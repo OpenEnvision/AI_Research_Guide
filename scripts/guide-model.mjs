@@ -56,7 +56,10 @@ export function loadGuide(root,assets='../',edition='personal'){
    if(!parts)throw Error('Missing field introduction or learning route '+lang+'/'+p.id);
    html=parts[1]+fieldNotes(field,lang,parts[2],parts[3],assets);
   }
-  if(p.id==='papers')html=html.replace(/(<h1>[\s\S]*?<\/h1>)/,m=>m+paperLibrary(fields,lang,assets));
+  if(p.id==='papers'){
+   if(edition==='uestc'&&lang==='zh')html=html.replace('<!-- paper-library -->',paperLibrary(fields,lang,assets,{compact:true}));
+   else html=html.replace(/(<h1>[\s\S]*?<\/h1>)/,m=>m+paperLibrary(fields,lang,assets));
+  }
   if(p.id==='ama')html+=amaPage(lang);
   html=enrichDirectory(p.id,lang,html,assets);
   const headings=[...html.matchAll(/<h2 id="((?!title-)[^"]+)">([\s\S]*?)<\/h2>/g)].map(m=>({id:m[1],title:plain(m[2])}));

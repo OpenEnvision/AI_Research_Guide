@@ -32,7 +32,7 @@
 
 ## 跟进研究动态
 
-[研究者与实验室动态](lookout.md) · [技术博客与研究观点](blogs.md) · [挑一篇论文读](papers.md)
+[研究者与实验室动态](lookout.md) · [技术博客与研究观点](blogs.md) · [论文选读](papers.md)
 
 [关于 AI 社与这份指南](about.md)
 
