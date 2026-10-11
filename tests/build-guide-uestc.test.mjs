@@ -15,6 +15,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
+import { loadGuide, validateGuide, buildSearchData, filename } from '../scripts/guide-model.mjs';
 import { assertAssetsResolve } from '../scripts/guide-verify.mjs';
 import { redirectPage, vercelConfig } from '../scripts/guide-shell-uestc.mjs';
 
@@ -25,18 +27,28 @@ const LANGS = ['zh', 'en'];
 
 test('both editions build', () => {
   execFileSync(process.execPath, ['scripts/build-guide.mjs'], { cwd: root, stdio: 'pipe' });
+  // Simulate files left by a previous 40-page club build.
+  for (const lang of LANGS) {
+    fs.mkdirSync(path.join(uestc, lang), { recursive: true });
+    for (const id of ['welcome', 'timeline', 'life', 'experience'])
+      fs.writeFileSync(path.join(uestc, lang, `${id}.html`), 'stale personal page');
+  }
   execFileSync(process.execPath, ['scripts/build-guide-uestc.mjs'], { cwd: root, stdio: 'pipe' });
 });
 
 const pagesOf = (dir, lang) =>
   fs.readdirSync(path.join(dir, lang)).filter(f => f.endsWith('.html')).sort();
 
-test('both editions emit the same page set', () => {
+test('club output follows its manifest and removes stale personal pages', () => {
+  const manifest = JSON.parse(fs.readFileSync(path.join(root, 'content/guide/uestc/manifest.json'), 'utf8'));
   for (const lang of LANGS) {
     const a = pagesOf(guide, lang);
     const b = pagesOf(uestc, lang);
     assert.equal(a.length, 40, `${lang}: expected 40 default pages, got ${a.length}`);
-    assert.deepEqual(b, a, `${lang}: page sets differ between editions`);
+    assert.equal(b.length, 36);
+    assert.deepEqual(b, manifest.map(p => filename(p.id)).sort());
+    for (const id of ['welcome', 'timeline', 'life', 'experience'])
+      assert.ok(!b.includes(`${id}.html`), `${lang}: excluded page ${id} survived`);
   }
 });
 
@@ -144,13 +156,15 @@ test('shared assets are referenced at the deeper prefix', () => {
     }
 });
 
-test('both editions render identical article content', () => {
+test('pages without club overrides retain shared article content', () => {
   // The uestc shell hoists the article's <h1> into the page title band; put it
   // back, normalise the asset depth, and the two must be byte-equal. This is
   // what proves the shared content model has not diverged.
   const normalise = html => html.replaceAll('../../', '../');
   for (const lang of LANGS)
-    for (const page of pagesOf(guide, lang)) {
+    for (const page of pagesOf(uestc, lang)) {
+      const id = page === 'index.html' ? 'home' : page.replace('.html', '');
+      if (fs.existsSync(path.join(root, 'content/guide/uestc', lang, id + '.md'))) continue;
       const a = fs.readFileSync(path.join(guide, lang, page), 'utf8').match(/<article>([\s\S]*)<\/article>/)?.[1];
       const bRaw = fs.readFileSync(path.join(uestc, lang, page), 'utf8');
       const bInner = bRaw.match(/<article class="markdown-body">([\s\S]*)<\/article>/)?.[1];
@@ -158,6 +172,60 @@ test('both editions render identical article content', () => {
       assert.ok(a && bInner, `${lang}/${page}: could not extract article`);
       assert.equal(normalise((band ?? '') + bInner), a, `${lang}/${page}: article content diverged`);
     }
+});
+
+test('all 80 personal pages remain byte-identical to the pre-edit baseline', () => {
+  // Captured before the club content changes at 01992cb. An intentional future
+  // personal-edition change must explicitly update this fixture.
+  const expected = JSON.parse(fs.readFileSync(path.join(root, 'tests/fixtures/personal-pages.sha256.json'), 'utf8'));
+  assert.equal(Object.keys(expected).length, 80);
+  for (const [file, hash] of Object.entries(expected))
+    assert.equal(createHash('sha256').update(fs.readFileSync(path.join(guide, file))).digest('hex'), hash, file);
+});
+
+test('club articles, navigation, and search have no removed-page links or personal promotion', () => {
+  const { all, manifest } = loadGuide(root, '../../', 'uestc');
+  validateGuide(all, manifest);
+  const excluded = /(?:welcome|timeline|life|experience)\.html/;
+  for (const lang of LANGS) {
+    for (const p of all[lang]) {
+      const rendered = fs.readFileSync(path.join(uestc, lang, filename(p.id)), 'utf8');
+      assert.doesNotMatch(rendered, excluded, `${lang}/${p.id}`);
+      assert.doesNotMatch(p.html, /https:\/\/takamatsu-hikaru\.github\.io\/blog\//i);
+      assert.doesNotMatch(p.plain, /顿觉天地宽|写给刚进大学的你|怎么好好生活|甜蜜的牢房|愚者之峰|rising star|personal progress|living well/i);
+      for (const match of p.html.matchAll(/<a\b[^>]*href="irene-workflow\.html[^\"]*"[^>]*>([^]*?)<\/a>/g))
+        assert.doesNotMatch(match[1], /irene|experience|经历/i, `${lang}/${p.id}: personality-led workflow label`);
+    }
+    const search = buildSearchData(all)[lang];
+    assert.ok(search.length > 36);
+    for (const item of search) assert.doesNotMatch(item.url, excluded);
+    assert.doesNotMatch(fs.readFileSync(path.join(uestc, 'search-data.js'), 'utf8'), excluded);
+    const research = all[lang].find(p => p.id === 'research');
+    assert.equal((research.html.match(/class="qa"/g) || []).length, 60);
+  }
+});
+
+test('workflow attribution, requested authors, member repository, and correct edit sources survive', () => {
+  const { all } = loadGuide(root, '../../', 'uestc');
+  for (const lang of LANGS) {
+    const workflow = all[lang].find(p => p.id === 'irene-workflow');
+    assert.equal(workflow.group, '做研究时来查');
+    assert.match(workflow.html, /https:\/\/github.com\/tseirene6/);
+    assert.doesNotMatch(workflow.title, /irene/i);
+    const blog = all[lang].find(p => p.id === 'blogs');
+    for (const name of ['Purshow', 'Wenhao Chai', 'knightnemo', 'Elon Musk', 'Sam Altman', 'Dario Amodei'])
+      assert.ok(blog.plain.includes(name), `Missing ${name}`);
+    const memberSection = blog.html.slice(blog.html.lastIndexOf('<h3'));
+    const memberLinks = [...memberSection.matchAll(/href="([^\"]+)"/g)].map(m => m[1]);
+    assert.deepEqual(memberLinks, ['https://github.com/Takamatsu-Hikaru/AI-Research-Guide']);
+    for (const id of ['home', 'basics']) {
+      const p = all[lang].find(p => p.id === id);
+      const html = fs.readFileSync(path.join(uestc, lang, filename(id)), 'utf8');
+      const source = `content/guide/${id === 'home' || (id === 'basics' && lang === 'zh') ? 'uestc/' : ''}${lang}/${id}.md`;
+      assert.equal(p.sourcePath, source);
+      assert.ok(html.includes(`/edit/main/${source}`));
+    }
+  }
 });
 
 test('the skin defines every token the reused fragments need', () => {

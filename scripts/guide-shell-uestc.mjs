@@ -18,7 +18,7 @@ import { STRINGS, escape, filename, groupName } from './guide-model.mjs';
 // and reaches the guide root with one extra hop. The standalone build passes
 // '../' because there the pages become the package root's zh/ and en/.
 export const ASSETS='../../';
-export const SKIN=ASSETS+'guide-uestc.css';
+export const SKIN=ASSETS+'guide-uestc.css?v=20261011d';
 
 export function pageShell({p,pages,index,lang,assets=ASSETS,skin=SKIN}){
  const t=STRINGS[lang],other=lang==='zh'?'en':'zh';
@@ -45,7 +45,7 @@ export function pageShell({p,pages,index,lang,assets=ASSETS,skin=SKIN}){
 <div class="article-layout"><article class="markdown-body">${body}</article><aside id="toc" aria-label="${t.onpage}"><strong>${t.onpage}</strong>${p.headings.map(h=>`<a href="#${h.id}">${escape(h.title)}</a>`).join('')}</aside></div>
 <nav class="neighbors" aria-label="${lang==='zh'?'前后文章':'Adjacent articles'}">${neighbors}</nav>
 </main>
-<footer class="app-footer"><span>UESTC AI · ${escape(t.brand)}</span><span><a href="https://github.com/Takamatsu-Hikaru/AI-Research-Guide/edit/main/content/guide/${lang}/${p.id}.md" target="_blank" rel="noopener">${t.source}</a><a href="https://github.com/Takamatsu-Hikaru/AI-Research-Guide" target="_blank" rel="noopener">GitHub</a></span></footer>
+<footer class="app-footer"><span>UESTC AI · ${escape(t.brand)}</span><span><a href="https://github.com/Takamatsu-Hikaru/AI-Research-Guide/edit/main/${p.sourcePath}" target="_blank" rel="noopener">${t.source}</a><a href="https://github.com/Takamatsu-Hikaru/AI-Research-Guide" target="_blank" rel="noopener">GitHub</a></span></footer>
 </div>
 </div>
 <dialog id="searchdialog" aria-label="${t.label}"><div class="searchhead"><input id="searchinput" type="search" placeholder="${t.placeholder}" aria-label="${t.label}"><button id="closesearch">${t.close}</button></div><div id="results" aria-live="polite"></div></dialog>

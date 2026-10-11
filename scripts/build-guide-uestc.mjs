@@ -1,6 +1,6 @@
 import './build-wiki.mjs';
 // Second edition of the guide, re-skinned in uestc_ai's visual language
-// (warm paper, coral accent, Georgia headings, sidebar + topbar shell).
+// (warm paper, coral accent, readable sans-serif headings, sidebar + topbar shell).
 //
 // One content model, two output targets:
 //
@@ -15,8 +15,8 @@ import './build-wiki.mjs';
 //     for is copied in, so the directory can be deployed on its own (Pages,
 //     Netlify, nginx, a file server) with no sibling files.
 //
-// Content comes from guide-model.mjs, so anchors, the 60 questions, resource
-// ids and the search index cannot drift from the default edition.
+// Club pages come from content/guide/uestc, with shared pages as a fallback.
+// Navigation and search are built from the club manifest only.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -30,9 +30,9 @@ const STANDALONE=process.argv.includes('--standalone');
 
 const out=STANDALONE?path.join(root,'dist/guide-uestc-guide'):path.join(guideRoot,'guide-uestc');
 const assets=STANDALONE?'../':ASSETS;
-const skin=assets+'guide-uestc.css';
+const skin=assets+'guide-uestc.css?v=20261011d';
 
-const {manifest,all}=loadGuide(root,assets);
+const {manifest,all}=loadGuide(root,assets,'uestc');
 const report=validateGuide(all,manifest);
 
 // Clear stale output, but keep .vercel/ — the Vercel CLI writes its project
@@ -44,6 +44,9 @@ if(STANDALONE&&fs.existsSync(out))
  }
 for(const lang of ['zh','en']){
  fs.mkdirSync(path.join(out,lang),{recursive:true});
+ const expected=new Set(all[lang].map(p=>filename(p.id)));
+ for(const file of fs.readdirSync(path.join(out,lang)))
+  if(file.endsWith('.html')&&!expected.has(file))fs.unlinkSync(path.join(out,lang,file));
  for(const [index,p] of all[lang].entries())
   fs.writeFileSync(path.join(out,lang,filename(p.id)),pageShell({p,pages:all[lang],index,lang,assets,skin}));
 }

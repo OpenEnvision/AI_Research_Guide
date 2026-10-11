@@ -1,6 +1,5 @@
-// Theme-neutral content model for the guide. Both the default build and the
-// uestc-skinned build consume this, so anchors, question counts, resource ids
-// and the search index stay identical between editions.
+// Shared renderer. The club edition has its own manifest and optional page
+// files; the personal edition continues to read the original content.
 //
 // `assets` is the relative prefix that reaches public/blog/guide/ from a
 // generated page's directory: '../' for guide/<lang>/<page>.html (the default,
@@ -33,13 +32,17 @@ const markdownAssets=(html,assets)=>{
  return html.replaceAll(guideRoot,assets).replaceAll('../chronicle/',assets+'chronicle/').replaceAll('../wiki/',assets+'wiki/');
 };
 
-export function loadGuide(root,assets='../'){
+export function loadGuide(root,assets='../',edition='personal'){
  const content=path.join(root,'content/guide');
- const manifest=JSON.parse(fs.readFileSync(path.join(content,'manifest.json'),'utf8'));
+ const editionRoot=edition==='uestc'?path.join(content,'uestc'):content;
+ const manifest=JSON.parse(fs.readFileSync(path.join(editionRoot,'manifest.json'),'utf8'));
  const fields=loadFields(root);
  const all={zh:[],en:[]};
  for(const lang of ['zh','en'])for(const p of manifest){
-  const raw=fs.readFileSync(path.join(content,lang,p.id+'.md'),'utf8');
+  const override=path.join(editionRoot,lang,p.id+'.md');
+  const source=fs.existsSync(override)?override:path.join(content,lang,p.id+'.md');
+  const sourcePath=path.relative(root,source).split(path.sep).join('/');
+  const raw=fs.readFileSync(source,'utf8');
   const title=raw.match(/^# (.+)$/m)?.[1];if(!title)throw Error('Missing title '+lang+'/'+p.id);
   let n=0;let html=marked.parse(raw,{gfm:true}).replace(/<h([23])>([\s\S]*?)<\/h\1>/g,(_,level,text)=>`<h${level} id="sec-${++n}">${text}</h${level}>`);
   html=markdownAssets(html,assets);
@@ -64,7 +67,7 @@ export function loadGuide(root,assets='../'){
   }
   if(p.id==='home')html=html.replace(/(<h1>[\s\S]*?<\/h1>)/,m=>`<img class="home-logo" src="${assets}logo-mark.png" alt="UESTC AI 社">`+m);
   if(p.id==='home')html=html.replace(/(<h2[^>]*>[\s\S]*?)(?=<h2|$)/g,'<section class="home-section">$1</section>');
-  all[lang].push({...p,title,html,headings,plain:plain(html)});
+  all[lang].push({...p,title,html,headings,plain:plain(html),sourcePath});
  }
  return {manifest,fields,all};
 }
