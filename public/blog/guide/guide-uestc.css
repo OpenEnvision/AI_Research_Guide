@@ -605,3 +605,12 @@ body.home .markdown-body > p:first-of-type { font-size: 17px; color: var(--ink);
   main.app-content { padding: 0; max-width: none; }
   .qa { break-inside: avoid; }
 }
+
+/* Lookout: programme marks and complete episode covers. */
+body[data-page="lookout"] .markdown-body .outlet-mark {
+  display:inline-block; width:36px; height:36px; object-fit:cover; border-radius:6px;
+  vertical-align:middle; margin:0 9px 0 0; border:0; padding:0;
+}
+body[data-page="lookout"] .markdown-body .lookout-cover { margin:18px 0 30px; max-width:520px; }
+body[data-page="lookout"] .markdown-body .lookout-cover img { display:block; width:100%; height:auto; border-radius:5px; }
+body[data-page="lookout"] .markdown-body .lookout-cover figcaption { margin-top:5px; font-size:13px; line-height:1.6; }

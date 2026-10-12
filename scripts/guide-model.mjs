@@ -37,6 +37,7 @@ export function loadGuide(root,assets='../',edition='personal'){
  const editionRoot=edition==='uestc'?path.join(content,'uestc'):content;
  const manifest=JSON.parse(fs.readFileSync(path.join(editionRoot,'manifest.json'),'utf8'));
  const fields=loadFields(root);
+ const lookoutCopy=edition==='uestc'?JSON.parse(fs.readFileSync(path.join(editionRoot,'lookout-directory.json'),'utf8')):{};
  const all={zh:[],en:[]};
  for(const lang of ['zh','en'])for(const p of manifest){
   const override=path.join(editionRoot,lang,p.id+'.md');
@@ -61,7 +62,7 @@ export function loadGuide(root,assets='../',edition='personal'){
    else html=html.replace(/(<h1>[\s\S]*?<\/h1>)/,m=>m+paperLibrary(fields,lang,assets));
   }
   if(p.id==='ama')html+=amaPage(lang);
-  html=enrichDirectory(p.id,lang,html,assets);
+  html=enrichDirectory(p.id,lang,html,assets,edition==='uestc'&&lang==='zh'&&p.id==='lookout'?lookoutCopy:{});
   const headings=[...html.matchAll(/<h2 id="((?!title-)[^"]+)">([\s\S]*?)<\/h2>/g)].map(m=>({id:m[1],title:plain(m[2])}));
   if(p.id==='research'){
    html=html.replace(/<a id="(q\d+)"><\/a>\s*<h3[^>]*>([\s\S]*?)<\/h3>([\s\S]*?)(?=<a id="q\d+"|<h2|$)/g,(_,id,q,a)=>`<details class="qa" id="${id}"><summary>${q}</summary><div class="answer">${a}</div></details>\n`);
