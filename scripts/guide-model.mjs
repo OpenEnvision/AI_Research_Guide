@@ -36,7 +36,7 @@ export function loadGuide(root,assets='../',edition='personal'){
  const content=path.join(root,'content/guide');
  const editionRoot=edition==='uestc'?path.join(content,'uestc'):content;
  const manifest=JSON.parse(fs.readFileSync(path.join(editionRoot,'manifest.json'),'utf8'));
- const fields=loadFields(root);
+ const fields=loadFields(root,edition);
  const lookoutCopy=edition==='uestc'?JSON.parse(fs.readFileSync(path.join(editionRoot,'lookout-directory.json'),'utf8')):{};
  const all={zh:[],en:[]};
  for(const lang of ['zh','en'])for(const p of manifest){

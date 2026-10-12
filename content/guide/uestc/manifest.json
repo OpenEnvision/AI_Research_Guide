@@ -50,7 +50,8 @@
     "title": "大语言模型：理解、生成、推理",
     "group": "研究方向",
     "kind": "方向导读",
-    "desc": "数据、结构、训练与能力"
+    "desc": "数据、结构、训练与能力",
+    "updated": "2026-10-12"
   },
   {
     "id": "agent",
@@ -58,58 +59,63 @@
     "group": "研究方向",
     "kind": "方向导读",
     "desc": "工具、反馈与任务完成",
-    "updated": "2026-10-11"
+    "updated": "2026-10-12"
   },
   {
     "id": "vision",
-    "title": "计算机视觉",
+    "title": "计算机视觉：让模型读懂图像",
     "group": "研究方向",
     "kind": "方向导读",
     "desc": "图像、表示与场景",
-    "updated": "2026-10-05"
+    "updated": "2026-10-12"
   },
   {
     "id": "multimodal",
-    "title": "多模态",
+    "title": "多模态：图像、语言与声音",
     "group": "研究方向",
     "kind": "方向导读",
-    "desc": "连接图像与语言"
+    "desc": "连接图像与语言",
+    "updated": "2026-10-12"
   },
   {
     "id": "generation",
     "title": "生成模型",
     "group": "研究方向",
     "kind": "方向导读",
-    "desc": "从噪声到样本"
+    "desc": "从噪声到样本",
+    "updated": "2026-10-12"
   },
   {
     "id": "rl",
     "title": "强化学习",
     "group": "研究方向",
     "kind": "方向导读",
-    "desc": "行动与反馈"
+    "desc": "行动与反馈",
+    "updated": "2026-10-12"
   },
   {
     "id": "world-model",
-    "title": "World Model",
+    "title": "世界模型",
     "group": "研究方向",
     "kind": "方向导读",
-    "desc": "预测怎样服务行动"
+    "desc": "预测怎样服务行动",
+    "updated": "2026-10-12"
   },
   {
     "id": "embodied",
-    "title": "具身智能",
+    "title": "具身智能：从看见到行动",
     "group": "研究方向",
     "kind": "方向导读",
     "desc": "观察、动作与真实环境",
-    "updated": "2026-10-05"
+    "updated": "2026-10-12"
   },
   {
     "id": "systems",
     "title": "效率与系统",
     "group": "研究方向",
     "kind": "方向导读",
-    "desc": "质量、速度与成本"
+    "desc": "质量、速度与成本",
+    "updated": "2026-10-12"
   },
   {
     "id": "ai4x",
@@ -117,7 +123,7 @@
     "group": "研究方向",
     "kind": "方向导读",
     "desc": "从学科问题出发",
-    "updated": "2026-10-05"
+    "updated": "2026-10-12"
   },
   {
     "id": "reading",
