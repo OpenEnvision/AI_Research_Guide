@@ -22,7 +22,7 @@
 
 - **[LessWrong](https://www.lesswrong.com/about)**
 
-    关于理性、研究判断与 AI 的文章和讨论。相关选文见 [LessWrong 选读](lesswrong.md)。
+    关于理性、研究判断与 AI 的文章和讨论。相关选文见 [LessWrong：研究判断与 AI 使用](lesswrong.md)。
 
 ## 研究发布与媒体
 

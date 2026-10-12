@@ -74,4 +74,4 @@ Agent 的训练样本包含观察、动作、工具返回和任务结果。任�
 
 [Hello Agents](https://github.com/datawhalechina/hello-agents) 提供中文教程和代码项目；[Hugging Face Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction)介绍工具调用、Agent 框架与实践。[LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/)讨论规划、记忆和工具使用等组件，[LLM Agent Paper List](https://github.com/WooooDyy/LLM-Agent-Paper-List)整理相关研究论文。
 
-更多教程与论文见[Agent 资料目录](catalog-directions.md#topic-21)。编程与开发工具见[学习基础知识](basics.md)；具体使用介绍见[AI 工具](ai.md)与[论文阅读和笔记工作流](irene-workflow.md)。
+更多教程与论文见[Agent 资料目录](catalog-directions.md#topic-21)。编程与开发工具见[学习基础知识](basics.md)；具体使用介绍见[AI 工具](ai.md)与[论文阅读与笔记工作流](irene-workflow.md)。

@@ -22,7 +22,7 @@ AI 项目里还会经常用到 **PyTorch** 和 **Hugging Face**。PyTorch 用于
 
 [PyTorch 基础教程](https://docs.pytorch.org/tutorials/beginner/basics/intro.html) 展示了数据加载、模型定义、自动求导和参数更新的完整过程；[Hugging Face Hub 文档](https://huggingface.co/docs/hub/index)介绍模型与数据集的查找、下载和分享。
 
-VS Code 等编辑器中的编程 AI，也可以参与代码阅读、功能实现、调试和测试。相关使用方法见[和 AI 一起做事](ai.md)。
+VS Code 等编辑器中的编程 AI，也可以参与代码阅读、功能实现、调试和测试。相关使用方法见[AI 工具](ai.md)。
 
 计算机基础还包括数据结构、算法、操作系统、网络和体系结构。[Crash Course Computer Science](https://thecrashcourse.com/topic/computerscience/) 介绍这些领域的基本面貌；[MIT 6.006](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/) 系统讲解数据结构、算法设计与复杂度分析。[CS 自学指南](https://csdiy.wiki/)整理了各领域的课程、教材和学习经验。
 
@@ -151,4 +151,4 @@ VAE 将概率建模与变分推断联系起来；GAN 通过生成器与判别器
 
 ## 相关资料
 
-[基础课程与教材目录](catalog-foundation.md) · [课程与论文精读](limu.md) · [第一个 AI 项目](start.md) · [研究方向总览](directions.md)
+[课程、教材与基础学习](catalog-foundation.md) · [深度学习课程与论文精读](limu.md) · [第一个 AI 项目](start.md) · [研究方向总览](directions.md)

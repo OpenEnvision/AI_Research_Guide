@@ -30,4 +30,4 @@
 
 ## 相关资料
 
-[研究方向总览](directions.md) · [找资料和读论文](reading.md) · [方向资料目录](catalog-directions.md)
+[研究方向总览](directions.md) · [找资料和读论文](reading.md) · [各方向课程、论文与项目](catalog-directions.md)

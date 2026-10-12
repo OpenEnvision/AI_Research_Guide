@@ -401,4 +401,4 @@ AI 已经参与到分子筛选、蛋白质设计、天气预测、医学影像�
 
 分子的旋转与对称性、图中的关系、时间序列的先后、医学图像的体素间距，都带着具体的学科含义。这些结构影响数据表示、模型与训练目标；新分子骨架、新供体、新患者或未来时间段，又对应不同的泛化问题。交叉研究中的方法选择，与这些问题本身密切相连。
 
-[AI for Science 资料索引](https://github.com/ai4s-research/awesome-ai-for-science) · [AI4X 资料目录](catalog-directions.md#topic-23) · [科研问答](research.md) · [联系与合作](contact.md)
+[AI for Science 资料索引](https://github.com/ai4s-research/awesome-ai-for-science) · [AI4X 资料目录](catalog-directions.md#topic-23) · [科研入门Q&A](research.md) · [联系老师、学长与合作](contact.md)

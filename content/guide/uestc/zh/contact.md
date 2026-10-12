@@ -31,4 +31,4 @@
 
 ## 相关资料
 
-[科研经验与问答](research-conversations.md) · [课题组与研究团队](labs.md)
+[科研经验与交流](research-conversations.md) · [课题组与研究团队](labs.md)

@@ -52,6 +52,6 @@
 
 ## 论文讲解与相关资料
 
-[李沐论文精读](https://github.com/mli/paper-reading)逐段讲解研究背景、方法与实验，也讨论论文写作。Transformer、ViT、CLIP 等视频见[论文选读](papers.md#sec-1)，更多课程与精读视频见[课程与论文精读](limu.md)。
+[李沐论文精读](https://github.com/mli/paper-reading)逐段讲解研究背景、方法与实验，也讨论论文写作。Transformer、ViT、CLIP 等视频见[论文选读](papers.md#sec-1)，更多课程与精读视频见[深度学习课程与论文精读](limu.md)。
 
-[科研资料目录](catalog-research.md) · [科研问答与 AMA](research-conversations.md) · [联系老师与合作](contact.md)
+[科研方法与常用工具](catalog-research.md) · [科研经验与交流](research-conversations.md) · [联系老师、学长与合作](contact.md)
