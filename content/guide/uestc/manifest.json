@@ -184,92 +184,84 @@
     "updated": "2026-10-11"
   },
   {
-    "id": "about",
-    "title": "关于与来源",
-    "group": "看看外面",
-    "kind": "关于本指南",
-    "desc": "作者、社团与引用来源",
-    "updated": "2026-10-11"
-  },
-  {
     "id": "resources",
     "title": "资料总索引",
     "group": "资料总索引",
     "kind": "资料选读",
-    "desc": "课程、paper list、博客、LessWrong、课题组与问答",
-    "updated": "2026-10-11"
+    "desc": "课程、技术文章、科研方法与研究动态",
+    "updated": "2026-10-12"
   },
   {
     "id": "catalog-foundation",
     "title": "课程、教材与基础学习",
     "group": "资料总索引",
     "kind": "资料选读",
-    "desc": "按主题查课程、文章与原始项目",
-    "updated": "2026-10-05"
+    "desc": "计算机、数学、Python、机器学习与模型架构",
+    "updated": "2026-10-12"
   },
   {
     "id": "catalog-research",
     "title": "科研方法与常用工具",
     "group": "资料总索引",
     "kind": "资料选读",
-    "desc": "按主题查课程、文章与原始项目",
-    "updated": "2026-10-11"
+    "desc": "文献、实验、写作、汇报与工具",
+    "updated": "2026-10-12"
   },
   {
     "id": "catalog-directions",
     "title": "各方向课程、论文与项目",
     "group": "资料总索引",
     "kind": "资料选读",
-    "desc": "按主题查课程、文章与原始项目",
-    "updated": "2026-10-05"
+    "desc": "各方向的课程、论文清单与开源项目",
+    "updated": "2026-10-12"
   },
   {
     "id": "catalog-channels",
     "title": "博客、访谈与信息渠道",
     "group": "资料总索引",
     "kind": "资料选读",
-    "desc": "按主题查课程、文章与原始项目",
-    "updated": "2026-10-05"
+    "desc": "技术博客、研究发布、媒体与访谈",
+    "updated": "2026-10-12"
   },
   {
     "id": "blogs",
     "title": "技术博客与研究观点",
     "group": "资料总索引",
     "kind": "资料选读",
-    "desc": "研究笔记、产业观点与社员仓库",
-    "updated": "2026-10-11"
+    "desc": "模型推导、Scaling、评测与科研写作",
+    "updated": "2026-10-12"
   },
   {
     "id": "lesswrong",
     "title": "LessWrong：研究判断与 AI 使用",
     "group": "资料总索引",
     "kind": "资料选读",
-    "desc": "建议的适用条件、实验判断与 AI 使用观察",
-    "updated": "2026-10-11"
+    "desc": "经验、证据、实验测量与 AI 对话",
+    "updated": "2026-10-12"
   },
   {
     "id": "research-conversations",
-    "title": "科研方法与交流资料",
+    "title": "科研经验与交流",
     "group": "资料总索引",
     "kind": "资料选读",
-    "desc": "论文阅读、训练排查与研究交流",
-    "updated": "2026-10-11"
+    "desc": "研究经验、师生合作与社区问答",
+    "updated": "2026-10-12"
   },
   {
     "id": "limu",
-    "title": "李沐：从课程到论文精读",
+    "title": "深度学习课程与论文精读",
     "group": "资料总索引",
     "kind": "资料选读",
-    "desc": "把基础、代码与研究阅读接起来",
-    "updated": "2026-10-05"
+    "desc": "动手学深度学习与论文精读视频",
+    "updated": "2026-10-12"
   },
   {
     "id": "labs",
-    "title": "认识课题组与研究团队",
+    "title": "课题组与研究团队",
     "group": "资料总索引",
     "kind": "资料选读",
-    "desc": "从具体工作找到人、团队与下一篇文章",
-    "updated": "2026-10-05"
+    "desc": "高校名录、实验室与工业研究团队",
+    "updated": "2026-10-12"
   },
   {
     "id": "ama",
@@ -278,5 +270,13 @@
     "kind": "讨论",
     "desc": "提问、追问与 core 回复",
     "updated": "2026-10-05"
+  },
+  {
+    "id": "about",
+    "title": "关于 AI 社与这份指南",
+    "group": "关于",
+    "kind": "关于本指南",
+    "desc": "社团、来源、致谢与修订",
+    "updated": "2026-10-11"
   }
 ]

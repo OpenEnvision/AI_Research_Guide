@@ -12,8 +12,8 @@ import { loadFields, fieldNotes, paperLibrary } from './fieldnotes.mjs';
 import { enrichDirectory } from './guide-directory.mjs';
 import { amaPage } from './ama-page.mjs';
 
-export const GROUPS=['先从这里开始','开始学习','研究方向','做研究时来查','经历与生活','看看外面','资料总索引','交流与提问'];
-export const EN_GROUPS=['Start here','Start learning','Research directions','While doing research','Experience & life','Look outside','Resource index','Questions & conversations'];
+export const GROUPS=['先从这里开始','开始学习','研究方向','做研究时来查','经历与生活','看看外面','资料总索引','交流与提问','关于'];
+export const EN_GROUPS=['Start here','Start learning','Research directions','While doing research','Experience & life','Look outside','Resource index','Questions & conversations','About'];
 export const QUESTIONS=60;
 export const STRINGS={zh:{brand:'AI 科研入门指南',blog:'GitHub 仓库',search:'搜索',menu:'目录',close:'关闭',onpage:'本页内容',all:'展开全部',collapse:'收起全部',questions:'60 个问题',home:'指南首页',source:'编辑本页',prev:'上一篇',next:'下一篇',placeholder:'搜索文章、问题和资料',hint:'例如：MNIST、联系老师、Scaling Ladder',empty:'没有找到，试试短一点的词。',label:'搜索指南',theme:'切换深浅色',skip:'跳到正文'},en:{brand:'AI Research Guide',blog:'GitHub repository',search:'Search',menu:'Contents',close:'Close',onpage:'On this page',all:'Expand all',collapse:'Collapse all',questions:'60 questions',home:'Guide home',source:'Edit this page',prev:'Previous',next:'Next',placeholder:'Search articles, questions, and resources',hint:'Try MNIST, contacting a supervisor, or Scaling Ladder',empty:'No matches. Try a shorter phrase.',label:'Search the guide',theme:'Toggle color theme',skip:'Skip to content'}};
 

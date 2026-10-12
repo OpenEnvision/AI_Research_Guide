@@ -1,18 +1,18 @@
-# 科研方法与交流资料
+# 科研经验与交流
 
-读论文、排查训练问题，或者准备和老师交流时，你可能想看看别人具体是怎么做的。下面收了一些研究者的文章和问答；每个条目都写了主题，方便你挑眼下需要的部分读。
+选题、阅读、实验和合作，往往很难只靠课程讲清。研究者的经验文章会谈到实际工作中的判断与取舍，这里也收了一些师生交流、联系邮件和社区问答的材料。
 
 [科研问答](research.md) · [联系与合作](contact.md)
 
 <a id="han"></a>
 
-## 韩晓光：什么是好的科研工作
+## 什么是好的科研工作
 
-韩晓光的《什么是好的科研工作》，小红书图文，共 18 张图片。
+《什么是好的科研工作》是韩晓光的一组科研经验分享。
 - [原帖入口](https://www.xiaohongshu.com/explore/6a2c19dd000000001603cbc8?xsec_token=ABgBAhwXSoeWd1lpi1ezxG_V9kPXXG7DpOPplTcKy8000%3D&xsec_source=pc_search)
-- [提供该原帖链接的参考页](https://dut-future-guide.github.io/future-school-path/research/)
+- [大工未来技术学院科研资料页](https://dut-future-guide.github.io/future-school-path/research/)
 
-- 另有较早的[《科研那些事（万字长文，真诚分享）》](https://mp.weixin.qq.com/s/Prs4yrktWLzSBbzMRwZ-ug)。
+另有较早的[《科研那些事（万字长文，真诚分享）》](https://mp.weixin.qq.com/s/Prs4yrktWLzSBbzMRwZ-ug)。
 
 ## 科研入门、指导与交流
 
@@ -26,4 +26,4 @@
 ## 社区提问与 AMA
 
 - [Reddit：How do you read a computer science research paper?](https://www.reddit.com/r/compsci/comments/1fwf6yg/how_do_you_read_a_computer_science_research_paper/)：读论文的真实入门疑问；讨论中也出现缺乏导师和实验室资源的背景。
-- [Reddit：Geoffrey Hinton AMA](https://www.reddit.com/r/MachineLearning/comments/2lmo0l/ama_geoffrey_hinton/)：研究、创新等问答，属于历史材料。
+- [Reddit：Geoffrey Hinton AMA](https://www.reddit.com/r/MachineLearning/comments/2lmo0l/ama_geoffrey_hinton/)：关于研究与创新的问答。

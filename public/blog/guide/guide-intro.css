@@ -90,3 +90,12 @@ body[data-page="papers"] .article-layout { grid-template-columns: minmax(0,760px
  body.home .markdown-body table th:first-child { width: 55%; }
  body.home .markdown-body table th:last-child { width: 45%; }
 }
+
+/* Small source marks keep directory entries readable as text. */
+.markdown-body .resource-mark {
+  display: inline-block; width: 22px; height: 22px; max-height: 22px;
+  object-fit: contain; vertical-align: -5px; margin: 0 6px 0 0;
+  border: 0; border-radius: 3px; box-shadow: none;
+}
+body[data-page^="catalog-"] .markdown-body > ul > li { margin-bottom: 18px; }
+body[data-page="resources"] .markdown-body > ul > li { margin-bottom: 16px; }
