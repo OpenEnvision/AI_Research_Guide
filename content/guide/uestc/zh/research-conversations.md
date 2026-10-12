@@ -20,6 +20,7 @@
 - [Jason Eisner：How to work with a professor](https://www.cs.jhu.edu/~jason/advice/how-to-work-with-a-professor.html)：交流、记录、求助和合作等具体做法。
 - [Stanford：Emailing faculty](https://advising.stanford.edu/current-students/advising-student-handbook/email-faculty)：联系老师的邮件写法。
 - [Chris Olah：Research taste](https://colah.github.io/notes/taste/)：研究判断及练习的讨论。
+- [How to be good at research](https://vivekstills.substack.com/p/how-to-be-good-at-research)：选题、实验迭代与研究中的积累，值得一读。另有[中文翻译](https://www.geekjourney.dev/docs/reading/how-to-be-good-at-research)。
 - [S. Keshav：Research hints](https://svr-sk818-web.cl.cam.ac.uk/keshav/advice/research-hints.html)：研究问题、记录和推进方法。
 - [Andrej Karpathy：A Recipe for Training Neural Networks](https://karpathy.github.io/2019/04/25/recipe/)：训练、排查和实验实践。
 
