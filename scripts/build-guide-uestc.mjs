@@ -30,7 +30,7 @@ const STANDALONE=process.argv.includes('--standalone');
 
 const out=STANDALONE?path.join(root,'dist/guide-uestc-guide'):path.join(guideRoot,'guide-uestc');
 const assets=STANDALONE?'../':ASSETS;
-const skin=assets+'guide-uestc.css?v=20261012a';
+const skin=assets+'guide-uestc.css?v=20261012b';
 
 const {manifest,all}=loadGuide(root,assets,'uestc');
 const report=validateGuide(all,manifest);

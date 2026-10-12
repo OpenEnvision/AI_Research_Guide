@@ -614,3 +614,31 @@ body[data-page="lookout"] .markdown-body .outlet-mark {
 body[data-page="lookout"] .markdown-body .lookout-cover { margin:18px 0 30px; max-width:520px; }
 body[data-page="lookout"] .markdown-body .lookout-cover img { display:block; width:100%; height:auto; border-radius:5px; }
 body[data-page="lookout"] .markdown-body .lookout-cover figcaption { margin-top:5px; font-size:13px; line-height:1.6; }
+
+/* Consistent resource groups for Lookout: each source keeps its own identity. */
+body[data-page="lookout"] .lookout-grid {
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:18px 0 24px;
+}
+body[data-page="lookout"] .lookout-grid.two { grid-template-columns:repeat(2,minmax(0,1fr)); }
+body[data-page="lookout"] .lookout-resource {
+  min-width:0; padding:17px 16px; background:var(--surface); border:1px solid var(--line); border-radius:3px;
+}
+body[data-page="lookout"] .lookout-resource h4 { margin:0; font-size:16px; line-height:1.45; }
+body[data-page="lookout"] .lookout-resource h4 a {
+  display:flex; align-items:center; gap:11px; min-height:44px; color:var(--ink); text-decoration:none; border:0;
+}
+body[data-page="lookout"] .lookout-resource h4 a:hover { color:var(--link); }
+body[data-page="lookout"] .lookout-resource h4 img {
+  display:block; flex:0 0 40px; width:40px; height:40px; max-height:none;
+  object-fit:contain; margin:0; padding:0; border:0; border-radius:4px; background:transparent;
+}
+body[data-page="lookout"] .lookout-grid.conferences h4 img,
+body[data-page="lookout"] .lookout-resource h4 img.wide-mark { flex-basis:66px; width:66px; height:40px; }
+body[data-page="lookout"] .lookout-resource p { margin:12px 0 0; font-size:14px; line-height:1.85; }
+@media(max-width:760px) {
+  body[data-page="lookout"] .lookout-grid,body[data-page="lookout"] .lookout-grid.two { grid-template-columns:1fr; gap:10px; }
+  body[data-page="lookout"] .lookout-resource { padding:15px 16px; }
+  body[data-page="lookout"] .lookout-resource p { margin:8px 0 0 51px; }
+  body[data-page="lookout"] .lookout-grid.conferences .lookout-resource p,
+  body[data-page="lookout"] .lookout-resource:has(img.wide-mark) p { margin-left:77px; }
+}

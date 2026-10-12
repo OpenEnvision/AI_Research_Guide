@@ -4,28 +4,57 @@
 
 ## 论文与研究入口
 
-**[Google Research](https://research.google/pubs/)**<br>
-机器学习、计算机系统、科学计算等领域的论文与研究成果。
+<div class="lookout-grid">
+<section class="lookout-resource"><h4><a href="https://research.google/pubs/"><img src="../../../public/blog/guide/figures/uestc/lookout/google-research.png" alt="" width="40" height="40" loading="lazy"><span>Google Research</span></a></h4><p>机器学习、计算机系统与科学计算等领域的论文与研究成果。</p></section>
+<section class="lookout-resource"><h4><a href="https://bair.berkeley.edu/blog/archive/"><img class="wide-mark" src="../../../public/blog/guide/figures/uestc/lookout/bair.webp" alt="" width="40" height="40" loading="lazy"><span>BAIR Blog</span></a></h4><p>Berkeley AI Research 的研究博客，介绍新工作的方法、实验与背景。</p></section>
+<section class="lookout-resource"><h4><a href="https://huggingface.co/papers"><img src="../../../public/blog/guide/figures/uestc/resources/huggingface.svg" alt="" width="40" height="40" loading="lazy"><span>Hugging Face Papers</span></a></h4><p>每日论文与社区讨论，关联作者、模型和开源项目。</p></section>
+</div>
 
-**[Berkeley AI Research Blog](https://bair.berkeley.edu/blog/archive/)**<br>
-实验室成员介绍机器学习、视觉、机器人等方向的新工作，讨论方法、实验和研究背景。
+### 学术会议
 
-**[Hugging Face Daily Papers](https://huggingface.co/papers)**<br>
-每日论文及社区讨论，关联作者、模型和开源项目。
-
-[NeurIPS](https://neurips.cc/)、[ICML](https://icml.cc/) 和 [ICLR](https://iclr.cc/) 的会议网站有论文、报告、Tutorial 和 Workshop。
+<div class="lookout-grid conferences">
+<section class="lookout-resource"><h4><a href="https://neurips.cc/"><img src="../../../public/blog/guide/figures/uestc/lookout/neurips.svg" alt="" width="40" height="40" loading="lazy"><span>NeurIPS</span></a></h4><p>机器学习与计算神经科学，含论文、报告与专题研讨。</p></section>
+<section class="lookout-resource"><h4><a href="https://icml.cc/"><img src="../../../public/blog/guide/figures/uestc/lookout/icml.svg" alt="" width="40" height="40" loading="lazy"><span>ICML</span></a></h4><p>机器学习理论、方法与应用，含论文、Tutorial 与 Workshop。</p></section>
+<section class="lookout-resource"><h4><a href="https://iclr.cc/"><img src="../../../public/blog/guide/figures/uestc/lookout/iclr.svg" alt="" width="40" height="40" loading="lazy"><span>ICLR</span></a></h4><p>深度学习与表示学习，含论文、公开评审与会议报告。</p></section>
+</div>
 
 ## 媒体与技术博客
 
-[机器之心](https://www.jiqizhixin.com/)、[量子位](https://www.qbitai.com/)和[新智元](https://aiera.com.cn/)报道 AI 前沿研究、产品与行业动态。知乎有论文解读和学术讨论，小红书有研究者的日常与经验分享，B 站有课程和技术讲解；X 和 YouTube 上也有许多工具使用细节、项目演示和有趣的分享。
+### 中文科技媒体
 
-**[Z Potentials](https://zpotentials.substack.com/)**<br>
-AI 团队、研究者与创业者访谈，涉及研究方向、团队经历和产品开发。
+<div class="lookout-grid">
+<section class="lookout-resource"><h4><a href="https://www.jiqizhixin.com/"><img src="../../../public/blog/guide/figures/uestc/lookout/jiqizhixin-official.webp" alt="" width="40" height="40" loading="lazy"><span>机器之心</span></a></h4><p>AI 论文解读、开源项目与产业报道。</p></section>
+<section class="lookout-resource"><h4><a href="https://www.qbitai.com/"><img class="wide-mark" src="../../../public/blog/guide/figures/uestc/lookout/qbitai-mark.png" alt="" width="40" height="40" loading="lazy"><span>量子位</span></a></h4><p>AI 前沿研究、产品发布与科技行业动态。</p></section>
+<section class="lookout-resource"><h4><a href="https://aiera.com.cn/"><img class="wide-mark" src="../../../public/blog/guide/figures/uestc/lookout/aiera.webp" alt="" width="40" height="40" loading="lazy"><span>新智元</span></a></h4><p>AI 研究进展、技术发布与行业访谈。</p></section>
+</div>
 
-**[葬AI](https://funeralai.substack.com/)**<br>
-AI 产品体验、工具使用与行业评论。
+### 社区与视频平台
 
-技术博客中，[科学空间](https://kexue.fm/content.html)有数学推导与模型分析，[Simon Willison](https://simonwillison.net/)记录工具实践与开发细节，[Karpathy](https://karpathy.ai/)分享课程、项目和技术文章。
+<div class="lookout-grid">
+<section class="lookout-resource"><h4><a href="https://www.zhihu.com/"><img src="../../../public/blog/guide/figures/uestc/lookout/zhihu.ico" alt="" width="40" height="40" loading="lazy"><span>知乎</span></a></h4><p>论文解读、学术讨论与科研经验。</p></section>
+<section class="lookout-resource"><h4><a href="https://www.bilibili.com/"><img src="../../../public/blog/guide/figures/uestc/lookout/bilibili.ico" alt="" width="40" height="40" loading="lazy"><span>B 站</span></a></h4><p>课程、论文讲解、技术演示与研究者访谈。</p></section>
+<section class="lookout-resource"><h4><a href="https://www.xiaohongshu.com/"><img src="../../../public/blog/guide/figures/uestc/lookout/xiaohongshu.png" alt="" width="40" height="40" loading="lazy"><span>小红书</span></a></h4><p>研究者的日常、求学经历与经验分享。</p></section>
+</div>
+
+<div class="lookout-grid two">
+<section class="lookout-resource"><h4><a href="https://x.com/"><img src="../../../public/blog/guide/figures/uestc/lookout/x.svg" alt="" width="40" height="40" loading="lazy"><span>X</span></a></h4><p>研究者与团队的新工作、项目进展和技术讨论。</p></section>
+<section class="lookout-resource"><h4><a href="https://www.youtube.com/"><img src="../../../public/blog/guide/figures/uestc/lookout/youtube.png" alt="" width="40" height="40" loading="lazy"><span>YouTube</span></a></h4><p>技术讲解、工具使用细节、项目演示与长访谈。</p></section>
+</div>
+
+### 技术博客
+
+<div class="lookout-grid">
+<section class="lookout-resource"><h4><a href="https://kexue.fm/content.html"><img src="../../../public/blog/guide/figures/uestc/lookout/kexue.webp" alt="" width="40" height="40" loading="lazy"><span>科学空间</span></a></h4><p>数学推导、概率建模与神经网络方法分析。</p></section>
+<section class="lookout-resource"><h4><a href="https://simonwillison.net/"><img src="../../../public/blog/guide/figures/uestc/lookout/simon.webp" alt="" width="40" height="40" loading="lazy"><span>Simon Willison</span></a></h4><p>AI 工具试用、开发细节与实践记录。</p></section>
+<section class="lookout-resource"><h4><a href="https://karpathy.ai/"><img src="../../../public/blog/guide/figures/uestc/lookout/karpathy.webp" alt="" width="40" height="40" loading="lazy"><span>Karpathy</span></a></h4><p>神经网络课程、开源项目与技术文章。</p></section>
+</div>
+
+### 访谈与行业评论
+
+<div class="lookout-grid two">
+<section class="lookout-resource"><h4><a href="https://zpotentials.substack.com/"><img src="../../../public/blog/guide/figures/uestc/lookout/zpotentials.png" alt="" width="40" height="40" loading="lazy"><span>Z Potentials</span></a></h4><p>AI 团队、研究者与创业者访谈，聊研究、团队与产品。</p></section>
+<section class="lookout-resource"><h4><a href="https://funeralai.substack.com/"><img src="../../../public/blog/guide/figures/uestc/lookout/funeralai.webp" alt="" width="40" height="40" loading="lazy"><span>葬AI</span></a></h4><p>AI 产品体验、工具使用与行业评论。</p></section>
+</div>
 
 ## 研究者访谈
 

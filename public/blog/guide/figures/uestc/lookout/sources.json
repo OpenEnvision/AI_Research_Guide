@@ -95,6 +95,92 @@
       "official": "https://x.ai/",
       "news": "https://x.ai/news",
       "note": "2026-10-12 official website and docs currently use SpaceXSI branding; source favicon is the current X mark, not the historical xAI wordmark."
+    },
+    {
+      "file": "jiqizhixin.webp",
+      "source": "https://www.jiqizhixin.com/",
+      "image": "https://www.jiqizhixin.com/favicon.ico",
+      "dimensions": [
+        160,
+        160
+      ],
+      "bytes": 7694
+    },
+    {
+      "file": "aiera.webp",
+      "source": "https://aiera.com.cn/",
+      "image": "https://aiera.com.cn/logo-mark.png",
+      "dimensions": [
+        160,
+        82
+      ],
+      "bytes": 6788
+    },
+    {
+      "file": "simon.webp",
+      "source": "https://simonwillison.net/",
+      "image": "https://github.com/simonw.png?size=160",
+      "dimensions": [
+        160,
+        160
+      ],
+      "bytes": 8160
+    },
+    {
+      "file": "karpathy.webp",
+      "source": "https://karpathy.ai/",
+      "image": "https://karpathy.ai/assets/me_new.jpg",
+      "dimensions": [
+        160,
+        160
+      ],
+      "bytes": 4980
+    },
+    {
+      "file": "funeralai.webp",
+      "source": "https://funeralai.substack.com/",
+      "image": "https://substackcdn.com/image/fetch/$s_!WnhY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d2f2df3-2579-4e95-b8f0-2e8f3f8bb94b%2Fapple-touch-icon-180x180.png",
+      "dimensions": [
+        160,
+        160
+      ],
+      "bytes": 3570
+    },
+    {
+      "file": "bair.webp",
+      "source": "https://bair.berkeley.edu/blog/archive/",
+      "image": "https://bair.berkeley.edu/blog/assets/BAIR_Logo.png",
+      "dimensions": [
+        160,
+        85
+      ],
+      "bytes": 10910
+    },
+    {
+      "source": "https://zpotentials.substack.com/",
+      "image": "https://substackcdn.com/image/fetch/$s_!ETly!,w_400,h_400,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdf7a7bda-fb97-4b61-9bfa-3fc4b4b12ae9_3687x3687.png",
+      "file": "zpotentials.png",
+      "bytes": 9506
+    },
+    {
+      "file": "jiqizhixin-official.webp",
+      "image": "https://i2.hdslb.com/bfs/face/cb838ff9e6f57c1d3499621c91df8e013adad4fd.jpg",
+      "source": "https://space.bilibili.com/73414544",
+      "dimensions": [
+        160,
+        160
+      ],
+      "bytes": 2142
+    },
+    {
+      "file": "kexue.webp",
+      "image": "https://github.com/bojone.png?size=160",
+      "source": "https://github.com/bojone",
+      "dimensions": [
+        160,
+        160
+      ],
+      "bytes": 6990
     }
   ]
 }
