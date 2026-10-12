@@ -100,5 +100,32 @@ body[data-page="papers"] .article-layout { grid-template-columns: minmax(0,760px
 body[data-page^="catalog-"] .markdown-body > ul > li { margin-bottom: 18px; }
 body[data-page="resources"] .markdown-body > ul > li { margin-bottom: 16px; }
 
-.markdown-body .podcast-pair { max-width: 480px; gap: 24px; }
-@media (max-width:520px) { .markdown-body .podcast-pair { flex-direction: row; gap: 16px; } }
+
+/* Resource directories: keep each cover with its own title and description. */
+body[data-page^="catalog-"] .markdown-body > ul { list-style: none; padding: 0; margin: 0; }
+body[data-page^="catalog-"] .markdown-body > ul > li {
+  padding: 19px 0; margin: 0; border-bottom: 1px solid #e5e8e2;
+}
+body[data-page^="catalog-"] .markdown-body > ul > li:last-child { border-bottom: 0; }
+body[data-page^="catalog-"] .markdown-body li > p { margin: 0; font-size: 15px; line-height: 1.85; }
+body[data-page^="catalog-"] .markdown-body li > p:first-child { margin-bottom: 7px; font-size: 17px; line-height: 1.6; }
+body[data-page^="catalog-"] .markdown-body li > p:first-child a { text-decoration: none; }
+body[data-page^="catalog-"] .markdown-body li > p:first-child a:hover { text-decoration: underline; }
+body[data-page^="catalog-"] .markdown-body li:has(> .resource-figure) {
+  display: grid; grid-template-columns: minmax(0,1fr) 220px; grid-template-rows: min-content 1fr; column-gap: 24px; align-content: start;
+}
+body[data-page^="catalog-"] .markdown-body li:has(> .resource-figure) > p { grid-column: 1; }
+body[data-page^="catalog-"] .markdown-body li > .resource-figure {
+  grid-column: 2; grid-row: 1 / span 2; margin: 0; width: 220px; max-width: 100%; align-self: start;
+}
+body[data-page^="catalog-"] .markdown-body li > .resource-figure img {
+  width: 100%; height: 128px; object-fit: contain; border-radius: 4px;
+}
+body[data-page^="catalog-"] .markdown-body li > .resource-figure figcaption { padding-top: 6px; line-height: 1.55; }
+body[data-page^="catalog-"] .markdown-body .resource-mark { width: 26px; height: 26px; max-height: 26px; vertical-align: -6px; margin-right: 8px; }
+@media (max-width:600px) {
+  body[data-page^="catalog-"] .markdown-body li:has(> .resource-figure) { display: block; }
+  body[data-page^="catalog-"] .markdown-body li > .resource-figure { width: 100%; margin: 14px 0 0; }
+  body[data-page^="catalog-"] .markdown-body li > .resource-figure img { height: auto; max-height: 210px; }
+  body[data-page^="catalog-"] .markdown-body li > .resource-figure.book { width: 120px; }
+}
