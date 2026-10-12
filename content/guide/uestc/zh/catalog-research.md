@@ -30,17 +30,17 @@
 
 - **[AMiner 平台说明](https://docs.aminer.cn/user-guide/platform-overview/)**：中文平台说明，涵盖学术搜索、问答与文献阅读。
 
-- **[Zotero：The Basics](https://www.zotero.org/support/quick_start_guide)**：官方入门教程，介绍文献保存、条目与附件管理，以及引用。
+- **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/zotero.ico" alt="" loading="lazy"> Zotero：The Basics](https://www.zotero.org/support/quick_start_guide)**：官方入门教程，介绍文献保存、条目与附件管理，以及引用。
 
 - **[OpenReview 文档](https://docs.openreview.net/)**：官方文档，介绍论文提交、版本、公开评审与作者回复等功能。
 
-- **[Hugging Face Daily Papers](https://huggingface.co/papers)**：每日论文与社区讨论，关联论文、作者和项目。
+- **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/huggingface.svg" alt="" loading="lazy"> Hugging Face Daily Papers](https://huggingface.co/papers)**：每日论文与社区讨论，关联论文、作者和项目。
 
-- **[Obsidian](https://obsidian.md/)**：本地 Markdown 笔记工具，支持双向链接。
+- **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/obsidian.svg" alt="" loading="lazy"> Obsidian](https://obsidian.md/)**：本地 Markdown 笔记工具，支持双向链接。
 
-- **[Zotero Integration](https://github.com/community-archive/obsidian-zotero-integration)**：将 Zotero 的引用、笔记与 PDF 批注导入 Obsidian。
+- **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/zotero.ico" alt="" loading="lazy"> Zotero Integration](https://github.com/community-archive/obsidian-zotero-integration)**：将 Zotero 的引用、笔记与 PDF 批注导入 Obsidian。
 
-- **[Zotero Connector](https://www.zotero.org/download/connectors)**：浏览器扩展，用于保存文献信息与可获取的附件。
+- **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/zotero.ico" alt="" loading="lazy"> Zotero Connector](https://www.zotero.org/download/connectors)**：浏览器扩展，用于保存文献信息与可获取的附件。
 
 - **[Scholaread 靠岸学术](https://www.scholaread.cn/help)**：论文阅读、翻译与笔记工具。
 
@@ -54,6 +54,8 @@
 
 - **[李沐：论文精读索引](https://github.com/mli/paper-reading)**：中文论文精读视频目录，涵盖研究背景、方法、实验与论文写作。 [Transformer 逐段精读](https://www.bilibili.com/video/BV1pu411o7BE)
 
+<figure class="resource-figure compact"><a href="https://www.bilibili.com/video/BV1pu411o7BE/"><img src="../../../public/blog/guide/figures/uestc/reading/limu-transformer.jpg" alt="Transformer 论文逐段精读" loading="lazy" width="800" height="447"></a><figcaption><a href="https://www.bilibili.com/video/BV1pu411o7BE/">Transformer 论文逐段精读</a></figcaption></figure>
+
 - **[ACL Anthology](https://aclanthology.org/)**：自然语言处理论文库，收录会议论文及其引用信息。
 
 - **[Proceedings of Machine Learning Research](https://proceedings.mlr.press/)**：机器学习会议与 workshop 论文集，提供论文与补充材料。
@@ -66,11 +68,11 @@
 
 - **[Deep Learning Tuning Playbook — Google Research](https://github.com/google-research/tuning_playbook)**：深度学习调参手册，涵盖初始配置、实验组织和优化问题。
 
-- **[scikit-learn：Common pitfalls and recommended practices](https://scikit-learn.org/stable/common_pitfalls.html)**：通过代码对照解释数据泄漏、预处理不一致与随机性等常见问题。
+- **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/sklearn.ico" alt="" loading="lazy"> scikit-learn：Common pitfalls and recommended practices](https://scikit-learn.org/stable/common_pitfalls.html)**：通过代码对照解释数据泄漏、预处理不一致与随机性等常见问题。
 
 - **[Task-Specific LLM Evals that Do & Don’t Work — Eugene Yan](https://eugeneyan.com/writing/evals/)**：讨论面向具体 LLM 应用的评测对象、评价方法与实践经验。
 
-- **[Jupyter](https://jupyter.org/)**：Notebook 工具，将代码、分析文字、表格与图放在同一份文档中。
+- **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/jupyter.svg" alt="" loading="lazy"> Jupyter](https://jupyter.org/)**：Notebook 工具，将代码、分析文字、表格与图放在同一份文档中。
 
 - **[Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)**：VS Code 扩展，用颜色区分 CSV／TSV 各列，并检查列数。
 
@@ -82,7 +84,7 @@
 
 - **[MLNLP Paper-Writing-Tips](https://github.com/MLNLP-World/Paper-Writing-Tips)**：论文写作资料与检查清单，涉及格式、表达和投稿细节。
 
-- **[Learn LaTeX in 30 minutes — Overleaf](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)**：Overleaf 的 LaTeX 入门教程，介绍文本、公式、图片与引用。
+- **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/overleaf.svg" alt="" loading="lazy"> Learn LaTeX in 30 minutes — Overleaf](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)**：Overleaf 的 LaTeX 入门教程，介绍文本、公式、图片与引用。
 
 - **[Markdown Guide：Basic Syntax](https://www.markdownguide.org/basic-syntax/)**：Markdown 语法参考，包含标题、链接、列表、图片与代码块。
 

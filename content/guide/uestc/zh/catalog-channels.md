@@ -34,6 +34,8 @@
 
 ## 访谈与行业评论
 
+<div class="resource-pair podcast-pair"><figure class="resource-figure podcast"><a href="https://zpotentials.substack.com/"><img src="../../../public/blog/guide/figures/uestc/resources/zpotentials.png" alt="Z Potentials" loading="lazy" width="400" height="400"></a><figcaption><a href="https://zpotentials.substack.com/">Z Potentials</a></figcaption></figure><figure class="resource-figure podcast"><a href="https://www.xiaoyuzhoufm.com/podcast/626b46ea9cbbf0451cf5a962"><img src="../../../public/blog/guide/figures/uestc/resources/xiaojun.webp" alt="张小珺 Jùn · 商业访谈录" loading="lazy" width="1440" height="1440"></a><figcaption><a href="https://www.xiaoyuzhoufm.com/podcast/626b46ea9cbbf0451cf5a962">张小珺 Jùn · 商业访谈录</a></figcaption></figure></div>
+
 - **[Z Potentials](https://zpotentials.substack.com/)**：AI 团队、研究者与创业者访谈。
 
 - **[葬AI](https://funeralai.substack.com/)**：AI 产品体验与行业评论。

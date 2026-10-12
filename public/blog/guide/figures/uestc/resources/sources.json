@@ -1,0 +1,76 @@
+{
+  "obsidian": {
+    "source": "https://obsidian.md/",
+    "image": "https://obsidian.md/favicon.svg",
+    "file": "obsidian.svg",
+    "bytes": 1361
+  },
+  "jupyter": {
+    "source": "https://jupyter.org/",
+    "image": "https://jupyter.org/favicon.svg",
+    "file": "jupyter.svg",
+    "bytes": 2367
+  },
+  "overleaf": {
+    "source": "https://www.overleaf.com/",
+    "image": "https://cdn.overleaf.com/favicon.svg",
+    "file": "overleaf.svg",
+    "bytes": 908
+  },
+  "pytorch": {
+    "source": "https://pytorch.org/",
+    "image": "https://pytorch.org/wp-content/uploads/2024/10/cropped-favicon-180x180.webp",
+    "file": "pytorch.webp",
+    "bytes": 2008
+  },
+  "numpy": {
+    "source": "https://numpy.org/",
+    "image": "https://numpy.org/images/favicon.ico",
+    "file": "numpy.ico",
+    "bytes": 32038
+  },
+  "sklearn": {
+    "source": "https://scikit-learn.org/stable/",
+    "image": "https://scikit-learn.org/stable/_static/favicon.ico",
+    "file": "sklearn.ico",
+    "bytes": 2238
+  },
+  "git": {
+    "source": "https://git-scm.com/",
+    "image": "https://git-scm.com/favicon.ico",
+    "file": "git.ico",
+    "bytes": 6518
+  },
+  "xiaojun": {
+    "source": "https://www.xiaoyuzhoufm.com/podcast/626b46ea9cbbf0451cf5a962",
+    "image": "https://image.xyzcdn.net/Fnuyt9PQDQx0I0wlErG3ZHcW9Gpu.png",
+    "file": "xiaojun.webp",
+    "bytes": 95696
+  },
+  "zpotentials": {
+    "source": "https://zpotentials.substack.com/",
+    "image": "https://substackcdn.com/image/fetch/$s_!ETly!,w_400,h_400,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdf7a7bda-fb97-4b61-9bfa-3fc4b4b12ae9_3687x3687.png",
+    "file": "zpotentials.png",
+    "bytes": 9506
+  },
+  "huggingface": {
+    "source": "https://huggingface.co/learn/agents-course/en/unit0/introduction",
+    "image": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+    "file": "huggingface.svg",
+    "bytes": 4634
+  },
+  "zotero": {
+    "source": "https://www.zotero.org/",
+    "image": "https://www.zotero.org/favicon.ico",
+    "file": "zotero.ico",
+    "bytes": 6518
+  },
+  "andrew-ml": {
+    "file": "andrew-ml.jpg",
+    "source": "Previously prepared course cover; see course-cover-sources.json"
+  },
+  "hongyi-attention": {
+    "file": "hongyi-attention.jpg",
+    "source": "Previously prepared course cover; see course-cover-sources.json"
+  }
+}

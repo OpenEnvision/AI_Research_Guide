@@ -99,3 +99,6 @@ body[data-page="papers"] .article-layout { grid-template-columns: minmax(0,760px
 }
 body[data-page^="catalog-"] .markdown-body > ul > li { margin-bottom: 18px; }
 body[data-page="resources"] .markdown-body > ul > li { margin-bottom: 16px; }
+
+.markdown-body .podcast-pair { max-width: 480px; gap: 24px; }
+@media (max-width:520px) { .markdown-body .podcast-pair { flex-direction: row; gap: 16px; } }

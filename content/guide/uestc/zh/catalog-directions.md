@@ -12,6 +12,8 @@
 
 - **[Ultralytics YOLO Quickstart](https://docs.ultralytics.com/quickstart)**：目标检测入门文档，包含安装、加载预训练模型与预测的代码示例。
 
+<figure class="resource-figure medium"><a href="https://docs.ultralytics.com/quickstart"><img src="../../../public/blog/guide/figures/uestc/intro/yolo-detection.png" alt="YOLO · 目标检测" loading="lazy" width="1920" height="541"></a><figcaption><a href="https://docs.ultralytics.com/quickstart">YOLO · 目标检测</a></figcaption></figure>
+
 - **[Stanford CS231n](https://cs231n.stanford.edu/schedule)**：计算机视觉课程，讲解视觉任务、神经网络训练与常见架构，提供课件和作业。
 
 - **[CNN Explainer — Polo Club](https://poloclub.github.io/cnn-explainer/)**：卷积网络交互演示，展示输入图像与网络中间表示。
@@ -22,7 +24,7 @@
 
 ## 自然语言处理与语言模型
 
-- **[Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1)**：语言模型课程与代码，涵盖 tokenizer、模型与数据处理。
+- **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/huggingface.svg" alt="" loading="lazy"> Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1)**：语言模型课程与代码，涵盖 tokenizer、模型与数据处理。
 
 - **[Build a Large Language Model From Scratch — Sebastian Raschka](https://github.com/rasbt/LLMs-from-scratch)**：从头实现语言模型的配套代码，包含 token、embedding、attention 与训练过程。
 
@@ -36,7 +38,7 @@
 
 ## 多模态与视觉语言模型
 
-- **[Vision Language Models Explained — Hugging Face](https://huggingface.co/blog/vlms)**：介绍视觉语言模型的组成、使用与评价。
+- **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/huggingface.svg" alt="" loading="lazy"> Vision Language Models Explained — Hugging Face](https://huggingface.co/blog/vlms)**：介绍视觉语言模型的组成、使用与评价。
 
 - **[CLIP 官方项目](https://github.com/openai/CLIP)**：图文对比学习的官方代码与论文，包含零样本分类示例。
 
@@ -48,7 +50,7 @@
 
 ## AIGC、Diffusion 与 Flow Matching
 
-- **[Hugging Face Diffusion Course](https://huggingface.co/learn/diffusion-course/unit1/1)**：扩散模型实践课程，通过 Notebook 介绍图像生成、加噪与去噪。
+- **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/huggingface.svg" alt="" loading="lazy"> Hugging Face Diffusion Course](https://huggingface.co/learn/diffusion-course/unit1/1)**：扩散模型实践课程，通过 Notebook 介绍图像生成、加噪与去噪。
 
 - **[MIT：Introduction to Flow Matching and Diffusion Models，2025](https://diffusion.csail.mit.edu/2025/)**：生成模型课程，讲解 Flow Matching 与扩散模型的数学关系，配有讲义和练习。
 
@@ -90,11 +92,13 @@
 
 - **[MIT Underactuated Robotics](https://underactuated.mit.edu/)**：机器人动力学、控制与决策课程。
 
-- **[LeRobot](https://github.com/huggingface/lerobot)**：机器人学习的模型、数据集、训练代码与工具。
+- **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/huggingface.svg" alt="" loading="lazy"> LeRobot](https://github.com/huggingface/lerobot)**：机器人学习的模型、数据集、训练代码与工具。
 
 - **[RoboTwin 2.0](https://robotwin-platform.github.io/)**：双臂机器人仿真、数据生成与评测项目。
 
 - **[ALOHA／ACT：Learning Fine-Grained Bimanual Manipulation](https://tonyzhaozh.github.io/aloha/)**：双臂机器人模仿学习项目，展示示范数据采集、动作预测与精细操作。
+
+<figure class="resource-figure medium"><a href="https://tonyzhaozh.github.io/aloha/"><img src="../../../public/blog/guide/figures/uestc/intro/aloha.jpg" alt="ACT / ALOHA · 双臂操作" loading="lazy" width="1859" height="1454"></a><figcaption><a href="https://tonyzhaozh.github.io/aloha/">ACT / ALOHA · 双臂操作</a></figcaption></figure>
 
 - **[Diffusion Policy](https://diffusion-policy.cs.columbia.edu/)**：将扩散模型用于动作序列生成，提供论文、代码与机器人操作演示。
 
@@ -118,7 +122,9 @@
 
 - **[LLM Powered Autonomous Agents — Lilian Weng](https://lilianweng.github.io/posts/2023-06-23-agent/)**：通过规划、记忆和工具使用等组件介绍 LLM Agent。
 
-- **[Hugging Face Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction)**：工具调用、Agent 框架与实践课程。
+- **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/huggingface.svg" alt="" loading="lazy"> Hugging Face Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction)**：工具调用、Agent 框架与实践课程。
+
+<figure class="resource-figure medium"><a href="https://huggingface.co/learn/agents-course/en/unit0/introduction"><img src="../../../public/blog/guide/figures/uestc/intro/hf-agents.jpg" alt="Hugging Face Agents Course" loading="lazy" width="1200" height="675"></a><figcaption><a href="https://huggingface.co/learn/agents-course/en/unit0/introduction">Hugging Face Agents Course</a></figcaption></figure>
 
 - **[Hello Agents — Datawhale](https://github.com/datawhalechina/hello-agents)**：中文 Agent 原理与实践教程，包含基础实现、框架与项目。
 
@@ -140,7 +146,7 @@
 
 - **[How To Scale Your Model](https://jax-ml.github.io/scaling-book/)**：分布式训练与推理技术书，讨论模型规模、硬件与通信开销。
 
-- **[PyTorch Performance Tuning Guide](https://docs.pytorch.org/tutorials/recipes/recipes/tuning_guide.html)**：PyTorch 官方性能调优指南，包含数据加载、内存与计算优化。
+- **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/pytorch.webp" alt="" loading="lazy"> PyTorch Performance Tuning Guide](https://docs.pytorch.org/tutorials/recipes/recipes/tuning_guide.html)**：PyTorch 官方性能调优指南，包含数据加载、内存与计算优化。
 
 <a id="topic-23"></a>
 
