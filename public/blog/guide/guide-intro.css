@@ -1,4 +1,6 @@
-/* Article layout for the two introductory Chinese pages. */
+/* Editorial layout for Chinese introduction and paper-reading pages. */
+.app-main { background: #fff; }
+.page-title-band { background: var(--paper); }
 .article-layout { grid-template-columns: minmax(0,680px) 180px; }
 .markdown-body { font-size: 16px; line-height: 1.9; }
 .markdown-body p, .markdown-body li { color: #20211e; line-height: 1.9; }
@@ -56,4 +58,35 @@
   .resource-pair img { aspect-ratio: auto; }
   .logo-strip { gap: 23px 22px; }
   .markdown-body .resource-figure { margin: 22px auto 29px; }
+}
+
+/* Keep the homepage's navigation and paper gallery spacious. */
+body.home .article-layout { grid-template-columns: minmax(0,900px); }
+body.home .markdown-body > p { max-width: 760px; }
+body.home .home-section h2 { color: #24583e; font-size: 25px; border-bottom: 1px solid var(--line); }
+body.home .home-section p { line-height: 1.9; }
+body.home .markdown-body table { background: #fff; }
+body.home .markdown-body table th { background: #f4f6f1; }
+body.home .markdown-body table td { border-left: 0; border-right: 0; padding-top: 14px; padding-bottom: 14px; }
+body.home .markdown-body table td:last-child a { font-weight: 650; }
+body[data-page="papers"] .article-layout { grid-template-columns: minmax(0,760px) 180px; }
+.markdown-body .resource-pair img { aspect-ratio: auto; background: #fff; }
+.qa { background: #fff; margin: 0; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; }
+.qa[open] { border-left: 0; }
+.qa summary { padding: 22px 34px 22px 0; font-size: 18px; line-height: 1.7; }
+.qa summary:after { right: 3px; top: 22px; color: var(--sage); }
+.qa[open] summary { color: var(--link); border-bottom: 0; padding-bottom: 14px; }
+.qa .answer { padding: 0 0 6px; }
+.qa .answer p { margin-bottom: 18px; }
+.qa-tools { font-family: var(--sans); }
+@media (max-width:1200px) {
+ body[data-page="papers"] .article-layout { grid-template-columns: minmax(0,760px); }
+}
+@media (max-width:800px) {
+ body.home .home-section h2 { font-size: 23px; }
+ .qa summary { font-size: 17px; }
+}
+@media (max-width:520px) {
+ body.home .markdown-body table th:first-child { width: 55%; }
+ body.home .markdown-body table th:last-child { width: 45%; }
 }

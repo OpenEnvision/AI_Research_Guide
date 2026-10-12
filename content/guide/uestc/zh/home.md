@@ -1,6 +1,6 @@
 # AI科研入门指南
 
-各位同学，欢迎来到 UESTC AI 社的入门指南。如果你对 AI 和科研感兴趣，却还不知道从哪里开始入门；或者已经开始参与项目或规划找课题组，却不知道怎么联系老师，对接工作；或者已经加入了自己的课题组，但是仍然对想idea，推进工作感到迷茫。我们希望这份指南能够帮助到你。
+各位同学，欢迎来到 UESTC AI 社的入门指南。如果你对 AI 和科研感兴趣，却还不知道从哪里开始入门；或者已经开始参与项目或规划找课题组，却不知道怎么联系老师，对接工作；或者已经加入了自己的课题组，但是仍然对想 idea、推进工作感到迷茫。我们希望这份指南能够帮助到你。
 
 
 ## 从哪里开始
@@ -21,7 +21,7 @@
 
 ## AI 编年史
 
-如果你想宏观的了解AI的历史，可以看这段有关AI发展的介绍视频。从达特茅斯会议到语言模型、生成、机器人与科学发现到未来的AGI，我们都身在其中。
+如果你想宏观地了解 AI 的历史，可以看这段有关AI发展的介绍视频。从达特茅斯会议，到语言模型、生成、机器人与科学发现，再到未来的 AGI，我们都身在其中。
 
 <video class="chronicle-video" controls preload="none" playsinline poster="../chronicle/poster.jpg" aria-label="AI 编年史">
 <source src="../chronicle/ai-chronicle.mp4" type="video/mp4">
@@ -42,15 +42,15 @@
 
 [OpenEnvision（OE）](https://openenvision.github.io/)是连接学术界与产业界的开放 AI 研究社区，关注世界模型、多模态、视觉与具身智能，也通过整理博客、访谈和课程，为社区分享研究知识。
 
-- [BlogrXiv：AI 研究博客与技术文章](https://openenvision.github.io/BlogrXiv/site/index.html)：汇集研究博客、实验室文章和技术笔记，可以按方向找机制解释、工程经验与科研方法，再进入作者原文。
-- [ScholarTube：AI 访谈、播客与课程](https://openenvision.github.io/ScholarTube/)：收集研究者长访谈、视频播客、完整课程与学术报告，覆盖 Agent、世界模型、视觉、机器人及科研方法，链接到原始视频。
+- [BlogrXiv：AI 研究博客与技术文章](https://openenvision.github.io/BlogrXiv/site/index.html)：汇集研究博客、实验室文章和技术笔记，涉及模型原理、工程经验与科研方法。
+- [ScholarTube：AI 访谈、播客与课程](https://openenvision.github.io/ScholarTube/)：收集研究者长访谈、视频播客、完整课程与学术报告，覆盖 Agent、世界模型、视觉、机器人及科研方法。
 ### Lumina
 
-[Lumina](https://lumina-embodied.ai/)关注具身智能的研究、开源项目与社区交流。为大家提供了[具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)，和定期举办的Lumina Talks、具身观察和社区活动。
+[Lumina](https://lumina-embodied.ai/)关注具身智能的研究、开源项目与社区交流，提供了[具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)，也定期举办 Lumina Talks、具身观察和社区活动。
 
 ### AgentHub
 
-[AgentHub](https://hqhq1025.github.io/agent_hub/)把 Agent 社区里的讨论整理成日报和周报，涉及智能体研究、工具使用、工程实践与行业动态。分享大家最近遇到的问题、和技术方案的比较和判断
+[AgentHub](https://hqhq1025.github.io/agent_hub/)把 Agent 社区里的讨论整理成日报和周报，涉及智能体研究、工具使用、工程实践与行业动态。分享大家最近遇到的问题，以及对技术方案的比较和判断。
 
 ## 更多学习资料
 

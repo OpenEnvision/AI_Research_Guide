@@ -10,89 +10,48 @@
 - **是什么带来了变化？** 新的数据、新的现象，还是原来的方法遇到了瓶颈？
 - **几项工作怎样联系？** 它们沿着同一条路线推进，提出不同的解释，还是把原本分开的方向接到了一起？
 
-遇到一篇感兴趣的文章，也可以看看作者之前和之后的工作、主页、blog 和报告。沿着同一个问题读下去，有时能看见单篇论文里不容易察觉的思考过程。把没想明白的地方记下来，下一轮找资料时就有了线索。
+遇到一篇感兴趣的文章，也可以看看作者之前和之后的工作、主页、blog 和报告。沿着同一个问题读下去，有时能看见单篇论文里不容易察觉的思考过程。
 
-<p class="guide-takeaway">这次读论文，是想了解一个方向、解决项目中的问题，还是准备复现？目的不同，需要深入的地方也不同。</p>
+## 查找论文与相关工作
 
-## 找到一篇论文后，怎么继续查相关工作？
-
-有标题就先找原文、项目页和代码。用 [Google Scholar](https://scholar.google.com/)看参考文献与后续引用，再对照作者主页。需要检索帮助，可以看 [Scholar 官方说明](https://scholar.google.com/intl/en/scholar/help.html)，或尝试 [AMiner](https://docs.aminer.cn/user-guide/platform-overview/) 的检索与阅读功能。
-
-存资料时，用 [Zotero](https://www.zotero.org/support/quick_start_guide)保存题目、作者、链接、版本和附件。自己的疑问放在同一个条目附近，过段时间回来容易接上。
-
-<a id="reading-depth"></a>
-
-## 按任务选择阅读深度
-
-先写下自己最近想弄明白的问题，再看这篇论文和它有什么关系：它直接回答问题，连接了两个原本分开的思路，提供了能用的方法，还是只有关键词相似？
-
-| 这次为什么读 | 重点看什么 | 读完留下什么 |
-| --- | --- | --- |
-| 快速了解一项工作 | 问题、方法主意、关键结果 | 一句话概括，以及要不要回来读 |
-| 梳理一个方向 | 背景、方法之间的联系、证据和适用条件 | 工作之间的比较、仍没解决的问题 |
-| 准备复现或改进 | 架构、公式、数据、实验设置、消融和实现 | 能讲清的方法图、疑问和待验证的实验 |
-
-论文的证据有缺口，也可能值得精读：它提出的问题很重要，或者这个缺口正好值得研究。反过来，一篇扎实但与当前问题关系很小的论文，也可以先略读。
-
-阅读深度可结合前置知识、时间与待验证问题确定；把必须看的章节、图表列成清单。见[阅读深度与证据检查](irene-workflow.md#depth)。
-
-## 第一遍读论文，重点看什么？
-
-从摘要、引言、关键图和结论开始，再去实验里核对。记录四项：
-
-- **问题与条件**：这项工作在哪些条件下解决什么问题。
-- **主要方法**：改变了哪些机制或步骤。
-- **实验证据**：哪些结果支持主张。
-- **待查问题**：哪些内容仍需核对。
-
-[Keshav 的 How to Read a Paper](https://cs.uwaterloo.ca/~brecht/courses/854-Experimental-Performance-Evaluation-2018/readings/common/how-to-read/keshav-paper-reading.pdf)和[李沐论文精读](https://github.com/mli/paper-reading)能看到两种具体读法。选一篇配着用，比只记阅读方法更容易体会。
-
-<a id="claims-evidence"></a>
-
-读到一项主要结论，就找出支撑它的图表或实验，再看实验是在什么条件下完成的。可以记成四列：**作者主张、对应证据、成立条件、自己的疑问**。比如作者说一个模块带来了提升，就看看消融是否单独改变了这个模块；说能泛化到新场景，就找测试场景与训练数据的关系。
-
-把这张记录配着方法图讲一遍，再让 AI 围绕解释追问，做法见[让 AI 问你](ai.md#grill-me)。
-
-## 要复现时，再往细处走
-
-数据怎么来的，划分有没有重叠，指标具体怎么算，baseline 怎样设置，核心实现在哪里，随机性有多大。把论文和代码放在一起看，有时最重要的条件在附录、配置文件或 issue 里。
-
-AI 可以解释一段，也可以帮你列疑问。需要支持某个判断时，回到原文或实际运行结果。
-
-<a id="paper-notes"></a>
-
-## 读完怎么留下笔记？
-
-[论文与笔记管理示例](irene-workflow.md#notes)是用 Zotero 保存论文与附件，用 Obsidian 留下文献笔记和自己的思考，再让 AI 读取这些笔记，帮助比较、整理和追问。
-
-一篇笔记可以从这些内容开始：
-
-- **来源**：标题、作者、年份和原文链接。
-- **问题与方法**：这项工作想解决什么，核心做法是什么。
-- **关键证据**：对应图表、实验设置和结论。
-- **待查问题**：哪里没懂，哪些解释还需要验证。
-- **相关工作**：它与读过的哪篇论文、正在做的哪个项目有关。
-
-把自己的批注与摘录分开，给关键图表留下页码。以后比较论文或写文章时，可以顺着笔记回到证据。Zotero 与 Obsidian 的导入配置、目录和任务示例放在[完整工作流](irene-workflow.md#notes)里。
-
-## 把几篇文章放在一起
-
-先选同一个问题，每篇写一小段：它改变了什么，依赖什么条件，留下了什么。比较时尤其看任务与资源是否相同。
-
-最后给自己留一句：“看完这些，我现在想查的是……”这句话可能引出下一篇文章、一次讨论，也可能引出一个实验。
-
-[选一篇具体论文](papers.md) · [做实验](experiments.md) · [拿着问题去交流](contact.md)
+[Google Scholar](https://scholar.google.com/) 可以查论文的后续引用与相关工作；论文中的参考文献则能找到它所依赖的前人工作。作者主页、项目页和代码仓库常有报告、演示与后续更新。检索功能见 [Scholar 官方说明](https://scholar.google.com/intl/en/scholar/help.html)，[AMiner](https://docs.aminer.cn/user-guide/platform-overview/) 也提供论文检索与阅读功能。
 
 <a id="research-map"></a>
 
-## 带着问题继续找
+比如最近关心 Agent 的长任务失败，可以按规划、工具使用、记忆和环境反馈查找相关工作：各篇解释了哪种失败，实验覆盖哪些情况，还有哪些现象没有解释？搜索时结合研究对象、方法和任务，再沿参考文献与引用找基础工作、直接前作和同期研究。更具体的检索示例见[定向文献检索](irene-workflow.md#search)。
 
-给当前问题留一页笔记，列出相关工作、已做实验、未解决问题与可能连接的方向。组织方式见[研究问题与文献对应表](irene-workflow.md#depth)。
+<a id="reading-depth"></a>
 
-比如最近关心 Agent 的长任务失败，就可以按规划、工具使用、记忆和环境反馈整理文章：各篇解释了哪种失败，实验覆盖哪些情况，还有哪些现象没有解释？这些疑问会让下一轮检索具体起来。
+## 读到什么程度
 
-搜索时写清研究对象、机制、任务和想了解的现象，再沿参考文献与引用找基础工作、直接前作和同期研究。作者主页、代码仓库和项目页常能接上后续版本。[定向文献检索步骤](irene-workflow.md#search)也可以一起看。
+**阅读深度取决于这次想弄明白什么。** 了解一项工作时，先关注问题、主要方法和关键结果；梳理一个方向时，要比较工作之间的联系；准备复现或改进，则需要细看架构、公式、数据和实验设置。
 
-## 读法与资料的其他入口
+同一篇论文也可以分几次读。第一遍留下的疑问，可能在看过后续工作、代码或实验之后才有答案。[Keshav 的 How to Read a Paper](https://cs.uwaterloo.ca/~brecht/courses/854-Experimental-Performance-Evaluation-2018/readings/common/how-to-read/keshav-paper-reading.pdf) 介绍了三遍阅读法；李沐的[如何读论文](https://www.bilibili.com/video/BV1H44y1t75x/)也谈到论文的阅读顺序与深度。
 
-可以用[李沐论文精读](limu.md)对照自己的阅读过程；[科研资料目录](catalog-research.md)里还有检索、保存、发表与阅读材料，[科研问答与 AMA](research-conversations.md)保留其他学生问过的问题。
+<figure class="resource-figure medium"><a href="https://www.bilibili.com/video/BV1H44y1t75x/"><img src="../../../public/blog/guide/figures/uestc/reading/limu-reading.jpg" alt="李沐：如何读论文" loading="lazy" width="800" height="450"></a><figcaption><a href="https://www.bilibili.com/video/BV1H44y1t75x/">如何读论文</a><span class="caption-dot">·</span>跟李沐学 AI<span class="caption-dot">·</span><a href="https://www.zhihu.com/zvideo/1428973951632969728">知乎</a></figcaption></figure>
+
+## 论文里的问题、方法与实验
+
+从摘要、引言、关键图和结论开始，了解**做了什么、为什么做、怎么做**，再去实验里看结果怎样支持这些判断。方法细节和没弄懂的地方，可以回头再查。
+
+<a id="claims-evidence"></a>
+
+比如作者说一个模块带来了提升，就看看消融是否单独改变了这个模块；说能泛化到新场景，就找测试场景与训练数据的关系。比较几篇工作时，除了方法差别，还要看它们使用的任务、数据和计算资源是否相同。阅读中的疑问也可以拿来讨论，或[让 AI 围绕你的理解追问](ai.md#grill-me)。
+
+## 复现时要看的细节
+
+数据怎么来的，划分有没有重叠，指标具体怎么算，baseline 怎样设置，核心实现在哪里，随机性有多大。把论文和代码放在一起看，有时最重要的条件在**附录、配置文件或 issue** 里。
+
+<a id="paper-notes"></a>
+
+## 论文笔记与文献整理
+
+[Zotero](https://www.zotero.org/support/quick_start_guide) 可以保存论文信息、PDF 和批注；Obsidian、飞书或 Notion 都可以用来整理自己的理解、疑问和相关材料。图表留下页码，摘录与自己的判断分开，之后比较论文、写文章时也方便查回原文。Zotero 与 Obsidian 的配置和笔记示例见[论文与笔记工作流](irene-workflow.md#notes)。
+
+几篇论文讨论同一个问题时，可以把它们放在一起，整理方法之间的联系、各自的实验条件和仍未解决的问题。随着阅读和实验推进，这些联系也会变化。[研究问题与文献对应表](irene-workflow.md#depth)里有一种整理方式。
+
+## 论文讲解与相关资料
+
+[李沐论文精读](https://github.com/mli/paper-reading)逐段讲解研究背景、方法与实验，也讨论论文写作。Transformer、ViT、CLIP 等视频见[论文选读](papers.md#sec-1)，更多课程与精读视频见[课程与论文精读](limu.md)。
+
+[科研资料目录](catalog-research.md) · [科研问答与 AMA](research-conversations.md) · [做实验](experiments.md) · [联系老师与合作](contact.md)

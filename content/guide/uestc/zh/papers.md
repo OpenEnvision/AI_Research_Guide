@@ -8,6 +8,10 @@
 
 [李沐论文精读](limu.md)有 ResNet、Transformer、BERT、GPT-3、CLIP 等论文的视频讲解，从研究背景、方法到实验，也会讨论论文的写作。
 
+<figure class="resource-figure medium"><a href="https://www.bilibili.com/video/BV1pu411o7BE/"><img src="../../../public/blog/guide/figures/uestc/reading/limu-transformer.jpg" alt="李沐：Transformer 论文精读" loading="lazy" width="800" height="450"></a><figcaption><a href="https://www.bilibili.com/video/BV1pu411o7BE/">Transformer 论文精读</a><span class="caption-dot">·</span>跟李沐学 AI<span class="caption-dot">·</span><a href="https://www.zhihu.com/zvideo/1437034536677404672">知乎</a></figcaption></figure>
+
+<div class="resource-pair"><figure class="resource-figure "><a href="https://www.bilibili.com/video/BV15P4y137jb/"><img src="../../../public/blog/guide/figures/uestc/reading/limu-vit.jpg" alt="李沐：ViT 论文精读" loading="lazy" width="800" height="450"></a><figcaption><a href="https://www.bilibili.com/video/BV15P4y137jb/">ViT 论文精读</a><span class="caption-dot">·</span>跟李沐学 AI<span class="caption-dot">·</span><a href="https://www.zhihu.com/zvideo/1449195245754380288">知乎</a></figcaption></figure><figure class="resource-figure "><a href="https://www.bilibili.com/video/BV1SL4y1s7LQ/"><img src="../../../public/blog/guide/figures/uestc/reading/limu-clip.jpg" alt="李沐：CLIP 论文精读" loading="lazy" width="800" height="450"></a><figcaption><a href="https://www.bilibili.com/video/BV1SL4y1s7LQ/">CLIP 论文精读</a><span class="caption-dot">·</span>跟李沐学 AI<span class="caption-dot">·</span><a href="https://www.zhihu.com/zvideo/1475706654562299904">知乎</a></figcaption></figure></div>
+
 论文的配套讲解还有很多，知乎、技术博客和 B 站上都能找到。比如 Transformer 的[图解文章](https://jalammar.github.io/illustrated-transformer/)和[带注释的代码实现](https://github.com/harvardnlp/annotated-transformer)。
 
 ## 更多论文
