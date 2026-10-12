@@ -20,12 +20,12 @@ This guide is for students starting university who want to explore AI and resear
 
 | Section | Topics |
 | --- | --- |
-| Foundations and learning | [Which foundations do you need, and how much?](content/guide/en/basics.md) · [Pick a paper](content/guide/en/papers.md) |
-| Research directions | [Overview](content/guide/en/directions.md) · [Language models](content/guide/en/llm.md) · [Agents](content/guide/en/agent.md) · [Vision](content/guide/en/vision.md) · [Multimodal learning](content/guide/en/multimodal.md) · [Generation](content/guide/en/generation.md) · [Reinforcement learning](content/guide/en/rl.md) · [World models](content/guide/en/world-model.md) · [Embodied AI](content/guide/en/embodied.md) · [Efficiency and systems](content/guide/en/systems.md) · [Interdisciplinary AI](content/guide/en/ai4x.md) |
-| Doing research | [Finding and reading papers](content/guide/en/reading.md) · [Experiments](content/guide/en/experiments.md) · [Writing, figures, and presentations](content/guide/en/writing.md) · [Contact and collaboration](content/guide/en/contact.md) · [Working with AI](content/guide/en/ai.md) · [Publication](content/guide/en/publishing.md) |
-| Experience and life | [Lessons and reflection](content/guide/en/experience.md) · [irene: research workflow](content/guide/en/irene-workflow.md) · [My freshman year](content/guide/en/timeline.md) · [Living well](content/guide/en/life.md) |
-| Looking outside | [Lookout](content/guide/en/lookout.md) · [Blogs](content/guide/en/blogs.md) · [LessWrong](content/guide/en/lesswrong.md) · [Mu Li](content/guide/en/limu.md) · [Research groups](content/guide/en/labs.md) |
-| Resources | [Resource index](content/guide/en/resources.md) · [Research conversations and Q&A](content/guide/en/research-conversations.md) |
+| Foundations and learning | [Which foundations do you need, and how much?](content/guide/en/basics.md) · [Choose a paper to read](content/guide/en/papers.md) |
+| Research directions | [What do different AI research areas study?](content/guide/en/directions.md) · [Large language models: understanding, generation, and reasoning](content/guide/en/llm.md) · [Agents: getting models to do things](content/guide/en/agent.md) · [Computer vision: understanding images](content/guide/en/vision.md) · [Multimodal models: connecting images and language](content/guide/en/multimodal.md) · [Generative models: how an image is made](content/guide/en/generation.md) · [Reinforcement learning: actions have consequences](content/guide/en/rl.md) · [World models: predict, then act](content/guide/en/world-model.md) · [Embodied AI: from seeing to acting](content/guide/en/embodied.md) · [Efficiency and systems: making models run](content/guide/en/systems.md) · [Interdisciplinary AI](content/guide/en/ai4x.md) |
+| Doing research | [Finding and reading papers](content/guide/en/reading.md) · [Writing, figures, and talks](content/guide/en/writing.md) · [Contacting researchers and collaborating](content/guide/en/contact.md) · [Working with AI](content/guide/en/ai.md) |
+| Experience and life | [Experience, practical lessons, and wrong turns](content/guide/en/experience.md) · [Paper reading and note workflows](content/guide/en/irene-workflow.md) · [My Freshman-Year Review: The World Suddenly Opens Wide](content/guide/en/timeline.md) · [Living well](content/guide/en/life.md) |
+| Looking outside | [Lookout: what are researchers and labs working on?](content/guide/en/lookout.md) · [Technical blogs and research perspectives](content/guide/en/blogs.md) · [LessWrong: research judgment and AI use](content/guide/en/lesswrong.md) · [Mu Li: from courses to close paper reading](content/guide/en/limu.md) · [Getting to know research groups](content/guide/en/labs.md) |
+| Resources | [Resource index](content/guide/en/resources.md) · [Research methods and communication](content/guide/en/research-conversations.md) |
 
 The [website](https://takamatsu-hikaru.github.io/AI-Research-Guide/en/) includes full-text search, expandable research Q&A, and introductions, roadmaps, terminology, and illustrated paper cards across 10 fields. Cards link to the original papers and related projects.
 
@@ -58,11 +58,11 @@ Articles are in [content/guide/zh](content/guide/zh) and [content/guide/en](cont
 
 ## About and acknowledgments
 
-[About the UESTC AI Club and this guide](content/guide/en/about.md). Club members wrote the opening essays, research Q&A, and personal accounts. Courses, papers, and blogs link to their original authors.
+[About the UESTC AI Club guide](content/guide/en/about.md). Club members wrote the opening essays, research Q&A, and personal accounts. Courses, papers, and blogs link to their original authors.
 
 This guide continues the work of the [UESTC AI Club Guide](https://my.feishu.cn/docx/HQYodz7thohS1Nxo6KAcoeNtnbb) and AI4UESTC_Beginners. We thank their authors and contributors. The [Lumina Embodied AI Guide](https://github.com/TianxingChen/Embodied-AI-Guide) informed the organization and resource selection for embodied AI. Figure attribution is recorded in the [figure index](content/guide/paper-figures.json).
 
-[irene](https://github.com/tseirene6) contributed the experience behind [Building your research workflow](content/guide/en/irene-workflow.md): paper and note management, research briefs, reading depth, and questions from AI. Related methods throughout the guide are adapted from this account.
+[irene](https://github.com/tseirene6) contributed the experience behind [Paper reading and note workflows](content/guide/en/irene-workflow.md): paper and note management, research briefs, reading depth, and questions from AI. Related methods throughout the guide are adapted from this account.
 
 ## Update the guide
 
@@ -81,6 +81,5 @@ npm test               # regression checks across both editions
 
 Open `public/blog/guide/zh/index.html` or `public/blog/guide/en/index.html`; the second edition is at `public/blog/guide/guide-uestc/zh/index.html`.
 
-The default edition is published to [GitHub Pages](https://takamatsu-hikaru.github.io/AI-Research-Guide/en/) and the second edition to [wiki.uestcai.top](https://wiki.uestcai.top/en/). Both build and publish from the main branch through GitHub Actions.
 
-The same Markdown, field data, images and video render into both editions, so their content cannot drift apart; see [CONTRIBUTING.md](CONTRIBUTING.md) for how to update and contribute.
+The GitHub Pages and personal website editions share the club guide’s articles, paper cards, and presentation. The personal edition also retains the university letter, personal essays, and LessWrong selections on growth and work–life balance.

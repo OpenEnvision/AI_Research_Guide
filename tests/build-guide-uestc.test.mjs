@@ -156,31 +156,32 @@ test('shared assets are referenced at the deeper prefix', () => {
     }
 });
 
-test('pages without club overrides retain shared article content', () => {
-  // The uestc shell hoists the article's <h1> into the page title band; put it
-  // back, normalise the asset depth, and the two must be byte-equal. This is
-  // what proves the shared content model has not diverged.
-  const normalise = html => html.replaceAll('../../', '../');
-  for (const lang of LANGS)
-    for (const page of pagesOf(uestc, lang)) {
-      const id = page === 'index.html' ? 'home' : page.replace('.html', '');
-      if (fs.existsSync(path.join(root, 'content/guide/uestc', lang, id + '.md'))) continue;
-      const a = fs.readFileSync(path.join(guide, lang, page), 'utf8').match(/<article>([\s\S]*)<\/article>/)?.[1];
-      const bRaw = fs.readFileSync(path.join(uestc, lang, page), 'utf8');
-      const bInner = bRaw.match(/<article class="markdown-body">([\s\S]*)<\/article>/)?.[1];
-      const band = bRaw.match(/<div class="page-title-band">[\s\S]*?<span class="eyebrow">[\s\S]*?<\/span>([\s\S]*?)<\/div><\/div>/)?.[1];
-      assert.ok(a && bInner, `${lang}/${page}: could not extract article`);
-      assert.equal(normalise((band ?? '') + bInner), a, `${lang}/${page}: article content diverged`);
-    }
+test('shared articles stay identical across editions', () => {
+  const personal = loadGuide(root);
+  const club = loadGuide(root, '../', 'uestc');
+  for (const lang of LANGS) for (const page of club.all[lang]) {
+    if (['home', 'lesswrong'].includes(page.id)) continue;
+    const other = personal.all[lang].find(p => p.id === page.id);
+    assert.equal(other.html, page.html, lang + '/' + page.id);
+    assert.equal(other.title, page.title);
+    assert.equal(other.group, page.group);
+  }
 });
 
-test('all 80 personal pages remain byte-identical to the pre-edit baseline', () => {
-  // Captured before the club content changes at 01992cb. An intentional future
-  // personal-edition change must explicitly update this fixture.
-  const expected = JSON.parse(fs.readFileSync(path.join(root, 'tests/fixtures/personal-pages.sha256.json'), 'utf8'));
-  assert.equal(Object.keys(expected).length, 80);
-  for (const [file, hash] of Object.entries(expected))
-    assert.equal(createHash('sha256').update(fs.readFileSync(path.join(guide, file))).digest('hex'), hash, file);
+test('personal additions survive without restoring removed teaching copy', () => {
+  const { all } = loadGuide(root);
+  for (const lang of LANGS) {
+    assert.ok(all[lang].find(p => p.id === 'home').html.includes('welcome.html'));
+    const lesswrong = all[lang].find(p => p.id === 'lesswrong').html;
+    for (const slug of ['working-yourself-ragged-is-not-a-virtue', 'tsuyoku-naritai-i-want-to-become-stronger', 'generalizing-from-one-example'])
+      assert.ok(lesswrong.includes(slug), lang + ': missing ' + slug);
+    for (const id of ['experiments', 'publishing']) {
+      assert.ok(!all[lang].some(p => p.id === id));
+      assert.match(fs.readFileSync(path.join(guide,lang,id+'.html'),'utf8'), /http-equiv="refresh"/);
+    }
+    assertAssetsResolve(path.join(guide, lang), 'personal ' + lang);
+  }
+  assert.doesNotMatch(all.zh.find(p => p.id === 'lesswrong').plain, /读的时候想一想|讲什么：/);
 });
 
 test('club articles, navigation, and search have no removed-page links or personal promotion', () => {

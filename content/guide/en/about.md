@@ -1,26 +1,21 @@
-# About the AI Club and this guide
+# About the UESTC AI Club guide
 
-This guide grew out of learning and discussion in the UESTC AI Club, and we hope students at other universities will find it useful too. We care about how a student finds their way through university, starts exploring AI, meets people to work with, and gradually develops their own judgment.
+We are the UESTC AI Club, a group of students learning about AI and working on projects together. This guide grew out of our learning and discussions, and we hope it is useful to students at other universities who want to explore AI and research too.
 
-## What is here
+## Scope
 
-Two opening essays, starter projects, practical research workflows, resources across AI fields, and personal experiences and reflections.
+- Starter projects, foundations, and representative papers across AI fields.
+- Literature search, reading notes, experiments, writing, and presentations.
+- References for contacting research teams, collaboration, and publication.
 
-Our members share an interest in AI. Some work on vision, language models, agents, world models, or embodied AI; others enjoy development, competitions, and turning ideas into things.
+## Sources and contributions
 
-## Content and sources
+This guide continues the [UESTC AI Club Guide](https://my.feishu.cn/docx/HQYodz7thohS1Nxo6KAcoeNtnbb) and its predecessor AI4UESTC_Beginners. Thanks to their contributors and to the authors of the courses, papers, open projects, and technical articles linked here.
 
-Club members wrote the opening essays, research Q&A, and personal accounts. Courses, papers, and blogs link to their original authors.
+The [Lumina Embodied AI Guide](https://github.com/TianxingChen/Embodied-AI-Guide) informed the selection of embodied AI resources.
 
-This guide continues the work of the [UESTC AI Club Guide](https://my.feishu.cn/docx/HQYodz7thohS1Nxo6KAcoeNtnbb) and its predecessor AI4UESTC_Beginners. We thank the original contributors and the authors of the courses, open-source projects, blogs, and experience articles.
+[Paper reading and note workflows](irene-workflow.md) adapts irene's “一些小分享”; attribution and original materials are included in the article.
 
-The [Lumina Embodied AI Guide](https://github.com/TianxingChen/Embodied-AI-Guide) informed the organization and resource selection for embodied AI.
+References retain author names and original links. Use “Edit this page” in the footer to propose corrections or update a link.
 
-[Start at the home page](home.md) · [Read the letter to new students](welcome.md)
-
-## Finding references
-
-Courses, papers, blogs, and research groups are collected in the [resource index](resources.md).
-
-
-[irene](https://github.com/tseirene6) contributed the experience behind [Building your research workflow](irene-workflow.md): paper and note management, research briefs, reading depth, and questions from AI. Related methods throughout the guide are adapted from this account.
+[Guide home](home.md) · [Resource index](resources.md)

@@ -504,4 +504,3 @@ Archive the question, literature comparisons, runnable code, configurations, raw
 ### 60. How do I adjust and hand over a project when conditions change?
 
 Look at the situation with your collaborators: **what have you done, what remains unclear, and what can you do with the time and resources now available?** If you need to reduce, pause, or end the project, agree on what remains to be finished, where code and data are stored, and who will follow up. The next person can then continue from the existing records.
-

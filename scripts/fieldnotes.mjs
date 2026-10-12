@@ -6,10 +6,10 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 export const loadFields=(root,edition='personal')=>{
  const dir=path.join(root,'content/guide/fieldnotes');
  const copyFile=path.join(root,'content/guide/uestc/fieldnotes.json');
- const copy=edition==='uestc'&&fs.existsSync(copyFile)?JSON.parse(fs.readFileSync(copyFile,'utf8')):{};
+ const copy=fs.existsSync(copyFile)?JSON.parse(fs.readFileSync(copyFile,'utf8')):{};
  return fs.existsSync(dir)?fs.readdirSync(dir).filter(x=>x.endsWith('.json')).sort().map(x=>{
   const field=JSON.parse(fs.readFileSync(path.join(dir,x),'utf8'));
-  // Club prose overrides leave the shared paper cards, figures and English intact.
+  // Both editions share the reviewed prose, paper cards, and figures.
   return copy[field.id]?{...field,zh:{...field.zh,...copy[field.id]}}:field;
  }):[];
 };

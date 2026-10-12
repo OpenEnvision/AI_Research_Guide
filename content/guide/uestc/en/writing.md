@@ -101,5 +101,3 @@ For a talk, consider what the audience knows and select enough material to expla
 ## Consult while drafting
 
 [Huang and Ding's guide](blogs.md#ding) helps with contributions, structure, and drafts. [The Bottom Line](lesswrong.md#bottom-line) discusses how evidence determines conclusions. LaTeX, figures, and presentation resources are in the [research catalog](catalog-research.md#topic-11).
-
-

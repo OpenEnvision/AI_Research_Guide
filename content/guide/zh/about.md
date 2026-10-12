@@ -1,26 +1,19 @@
 # 关于 AI 社与这份指南
 
-这份知识库由 UESTC AI 社的学习与交流出发，也希望能被更多学校的同学用上。我们关心的是，一个学生怎样认识大学、开始探索 AI、找到愿意一起做事的人，慢慢形成自己的判断。
+我们是 UESTC AI 社，一群对 AI 感兴趣、一起学习和做项目的同学。这份指南从社团平时的学习与交流中整理而来，也希望能帮到其他学校想开始学 AI、尝试科研的同学。
 
-## 这里有什么
+## 来源与致谢
 
-两篇写在前面的话，几条可以开始的小项目路线，科研中常用的做法，各方向的入门材料，以及个人经历和复盘。
+这份指南承接旧[《UESTC AI 社指南》](https://my.feishu.cn/docx/HQYodz7thohS1Nxo6KAcoeNtnbb)及其前身 AI4UESTC_Beginners 的整理工作。感谢旧库贡献者，以及课程、论文、开源项目与技术文章的作者。
 
-我们汇聚了一群对 AI 感兴趣的人。有人做视觉、语言模型、Agent、世界模型或具身，有人喜欢开发、比赛和把想法做成东西。
+[Lumina 具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)为具身方向的资料选取提供了参考。
 
-## 内容与来源
+[论文阅读与笔记工作流](irene-workflow.md)根据 irene 的《一些小分享》整理，原文与工具来源在文章中标注。
 
-大学开篇、科研问答和个人经历由社团成员撰写。课程、论文和博客链接到原作者的页面。
+## 引用与修订
 
-这份指南承接旧[《UESTC AI 社指南》](https://my.feishu.cn/docx/HQYodz7thohS1Nxo6KAcoeNtnbb)及其前身 AI4UESTC_Beginners 的整理工作。感谢旧库作者和贡献者，也感谢课程、开源项目、博客与经验文章的作者。
+课程、论文、项目与技术文章保留原始链接，改编材料注明来源。关于引用、署名或图片使用的问题，可以在[指南仓库](https://github.com/Takamatsu-Hikaru/AI-Research-Guide)提出。
 
-[Lumina 具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)为具身方向的组织与资料选取提供了参考。
+发现内容错误、过期链接，或有希望补充的资料，欢迎通过仓库的 Issues 或 Pull Request 参与修订。
 
-[从首页开始](home.md) · [读作者的大学开篇](welcome.md)
-
-## 参考材料在哪里
-
-课程、论文、博客与研究团队可以在[资料总索引](resources.md)中查找。
-
-
-[irene](https://github.com/tseirene6) 分享了[《搭建自己的科研工作流》](irene-workflow.md)，提供了论文与笔记管理、科研简报、阅读深度和 AI 追问的实践经验。相关文章中的对应方法由这份分享整理。
+[指南首页](home.md) · [资料总索引](resources.md)

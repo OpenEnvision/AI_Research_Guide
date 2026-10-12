@@ -11,8 +11,8 @@
 | 你现在想了解什么 | 入口 |
 | --- | --- |
 | 大学有哪些选择，自己想往哪里走 | [写给刚进大学的你](content/guide/zh/welcome.md) |
-| 为什么做科研，如何开始、找方向、联系老师 | [How to 入门科研：60 个问题](content/guide/zh/research.md) |
-| 先做一个能看到结果的小项目 | [第一个 AI 项目，从哪里开始？](content/guide/zh/start.md) |
+| 为什么做科研，如何开始、找方向、联系老师 | [科研入门Q&A](content/guide/zh/research.md) |
+| 先做一个能看到结果的小项目 | [第一个 AI 项目](content/guide/zh/start.md) |
 
 ## 内容导航
 
@@ -20,12 +20,12 @@
 
 | 板块 | 内容 |
 | --- | --- |
-| 基础与学习 | [基础怎么学，需要学到哪里？](content/guide/zh/basics.md) · [挑一篇论文读](content/guide/zh/papers.md) |
-| 认识研究方向 | [方向总览](content/guide/zh/directions.md) · [大语言模型](content/guide/zh/llm.md) · [Agent](content/guide/zh/agent.md) · [视觉](content/guide/zh/vision.md) · [多模态](content/guide/zh/multimodal.md) · [生成](content/guide/zh/generation.md) · [强化学习](content/guide/zh/rl.md) · [世界模型](content/guide/zh/world-model.md) · [具身智能](content/guide/zh/embodied.md) · [效率与系统](content/guide/zh/systems.md) · [AI 交叉学科](content/guide/zh/ai4x.md) |
-| 推进一项研究 | [找资料、读论文](content/guide/zh/reading.md) · [做实验](content/guide/zh/experiments.md) · [写作、画图与汇报](content/guide/zh/writing.md) · [联系与合作](content/guide/zh/contact.md) · [使用 AI](content/guide/zh/ai.md) · [投稿](content/guide/zh/publishing.md) |
-| 经历与生活 | [经验与复盘](content/guide/zh/experience.md) · [irene：科研工作流](content/guide/zh/irene-workflow.md) · [大一回忆](content/guide/zh/timeline.md) · [怎么好好生活](content/guide/zh/life.md) |
-| 看看外面 | [Lookout](content/guide/zh/lookout.md) · [作者博客](content/guide/zh/blogs.md) · [LessWrong](content/guide/zh/lesswrong.md) · [李沐](content/guide/zh/limu.md) · [研究团队](content/guide/zh/labs.md) |
-| 找具体资料 | [资料总索引](content/guide/zh/resources.md) · [科研经验与问答](content/guide/zh/research-conversations.md) |
+| 基础与学习 | [学习基础知识](content/guide/zh/basics.md) · [论文选读](content/guide/zh/papers.md) |
+| 认识研究方向 | [AI 的不同方向，都在研究什么？](content/guide/zh/directions.md) · [大语言模型：理解、生成、推理](content/guide/zh/llm.md) · [Agent](content/guide/zh/agent.md) · [计算机视觉：让模型读懂图像](content/guide/zh/vision.md) · [多模态：图像、语言与声音](content/guide/zh/multimodal.md) · [生成模型](content/guide/zh/generation.md) · [强化学习](content/guide/zh/rl.md) · [世界模型](content/guide/zh/world-model.md) · [具身智能：从看见到行动](content/guide/zh/embodied.md) · [效率与系统](content/guide/zh/systems.md) · [AI 交叉学科](content/guide/zh/ai4x.md) |
+| 推进一项研究 | [找资料和读论文](content/guide/zh/reading.md) · [写作、画图和汇报](content/guide/zh/writing.md) · [联系老师、学长与合作](content/guide/zh/contact.md) · [AI 工具](content/guide/zh/ai.md) |
+| 经历与生活 | [经历、焚诀与走过的弯路](content/guide/zh/experience.md) · [论文阅读与笔记工作流](content/guide/zh/irene-workflow.md) · [大一年终总结：顿觉天地宽](content/guide/zh/timeline.md) · [怎么好好生活](content/guide/zh/life.md) |
+| 看看外面 | [Lookout：研究者和实验室最近在做什么？](content/guide/zh/lookout.md) · [技术博客与研究观点](content/guide/zh/blogs.md) · [LessWrong：研究判断与 AI 使用](content/guide/zh/lesswrong.md) · [深度学习课程与论文精读](content/guide/zh/limu.md) · [课题组与研究团队](content/guide/zh/labs.md) |
+| 找具体资料 | [资料总索引](content/guide/zh/resources.md) · [科研经验与交流](content/guide/zh/research-conversations.md) |
 
 [在线阅读](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/)包含全文搜索、可展开的科研问答，以及 10 个方向的简介、发展路线、术语和 带原图的论文卡片。每张卡片都附论文原文及相关项目链接。
 
@@ -37,18 +37,15 @@
 
 [OpenEnvision（OE）](https://openenvision.github.io/)是连接学术界与产业界的开放 AI 研究社区，关注世界模型、多模态、视觉与具身智能，也通过整理博客、访谈和课程，为社区分享研究知识。
 
-- **[BlogrXiv：AI 研究博客与技术文章](https://openenvision.github.io/BlogrXiv/site/index.html)**：汇集研究博客、实验室文章和技术笔记，可以按方向找机制解释、工程经验与科研方法，再进入作者原文。
-- **[ScholarTube：AI 访谈、播客与课程](https://openenvision.github.io/ScholarTube/)**：收集研究者长访谈、视频播客、完整课程与学术报告，覆盖 Agent、世界模型、视觉、机器人及科研方法，链接到原始视频。
-
-也欢迎向 [BlogrXiv](https://github.com/OpenEnvision/BlogrXiv) 和 [ScholarTube](https://github.com/OpenEnvision/ScholarTube) 推荐值得分享的文章与视频。
-
+- [BlogrXiv：AI 研究博客与技术文章](https://openenvision.github.io/BlogrXiv/site/index.html)：汇集研究博客、实验室文章和技术笔记，涉及模型原理、工程经验与科研方法。
+- [ScholarTube：AI 访谈、播客与课程](https://openenvision.github.io/ScholarTube/)：收集研究者长访谈、视频播客、完整课程与学术报告，覆盖 Agent、世界模型、视觉、机器人及科研方法。
 ### Lumina
 
-[Lumina](https://lumina-embodied.ai/)关注具身智能的研究、开源项目与社区交流。想系统了解这个方向，可以读[具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)；想听研究者讲正在做的工作，可以从官网的 Talks、具身观察和社区活动进入。
+[Lumina](https://lumina-embodied.ai/)关注具身智能的研究、开源项目与社区交流，提供了[具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)，也定期举办 Lumina Talks、具身观察和社区活动。
 
 ### AgentHub
 
-[AgentHub（群谈）](https://hqhq1025.github.io/agent_hub/)把 Agent 社区里的讨论整理成日报和周报，涉及智能体研究、工具使用、工程实践与行业动态。可以按日期翻阅，也可以看不同群组的讨论与外部资讯，了解大家最近遇到什么问题、怎样比较技术方案，以及同一个问题有哪些不同判断。
+[AgentHub](https://hqhq1025.github.io/agent_hub/)把 Agent 社区里的讨论整理成日报和周报，涉及智能体研究、工具使用、工程实践与行业动态。分享大家最近遇到的问题，以及对技术方案的比较和判断。
 
 ## 交流与参与
 
@@ -58,11 +55,11 @@
 
 ## 关于与致谢
 
-[关于 UESTC AI 社与这份指南](content/guide/zh/about.md)。大学开篇、科研问答和个人经历由社团成员撰写，课程、论文和博客链接到原作者页面。
+[关于 AI 社与这份指南](content/guide/zh/about.md)。大学开篇、科研问答和个人经历由社团成员撰写，课程、论文和博客链接到原作者页面。
 
 这份指南承接[《UESTC AI 社指南》](https://my.feishu.cn/docx/HQYodz7thohS1Nxo6KAcoeNtnbb)及 AI4UESTC_Beginners 的整理工作，感谢旧库作者与贡献者。[Lumina 具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)为具身方向的组织与资料选取提供了参考。论文插图的来源记录在[配图索引](content/guide/paper-figures.json)。
 
-[irene](https://github.com/tseirene6) 分享了[《搭建自己的科研工作流》](content/guide/zh/irene-workflow.md)，提供了论文与笔记管理、科研简报、阅读深度和 AI 追问的实践经验。相关文章中的对应方法由这份分享整理。
+[irene](https://github.com/tseirene6) 分享了[论文阅读与笔记工作流](content/guide/zh/irene-workflow.md)，提供了论文与笔记管理、科研简报、阅读深度和 AI 追问的实践经验。相关文章中的对应方法由这份分享整理。
 
 ## 更新内容
 
@@ -74,13 +71,11 @@
 
 ```bash
 npm ci
-npm run build          # 默认版式
-npm run build:uestc    # 第二套版式（uestc_ai 风格）
+npm run build          # GitHub Pages / 个人版
+npm run build:uestc    # 社团版
 npm test               # 两套版式的回归检查
 ```
 
 打开 `public/blog/guide/zh/index.html` 或 `public/blog/guide/en/index.html`；第二套版式在 `public/blog/guide/guide-uestc/zh/index.html`。
 
-默认版式发布到 [GitHub Pages](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/)，第二套版式发布到 [wiki.uestcai.top](https://wiki.uestcai.top/zh/)，都由 GitHub Actions 在主分支更新后自动构建发布。
-
-同一份 Markdown、方向数据、图片和视频渲染成两套版式，内容不会各自漂移；改动与分工见[更新与贡献说明](CONTRIBUTING.md)。
+GitHub Pages 版发布到 [AI-Research-Guide](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/)，社团版发布到 [wiki.uestcai.top](https://wiki.uestcai.top/zh/)，个人主页版位于 [blog/guide](https://takamatsu-hikaru.github.io/blog/guide/zh/)。三个入口共用正文、方向小卡与图文排版；个人版另保留大学开篇、个人经历和 LessWrong 的成长与生活文章。

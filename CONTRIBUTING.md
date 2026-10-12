@@ -38,22 +38,15 @@
 
 网站的方向页会把 Markdown 正文与 JSON 中的简介、论文卡片拼在一起；Lookout 的公司目录由共享模块插入。查看这些页的全部内容时，可以同时看对应的在线页面和上表中的源文件。
 
-## 两套版式
+## 版本同步
 
-同一份内容渲染成两套版式，共用 `content/guide` 下的 Markdown、`fieldnotes` 数据和所有图片视频：
+社团版使用 content/guide/uestc 的正文，个人版与 GitHub Pages 使用 content/guide 下的正文。共同文章保持一致，个人版另保留大学开篇、相关个人经历与 LessWrong 的成长和生活文章。两版共用 guide-shell-uestc.mjs、guide-uestc.css、guide-intro.css、方向数据和图片。
 
-| 命令 | 产物 | 版式 |
-| --- | --- | --- |
-| `npm run build` | `public/blog/guide/{zh,en}/` | 默认版式（暖色纸底、固定顶栏、右侧本页目录） |
-| `npm run build:uestc` | `public/blog/guide/guide-uestc/{zh,en}/` | [uestc_ai](https://github.com/Takamatsu-Hikaru) 平台版式（侧栏 + 顶栏、coral 强调色、Georgia 标题） |
-
-两套都用 [guide-model.mjs](scripts/guide-model.mjs) 生成内容，所以锚点、60 个问答、资料条目编号和搜索索引不会各自漂移。文章改 Markdown 时两边一起变；只有外壳和样式分别维护。
-
-uestc 版位于 `guide/guide-uestc/`，比默认版深一层，因此共享资源用 `../../` 引用。这个前缀由 [guide-model.mjs](scripts/guide-model.mjs) 的 `assets` 参数统一处理（默认 `'../'`，即默认版式的深度）——新增会输出图片链接的组件时，记得把 `assets` 透传下去，漏传会得到能通过肉眼检查但实际 404 的路径。构建会用 [guide-verify.mjs](scripts/guide-verify.mjs) 逐个解析并拦住这种错误。
-
-uestc 版目前只能通过 URL 直接访问（`guide-uestc/zh/`），默认版的首页没有指向它的链接——加上会改动现有页面，需要单独确认。
-
-改动 uestc 版样式时注意三点：它排在 `guide.css`、`fieldnotes.css`、`guide-motion.css` 之后加载，靠顺序赢下同优先级的规则；`#nav`、`#toc` 等 id 选择器需要在 [guide-uestc.css](public/blog/guide/guide-uestc.css) 里以同样的 id 优先级重新声明；断点必须保持 800px，因为 [guide.js](public/blog/guide/guide.js) 的移动端抽屉逻辑写死了这个宽度。
+- 修改共同文章时，同步两处 Markdown；npm test 会比较实际渲染内容。
+- 方向页的已审读中文文案共用 content/guide/uestc/fieldnotes.json；论文卡片仍在 content/guide/fieldnotes。
+- Lookout 共用 content/guide/uestc/lookout-directory.json。
+- npm run build 构建个人版与 GitHub Pages；npm run build:uestc 构建社团版。
+- 用 node scripts/sync-personal-site.mjs <个人主页仓库路径> 同步指南文件，再在个人主页仓库运行 npm run build:guide。
 
 ## 本地预览
 
