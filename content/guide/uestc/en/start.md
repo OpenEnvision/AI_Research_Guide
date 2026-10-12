@@ -69,7 +69,7 @@ Use a video you filmed and inspect pedestrian or vehicle detections. For a speci
 
 Follow one observation: does resolution help small objects? When the confidence threshold falls, how many additional boxes are false positives? Keep output images beside settings and you have something concrete to [discuss with a mentor](contact.md).
 
-Next read [computer vision](vision.md) for classification, detection, and segmentation. For serious comparisons, see [experiments](experiments.md).
+Next read [computer vision](vision.md) for classification, detection, and segmentation. For serious comparisons, see [experiments](research.md#q43).
 
 <a id="project-agent"></a>
 
@@ -95,7 +95,7 @@ After finishing an example, save the code and results and note **what you change
 
 - To understand how data enters the model and what each layer does, explore [foundations and architectures](basics.md).
 - If the task interests you and you want to see what researchers have tried, find papers in the [directions pages](directions.md).
-- To reproduce a paper seriously, connect [reading](reading.md), [experiments](experiments.md), and [conversation](contact.md).
+- To reproduce a paper seriously, connect [reading](reading.md), [experiments](research.md#q43), and [conversation](contact.md).
 - You can also try another project and see how it handles the questions you encountered here.
 
 ## Continue learning

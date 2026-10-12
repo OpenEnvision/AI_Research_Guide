@@ -34,7 +34,7 @@ Ask it for counterexamples, alternative explanations, and missing evidence for a
 
 [Lilian Weng's agent article](https://lilianweng.github.io/posts/2023-06-23-agent/) and [Anthropic's Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) explain how systems organize tasks. To research agents themselves, see the [direction page](agent.md).
 
-Handle unpublished and review materials according to team and venue requirements; see [publication](publishing.md).
+Handle unpublished and review materials according to team and venue requirements; see [publication](writing.md).
 
 <a id="grill-me"></a>
 

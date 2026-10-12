@@ -20,7 +20,7 @@ export const STRINGS={zh:{brand:'AI 科研入门指南',blog:'GitHub 仓库',sea
 export const escape=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const plain=s=>s.replace(/<[^>]*>/g,' ').replace(/&amp;/g,'&').replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/\s+/g,' ').trim();
 export const filename=id=>id==='home'?'index.html':id+'.html';
-export const groupName=(g,l)=>l==='zh'?g:EN_GROUPS[GROUPS.indexOf(g)];
+export const groupName=(g,l)=>l==='zh'?g:g==='科研实践'?'Research practice':EN_GROUPS[GROUPS.indexOf(g)];
 
 // Asset paths authored directly inside Markdown. Templates cannot reach these,
 // so they are rewritten here against the same `assets` prefix. With the default

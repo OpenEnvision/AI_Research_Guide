@@ -81,7 +81,7 @@ Choose a shared question and record what each paper changes, depends on, and lea
 
 Finish with “After reading these, I want to investigate…” It may lead to another paper, a conversation, or an experiment.
 
-[Choose a paper](papers.md) · [Experiment](experiments.md) · [Discuss your question](contact.md)
+[Choose a paper](papers.md) · [Experiment](research.md#q43) · [Discuss your question](contact.md)
 
 <a id="research-map"></a>
 

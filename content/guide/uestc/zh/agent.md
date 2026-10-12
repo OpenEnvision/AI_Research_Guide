@@ -103,7 +103,7 @@ Agent 的训练样本可以包含观察、动作、工具返回和最终结果�
 
 [Lilian Weng：LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/)适合建立早期组件视角。[LLM Agent Paper List](https://github.com/WooooDyy/LLM-Agent-Paper-List)适合选定问题后继续找论文。
 
-如果你现在主要想用 Agent 帮自己科研，去[和 AI 一起做事](ai.md)。如果开始研究它为何失败，接着看[实验与评估](experiments.md)。
+科研中的工具使用见 [AI 工具](ai.md)。
 
 ## 评测分析与多 Agent 组织
 

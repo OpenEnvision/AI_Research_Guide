@@ -96,7 +96,7 @@ Use [Overleaf's LaTeX introduction](https://www.overleaf.com/learn/latex/Learn_L
 
 For a talk, consider what the audience knows and select enough material to explain the central question. See [the research-talk lecture](https://www.microsoft.com/en-us/research/academic-program/give-great-research-talk/). A lab update can center on the question, key results, current interpretation, and what you want to discuss.
 
-[Publication](publishing.md) · [Experiment records](experiments.md) · [AI-assisted revision](ai.md)
+[Experiment records](research.md#q43) · [AI-assisted revision](ai.md)
 
 ## Consult while drafting
 

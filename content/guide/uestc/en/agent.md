@@ -103,7 +103,7 @@ For coding agents, see [SWE-bench](https://www.swebench.com/); AgentBench above 
 
 [Lilian Weng's LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/) introduces an early component-based view. The [LLM Agent Paper List](https://github.com/WooooDyy/LLM-Agent-Paper-List) helps once you have a question to follow.
 
-For using agents in your own research, see [working with AI](ai.md). For studying why they fail, see [experiments and evaluation](experiments.md).
+For using agents in your own research, see [working with AI](ai.md). For studying why they fail, see [experiments and evaluation](research.md#q43).
 
 ## Evaluation analysis and multi-agent organization
 

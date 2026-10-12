@@ -16,7 +16,7 @@ Research formulates hypotheses or methods for unresolved questions and tests the
 
 ### 2. What does an AI researcher actually do all day, beyond reading papers and coding?
 
-Common tasks include literature search, baseline reproduction, experiment design, debugging, analysis, recording configurations, discussion, and writing. An experiment produces **a code version, configuration, logs, metrics, and example analysis**. See [experiments](experiments.md).
+Common tasks include literature search, baseline reproduction, experiment design, debugging, analysis, recording configurations, discussion, and writing. An experiment produces **a code version, configuration, logs, metrics, and example analysis**. See [experiments](research.md#q43).
 
 <a id="q3"></a>
 
@@ -460,7 +460,7 @@ Public papers, open-source code, and your own notes still require checking appli
 
 For reviewing, check that year's venue rules separately. [ICML 2026](https://icml.cc/Conferences/2026/LLM-Policy), for example, distinguishes two reviewing policies: follow the one assigned to you. Permitted assistance does not mean delegating judgment and evaluation to AI.
 
-Check the target venue's writing rules too. Authors remain responsible for the content; AI cannot take on authorship responsibility. Follow the specific rules on disclosure and permitted use. Check every reference, particularly for fabricated citations. Official entry points are on the [publication page](publishing.md).
+Check the target venue's writing rules too. Authors remain responsible for the content; AI cannot take on authorship responsibility. Follow the specific rules on disclosure and permitted use. Check every reference, particularly for fabricated citations. Official entry points are on the [publication page](writing.md).
 
 
 ## Writing, publication, and project records
@@ -491,13 +491,13 @@ Check **the question, differences from prior work, comparison conditions, streng
 
 A **workshop** is a focused forum for discussion. Archival status, later submission of an extended version, and accepted work types depend on its rules. A suitable workshop can offer conversation and feedback.
 
-A **preprint** shares work before or outside formal publication. arXiv is a common venue. Uploading there does not itself mean peer review; a preprint may later be formally published. Inspect the specific version and publication record. Find official links on the [publication page](publishing.md).
+A **preprint** shares work before or outside formal publication. arXiv is a common venue. Uploading there does not itself mean peer review; a preprint may later be formally published. Inspect the specific version and publication record. Find official links on the [publication page](writing.md).
 
 <a id="q59"></a>
 
 ### 59. How do I archive and review unpublished or rejected work?
 
-Archive the question, literature comparisons, runnable code, configurations, raw results, and failure analysis. For reviews, separate **implementation issues, evidence gaps, presentation issues, and disagreements over scope**. Identify revisions and required validation. See [publication](publishing.md) for submission procedures.
+Archive the question, literature comparisons, runnable code, configurations, raw results, and failure analysis. For reviews, separate **implementation issues, evidence gaps, presentation issues, and disagreements over scope**. Identify revisions and required validation. See [publication](writing.md) for submission procedures.
 
 <a id="q60"></a>
 

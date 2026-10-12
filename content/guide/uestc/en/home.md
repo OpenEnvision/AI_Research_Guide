@@ -12,7 +12,7 @@ Choose a starting point below that fits where you are now. You can come back as 
 | Understand the research areas | [Research directions](directions.md) |
 | Resolve a programming, math, or model concept | [Foundations](basics.md) |
 | Prepare to join a research project | [Getting started: 60 questions](research.md) |
-| Work on a paper or experiment | [Reading](reading.md) · [Experiments](experiments.md) · [Writing and talks](writing.md) |
+| Work on a paper or experiment | [Reading](reading.md) · [Writing and talks](writing.md) |
 
 ## AI, a history
 
@@ -42,9 +42,9 @@ Look up unfamiliar terms, browse research topics, and follow related concepts.
 
 ## Questions that come up during research
 
-[Finding and reading papers](reading.md) · [Understanding experiments](experiments.md) · [Writing, figures, and talks](writing.md)
+[Finding and reading papers](reading.md) · [Writing, figures, and talks](writing.md)
 
-[Contact and collaboration](contact.md) · [Working with AI](ai.md) · [Publication](publishing.md)
+[Contact and collaboration](contact.md) · [Working with AI](ai.md)
 
 How do you read your first paper, interpret experiment results, or write your first message to a professor? If you are stuck at one of these steps, open the relevant article for examples and approaches you can try.
 

@@ -30,7 +30,7 @@ test('both editions build', () => {
   // Simulate files left by a previous 40-page club build.
   for (const lang of LANGS) {
     fs.mkdirSync(path.join(uestc, lang), { recursive: true });
-    for (const id of ['welcome', 'timeline', 'life', 'experience'])
+    for (const id of ['welcome', 'timeline', 'life', 'experience', 'experiments', 'publishing'])
       fs.writeFileSync(path.join(uestc, lang, `${id}.html`), 'stale personal page');
   }
   execFileSync(process.execPath, ['scripts/build-guide-uestc.mjs'], { cwd: root, stdio: 'pipe' });
@@ -45,9 +45,9 @@ test('club output follows its manifest and removes stale personal pages', () => 
     const a = pagesOf(guide, lang);
     const b = pagesOf(uestc, lang);
     assert.equal(a.length, 40, `${lang}: expected 40 default pages, got ${a.length}`);
-    assert.equal(b.length, 36);
+    assert.equal(b.length, 34);
     assert.deepEqual(b, manifest.map(p => filename(p.id)).sort());
-    for (const id of ['welcome', 'timeline', 'life', 'experience'])
+    for (const id of ['welcome', 'timeline', 'life', 'experience', 'experiments', 'publishing'])
       assert.ok(!b.includes(`${id}.html`), `${lang}: excluded page ${id} survived`);
   }
 });
@@ -209,7 +209,7 @@ test('workflow attribution, requested authors, member repository, and correct ed
   const { all } = loadGuide(root, '../../', 'uestc');
   for (const lang of LANGS) {
     const workflow = all[lang].find(p => p.id === 'irene-workflow');
-    assert.equal(workflow.group, '做研究时来查');
+    assert.equal(workflow.group, '科研实践');
     assert.match(workflow.html, /https:\/\/github.com\/tseirene6/);
     assert.doesNotMatch(workflow.title, /irene/i);
     const blog = all[lang].find(p => p.id === 'blogs');

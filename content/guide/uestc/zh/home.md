@@ -2,7 +2,7 @@
 
 各位同学，欢迎来到 UESTC AI 社的入门指南。如果你对 AI 和科研感兴趣，却还不知道从哪里开始入门；或者已经开始参与项目或规划找课题组，却不知道怎么联系老师，对接工作；或者已经加入了自己的课题组，但是仍然对想 idea、推进工作感到迷茫。我们希望这份指南能够帮助到你。
 
-<figure class="resource-figure guide-overview"><a href="../../../public/blog/guide/figures/uestc/home/guide-overview.png?v=2" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/uestc/home/guide-overview.webp?v=2" width="1600" height="904" alt="指南全览：开始学习、研究方向、做研究时来查、看看外面与资料索引；从初次接触、动手学习，到进入课题、形成判断和表达交流。" decoding="async" fetchpriority="high"></a></figure>
+<figure class="resource-figure guide-overview"><a href="../../../public/blog/guide/figures/uestc/home/guide-overview.png?v=2" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/uestc/home/guide-overview.webp?v=2" width="1600" height="904" alt="指南全览：开始学习、研究方向、科研实践、看看外面与资料索引；从初次接触、动手学习，到进入课题、形成判断和表达交流。" decoding="async" fetchpriority="high"></a></figure>
 
 ## 从哪里开始
 
@@ -13,11 +13,10 @@
 | 补一补编程、数学、机器学习等基础 | [基础学习资料](basics.md) |
 | 了解科研到底在做什么，怎么开始 | [科研入门](research.md) |
 | 学着找论文、读论文 | [找资料和读论文](reading.md) |
-| 设计实验、分析结果、排查问题 | [做实验](experiments.md) |
 | 写论文、画图、准备汇报 | [写作与汇报](writing.md) |
 | 找老师、联系课题组、参与合作 | [联系老师与合作](contact.md) |
-| 用 AI 辅助学习、编程和科研 | [和 AI 一起做事](ai.md) |
-| 了解会议、投稿和审稿流程 | [投稿与发表](publishing.md) |
+| 用 AI 辅助学习、编程和科研 | [AI 工具](ai.md) |
+| 了解会议、投稿和审稿流程 | [投稿与会议](writing.md#submission) |
 | 查找不熟悉的 AI 术语或学术会议 | [术语与会议速查](../wiki/index.html) |
 
 ## AI 编年史

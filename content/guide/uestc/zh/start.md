@@ -89,4 +89,4 @@ YOLO 可以找出图片中的物体，并标出类别和位置。一张街景照
 
 ## 相关资料
 
-[学习基础知识](basics.md) · [研究方向总览](directions.md) · [找资料和读论文](reading.md) · [实验方法](experiments.md)
+[学习基础知识](basics.md) · [研究方向总览](directions.md) · [找资料和读论文](reading.md)
