@@ -6,6 +6,8 @@
 
 This guide is for students starting university who want to explore AI and research. It brings together our answers to questions about university choices and getting started in research, alongside beginner projects, key papers across research areas, courses, and tools. It also covers contacting faculty, joining a lab for the first time, failed experiments, and the anxiety of comparing yourself with your peers.
 
+[![AI Research Guide overview](public/blog/guide/figures/uestc/home/guide-overview.webp)](https://wiki.uestcai.top/en/)
+
 ## Start here
 
 | What are you thinking about? | Read |
@@ -52,7 +54,9 @@ You can also recommend articles and videos to [BlogrXiv](https://github.com/Open
 
 ## Discuss and contribute
 
-Bring questions about learning, projects, and research to the [discussion board](https://takamatsu-hikaru.github.io/AI-Research-Guide/en/ama.html). Report typos, broken links, or suggested additions through [Issues](https://github.com/Takamatsu-Hikaru/AI-Research-Guide/issues) or a pull request. If the guide helps, star it for later or share it with other students.
+Bring questions about learning, projects, and research to the [discussion board](https://takamatsu-hikaru.github.io/AI-Research-Guide/en/ama.html).
+
+Contributions are welcome on [GitHub](https://github.com/Takamatsu-Hikaru/AI-Research-Guide): open an issue or submit a PR with corrections and resources. If you find the guide useful, give it a star or share it with others.
 
 Articles are in [content/guide/zh](content/guide/zh) and [content/guide/en](content/guide/en). Field introductions and paper cards are in [content/guide/fieldnotes](content/guide/fieldnotes).
 

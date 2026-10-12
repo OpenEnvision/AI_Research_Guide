@@ -6,6 +6,8 @@
 
 这份指南面向刚进入大学、想了解 AI 和科研的同学。这里有我们对大学选择与科研入门的回答，也整理了入门项目、各方向的代表论文、课程和工具。联系老师、第一次进组、实验失败，以及和同龄人比较时的焦虑，也在其中。
 
+[![AI 科研入门指南架构图](public/blog/guide/figures/uestc/home/guide-overview.webp)](https://wiki.uestcai.top/zh/)
+
 ## 从这里开始
 
 | 你现在想了解什么 | 入口 |
@@ -49,7 +51,9 @@
 
 ## 交流与参与
 
-欢迎在[讨论区](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/ama.html)聊学习、项目和科研中的问题。错别字、失效链接和内容补充可以[提 Issue](https://github.com/Takamatsu-Hikaru/AI-Research-Guide/issues)或提交 PR。觉得有用，也欢迎 Star 收藏、分享给身边的同学。
+欢迎在[讨论区](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/ama.html)聊学习、项目和科研中的问题。
+
+欢迎到 [GitHub 仓库](https://github.com/Takamatsu-Hikaru/AI-Research-Guide)提 Issue、提交 PR，补充资料或修正内容。觉得有用，也欢迎 Star、分享给身边的同学。
 
 中文正文在 [content/guide/zh](content/guide/zh)，英文正文在 [content/guide/en](content/guide/en)。方向介绍和论文卡片的数据在 [content/guide/fieldnotes](content/guide/fieldnotes)。
 
