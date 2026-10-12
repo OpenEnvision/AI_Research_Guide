@@ -1,0 +1,59 @@
+/* Article layout for the two introductory Chinese pages. */
+.article-layout { grid-template-columns: minmax(0,680px) 180px; }
+.markdown-body { font-size: 16px; line-height: 1.9; }
+.markdown-body p, .markdown-body li { color: #20211e; line-height: 1.9; }
+.markdown-body p { margin: 0 0 22px; }
+.markdown-body h2 {
+  color: #24583e; font-size: 25px; line-height: 1.5;
+  text-wrap: balance; margin: 46px 0 22px; padding-bottom: 13px;
+}
+.markdown-body h3 { font-size: 20px; line-height: 1.55; margin: 30px 0 14px; }
+.markdown-body strong { color: #172b20; font-weight: 750; }
+.markdown-body a { color: #24583e; text-underline-offset: 4px; }
+.markdown-body .resource-figure {
+  display: block; width: 100%; max-width: 100%; margin: 26px auto 34px;
+  padding: 0; border: 0; background: none;
+}
+.markdown-body .resource-figure.medium { max-width: 540px; }
+.markdown-body .resource-figure.compact { max-width: 378px; }
+.markdown-body .resource-figure.robot { max-width: 510px; }
+.markdown-body .math-illustration { max-width: 600px; }
+.markdown-body .resource-figure > a { display: block; border: 0; background: none; }
+.markdown-body .resource-figure img {
+  display: block; width: 100%; max-width: 100%; height: auto; max-height: none;
+  object-fit: contain; margin: 0; border: 0; border-radius: 6px; box-shadow: none;
+}
+.markdown-body figcaption {
+  font-size: 12px; line-height: 1.75; color: #647062;
+  text-align: left; margin: 0; padding-top: 9px;
+}
+.markdown-body figcaption a { color: #52664e; text-decoration: none; border: 0; }
+.caption-dot { color: #9aa293; margin: 0 6px; }
+.resource-pair { display: flex; align-items: flex-start; gap: 16px; margin: 26px 0 34px; }
+.markdown-body .resource-pair .resource-figure { flex: 1; min-width: 0; margin: 0; }
+.resource-pair img { aspect-ratio: 16/10; background: #121512; }
+.logo-strip {
+  display: flex; flex-wrap: wrap; gap: 24px 30px; align-items: flex-start;
+  margin: 27px 0 34px; padding: 22px 0;
+  border-top: 1px solid #d5d1c8; border-bottom: 1px solid #d5d1c8;
+}
+.markdown-body .logo-entry {
+  display: flex; flex-direction: column; align-items: center; gap: 9px;
+  min-width: 70px; text-decoration: none; border: 0; color: #30362f;
+  font-size: 12px; line-height: 1.5;
+}
+.markdown-body .logo-entry img {
+  width: 32px; height: 32px; object-fit: contain; margin: 0; border: 0; border-radius: 6px;
+}
+@media (max-width:1200px) { .article-layout { grid-template-columns: minmax(0,680px); } }
+@media (max-width:800px) {
+  .article-layout { display: block; }
+  .markdown-body h2 { font-size: 23px; margin-top: 40px; }
+}
+@media (max-width:520px) {
+  .resource-pair { flex-direction: column; gap: 24px; }
+  .resource-pair .resource-figure { width: 100%; }
+  .resource-pair img { aspect-ratio: auto; }
+  .logo-strip { gap: 23px 22px; }
+  .markdown-body .resource-figure { margin: 22px auto 29px; }
+}

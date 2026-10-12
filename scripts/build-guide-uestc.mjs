@@ -59,7 +59,7 @@ if(STANDALONE){
  // a 2048px / 3.1MB source that no page should be loading.
  for(const dir of ['figures','brands','chronicle','sources','ai4x','wiki'])
   fs.cpSync(path.join(guideRoot,dir),path.join(out,dir),{recursive:true});
- const files=['favicon.png','logo-mark.png','guide.css','fieldnotes.css','guide-motion.css','guide-uestc.css','guide.js','fieldnotes.js','guide-motion.js','ama.js'];
+ const files=['favicon.png','logo-mark.png','guide.css','fieldnotes.css','guide-motion.css','guide-uestc.css','guide-intro.css','guide.js','fieldnotes.js','guide-motion.js','ama.js'];
  for(const file of files)fs.copyFileSync(path.join(guideRoot,file),path.join(out,file));
  // GitHub Pages would otherwise run the output through Jekyll.
  fs.writeFileSync(path.join(out,'.nojekyll'),'');
