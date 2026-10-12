@@ -2,6 +2,7 @@
 
 各位同学，欢迎来到 UESTC AI 社的入门指南。如果你对 AI 和科研感兴趣，却还不知道从哪里开始入门；或者已经开始参与项目或规划找课题组，却不知道怎么联系老师，对接工作；或者已经加入了自己的课题组，但是仍然对想 idea、推进工作感到迷茫。我们希望这份指南能够帮助到你。
 
+<figure class="resource-figure guide-overview"><a href="../../../public/blog/guide/figures/uestc/home/guide-overview.png" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/uestc/home/guide-overview.webp" width="1600" height="984" alt="指南全览：开始学习、研究方向、做研究时来查、看看外面与资料索引；从初次接触、动手学习，到进入课题、形成判断和表达交流。" decoding="async" fetchpriority="high"></a></figure>
 
 ## 从哪里开始
 
