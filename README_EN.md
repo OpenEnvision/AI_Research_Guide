@@ -2,11 +2,9 @@
 
 <h1 align="center">AI Research Guide</h1>
 <p align="center">University choices, your first research project, and lessons along the way</p>
-<p align="center"><a href="README.md">中文</a> · <b>English</b> · <a href="https://takamatsu-hikaru.github.io/AI-Research-Guide/en/">Read online</a> · <a href="https://wiki.uestcai.top/en/">Club platform edition</a> · <a href="https://takamatsu-hikaru.github.io/blog/guide/en/index.html">Personal website edition</a> · <a href="https://takamatsu-hikaru.github.io/AI-Research-Guide/en/ama.html">Discussions</a></p>
+<p align="center"><a href="README_ZH.md">中文</a> · <b>English</b> · <a href="https://takamatsu-hikaru.github.io/AI-Research-Guide/en/">Read online</a> · <a href="https://wiki.uestcai.top/en/">Club platform edition</a> · <a href="https://takamatsu-hikaru.github.io/blog/guide/en/index.html">Personal website edition</a> · <a href="https://takamatsu-hikaru.github.io/AI-Research-Guide/en/ama.html">Discussions</a></p>
 
 This guide is for students starting university who want to explore AI and research. It brings together our answers to questions about university choices and getting started in research, alongside beginner projects, key papers across research areas, courses, and tools. It also covers contacting faculty, joining a lab for the first time, failed experiments, and the anxiety of comparing yourself with your peers.
-
-[![AI Research Guide overview](public/blog/guide/figures/uestc/home/guide-overview.webp)](https://wiki.uestcai.top/en/)
 
 ## Start here
 
@@ -17,8 +15,6 @@ This guide is for students starting university who want to explore AI and resear
 | Making a small project work | [Your first AI project: where to begin?](content/guide/en/start.md) |
 
 ## Explore the guide
-
-[AI terminology and conferences · 中文](https://takamatsu-hikaru.github.io/AI-Research-Guide/wiki/index.html): search names and abbreviations, browse by field, and follow related concepts.
 
 | Section | Topics |
 | --- | --- |
@@ -56,11 +52,13 @@ You can also recommend articles and videos to [BlogrXiv](https://github.com/Open
 
 Bring questions about learning, projects, and research to the [discussion board](https://takamatsu-hikaru.github.io/AI-Research-Guide/en/ama.html).
 
-Contributions are welcome on [GitHub](https://github.com/Takamatsu-Hikaru/AI-Research-Guide): open an issue or submit a PR with corrections and resources. If you find the guide useful, give it a star or share it with others.
+Contributions are welcome on [GitHub](https://github.com/OpenEnvision/ai_research_guide): open an issue or submit a PR with corrections and resources. If you find the guide useful, give it a star or share it with others.
 
 Articles are in [content/guide/zh](content/guide/zh) and [content/guide/en](content/guide/en). Field introductions and paper cards are in [content/guide/fieldnotes](content/guide/fieldnotes).
 
 ## About and acknowledgments
+
+This OpenEnvision copy is based on [Takamatsu-Hikaru/AI-Research-Guide](https://github.com/Takamatsu-Hikaru/AI-Research-Guide). The source code and guide content are preserved; this edition adapts the repository README for English readers.
 
 [About the UESTC AI Club guide](content/guide/en/about.md). Club members wrote the opening essays, research Q&A, and personal accounts. Courses, papers, and blogs link to their original authors.
 
@@ -70,7 +68,7 @@ This guide continues the work of the [UESTC AI Club Guide](https://my.feishu.cn/
 
 ## Update the guide
 
-Edit [English Markdown](content/guide/en) or [Chinese Markdown](content/guide/zh) directly on GitHub. Changes to the main branch automatically generate HTML and publish the website. See the [editing and contribution guide](CONTRIBUTING.md#editing-in-english) for paper cards, company directories and page styling.
+Edit [English Markdown](content/guide/en) or [Chinese Markdown](content/guide/zh) directly on GitHub. Automatic deployment is disabled in this repository. The online reading links point to the existing English editions. See the [editing and contribution guide](CONTRIBUTING.md#editing-in-english) for paper cards, company directories and page styling.
 
 ## Build locally
 
@@ -83,7 +81,7 @@ npm run build:uestc    # second edition (uestc_ai skin)
 npm test               # regression checks across both editions
 ```
 
-Open `public/blog/guide/zh/index.html` or `public/blog/guide/en/index.html`; the second edition is at `public/blog/guide/guide-uestc/zh/index.html`.
+Open `public/blog/guide/en/index.html`; the second edition is at `public/blog/guide/guide-uestc/en/index.html`.
 
 
 The GitHub Pages and personal website editions share the club guide’s articles, paper cards, and presentation. The personal edition also retains the university letter, personal essays, and LessWrong selections on growth and work–life balance.

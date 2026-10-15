@@ -1,85 +1,87 @@
-<p align="center"><img src="public/blog/guide/logo-mark.png" width="190" alt="UESTC AI 社"></p>
+<p align="center"><img src="public/blog/guide/logo-mark.png" width="190" alt="UESTC AI Club"></p>
 
-<h1 align="center">AI 科研入门指南</h1>
-<p align="center">大学选择、第一项研究与一路上的经验</p>
-<p align="center"><b>中文</b> · <a href="README_EN.md">English</a> · <a href="https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/">在线阅读</a> · <a href="https://wiki.uestcai.top/zh/">社团平台版</a> · <a href="https://takamatsu-hikaru.github.io/blog/guide/zh/index.html">个人主页版</a> · <a href="https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/ama.html">讨论区</a></p>
+<h1 align="center">AI Research Guide</h1>
+<p align="center">University choices, your first research project, and lessons along the way</p>
+<p align="center"><a href="README_ZH.md">中文</a> · <b>English</b> · <a href="https://takamatsu-hikaru.github.io/AI-Research-Guide/en/">Read online</a> · <a href="https://wiki.uestcai.top/en/">Club platform edition</a> · <a href="https://takamatsu-hikaru.github.io/blog/guide/en/index.html">Personal website edition</a> · <a href="https://takamatsu-hikaru.github.io/AI-Research-Guide/en/ama.html">Discussions</a></p>
 
-这份指南面向刚进入大学、想了解 AI 和科研的同学。这里有我们对大学选择与科研入门的回答，也整理了入门项目、各方向的代表论文、课程和工具。联系老师、第一次进组、实验失败，以及和同龄人比较时的焦虑，也在其中。
+This guide is for students starting university who want to explore AI and research. It brings together our answers to questions about university choices and getting started in research, alongside beginner projects, key papers across research areas, courses, and tools. It also covers contacting faculty, joining a lab for the first time, failed experiments, and the anxiety of comparing yourself with your peers.
 
-[![AI 科研入门指南架构图](public/blog/guide/figures/uestc/home/guide-overview.webp)](https://wiki.uestcai.top/zh/)
+## Start here
 
-## 从这里开始
-
-| 你现在想了解什么 | 入口 |
+| What are you thinking about? | Read |
 | --- | --- |
-| 大学有哪些选择，自己想往哪里走 | [写给刚进大学的你](content/guide/zh/welcome.md) |
-| 为什么做科研，如何开始、找方向、联系老师 | [科研入门Q&A](content/guide/zh/research.md) |
-| 先做一个能看到结果的小项目 | [第一个 AI 项目](content/guide/zh/start.md) |
+| The choices university offers and where you want to go | [A letter to new university students](content/guide/en/welcome.md) |
+| Why try research? How do you begin, find a direction, or contact a supervisor? | [Getting started in research: 60 questions](content/guide/en/research.md) |
+| Making a small project work | [Your first AI project: where to begin?](content/guide/en/start.md) |
 
-## 内容导航
+## Explore the guide
 
-[术语与会议速查](https://takamatsu-hikaru.github.io/AI-Research-Guide/wiki/index.html)：查询中文、英文或缩写，按方向浏览术语、会议与期刊。
-
-| 板块 | 内容 |
+| Section | Topics |
 | --- | --- |
-| 基础与学习 | [学习基础知识](content/guide/zh/basics.md) · [论文选读](content/guide/zh/papers.md) |
-| 认识研究方向 | [AI 的不同方向，都在研究什么？](content/guide/zh/directions.md) · [大语言模型：理解、生成、推理](content/guide/zh/llm.md) · [Agent](content/guide/zh/agent.md) · [计算机视觉：让模型读懂图像](content/guide/zh/vision.md) · [多模态：图像、语言与声音](content/guide/zh/multimodal.md) · [生成模型](content/guide/zh/generation.md) · [强化学习](content/guide/zh/rl.md) · [世界模型](content/guide/zh/world-model.md) · [具身智能：从看见到行动](content/guide/zh/embodied.md) · [效率与系统](content/guide/zh/systems.md) · [AI 交叉学科](content/guide/zh/ai4x.md) |
-| 推进一项研究 | [找资料和读论文](content/guide/zh/reading.md) · [写作、画图和汇报](content/guide/zh/writing.md) · [联系老师、学长与合作](content/guide/zh/contact.md) · [AI 工具](content/guide/zh/ai.md) |
-| 经历与生活 | [经历、焚诀与走过的弯路](content/guide/zh/experience.md) · [论文阅读与笔记工作流](content/guide/zh/irene-workflow.md) · [大一年终总结：顿觉天地宽](content/guide/zh/timeline.md) · [怎么好好生活](content/guide/zh/life.md) |
-| 看看外面 | [Lookout：研究者和实验室最近在做什么？](content/guide/zh/lookout.md) · [技术博客与研究观点](content/guide/zh/blogs.md) · [LessWrong：研究判断与 AI 使用](content/guide/zh/lesswrong.md) · [深度学习课程与论文精读](content/guide/zh/limu.md) · [课题组与研究团队](content/guide/zh/labs.md) |
-| 找具体资料 | [资料总索引](content/guide/zh/resources.md) · [科研经验与交流](content/guide/zh/research-conversations.md) |
+| Foundations and learning | [Which foundations do you need, and how much?](content/guide/en/basics.md) · [Choose a paper to read](content/guide/en/papers.md) |
+| Research directions | [What do different AI research areas study?](content/guide/en/directions.md) · [Large language models: understanding, generation, and reasoning](content/guide/en/llm.md) · [Agents: getting models to do things](content/guide/en/agent.md) · [Computer vision: understanding images](content/guide/en/vision.md) · [Multimodal models: connecting images and language](content/guide/en/multimodal.md) · [Generative models: how an image is made](content/guide/en/generation.md) · [Reinforcement learning: actions have consequences](content/guide/en/rl.md) · [World models: predict, then act](content/guide/en/world-model.md) · [Embodied AI: from seeing to acting](content/guide/en/embodied.md) · [Efficiency and systems: making models run](content/guide/en/systems.md) · [Interdisciplinary AI](content/guide/en/ai4x.md) |
+| Doing research | [Finding and reading papers](content/guide/en/reading.md) · [Writing, figures, and talks](content/guide/en/writing.md) · [Contacting researchers and collaborating](content/guide/en/contact.md) · [Working with AI](content/guide/en/ai.md) |
+| Experience and life | [Experience, practical lessons, and wrong turns](content/guide/en/experience.md) · [Paper reading and note workflows](content/guide/en/irene-workflow.md) · [My Freshman-Year Review: The World Suddenly Opens Wide](content/guide/en/timeline.md) · [Living well](content/guide/en/life.md) |
+| Looking outside | [Lookout: what are researchers and labs working on?](content/guide/en/lookout.md) · [Technical blogs and research perspectives](content/guide/en/blogs.md) · [LessWrong: research judgment and AI use](content/guide/en/lesswrong.md) · [Mu Li: from courses to close paper reading](content/guide/en/limu.md) · [Getting to know research groups](content/guide/en/labs.md) |
+| Resources | [Resource index](content/guide/en/resources.md) · [Research methods and communication](content/guide/en/research-conversations.md) |
 
-[在线阅读](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/)包含全文搜索、可展开的科研问答，以及 10 个方向的简介、发展路线、术语和 带原图的论文卡片。每张卡片都附论文原文及相关项目链接。
+The [website](https://takamatsu-hikaru.github.io/AI-Research-Guide/en/) includes full-text search, expandable research Q&A, and introductions, roadmaps, terminology, and illustrated paper cards across 10 fields. Cards link to the original papers and related projects.
 
-[AI 编年史与方向总览](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/directions.html)串起主要研究路线；[Lookout](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/lookout.html)整理 AI 与机器人公司的研究入口。Agent 方向已补充 Generative Agents 的小镇和 Voyager 的 Minecraft 技能探索。
+The [AI chronicle and research overview](https://takamatsu-hikaru.github.io/AI-Research-Guide/en/directions.html) connect major research paths. [Lookout](https://takamatsu-hikaru.github.io/AI-Research-Guide/en/lookout.html) collects AI and robotics company research. The Agent section includes Generative Agents in Smallville and Voyager’s Minecraft skill exploration.
 
-## 研究社区与知识分享
+## Research communities and knowledge sharing
 
 ### OpenEnvision
 
-[OpenEnvision（OE）](https://openenvision.github.io/)是连接学术界与产业界的开放 AI 研究社区，关注世界模型、多模态、视觉与具身智能，也通过整理博客、访谈和课程，为社区分享研究知识。
+[OpenEnvision (OE)](https://openenvision.github.io/) is an open AI research community connecting academia and industry, with interests in world models, multimodal intelligence, vision, and embodied AI. It also shares research knowledge through curated writing, interviews, and courses.
 
-- [BlogrXiv：AI 研究博客与技术文章](https://openenvision.github.io/BlogrXiv/site/index.html)：汇集研究博客、实验室文章和技术笔记，涉及模型原理、工程经验与科研方法。
-- [ScholarTube：AI 访谈、播客与课程](https://openenvision.github.io/ScholarTube/)：收集研究者长访谈、视频播客、完整课程与学术报告，覆盖 Agent、世界模型、视觉、机器人及科研方法。
+- **[BlogrXiv: AI research blogs and technical writing](https://openenvision.github.io/BlogrXiv/site/index.html)** brings together research blogs, lab essays, and technical notes. Browse by field for explanations, engineering experience, and research methods, then follow links to the original articles.
+- **[ScholarTube: AI interviews, podcasts, and courses](https://openenvision.github.io/ScholarTube/)** collects long-form researcher interviews, video podcasts, complete courses, and research talks across agents, world models, vision, robotics, and research practice, with links to the original videos.
+
+You can also recommend articles and videos to [BlogrXiv](https://github.com/OpenEnvision/BlogrXiv) and [ScholarTube](https://github.com/OpenEnvision/ScholarTube).
+
 ### Lumina
 
-[Lumina](https://lumina-embodied.ai/)关注具身智能的研究、开源项目与社区交流，提供了[具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)，也定期举办 Lumina Talks、具身观察和社区活动。
+[Lumina](https://lumina-embodied.ai/) brings together embodied AI research, open projects and community events. Its [Embodied AI Guide](https://github.com/TianxingChen/Embodied-AI-Guide) organizes the field’s learning resources; Talks, research coverage and events on the website introduce the people and projects behind the work.
 
 ### AgentHub
 
-[AgentHub](https://hqhq1025.github.io/agent_hub/)把 Agent 社区里的讨论整理成日报和周报，涉及智能体研究、工具使用、工程实践与行业动态。分享大家最近遇到的问题，以及对技术方案的比较和判断。
+[AgentHub](https://hqhq1025.github.io/agent_hub/) collects discussions from the Agent community into daily and weekly digests, covering agent research, tools, engineering practice and industry developments. Browse by date, discussion group or external news to see what people are working through, how they compare technical approaches and where their views differ.
 
-## 交流与参与
+## Discuss and contribute
 
-欢迎在[讨论区](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/ama.html)聊学习、项目和科研中的问题。
+Bring questions about learning, projects, and research to the [discussion board](https://takamatsu-hikaru.github.io/AI-Research-Guide/en/ama.html).
 
-欢迎到 [GitHub 仓库](https://github.com/Takamatsu-Hikaru/AI-Research-Guide)提 Issue、提交 PR，补充资料或修正内容。觉得有用，也欢迎 Star、分享给身边的同学。
+Contributions are welcome on [GitHub](https://github.com/OpenEnvision/ai_research_guide): open an issue or submit a PR with corrections and resources. If you find the guide useful, give it a star or share it with others.
 
-中文正文在 [content/guide/zh](content/guide/zh)，英文正文在 [content/guide/en](content/guide/en)。方向介绍和论文卡片的数据在 [content/guide/fieldnotes](content/guide/fieldnotes)。
+Articles are in [content/guide/zh](content/guide/zh) and [content/guide/en](content/guide/en). Field introductions and paper cards are in [content/guide/fieldnotes](content/guide/fieldnotes).
 
-## 关于与致谢
+## About and acknowledgments
 
-[关于 AI 社与这份指南](content/guide/zh/about.md)。大学开篇、科研问答和个人经历由社团成员撰写，课程、论文和博客链接到原作者页面。
+This OpenEnvision copy is based on [Takamatsu-Hikaru/AI-Research-Guide](https://github.com/Takamatsu-Hikaru/AI-Research-Guide). The source code and guide content are preserved; this edition adapts the repository README for English readers.
 
-这份指南承接[《UESTC AI 社指南》](https://my.feishu.cn/docx/HQYodz7thohS1Nxo6KAcoeNtnbb)及 AI4UESTC_Beginners 的整理工作，感谢旧库作者与贡献者。[Lumina 具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)为具身方向的组织与资料选取提供了参考。论文插图的来源记录在[配图索引](content/guide/paper-figures.json)。
+[About the UESTC AI Club guide](content/guide/en/about.md). Club members wrote the opening essays, research Q&A, and personal accounts. Courses, papers, and blogs link to their original authors.
 
-[irene](https://github.com/tseirene6) 分享了[论文阅读与笔记工作流](content/guide/zh/irene-workflow.md)，提供了论文与笔记管理、科研简报、阅读深度和 AI 追问的实践经验。相关文章中的对应方法由这份分享整理。
+This guide continues the work of the [UESTC AI Club Guide](https://my.feishu.cn/docx/HQYodz7thohS1Nxo6KAcoeNtnbb) and AI4UESTC_Beginners. We thank their authors and contributors. The [Lumina Embodied AI Guide](https://github.com/TianxingChen/Embodied-AI-Guide) informed the organization and resource selection for embodied AI. Figure attribution is recorded in the [figure index](content/guide/paper-figures.json).
 
-## 更新内容
+[irene](https://github.com/tseirene6) contributed the experience behind [Paper reading and note workflows](content/guide/en/irene-workflow.md): paper and note management, research briefs, reading depth, and questions from AI. Related methods throughout the guide are adapted from this account.
 
-直接在 GitHub 编辑 [中文 Markdown](content/guide/zh) 或 [英文 Markdown](content/guide/en)，提交到主分支后会自动生成 HTML 并发布网站。论文小卡、公司目录与页面样式的编辑位置见[更新与贡献说明](CONTRIBUTING.md)。
+## Update the guide
 
-## 本地构建
+Edit [English Markdown](content/guide/en) or [Chinese Markdown](content/guide/zh) directly on GitHub. Automatic deployment is disabled in this repository. The online reading links point to the existing English editions. See the [editing and contribution guide](CONTRIBUTING.md#editing-in-english) for paper cards, company directories and page styling.
 
-需要 Node.js 22 或更高版本。
+## Build locally
+
+Use Node.js 22 or newer.
 
 ```bash
 npm ci
-npm run build          # GitHub Pages / 个人版
-npm run build:uestc    # 社团版
-npm test               # 两套版式的回归检查
+npm run build          # default edition
+npm run build:uestc    # second edition (uestc_ai skin)
+npm test               # regression checks across both editions
 ```
 
-打开 `public/blog/guide/zh/index.html` 或 `public/blog/guide/en/index.html`；第二套版式在 `public/blog/guide/guide-uestc/zh/index.html`。
+Open `public/blog/guide/en/index.html`; the second edition is at `public/blog/guide/guide-uestc/en/index.html`.
 
-GitHub Pages 版发布到 [AI-Research-Guide](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/)，社团版发布到 [wiki.uestcai.top](https://wiki.uestcai.top/zh/)，个人主页版位于 [blog/guide](https://takamatsu-hikaru.github.io/blog/guide/zh/)。三个入口共用正文、方向小卡与图文排版；个人版另保留大学开篇、个人经历和 LessWrong 的成长与生活文章。
+
+The GitHub Pages and personal website editions share the club guide’s articles, paper cards, and presentation. The personal edition also retains the university letter, personal essays, and LessWrong selections on growth and work–life balance.
