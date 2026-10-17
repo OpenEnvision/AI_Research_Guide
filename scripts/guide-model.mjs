@@ -1,5 +1,5 @@
-// Shared renderer. The club edition has its own manifest and optional page
-// files; the personal edition continues to read the original content.
+// Shared bilingual renderer. The compact edition selects a subset of the
+// same reviewed articles through its own manifest.
 //
 // `assets` is the relative prefix that reaches public/blog/guide/ from a
 // generated page's directory: '../' for guide/<lang>/<page>.html (the default,
@@ -7,20 +7,34 @@
 // guide/guide-uestc/<lang>/<page>.html.
 import fs from 'node:fs';
 import path from 'node:path';
-import { marked } from 'marked';
+import { Marked } from 'marked';
 import { loadFields, fieldNotes, paperLibrary } from './fieldnotes.mjs';
 import { enrichDirectory } from './guide-directory.mjs';
 import { amaPage } from './ama-page.mjs';
 
 export const GROUPS=['先从这里开始','开始学习','研究方向','做研究时来查','经历与生活','看看外面','资料总索引','交流与提问','关于'];
-export const EN_GROUPS=['Start here','Start learning','Research directions','While doing research','Experience & life','Look outside','Resource index','Questions & conversations','About'];
+export const EN_GROUPS=['Start here','Start learning','Research areas','Research practice','Experience & life','Research communities','Resource index','Questions & conversations','About'];
 export const QUESTIONS=60;
-export const STRINGS={zh:{brand:'AI 科研入门指南',blog:'GitHub 仓库',search:'搜索',menu:'目录',close:'关闭',onpage:'本页内容',all:'展开全部',collapse:'收起全部',questions:'60 个问题',home:'指南首页',source:'编辑本页',prev:'上一篇',next:'下一篇',placeholder:'搜索文章、问题和资料',hint:'例如：MNIST、联系老师、Scaling Ladder',empty:'没有找到，试试短一点的词。',label:'搜索指南',theme:'切换深浅色',skip:'跳到正文'},en:{brand:'AI Research Guide',blog:'GitHub repository',search:'Search',menu:'Contents',close:'Close',onpage:'On this page',all:'Expand all',collapse:'Collapse all',questions:'60 questions',home:'Guide home',source:'Edit this page',prev:'Previous',next:'Next',placeholder:'Search articles, questions, and resources',hint:'Try MNIST, contacting a supervisor, or Scaling Ladder',empty:'No matches. Try a shorter phrase.',label:'Search the guide',theme:'Toggle color theme',skip:'Skip to content'}};
+export const STRINGS={zh:{brand:'AI 学习与科研指南',blog:'GitHub 仓库',search:'搜索',menu:'目录',close:'关闭',onpage:'本页内容',all:'展开全部',collapse:'收起全部',questions:'60 个问题',home:'指南概览',source:'编辑本页',prev:'上一篇',next:'下一篇',placeholder:'搜索文章、论文与学习资源',hint:'可检索研究主题、论文、课程与科研方法。',empty:'未找到匹配结果，请调整关键词。',label:'搜索指南',theme:'切换颜色主题',skip:'跳到正文'},en:{brand:'AI Learning & Research Guide',blog:'GitHub repository',search:'Search',menu:'Contents',close:'Close',onpage:'On this page',all:'Expand all',collapse:'Collapse all',questions:'60 questions',home:'Guide overview',source:'Edit this page',prev:'Previous',next:'Next',placeholder:'Search articles, questions, and resources',hint:'Search research topics, papers, courses, and research methods.',empty:'No matching results. Refine your search terms.',label:'Search the guide',theme:'Toggle color theme',skip:'Skip to content'}};
 
 export const escape=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const plain=s=>s.replace(/<[^>]*>/g,' ').replace(/&amp;/g,'&').replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/\s+/g,' ').trim();
 export const filename=id=>id==='home'?'index.html':id+'.html';
 export const groupName=(g,l)=>l==='zh'?g:g==='科研实践'?'Research practice':EN_GROUPS[GROUPS.indexOf(g)];
+
+// CommonMark treats a punctuation-ending closing delimiter followed by a Han
+// character as part of a word. Chinese labels such as **初学者：**建立 therefore
+// need a narrow inline rule; tokenizing here leaves escapes, code and raw HTML
+// alone, instead of replacing asterisks in the source or rendered document.
+const guideMarkdown=new Marked({gfm:true,tokenizer:{
+ emStrong(src){
+  if(this.lexer.state.inRawBlock)return false;
+  const match=/^\*\*((?=[^*\n]*\p{Script=Han})[^\s*][^*\n]*[\p{P}\p{S}])\*\*(?=\p{Script=Han})/u.exec(src);
+  if(!match)return false;
+  return {type:'strong',raw:match[0],text:match[1],tokens:this.lexer.inlineTokens(match[1])};
+ }
+}});
+export const renderGuideMarkdown=raw=>guideMarkdown.parse(raw);
 
 // Asset paths authored directly inside Markdown. Templates cannot reach these,
 // so they are rewritten here against the same `assets` prefix. With the default
@@ -37,19 +51,25 @@ export function loadGuide(root,assets='../',edition='personal'){
  const editionRoot=edition==='uestc'?path.join(content,'uestc'):content;
  const manifest=JSON.parse(fs.readFileSync(path.join(editionRoot,'manifest.json'),'utf8'));
  const fields=loadFields(root,edition);
- const lookoutCopy=JSON.parse(fs.readFileSync(path.join(content,'uestc/lookout-directory.json'),'utf8'));
+ const lookoutCopy=Object.fromEntries(['zh','en'].map(lang=>[lang,JSON.parse(fs.readFileSync(path.join(content,`uestc/lookout-directory${lang==='en'?'.en':''}.json`),'utf8'))]));
  const all={zh:[],en:[]};
  for(const lang of ['zh','en'])for(const p of manifest){
-  const override=path.join(editionRoot,lang,p.id+'.md');
-  const source=fs.existsSync(override)?override:path.join(content,lang,p.id+'.md');
+  // All published editions use the same reviewed, bilingual source. The
+  // compact edition differs only in its manifest, not its research advice.
+  const source=path.join(content,lang,p.id+'.md');
   const sourcePath=path.relative(root,source).split(path.sep).join('/');
   const raw=fs.readFileSync(source,'utf8');
   const title=raw.match(/^# (.+)$/m)?.[1];if(!title)throw Error('Missing title '+lang+'/'+p.id);
-  let n=0;let html=marked.parse(raw,{gfm:true}).replace(/<h([23])>([\s\S]*?)<\/h\1>/g,(_,level,text)=>`<h${level} id="sec-${++n}">${text}</h${level}>`);
+  let n=0;let html=renderGuideMarkdown(raw).replace(/<h([23])>([\s\S]*?)<\/h\1>/g,(_,level,text)=>`<h${level} id="sec-${++n}">${text}</h${level}>`);
   html=markdownAssets(html,assets);
   html=html.replace(/<p>(<a id="[^"]+"><\/a>)<\/p>/g,'$1');
   let resource=0;html=html.replace(/<li>(?=\s*(?:<p>)?\s*<strong><a href="https?:)/g,()=>`<li id="resource-${++resource}">`);
-  html=html.replace(/href="(?!https?:)([^"]+)\.md(?:#([^"]+))?"/g,(_,id,anchor)=>`href="${filename(id)}${anchor?'#'+anchor:''}"`);
+  // Bare Markdown filenames are guide articles. Downloadable Markdown under
+  // asset directories must keep its real suffix.
+  html=html.replace(/href="([^"/:]+)\.md(?:#([^"]+))?"/g,(_,id,anchor)=>`href="${filename(id)}${anchor?'#'+anchor:''}"`);
+  // Personal essays remain available in the full edition. The compact
+  // manifest omits them, so its overview must not link to missing articles.
+  if(edition==='uestc'&&p.id==='home')html=html.replace(/<p>(?:(?!<\/p>)[\s\S])*?href="(?:welcome|experience|timeline|life)\.html"(?:(?!<\/p>)[\s\S])*?<\/p>/g,'');
   html=html.replace(/<a href="(https?:[^"]+)"/g,'<a target="_blank" rel="noopener noreferrer" href="$1"');
   const field=fields.find(f=>f.id===p.id);
   if(field){
@@ -58,18 +78,18 @@ export function loadGuide(root,assets='../',edition='personal'){
    html=parts[1]+fieldNotes(field,lang,parts[2],parts[3],assets);
   }
   if(p.id==='papers'){
-   if(lang==='zh')html=html.replace('<!-- paper-library -->',paperLibrary(fields,lang,assets,{compact:true}));
-   else html=html.replace(/(<h1>[\s\S]*?<\/h1>)/,m=>m+paperLibrary(fields,lang,assets));
+   if(!html.includes('<!-- paper-library -->'))throw Error('Missing paper-library placement marker '+lang);
+   html=html.replace('<!-- paper-library -->',paperLibrary(fields,lang,assets,{compact:true}));
   }
   if(p.id==='ama')html+=amaPage(lang);
-  html=enrichDirectory(p.id,lang,html,assets,lang==='zh'&&p.id==='lookout'?lookoutCopy:{});
+  html=enrichDirectory(p.id,lang,html,assets,p.id==='lookout'?lookoutCopy[lang]:{});
   const headings=[...html.matchAll(/<h2 id="((?!title-)[^"]+)">([\s\S]*?)<\/h2>/g)].map(m=>({id:m[1],title:plain(m[2])}));
   if(p.id==='research'){
    html=html.replace(/<a id="(q\d+)"><\/a>\s*<h3[^>]*>([\s\S]*?)<\/h3>([\s\S]*?)(?=<a id="q\d+"|<h2|$)/g,(_,id,q,a)=>`<details class="qa" id="${id}"><summary>${q}</summary><div class="answer">${a}</div></details>\n`);
    if((html.match(/class="qa"/g)||[]).length!==QUESTIONS)throw Error('Question count '+lang);
    html=html.replace('<h2',`<div class="qa-tools"><span>${STRINGS[lang].questions}</span><button id="expand" type="button">${STRINGS[lang].all}</button></div><h2`);
   }
-  if(p.id==='home')html=html.replace(/(<h1>[\s\S]*?<\/h1>)/,m=>`<img class="home-logo" src="${assets}logo-mark.png" alt="UESTC AI 社">`+m);
+  if(p.id==='home')html=html.replace(/(<h1>[\s\S]*?<\/h1>)/,m=>`<img class="home-logo" src="${assets}logo-openenvision.png" alt="OpenEnvision">`+m);
   if(p.id==='home')html=html.replace(/(<h2[^>]*>[\s\S]*?)(?=<h2|$)/g,'<section class="home-section">$1</section>');
   all[lang].push({...p,title,html,headings,plain:plain(html),sourcePath});
  }
@@ -83,7 +103,7 @@ export function validateGuide(all,manifest){
  for(const lang of ['zh','en']){
   const pages=all[lang];const idsByPage=new Map(pages.map(p=>[filename(p.id),new Set([...p.html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]))]));
   for(const p of pages)for(const m of p.html.matchAll(/href="([^"#:]+\.html)(?:#([^"]+))?"/g)){
-   if(m[1].includes('://')||/^(?:\.\.\/){1,2}wiki\/index\.html$/.test(m[1]))continue;
+   if(m[1].includes('://')||/^(?:\.\.\/){1,2}wiki\/(?:index|en)\.html$/.test(m[1]))continue;
    if(!idsByPage.has(m[1])||(m[2]&&!idsByPage.get(m[1]).has(m[2])))throw Error(`Broken link ${lang}/${p.id}: ${m[0]}`);
   }
   report.resourceEntries[lang]=pages.filter(p=>p.id.startsWith('catalog-')).reduce((a,p)=>a+(p.html.match(/id="resource-/g)||[]).length,0);

@@ -3,19 +3,19 @@
   "zh": {
     "overview": [
       "世界模型尝试从观察和行动中学会环境怎样变化。例如机器人向前推杯子，模型预测杯子接下来会在哪里；智能体还可以比较几种行动的可能结果。预测对象可以是画面，也可以是压缩后的内部状态，关键是这些信息能怎样帮助完成任务。",
-      "这里有几条相邻但不同的路线：学习可供控制器使用的环境表示，在模型想象的轨迹里训练策略，或者行动前用模型搜索。生成看起来合理的视频是另一种能力。读论文时，把预测什么、训练谁、最后在哪里测效果分开，会更容易理解它们。"
+      "这里有几种相关但不同的方法：学习可供控制器使用的环境表示，在模型想象的轨迹里训练策略，或者行动前用模型搜索。生成看起来合理的视频是另一种能力。读论文时，分别明确预测对象、训练对象与最终评价环境，会更容易理解这些方法。"
     ],
     "solves": [
       "把高维观察压缩成保留任务信息的表示，帮助策略判断当前处境。",
       "在学到的环境中产生训练轨迹，减少部分真实交互需求。",
       "行动前比较可能的后果，为搜索和规划提供预测。"
     ],
-    "stance": "判断世界模型是否有用，要看它支持了什么决策，以及模型里的好结果能否回到真实任务中成立。",
+    "stance": "判断世界模型是否有用，要看它支持了什么决策，以及模型中得到的良好结果能否在真实任务中成立。",
     "roadmap": [
       {
         "year": "2018",
         "title": "把视觉、记忆与控制拆开",
-        "text": "World Models 用压缩表示和变化预测支持小控制器，并展示在模型生成的环境里训练。",
+        "text": "World Models 用压缩表示和变化预测支持小型控制器，并展示了在模型生成的环境中训练控制器的方法。",
         "papers": [
           "wm-world-models"
         ]
@@ -74,15 +74,15 @@
   },
   "en": {
     "overview": [
-      "A world model learns how an environment changes from observations and actions. If a robot pushes a cup, it may predict where the cup will move; an agent can compare the consequences of several actions. Predictions may concern images or compressed internal states. Their value depends on how they help a task.",
-      "Related routes learn useful representations for controllers, train policies on imagined trajectories, or search with a model before acting. Producing plausible videos is another capability. Keep three questions separate when reading: what is predicted, which component is trained, and where the final outcome is evaluated."
+      "A world model learns how an environment changes from observations and actions. If a robot pushes a cup, it may predict where the cup will move; an agent can compare the consequences of several actions. Predictions may concern images or compressed internal states. Their value depends on how they help solve a task.",
+      "Related approaches learn useful representations for controllers, train policies on imagined trajectories, or search with a model before acting. Producing plausible videos is another capability. Keep three questions separate when reading: what is predicted, which component is trained, and where the final outcome is evaluated."
     ],
     "solves": [
       "Compress high-dimensional observations into representations useful for decisions.",
-      "Generate training trajectories in a learned environment, reducing some real interaction needs.",
+      "Generate training trajectories in a learned environment, reducing some of the need for real-world interaction.",
       "Predict consequences to support search and planning before acting."
     ],
-    "stance": "Judge a world model by the decisions it supports and whether success inside the model survives evaluation in the actual task.",
+    "stance": "Judge a world model by the decisions it supports and whether success inside the model carries over to the actual task.",
     "roadmap": [
       {
         "year": "2018",
@@ -103,7 +103,7 @@
       {
         "year": "2025",
         "title": "Learn behavior on imagined trajectories",
-        "text": "The formal DreamerV3 paper studies one configuration across task families. Follow how the world model, actor, and critic work together.",
+        "text": "The published DreamerV3 paper studies one configuration across task families. Follow how the world model, actor, and critic work together.",
         "papers": [
           "wm-dreamerv3"
         ]
@@ -112,7 +112,7 @@
     "terms": [
       {
         "term": "Latent state",
-        "text": "A compressed internal representation of observations and history. Individual dimensions need not have readable meanings."
+        "text": "A compressed internal representation of observations and history. Individual dimensions need not have interpretable meanings."
       },
       {
         "term": "Dynamics model",
@@ -129,7 +129,7 @@
     ],
     "checklist": [
       "Label inputs and outputs of the vision, memory, and controller components in World Models; draw one interaction loop.",
-      "Compare MuZero and Dreamer in a table: predicted quantities, policy-training location, and search at decision time.",
+      "Compare MuZero and Dreamer in a table: predicted quantities, where policy training takes place, and search at decision time.",
       "Compare a predicted trajectory with an actual one. Mark where they diverge and which action choice the error might change."
     ],
     "figure": {
@@ -156,7 +156,7 @@
         "tag": "表示 · 记忆 · 控制",
         "question": "能否先学环境表示，再用很小的控制器完成任务？",
         "idea": "视觉模块压缩画面，循环模型学习变化，控制器利用二者提供的信息选动作。",
-        "why": "交互页面让几个模块各自做什么非常直观。",
+        "why": "交互页面直观地展示了各模块的作用。",
         "read": "先看 Agent Model 与 Car Racing，再看在 VizDoom 的想象环境中训练。",
         "limit": "控制器可能利用模型误差；模型内高回报需要回到原环境检验。"
       },
@@ -185,10 +185,10 @@
       },
       "en": {
         "tag": "MuZero · Learning and search",
-        "question": "Can a learned model support search without supplied dynamics?",
-        "idea": "Predict reward, value, and policy in internal states, then compare choices with tree search.",
+        "question": "Can a learned model support search without being given the environment's dynamics?",
+        "idea": "Predict rewards, values, and policies from internal states, then compare choices with tree search.",
         "why": "Useful models need not reconstruct every pixel.",
-        "read": "Follow planning, acting, and training before game results.",
+        "read": "Follow the planning, action, and training processes before examining the game results.",
         "limit": "The paper evaluates specific games and action interfaces."
       }
     },
@@ -205,11 +205,11 @@
         "idea": "用交互经验训练世界模型，在预测轨迹中训练 actor 与 critic，并稳定不同损失与信号的尺度。",
         "why": "它把世界模型与行为学习连起来，也展示跨任务评估应怎样组织。",
         "read": "先看训练流程图与 Learning algorithm，再看任务分组和消融。",
-        "limit": "统一配置不等于一个预训练模型直接通吃所有任务；各任务仍需训练与交互。"
+        "limit": "统一配置不意味着一个预训练模型可以直接完成所有任务；各任务仍需训练与交互。"
       },
       "en": {
         "tag": "DreamerV3 · Learning in imagination",
-        "question": "How can one algorithm handle different task signal scales?",
+        "question": "How can one algorithm handle tasks whose learning signals differ in scale?",
         "idea": "Learn a world model from experience, train actor and critic on imagined trajectories, and stabilize losses and signal scales.",
         "why": "It connects predictive learning with behavior learning and cross-task evaluation.",
         "read": "Start with the training diagram, learning algorithm, and ablations.",

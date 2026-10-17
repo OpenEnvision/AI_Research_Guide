@@ -1,13 +1,25 @@
-# AI科研入门指南
+# AI 学习与科研指南
 
-各位同学，欢迎来到 UESTC AI 社的入门指南。如果你对 **AI 和科研感兴趣**，却还不知道从哪里开始入门；或者已经开始参与项目或规划找课题组，却不知道怎么联系老师，对接工作；或者已经加入了自己的课题组，但是仍然对**想 idea、推进工作**感到迷茫。我们希望这份指南能够帮助到你。
+OpenEnvision AI Research Guide 面向希望系统学习人工智能、开展项目并逐步参与科研的学习者，涵盖编程与数学基础、机器学习与深度学习、主要研究方向，以及文献阅读、实验设计、评测和学术交流。中英文页面提供对应入口，课程与练习围绕可检查的学习成果组织。
 
-<figure class="resource-figure guide-overview"><a href="../../../public/blog/guide/figures/uestc/home/guide-overview.png?v=2" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/uestc/home/guide-overview.webp?v=2" width="1600" height="904" alt="指南全览：开始学习、研究方向、科研实践、看看外面与资料索引；从初次接触、动手学习，到进入课题、形成判断和表达交流。" decoding="async" fetchpriority="high"></a></figure>
+**[学习路线](learning-path.md)** · **[MOOC 与课程](courses.md)** · **[练习与竞赛](practice.md)** · **[实验方法](research-methods.md)** · **[数据集与评测](datasets.md)**
 
-## 从哪里开始
+**[进阶专题路线](advanced-topics.md)** · **[研究工程与交付](engineering.md)** · **[可信与负责任 AI](responsible-ai.md)**
 
-| 如果你想…… | 可以看看↓↓ |
-|---|---|
+<figure class="resource-figure guide-overview"><a href="../../../public/blog/guide/figures/openenvision-guide-overview.svg" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/openenvision-guide-overview.svg" width="1600" height="904" alt="指南全览：开始学习、研究方向、科研实践、看看外面与资料索引；从初次接触、动手学习，到进入课题、形成判断和表达交流。" decoding="async" fetchpriority="high"></a></figure>
+
+## 按当前任务选择入口
+
+| 当前目标 | 建议入口 |
+| --- | --- |
+| 制定从基础到科研的学习计划 | [分阶段学习路线](learning-path.md) |
+| 选择中英文网课、MOOC、教材和专题课程 | [MOOC 与系统课程](courses.md) |
+| 练习 Python、算法、SQL 或参加数据竞赛 | [练习与学习平台](practice.md) |
+| 设计可靠实验并复现结果 | [实验设计与可复现研究](research-methods.md) |
+| 深入检索推荐、图、时序、因果、概率、音频或三维 | [进阶专题路线](advanced-topics.md) |
+| 把实验整理成可重跑、可交付的项目 | [研究工程与交付](engineering.md) |
+| 检查公平、鲁棒性、隐私、解释与 Agent 安全 | [可信与负责任 AI](responsible-ai.md) |
+| 选择数据集、基准与指标 | [数据集与评测方法](datasets.md) |
 | 找一个 AI 入门项目，先动手试试 | [第一个 AI 项目](start.md) |
 | 了解 AI 有哪些研究方向、分别在做什么 | [研究方向总览](directions.md) |
 | 补一补编程、数学、机器学习等基础 | [学习基础知识](basics.md) |
@@ -21,7 +33,7 @@
 
 ## AI 编年史
 
-如果你想宏观地了解 AI 的历史，可以看这段有关AI发展的介绍视频。从达特茅斯会议，到语言模型、生成、机器人与科学发现，再到未来的 AGI，我们都身在其中。
+这段历史导览串联了人工智能的重要研究路径。历史梳理用于建立背景；对具体方法、能力和发展趋势的判断，应进一步核对原始论文与实验材料。
 
 <video class="chronicle-video" controls preload="none" playsinline poster="../chronicle/poster.jpg" aria-label="AI 编年史">
 <source src="../chronicle/ai-chronicle.mp4" type="video/mp4">
@@ -34,13 +46,13 @@
 
 [研究者与实验室动态](lookout.md) · [技术博客与研究观点](blogs.md) · [论文选读](papers.md)
 
-[关于 AI 社与这份指南](about.md)
+[关于 OpenEnvision 与这份指南](about.md)
 
 ## 研究社区与知识分享
 
 ### OpenEnvision
 
-[OpenEnvision（OE）](https://openenvision.github.io/)是连接学术界与产业界的开放 AI 研究社区，关注**世界模型、多模态、视觉与具身智能**，也通过整理博客、访谈和课程，为社区分享研究知识。
+[OpenEnvision（OE）](https://openenvision.org/)是连接学术界与产业界的开放 AI 研究社区，关注**世界模型、多模态、视觉与具身智能**，也通过整理博客、访谈和课程，为社区分享研究知识。
 
 - [BlogrXiv：AI 研究博客与技术文章](https://openenvision.github.io/BlogrXiv/site/index.html)：汇集研究博客、实验室文章和技术笔记，涉及模型原理、工程经验与科研方法。
 - [ScholarTube：AI 访谈、播客与课程](https://openenvision.github.io/ScholarTube/)：收集研究者长访谈、视频播客、完整课程与学术报告，覆盖 Agent、世界模型、视觉、机器人及科研方法。
@@ -54,4 +66,4 @@
 
 ## 更多学习资料
 
-我们整理了一份[资料总索引](resources.md)，包括课程、论文、教程、博客和其他学习资源，可以按主题浏览，也可以直接搜索。
+[资源总索引](resources.md)按学习任务连接课程、教材、练习、数据、论文与科研工具。新课程和平台条目注明资源类型、语言、先修要求与建议产出；访问与收费规则以提供方当期说明为准。

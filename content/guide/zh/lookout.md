@@ -2,7 +2,7 @@
 
 公司的研究发布、实验室博客和开源项目记录了 AI 的新进展；访谈与社区讨论里，还有研究者的工作经历、技术判断和想法。
 
-## 论文与研究入口
+## 论文与研究动态
 
 <div class="lookout-grid">
 <section class="lookout-resource"><h4><a href="https://research.google/pubs/"><img src="../../../public/blog/guide/figures/uestc/lookout/google-research.png" alt="" width="40" height="40" loading="lazy"><span>Google Research</span></a></h4><p>机器学习、计算机系统与科学计算等领域的论文与研究成果。</p></section>
@@ -52,7 +52,7 @@
 ### 访谈与行业评论
 
 <div class="lookout-grid two">
-<section class="lookout-resource"><h4><a href="https://zpotentials.substack.com/"><img src="../../../public/blog/guide/figures/uestc/lookout/zpotentials.png" alt="" width="40" height="40" loading="lazy"><span>Z Potentials</span></a></h4><p>AI 团队、研究者与创业者访谈，聊研究、团队与产品。</p></section>
+<section class="lookout-resource"><h4><a href="https://zpotentials.substack.com/"><img src="../../../public/blog/guide/figures/uestc/lookout/zpotentials.png" alt="" width="40" height="40" loading="lazy"><span>Z Potentials</span></a></h4><p>AI 团队、研究者与创业者访谈，讨论研究、团队与产品。</p></section>
 <section class="lookout-resource"><h4><a href="https://funeralai.substack.com/"><img src="../../../public/blog/guide/figures/uestc/lookout/funeralai.webp" alt="" width="40" height="40" loading="lazy"><span>葬AI</span></a></h4><p>AI 产品体验、工具使用与行业评论。</p></section>
 </div>
 
@@ -60,7 +60,7 @@
 
 ### <img class="outlet-mark" src="../../../public/blog/guide/figures/uestc/lookout/xiaojun-logo-small.webp" alt="" width="36" height="36"> 张小珺 Jùn｜商业访谈录
 
-与研究者、创业者的长篇对谈，聊技术、工作经历和重要选择。[节目主页](https://www.xiaoyuzhoufm.com/podcast/626b46ea9cbbf0451cf5a962) · [B 站](https://space.bilibili.com/280780745/)
+与研究者、创业者的长篇对谈，讨论技术、工作经历和重要选择。[节目主页](https://www.xiaoyuzhoufm.com/podcast/626b46ea9cbbf0451cf5a962) · [B 站](https://space.bilibili.com/280780745/)
 
 [谢赛宁这一期](https://www.xiaoyuzhoufm.com/episode/69b77577f8b8079bfa8eb837)从求学与研究经历聊到表征学习、research taste、世界模型和创业。
 
@@ -82,7 +82,9 @@
 
 ## 科研简报
 
-[科研简报工作流](irene-workflow.md#brief)介绍按研究主题订阅新论文、代码和技术文章的方法，包括选题、去重与定时推送的配置。
+[科研简报工作流](irene-workflow.md#brief)介绍如何围绕研究问题选择新论文、代码与技术文章，去除重复条目，并安排更新。先检查一期简报的内容，再决定合适的更新频率。
+
+为选中的条目注明原始链接与日期、所研究的问题、与已有工作的差异，以及一个想继续追问的问题。围绕问题整理的精简清单，比未经筛选的信息流更便于查阅。再按[阅读目的](reading.md#reading-depth)决定哪些值得深入。
 
 ## 研究社区与知识分享
 

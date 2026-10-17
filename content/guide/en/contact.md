@@ -1,43 +1,54 @@
-# Contacting researchers and collaborating
+# Academic contact and collaboration
 
-For many people, the difficult part is not knowing what happens after sending the message. You can begin by asking a specific question, learning about a project, or exploring a possible collaboration.
+A useful first message connects a specific piece of work to a clear question or proposed contribution. Faculty, researchers at different career stages, student peers, open-source maintainers, and paper authors can all be relevant contacts. Start with the work and the appropriate public contact channel.
 
-If you are drafting your first email, use the example below and replace the topic, prior attempts, and request with your own.
+## Identify a relevant contact
 
-## Find a reason to talk
+Read a recent paper, project page, or open call. Record what interests you, what you have already tried, and what guidance you need. Check whether the person has posted instructions for research inquiries or applications. A public paper or repository gives you a starting point for a question; it does not establish that the author is recruiting.
 
-Read the person's recent papers, projects, or open calls. Know what interests you, what you have tried, and what you want to ask.
+[Stanford's guide to emailing faculty](https://advising.stanford.edu/current-students/advising-student-handbook/email-faculty) offers advice on writing a concise academic email. Use the [research-group directory](labs.md) to follow questions and projects across institutions.
 
-[Stanford's guide to emailing faculty](https://advising.stanford.edu/current-students/advising-student-handbook/email-faculty) offers a useful model. Local instructors, students at other universities, and paper authors can all be people to talk to.
+## Write a focused first message
 
-## The first email can be short
+Use an informative subject, address the recipient by their stated name or title, and make the request easy to assess. Adapt this example to your background and task:
 
-Adapt the details in this example to your own situation:
+> Subject: Research collaboration inquiry — [specific topic or project]
+>
+> Dear [name],
+>
+> I am [name], a [student / junior researcher / other relevant role] working on [subject or topic] at [institution, if applicable]. I read your work on [paper/project] and am interested in [specific question]. I have tried [brief attempt]; my notes or code are available at [link].
+>
+> Are you currently considering collaborators with my background on this topic? I can commit approximately [time] per week during [dates], working [remotely/in person]. If appropriate, I would appreciate a short conversation about a possible starting task and supervision.
+>
+> Thank you for your time.  
+> [Name]
 
-> Hello Professor, I am an undergraduate studying [subject] at [university], currently exploring long-horizon agents. After reading [paper] from your group, I became interested in its failure-recovery component. I tried the related example and wrote a one-page record.  
->  
-> May I ask whether you have a task suitable for an undergraduate, or time for a short conversation about this question? I can currently commit [time] each week. My notes and CV are attached. Thank you.
+For a technical question, replace the request to join a project with the source location, your interpretation, and the unresolved point. State completed work accurately and share a small, relevant piece of work. Follow application instructions when they request a CV or other documents.
 
-State a specific request, such as checking an experimental setting or suggesting related work, so the recipient can assess the topic and time involved. If there is no reply, follow up once after a reasonable interval and continue checking other relevant contacts.
+If no interval is specified, allow time for the recipient’s working schedule and local holidays before sending one concise follow-up. Continue exploring other relevant opportunities. A delayed reply or lack of an opening tells you little beyond the availability of that particular opportunity.
 
-## What to clarify in the first conversation
+## Clarify the arrangement before beginning
 
-Ask about the actual task, supervision, communication, data, compute, and time. Explain your aims and foundations so both sides can assess the fit.
+Discuss the research question, first task, review date, day-to-day supervisor, meeting frequency, and expected time commitment. Confirm the data, compute, equipment, and access that will actually be available. A short trial should have an agreed scope, feedback process, and plan for how its outputs may be used.
 
-For a trial, agree on when to review its outcome. Discuss contribution, authorship, and handover expectations early and update them as the work changes.
+For work across institutions or regions, clarify remote participation, time zones, working language, affiliation requirements, and any formal application or funding arrangements. Discuss accessibility needs and constraints on your time without assuming everyone can attend live meetings or provide unpaid full-time work. State your constraints so that both sides can assess a feasible commitment.
 
-## How to ask when stuck
+Discuss contribution records, authorship, ownership or release of artifacts, and handover expectations early. Update the agreement when the work changes, using the applicable institutional and publication requirements.
 
-Expand “the program will not run” into what you wanted to execute, the environment, where it failed, and what you tried. Research questions similarly need the goal, observation, attempts, and hypothesis.
+## Ask for help with enough evidence
 
-The information-organization sections of [How To Ask Questions The Smart Way](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way) are useful. [How to work with a professor](https://www.cs.jhu.edu/~jason/advice/how-to-work-with-a-professor.html) also discusses records, updates, and collaboration.
+A useful question includes **the goal, observed behavior, previous attempts, and the remaining uncertainty**. For code, add the environment, relevant versions, a minimal example, and the exact error or unexpected result. For a paper, identify its version and the equation, figure, or passage in question.
 
-## Adjustments and handoff
+The sections on organizing a question in [How To Ask Questions The Smart Way (Chinese translation)](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way) offer examples. [How to work with a professor](https://www.cs.jhu.edu/~jason/advice/how-to-work-with-a-professor.html) discusses records, updates, and collaboration. Use the agreed feedback process to ask for help when a blocker puts the task at risk or consumes substantial resources. Clear information helps others respond; you do not need to resolve the problem or exhaust every tool before asking. Groups should make it clear where beginners can ask questions.
 
-If scope, time, or resources differ from the agreement, list the differences and discuss adjustments with the project contact. When ending the collaboration, confirm the end date, finished and unfinished tasks, code and data locations, handoff recipient, and use of outputs.
+## Review progress and resolve disagreements
 
-See [Q25](research.md#q25) for handoff checks and [questions 16–25](research.md#q16) for contact details.
+Bring a brief record of what changed, what the evidence shows, what remains uncertain, and what you plan to do next. Negative or inconclusive results can be useful when the comparison is sound and the records are clear. If you disagree, locate the assumption or evidence that leads to a different interpretation and propose a way to check it.
 
-## Other accounts of contacting and collaborating
+When feedback, scope, time, or resources differ from the agreement, describe the differences and discuss adjustments. For persistent concerns, use an appropriate supervisor or institutional support channel.
 
-[Research conversations](research-conversations.md) includes Jason Eisner's advice, and Stanford's email guide. If you do not yet know which groups exist, follow projects through the [lab directory](labs.md).
+## End or hand over a collaboration clearly
+
+Confirm the end date, completed and unfinished tasks, code and data locations, handoff recipient, access changes, and arrangements for continued use of outputs. Leave enough context for another person to understand the state of the work. See [Q25](research.md#q25) and [questions 16–25](research.md#q16) for related decisions.
+
+[Research experience and conversations](research-conversations.md) · [Research groups](labs.md)

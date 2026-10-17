@@ -11,7 +11,7 @@
     "kind": "term",
     "summary": "世界模型学习环境的结构与变化规律，帮助系统预测接下来可能发生的情况。",
     "detail": [
-      "给定当前画面和动作，模型可以预测物体如何移动，或预测更紧凑的内部状态。决策系统借助这些预测比较行为后果，也可以在模型中生成训练经验。"
+      "模型可以预测未来观测、潜在状态或奖励，决策系统据此比较行为后果或生成训练经验。它学到的是适用于某些数据和任务的预测关系；画面逼真不代表物理规律正确，也不保证能准确预测任意动作的后果。"
     ],
     "related": [
       "dynamics-model",
@@ -22,6 +22,10 @@
       {
         "title": "World Models",
         "url": "https://arxiv.org/abs/1803.10122"
+      },
+      {
+        "title": "Dream to Control: Learning Behaviors by Latent Imagination",
+        "url": "https://arxiv.org/abs/1912.01603"
       }
     ],
     "categories": [
@@ -39,7 +43,7 @@
     "category": "world-model",
     "group": "预测基础",
     "kind": "term",
-    "summary": "状态转移模型描述当前状态在动作作用下如何变化到下一状态。",
+    "summary": "状态转移模型描述在给定动作下，当前状态如何转变为下一状态。",
     "detail": [
       "推一下箱子后，它会往哪里移动、移动多远，都属于转移模型要预测的内容。模型可输出确定结果，也可表示多种可能结果及其概率。"
     ],
@@ -70,7 +74,7 @@
     "kind": "term",
     "summary": "前向模型根据当前情况和动作预测其后果。",
     "detail": [
-      "输入机械臂当前状态和施加的动作，模型预测下一时刻的状态或观测。它可以帮助检查某个候选动作会不会碰到桌面。"
+      "输入机械臂当前状态和动作，模型预测下一状态或观测。在状态到状态的场景中，前向模型可以就是状态转移模型；“前向”强调从动作预测后果的方向，与由前后状态推断动作的逆向模型相对。"
     ],
     "related": [
       "dynamics-model",
@@ -89,27 +93,62 @@
   },
   {
     "id": "inverse-model",
-    "term": "Inverse Model",
-    "zh": "逆向模型",
+    "term": "Inverse Dynamics Model",
+    "zh": "逆动力学模型",
     "aliases": [
-      "Inverse Dynamics Model"
+      "Inverse Model",
+      "逆向模型"
     ],
     "category": "world-model",
     "group": "预测基础",
     "kind": "term",
-    "summary": "逆向模型根据动作前后的状态，估计可能造成这次变化的动作。",
+    "summary": "在世界模型与表征学习中，逆动力学模型由变化前后的状态或观测推断中间动作。",
     "detail": [
-      "看到物体从左侧移到右侧，逆向模型推断中间可能使用了怎样的推动动作。多个动作可能产生类似变化，因此逆向问题可以具有多解。"
+      "看到物体从左侧移到右侧，模型估计可能的推动动作；多个动作可能产生类似变化，因此结果可能不唯一。这与根据末端目标位姿求关节构型的逆运动学不同。在经典机器人动力学中，逆动力学还常指由指定运动求所需力矩。"
     ],
     "related": [
       "forward-model",
       "action",
-      "robot-kinematics"
+      "inverse-kinematics",
+      "robot-dynamics"
     ],
     "sources": [
       {
         "title": "Curiosity-driven Exploration by Self-supervised Prediction",
         "url": "https://arxiv.org/abs/1705.05363"
+      },
+      {
+        "title": "Modern Robotics: Dynamics of Open Chains",
+        "url": "https://modernrobotics.northwestern.edu/chapters/chapter8/"
+      }
+    ],
+    "categories": [
+      "world-model"
+    ]
+  },
+  {
+    "id": "action-conditioned",
+    "term": "Action-conditioned Prediction",
+    "zh": "动作条件预测",
+    "aliases": [
+      "Action Conditioning"
+    ],
+    "category": "world-model",
+    "group": "预测基础",
+    "kind": "term",
+    "summary": "动作条件预测把将要执行的动作作为输入，预测不同选择分别会带来什么变化。",
+    "detail": [
+      "从机器人看到的同一画面出发，向左转和向右转会产生不同的后续画面。显式输入动作，使模型能够预测具体行动的后果。"
+    ],
+    "related": [
+      "forward-model",
+      "dynamics-model",
+      "conditioning"
+    ],
+    "sources": [
+      {
+        "title": "Learning Latent Dynamics for Planning from Pixels",
+        "url": "https://proceedings.mlr.press/v97/hafner19a"
       }
     ],
     "categories": [
@@ -124,7 +163,7 @@
       "Latent Transition"
     ],
     "category": "world-model",
-    "group": "预测基础",
+    "group": "状态表示与观测",
     "kind": "term",
     "summary": "潜在状态动力学在压缩后的内部表示中预测环境变化。",
     "detail": [
@@ -146,6 +185,72 @@
     ]
   },
   {
+    "id": "belief-state",
+    "term": "Belief State",
+    "zh": "信念状态",
+    "aliases": [
+      "State Belief",
+      "状态信念"
+    ],
+    "category": "world-model",
+    "group": "状态表示与观测",
+    "kind": "term",
+    "summary": "信念状态是在部分可观测环境中，根据观测和行动历史形成的、关于环境状态的概率分布。",
+    "detail": [
+      "机器人不确定物体在左柜还是右柜时，可以为两种位置分配概率，获得新观测后再更新。在给定正确 POMDP 模型且精确更新时，信念可以概括决策所需的历史；任意神经网络隐藏向量并不自动等同于这个概率分布。"
+    ],
+    "related": [
+      "pomdp",
+      "state",
+      "observation-model",
+      "latent-dynamics"
+    ],
+    "sources": [
+      {
+        "title": "Planning and acting in partially observable stochastic domains",
+        "url": "https://people.csail.mit.edu/lpk/papers/aij98-pomdp.pdf"
+      }
+    ],
+    "categories": [
+      "world-model",
+      "rl"
+    ],
+    "categoryGroups": {
+      "rl": "环境与交互"
+    }
+  },
+  {
+    "id": "observation-model",
+    "term": "Observation Model",
+    "zh": "观测模型",
+    "aliases": [
+      "Emission Model",
+      "观测概率模型"
+    ],
+    "category": "world-model",
+    "group": "状态表示与观测",
+    "kind": "term",
+    "summary": "观测模型描述在给定环境状态、以及必要时给定动作的条件下，可能接收到的观测及其概率。",
+    "detail": [
+      "同一物体位置在不同遮挡、传感器噪声或感知动作下可能产生不同图像。状态转移模型预测环境如何变化，观测模型描述这些状态如何呈现在传感器中；根据观测反推状态则属于状态估计。"
+    ],
+    "related": [
+      "observation",
+      "state",
+      "dynamics-model",
+      "belief-state"
+    ],
+    "sources": [
+      {
+        "title": "Planning and acting in partially observable stochastic domains",
+        "url": "https://people.csail.mit.edu/lpk/papers/aij98-pomdp.pdf"
+      }
+    ],
+    "categories": [
+      "world-model"
+    ]
+  },
+  {
     "id": "imagination",
     "term": "Imagination",
     "zh": "模型内想象",
@@ -154,7 +259,7 @@
       "想象轨迹"
     ],
     "category": "world-model",
-    "group": "预测与决策",
+    "group": "模型内决策",
     "kind": "term",
     "summary": "模型内想象是在已学习的环境模型中展开未来状态和动作序列。",
     "detail": [
@@ -184,7 +289,7 @@
       "Model-based Planning"
     ],
     "category": "world-model",
-    "group": "预测与决策",
+    "group": "模型内决策",
     "kind": "term",
     "summary": "基于世界模型的规划通过预测和比较候选动作的后果，选择更符合目标的行动。",
     "detail": [
@@ -214,11 +319,11 @@
       "Monte Carlo Tree Search"
     ],
     "category": "world-model",
-    "group": "预测与决策",
+    "group": "模型内决策",
     "kind": "term",
     "summary": "蒙特卡洛树搜索通过反复选择、扩展、评估和回传结果，逐渐把计算集中到更有希望的决策分支。",
     "detail": [
-      "下棋时，每个节点表示一个局面，每条边表示一步棋。系统多次评估候选后续，把结果回传到前面的分支；现代方法可用策略和价值网络辅助搜索。"
+      "下棋时，每个节点表示一个局面，每条边表示一步棋，搜索将评估结果回传并分配后续计算。MCTS 可以使用已知规则或模拟器，也可以结合学习到的模型、策略和价值网络；它是一种搜索方法，并不要求一定训练世界模型。"
     ],
     "related": [
       "world-planning",
@@ -229,35 +334,10 @@
       {
         "title": "Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model",
         "url": "https://arxiv.org/abs/1911.08265"
-      }
-    ],
-    "categories": [
-      "world-model"
-    ]
-  },
-  {
-    "id": "action-conditioned",
-    "term": "Action-conditioned Prediction",
-    "zh": "动作条件预测",
-    "aliases": [
-      "Action Conditioning"
-    ],
-    "category": "world-model",
-    "group": "预测基础",
-    "kind": "term",
-    "summary": "动作条件预测把将要执行的动作作为输入，预测不同选择分别会带来什么变化。",
-    "detail": [
-      "同一幅机器人面前的画面，向左转和向右转会产生不同的下一画面。显式输入动作，使模型能够回答具体行动的后果问题。"
-    ],
-    "related": [
-      "forward-model",
-      "dynamics-model",
-      "conditioning"
-    ],
-    "sources": [
+      },
       {
-        "title": "Learning Latent Dynamics for Planning from Pixels",
-        "url": "https://proceedings.mlr.press/v97/hafner19a"
+        "title": "Bandit based Monte-Carlo Planning",
+        "url": "https://sites.ualberta.ca/~szepesva/papers/ecml06.pdf"
       }
     ],
     "categories": [
@@ -276,7 +356,7 @@
     "kind": "term",
     "summary": "开环执行按事先确定的动作运行，在执行期间不根据新的观测调整这些动作。",
     "detail": [
-      "机械臂一次接收一整段动作后执行到底，期间杯子被挪动也不立即修正。开环预测常用于考察模型离开真实观测后，能连续推演多远。"
+      "若高层动作序列在执行期间不读取新视觉反馈，它在这一层是开环的，但底层电机仍可能使用闭环控制。“开环预测”则指模型连续推演时不再接收真实观测，是预测评估方式；应说明所指层级和时间范围。"
     ],
     "related": [
       "closed-loop",
@@ -290,8 +370,12 @@
       }
     ],
     "categories": [
-      "world-model"
-    ]
+      "world-model",
+      "robotics"
+    ],
+    "categoryGroups": {
+      "robotics": "规划与控制"
+    }
   },
   {
     "id": "closed-loop",
@@ -321,8 +405,12 @@
       }
     ],
     "categories": [
-      "world-model"
-    ]
+      "world-model",
+      "robotics"
+    ],
+    "categoryGroups": {
+      "robotics": "规划与控制"
+    }
   },
   {
     "id": "compounding-error",

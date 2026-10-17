@@ -4,14 +4,14 @@
     "term": "Embodied AI",
     "zh": "具身智能",
     "aliases": [
-      "Embodiment"
+      "Embodied Intelligence"
     ],
     "category": "robotics",
-    "group": "机器人任务",
+    "group": "具身基础",
     "kind": "term",
-    "summary": "具身智能研究具有身体或行动接口的系统如何通过感知和行动与环境交互。",
+    "summary": "具身智能研究具有物理身体或仿真身体的系统如何通过感知和行动与环境交互。",
     "detail": [
-      "机器人要取杯子，需要看见杯子、移动身体或机械臂、接触物体，再根据新反馈调整。它的身体尺寸、传感器和动作能力都会影响可学到的行为。"
+      "机器人取杯子时，需要感知物体、移动并接触，再根据反馈调整；身体结构与环境会共同限制它的行为。研究也可在仿真环境中进行。单纯能够调用软件工具，并不足以说明一个系统具备这里所说的具身能力。"
     ],
     "related": [
       "manipulation",
@@ -22,6 +22,36 @@
       {
         "title": "Habitat: A Platform for Embodied AI Research",
         "url": "https://arxiv.org/abs/1904.01201"
+      }
+    ],
+    "categories": [
+      "robotics"
+    ]
+  },
+  {
+    "id": "humanoid",
+    "term": "Humanoid Robot",
+    "zh": "人形机器人",
+    "aliases": [
+      "Humanoid",
+      "仿人机器人"
+    ],
+    "category": "robotics",
+    "group": "具身基础",
+    "kind": "term",
+    "summary": "人形机器人采用接近人体的结构，通常具有躯干、双腿以及双臂。",
+    "detail": [
+      "双腿支持机器人在楼梯等为人设计的场景中移动，双臂可承担操作任务。协调全身运动时，需要同时考虑平衡、关节范围、接触和目标动作。"
+    ],
+    "related": [
+      "locomotion",
+      "manipulation",
+      "degrees-of-freedom"
+    ],
+    "sources": [
+      {
+        "title": "Real-World Humanoid Locomotion with Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2303.03381"
       }
     ],
     "categories": [
@@ -60,17 +90,17 @@
   {
     "id": "locomotion",
     "term": "Locomotion",
-    "zh": "运动行走",
+    "zh": "机体移动",
     "aliases": [
-      "步态运动",
-      "移动控制"
+      "机器人移动",
+      "Body Locomotion"
     ],
     "category": "robotics",
     "group": "机器人任务",
     "kind": "term",
-    "summary": "运动行走研究机器人如何移动自身，并在运动过程中保持稳定。",
+    "summary": "机体移动研究机器人如何通过步行、滚动等方式改变自身位置，并维持可控运动。",
     "detail": [
-      "四足机器人上台阶时，需要安排每条腿的落脚位置和支撑时机。控制器结合身体姿态与关节信息，持续调整动作以达到目标速度或方向。"
+      "四足机器人需要协调落脚位置和支撑时机，轮式机器人则控制车轮产生位移。Locomotion 关注身体怎样移动；导航还需要判断当前位置、目标方向和可行路线。"
     ],
     "related": [
       "humanoid",
@@ -81,6 +111,10 @@
       {
         "title": "Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning",
         "url": "https://arxiv.org/abs/2109.11978"
+      },
+      {
+        "title": "Nav2: Navigation Concepts",
+        "url": "https://docs.nav2.org/rolling/getting_started/navigation_concepts/"
       }
     ],
     "categories": [
@@ -88,29 +122,30 @@
     ]
   },
   {
-    "id": "humanoid",
-    "term": "Humanoid Robot",
-    "zh": "人形机器人",
+    "id": "robot-navigation",
+    "term": "Robot Navigation",
+    "zh": "机器人导航",
     "aliases": [
-      "Humanoid",
-      "仿人机器人"
+      "Navigation",
+      "自主导航"
     ],
     "category": "robotics",
     "group": "机器人任务",
     "kind": "term",
-    "summary": "人形机器人采用接近人体的结构，通常具有躯干、双腿以及双臂。",
+    "summary": "机器人导航通过定位、路线选择和运动控制，把机器人引导到目标位置。",
     "detail": [
-      "双腿支持机器人在楼梯等为人设计的场景中移动，双臂可承担操作任务。协调全身运动时，需要同时考虑平衡、关节范围、接触和目标动作。"
+      "移动机器人可以估计自己在地图中的位置、规划绕开障碍的路线，再持续控制运动并处理新障碍。导航可使用已有地图或在线感知；它比单独生成一条路径或维持行走步态涉及更多环节。"
     ],
     "related": [
+      "motion-planning",
       "locomotion",
-      "manipulation",
-      "degrees-of-freedom"
+      "observation",
+      "closed-loop"
     ],
     "sources": [
       {
-        "title": "Real-World Humanoid Locomotion with Reinforcement Learning",
-        "url": "https://arxiv.org/abs/2303.03381"
+        "title": "Nav2: Navigation Concepts",
+        "url": "https://docs.nav2.org/rolling/getting_started/navigation_concepts/"
       }
     ],
     "categories": [
@@ -185,7 +220,7 @@
     "category": "robotics",
     "group": "身体与空间",
     "kind": "term",
-    "summary": "自由度是描述系统可独立变化的构型所需要的参数数量。",
+    "summary": "自由度是描述系统构型所需的独立参数数量。",
     "detail": [
       "单个转动关节通常提供一个独立角度；自由刚体在三维空间中有三个平移和三个旋转自由度。机械结构中的约束会减少实际可独立运动的维度。"
     ],
@@ -268,20 +303,21 @@
     "term": "Kinematics",
     "zh": "运动学",
     "aliases": [
-      "Forward Kinematics",
-      "正运动学"
+      "Robot Kinematics",
+      "机器人运动学"
     ],
     "category": "robotics",
-    "group": "运动与控制",
+    "group": "运动学与动力学",
     "kind": "term",
     "summary": "运动学研究机器人关节构型与各部分位置、方向和速度之间的几何关系。",
     "detail": [
-      "已知各关节角度，正运动学可以算出夹爪在哪里。它提供描述运动的几何工具，常用于把传感器读数、目标位姿和机械臂结构联系起来。"
+      "正运动学从关节变量求末端位姿，逆运动学从目标位姿求关节构型，二者都是运动学问题。运动学描述几何运动关系；分析产生这些运动所需的力和力矩则属于动力学。"
     ],
     "related": [
+      "forward-kinematics",
       "inverse-kinematics",
-      "joint-space",
-      "task-space"
+      "robot-dynamics",
+      "joint-space"
     ],
     "sources": [
       {
@@ -301,7 +337,7 @@
       "Robot Dynamics"
     ],
     "category": "robotics",
-    "group": "运动与控制",
+    "group": "运动学与动力学",
     "kind": "term",
     "summary": "动力学研究力、力矩、质量和惯性如何影响机器人的运动。",
     "detail": [
@@ -330,7 +366,7 @@
       "Inverse Kinematics"
     ],
     "category": "robotics",
-    "group": "运动与控制",
+    "group": "运动学与动力学",
     "kind": "term",
     "summary": "逆运动学根据末端目标位置和朝向，求出能够达到目标的关节构型。",
     "detail": [
@@ -352,6 +388,36 @@
     ]
   },
   {
+    "id": "forward-kinematics",
+    "term": "Forward Kinematics",
+    "zh": "正运动学",
+    "aliases": [
+      "FK"
+    ],
+    "category": "robotics",
+    "group": "运动学与动力学",
+    "kind": "term",
+    "summary": "正运动学根据机器人结构和关节变量，计算末端或其他连杆相对于参考坐标系的位姿。",
+    "detail": [
+      "给定各关节角度和连杆尺寸，可以计算夹爪的位置与朝向。它是运动学中的一个具体问题，不能代替整个运动学领域；它也不会直接计算执行动作所需的力矩。"
+    ],
+    "related": [
+      "robot-kinematics",
+      "inverse-kinematics",
+      "joint-space",
+      "end-effector"
+    ],
+    "sources": [
+      {
+        "title": "Modern Robotics: Forward Kinematics",
+        "url": "https://modernrobotics.northwestern.edu/nu-gm-book-resource/4-1-1-product-of-exponentials-formula-in-the-space-frame/"
+      }
+    ],
+    "categories": [
+      "robotics"
+    ]
+  },
+  {
     "id": "pid",
     "term": "PID",
     "zh": "比例—积分—微分控制",
@@ -359,9 +425,9 @@
       "PID Controller"
     ],
     "category": "robotics",
-    "group": "运动与控制",
+    "group": "规划与控制",
     "kind": "term",
-    "summary": "PID 根据当前误差、累积误差和误差变化速度，组合出控制输入。",
+    "summary": "PID 根据当前误差、累积误差和误差变化速度，组合形成控制输入。",
     "detail": [
       "控制关节到达目标角度时，比例项根据偏差施加纠正，积分项补偿持续残差，微分项响应误差变化。三个增益共同影响到位速度、振荡和稳态表现。"
     ],
@@ -388,7 +454,7 @@
       "Model Predictive Control"
     ],
     "category": "robotics",
-    "group": "运动与控制",
+    "group": "规划与控制",
     "kind": "term",
     "summary": "模型预测控制用模型优化未来一段动作序列，执行其中一部分后根据新观测重新规划。",
     "detail": [
@@ -410,6 +476,35 @@
     ]
   },
   {
+    "id": "motion-planning",
+    "term": "Motion Planning",
+    "zh": "运动规划",
+    "aliases": [
+      "路径规划"
+    ],
+    "category": "robotics",
+    "group": "规划与控制",
+    "kind": "term",
+    "summary": "运动规划寻找满足起点、目标和约束条件的机器人运动路径或轨迹。",
+    "detail": [
+      "机械臂要绕过挡板把杯子送到托盘上，规划器需要考虑障碍物、关节范围和运动可行性。规划结果再交给控制器跟踪执行。"
+    ],
+    "related": [
+      "robot-kinematics",
+      "task-space",
+      "mpc"
+    ],
+    "sources": [
+      {
+        "title": "Modern Robotics：Motion Planning",
+        "url": "https://modernrobotics.northwestern.edu/chapters/chapter10/"
+      }
+    ],
+    "categories": [
+      "robotics"
+    ]
+  },
+  {
     "id": "teleoperation",
     "term": "Teleoperation",
     "zh": "遥操作",
@@ -418,7 +513,7 @@
       "Teleop"
     ],
     "category": "robotics",
-    "group": "示范与学习",
+    "group": "示范与模仿学习",
     "kind": "term",
     "summary": "遥操作是人通过手柄、主控机械臂或其他接口远程控制机器人动作。",
     "detail": [
@@ -448,7 +543,7 @@
       "Demo"
     ],
     "category": "robotics",
-    "group": "示范与学习",
+    "group": "示范与模仿学习",
     "kind": "term",
     "summary": "动作示范是专家完成任务时留下的观测、动作及相关结果记录。",
     "detail": [
@@ -478,11 +573,11 @@
       "行为复制"
     ],
     "category": "robotics",
-    "group": "示范与学习",
+    "group": "示范与模仿学习",
     "kind": "term",
-    "summary": "行为克隆用监督学习拟合示范中的观测到动作映射。",
+    "summary": "行为克隆通过监督学习，拟合示范数据中从观测到动作的映射。",
     "detail": [
-      "训练样本可以是一张抓取前的画面及专家当时的夹爪动作。模型学会在类似观测下输出类似动作，执行时连续调用这个映射完成任务。"
+      "训练样本可以是一张抓取前的画面及示范者当时的夹爪动作。执行时的偏差可能使策略进入示范很少覆盖的状态，从而累积错误。行为克隆是一种模仿学习方法；它直接拟合示范动作，不等同于按累计奖励优化的强化学习。"
     ],
     "related": [
       "demonstration",
@@ -507,7 +602,7 @@
       "IL"
     ],
     "category": "robotics",
-    "group": "示范与学习",
+    "group": "示范与模仿学习",
     "kind": "term",
     "summary": "模仿学习通过专家的示范或反馈学习如何行动。",
     "detail": [
@@ -536,11 +631,11 @@
       "Vision-Language-Action Model"
     ],
     "category": "robotics",
-    "group": "示范与学习",
+    "group": "动作模型与表示",
     "kind": "term",
     "summary": "视觉语言动作模型结合视觉观测与语言指令，输出机器人可以执行的动作。",
     "detail": [
-      "输入桌面画面和“把苹果放进碗里”，模型将对象理解、指令语义与动作预测连接起来。输出可以是关节命令、末端位姿变化或动作令牌。"
+      "输入桌面画面和“把苹果放进碗里”，模型把视觉、语言与动作预测连接起来。动作输出可以是关节命令、末端位姿变化或动作令牌，通常还由控制系统执行。VLA 描述输入输出与模型能力，不规定只能使用模仿学习，也不保证所有输出都可安全执行。"
     ],
     "related": [
       "vlm",
@@ -565,7 +660,7 @@
       "Action Chunk"
     ],
     "category": "robotics",
-    "group": "示范与学习",
+    "group": "动作模型与表示",
     "kind": "term",
     "summary": "动作分块让模型一次预测连续多个时间步的动作序列。",
     "detail": [
@@ -594,7 +689,7 @@
       "Sim2Real"
     ],
     "category": "robotics",
-    "group": "迁移与感知",
+    "group": "仿真与迁移",
     "kind": "term",
     "summary": "仿真到现实迁移是把模拟环境中学到的机器人能力部署到真实硬件。",
     "detail": [
@@ -623,11 +718,11 @@
       "领域随机化"
     ],
     "category": "robotics",
-    "group": "迁移与感知",
+    "group": "仿真与迁移",
     "kind": "term",
     "summary": "域随机化在训练中改变环境或系统参数，让策略适应一系列变化。",
     "detail": [
-      "模拟抓取时，可以随机改变光照、纹理、物体质量和摩擦。模型因此接触更多条件，真实环境有机会落入训练时覆盖的变化范围。"
+      "模拟抓取时，可以随机改变光照、纹理、物体质量和摩擦。模型因此接触更多条件，真实环境便更有可能落在训练覆盖的变化范围内。"
     ],
     "related": [
       "sim-to-real",
@@ -653,7 +748,7 @@
       "触觉"
     ],
     "category": "robotics",
-    "group": "迁移与感知",
+    "group": "机器人感知",
     "kind": "term",
     "summary": "触觉感知通过接触传感器获取物体表面形状、压力或滑动等信息。",
     "detail": [
@@ -682,7 +777,7 @@
       "Proprioceptive State"
     ],
     "category": "robotics",
-    "group": "迁移与感知",
+    "group": "机器人感知",
     "kind": "term",
     "summary": "本体感知提供机器人自身关节、姿态、速度等身体状态的信息。",
     "detail": [
@@ -697,35 +792,6 @@
       {
         "title": "Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning",
         "url": "https://arxiv.org/abs/2109.11978"
-      }
-    ],
-    "categories": [
-      "robotics"
-    ]
-  },
-  {
-    "id": "motion-planning",
-    "term": "Motion Planning",
-    "zh": "运动规划",
-    "aliases": [
-      "路径规划"
-    ],
-    "category": "robotics",
-    "group": "运动与控制",
-    "kind": "term",
-    "summary": "运动规划寻找满足起点、目标和约束条件的机器人运动路径或轨迹。",
-    "detail": [
-      "机械臂要绕过挡板把杯子送到托盘上，规划器需要考虑障碍物、关节范围和运动可行性。规划结果再交给控制器跟踪执行。"
-    ],
-    "related": [
-      "robot-kinematics",
-      "task-space",
-      "mpc"
-    ],
-    "sources": [
-      {
-        "title": "Modern Robotics：Motion Planning",
-        "url": "https://modernrobotics.northwestern.edu/chapters/chapter10/"
       }
     ],
     "categories": [

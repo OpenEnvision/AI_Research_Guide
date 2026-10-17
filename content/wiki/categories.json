@@ -4,16 +4,16 @@
     "name": "会议与期刊",
     "short": "会议期刊",
     "section": "学术与基础",
-    "guide": "../zh/publishing.html",
-    "guideTitle": "投稿与发表"
+    "guide": "../zh/writing.html#submission",
+    "guideTitle": "科研写作、图表与学术汇报"
   },
   {
     "id": "publishing",
     "name": "论文与学术交流",
     "short": "学术交流",
     "section": "学术与基础",
-    "guide": "../zh/publishing.html",
-    "guideTitle": "投稿与发表"
+    "guide": "../zh/writing.html#submission",
+    "guideTitle": "科研写作、图表与学术汇报"
   },
   {
     "id": "training",
@@ -21,15 +21,15 @@
     "short": "模型训练",
     "section": "学术与基础",
     "guide": "../zh/basics.html",
-    "guideTitle": "基础怎么学"
+    "guideTitle": "基础知识：把概念连接起来"
   },
   {
     "id": "data",
     "name": "数据、实验与评测",
     "short": "数据评测",
     "section": "学术与基础",
-    "guide": "../zh/experiments.html",
-    "guideTitle": "把实验做明白"
+    "guide": "../zh/research-methods.html",
+    "guideTitle": "研究方法与实验设计"
   },
   {
     "id": "llm",
@@ -41,11 +41,11 @@
   },
   {
     "id": "agents",
-    "name": "Agent 与多智能体",
-    "short": "Agent",
+    "name": "智能体与多智能体",
+    "short": "智能体",
     "section": "研究方向",
     "guide": "../zh/agent.html",
-    "guideTitle": "Agent：让模型去做事"
+    "guideTitle": "智能体：工具、反馈与任务执行"
   },
   {
     "id": "rl",
@@ -53,7 +53,7 @@
     "short": "强化学习",
     "section": "研究方向",
     "guide": "../zh/rl.html",
-    "guideTitle": "强化学习：行动之后还有后果"
+    "guideTitle": "强化学习：从交互中学习"
   },
   {
     "id": "vision",
@@ -69,7 +69,7 @@
     "short": "多模态",
     "section": "研究方向",
     "guide": "../zh/multimodal.html",
-    "guideTitle": "多模态：把图像和语言接起来"
+    "guideTitle": "多模态：图像、语言与声音"
   },
   {
     "id": "generation",
@@ -77,7 +77,7 @@
     "short": "生成模型",
     "section": "研究方向",
     "guide": "../zh/generation.html",
-    "guideTitle": "生成模型：图像是怎样一步步得到的"
+    "guideTitle": "生成模型：目标、采样与控制"
   },
   {
     "id": "robotics",
@@ -93,7 +93,7 @@
     "short": "世界模型",
     "section": "研究方向",
     "guide": "../zh/world-model.html",
-    "guideTitle": "World Model：先预测，再行动"
+    "guideTitle": "世界模型：预测、表示与控制"
   },
   {
     "id": "graph-finance",
@@ -101,7 +101,7 @@
     "short": "图学习与金融",
     "section": "研究方向",
     "guide": "../zh/ai4x.html",
-    "guideTitle": "AI 交叉学科"
+    "guideTitle": "AI 交叉研究：从具体学科的问题出发"
   },
   {
     "id": "science",
@@ -109,7 +109,7 @@
     "short": "AI4Science",
     "section": "研究方向",
     "guide": "../zh/ai4x.html",
-    "guideTitle": "AI 交叉学科"
+    "guideTitle": "AI 交叉研究：从具体学科的问题出发"
   },
   {
     "id": "systems",
@@ -117,7 +117,7 @@
     "short": "效率与系统",
     "section": "工具与系统",
     "guide": "../zh/systems.html",
-    "guideTitle": "效率与系统：让模型真的跑得动"
+    "guideTitle": "效率与系统"
   },
   {
     "id": "development",
@@ -125,6 +125,6 @@
     "short": "开发与协作",
     "section": "工具与系统",
     "guide": "../zh/start.html",
-    "guideTitle": "第一个 AI 项目，从哪里开始"
+    "guideTitle": "第一个 AI 项目：从基线到可复现结果"
   }
 ]

@@ -1,6 +1,6 @@
 import './build-wiki.mjs';
-// Second edition of the guide, re-skinned in uestc_ai's visual language
-// (warm paper, coral accent, readable sans-serif headings, sidebar + topbar shell).
+// Second edition of the guide, with OpenEnvision branding and a
+// black, white and red palette in the shared sidebar + topbar shell.
 //
 // One content model, two output targets:
 //
@@ -16,12 +16,13 @@ import './build-wiki.mjs';
 //     Netlify, nginx, a file server) with no sibling files.
 //
 // Club pages come from content/guide/uestc, with shared pages as a fallback.
-// Navigation and search are built from the club manifest only.
+// Navigation and search are built from the compact manifest only.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadGuide, validateGuide, buildSearchData, searchDataJs, filename, QUESTIONS } from './guide-model.mjs';
-import { pageShell, redirectPage, vercelConfig, ASSETS } from './guide-shell-uestc.mjs';
+import { pageShell, ASSETS } from './guide-shell-uestc.mjs';
+import { landingPage } from './guide-landing.mjs';
 import { assertAssetsResolve } from './guide-verify.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
@@ -30,7 +31,7 @@ const STANDALONE=process.argv.includes('--standalone');
 
 const out=STANDALONE?path.join(root,'dist/guide-uestc-guide'):path.join(guideRoot,'guide-uestc');
 const assets=STANDALONE?'../':ASSETS;
-const skin=assets+'guide-uestc.css?v=20261012g';
+const skin=assets+'guide-uestc.css?v=20261016-foundations';
 
 const {manifest,all}=loadGuide(root,assets,'uestc');
 const report=validateGuide(all,manifest);
@@ -48,10 +49,14 @@ for(const lang of ['zh','en']){
  for(const file of fs.readdirSync(path.join(out,lang)))
   if(file.endsWith('.html')&&!expected.has(file))fs.unlinkSync(path.join(out,lang,file));
  for(const [index,p] of all[lang].entries())
-  fs.writeFileSync(path.join(out,lang,filename(p.id)),pageShell({p,pages:all[lang],index,lang,assets,skin}));
+  fs.writeFileSync(path.join(out,lang,filename(p.id)),pageShell({p,pages:all[lang],alternatePage:all[lang==='zh'?'en':'zh'].find(page=>page.id===p.id),index,lang,assets,skin}));
 }
-fs.writeFileSync(path.join(out,'search-data.js'),searchDataJs(buildSearchData(all)));
-fs.writeFileSync(path.join(out,'index.html'),redirectPage);
+const searchData=buildSearchData(all);
+// Search data belongs to each edition, even when its scripts are shared.
+fs.writeFileSync(path.join(out,'search-data.js'),searchDataJs(searchData));
+for(const lang of ['zh','en'])fs.writeFileSync(path.join(out,`search-data.${lang}.json`),JSON.stringify(searchData[lang]));
+fs.writeFileSync(path.join(out,'index.html'),landingPage({assets:STANDALONE?'':'../'}));
+fs.writeFileSync(path.join(out,'zh.html'),landingPage({lang:'zh',assets:STANDALONE?'':'../'}));
 
 if(STANDALONE){
  // Everything the pages link to, copied to the depth their markup expects.
@@ -59,17 +64,17 @@ if(STANDALONE){
  // a 2048px / 3.1MB source that no page should be loading.
  for(const dir of ['figures','brands','chronicle','sources','ai4x','wiki'])
   fs.cpSync(path.join(guideRoot,dir),path.join(out,dir),{recursive:true});
- const files=['favicon.png','logo-mark.png','guide.css','fieldnotes.css','guide-motion.css','guide-uestc.css','guide-intro.css','guide.js','fieldnotes.js','guide-motion.js','ama.js'];
+ const files=['favicon-openenvision.png','logo-openenvision.png','guide.css','fieldnotes.css','guide-motion.css','guide-uestc.css','guide-intro.css','guide-academic.css','guide-controls.css','guide-explorers.css','guide-explorers.js','landing.css','language-switch.css','landing.js','guide.js','fieldnotes.js','guide-motion.js','ama.js'];
  for(const file of files)fs.copyFileSync(path.join(guideRoot,file),path.join(out,file));
  // GitHub Pages would otherwise run the output through Jekyll.
  fs.writeFileSync(path.join(out,'.nojekyll'),'');
- // Edge redirect for "/" so the root never renders the meta-refresh page.
- fs.writeFileSync(path.join(out,'vercel.json'),vercelConfig);
+ // Serve the actual bilingual presentation homepage at the package root.
+ fs.writeFileSync(path.join(out,'vercel.json'),JSON.stringify({cleanUrls:false},null,2)+'\n');
  // Vercel does serve dotfiles (/.nojekyll comes back 200), so the local state
  // the CLI drops in here — .env.local carries a VERCEL_OIDC_TOKEN — must be
  // excluded explicitly rather than left to the CLI's default ignore list.
  fs.writeFileSync(path.join(out,'.vercelignore'),['# Local Vercel state and CLI scratch, never part of the deployment.','.vercel','.env.local','.gitignore',''].join('\n'));
- fs.writeFileSync(path.join(out,'README.md'),`# AI 科研入门指南 · uestc 版\n\n自包含的静态站点包,直接以本目录为根发布即可。入口:\`zh/index.html\`(\`en/index.html\` 为英文)。\n\n没有任何构建步骤或服务端依赖;所有资源都已在包内。唯一的外部请求是 \`zh/ama.html\` / \`en/ama.html\` 运行时从 GitHub 拉取讨论区数据。\n\n内容由 \`scripts/build-guide-uestc.mjs --standalone\` 从仓库的 \`content/guide\` 生成,不要直接改这里的 HTML。\n`);
+ fs.writeFileSync(path.join(out,'README.md'),`# AI Learning & Research Guide · OpenEnvision\n\n自包含的静态站点包,直接以本目录为根发布即可。展示主页：\`index.html\`（英文默认）与 \`zh.html\`（中文）。正文目录位于 \`en/index.html\` 与 \`zh/index.html\`。\n\n没有任何构建步骤或服务端依赖;所有资源都已在包内。唯一的外部请求是 \`zh/ama.html\` / \`en/ama.html\` 运行时从 GitHub 拉取讨论区数据。\n\n内容由 \`scripts/build-guide-uestc.mjs --standalone\` 从仓库的 \`content/guide\` 生成,不要直接改这里的 HTML。\n`);
 }
 
 // Resolve every local src/href/poster against the filesystem, on the emitted

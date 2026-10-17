@@ -1,0 +1,32 @@
+import { languageSwitch } from './guide-language.mjs';
+
+export function wikiPage(lang='zh'){
+ const en=lang==='en';
+ const t=en?{
+  title:'Terminology reference',intro:'Look up AI concepts, conferences, and journals by name or abbreviation. Explore definitions, related terms, and original sources.',
+  languageNote:'Definitions are available in English and Chinese.',skip:'Skip to search',open:'Open categories',close:'Close categories',home:'Website home',guide:'English guide',guideShort:'Guide',location:'Breadcrumb',navigation:'Website navigation',categories:'Term categories',index:'Category index',contribute:'Suggestions & corrections',search:'Search names or abbreviations',clear:'Clear search',common:'Common searches',robotics:'robotics conferences',roboticsQuery:'robotics conference',frequent:'Common terms',kind:'Type',venues:'Conferences & journals',conference:'Conferences',journal:'Journals',topic:'Topic',allTopics:'All topics',allTerms:'All terms',results:'Term list',more:'Load more',detail:'Term details',brand:'AI Learning & Research Guide',closeDefinition:'Close definition',noscript:'Enable JavaScript to search and browse the reference.'
+ }:{
+  title:'术语与会议速查',intro:'按中文、英文或缩写检索 AI 概念、会议与期刊，查看解释、关联词条与原始来源。',
+  languageNote:'可切换中英文释义，保留当前词条与检索条件。',skip:'跳到搜索',open:'打开词条分类',close:'关闭分类',home:'网站主页',guide:'中文指南',guideShort:'指南',location:'当前位置',navigation:'网站导航',categories:'词条分类',index:'分类索引',contribute:'建议与勘误',search:'搜索中文、英文或缩写',clear:'清空搜索',common:'常见查询',robotics:'机器人会议',roboticsQuery:'机器人 会议',frequent:'常用词条',kind:'类型',venues:'会议与期刊',conference:'会议',journal:'期刊',topic:'主题',allTopics:'全部主题',allTerms:'全部词条',results:'词条列表',more:'加载更多',detail:'词条详情',brand:'AI 学习与科研指南',closeDefinition:'关闭解释',noscript:'请启用 JavaScript，以使用词条搜索与分类。'
+ };
+ const guide=`../${lang}/index.html`,home=en?'../index.html':'../zh.html';
+ return `<!doctype html>
+<html lang="${en?'en':'zh-CN'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>${t.title} · OpenEnvision</title><meta name="description" content="${t.intro}"><link rel="alternate" hreflang="en" href="en.html"><link rel="alternate" hreflang="zh-CN" href="index.html"><link rel="icon" href="../favicon-openenvision.png"><link rel="stylesheet" href="wiki.css?v=20261017-mobile-results"><link rel="stylesheet" href="../guide-controls.css?v=20261016-controls"><link rel="stylesheet" href="../language-switch.css?v=20261016-formal"></head>
+<body>
+<a class="skip" href="#query">${t.skip}</a>
+<header class="site-header"><div class="header-brand"><button id="menu" type="button" aria-expanded="false" aria-controls="categories" aria-label="${t.open}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><a class="brand" href="${home}" aria-label="OpenEnvision · ${t.home}"><img src="../logo-openenvision.png" alt="OpenEnvision" width="32" height="32"><strong>OpenEnvision</strong></a></div><nav class="header-context" aria-label="${t.location}"><a href="${guide}">${t.guideShort}</a><span aria-hidden="true">/</span><span>${t.title}</span></nav><nav class="header-actions" aria-label="${t.navigation}"><a class="website-link" href="${home}">${t.home} <span aria-hidden="true">↗</span></a><a class="guide-link" href="${guide}">${t.guide}</a>${languageSwitch({lang,enHref:'en.html',zhHref:'index.html',alternateId:'wiki-language'})}</nav></header>
+<button id="shade" aria-label="${t.close}" hidden></button>
+<aside id="categories" aria-label="${t.categories}"><div class="nav-title">${t.index}</div><a class="nav-active" href="#">${t.title}</a><div id="category-list"></div><a class="contribute" href="https://github.com/OpenEnvision/ai_research_guide/issues/new" target="_blank" rel="noopener">${t.contribute} ↗</a></aside>
+<main id="workspace">
+<div class="intro"><h1>${t.title}</h1><p>${t.intro}</p><p class="language-note"><span>EN / CN</span>${t.languageNote}</p></div>
+<div class="search-area"><form id="search-form" role="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.7"/><path d="m16 16 5 5"/></svg><label class="sr-only" for="query">${t.search}</label><input id="query" type="search" autocomplete="off" placeholder="${t.search}" aria-controls="results"><button id="clear" type="button" aria-label="${t.clear}" hidden>×</button><kbd data-search-shortcut>Ctrl K</kbd></form><div class="quick-search"><span>${t.common}</span><button data-query="ckpt">ckpt</button><button data-query="NeurIPS">NeurIPS</button><button data-query="harness">harness</button><button data-query="model-based">model-based</button><button data-query="${t.roboticsQuery}">${t.robotics}</button></div></div>
+<div class="browse-bar"><div><h2 id="section-title">${t.frequent}</h2><span id="result-count" role="status" aria-live="polite"></span></div><div class="filters"><label id="kind-filter" hidden><span class="sr-only">${t.kind}</span><select id="kind" aria-label="${t.kind}"><option value="">${t.venues}</option><option value="conference">${t.conference}</option><option value="journal">${t.journal}</option></select></label><label id="group-filter" hidden><span class="sr-only">${t.topic}</span><select id="group" aria-label="${t.topic}"><option value="">${t.allTopics}</option></select></label><button id="all-terms">${t.allTerms} →</button></div></div>
+<p id="group-description" class="group-description" hidden></p>
+<div class="dictionary-layout"><section class="results-column" aria-label="${t.results}"><div id="results"></div><button id="more" hidden>${t.more}</button></section><aside class="detail-column" id="detail" aria-label="${t.detail}"></aside></div>
+<footer><span>OpenEnvision · ${t.brand}</span><div><a href="${home}">${t.home} ↗</a><a href="${guide}">${t.guide}</a><a href="https://github.com/OpenEnvision/ai_research_guide" target="_blank" rel="noopener">GitHub ↗</a></div></footer>
+</main>
+<div id="toast" role="status"></div>
+<dialog id="term-peek"><button id="close-peek" aria-label="${t.closeDefinition}">×</button><div id="peek-content"></div></dialog>
+<noscript><p>${t.noscript}</p></noscript>
+<script src="vendor/minisearch.min.js"></script><script src="${en?'data-en.js':'data.js'}?v=20261017-bilingual-polish"></script><script src="search.js?v=20261017-topic-links"></script><script src="wiki.js?v=20261017-mobile-results"></script></body></html>\n`;
+}

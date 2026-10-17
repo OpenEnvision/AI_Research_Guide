@@ -1,154 +1,109 @@
-# 学习基础知识
+# 基础知识：把概念连接起来
 
-做研究可以自顶向下，但也要由浅入深的学习理解数学、ML/DL 和计算机，打好基础。一个推荐的学习心法是**按需学习而非顺序学习**，并灵活运用课程、blog 等多种学习资源。
+围绕同一个问题学习编程、数学与评估，更容易理解它们之间的联系。本章围绕一个很小的数值预测例子展开：第一次接触时可以顺序阅读，也可以通过章节链接回查不熟悉的概念。
 
-可以先学习到不影响理解的层次，也可以**针对你的项目、论文方向系统补充相关知识**。我们主要需要学习的基础知识是 Python、计算机、机器学习、深度学习与一些数学基础。
+先理解[函数与数组](#basics-arrays)，再看[线性模型](#basics-linear-algebra)和[导数](#basics-calculus)。[概率](#basics-probability)可以并行学习：有限情形的概率例子只需算术，不必等到修完微积分。最后在[机器学习](#basics-learning)与[评估](#basics-evaluation)中把这些知识连起来。更深入的数学知识可以随问题需要逐步补充，不需要全部学完才能开始第一个项目。
 
-[Crash Course Artificial Intelligence](https://thecrashcourse.com/topic/ai/) 是一套科普入门课，介绍监督学习、神经网络、自然语言处理、强化学习、机器人和推荐系统，可以由此了解 AI 的主要问题和方法。
+<a id="basics-arrays"></a>
+## 从观测到数组
 
-<figure class="resource-figure medium"><a href="https://thecrashcourse.com/topic/ai/" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/uestc/intro/crash-ai.png" alt="Crash Course Artificial Intelligence" loading="eager"></a><figcaption><a href="https://thecrashcourse.com/topic/ai/" target="_blank" rel="noopener">Crash Course Artificial Intelligence</a> <span class="caption-dot">·</span> <a href="https://www.bilibili.com/video/BV1tp421m71F/" target="_blank" rel="noopener">B 站</a></figcaption></figure>
+假设要根据路程预测出行时间。用两个**为方便手算而编造的观测**：`(1 km, 3 min)` 和 `(2 km, 5 min)`。路程是预测时已知的**特征**，时间是希望预测的**目标**，一次出行是一条观测。真实出行还会受到交通、路线等因素影响。
 
-## Python 与计算机
+数值数组的形状描述了数据的组织方式。有 `n` 次出行、每次 `d` 个特征时，可以用形状为 `(n, d)` 的输入矩阵 `X`，以及形状为 `(n,)` 的目标向量 `y`。在本例中，`X = [[1], [2]]` 的形状是 `(2, 1)`，`y = [3, 5]` 的形状是 `(2,)`。第一个轴索引观测，第二个轴索引特征。每个轴的含义由我们定义，不能只从长度猜测。
 
-Python 广泛用于数据处理、模型训练和实验。除了语言本身，运行项目还会涉及**环境配置、依赖、终端和版本管理**。
+这能解释一个常见错误：`(n,)` 向量和 `(n, 1)` 列数组即使包含相同的数字，广播时的行为也可能不同。**广播**按兼容的维度隐式重复数据，不会替你检查运算是否符合任务含义。改变形状前，先写清每个轴表示什么。
 
-- [CS50P](https://cs50.harvard.edu/python/)：介绍变量、条件、循环、函数、异常处理、文件操作和测试。
-- [MIT 6.100L](https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/)：通过 Python 介绍编程与计算思维，配有视频、讲义和编程作业。
-- [Missing Semester](https://missing.csail.mit.edu/)：介绍 Shell、Git、调试以及开发中常用的工具。
+使用模型库之前，先学会 Python 函数、循环、索引、文件读取与报错追踪，再学习数组形状、数据类型和数值运算。终端、环境管理与 Git 可以帮助你运行程序、恢复之前的工作；数据规模增长后，再系统学习数据结构与算法复杂度，不必把一整门算法课当作入门门槛。
 
-<figure class="resource-figure compact"><a href="https://cs50.harvard.edu/python/" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/uestc/intro/cs50p.png" alt="CS50P" loading="eager"></a><figcaption><a href="https://cs50.harvard.edu/python/" target="_blank" rel="noopener">CS50P</a></figcaption></figure>
+<a id="basics-linear-algebra"></a>
+## 线性代数：模型究竟算了什么
 
-AI 项目里还会经常用到 **PyTorch** 和 **Hugging Face**。PyTorch 用于张量计算、构建神经网络和训练模型；Hugging Face 提供模型、数据集和相关工具。
+一个简单的预测规则是 `ŷ = wx + b`：路程乘以斜率 `w`，再加上截距 `b`。符号 `ŷ` 上的帽子表示预测值，用来与观测目标 `y` 区分。例如，`w = 2, b = 1` 恰好拟合这两条观测。这描述的是观测中的关联，不能据此断言只改变路程就会导致特定的时间变化。
 
-[PyTorch 基础教程](https://docs.pytorch.org/tutorials/beginner/basics/intro.html) 展示了数据加载、模型定义、自动求导和参数更新的完整过程；[Hugging Face Hub 文档](https://huggingface.co/docs/hub/index)介绍模型与数据集的查找、下载和分享。
+特征不止一个时，一次预测可以写成**内积** `ŷ = xᵀw + b`：对应的特征与权重逐项相乘，再求和。矩阵把多条观测的计算组织在一起：`ŷ = Xw + b`。`X` 的形状是 `(n, d)`，`w` 的形状是 `(d,)`，结果就是形状为 `(n,)` 的预测向量；标量 `b` 加到每一个预测上。
 
-VS Code 等编辑器中的编程 AI，也可以参与代码阅读、功能实现、调试和测试。相关使用方法见[AI 工具](ai.md)。
+**矩阵乘法**通过乘积之和组合元素，**逐元素乘法**则让对应位置直接相乘，两者不能互换。神经网络的一层把类似的计算扩展到多个输出，通常再接一个非线性函数。如果没有非线性函数，堆叠这些层仍等价于一次矩阵乘法再加偏置，并没有得到表达能力更强的预测规则。
 
-计算机基础还包括数据结构、算法、操作系统、网络和体系结构。[Crash Course Computer Science](https://thecrashcourse.com/topic/computerscience/) 介绍这些领域的基本面貌；[MIT 6.006](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/) 系统讲解数据结构、算法设计与复杂度分析。[CS 自学指南](https://csdiy.wiki/)整理了各领域的课程、教材和学习经验。
+<figure class="resource-figure math-illustration"><img src="../../../public/blog/guide/figures/foundations/linear-zh.svg" alt="路程 1 和 2 千米，共用权重 2 与偏置 1，得到预测时间 3 和 5 分钟"></figure>
 
-## 机器学习
+先掌握向量、内积、矩阵乘法和转置。**秩**帮助理解特征是否包含重复的线性信息；特征值和奇异值分解，可以等到降维、压缩等问题需要时再深入。
 
-机器学习研究怎样从数据中学习规律，并将它用于预测和决策。模型在训练数据上表现很好，换一批数据却可能出错；模型变得复杂，也可能学到训练样本中的偶然特征。**训练集与测试集、过拟合、泛化、正则化和模型选择**，都与这些问题有关。
+<a id="basics-calculus"></a>
+## 微积分：怎样调整预测规则
 
-这些概念贯穿经典机器学习与深度学习。今天研究大模型的数据、训练和评测，仍然需要理解**模型学到了什么，以及实验结果能够说明什么**。
+怎样选择 `w` 和 `b`？先定义**损失**，用一个数衡量预测误差，并对误差施加惩罚。设残差 `rᵢ = ŷᵢ − yᵢ`，选择 `L = Σᵢ rᵢ² / (2n)`。平方使正负误差不会相互抵消，也让大误差受到更重的惩罚。系数 `1/2` 是为求导方便，因此这个损失是均方误差的一半。
 
-[An Introduction to Statistical Learning](https://www.statlearning.com/) 用回归、分类等问题介绍统计学习，配有图示、案例和代码实验。它对模型选择、重采样和正则化的讲解，也能帮助理解实际实验中的比较方法。
+**导数**描述输入发生小变化时，输出怎样变化。**偏导数**只改变一个参数，其余参数保持不变；**梯度**把这些偏导数组合在一起。本例中，`∂L/∂w = Σᵢ xᵢrᵢ / n`，`∂L/∂b = Σᵢ rᵢ / n`。
 
-[李宏毅机器学习课程](https://speech.ee.ntu.edu.tw/~hylee/ml/2025-spring.php) 提供中文视频，结合模型和应用讲解机器学习与深度学习。[Stanford CS229](https://cs229.stanford.edu/) 更侧重方法的数学推导，涵盖监督学习、无监督学习和概率模型。
+从 `w = 1, b = 0` 出发，预测是 `[1, 2]`，残差是 `[-2, -3]`，损失为 `3.25`。两个偏导数分别是 `−4` 和 `−2.5`。取学习率 `0.1`，一次梯度下降更新得到 `w ← 1 − 0.1 × (−4) = 1.4`、`b ← 0 − 0.1 × (−2.5) = 0.25`。新预测 `[1.65, 3.05]` 的损失是 `1.40625`。这只是一次算术演示，尚不能说明这条规则在真实预测中是否有用。
 
-<figure class="resource-figure medium"><a href="https://speech.ee.ntu.edu.tw/~hylee/ml/2025-spring.php" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/uestc/intro/hongyi-2025.jpg" alt="李宏毅机器学习课程" loading="eager"></a><figcaption><a href="https://speech.ee.ntu.edu.tw/~hylee/ml/2025-spring.php" target="_blank" rel="noopener">李宏毅机器学习课程</a> <span class="caption-dot">·</span> <a href="https://www.bilibili.com/video/BV1aiADewEBC/" target="_blank" rel="noopener">B 站</a></figcaption></figure>
+<figure class="resource-figure math-illustration"><img src="../../../public/blog/guide/figures/foundations/gradient-zh.svg" alt="一次梯度下降将 w 从 1 更新为 1.4、b 从 0 更新为 0.25，例子中的损失从 3.25 降到 1.40625"></figure>
 
-## 深度学习
+在可微且梯度非零的位置，负梯度给出一个局部下降方向；实际更新时仍可能因学习率过大而使损失上升。在神经网络中，**链式法则**连接多步复合运算的导数；**反向传播**高效计算参数梯度；[自动微分](https://docs.pytorch.org/tutorials/beginner/basics/autogradqs_tutorial.html)自动完成这一计算过程。计算梯度与选择参数更新方式是两件事。自动微分不会替你选择损失、发现数据泄漏，或证明模型适合当前问题。
 
-深度学习使用多层神经网络学习数据的表示。图像中的局部特征、文本中的上下文关系，都可以在训练中逐渐形成。
+<a id="basics-probability"></a>
+## 概率：预测与不确定性
 
-**网络结构**决定信息怎样处理，**损失函数**规定训练目标，**优化器**根据梯度更新参数。
+概率模型在特定假设下描述不确定性。**分布**为可能的结果分配概率。**条件概率**如 `P(延误 | 路程)`，讨论给定路程的出行中发生延误的可能性；以某个特征为条件，不等于证明它的因果作用。**期望**是按概率加权的平均，**方差**衡量偏离期望的平方程度。样本平均用观测数据估计期望，换一批样本，结果通常也会变化。
 
-[动手学深度学习](https://zh.d2l.ai/)（D2L）把数学解释、模型实现和实验放在一起，内容包括线性模型、多层感知机、CNN、RNN、Attention 和 Transformer，也有[中文配套课程](https://courses.d2l.ai/zh-v2/)。
+线性规则只输出一个数。概率版本可以写成 `y = wx + b + ε`，其中噪声 `ε` 表示规则没有解释的变化。如果误差相互独立、均值为零且服从共同固定方差的高斯分布，那么最大化观测数据的**似然**，等价于最小化平方误差。似然把观测视为固定，比较所假设模型中不同参数对这些观测的支持程度。这些假设为损失提供了解释；仅仅使用平方误差，不能反过来证明噪声服从高斯分布。[D2L 的线性回归章节](https://zh.d2l.ai/chapter_linear-regression/linear-regression.html)进一步介绍了这层联系。
 
-<figure class="resource-figure medium"><a href="https://courses.d2l.ai/zh-v2/" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/uestc/intro/limu-d2l.jpg" alt="动手学深度学习 v2" loading="eager"></a><figcaption><a href="https://courses.d2l.ai/zh-v2/" target="_blank" rel="noopener">动手学深度学习 v2</a> <span class="caption-dot">·</span> <a href="https://www.bilibili.com/video/BV1if4y147hS/" target="_blank" rel="noopener">B 站</a></figcaption></figure>
+分类模型可以输出各类别的概率。如果它为实际发生的类别分配概率 `q`，负对数似然损失就是 `−log q`：为已经发生的结果分配很低的概率，会受到较大惩罚。对有标签样本取平均，就是常见的 one-hot 标签交叉熵损失。输出概率仍需接受评估：模型可能非常自信地犯错，其置信程度也可能没有得到良好校准。
 
-[3Blue1Brown 神经网络系列](https://www.3blue1brown.com/lessons/neural-networks/) 用可视化解释神经网络、梯度下降和反向传播。[fast.ai](https://course.fast.ai/) 从实际应用出发，在训练模型的过程中逐步展开深度学习的方法。
+**熵**描述一个分布的不确定性；**交叉熵**将目标分布与预测概率联系起来；**KL 散度**也用于比较分布，但通常不对称，不能当作普通距离。可以在理解条件概率与期望后继续学习这些概念，不需要先背完术语才能入门。如何分析评估分数的不确定性，则是进一步的统计问题，见后文与[研究方法](research-methods.md)。
 
-<figure class="resource-figure medium"><a href="https://www.3blue1brown.com/lessons/neural-networks/" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/uestc/intro/3b1b-neural.jpg" alt="3Blue1Brown · 神经网络" loading="eager"></a><figcaption><a href="https://www.3blue1brown.com/lessons/neural-networks/" target="_blank" rel="noopener">3Blue1Brown · 神经网络</a> <span class="caption-dot">·</span> <a href="https://www.bilibili.com/video/BV1bx411M7Zx/" target="_blank" rel="noopener">B 站</a></figcaption></figure>
+<a id="basics-learning"></a>
+## 机器学习：分清不同选择
 
-[Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html) 从 micrograd 的自动求导引擎开始，通过 makemore 字符语言模型介绍神经网络的训练，随后实现 GPT 和 tokenizer。课程中的代码规模逐渐增加，梯度、损失和参数更新这些基本概念也会不断出现在后面的模型里。
+学习是用数据拟合一个规则。出行时间例子包含几种容易混淆的选择：
 
-<figure class="resource-figure medium"><a href="https://karpathy.ai/zero-to-hero.html" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/uestc/intro/micrograd.jpg" alt="Neural Networks: Zero to Hero" loading="eager"></a><figcaption><a href="https://karpathy.ai/zero-to-hero.html" target="_blank" rel="noopener">Neural Networks: Zero to Hero</a> <span class="caption-dot">·</span> <a href="https://www.bilibili.com/video/BV1mqrTBvEaf/" target="_blank" rel="noopener">B 站</a></figcaption></figure>
+| 概念 | 在这个例子中的含义 |
+| --- | --- |
+| 数据 | 通过特定采集过程得到的路程与时间观测 |
+| 模型 | `ŷ = wx + b` 这一类预测规则 |
+| 参数 | 经过拟合得到的 `w` 与 `b` |
+| 损失 / 目标 | 拟合时使用的平方误差准则；目标中也可能加入正则项 |
+| 优化算法 | 调整参数的过程，例如梯度下降 |
+| 超参数 | 不通过参数拟合来确定的设置，例如学习率、正则化强度 |
+| 评估指标 | 判断预测表现的量，例如以分钟表示的平均绝对误差 |
 
-## 数学基础
+损失与评估指标可以相同，也可以不同。平均绝对误差可以直接用分钟表示，平方误差则更重视大残差。换一个优化器，不会把线性模型变成神经网络。**正则化**在拟合中加入某种偏好，例如惩罚较大的权重；它是否有帮助，仍需在适当的未见数据上检查。
 
-线性代数、微积分、概率统计是模型训练中经常用到的数学基础。信息论中的**熵、交叉熵和 KL 散度**也很常见；随机过程与微分方程则更多出现在强化学习、Diffusion、Flow 等具体方法中。
+**监督学习**使用输入—目标对，本例就是如此。**无监督学习**在没有为每条观测提供目标的情况下研究数据结构。**自监督学习**从数据本身构造目标，例如被遮住的词。**强化学习**使用与行动及其后果相关的奖励。这些学习方式可以重叠或组合。Transformer 是一种网络结构，预测下一个 token 是一种训练目标。
 
-### 线性代数
+**深度学习**使用多层神经网络学习表示，但上面的区别依然成立：数据经过前向计算，损失比较输出与训练信号，通过反向传播计算梯度，再由优化器更新参数。小批量梯度由部分训练样本计算，而非一次使用全部数据。初学时，理解这个循环比记住各种优化器变体或训练大模型更重要。
 
-向量、矩阵、内积和线性变换，是表示数据和组织神经网络计算的基本工具。Transformer 中的 token 表示、**Q/K/V 投影和注意力计算**，都能对应到具体的矩阵运算。特征值、奇异值分解和低秩近似，则会出现在表示分析、模型压缩等问题中。
+<a id="basics-evaluation"></a>
+## 评估：拟合好不等于泛化好
 
-<figure class="resource-figure math-illustration"><img src="../../../public/blog/guide/figures/uestc/intro/math/linear.png" alt="矩阵变换前后的向量与坐标网格"></figure>
+**训练误差**描述模型在用于拟合的样本上表现如何，**泛化**关注指定群体或场景中的新观测。复杂模型可能连训练样本中偶然出现的细节也一并学到，这就是**过拟合**。即使完全拟合那两次编造的出行，也几乎不能说明对未来出行的预测效果。
 
-[3Blue1Brown 线性代数](https://www.3blue1brown.com/?topic=linear-algebra) 着重解释几何直觉；[MIT 18.06](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/) 系统讲解线性代数及其应用。
+**训练集**用于拟合参数；**验证集**支持模型类型、学习率和停止时机等选择；**测试集**在这些选择确定后估计表现。反复根据测试分数修改方案，就把测试信息纳入了模型选择，削弱了它作为独立估计的价值。数据少时可以用交叉验证辅助选择，但评估设计仍须尊重观测之间的关系。
 
-<div class="resource-pair"><figure class="resource-figure "><a href="https://www.3blue1brown.com/?topic=linear-algebra" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/uestc/intro/3b1b-vectors.jpg" alt="线性代数的本质" loading="eager"></a><figcaption><a href="https://www.3blue1brown.com/?topic=linear-algebra" target="_blank" rel="noopener">线性代数的本质</a> <span class="caption-dot">·</span> <a href="https://www.bilibili.com/video/BV1ys411472E/" target="_blank" rel="noopener">B 站</a></figcaption></figure><figure class="resource-figure "><a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/uestc/intro/mit-1806.jpg" alt="MIT 18.06 · Gilbert Strang" loading="eager"></a><figcaption><a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/" target="_blank" rel="noopener">MIT 18.06 · Gilbert Strang</a> <span class="caption-dot">·</span> <a href="https://www.bilibili.com/video/BV1zx411g7gq/" target="_blank" rel="noopener">B 站</a></figcaption></figure></div>
+数据划分应与预期用途一致。近似独立、来自同一群体的观测可以考虑随机划分；同一司机的多次出行可能需要分组；预测未来出行需要按时间分开。在一座城市得到的评估分数，也不一定代表模型在另一座城市的表现。**数据泄漏**指拟合模型或选择方案时，使用了在预期的预测或评估场景中本不应获得的信息。例如，归一化统计量应在训练数据上计算，再原样应用到验证与测试数据。[scikit-learn 的常见陷阱说明](https://scikit-learn.org/stable/common_pitfalls.html)展示了这种区别。
 
-### 微积分与优化
+简单基线让分数有参照：对于平方误差回归，可以从始终预测训练集均值开始。平均分之外，还要查看错误。分类准确率可能掩盖少数类的表现；**精确率**问“预测为正的样本中有多少确实为正”，**召回率**问“实际为正的样本中找回了多少”。应根据研究问题与不同错误的代价选择指标。
 
-导数描述变化率，梯度给出函数变化的方向，**链式法则**将多层计算连接起来。反向传播利用这些关系计算参数对损失的影响，SGD、Adam 等优化方法再据此更新参数。学习率、梯度尺度和优化器的选择，也会影响模型的收敛与训练稳定性。
+最后，分数只是有限观测得到的估计。训练随机种子的变化与测试样本的变化，是不同的不确定性来源。置信区间需要适当的抽样模型，不能直接把相关观测当作相互独立的样本。[研究方法](research-methods.md)继续介绍比较、统计不确定性与结论边界。若这些概念已经清楚，只是实现仍有困难，可以继续[第一个 AI 项目](start.md)或[实践训练](practice.md)。
 
-<figure class="resource-figure math-illustration"><img src="../../../public/blog/guide/figures/uestc/intro/math/gradient.png" alt="损失曲线上沿梯度更新参数的过程"></figure>
+## 配合本章使用的资料
 
-[3Blue1Brown 微积分](https://www.3blue1brown.com/lessons/essence-of-calculus/) 介绍导数、积分和链式法则的直观含义；D2L 的优化章节结合代码讲解梯度下降及常用优化器。
+为正在学习的概念选一份主资料，遇到具体疑问时再找另一种解释。[课程与教材](courses.md)提供更完整的课程顺序与先修说明。
 
-<figure class="resource-figure medium"><a href="https://www.3blue1brown.com/lessons/essence-of-calculus/" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/uestc/intro/3b1b-calculus.jpg" alt="微积分的本质" loading="eager"></a><figcaption><a href="https://www.3blue1brown.com/lessons/essence-of-calculus/" target="_blank" rel="noopener">微积分的本质</a> <span class="caption-dot">·</span> <a href="https://www.bilibili.com/video/BV1qW411N7FU/" target="_blank" rel="noopener">B 站</a></figcaption></figure>
+- **编程与工具：** [CS50P](https://cs50.harvard.edu/python/) 或 [MIT 6.100L](https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/)；[Missing Semester](https://missing.csail.mit.edu/) 介绍终端、Git 和调试。算法问题出现后可继续 [MIT 6.006](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/)。[Crash Course Computer Science](https://thecrashcourse.com/topic/computerscience/) 与中文社区目录 [CS 自学指南](https://csdiy.wiki/) 提供更广的计算机学习背景。
+- **线性代数与微积分：** [3Blue1Brown 线性代数](https://www.3blue1brown.com/?topic=linear-algebra)（[中文字幕版](https://www.bilibili.com/video/BV1ys411472E/)）、[MIT 18.06](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/)（[B 站](https://www.bilibili.com/video/BV1zx411g7gq/)）、[微积分的本质](https://www.3blue1brown.com/lessons/essence-of-calculus/)（[中文字幕版](https://www.bilibili.com/video/BV1qW411N7FU/)）。[Mathematics for Machine Learning](https://mml-book.github.io/) 把这些数学知识与建模联系起来。
+- **概率与统计：** [Seeing Theory](https://seeing-theory.brown.edu/) 提供交互直觉；[Harvard Stat 110](https://stat110.hsites.harvard.edu/) 提供系统课程；[CS229 讲义](https://cs229.stanford.edu/notes2022fall/main_notes.pdf) 将估计与机器学习连接起来。进一步的信息论与概率系统内容可查 [MIT 6.441](https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/) 和 [MIT 6.041SC](https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/)。
+- **机器学习：** [An Introduction to Statistical Learning](https://www.statlearning.com/) 介绍回归与模型选择；[李宏毅课程](https://speech.ee.ntu.edu.tw/~hylee/ml/2025-spring.php)（[中文讲解](https://www.bilibili.com/video/BV1aiADewEBC/)）；[CS229](https://cs229.stanford.edu/) 适合作为更注重数学的延伸。[Crash Course AI](https://thecrashcourse.com/topic/ai/)（[中文字幕版](https://www.bilibili.com/video/BV1tp421m71F/)）提供全局认识。
+- **神经网络：** [动手学深度学习](https://zh.d2l.ai/)（[中文配套课](https://courses.d2l.ai/zh-v2/)、[B 站](https://www.bilibili.com/video/BV1if4y147hS/)）、[3Blue1Brown 神经网络系列](https://www.3blue1brown.com/lessons/neural-networks/)（[中文字幕版](https://www.bilibili.com/video/BV1bx411M7Zx/)）、[fast.ai](https://course.fast.ai/) 与 [Zero to Hero](https://karpathy.ai/zero-to-hero.html)（[中文字幕版](https://www.bilibili.com/video/BV1mqrTBvEaf/)）各有讲法，选一条主线即可。[PyTorch Learn the Basics](https://docs.pytorch.org/tutorials/beginner/basics/intro.html) 将训练循环落实到框架；[Hugging Face Hub 文档](https://huggingface.co/docs/hub/index) 介绍查找和分享模型、数据，使用时仍需检查各项资源的许可与条件。[AI 工具](ai.md)讨论编程辅助及其输出核验。
 
-### 概率论与统计
+## 基础之后的可选分支
 
-**条件概率、期望、方差和贝叶斯公式**，经常出现在模型定义与训练目标中。语言模型预测下一个 token 的概率，生成模型学习数据分布，强化学习则关心行动带来的期望回报。
+学习**语言模型**前，先理解矩阵运算、条件概率与训练循环。[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)、[Transformer Explainer](https://poloclub.github.io/transformer-explainer/)、[Annotated Transformer](https://github.com/harvardnlp/annotated-transformer) 和 [Super Study Guide](https://superstudy.guide/transformers-large-language-models/) 提供互补的解释，后续见[大语言模型](llm.md)。
 
-<figure class="resource-figure math-illustration"><img src="../../../public/blog/guide/figures/uestc/intro/math/probability.png" alt="给定上下文后，下一个词的条件概率"></figure>
+学习**生成模型**时，先建立概率密度与期望的概念，再学习潜变量、随机过程；连续时间方法还需要微分方程与数值积分。可以继续[生成模型](generation.md)、[Flow Matching Guide](https://arxiv.org/abs/2412.06264) 和 [Rectified Flow 教程](https://rectifiedflow.github.io/)。
 
-统计估计讨论如何利用观测数据确定模型参数。<strong>最大似然估计（MLE）</strong>寻找最能解释数据的参数；<strong>最大后验估计（MAP）</strong>还结合了参数的先验。理解它们，也就能进一步理解训练目标与概率模型之间的关系。
+学习**强化学习**时，先补充状态、动作、奖励、期望回报与价值函数，再进入策略梯度。后续见[强化学习](rl.md)；[PPO](https://arxiv.org/abs/1707.06347) 及其 [Spinning Up 说明](https://spinningup.openai.com/en/latest/algorithms/ppo.html)、[DeepSeekMath / GRPO](https://arxiv.org/abs/2402.03300)、[DPO](https://arxiv.org/abs/2305.18290) 可以留作后续参考。这些方法的目标与假设值得专门学习，不宜在基础入门中压缩成几句定义。
 
-[Seeing Theory](https://seeing-theory.brown.edu/) 用交互演示介绍概率统计；[Harvard Stat 110](https://stat110.hsites.harvard.edu/) 系统讲解概率论。MLE、MAP 与机器学习模型的联系，也可以结合 [CS229 讲义](https://cs229.stanford.edu/notes2022fall/main_notes.pdf)阅读。
+专题笔记保留各作者的观点与归属：[KnightNemo](https://knightnemo.github.io/blog/)、[Purshow](https://purshow.github.io/#blog)、[科学空间](https://kexue.fm/)（[文章目录](https://kexue.fm/content.html)）、[Jiaxuan Zou 的 Scaling Ladder 文章](https://jiaxuanzou0714.github.io/blog/2026/how-to-build-scientific-scaling-ladder/)。具体技术结论可沿其引用继续核对一手资料。
 
-### 信息论
-
-熵描述分布的不确定性，交叉熵常用于训练分类器和语言模型，KL 散度衡量两个分布之间的差异。这些概念会出现在语言模型的训练损失、知识蒸馏、变分推断，以及后训练中对策略变化的约束里。
-
-<figure class="resource-figure math-illustration"><img src="../../../public/blog/guide/figures/uestc/intro/math/entropy.png" alt="均匀分布与集中分布的熵"></figure>
-
-[MIT 6.441 信息论](https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/) 提供系统讲义，其中熵、互信息和相对熵与机器学习联系密切。
-
-### 随机过程与微分方程
-
-随机过程描述状态随时间的变化。马尔科夫链通过当前状态和转移概率描述下一步，DDPM 的逐步加噪过程就采用了这样的建模方式。强化学习中的马尔科夫决策过程，还加入了行动和奖励。
-
-[MIT 6.041SC](https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/) 涵盖概率基础、随机过程、马尔科夫链和统计推断。
-
-连续时间的生成模型还会用到微分方程。速度场描述样本怎样运动，数值积分把连续过程变成可以执行的采样步骤。这些知识与 Flow Matching、Rectified Flow 直接相连，相关讲解见下面的生成模型部分。
-
-<figure class="resource-figure math-illustration"><img src="../../../public/blog/guide/figures/uestc/intro/math/dynamics.png" alt="逐步加噪的随机过程，以及样本沿速度场移动的轨迹"></figure>
-
-[Mathematics for Machine Learning](https://mml-book.github.io/) 将线性代数、矩阵分解、微积分、概率和优化放在机器学习的背景下介绍，也适合把这些数学知识联系起来。
-
-## 基础知识在具体模型中怎么用
-
-Transformer、生成模型和强化学习是三个典型的例子。Attention 涉及向量表示和矩阵运算；VAE、Diffusion 和 Flow 将概率建模、优化与微分方程联系起来；Policy Gradient、PPO 和 GRPO 则涉及期望回报、概率比率、梯度与策略优化。
-
-### Transformer 与语言模型
-
-Transformer 把向量表示、注意力和神经网络训练结合起来：token 被映射成向量，不同位置通过 Attention 交换信息，模型根据训练目标调整参数。自回归语言模型进一步将一段文本的概率分解为**逐个 token 的条件概率**，并通过预测后续文本进行训练。
-
-[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) 用架构图解释各个模块；[Transformer Explainer](https://poloclub.github.io/transformer-explainer/) 展示可交互的计算过程；[Annotated Transformer](https://github.com/harvardnlp/annotated-transformer) 提供带讲解的实现。
-
-[Super Study Guide: Transformers & Large Language Models](https://superstudy.guide/transformers-large-language-models/) 从神经网络与 Embedding 展开到 Transformer、语言模型及其训练方法。更具体的预训练、后训练与推理问题见[大语言模型](llm.md)。
-
-### 表示学习与生成模型
-
-**表示学习关心怎样从数据中提取和组织特征**，**生成建模关心怎样学习数据分布并产生新样本**。两者也会结合，例如 VAE 同时学习潜在表示与生成过程。
-
-VAE 将概率建模与变分推断联系起来；GAN 通过生成器与判别器的对抗进行训练；DDPM 学习逐步去噪；Flow Matching 则学习连接噪声与数据的速度场。它们背后的概率分布、期望、KL 散度和微分方程，都来自前面的基础知识。
-
-[Flow Matching Guide and Code](https://arxiv.org/abs/2412.06264) 将数学讲解与代码示例放在一起；[Rectified Flow 教程](https://rectifiedflow.github.io/)提供讲义、代码和 ICML tutorial 视频，讨论生成轨迹、采样及其与扩散模型的联系。
-
-相关方法、论文与图像生成案例见[生成模型](generation.md)。
-
-### 强化学习与模型后训练
-
-强化学习研究怎样通过行动与反馈改进策略。策略给出行动的概率，回报描述行动带来的结果，策略梯度将**提高期望回报**的目标转化为参数更新。
-
-[PPO](https://arxiv.org/abs/1707.06347) 是一类策略梯度方法，通过约束更新幅度改善训练稳定性。[GRPO](https://arxiv.org/abs/2402.03300) 利用一组回答的相对奖励构造优势估计，将这类方法应用到语言模型的推理训练中。
-
-模型后训练也包括从偏好数据中学习。[DPO](https://arxiv.org/abs/2305.18290) 根据较好与较差回答之间的偏好构造训练目标，与 PPO 式 RLHF 提供了不同的训练方式。
-
-基础概念、算法和课程见[强化学习](rl.md)。
-
-## 技术文章与笔记
-
-- [机器学习、生成模型与数学笔记](https://knightnemo.github.io/blog/)：涵盖 Diffusion、Diffusion RL、World Model 等主题。来源：[KnightNemo](https://knightnemo.github.io/blog/)。
-- [Attention、MoE 与模型架构专题](https://purshow.github.io/#blog)：围绕具体结构、训练方法和研究问题整理的笔记。来源：[Purshow](https://purshow.github.io/#blog)。
-- [Attention、位置编码与生成模型推导](https://kexue.fm/)：包含概率建模、模型结构和训练目标的数学分析。来源：[科学空间](https://kexue.fm/)。
-- [如何搭建一个科学的 Scaling Ladder](https://jiaxuanzou0714.github.io/blog/2026/how-to-build-scientific-scaling-ladder/)：讨论如何组织不同规模的实验，研究模型、数据和计算之间的关系。来源：[jiaxuan](https://jiaxuanzou0714.github.io/blog/)。
-
-## 相关资料
-
-[课程、教材与基础学习](catalog-foundation.md) · [深度学习课程与论文精读](limu.md) · [第一个 AI 项目](start.md) · [研究方向总览](directions.md)
+[学习路径](learning-path.md) · [课程、教材与基础学习](catalog-foundation.md) · [李沐课程与论文精读](limu.md) · [研究方向总览](directions.md)

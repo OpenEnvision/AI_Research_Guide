@@ -60,11 +60,132 @@
     ]
   },
   {
+    "id": "aamas",
+    "term": "AAMAS",
+    "zh": "自主智能体与多智能体系统会议",
+    "aliases": [
+      "Autonomous Agents and Multiagent Systems"
+    ],
+    "category": "venues",
+    "group": "人工智能",
+    "kind": "conference",
+    "summary": "研究自主智能体以及多个智能体之间交互的会议。",
+    "detail": [
+      "全称 International Conference on Autonomous Agents and Multiagent Systems。合作、博弈、协调、机制设计和多智能体学习是常见主题，智能体可以是软件系统或机器人。"
+    ],
+    "related": [
+      "aaai",
+      "ijcai",
+      "aij",
+      "jair"
+    ],
+    "sources": [
+      {
+        "title": "AAMAS 官方会议与论文信息",
+        "url": "https://www.ifaamas.org/"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "aij",
+    "term": "AIJ",
+    "zh": "人工智能期刊",
+    "aliases": [
+      "Artificial Intelligence Journal"
+    ],
+    "category": "venues",
+    "group": "人工智能",
+    "kind": "journal",
+    "summary": "覆盖人工智能基础问题与多个研究方向的学术期刊。",
+    "detail": [
+      "正式刊名为 Artificial Intelligence，常用 AIJ 来区别于人工智能这一学科名称。知识表示、推理、规划、学习与智能体都是其相关研究方向。"
+    ],
+    "related": [
+      "aaai",
+      "ijcai",
+      "aamas",
+      "jair"
+    ],
+    "sources": [
+      {
+        "title": "AIJ 期刊与出版信息",
+        "url": "https://shop.elsevier.com/journals/artificial-intelligence/0004-3702"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "jair",
+    "term": "JAIR",
+    "zh": "人工智能研究期刊",
+    "aliases": [
+      "Journal of Artificial Intelligence Research"
+    ],
+    "category": "venues",
+    "group": "人工智能",
+    "kind": "journal",
+    "summary": "开放发表人工智能各分支研究成果的学术期刊。",
+    "detail": [
+      "全称 Journal of Artificial Intelligence Research。论文涵盖搜索、推理、学习、规划、语言及多智能体等方向，全文可通过期刊网站获取。"
+    ],
+    "related": [
+      "aaai",
+      "ijcai",
+      "aamas",
+      "aij"
+    ],
+    "sources": [
+      {
+        "title": "JAIR 期刊与出版信息",
+        "url": "https://www.jair.org/"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "npj-artificial-intelligence",
+    "term": "npj Artificial Intelligence",
+    "zh": "npj 人工智能",
+    "aliases": [
+      "npj AI"
+    ],
+    "category": "venues",
+    "group": "人工智能",
+    "kind": "journal",
+    "summary": "发表人工智能及其跨学科应用研究的开放获取期刊。",
+    "detail": [
+      "它属于 Nature Portfolio 的 npj 系列，关注 AI 理论、方法与应用。检索时可同时使用完整刊名和简称 npj AI，以避免与其他人工智能刊物混淆。"
+    ],
+    "related": [
+      "aaai",
+      "ijcai",
+      "aamas",
+      "aij"
+    ],
+    "sources": [
+      {
+        "title": "npj Artificial Intelligence 期刊与出版信息",
+        "url": "https://www.nature.com/npjai/"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
     "id": "neurips",
     "term": "NeurIPS",
     "zh": "神经信息处理系统大会",
     "aliases": [
-      "NIPS"
+      "NIPS",
+      "Conference on Neural Information Processing Systems"
     ],
     "category": "venues",
     "group": "机器学习",
@@ -251,7 +372,37 @@
     "kind": "conference",
     "summary": "集中讨论强化学习理论、算法、实证与应用的会议。",
     "detail": [
-      "全称 Reinforcement Learning Conference。强化学习研究智能体怎样通过行动和反馈学习决策；RLC 与 Reinforcement Learning Journal 的发表和交流安排相联系。"
+      "全称 Reinforcement Learning Conference。会议集中讨论通过行动与反馈学习决策的方法，并与 Reinforcement Learning Journal（RLJ）相联系；阅读论文时要分别核对期刊发表信息与会议报告安排。"
+    ],
+    "related": [
+      "rlj",
+      "neurips",
+      "icml",
+      "iclr"
+    ],
+    "sources": [
+      {
+        "title": "RLC 官方会议与论文信息",
+        "url": "https://rl-conference.cc/"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "jmlr",
+    "term": "JMLR",
+    "zh": "机器学习研究期刊",
+    "aliases": [
+      "Journal of Machine Learning Research"
+    ],
+    "category": "venues",
+    "group": "机器学习",
+    "kind": "journal",
+    "summary": "发表机器学习各方向完整研究成果的开放获取期刊。",
+    "detail": [
+      "全称 Journal of Machine Learning Research。论文可覆盖理论、算法、实证和软件，篇幅通常允许作者展开推导、实验和方法细节；官网提供论文全文。"
     ],
     "related": [
       "neurips",
@@ -261,8 +412,129 @@
     ],
     "sources": [
       {
-        "title": "RLC 官方会议与论文信息",
-        "url": "https://rl-conference.cc/"
+        "title": "JMLR 期刊与出版信息",
+        "url": "https://jmlr.org/"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "tmlr",
+    "term": "TMLR",
+    "zh": "机器学习研究汇刊",
+    "aliases": [
+      "Transactions on Machine Learning Research"
+    ],
+    "category": "venues",
+    "group": "机器学习",
+    "kind": "journal",
+    "summary": "接受持续投稿、通过公开审稿交流发表机器学习研究的期刊。",
+    "detail": [
+      "全称 Transactions on Machine Learning Research。投稿与审稿在 OpenReview 上进行，读者可以结合论文、审稿意见和作者回复理解研究得到支持的范围。"
+    ],
+    "related": [
+      "neurips",
+      "icml",
+      "iclr",
+      "aistats"
+    ],
+    "sources": [
+      {
+        "title": "TMLR 期刊与出版信息",
+        "url": "https://jmlr.org/tmlr/"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "tnnls",
+    "term": "TNNLS",
+    "zh": "神经网络与学习系统汇刊",
+    "aliases": [
+      "IEEE Transactions on Neural Networks and Learning Systems"
+    ],
+    "category": "venues",
+    "group": "机器学习",
+    "kind": "journal",
+    "summary": "研究神经网络及相关学习系统的 IEEE 期刊。",
+    "detail": [
+      "全称 IEEE Transactions on Neural Networks and Learning Systems。论文涉及学习理论、网络结构、训练方法和应用，既包含算法研究，也包含系统行为的分析。"
+    ],
+    "related": [
+      "neurips",
+      "icml",
+      "iclr",
+      "aistats"
+    ],
+    "sources": [
+      {
+        "title": "TNNLS 期刊与出版信息",
+        "url": "https://cis.ieee.org/publications/t-neural-networks-and-learning-systems"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "nature-machine-intelligence",
+    "term": "Nature Machine Intelligence",
+    "zh": "自然机器智能",
+    "aliases": [
+      "Nature MI",
+      "NMI",
+      "Nat Mach Intell"
+    ],
+    "category": "venues",
+    "group": "机器学习",
+    "kind": "journal",
+    "summary": "发表人工智能、机器学习与机器人等方向研究的跨学科期刊。",
+    "detail": [
+      "研究范围涵盖智能算法、应用及与其他学科交叉的问题。阅读时可以关注方法带来的新能力，以及实验怎样支持论文的科学结论。"
+    ],
+    "related": [
+      "neurips",
+      "icml",
+      "iclr",
+      "aistats"
+    ],
+    "sources": [
+      {
+        "title": "Nature Machine Intelligence 期刊与出版信息",
+        "url": "https://www.nature.com/natmachintell/"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "rlj",
+    "term": "RLJ",
+    "zh": "强化学习期刊",
+    "aliases": [
+      "Reinforcement Learning Journal"
+    ],
+    "category": "venues",
+    "group": "机器学习",
+    "kind": "journal",
+    "summary": "专门发表强化学习研究的开放获取同行评审期刊。",
+    "detail": [
+      "全称 Reinforcement Learning Journal。RLJ 与 Reinforcement Learning Conference（RLC）相联系，论文可通过会议交流；应分别核对期刊发表记录与会议报告安排。"
+    ],
+    "related": [
+      "rlc",
+      "jmlr",
+      "tmlr"
+    ],
+    "sources": [
+      {
+        "title": "RLJ：期刊与关联会议说明",
+        "url": "https://rlj.org/"
       }
     ],
     "categories": [
@@ -480,10 +752,133 @@
     ]
   },
   {
+    "id": "tpami",
+    "term": "TPAMI",
+    "zh": "模式分析与机器智能汇刊",
+    "aliases": [
+      "PAMI",
+      "tpmai",
+      "IEEE Transactions on Pattern Analysis and Machine Intelligence"
+    ],
+    "category": "venues",
+    "group": "计算机视觉",
+    "kind": "journal",
+    "summary": "覆盖模式分析、计算机视觉与相关机器智能研究的 IEEE 期刊。",
+    "detail": [
+      "全称 IEEE Transactions on Pattern Analysis and Machine Intelligence，也常简称 PAMI。论文常深入讨论视觉方法、模式识别理论与实验验证。"
+    ],
+    "related": [
+      "cvpr",
+      "iccv",
+      "eccv",
+      "ijcv"
+    ],
+    "sources": [
+      {
+        "title": "TPAMI 期刊与出版信息",
+        "url": "https://www.computer.org/digital-library/journals/tp/cfp-ieee-pattern-analysis-machine-intelligence"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "ijcv",
+    "term": "IJCV",
+    "zh": "国际计算机视觉期刊",
+    "aliases": [
+      "International Journal of Computer Vision"
+    ],
+    "category": "venues",
+    "group": "计算机视觉",
+    "kind": "journal",
+    "summary": "发表计算机视觉理论、算法与系统研究的期刊。",
+    "detail": [
+      "全称 International Journal of Computer Vision。图像理解、几何重建、视觉学习与视频分析等工作可在其中找到，期刊文章通常对问题与方法作较完整的论述。"
+    ],
+    "related": [
+      "cvpr",
+      "iccv",
+      "eccv",
+      "tpami"
+    ],
+    "sources": [
+      {
+        "title": "IJCV 期刊与出版信息",
+        "url": "https://link.springer.com/journal/11263"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "tip",
+    "term": "TIP",
+    "zh": "图像处理汇刊",
+    "aliases": [
+      "IEEE Transactions on Image Processing"
+    ],
+    "category": "venues",
+    "group": "计算机视觉",
+    "kind": "journal",
+    "summary": "研究图像处理理论、算法与应用的 IEEE 期刊。",
+    "detail": [
+      "全称 IEEE Transactions on Image Processing。图像恢复、压缩、增强、表示和分析等都是相关主题，重点涉及图像信息的获取、处理与利用。"
+    ],
+    "related": [
+      "cvpr",
+      "iccv",
+      "eccv",
+      "tpami"
+    ],
+    "sources": [
+      {
+        "title": "TIP 期刊与出版信息",
+        "url": "https://signalprocessingsociety.org/publications-resources/ieee-transactions-image-processing"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "pattern-recognition",
+    "term": "PR",
+    "zh": "模式识别期刊",
+    "aliases": [
+      "Pattern Recognition"
+    ],
+    "category": "venues",
+    "group": "计算机视觉",
+    "kind": "journal",
+    "summary": "发表模式识别方法及其应用研究的学术期刊。",
+    "detail": [
+      "正式刊名为 Pattern Recognition。分类、聚类、特征学习与图像或文档分析都是相关问题；在参考文献中 PR 可作为刊名简称。"
+    ],
+    "related": [
+      "cvpr",
+      "iccv",
+      "eccv",
+      "tpami"
+    ],
+    "sources": [
+      {
+        "title": "PR 期刊与出版信息",
+        "url": "https://shop.elsevier.com/journals/pattern-recognition/0031-3203"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
     "id": "acl",
     "term": "ACL",
     "zh": "计算语言学协会年会",
     "aliases": [
+      "Annual Meeting of the Association for Computational Linguistics",
       "Association for Computational Linguistics"
     ],
     "category": "venues",
@@ -641,7 +1036,7 @@
     "category": "venues",
     "group": "自然语言处理",
     "kind": "conference",
-    "summary": "交流语言的计算研究与自然语言处理技术的国际会议。",
+    "summary": "交流语言计算方法与自然语言处理技术的国际会议。",
     "detail": [
       "全称 International Conference on Computational Linguistics。议题连接语言学问题和计算方法，包括语义、语法、文本处理、多语种技术和语言模型。"
     ],
@@ -722,6 +1117,66 @@
     ]
   },
   {
+    "id": "tacl",
+    "term": "TACL",
+    "zh": "计算语言学协会汇刊",
+    "aliases": [
+      "Transactions of the Association for Computational Linguistics"
+    ],
+    "category": "venues",
+    "group": "自然语言处理",
+    "kind": "journal",
+    "summary": "发表计算语言学与自然语言处理研究的期刊。",
+    "detail": [
+      "全称 Transactions of the Association for Computational Linguistics。它采用期刊审稿流程，并有与 ACL 系列会议关联的论文报告安排，论文正文可在 ACL Anthology 查阅。"
+    ],
+    "related": [
+      "acl",
+      "emnlp",
+      "naacl",
+      "computational-linguistics"
+    ],
+    "sources": [
+      {
+        "title": "TACL 期刊与出版信息",
+        "url": "https://aclanthology.org/venues/tacl/"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "computational-linguistics",
+    "term": "CL",
+    "zh": "计算语言学期刊",
+    "aliases": [
+      "Computational Linguistics"
+    ],
+    "category": "venues",
+    "group": "自然语言处理",
+    "kind": "journal",
+    "summary": "研究语言的计算建模、分析与处理的学术期刊。",
+    "detail": [
+      "正式刊名为 Computational Linguistics。论文可以同时涉及语言理论与计算方法，例如语义、句法、语言学习和自然语言处理系统。"
+    ],
+    "related": [
+      "acl",
+      "emnlp",
+      "naacl",
+      "tacl"
+    ],
+    "sources": [
+      {
+        "title": "CL 期刊与出版信息",
+        "url": "https://aclanthology.org/venues/cl/"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
     "id": "corl",
     "term": "CoRL",
     "zh": "机器人学习会议",
@@ -731,7 +1186,7 @@
     "category": "venues",
     "group": "机器人",
     "kind": "conference",
-    "summary": "研究机器人如何通过数据与交互学习能力的会议。",
+    "summary": "研究机器人如何通过数据与交互学习技能的会议。",
     "detail": [
       "全称 Conference on Robot Learning。模仿学习、强化学习、感知与控制结合、真实机器人实验等是常见主题，重点是学习方法怎样支持机器人的实际行为。"
     ],
@@ -872,6 +1327,128 @@
     ]
   },
   {
+    "id": "tro",
+    "term": "T-RO",
+    "zh": "机器人学汇刊",
+    "aliases": [
+      "TRO",
+      "IEEE Transactions on Robotics"
+    ],
+    "category": "venues",
+    "group": "机器人",
+    "kind": "journal",
+    "summary": "发表机器人学基础、方法与系统研究的 IEEE 期刊。",
+    "detail": [
+      "全称 IEEE Transactions on Robotics，常写 TRO。主题包括运动、感知、控制、操作与机器人系统，文章通常深入解释方法原理和实验结果。"
+    ],
+    "related": [
+      "corl",
+      "rss",
+      "icra",
+      "iros"
+    ],
+    "sources": [
+      {
+        "title": "T-RO 期刊与出版信息",
+        "url": "https://www.ieee-ras.org/publications/t-ro/"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "ijrr",
+    "term": "IJRR",
+    "zh": "国际机器人研究期刊",
+    "aliases": [
+      "International Journal of Robotics Research"
+    ],
+    "category": "venues",
+    "group": "机器人",
+    "kind": "journal",
+    "summary": "覆盖机器人科学、技术与系统研究的期刊。",
+    "detail": [
+      "全称 The International Journal of Robotics Research。机器人机构、感知、规划、控制与学习均在其研究范围内，常呈现完整的理论和实验论证。"
+    ],
+    "related": [
+      "corl",
+      "rss",
+      "icra",
+      "iros"
+    ],
+    "sources": [
+      {
+        "title": "IJRR 期刊与出版信息",
+        "url": "https://journals.sagepub.com/home/ijr"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "ral",
+    "term": "RA-L",
+    "zh": "机器人与自动化快报",
+    "aliases": [
+      "RAL",
+      "Robotics and Automation Letters"
+    ],
+    "category": "venues",
+    "group": "机器人",
+    "kind": "journal",
+    "summary": "以较精炼篇幅发表机器人与自动化研究的 IEEE 期刊。",
+    "detail": [
+      "全称 IEEE Robotics and Automation Letters，常写 RAL。它属于期刊，部分论文还可通过关联安排在机器人会议上报告，阅读出版记录可区分发表载体与报告场合。"
+    ],
+    "related": [
+      "corl",
+      "rss",
+      "icra",
+      "iros"
+    ],
+    "sources": [
+      {
+        "title": "RA-L 期刊与出版信息",
+        "url": "https://www.ieee-ras.org/publications/ra-l/"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "science-robotics",
+    "term": "Science Robotics",
+    "zh": "科学机器人学",
+    "aliases": [
+      "Sci Robot"
+    ],
+    "category": "venues",
+    "group": "机器人",
+    "kind": "journal",
+    "summary": "发表跨学科机器人研究与技术进展的期刊。",
+    "detail": [
+      "它属于 Science 期刊系列，覆盖机器人设计、材料、控制、智能与应用等方向。研究常把新的机器人能力与科学问题或现实任务联系起来。"
+    ],
+    "related": [
+      "corl",
+      "rss",
+      "icra",
+      "iros"
+    ],
+    "sources": [
+      {
+        "title": "Science Robotics 期刊与出版信息",
+        "url": "https://www.science.org/journal/scirobotics"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
     "id": "acm-mm",
     "term": "ACM MM",
     "zh": "ACM 多媒体会议",
@@ -954,6 +1531,36 @@
       {
         "title": "INTERSPEECH 官方会议与论文信息",
         "url": "https://www.isca-speech.org/"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "tmm",
+    "term": "TMM",
+    "zh": "多媒体汇刊",
+    "aliases": [
+      "IEEE Transactions on Multimedia"
+    ],
+    "category": "venues",
+    "group": "多媒体与语音",
+    "kind": "journal",
+    "summary": "研究多媒体内容、系统及应用的 IEEE 期刊。",
+    "detail": [
+      "全称 IEEE Transactions on Multimedia。研究可结合图像、声音、视频和文本，讨论内容理解、编码传输、检索、生成及用户交互。"
+    ],
+    "related": [
+      "acm-mm",
+      "icassp",
+      "interspeech",
+      "tip"
+    ],
+    "sources": [
+      {
+        "title": "TMM 期刊与出版信息",
+        "url": "https://signalprocessingsociety.org/publications-resources/ieee-transactions-multimedia"
       }
     ],
     "categories": [
@@ -1173,29 +1780,59 @@
     ]
   },
   {
-    "id": "aamas",
-    "term": "AAMAS",
-    "zh": "自主智能体与多智能体系统会议",
+    "id": "tkde",
+    "term": "TKDE",
+    "zh": "知识与数据工程汇刊",
     "aliases": [
-      "Autonomous Agents and Multiagent Systems"
+      "IEEE Transactions on Knowledge and Data Engineering"
     ],
     "category": "venues",
-    "group": "人工智能",
-    "kind": "conference",
-    "summary": "研究自主智能体以及多个智能体之间交互的会议。",
+    "group": "检索与数据挖掘",
+    "kind": "journal",
+    "summary": "研究数据与知识的管理、处理和利用的 IEEE 期刊。",
     "detail": [
-      "全称 International Conference on Autonomous Agents and Multiagent Systems。合作、博弈、协调、机制设计和多智能体学习是常见主题，智能体可以是软件系统或机器人。"
+      "全称 IEEE Transactions on Knowledge and Data Engineering。数据库、数据挖掘、知识发现与信息系统都是相关方向，论文常同时考虑算法质量和数据规模。"
     ],
     "related": [
-      "aaai",
-      "ijcai",
-      "aij",
-      "jair"
+      "kdd",
+      "sigir",
+      "wsdm",
+      "recsys"
     ],
     "sources": [
       {
-        "title": "AAMAS 官方会议与论文信息",
-        "url": "https://www.ifaamas.org/"
+        "title": "TKDE 期刊与出版信息",
+        "url": "https://www.computer.org/csdl/journal/tk"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
+    "id": "tois",
+    "term": "TOIS",
+    "zh": "信息系统汇刊",
+    "aliases": [
+      "ACM Transactions on Information Systems"
+    ],
+    "category": "venues",
+    "group": "检索与数据挖掘",
+    "kind": "journal",
+    "summary": "重点发表信息检索及相关信息系统研究的 ACM 期刊。",
+    "detail": [
+      "全称 ACM Transactions on Information Systems。搜索、排序、推荐、信息组织和用户的信息获取行为是常见主题，可与 SIGIR 等会议的研究一起阅读。"
+    ],
+    "related": [
+      "kdd",
+      "sigir",
+      "wsdm",
+      "recsys"
+    ],
+    "sources": [
+      {
+        "title": "TOIS 期刊与出版信息",
+        "url": "https://dl.acm.org/journal/tois"
       }
     ],
     "categories": [
@@ -1244,7 +1881,7 @@
     "kind": "conference",
     "summary": "研究操作系统及大规模计算系统设计与实现的会议。",
     "detail": [
-      "全称 USENIX Symposium on Operating Systems Design and Implementation。分布式系统、存储、网络服务和机器学习系统都可能出现，论文通常通过系统实现与实验评估设计选择。"
+      "全称 USENIX Symposium on Operating Systems Design and Implementation。分布式系统、存储、网络服务和机器学习系统都是可能涉及的主题，论文通常通过系统实现与实验评估设计选择。"
     ],
     "related": [
       "mlsys",
@@ -1563,6 +2200,36 @@
     ]
   },
   {
+    "id": "tog",
+    "term": "TOG",
+    "zh": "图形学汇刊",
+    "aliases": [
+      "ACM Transactions on Graphics"
+    ],
+    "category": "venues",
+    "group": "图形学与交互",
+    "kind": "journal",
+    "summary": "发表计算机图形学研究的 ACM 期刊。",
+    "detail": [
+      "全称 ACM Transactions on Graphics。渲染、几何、动画、仿真与视觉内容创作是重要主题，部分论文与 SIGGRAPH 或 SIGGRAPH Asia 的技术论文项目相联系。"
+    ],
+    "related": [
+      "siggraph",
+      "siggraph-asia",
+      "chi",
+      "uist"
+    ],
+    "sources": [
+      {
+        "title": "TOG 期刊与出版信息",
+        "url": "https://dl.acm.org/journal/tog"
+      }
+    ],
+    "categories": [
+      "venues"
+    ]
+  },
+  {
     "id": "miccai",
     "term": "MICCAI",
     "zh": "医学图像计算与计算机辅助干预会议",
@@ -1653,611 +2320,6 @@
     ]
   },
   {
-    "id": "jmlr",
-    "term": "JMLR",
-    "zh": "机器学习研究期刊",
-    "aliases": [
-      "Journal of Machine Learning Research"
-    ],
-    "category": "venues",
-    "group": "机器学习",
-    "kind": "journal",
-    "summary": "发表机器学习各方向完整研究成果的开放获取期刊。",
-    "detail": [
-      "全称 Journal of Machine Learning Research。论文可覆盖理论、算法、实证和软件，篇幅通常允许作者展开推导、实验和方法细节；官网提供论文全文。"
-    ],
-    "related": [
-      "neurips",
-      "icml",
-      "iclr",
-      "aistats"
-    ],
-    "sources": [
-      {
-        "title": "JMLR 期刊与出版信息",
-        "url": "https://jmlr.org/"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "tmlr",
-    "term": "TMLR",
-    "zh": "机器学习研究汇刊",
-    "aliases": [
-      "Transactions on Machine Learning Research"
-    ],
-    "category": "venues",
-    "group": "机器学习",
-    "kind": "journal",
-    "summary": "以持续投稿和公开审稿交流发表机器学习研究的期刊。",
-    "detail": [
-      "全称 Transactions on Machine Learning Research。投稿与审稿在 OpenReview 上进行，读者可以结合论文、审稿意见和作者回复理解研究得到支持的范围。"
-    ],
-    "related": [
-      "neurips",
-      "icml",
-      "iclr",
-      "aistats"
-    ],
-    "sources": [
-      {
-        "title": "TMLR 期刊与出版信息",
-        "url": "https://jmlr.org/tmlr/"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "aij",
-    "term": "AIJ",
-    "zh": "人工智能期刊",
-    "aliases": [
-      "Artificial Intelligence Journal"
-    ],
-    "category": "venues",
-    "group": "人工智能",
-    "kind": "journal",
-    "summary": "覆盖人工智能基础与广泛研究方向的学术期刊。",
-    "detail": [
-      "正式刊名为 Artificial Intelligence，常用 AIJ 来区别于人工智能这一学科名称。知识表示、推理、规划、学习与智能体都是其相关研究方向。"
-    ],
-    "related": [
-      "aaai",
-      "ijcai",
-      "aamas",
-      "jair"
-    ],
-    "sources": [
-      {
-        "title": "AIJ 期刊与出版信息",
-        "url": "https://shop.elsevier.com/journals/artificial-intelligence/0004-3702"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "jair",
-    "term": "JAIR",
-    "zh": "人工智能研究期刊",
-    "aliases": [
-      "Journal of Artificial Intelligence Research"
-    ],
-    "category": "venues",
-    "group": "人工智能",
-    "kind": "journal",
-    "summary": "开放发表人工智能各分支研究成果的学术期刊。",
-    "detail": [
-      "全称 Journal of Artificial Intelligence Research。论文涵盖搜索、推理、学习、规划、语言及多智能体等方向，全文可通过期刊网站获取。"
-    ],
-    "related": [
-      "aaai",
-      "ijcai",
-      "aamas",
-      "aij"
-    ],
-    "sources": [
-      {
-        "title": "JAIR 期刊与出版信息",
-        "url": "https://www.jair.org/"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "tnnls",
-    "term": "TNNLS",
-    "zh": "神经网络与学习系统汇刊",
-    "aliases": [
-      "IEEE Transactions on Neural Networks and Learning Systems"
-    ],
-    "category": "venues",
-    "group": "机器学习",
-    "kind": "journal",
-    "summary": "研究神经网络及相关学习系统的 IEEE 期刊。",
-    "detail": [
-      "全称 IEEE Transactions on Neural Networks and Learning Systems。论文涉及学习理论、网络结构、训练方法和应用，既包含算法研究，也包含系统行为的分析。"
-    ],
-    "related": [
-      "neurips",
-      "icml",
-      "iclr",
-      "aistats"
-    ],
-    "sources": [
-      {
-        "title": "TNNLS 期刊与出版信息",
-        "url": "https://cis.ieee.org/publications/t-neural-networks-and-learning-systems"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "tpami",
-    "term": "TPAMI",
-    "zh": "模式分析与机器智能汇刊",
-    "aliases": [
-      "PAMI",
-      "tpmai"
-    ],
-    "category": "venues",
-    "group": "计算机视觉",
-    "kind": "journal",
-    "summary": "覆盖模式分析、计算机视觉与相关机器智能研究的 IEEE 期刊。",
-    "detail": [
-      "全称 IEEE Transactions on Pattern Analysis and Machine Intelligence，也常简称 PAMI。论文常深入讨论视觉方法、模式识别理论与实验验证；"
-    ],
-    "related": [
-      "cvpr",
-      "iccv",
-      "eccv",
-      "ijcv"
-    ],
-    "sources": [
-      {
-        "title": "TPAMI 期刊与出版信息",
-        "url": "https://www.computer.org/digital-library/journals/tp/cfp-ieee-pattern-analysis-machine-intelligence"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "ijcv",
-    "term": "IJCV",
-    "zh": "国际计算机视觉期刊",
-    "aliases": [
-      "International Journal of Computer Vision"
-    ],
-    "category": "venues",
-    "group": "计算机视觉",
-    "kind": "journal",
-    "summary": "发表计算机视觉理论、算法与系统研究的期刊。",
-    "detail": [
-      "全称 International Journal of Computer Vision。图像理解、几何重建、视觉学习与视频分析等工作可在其中找到，期刊文章通常对问题与方法作较完整的论述。"
-    ],
-    "related": [
-      "cvpr",
-      "iccv",
-      "eccv",
-      "tpami"
-    ],
-    "sources": [
-      {
-        "title": "IJCV 期刊与出版信息",
-        "url": "https://link.springer.com/journal/11263"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "tip",
-    "term": "TIP",
-    "zh": "图像处理汇刊",
-    "aliases": [
-      "IEEE Transactions on Image Processing"
-    ],
-    "category": "venues",
-    "group": "计算机视觉",
-    "kind": "journal",
-    "summary": "研究图像处理理论、算法与应用的 IEEE 期刊。",
-    "detail": [
-      "全称 IEEE Transactions on Image Processing。图像恢复、压缩、增强、表示和分析等都是相关主题，重点涉及图像信息的获取、处理与利用。"
-    ],
-    "related": [
-      "cvpr",
-      "iccv",
-      "eccv",
-      "tpami"
-    ],
-    "sources": [
-      {
-        "title": "TIP 期刊与出版信息",
-        "url": "https://signalprocessingsociety.org/publications-resources/ieee-transactions-image-processing"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "tmm",
-    "term": "TMM",
-    "zh": "多媒体汇刊",
-    "aliases": [
-      "IEEE Transactions on Multimedia"
-    ],
-    "category": "venues",
-    "group": "多媒体与语音",
-    "kind": "journal",
-    "summary": "研究多媒体内容、系统及应用的 IEEE 期刊。",
-    "detail": [
-      "全称 IEEE Transactions on Multimedia。研究可结合图像、声音、视频和文本，讨论内容理解、编码传输、检索、生成及用户交互。"
-    ],
-    "related": [
-      "acm-mm",
-      "icassp",
-      "interspeech",
-      "tip"
-    ],
-    "sources": [
-      {
-        "title": "TMM 期刊与出版信息",
-        "url": "https://signalprocessingsociety.org/publications-resources/ieee-transactions-multimedia"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "pattern-recognition",
-    "term": "PR",
-    "zh": "模式识别期刊",
-    "aliases": [
-      "Pattern Recognition"
-    ],
-    "category": "venues",
-    "group": "计算机视觉",
-    "kind": "journal",
-    "summary": "发表模式识别方法及其应用研究的学术期刊。",
-    "detail": [
-      "正式刊名为 Pattern Recognition。分类、聚类、特征学习与图像或文档分析都是相关问题；在参考文献中 PR 可作为刊名简称。"
-    ],
-    "related": [
-      "cvpr",
-      "iccv",
-      "eccv",
-      "tpami"
-    ],
-    "sources": [
-      {
-        "title": "PR 期刊与出版信息",
-        "url": "https://shop.elsevier.com/journals/pattern-recognition/0031-3203"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "tacl",
-    "term": "TACL",
-    "zh": "计算语言学协会汇刊",
-    "aliases": [
-      "Transactions of the Association for Computational Linguistics"
-    ],
-    "category": "venues",
-    "group": "自然语言处理",
-    "kind": "journal",
-    "summary": "发表计算语言学与自然语言处理研究的期刊。",
-    "detail": [
-      "全称 Transactions of the Association for Computational Linguistics。它采用期刊审稿流程，并有与 ACL 系列会议关联的论文报告安排，论文正文可在 ACL Anthology 查阅。"
-    ],
-    "related": [
-      "acl",
-      "emnlp",
-      "naacl",
-      "computational-linguistics"
-    ],
-    "sources": [
-      {
-        "title": "TACL 期刊与出版信息",
-        "url": "https://aclanthology.org/venues/tacl/"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "computational-linguistics",
-    "term": "CL",
-    "zh": "计算语言学期刊",
-    "aliases": [
-      "Computational Linguistics"
-    ],
-    "category": "venues",
-    "group": "自然语言处理",
-    "kind": "journal",
-    "summary": "研究语言的计算建模、分析与处理的学术期刊。",
-    "detail": [
-      "正式刊名为 Computational Linguistics。论文可以同时涉及语言理论与计算方法，例如语义、句法、语言学习和自然语言处理系统。"
-    ],
-    "related": [
-      "acl",
-      "emnlp",
-      "naacl",
-      "tacl"
-    ],
-    "sources": [
-      {
-        "title": "CL 期刊与出版信息",
-        "url": "https://aclanthology.org/venues/cl/"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "tro",
-    "term": "T-RO",
-    "zh": "机器人学汇刊",
-    "aliases": [
-      "TRO",
-      "IEEE Transactions on Robotics"
-    ],
-    "category": "venues",
-    "group": "机器人",
-    "kind": "journal",
-    "summary": "发表机器人学基础、方法与系统研究的 IEEE 期刊。",
-    "detail": [
-      "全称 IEEE Transactions on Robotics，常写 TRO。主题包括运动、感知、控制、操作与机器人系统，文章通常深入解释方法原理和实验结果。"
-    ],
-    "related": [
-      "corl",
-      "rss",
-      "icra",
-      "iros"
-    ],
-    "sources": [
-      {
-        "title": "T-RO 期刊与出版信息",
-        "url": "https://www.ieee-ras.org/publications/t-ro/"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "ijrr",
-    "term": "IJRR",
-    "zh": "国际机器人研究期刊",
-    "aliases": [
-      "International Journal of Robotics Research"
-    ],
-    "category": "venues",
-    "group": "机器人",
-    "kind": "journal",
-    "summary": "覆盖机器人科学、技术与系统研究的期刊。",
-    "detail": [
-      "全称 The International Journal of Robotics Research。机器人机构、感知、规划、控制与学习均在其研究范围内，常呈现完整的理论和实验论证。"
-    ],
-    "related": [
-      "corl",
-      "rss",
-      "icra",
-      "iros"
-    ],
-    "sources": [
-      {
-        "title": "IJRR 期刊与出版信息",
-        "url": "https://journals.sagepub.com/home/ijr"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "ral",
-    "term": "RA-L",
-    "zh": "机器人与自动化快报",
-    "aliases": [
-      "RAL",
-      "Robotics and Automation Letters"
-    ],
-    "category": "venues",
-    "group": "机器人",
-    "kind": "journal",
-    "summary": "以较精炼篇幅发表机器人与自动化研究的 IEEE 期刊。",
-    "detail": [
-      "全称 IEEE Robotics and Automation Letters，常写 RAL。它属于期刊，部分论文还可通过关联安排在机器人会议上报告，阅读出版记录可区分发表载体与报告场合。"
-    ],
-    "related": [
-      "corl",
-      "rss",
-      "icra",
-      "iros"
-    ],
-    "sources": [
-      {
-        "title": "RA-L 期刊与出版信息",
-        "url": "https://www.ieee-ras.org/publications/ra-l/"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "science-robotics",
-    "term": "Science Robotics",
-    "zh": "科学机器人学",
-    "aliases": [
-      "Sci Robot"
-    ],
-    "category": "venues",
-    "group": "机器人",
-    "kind": "journal",
-    "summary": "发表跨学科机器人研究与技术进展的期刊。",
-    "detail": [
-      "它属于 Science 期刊系列，覆盖机器人设计、材料、控制、智能与应用等方向。研究常把新的机器人能力与科学问题或现实任务联系起来。"
-    ],
-    "related": [
-      "corl",
-      "rss",
-      "icra",
-      "iros"
-    ],
-    "sources": [
-      {
-        "title": "Science Robotics 期刊与出版信息",
-        "url": "https://www.science.org/journal/scirobotics"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "tkde",
-    "term": "TKDE",
-    "zh": "知识与数据工程汇刊",
-    "aliases": [
-      "IEEE Transactions on Knowledge and Data Engineering"
-    ],
-    "category": "venues",
-    "group": "检索与数据挖掘",
-    "kind": "journal",
-    "summary": "研究数据与知识的管理、处理和利用的 IEEE 期刊。",
-    "detail": [
-      "全称 IEEE Transactions on Knowledge and Data Engineering。数据库、数据挖掘、知识发现与信息系统都是相关方向，论文常同时考虑算法质量和数据规模。"
-    ],
-    "related": [
-      "kdd",
-      "sigir",
-      "wsdm",
-      "recsys"
-    ],
-    "sources": [
-      {
-        "title": "TKDE 期刊与出版信息",
-        "url": "https://www.computer.org/csdl/journal/tk"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "tois",
-    "term": "TOIS",
-    "zh": "信息系统汇刊",
-    "aliases": [
-      "ACM Transactions on Information Systems"
-    ],
-    "category": "venues",
-    "group": "检索与数据挖掘",
-    "kind": "journal",
-    "summary": "以信息检索及相关信息系统研究为重要内容的 ACM 期刊。",
-    "detail": [
-      "全称 ACM Transactions on Information Systems。搜索、排序、推荐、信息组织和用户的信息获取行为是常见主题，可与 SIGIR 等会议的研究一起阅读。"
-    ],
-    "related": [
-      "kdd",
-      "sigir",
-      "wsdm",
-      "recsys"
-    ],
-    "sources": [
-      {
-        "title": "TOIS 期刊与出版信息",
-        "url": "https://dl.acm.org/journal/tois"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "tog",
-    "term": "TOG",
-    "zh": "图形学汇刊",
-    "aliases": [
-      "ACM Transactions on Graphics"
-    ],
-    "category": "venues",
-    "group": "图形学与交互",
-    "kind": "journal",
-    "summary": "发表计算机图形学研究的 ACM 期刊。",
-    "detail": [
-      "全称 ACM Transactions on Graphics。渲染、几何、动画、仿真与视觉内容创作是重要主题，部分论文与 SIGGRAPH 或 SIGGRAPH Asia 的技术论文项目相联系。"
-    ],
-    "related": [
-      "siggraph",
-      "siggraph-asia",
-      "chi",
-      "uist"
-    ],
-    "sources": [
-      {
-        "title": "TOG 期刊与出版信息",
-        "url": "https://dl.acm.org/journal/tog"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "nature-machine-intelligence",
-    "term": "Nature Machine Intelligence",
-    "zh": "自然机器智能",
-    "aliases": [
-      "Nature MI",
-      "NMI",
-      "Nat Mach Intell"
-    ],
-    "category": "venues",
-    "group": "机器学习",
-    "kind": "journal",
-    "summary": "发表人工智能、机器学习与机器人等方向研究的跨学科期刊。",
-    "detail": [
-      "研究范围连接智能算法、应用和与其他学科的交叉问题。阅读时可以关注方法带来的新能力，以及实验怎样支持论文的科学结论。"
-    ],
-    "related": [
-      "neurips",
-      "icml",
-      "iclr",
-      "aistats"
-    ],
-    "sources": [
-      {
-        "title": "Nature Machine Intelligence 期刊与出版信息",
-        "url": "https://www.nature.com/natmachintell/"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
     "id": "nature-methods",
     "term": "Nature Methods",
     "zh": "自然方法",
@@ -2269,7 +2331,7 @@
     "kind": "journal",
     "summary": "发表生命科学研究方法、技术与工具的期刊。",
     "detail": [
-      "其中会出现机器学习辅助的成像、单细胞分析、结构研究等工作。论文的核心通常是方法如何帮助开展生命科学实验或分析数据。"
+      "相关研究包括机器学习辅助的成像、单细胞分析和结构研究等工作。论文的核心通常是方法如何帮助开展生命科学实验或分析数据。"
     ],
     "related": [
       "miccai",
@@ -2311,36 +2373,6 @@
       {
         "title": "Nature Computational Science 期刊与出版信息",
         "url": "https://www.nature.com/natcomputsci/about/aims"
-      }
-    ],
-    "categories": [
-      "venues"
-    ]
-  },
-  {
-    "id": "npj-artificial-intelligence",
-    "term": "npj Artificial Intelligence",
-    "zh": "npj 人工智能",
-    "aliases": [
-      "npj AI"
-    ],
-    "category": "venues",
-    "group": "人工智能",
-    "kind": "journal",
-    "summary": "发表人工智能及其跨学科应用研究的开放获取期刊。",
-    "detail": [
-      "它属于 Nature Portfolio 的 npj 系列，关注 AI 理论、方法与应用。检索时可同时使用完整刊名和简称 npj AI，以避免与其他人工智能刊物混淆。"
-    ],
-    "related": [
-      "aaai",
-      "ijcai",
-      "aamas",
-      "aij"
-    ],
-    "sources": [
-      {
-        "title": "npj Artificial Intelligence 期刊与出版信息",
-        "url": "https://www.nature.com/npjai/"
       }
     ],
     "categories": [

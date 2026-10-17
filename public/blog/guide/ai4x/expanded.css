@@ -1,4 +1,4 @@
-.ai4x-expanded{--science:#34776a;--science-warm:#bc7c48}
+.ai4x-expanded{--science:var(--red);--science-warm:var(--ink)}
 .ai4x-expanded .topic-map{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:22px;border-block:1px solid var(--soft);padding:20px 0;margin:24px 0}
 .ai4x-expanded .topic-map h3{font-weight:600;font-size:16px;line-height:1.6;margin:0 0 9px}
 .ai4x-expanded .topic-map a{display:block;font-size:14px;line-height:1.7;padding:4px 0}
@@ -11,14 +11,14 @@
 .ai4x-expanded .scene-groups button{border:0;border-bottom:2px solid transparent;background:none;font-size:14px;text-align:left;padding:8px 0}
 .ai4x-expanded .scene-groups button[aria-pressed=true]{border-bottom-color:var(--science);color:var(--science)}
 .ai4x-expanded .scene-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
-.ai4x-expanded .scene-tabs button{background:none;border:1px solid transparent;border-radius:6px;padding:9px 11px;font-size:14px;line-height:1.5;text-align:left}
-.ai4x-expanded .scene-tabs button[aria-selected=true]{background:#dce9df;color:#28594c;border-color:#bfd4c5}
+.ai4x-expanded .scene-tabs button{background:none;border:1px solid transparent;border-radius:var(--radius);padding:9px 11px;font-size:14px;line-height:1.5;text-align:left}
+.ai4x-expanded .scene-tabs button[aria-selected=true]{background:var(--red-soft);color:var(--ink);border-color:var(--line)}
 .ai4x-expanded .scene-select{display:flex;justify-content:flex-end;margin:10px 0 14px;font-size:14px}
 .ai4x-expanded .process-labels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-bottom:14px}
-.ai4x-expanded .process-labels button{background:none;border:0;border-radius:6px;text-align:left;font-size:14px;line-height:1.6;padding:9px 10px;color:var(--muted)}
+.ai4x-expanded .process-labels button{background:none;border:0;border-radius:var(--radius);text-align:left;font-size:14px;line-height:1.6;padding:9px 10px;color:var(--muted)}
 .ai4x-expanded .process-labels button span{display:block;font:13px/1.5 monospace;margin-bottom:4px}
-.ai4x-expanded .process-labels button.active{background:#dce9df;color:#28594c}
-.ai4x-expanded #scene-host{aspect-ratio:900/440;border:1px solid #d7e0d1;border-radius:10px;overflow:hidden;background:#edf2e9}
+.ai4x-expanded .process-labels button.active{background:var(--red-soft);color:var(--ink)}
+.ai4x-expanded #scene-host{aspect-ratio:900/440;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--paper-2)}
 .ai4x-expanded #scene-host canvas{display:block;width:100%;height:100%}
 .ai4x-expanded .scene-progress{height:3px;background:var(--soft);margin-top:14px;overflow:hidden}
 .ai4x-expanded .scene-progress i{display:block;height:100%;background:var(--science);transform-origin:left}
@@ -54,5 +54,5 @@
 .ai4x-expanded .paper-item:only-child .paper-stamp{grid-column:1/-1}
 .ai4x-expanded .paper-item:only-child .paper-art{grid-column:1;grid-row:2/5;align-self:center}
 .ai4x-expanded .paper-item:only-child .paper-card>strong,.ai4x-expanded .paper-item:only-child .paper-question,.ai4x-expanded .paper-item:only-child .paper-open{grid-column:2}
-html[data-theme=dark] .ai4x-expanded{--science:#8cc1a9;--science-warm:#cf9c6e}
+html[data-theme=dark] .ai4x-expanded{--science:var(--red);--science-warm:var(--ink)}
 @media(max-width:650px){.ai4x-expanded .topic-map{grid-template-columns:1fr;gap:14px}.ai4x-expanded .topic-map>div{display:grid;grid-template-columns:1fr 1fr;column-gap:18px}.ai4x-expanded .topic-map h3{grid-column:1/-1}.ai4x-expanded .scene-tabs,.ai4x-expanded .process-labels{grid-template-columns:repeat(2,minmax(0,1fr))}.ai4x-expanded .scene-groups{gap:12px}.ai4x-expanded .scene-groups button{font-size:13px}.ai4x-expanded .task-list>div{grid-template-columns:1fr;gap:7px}.ai4x-expanded .route{grid-template-columns:1fr}.ai4x-expanded .route li+li{border-left:0;border-top:1px solid var(--soft)}.ai4x-expanded .resources,.ai4x-expanded .terms{grid-template-columns:1fr}.ai4x-expanded .paper-grid>.paper-item:only-child .paper-card{display:flex}.ai4x-expanded .process-labels button span{display:inline;margin-right:7px}}

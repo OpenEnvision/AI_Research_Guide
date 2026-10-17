@@ -1,19 +1,27 @@
 [
   {
     "id": "home",
-    "title": "AI科研入门指南",
+    "title": "AI 学习与科研指南",
     "group": "先从这里开始",
     "kind": "导读",
-    "desc": "这份指南怎样用",
-    "updated": "2026-10-11"
+    "desc": "系统学习、课程练习、研究方向与实验方法",
+    "updated": "2026-10-17",
+    "navTitle": {
+      "zh": "指南概览",
+      "en": "Guide overview"
+    }
   },
   {
-    "id": "welcome",
-    "title": "写给刚进大学的你",
+    "id": "learning-path",
+    "title": "AI 学习路线：从基础到独立研究",
     "group": "先从这里开始",
-    "kind": "写在前面",
-    "desc": "大学、迷茫与自己的生活",
-    "updated": "2026-10-05"
+    "kind": "学习路线",
+    "desc": "阶段目标、先修能力、项目交付与中英文术语",
+    "updated": "2026-10-17",
+    "navTitle": {
+      "zh": "学习路线",
+      "en": "Learning path"
+    }
   },
   {
     "id": "research",
@@ -21,22 +29,59 @@
     "group": "先从这里开始",
     "kind": "科研问答",
     "desc": "项目、文献、实验与合作",
-    "updated": "2026-10-11"
+    "updated": "2026-10-17",
+    "navTitle": {
+      "zh": "科研入门问答",
+      "en": "Research handbook"
+    }
   },
   {
     "id": "start",
     "title": "第一个 AI 项目",
     "group": "开始学习",
     "kind": "学习路线",
-    "desc": "MNIST、YOLO，以及 Agent 和机器人的动手入口",
-    "updated": "2026-10-05"
+    "desc": "从分类、回归和检索到语言模型、Agent 与机器人",
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "项目实践",
+      "en": "Starter projects"
+    }
   },
   {
     "id": "basics",
     "title": "学习基础知识",
     "group": "开始学习",
     "kind": "学习资料",
-    "desc": "计算机、数学、ML 与 DL"
+    "desc": "计算机、数学、ML 与 DL",
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "基础知识",
+      "en": "Foundations"
+    }
+  },
+  {
+    "id": "courses",
+    "title": "MOOC、公开课与系统学习",
+    "group": "开始学习",
+    "kind": "课程目录",
+    "desc": "中英文平台、数学、机器学习与各研究方向课程",
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "课程与 MOOC",
+      "en": "Courses & MOOCs"
+    }
+  },
+  {
+    "id": "practice",
+    "title": "练习、竞赛与学习平台",
+    "group": "开始学习",
+    "kind": "实践资源",
+    "desc": "编程算法、SQL、数学、机器学习与数据竞赛",
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "练习与竞赛",
+      "en": "Practice & competitions"
+    }
   },
   {
     "id": "papers",
@@ -44,14 +89,19 @@
     "group": "开始学习",
     "kind": "论文导读",
     "desc": "经典与代表论文、论文讲解和各方向论文清单",
-    "updated": "2026-10-05"
+    "updated": "2026-10-16"
   },
   {
     "id": "directions",
-    "title": "AI 的不同方向，都在研究什么？",
+    "title": "AI 研究方向与问题地图",
     "group": "研究方向",
     "kind": "方向导航",
-    "desc": "找到让自己好奇的问题"
+    "desc": "任务定义、研究证据与跨方向联系",
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "研究方向地图",
+      "en": "Research map"
+    }
   },
   {
     "id": "llm",
@@ -59,7 +109,11 @@
     "group": "研究方向",
     "kind": "方向导读",
     "desc": "数据、结构、训练与能力",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "大语言模型",
+      "en": "Language models"
+    }
   },
   {
     "id": "agent",
@@ -67,7 +121,11 @@
     "group": "研究方向",
     "kind": "方向导读",
     "desc": "工具、反馈与任务完成",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "智能体",
+      "en": "Agents"
+    }
   },
   {
     "id": "vision",
@@ -75,7 +133,11 @@
     "group": "研究方向",
     "kind": "方向导读",
     "desc": "图像、表示与场景",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "计算机视觉",
+      "en": "Computer vision"
+    }
   },
   {
     "id": "multimodal",
@@ -83,7 +145,11 @@
     "group": "研究方向",
     "kind": "方向导读",
     "desc": "连接图像与语言",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "多模态学习",
+      "en": "Multimodal learning"
+    }
   },
   {
     "id": "generation",
@@ -91,7 +157,11 @@
     "group": "研究方向",
     "kind": "方向导读",
     "desc": "从噪声到样本",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "生成模型",
+      "en": "Generative models"
+    }
   },
   {
     "id": "rl",
@@ -99,7 +169,11 @@
     "group": "研究方向",
     "kind": "方向导读",
     "desc": "行动与反馈",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "强化学习",
+      "en": "Reinforcement learning"
+    }
   },
   {
     "id": "world-model",
@@ -107,7 +181,11 @@
     "group": "研究方向",
     "kind": "方向导读",
     "desc": "预测怎样服务行动",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "世界模型",
+      "en": "World models"
+    }
   },
   {
     "id": "embodied",
@@ -115,7 +193,11 @@
     "group": "研究方向",
     "kind": "方向导读",
     "desc": "观察、动作与真实环境",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "具身智能",
+      "en": "Embodied AI"
+    }
   },
   {
     "id": "systems",
@@ -123,7 +205,11 @@
     "group": "研究方向",
     "kind": "方向导读",
     "desc": "质量、速度与成本",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "高效 AI 与系统",
+      "en": "Efficient AI & systems"
+    }
   },
   {
     "id": "ai4x",
@@ -131,7 +217,23 @@
     "group": "研究方向",
     "kind": "方向导读",
     "desc": "从学科问题出发",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "跨学科 AI",
+      "en": "Interdisciplinary AI"
+    }
+  },
+  {
+    "id": "advanced-topics",
+    "title": "进阶专题：从任务定义到可检验的研究",
+    "group": "研究方向",
+    "kind": "专题路线",
+    "desc": "检索、推荐、图、时序、因果、概率、音频、三维与学习理论",
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "进阶专题路线",
+      "en": "Specialized topics"
+    }
   },
   {
     "id": "reading",
@@ -139,7 +241,55 @@
     "group": "科研实践",
     "kind": "科研工作",
     "desc": "从原文找到自己的问题",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16"
+  },
+  {
+    "id": "research-methods",
+    "title": "实验设计与可复现研究",
+    "group": "科研实践",
+    "kind": "研究方法",
+    "desc": "问题、基线、评测、不确定性与研究材料",
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "实验设计与复现",
+      "en": "Experimental design"
+    }
+  },
+  {
+    "id": "datasets",
+    "title": "数据集、基准与评测方法",
+    "group": "科研实践",
+    "kind": "数据与评测",
+    "desc": "数据来源、评价协议、指标与数据审计",
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "数据集与评测",
+      "en": "Datasets & evaluation"
+    }
+  },
+  {
+    "id": "engineering",
+    "title": "AI 研究工程与可复现交付",
+    "group": "科研实践",
+    "kind": "研究工程",
+    "desc": "环境、版本、训练诊断、性能、服务与交付",
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "研究工程与交付",
+      "en": "Research engineering"
+    }
+  },
+  {
+    "id": "responsible-ai",
+    "title": "可信与负责任 AI",
+    "group": "科研实践",
+    "kind": "可信 AI",
+    "desc": "公平、鲁棒性、校准、解释、隐私、安全与人工评价",
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "可信与负责任 AI",
+      "en": "Trustworthy & responsible AI"
+    }
   },
   {
     "id": "irene-workflow",
@@ -147,7 +297,7 @@
     "group": "科研实践",
     "kind": "工作流",
     "desc": "文献管理、阅读深度、科研简报与 AI 追问",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16"
   },
   {
     "id": "writing",
@@ -155,15 +305,23 @@
     "group": "科研实践",
     "kind": "科研工作",
     "desc": "把问题、做法和证据讲清",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "写作与学术交流",
+      "en": "Writing & communication"
+    }
   },
   {
     "id": "contact",
-    "title": "联系老师、学长与合作",
+    "title": "学术联系与研究合作",
     "group": "科研实践",
     "kind": "科研工作",
     "desc": "让交流从具体事情开始",
-    "updated": "2026-10-12"
+    "updated": "2026-10-17",
+    "navTitle": {
+      "zh": "学术联系与合作",
+      "en": "Contact & collaboration"
+    }
   },
   {
     "id": "ai",
@@ -171,31 +329,7 @@
     "group": "科研实践",
     "kind": "科研工作",
     "desc": "编程、资料分析、图表与研究讨论",
-    "updated": "2026-10-12"
-  },
-  {
-    "id": "experience",
-    "title": "经历、焚诀与走过的弯路",
-    "group": "经历与生活",
-    "kind": "经验选读",
-    "desc": "方法、回忆与走过的弯路",
-    "updated": "2026-10-06"
-  },
-  {
-    "id": "timeline",
-    "title": "大一年终总结：顿觉天地宽",
-    "group": "经历与生活",
-    "kind": "Hikaru",
-    "desc": "顿觉天地宽",
-    "updated": "2026-10-05"
-  },
-  {
-    "id": "life",
-    "title": "怎么好好生活",
-    "group": "经历与生活",
-    "kind": "生活与经历",
-    "desc": "生活里那些具体的事情",
-    "updated": "2026-10-05"
+    "updated": "2026-10-16"
   },
   {
     "id": "lookout",
@@ -203,15 +337,19 @@
     "group": "看看外面",
     "kind": "信息与研究社区",
     "desc": "认识工作、研究者与实验室",
-    "updated": "2026-10-11"
+    "updated": "2026-10-17"
   },
   {
     "id": "resources",
-    "title": "资料总索引",
+    "title": "资源总索引",
     "group": "资料总索引",
     "kind": "资料选读",
     "desc": "课程、技术文章、科研方法与研究动态",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16",
+    "navTitle": {
+      "zh": "资源总索引",
+      "en": "Resource index"
+    }
   },
   {
     "id": "catalog-foundation",
@@ -219,7 +357,7 @@
     "group": "资料总索引",
     "kind": "资料选读",
     "desc": "计算机、数学、Python、机器学习与模型架构",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16"
   },
   {
     "id": "catalog-research",
@@ -227,7 +365,7 @@
     "group": "资料总索引",
     "kind": "资料选读",
     "desc": "文献、实验、写作、汇报与工具",
-    "updated": "2026-10-12"
+    "updated": "2026-10-17"
   },
   {
     "id": "catalog-directions",
@@ -235,7 +373,7 @@
     "group": "资料总索引",
     "kind": "资料选读",
     "desc": "各方向的课程、论文清单与开源项目",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16"
   },
   {
     "id": "catalog-channels",
@@ -243,7 +381,7 @@
     "group": "资料总索引",
     "kind": "资料选读",
     "desc": "技术博客、研究发布、媒体与访谈",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16"
   },
   {
     "id": "blogs",
@@ -251,7 +389,7 @@
     "group": "资料总索引",
     "kind": "资料选读",
     "desc": "模型推导、Scaling、评测与科研写作",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16"
   },
   {
     "id": "lesswrong",
@@ -259,7 +397,7 @@
     "group": "资料总索引",
     "kind": "资料选读",
     "desc": "经验、证据、实验测量与 AI 对话",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16"
   },
   {
     "id": "research-conversations",
@@ -267,7 +405,7 @@
     "group": "资料总索引",
     "kind": "资料选读",
     "desc": "研究经验、师生合作与社区问答",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16"
   },
   {
     "id": "limu",
@@ -275,30 +413,62 @@
     "group": "资料总索引",
     "kind": "资料选读",
     "desc": "动手学深度学习与论文精读视频",
-    "updated": "2026-10-12"
+    "updated": "2026-10-16"
   },
   {
     "id": "labs",
     "title": "课题组与研究团队",
     "group": "资料总索引",
     "kind": "资料选读",
-    "desc": "高校名录、实验室与工业研究团队",
-    "updated": "2026-10-12"
+    "desc": "跨地区研究网络、团队示例与项目查找方法",
+    "updated": "2026-10-17"
   },
   {
     "id": "ama",
-    "title": "AMA 讨论区",
+    "title": "社区提问与贡献",
     "group": "交流与提问",
     "kind": "讨论",
-    "desc": "提问、追问与 core 回复",
-    "updated": "2026-10-05"
+    "desc": "学习提问、内容纠错与开放资源建议",
+    "updated": "2026-10-17"
   },
   {
     "id": "about",
-    "title": "关于 AI 社与这份指南",
+    "title": "关于 OpenEnvision 与这份指南",
     "group": "关于",
     "kind": "关于本指南",
-    "desc": "社团、来源、致谢与修订",
-    "updated": "2026-10-11"
+    "desc": "OpenEnvision、来源、致谢与修订",
+    "updated": "2026-10-17",
+    "navTitle": {
+      "zh": "关于本指南",
+      "en": "About this guide"
+    }
+  },
+  {
+    "id": "welcome",
+    "title": "学习与研究的起点",
+    "group": "先从这里开始",
+    "kind": "写在前面",
+    "desc": "探索方向、建立支持与迈出研究的第一步",
+    "updated": "2026-10-17",
+    "navTitle": {
+      "zh": "学习与研究的起点",
+      "en": "Starting your research journey"
+    }
+  },
+  {
+    "id": "experience",
+    "title": "研究经历与个人反思",
+    "group": "经历与生活",
+    "kind": "经验选读",
+    "desc": "研究选择、经验判断与从挫折中学习",
+    "updated": "2026-10-17"
+  },
+  {
+    "id": "life",
+    "title": "生活与研究的平衡",
+    "group": "经历与生活",
+    "kind": "生活与经历",
+    "desc": "个人节奏、合作关系与研究之外的生活",
+    "updated": "2026-10-17"
   }
 ]

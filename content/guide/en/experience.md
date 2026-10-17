@@ -1,44 +1,41 @@
-# Experience, practical lessons, and wrong turns
+# Research experiences and personal reflections
 
-Some advice only makes sense after you have lived through it. Here are personal accounts, working methods, and things that did not work out. Before taking a lesson away, look at the situation the person was in.
+Personal accounts reveal the decisions, support, difficulties, and uncertainty behind research. These accounts offer university students and junior researchers different ways to think about the questions they face. Each account comes from a particular person and setting; consider the discipline, supervision, available resources, and responsibilities that shaped it.
 
-## Experiences shared here
+## From learning to research
 
-**[My Freshman-Year Review: The World Suddenly Opens Wide](timeline.md)**  
-From learning to code and trying CV demos to the first deadline, internships, and rejection. The full timeline includes how I thought about learning, comparison, and life at the time.
+**[Starting your learning and research journey](welcome.md)**  
+Choosing a first question, understanding possible paths, finding peers, and making sense of progress. Adapted from Hikaru's reflections for readers starting university, moving into AI, or beginning research.
 
-**[A letter to new university students](welcome.md)**  
-Retelling that year's uncertainty for people just arriving: what you want, how you see yourself, and ordinary life outside research.
-
-Specific answers about starting research are in the [research Q&A](research.md). Return to the experience when a question reminds you of it.
+For more specific questions about getting started, explore the [research Q&A](research.md). Start with a question you face now, and consider which advice fits your circumstances.
 
 **[Building your research workflow — irene](irene-workflow.md)**
 
-From organizing papers and notes with Zotero and Obsidian to research briefs, reading depth, and questions from AI. Includes selecting papers, examining evidence, and following your own questions, with the original PDF, prompts, and tools.
+irene shares how to select papers, examine evidence, and follow your own questions. The workflow covers organizing papers and notes with Zotero and Obsidian, preparing research briefs, deciding how closely to read, and using AI-generated questions to check your understanding. The original PDF, prompts, and tools are included.
 
 ## Other people's paths
 
 [Jiaxuan Zou: Cognitive Compound Interest—Reflections on Two Undergraduate Years](https://jiaxuanzou0714.github.io/blog/2026/cognitive-compound-interest/)  
-Notice how public writing, conversation, and collaboration affected his choices. When an opportunity appears, look at the earlier work and help behind it.
+Notice how public writing, conversation, and collaboration affected his choices. When an opportunity appears, look at the earlier work and support behind it. The author's stage of study does not set a deadline for your own progress.
 
 [Wenhao Chai: FAQ for Juniors](https://wenhaochai.com/pages/junior_faq.html)  
-Begin with questions about background, labs, and research choices. Compare answers from different experiences with our own Q&A.
+Begin with questions about background, labs, and research choices. Compare answers from different experiences with this guide's Q&A.
 
 [Karpathy: A Survival Guide to a PhD](https://karpathy.github.io/2016/09/07/phd/)  
-A 2016 account of doctoral life. Start with everyday research, changing direction, and independent work, comparing them with your current stage.
+A 2016 account of doctoral life. Start with everyday research, changing direction, and independent work, then consider which lessons fit your current stage and research environment.
 
-## Ask what a practical recipe solves
+## Ask what a piece of advice helps you do
 
-[Writing AI Conference Papers](https://github.com/hzwer/WritingAIPaper) helps with paper structure and expression. [Karpathy's training recipe](https://karpathy.github.io/2019/04/25/recipe/) helps diagnose experiments. They are also linked from the [workflow pages](reading.md).
+[Writing AI Conference Papers](https://github.com/hzwer/WritingAIPaper) offers guidance on paper structure and expression. [Karpathy's training recipe](https://karpathy.github.io/2019/04/25/recipe/) helps diagnose experiments. Both are also linked from the [paper reading and research workflow guide](reading.md).
 
-[Beware of Other-Optimizing](https://www.lesswrong.com/posts/6NvbSwuSAooQxxf7f/beware-of-other-optimizing) asks why advice that helps one person may fail another. Read the circumstances together with the method to identify what you can use.
+[Beware of Other-Optimizing](https://www.lesswrong.com/posts/6NvbSwuSAooQxxf7f/beware-of-other-optimizing) asks why advice that helps one person may fail another. Consider the context behind the advice: does it address your problem, what time or support does it require, and what could you adapt?
 
-## Failure can be its own story
+## Setbacks are worth recording, too
 
-The [freshman-year review](timeline.md) includes my first rejection. Notice the consequences of scheduling, experiments, writing, and judgment.
+When reflecting on a setback, consider how your schedule, experiments, writing, and decisions contributed, along with circumstances outside your control. Separate what you observed, how you interpret it, and what you might try next.
 
-You can tell a complete story before it has a happy outcome. You do not need later success to earn permission to write about it.
+An experience is worth writing about even while its outcome is uncertain. You do not need a later success to make a setback worth discussing.
 
-## More experience and judgment
+## Further reading
 
-[Author blogs](blogs.md) include Zou's undergraduate reflection, Chai's FAQ, and Su's long-running writing. [Research Q&A and AMAs](research-conversations.md) preserve questions from different circumstances. Pair them with the [first three LessWrong selections](lesswrong.md) when thinking about your own situation.
+[Author blogs](blogs.md) include Zou's undergraduate reflection, Chai's FAQ, and Su's long-running writing. [Research Q&A and AMAs](research-conversations.md) bring together questions from people in different circumstances. For reflection on your own situation, see the LessWrong selections on [advice](lesswrong.md#other-advice), [improvement](lesswrong.md#growth), and [sustainable work](lesswrong.md#work-life).

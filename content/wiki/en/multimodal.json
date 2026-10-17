@@ -1,0 +1,175 @@
+[
+  {
+    "id": "modality",
+    "summary": "A modality is a form in which information is expressed or sensed, such as text, images, sound, or touch.",
+    "detail": [
+      "The same knock on a door can produce an audio recording, video frames, and vibration readings. Modalities provide complementary cues, which a model converts into representations it can process before using them together."
+    ],
+    "sourceTitles": [
+      "Visual Instruction Tuning"
+    ]
+  },
+  {
+    "id": "vlm",
+    "summary": "A vision-language model processes images and language jointly to learn semantic relationships between them.",
+    "detail": [
+      "Some models encode images and text separately for retrieval based on similarity; others generate image descriptions or answer questions. VLM describes the combination of vision and language, while the specific inputs and outputs depend on the design."
+    ],
+    "sourceTitles": [
+      "Learning Transferable Visual Models From Natural Language Supervision"
+    ]
+  },
+  {
+    "id": "mllm",
+    "summary": "A multimodal large language model connects information such as images or audio to a large language model so it can understand or generate content using multiple inputs.",
+    "detail": [
+      "When asked which item grew the most in a screenshot of a table, the model must first read the visual information and then answer the question. A common visual architecture consists of a vision encoder, a connector, and a language model."
+    ],
+    "sourceTitles": [
+      "Visual Instruction Tuning"
+    ]
+  },
+  {
+    "id": "vision-encoder",
+    "summary": "A vision encoder converts an image into numerical features that retain visual content.",
+    "detail": [
+      "An encoded photo can become one overall vector or a sequence of patch vectors. These features can support retrieval or be passed to a language model for question answering."
+    ],
+    "sourceTitles": [
+      "Learning Transferable Visual Models From Natural Language Supervision"
+    ]
+  },
+  {
+    "id": "multimodal-projector",
+    "summary": "A multimodal projector maps features from one modality into a representation space that another module can accept.",
+    "detail": [
+      "A vision encoder can produce features with a different dimension and distribution from a language model. A linear layer or MLP can map them into suitable inputs. A projector is one kind of connector; query-and-attention connectors such as Q-Former are not simply projection layers."
+    ],
+    "sourceTitles": [
+      "Visual Instruction Tuning",
+      "BLIP-2"
+    ]
+  },
+  {
+    "id": "multimodal-alignment",
+    "summary": "Multimodal alignment establishes correspondence between information from different modalities that expresses the same content.",
+    "detail": [
+      "A puppy photo and the sentence “a puppy running on grass” should be semantically related. Training can bring paired image and text representations closer together or link objects mentioned in text to image regions."
+    ],
+    "sourceTitles": [
+      "Learning Transferable Visual Models From Natural Language Supervision"
+    ]
+  },
+  {
+    "id": "multimodal-fusion",
+    "summary": "Multimodal fusion combines cues from different modalities into shared representations or outputs used to make decisions.",
+    "detail": [
+      "In speech understanding, audio provides pronunciation while lip movements help distinguish similar sounds. Fusion can happen by combining input features, using cross-attention, or merging the outputs of multiple models."
+    ],
+    "sourceTitles": [
+      "Visual Instruction Tuning"
+    ]
+  },
+  {
+    "id": "contrastive-learning",
+    "summary": "Contrastive learning compares matching and nonmatching examples to learn representations that reflect semantic relationships.",
+    "detail": [
+      "Pairs can be augmented views of one image or matched images and captions. Contrastive learning is not restricted to multimodal data and is not necessarily self-supervised. The choice of positives, negatives, and loss determines which information the representation preserves."
+    ],
+    "sourceTitles": [
+      "Learning Transferable Visual Models From Natural Language Supervision",
+      "A Simple Framework for Contrastive Learning of Visual Representations"
+    ]
+  },
+  {
+    "id": "vqa",
+    "summary": "Visual question answering generates an answer from an image and a natural-language question.",
+    "detail": [
+      "Asked “How many cups are next to the plate?” about a dining table photo, a model must recognize objects, understand spatial relations, and count. The question determines which image information it needs."
+    ],
+    "sourceTitles": [
+      "VQA: Visual Question Answering"
+    ]
+  },
+  {
+    "id": "ocr",
+    "summary": "Optical character recognition converts text in images or scans into editable, searchable characters.",
+    "detail": [
+      "OCR can read a merchant's name, date, and amount from a receipt photo. A common pipeline first locates text regions, then recognizes characters; document-understanding methods also identify tables, paragraphs, and reading order."
+    ],
+    "sourceTitles": [
+      "TrOCR: Transformer-based Optical Character Recognition with Pre-trained Models"
+    ]
+  },
+  {
+    "id": "multimodal-grounding",
+    "summary": "Visual grounding links objects or regions mentioned in language to specific image locations.",
+    "detail": [
+      "“Draw a box around the red cup on the left” provides color, location, and class cues. The model combines them with the image to produce a matching box, point, or mask."
+    ],
+    "sourceTitles": [
+      "Grounding DINO"
+    ]
+  },
+  {
+    "id": "image-captioning",
+    "summary": "Image captioning generates a natural-language sentence describing an image's content.",
+    "detail": [
+      "For a photo of a dog chasing a ball, a model might produce “A dog is chasing a ball on the grass.” Generation selects relevant objects, actions, and relationships and organizes visual information into coherent language."
+    ],
+    "sourceTitles": [
+      "Visual Instruction Tuning"
+    ]
+  },
+  {
+    "id": "cross-modal-retrieval",
+    "summary": "Cross-modal retrieval uses a query in one modality to find semantically matching content in another.",
+    "detail": [
+      "The text “a dog running through snow” can retrieve matching photos from an image collection. A common method encodes query text and candidate images as vectors and ranks them by similarity."
+    ],
+    "sourceTitles": [
+      "Learning Transferable Visual Models From Natural Language Supervision"
+    ]
+  },
+  {
+    "id": "asr",
+    "summary": "Automatic speech recognition converts spoken audio into text.",
+    "detail": [
+      "A meeting recording can be transcribed into sentences. The model must identify linguistic content from acoustic changes while handling accents, noise, and variations in speaking speed."
+    ],
+    "sourceTitles": [
+      "Robust Speech Recognition via Large-Scale Weak Supervision"
+    ]
+  },
+  {
+    "id": "tts",
+    "summary": "Text-to-speech synthesizes speech from text.",
+    "detail": [
+      "For navigation instructions, the system determines pronunciation, pauses, and intonation before synthesizing audio. Some systems can also control voice characteristics using a specified speaker or a short audio prompt."
+    ],
+    "sourceTitles": [
+      "Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers"
+    ]
+  },
+  {
+    "id": "audio-token",
+    "summary": "An audio token is an audio representation unit used in sequence modeling and may encode semantic structure or acoustic detail.",
+    "detail": [
+      "Discrete semantic tokens can be obtained by quantizing self-supervised audio features; acoustic codec tokens usually come from a neural audio codec codebook. They retain different information and have different waveform reconstruction capabilities, so audio token and codec token are not interchangeable."
+    ],
+    "sourceTitles": [
+      "AudioLM: a Language Modeling Approach to Audio Generation"
+    ]
+  },
+  {
+    "id": "neural-audio-codec",
+    "summary": "A neural audio codec uses learned encoding, quantization, and decoding to compress and reconstruct audio.",
+    "detail": [
+      "An encoder maps waveforms to compact representations, a quantizer produces discrete codes, and a decoder reconstructs sound. Design choices involve trade-offs among bitrate, latency, and quality. Codec tokens can be generation targets, but the codec itself is not an ASR or text-to-speech system."
+    ],
+    "sourceTitles": [
+      "SoundStream: An End-to-End Neural Audio Codec",
+      "High Fidelity Neural Audio Compression"
+    ]
+  }
+]

@@ -2,7 +2,7 @@
 
 Want to try research but unsure how to begin? You might be exploring a field, opening a paper someone asked you to read, or trying to explain an unexpected experiment result. We have gathered questions that come up at each of these stages.
 
-The 60 questions below cover preparation, contacting researchers, reading, experiments, and publication. **Open the question closest to what you are working through.** To run an example first, try [MNIST or YOLO](start.md).
+The 60 questions below cover preparation, contacting researchers, reading, experiments, and publication. **Open the question closest to what you are working through.** To run an example first, try [a starter project](start.md).
 
 ## What research involves
 
@@ -11,6 +11,9 @@ The 60 questions below cover preparation, contacting researchers, reading, exper
 ### 1. What is research? How is it different from classes, course projects, or competitions?
 
 Research formulates hypotheses or methods for unresolved questions and tests them with **inspectable evidence**. Courses and competitions usually supply tasks, data, or evaluation criteria; research must also establish the question, the gap in prior work, and the conditions of the conclusion.
+
+New knowledge, methods, data, and systems can all be contributions; producing a product is not a requirement for every research project.
+
 
 <a id="q2"></a>
 
@@ -30,12 +33,14 @@ A research project provides practice in defining questions, reviewing literature
 
 You may find that **the question is still vague, the baseline does not reproduce, or the experiments cannot be compared fairly**. Data or compute may be missing, or a result may not answer the original question. Before starting, discuss available resources, evaluation, when to meet, and what you hope to finish at this stage. After running, look at the discrepancies together.
 
+AI and agents may accelerate search, coding, or record keeping, depending on the task and verification process. They can also introduce errors that need checking; faster execution does not by itself make a finding reliable.
+
 
 <a id="q5"></a>
 
 ### 5. How can a small project cover running, modifying, and recording results?
 
-Choose an [MNIST or YOLO project](start.md) and complete three checks:
+Choose an [digit-classification or YOLO project](start.md) and complete three checks:
 
 1. Run the documented example and save the environment, configuration, and output.
 2. Change one factor and compare results and failure cases.
@@ -52,12 +57,16 @@ These artifacts can support a technical discussion.
 
 Start by asking: **what do you want to do next?** To run a demo, learn to set up the environment and understand the inputs and outputs. To reproduce an experiment, also work through the data split, training, and evaluation. When you want to change the method, go deeper into its principles and controlled comparisons. Read the specific project prerequisites too.
 
+Undergraduates can explore early or later in their degree, but particular projects still have prerequisite, safety, and data-access requirements. Starting to explore does not mean being ready for every task. The [learning path](learning-path.md) separates demonstration, reproduction, and method changes.
+
 
 <a id="q7"></a>
 
 ### 7. How do I identify missing prerequisites?
 
 “I lack the basics” is broad. Can you run a Python example, read a tensor shape, distinguish training from testing, or identify an abstract’s main claim with a dictionary? **Find the particular step that is blocking you**, then look up the relevant section in [foundations](basics.md). It will also be easier to explain what you need help with.
+
+Learning through a project still needs deliberate study when a gap blocks correctness or evaluation. Access also depends on recruitment, time, and resources; it is not determined by effort alone.
 
 
 <a id="q8"></a>
@@ -79,6 +88,8 @@ Start with something small you have already tried: **runnable reproduction code,
 
 Choose a [starter project](start.md) and try this sequence: **select the task and data → run a baseline → change one setting and compare → organize code, results, and questions**. There is no need to assign exactly one week to each step; adjust to your time and progress. Keep code or notes from each step so you can pick up where you left off.
 
+Use the [staged learning path](learning-path.md) and [practice projects](practice.md) to match the work to your equipment. A first-month plan is an example, not a universal pace or completion requirement.
+
 
 ## Directions and sources
 
@@ -87,6 +98,9 @@ Choose a [starter project](start.md) and try this sequence: **select the task an
 ### 11. Which resources introduce the research areas?
 
 Start with the tasks, inputs, outputs, and representative papers in [research directions](directions.md). Media and demos can provide leads; **check methods, evaluation conditions, and limitations** against papers, code, and project pages. See [Lookout](lookout.md) for research sources.
+
+Popularity and a compelling demo are not measures of evidence strength. Check publication records and limitations through the [literature-search workflow](reading.md#search-protocol).
+
 
 <a id="q12"></a>
 
@@ -107,6 +121,8 @@ Inspect code, data, and evaluation behind the demo: selected examples, failing i
 ### 14. What should I check when comparing research projects?
 
 If you are comparing projects, put them in a table: what question does each address, what prior work and prerequisites are involved, where will data and compute come from, who will discuss the work with you, and what needs to be ready by when? **Write down what you do not know and ask the project lead.** If data or compute is not yet available, discuss a smaller question you can try with what you have.
+
+List accessible data, run and tuning costs, validation time, and useful outputs if the hypothesis fails. Limited compute can motivate smaller systems, evaluation, data studies, or failure analysis without guaranteeing easier publication. See [baselines and budgets](research-methods.md#baselines-budget).
 
 
 <a id="q15"></a>
@@ -129,6 +145,9 @@ Use contact information on university, lab, or author pages and follow any state
 ### 17. How can relevant work and recruitment information be found?
 
 Check author pages, lab project pages, and open calls. Verify topics, recent work, participation requirements, and contact channels. Existing undergraduate members do not establish current openings; **ask whether supervision is available**.
+
+Ask about the actual supervision arrangement and available time as well as the opening itself.
+
 
 <a id="q18"></a>
 
@@ -177,6 +196,9 @@ Ask whether observation, a short trial, or a staged task is available, and confi
 
 Before joining, record agreements about outputs and authorship; update them when tasks or contributions change.
 
+Clarify use of trial outputs, confidential or restricted data, and handoff if you leave. Revisit authorship using actual contributions and the target venue policy rather than treating an early verbal ranking as unconditional.
+
+
 <a id="q24"></a>
 
 ### 24. How do I find out who will supervise me, how often we meet, and what resources are available?
@@ -206,17 +228,23 @@ Shared foundations include **linear algebra, probability and statistics, calculu
 
 For pretraining hyperparameters, post-training data mixtures, RL scaling, or DDPM, consult the relevant [foundation resources](basics.md), then relate them to the code and experiment.
 
+Choose prerequisites and exercises around the current task using the [course map](courses.md). A course list supplies resources rather than evidence that you can understand and verify a method.
+
+
 <a id="q27"></a>
 
 ### 27. How can I combine courses, books, and projects without putting off getting started?
 
 **You do not need to read every paper in a field before opening the code.** When you find a project that interests you and that you have the resources to run, reading and running it can go together: try the authors' examples, look at the model's output, use the implementation to understand the paper, and try changing something. Concepts whose purpose once seemed unclear become concrete questions, giving you a reason to return to a course or textbook.
 
+Connect courses, reading, and a project around one question using the [learning path](learning-path.md). Completion certificates can document participation but do not alone establish understanding or reproduction ability. Check explicit application requirements; accumulating certificates need not displace substantive practice.
+
+
 <a id="q28"></a>
 
 ### 28. When should I stop to study a concept systematically, and when is a rough understanding enough?
 
-Resolve a gap before proceeding if it affects **implementation correctness or interpretation**. Record derivations not needed for the current task, including when they will be needed, and review them before modifying methods or interpreting results.
+Resolve a gap before proceeding if it affects **implementation correctness, central assumptions, or interpretation**. Record derivations not needed for the current task, including when they will be needed, and review them before modifying methods or interpreting results.
 
 <a id="q29"></a>
 
@@ -229,6 +257,9 @@ Use three checks:
 - Propose explanations for a failure case and design checks that distinguish them.
 
 Save results and open questions for further study and experiments.
+
+For example, an overview of TRPO, PPO-Clip, or GRPO is not enough to verify an implementation. [PPO-Clip](https://arxiv.org/abs/1707.06347)'s clipped surrogate discourages large policy changes; it is not a universal hard bound on the actual KL change. Check the original method, assumptions, and implementation version before drawing a conclusion about stability.
+
 
 <a id="q30"></a>
 
@@ -252,6 +283,9 @@ Prioritize foundations needed for verification: tensors and autodiff, probabilit
 For agents, one route runs from LLM capabilities, chain-of-thought, and prompting to [ReAct](https://react-lm.github.io/), examining how reasoning, action, tools, and feedback combine. Extend to multi-agent systems, multimodal agents, agent RL, harnesses, skills, and feedback loops as the task requires. For recursive self-improvement, check what each paper improves and how it evaluates that change.
 
 The routes intersect. Record their questions, motivations, and connections. Continue with [papers](papers.md), [agents](agent.md), and [reading depth](reading.md#reading-depth).
+
+Finding a paper is different from verifying its claim. Preserve the version, publication record, and evidence locations, and verify AI-proposed titles and references. Use the [literature matrix](reading.md#literature-matrix).
+
 
 <a id="q32"></a>
 
@@ -286,6 +320,8 @@ Record key questions and how to verify them. See the [AI questioning example](ai
 ### 35. How do I keep useful notes and connect papers instead of collecting separate summaries?
 
 Keep **the question, method, evidence locations, conditions, open questions, and related work** in literature notes. Compare papers under matched tasks and evaluation definitions, retaining sources for each item. The [Zotero and Obsidian workflow](irene-workflow.md#notes) provides setup and comparison prompts.
+
+Separate the authors' statements, your interpretation, and unresolved information. Do not rank incompatible scores across data, budgets, or evaluation protocols. See the [verifiable-note template](reading.md#paper-notes).
 
 
 ## Finding questions and ideas
@@ -327,11 +363,16 @@ Compare observations in a joint reading, then choose one question for literature
 
 Search keywords, predecessors, and citation chains, then compare **settings, assumptions, data, methods, and evaluation**. Feasibility depends on data access, implementation, compute, time, and guidance. Use a small experiment to estimate cost and state which explanation it can exclude. See [targeted literature search](irene-workflow.md#search).
 
+A small test can check implementation and cost without establishing novelty, mechanism, or general effectiveness. Draft a question, hypothesis, control, and refutation condition using [experimental design](research-methods.md#question-hypothesis); consult the [dataset guide](datasets.md) for access and splitting.
+
+
 <a id="q40"></a>
 
 ### 40. When is a question worth pursuing? Should I stop if someone has tried it or my first attempt fails?
 
 Distinguish **implementation errors, statistical variation, and lack of effect** under the current conditions. Before another experiment, specify the uncertainty it resolves, resource cost, and stop or revision criteria. If prior work addresses the same question, check for a clear, testable remaining difference.
+
+Do not treat hearsay that “everyone tried it” as evidence of universal failure. Verify the original conditions and consider information value, opportunity cost, and a resource limit. See [negative results and research decisions](research-methods.md#negative-results).
 
 
 ## Doing experiments
@@ -352,6 +393,9 @@ A baseline gives you a reference for understanding the effect of a change. [Read
 
 After a run, compare the setup and results with the paper. Check data splits, evaluation, randomness, and possible leakage. Look at actual outputs too: some errors will not show up in an aggregate score.
 
+Distinguish successful execution, rebuilding a table, and supporting the main conclusion. Preserve code, data, and checkpoint versions, check baselines under a shared protocol, and disclose unresolved differences. Use the [reproduction checklist](research-methods.md#reproduction-checklist) and [dataset guide](datasets.md).
+
+
 <a id="q43"></a>
 
 ### 43. What should I decide before an experiment so I know what I am testing?
@@ -360,13 +404,19 @@ Write **the question, expected results**, and how different outcomes would chang
 
 To study one factor, control the others as far as possible. To study interactions, design combinations around that purpose. Keep each change traceable.
 
+Also record splits, configuration-selection rules, training/inference budgets, run IDs, and raw-output locations. Use validation for selection and keep held-out evidence out of repeated tuning. Copy the [experiment-record template](research-methods.md#experiment-record).
+
+
 <a id="q44"></a>
 
 ### 44. Does a higher score prove the idea works? How do I check bugs, unfair comparisons, and noise?
 
-First inspect implementation, data splits, and evaluation. Then check fairness, including **resources, configuration, and tuning effort**.
+Check implementation, splits, and evaluation first. Then inspect fairness in data and external information, resources, configurations, tuning opportunities, candidates, and retries. A higher aggregate score alone does not exclude these alternative explanations.
 
-Run more than once and report variation. If the gain is smaller than ordinary variation, the evidence may not support either a confident positive or negative conclusion. Use suitable ablations and sample analysis to test your explanation.
+Report effect size and uncertainty matched to the question. Comparing a mean gain directly with an across-run standard deviation does not by itself establish an effect or its absence: sample counts, pairing, dependence, and assumptions matter. Multiple seeds characterize run variation on fixed data; they do not create new independent patients, users, or tasks. Define the statistical unit and error-bar calculation.
+
+Use targeted ablations, failure analysis, and independent evaluation where needed. See [uncertainty and statistical units](research-methods.md#uncertainty).
+
 
 <a id="q45"></a>
 
@@ -384,6 +434,9 @@ Use the remaining discrepancies to decide whether to investigate further or chan
 ### 46. When should a blocker be reported, and what information is needed?
 
 Report the status when diagnosis is stuck, access is missing, or another task is blocked. Include **the goal, minimal reproduction, environment, logs, attempts, and precise question**. Record independent tasks that can proceed while awaiting feedback.
+
+A half-day or day is at most an experience-based reference, not a required waiting time. You do not need to exhaust AI tools before asking a person. Escalate according to impact, resource use, and the agreed feedback process.
+
 
 <a id="q47"></a>
 
@@ -452,6 +505,9 @@ Understanding the method and metric helps detect **task mismatch, leakage, imple
 
 Save **task inputs, key changes, configuration, outputs, and verification results**. Check whether you can locate the key computation, explain the metric, reproduce a result, and explain a failure. Turn unresolved points into checks for the next task.
 
+Even with AI assistance, a first draft can be difficult; the experience varies by person and task. Review what actually changed in your understanding of experiments, argument, and collaboration rather than treating task completion as proof of learning.
+
+
 <a id="q55"></a>
 
 ### 55. Which materials can I give AI? What permissions and research rules matter?
@@ -461,6 +517,8 @@ Public papers, open-source code, and your own notes still require checking appli
 For reviewing, check that year's venue rules separately. [ICML 2026](https://icml.cc/Conferences/2026/LLM-Policy), for example, distinguishes two reviewing policies: follow the one assigned to you. Permitted assistance does not mean delegating judgment and evaluation to AI.
 
 Check the target venue's writing rules too. Authors remain responsible for the content; AI cannot take on authorship responsibility. Follow the specific rules on disclosure and permitted use. Check every reference, particularly for fabricated citations. Official entry points are on the [publication page](writing.md).
+
+Public accessibility is not unrestricted permission to upload, reuse, or redistribute. Check third-party material even inside your own notes. Record AI-generated data, labels, or judgments as methodological components and verify applicable disclosure rules; see [AI assistance and disclosure](writing.md#ai-disclosure) and [ethics and licensing](research-methods.md#ethics-license). A reviewing permission does not automatically apply to authorship or another venue.
 
 
 ## Writing, publication, and project records
@@ -473,31 +531,38 @@ Check the target venue's writing rules too. Authors remain responsible for the c
 
 Draft the question, method diagram, and result records during experiments. If a paragraph is unclear, check both its wording and whether the necessary explanation or evidence is missing. See [writing](writing.md).
 
+Starting a draft does not mean the work is ready for submission. Readiness depends on contribution type and venue scope, not a universal experiment count or score. Use the [claim–evidence outline](writing.md#claim-evidence), then check current submission, anonymity, and artifact requirements.
+
+
 <a id="q57"></a>
 
 ### 57. What makes good research or a good paper? What do novelty, scores, and prestigious venues tell us?
 
-Check **the question, differences from prior work, comparison conditions, strength of evidence, limitations, and reproducibility**. New structures or higher scores require experimental explanation. Publication venues provide review and dissemination context but do not replace evidence checks. Verify institutional recognition against the relevant published rules.
+Check **the question, differences from prior work, comparison conditions, strength of evidence, limitations, and reproducibility**. New structures or higher scores require experimental explanation. Publication venues provide review and dissemination context but do not replace evidence checks; review arrangements vary by track and submission type. Verify institutional recognition against the relevant published rules.
 
 <a id="q58"></a>
 
 ### 58. How do SCI, CCF categories, major conferences, workshops, and preprints differ?
 
-**SCI/SCIE** are citation indexes. The phrase “SCI journal” refers to inclusion in an index. Journal quartiles are another evaluation layer; do not conflate them.
+SCI/SCIE refer to the science citation-index system; check SCIE in [Clarivate's Web of Science index documentation](https://webofscience.help.clarivate.com/Content/wos-core-collection/wos-core-collection.htm). Index inclusion, a JCR rank/quartile for a particular category and year, and another organization's classification are different information. Specify the system and year rather than treating them as one grade.
 
-**CCF A** comes from the China Computer Federation's recommended publication list, which groups conferences and journals into A, B, and C categories. Chinese institutions may use it for awards or graduate admission; check the particular program.
+CCF A comes from the China Computer Federation's recommended publication directory, which categorizes conferences and journals. The directory changes; consult [CCF's official notices](https://www.ccf.org.cn/Academic_Evaluation/By_category/2024-06-28/825349.shtml) and subsequent updates rather than only third-party lookups. Institutional or program recognition must be checked in its own formal rules.
 
-**Top conference** is an informal description of an important venue in a field. NeurIPS, ICML, ICLR, CVPR, and ACL are names common across AI areas. A field's view and the CCF list are not identical.
+“Top conference” is an informal field-specific description, not a universal certification. NeurIPS, ICML, ICLR, CVPR, and ACL cover different scopes. A conference name, a particular track's review process, and its CCF category are not interchangeable.
 
-A **workshop** is a focused forum for discussion. Archival status, later submission of an extended version, and accepted work types depend on its rules. A suitable workshop can offer conversation and feedback.
+A workshop is a focused forum. Peer review, archival status, accepted work types, and later extended submissions depend on its rules. Do not assume all workshop work is a main-conference publication or all of it is nonarchival.
 
-A **preprint** shares work before or outside formal publication. arXiv is a common venue. Uploading there does not itself mean peer review; a preprint may later be formally published. Inspect the specific version and publication record. Find official links on the [publication page](writing.md).
+A preprint is a publicly shared paper version or status, not a quality grade. [arXiv's official guidance](https://info.arxiv.org/help/moderation/index.html) distinguishes moderation from peer review. A formally published paper can also have an arXiv version. Check the version read, publication record, and applicable policies; see [paper versions and status](reading.md#search-protocol).
+
 
 <a id="q59"></a>
 
 ### 59. How do I archive and review unpublished or rejected work?
 
 Archive the question, literature comparisons, runnable code, configurations, raw results, and failure analysis. For reviews, separate **implementation issues, evidence gaps, presentation issues, and disagreements over scope**. Identify revisions and required validation. See [publication](writing.md) for submission procedures.
+
+One useful change is learning to notice previously missed conditions and test your judgments against evidence, alongside technical skills. Show a concrete example such as correcting leakage, helping a peer rerun a figure, or narrowing an unsupported claim. Research experience does not guarantee admission or employment, but checkable outputs make the work and learning visible.
+
 
 <a id="q60"></a>
 

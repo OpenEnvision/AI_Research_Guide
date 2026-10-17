@@ -1,0 +1,163 @@
+[
+  {
+    "id": "graph",
+    "summary": "A graph is a data structure consisting of nodes and edges connecting them.",
+    "detail": [
+      "In a social network, nodes can represent users and edges can represent who follows whom. Graphs can also record direction, weight, and different relationship types."
+    ],
+    "sourceTitles": [
+      "PyTorch Geometric: Introduction by Example"
+    ]
+  },
+  {
+    "id": "node",
+    "summary": "A node is a basic graph element representing an entity or object.",
+    "detail": [
+      "In a molecular graph, nodes can represent atoms with features such as element type and charge. In a user relationship graph, they can represent users."
+    ],
+    "sourceTitles": [
+      "PyTorch Geometric: Introduction by Example"
+    ]
+  },
+  {
+    "id": "edge",
+    "summary": "An edge represents a relationship or connection between two graph nodes.",
+    "detail": [
+      "Following someone is usually represented by a directed edge, while friendship can be represented by an undirected edge. Edges may also carry information such as distance, transaction amount, or chemical bond type."
+    ],
+    "sourceTitles": [
+      "PyTorch Geometric: Introduction by Example"
+    ]
+  },
+  {
+    "id": "knowledge-graph",
+    "summary": "A knowledge graph organizes structured knowledge or sourced assertions as entities and relationships.",
+    "detail": [
+      "“Beijing—located in—China” can be expressed as a relation triple, with types, timestamps, and sources attached to entities or relations. Assertions may be incorrect or conflict; a structured representation does not guarantee truth. A knowledge graph is a representation, not a graph neural network."
+    ],
+    "sourceTitles": [
+      "W3C: RDF 1.1 Primer"
+    ]
+  },
+  {
+    "id": "gnn",
+    "summary": "A graph neural network learns graph representations using nodes, edges, and adjacency relationships.",
+    "detail": [
+      "For molecular property prediction, atom nodes repeatedly aggregate information from neighboring atoms, and a representation of the whole graph supports prediction. A GNN can also directly predict a node's class."
+    ],
+    "sourceTitles": [
+      "Semi-Supervised Classification with Graph Convolutional Networks"
+    ]
+  },
+  {
+    "id": "message-passing",
+    "summary": "Message passing in a graph neural network collects information from neighboring nodes or edges to update node representations.",
+    "detail": [
+      "A round usually constructs messages, aggregates neighboring messages, and updates node representations. Stacking layers allows information to reach more distant neighbors."
+    ],
+    "sourceTitles": [
+      "PyTorch Geometric: Creating Message Passing Networks"
+    ]
+  },
+  {
+    "id": "link-prediction",
+    "summary": "Link prediction estimates whether a relationship exists or will appear between two nodes.",
+    "detail": [
+      "Applications include predicting whom a user may follow or completing missing knowledge graph relations. Evaluation must specify how existing edges are split and how negative examples are constructed."
+    ],
+    "sourceTitles": [
+      "PyTorch Geometric: LinkNeighborLoader"
+    ]
+  },
+  {
+    "id": "recommendation",
+    "summary": "A recommender system selects and ranks potentially useful content using information about users, candidates, and context.",
+    "detail": [
+      "Video recommendation usually retrieves candidates from a large collection and then ranks them by objectives such as relevance and quality. Click-through rate, viewing time, and user feedback can help evaluate results."
+    ],
+    "sourceTitles": [
+      "Google: Recommendation Systems"
+    ]
+  },
+  {
+    "id": "collaborative-filtering",
+    "summary": "Collaborative filtering learns preferences from patterns of user-item interactions to generate recommendations.",
+    "detail": [
+      "If two users like many of the same films, a system can use that association to recommend unseen films. Matrix factorization can map users and items to vectors."
+    ],
+    "sourceTitles": [
+      "Google: Collaborative filtering"
+    ]
+  },
+  {
+    "id": "content-based-recommendation",
+    "summary": "Content-based recommendation uses item features and user preferences to recommend items similar to content the user likes.",
+    "detail": [
+      "For example, the topics and text vectors of articles a user liked can be used to retrieve similar articles. It can use a user’s own history or explicit preferences without requiring other users’ interactions. Combining it with collaborative filtering yields a hybrid recommender."
+    ],
+    "sourceTitles": [
+      "Google: Content-based filtering"
+    ]
+  },
+  {
+    "id": "cold-start",
+    "summary": "Cold start is the difficulty of making accurate recommendations when a user, item, or system lacks historical interaction data.",
+    "detail": [
+      "A newly listed product has no click or purchase history. Text, images, categories, and a little initial feedback can provide starting information."
+    ],
+    "sourceTitles": [
+      "Google: Collaborative filtering advantages and disadvantages"
+    ]
+  },
+  {
+    "id": "time-series",
+    "summary": "A time series is a sequence of observations recorded in time order.",
+    "detail": [
+      "Daily sales, hourly temperatures, and minute-by-minute prices are time series. Forecast evaluation usually splits data chronologically so that past observations are used to predict future ones."
+    ],
+    "sourceTitles": [
+      "scikit-learn: TimeSeriesSplit"
+    ]
+  },
+  {
+    "id": "factor",
+    "summary": "A financial factor is a variable used to describe asset risk, shared return patterns, or stock selection signals.",
+    "detail": [
+      "Size, value, and momentum are common research subjects. “Factor” can mean an asset characteristic, a portfolio return constructed from characteristics, or a common driver in a model; its definition must be read in context."
+    ],
+    "sourceTitles": [
+      "Kenneth R. French: Fama/French Factors"
+    ]
+  },
+  {
+    "id": "backtest",
+    "summary": "A backtest simulates a strategy using historical data and specified execution rules.",
+    "detail": [
+      "It must specify when information was available, transaction costs, slippage, and execution assumptions. These choices directly affect simulated return and risk metrics."
+    ],
+    "sourceTitles": [
+      "QuantConnect: Research Guide"
+    ]
+  },
+  {
+    "id": "look-ahead-bias",
+    "summary": "Look-ahead bias occurs when a simulated historical decision uses information unavailable at the time.",
+    "detail": [
+      "Trading at the start of a month using reports published at month-end introduces future information. Using today’s index members for a historical backtest can also introduce survivorship bias. Construct inputs according to when each data point became available, not just the date it describes."
+    ],
+    "sourceTitles": [
+      "QuantConnect: Understanding Time",
+      "QuantConnect: Research Guide"
+    ]
+  },
+  {
+    "id": "survivorship-bias",
+    "summary": "Survivorship bias arises when analysis includes surviving observations but omits entities that exited or failed.",
+    "detail": [
+      "Backtesting only stocks still listed today omits delisted or bankrupt companies and distorts return and risk estimates. Preserve the historical universe and exit records. Survivorship bias concerns sample selection; look-ahead bias concerns information unavailable at the decision time. Both can occur together."
+    ],
+    "sourceTitles": [
+      "CFA Institute: The good, bad and ugly of bias in AI"
+    ]
+  }
+]

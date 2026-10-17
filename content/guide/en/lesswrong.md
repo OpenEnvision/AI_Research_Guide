@@ -1,8 +1,10 @@
 # LessWrong: research judgment and AI use
 
-When you discuss an idea with AI, is it helping you examine it or simply agreeing? When advice sounds convincing, how can you tell whether it fits your task? The essays discuss research judgment, personal experience, work, and AI.
+When you discuss an idea with AI, is it helping you examine it or simply agreeing? When advice sounds convincing, how can you tell whether it fits your task? The essays below explore research judgment, personal experience, working habits, and AI.
 
-For AI use and feedback, start with [the two observations below](#ai). For experiments, try [conclusions and evidence](#bottom-line) or [what a metric actually measures](#measurement).
+These are personal essays and community discussions. Consider each argument and its evidence rather than treating inclusion here as an endorsement of every claim. For AI use, start with [the observations below](#ai); for experiments, try [conclusions and evidence](#bottom-line) or [what a metric measures](#measurement).
+
+<a id="other-advice"></a>
 
 ## Does someone else's method fit this task?
 
@@ -10,17 +12,21 @@ For AI use and feedback, start with [the two observations below](#ai). For exper
 
 After finally finding advice that works, people may mistake it for the method everyone should adopt. Confident persuasion from acquaintances can strengthen that illusion.
 
-Ask: what time, money, foundations, and environment does this advice assume?
+Ask: what time, money, background knowledge, and support does this advice assume?
+
+<a id="growth"></a>
 
 ## Growth and improvement
 **[Tsuyoku Naritai! (I Want To Become Stronger)](https://www.lesswrong.com/posts/DoLQN5ryZ9XkZjq5h/tsuyoku-naritai-i-want-to-become-stronger)** — Eliezer Yudkowsky, 2007.
 
-Acknowledging bias does not itself constitute improvement. Direct attention toward reducing mistakes and taking another step.
+Recognizing a bias does not, by itself, help you improve. The next step is to work on reducing the mistakes it causes.
+
+<a id="work-life"></a>
 
 ## Work and life
 **[Working yourself ragged is not a virtue](https://www.lesswrong.com/posts/grfDjRpWr2xjtLBvi/working-yourself-ragged-is-not-a-virtue)** — So8res, 2015.
 
-Challenges treating exhaustion today as the measure of effort, considering working rhythms and costs over the long term.
+Questions the idea that exhaustion measures how hard you have worked, and considers the long-term effects of your working habits.
 
 ## Experience and generalization
 
@@ -32,7 +38,7 @@ How our feelings, learning habits, and social circles shape our assumptions abou
 
 **[Cached Thoughts](https://www.lesswrong.com/posts/2MD3NMLBPCqPfnfre/cached-thoughts)** — Eliezer Yudkowsky, 2007.
 
-We retrieve remembered conclusions, and familiarity can obscure their source and reasoning. The author also warns against turning the article's own concept into another automatic answer.
+We often recall a conclusion without recalling where it came from or why we believed it. The author also warns against turning the article's own concept into another automatic answer.
 
 Ask: who and what conditions does this claim refer to? Can I find evidence for and against it?
 
@@ -40,7 +46,7 @@ Ask: who and what conditions does this claim refer to? Can I find evidence for a
 
 **[Your Strength as a Rationalist](https://www.lesswrong.com/posts/5JDkW4MYXit2CquLs/your-strength-as-a-rationalist)** — Eliezer Yudkowsky, 2007.
 
-Confusion deserves investigation when observations conflict with understanding. An explanation that accommodates every possible outcome afterward does not constrain prediction.
+When observations conflict with your understanding, investigate the discrepancy. An explanation that can accommodate any outcome after the fact cannot help you predict what will happen.
 
 Ask: if this explanation were true, what should I have expected to observe?
 
@@ -50,7 +56,7 @@ Ask: if this explanation were true, what should I have expected to observe?
 
 **[The Bottom Line](https://www.lesswrong.com/posts/34XxbRFe54FycoCDw/the-bottom-line)** — Eliezer Yudkowsky, 2007.
 
-Fixing an unchangeable answer and collecting attractive arguments differs from allowing evidence to determine the answer.
+Choosing an answer first and gathering persuasive arguments for it is different from letting the evidence determine your conclusion.
 
 Ask: what result would make me acknowledge that my explanation fails?
 
@@ -60,7 +66,7 @@ Ask: what result would make me acknowledge that my explanation fails?
 
 **[You Are Not Measuring What You Think You Are Measuring](https://www.lesswrong.com/posts/9kNxhKWvixtKW5anS/you-are-not-measuring-what-you-think-you-are-measuring)** — johnswentworth, 2022.
 
-Experimental examples show that measured factors can diverge from intention. The essay argues for observations that help explain mechanisms, beyond a simple win-or-lose answer.
+The examples show how an experiment can measure something other than what you intended. The essay argues for observations that help explain mechanisms, beyond a simple win-or-lose answer.
 
 Ask: which records besides the overall score can distinguish my explanation from alternatives?
 
@@ -68,7 +74,7 @@ Ask: which records besides the overall score can distinguish my explanation from
 
 **[Finding Cruxes: Help Reality Punch You In the Face](https://www.lesswrong.com/posts/wkDdQrBxoGLqPWh2P/finding-cruxes-help-reality-punch-you-in-the-face)** — Raemon, 2026.
 
-Start from a real decision, identify uncertainties that could change action, list alternatives, and check which conditions would make you switch.
+Start from a real decision, identify uncertainties that could change what you do, list alternatives, and check which conditions would make you switch.
 
 Ask: before spending another week, what one thing could I find out?
 
@@ -78,7 +84,7 @@ Ask: before spending another week, what one thing could I find out?
 
 Distinguishes feedback that brings people closer to reality from feedback that helps them hide unwelcome signals. The author reflects on teaching and organizational practice.
 
-Ask: what feedback from my effort can actually test my understanding?
+Ask: what feedback on my work would actually test my understanding?
 
 ## Is a novel view also well supported?
 
@@ -94,10 +100,10 @@ When discussing a research claim, distinguish how many people support it from th
 
 **[The Rise of Parasitic AI](https://www.lesswrong.com/posts/6ZnznCaTcbGYsCmqu/the-rise-of-parasitic-ai)** — Adele Lopez, 2025.
 
-The author collects online cases of AI personas and users reinforcing mistaken beliefs, describing some relationships as “parasitic.” Look for whether the AI adds checkable evidence or merely makes the original claim sound more convincing. These cases offer an angle for observation, not a description of all AI users.
+The author collects online cases of AI personas and users reinforcing mistaken beliefs, describing some relationships as “parasitic.” Look for whether the AI adds checkable evidence or merely makes the original claim sound more convincing. These cases illustrate a pattern to watch for; they do not describe all AI users.
 
 **[How My Students Think About AI](https://www.lesswrong.com/posts/ySXuvJcqRindQwAk7/how-my-students-think-about-ai)** — dvd, 2026.
 
-A public-university teacher in the US records students' use and views of AI, discussing context, employment, changing capabilities, and learning. Students mainly come from the author's nontechnical courses. Compare your habits: which tasks does your everyday tool actually help with?
+An instructor at a US public university describes how students use and think about AI, including its role in learning, employment, and their wider lives as its capabilities change. Students mainly come from the author's nontechnical courses. Compare your habits: which tasks does your everyday tool actually help with?
 
 For practical learning and checks, continue to [AI tools](ai.md).

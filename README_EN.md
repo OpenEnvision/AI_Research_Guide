@@ -1,87 +1,73 @@
-<p align="center"><img src="public/blog/guide/logo-mark.png" width="190" alt="UESTC AI Club"></p>
+<p align="center"><img src="public/blog/guide/logo-openenvision.png" width="190" alt="OpenEnvision"></p>
 
-<h1 align="center">AI Research Guide</h1>
-<p align="center">University choices, your first research project, and lessons along the way</p>
-<p align="center"><a href="README_ZH.md">中文</a> · <b>English</b> · <a href="https://takamatsu-hikaru.github.io/AI-Research-Guide/en/">Read online</a> · <a href="https://wiki.uestcai.top/en/">Club platform edition</a> · <a href="https://takamatsu-hikaru.github.io/blog/guide/en/index.html">Personal website edition</a> · <a href="https://takamatsu-hikaru.github.io/AI-Research-Guide/en/ama.html">Discussions</a></p>
+<h1 align="center">AI Learning & Research Guide</h1>
+<p align="center">An open guide for university students and junior researchers worldwide</p>
+<p align="center"><b>English</b> · <a href="README_ZH.md">中文</a> · <a href="https://github.com/OpenEnvision/ai_research_guide">Project repository</a></p>
 
-This guide is for students starting university who want to explore AI and research. It brings together our answers to questions about university choices and getting started in research, alongside beginner projects, key papers across research areas, courses, and tools. It also covers contacting faculty, joining a lab for the first time, failed experiments, and the anxiety of comparing yourself with your peers.
+Build AI foundations, complete reproducible projects, and learn to turn a question into research that others can examine. The guide connects programming, mathematics, machine learning, research areas, literature review, experimental design, evaluation, engineering, and academic communication. English and Chinese editions share the core learning routes and resources.
 
-## Start here
+## Start with your task
 
-| What are you thinking about? | Read |
+| Goal | Guide |
 | --- | --- |
-| The choices university offers and where you want to go | [A letter to new university students](content/guide/en/welcome.md) |
-| Why try research? How do you begin, find a direction, or contact a supervisor? | [Getting started in research: 60 questions](content/guide/en/research.md) |
-| Making a small project work | [Your first AI project: where to begin?](content/guide/en/start.md) |
+| Plan systematic study | [Learning path](content/guide/en/learning-path.md) · [Foundations](content/guide/en/basics.md) |
+| Choose structured courses and exercises | [Courses](content/guide/en/courses.md) · [Practice](content/guide/en/practice.md) |
+| Complete a first project | [Starter projects](content/guide/en/start.md) |
+| Choose a research question | [Research map](content/guide/en/directions.md) · [Specialized topics](content/guide/en/advanced-topics.md) |
+| Read, design, and evaluate research | [Reading papers](content/guide/en/reading.md) · [Experimental design](content/guide/en/research-methods.md) · [Datasets](content/guide/en/datasets.md) |
+| Produce reliable research artifacts | [Research engineering](content/guide/en/engineering.md) · [Responsible AI](content/guide/en/responsible-ai.md) |
+| Communicate and collaborate | [Writing](content/guide/en/writing.md) · [Academic contact](content/guide/en/contact.md) |
 
-## Explore the guide
+The [60-question research handbook](content/guide/en/research.md) answers common questions across these stages. The [resource index](content/guide/en/resources.md) provides the full directory. Attributed [personal experiences](content/guide/en/experience.md) remain supplementary reading.
 
-| Section | Topics |
-| --- | --- |
-| Foundations and learning | [Which foundations do you need, and how much?](content/guide/en/basics.md) · [Choose a paper to read](content/guide/en/papers.md) |
-| Research directions | [What do different AI research areas study?](content/guide/en/directions.md) · [Large language models: understanding, generation, and reasoning](content/guide/en/llm.md) · [Agents: getting models to do things](content/guide/en/agent.md) · [Computer vision: understanding images](content/guide/en/vision.md) · [Multimodal models: connecting images and language](content/guide/en/multimodal.md) · [Generative models: how an image is made](content/guide/en/generation.md) · [Reinforcement learning: actions have consequences](content/guide/en/rl.md) · [World models: predict, then act](content/guide/en/world-model.md) · [Embodied AI: from seeing to acting](content/guide/en/embodied.md) · [Efficiency and systems: making models run](content/guide/en/systems.md) · [Interdisciplinary AI](content/guide/en/ai4x.md) |
-| Doing research | [Finding and reading papers](content/guide/en/reading.md) · [Writing, figures, and talks](content/guide/en/writing.md) · [Contacting researchers and collaborating](content/guide/en/contact.md) · [Working with AI](content/guide/en/ai.md) |
-| Experience and life | [Experience, practical lessons, and wrong turns](content/guide/en/experience.md) · [Paper reading and note workflows](content/guide/en/irene-workflow.md) · [My Freshman-Year Review: The World Suddenly Opens Wide](content/guide/en/timeline.md) · [Living well](content/guide/en/life.md) |
-| Looking outside | [Lookout: what are researchers and labs working on?](content/guide/en/lookout.md) · [Technical blogs and research perspectives](content/guide/en/blogs.md) · [LessWrong: research judgment and AI use](content/guide/en/lesswrong.md) · [Mu Li: from courses to close paper reading](content/guide/en/limu.md) · [Getting to know research groups](content/guide/en/labs.md) |
-| Resources | [Resource index](content/guide/en/resources.md) · [Research methods and communication](content/guide/en/research-conversations.md) |
+## Preview locally
 
-The [website](https://takamatsu-hikaru.github.io/AI-Research-Guide/en/) includes full-text search, expandable research Q&A, and introductions, roadmaps, terminology, and illustrated paper cards across 10 fields. Cards link to the original papers and related projects.
-
-The [AI chronicle and research overview](https://takamatsu-hikaru.github.io/AI-Research-Guide/en/directions.html) connect major research paths. [Lookout](https://takamatsu-hikaru.github.io/AI-Research-Guide/en/lookout.html) collects AI and robotics company research. The Agent section includes Generative Agents in Smallville and Voyager’s Minecraft skill exploration.
-
-## Research communities and knowledge sharing
-
-### OpenEnvision
-
-[OpenEnvision (OE)](https://openenvision.github.io/) is an open AI research community connecting academia and industry, with interests in world models, multimodal intelligence, vision, and embodied AI. It also shares research knowledge through curated writing, interviews, and courses.
-
-- **[BlogrXiv: AI research blogs and technical writing](https://openenvision.github.io/BlogrXiv/site/index.html)** brings together research blogs, lab essays, and technical notes. Browse by field for explanations, engineering experience, and research methods, then follow links to the original articles.
-- **[ScholarTube: AI interviews, podcasts, and courses](https://openenvision.github.io/ScholarTube/)** collects long-form researcher interviews, video podcasts, complete courses, and research talks across agents, world models, vision, robotics, and research practice, with links to the original videos.
-
-You can also recommend articles and videos to [BlogrXiv](https://github.com/OpenEnvision/BlogrXiv) and [ScholarTube](https://github.com/OpenEnvision/ScholarTube).
-
-### Lumina
-
-[Lumina](https://lumina-embodied.ai/) brings together embodied AI research, open projects and community events. Its [Embodied AI Guide](https://github.com/TianxingChen/Embodied-AI-Guide) organizes the field’s learning resources; Talks, research coverage and events on the website introduce the people and projects behind the work.
-
-### AgentHub
-
-[AgentHub](https://hqhq1025.github.io/agent_hub/) collects discussions from the Agent community into daily and weekly digests, covering agent research, tools, engineering practice and industry developments. Browse by date, discussion group or external news to see what people are working through, how they compare technical approaches and where their views differ.
-
-## Discuss and contribute
-
-Bring questions about learning, projects, and research to the [discussion board](https://takamatsu-hikaru.github.io/AI-Research-Guide/en/ama.html).
-
-Contributions are welcome on [GitHub](https://github.com/OpenEnvision/ai_research_guide): open an issue or submit a PR with corrections and resources. If you find the guide useful, give it a star or share it with others.
-
-Articles are in [content/guide/zh](content/guide/zh) and [content/guide/en](content/guide/en). Field introductions and paper cards are in [content/guide/fieldnotes](content/guide/fieldnotes).
-
-## About and acknowledgments
-
-This OpenEnvision copy is based on [Takamatsu-Hikaru/AI-Research-Guide](https://github.com/Takamatsu-Hikaru/AI-Research-Guide). The source code and guide content are preserved; this edition adapts the repository README for English readers.
-
-[About the UESTC AI Club guide](content/guide/en/about.md). Club members wrote the opening essays, research Q&A, and personal accounts. Courses, papers, and blogs link to their original authors.
-
-This guide continues the work of the [UESTC AI Club Guide](https://my.feishu.cn/docx/HQYodz7thohS1Nxo6KAcoeNtnbb) and AI4UESTC_Beginners. We thank their authors and contributors. The [Lumina Embodied AI Guide](https://github.com/TianxingChen/Embodied-AI-Guide) informed the organization and resource selection for embodied AI. Figure attribution is recorded in the [figure index](content/guide/paper-figures.json).
-
-[irene](https://github.com/tseirene6) contributed the experience behind [Paper reading and note workflows](content/guide/en/irene-workflow.md): paper and note management, research briefs, reading depth, and questions from AI. Related methods throughout the guide are adapted from this account.
-
-## Update the guide
-
-Edit [English Markdown](content/guide/en) or [Chinese Markdown](content/guide/zh) directly on GitHub. Automatic deployment is disabled in this repository. The online reading links point to the existing English editions. See the [editing and contribution guide](CONTRIBUTING.md#editing-in-english) for paper cards, company directories and page styling.
-
-## Build locally
-
-Use Node.js 22 or newer.
+Use Node.js 22 or newer and Python 3 for the local server.
 
 ```bash
 npm ci
-npm run build          # default edition
-npm run build:uestc    # second edition (uestc_ai skin)
-npm test               # regression checks across both editions
+npm run build
+npm run dev
 ```
 
-Open `public/blog/guide/en/index.html`; the second edition is at `public/blog/guide/guide-uestc/en/index.html`.
+Open [the English presentation homepage](http://127.0.0.1:8000/blog/guide/) or [the Chinese homepage](http://127.0.0.1:8000/blog/guide/zh.html).
 
+| Page | Generated file |
+| --- | --- |
+| Repository root for GitHub Pages | `index.html` |
+| English presentation homepage, the default local entry | `public/blog/guide/index.html` |
+| Chinese presentation homepage | `public/blog/guide/zh.html` |
+| Site root, also showing the presentation homepage | `public/index.html` |
+| English guide overview | `public/blog/guide/en/index.html` |
+| Chinese guide overview | `public/blog/guide/zh/index.html` |
 
-The GitHub Pages and personal website editions share the club guide’s articles, paper cards, and presentation. The personal edition also retains the university letter, personal essays, and LessWrong selections on growth and work–life balance.
+This revision is a **local preview**. Existing public deployments may show earlier content; publishing is a separate step. External links have not all been individually rechecked. Resource pages explain their verification scope and dates.
+
+## Build the editions
+
+```bash
+npm run build                     # Main site, presentation homepages, and repository-root entry
+npm run build:pages               # GitHub Pages package in dist/github-pages
+npm run build:uestc               # Secondary edition
+npm run build:uestc:standalone    # Standalone package of the secondary edition
+npm test                          # Build and behavior regression checks
+```
+
+Both editions use the core Markdown in [content/guide/en](content/guide/en) and [content/guide/zh](content/guide/zh). The main edition contains 45 pages per language, including three community perspective pages. The annual review (`timeline`) is no longer published; its Markdown sources are retained as an archive. The secondary manifest selects 42 pages per language and excludes those community essays; its guide is generated at `public/blog/guide/guide-uestc/en/index.html` and the corresponding `zh/index.html`. Historical Markdown overrides in `content/guide/uestc` remain in the repository and are no longer used as separate core articles.
+
+## Deploy to GitHub Pages
+
+`npm run build` generates a complete English homepage as the repository-root `index.html`, together with `.nojekyll`. Its links and assets use relative paths under `public/blog/guide/`, so it also works when the site is hosted under a repository name.
+
+Choose a publishing method in **Settings → Pages → Build and deployment**:
+
+- **Deploy from a branch:** run `npm run build`, commit the root `index.html`, `.nojekyll`, and the complete `public/blog/guide/` directory, then select the publishing branch and **/(root)**. Rebuild and commit the generated output whenever the source content changes.
+- **GitHub Actions:** select **GitHub Actions** as the source. The included Pages workflow runs `npm run build:pages` and publishes `dist/github-pages/`. This package contains its own root `index.html`, `.nojekyll`, and `public/blog/guide/` directory for the main edition.
+
+Keep the full directory structure when uploading or copying a build; `index.html` alone is not a complete website. The local changes here have not been published to a remote repository. See GitHub's [publishing-source instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) for the repository settings.
+
+## Sources and contributions
+
+Maintained by [OpenEnvision](https://openenvision.org/), this project builds on [Takamatsu-Hikaru/AI-Research-Guide](https://github.com/Takamatsu-Hikaru/AI-Research-Guide), earlier [student-contributed AI learning materials](https://my.feishu.cn/docx/HQYodz7thohS1Nxo6KAcoeNtnbb). Original and adapted articles retain author credit and links to their sources. The [Lumina Embodied AI Guide](https://github.com/TianxingChen/Embodied-AI-Guide) informed embodied-AI resources; [irene](https://github.com/tseirene6) provided the source experience for the [paper-reading workflow](content/guide/en/irene-workflow.md).
+
+See [About this guide](content/guide/en/about.md) for editorial standards and acknowledgments, and [CONTRIBUTING.md](CONTRIBUTING.md) for editing guidance. Propose corrections with the affected page, supporting original source, and corresponding language update. Field material is in [content/guide/fieldnotes](content/guide/fieldnotes); figure attribution is recorded in [paper-figures.json](content/guide/paper-figures.json).

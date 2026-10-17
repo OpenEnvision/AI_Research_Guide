@@ -1,5 +1,7 @@
 # 大一年终总结：顿觉天地宽
 
+> **个人经历与历史语境。** 本文保留 Hikaru 的大学经历、观点及原有学生社区背景。文中的学习制度、社团情况与机会描述属于作者叙述的具体情境，不代表本指南面向所有地区读者的要求，也不代表当前招募信息。
+
 Hikaru · 个人经历
 
 [原文](https://takamatsu-hikaru.github.io/blog/research-checkpoint.html) · [写给刚进大学的你](welcome.md)
@@ -116,7 +118,9 @@ AutoResearch、AutoCache 搭建，学习 diffusion 与 diffusion cache。
 
 学习不可以掉信息量。这不代表你要以“如果我不能手撕、不懂八股，我就不 solid、不配做 research”来道德批判自己——这同样可以被 overfit。多想、多问、多交流，dive into，多发表你的想法。
 
-比如，同样是 TRPO，AI 给你讲这是一个使用 KL 优化训练稳定的 RL 算法，但是他优化目标计算太复杂，所以 PPO 用 clip 优化了这里，然后 GRPO 去掉 critic，多 rollout 几次；和你完整的去探索为什么这样，把 sₜ、sₜ₊₁，policy 如何采样、如何近似，如何约束 J 和 A，再去看到底怎么样，scaling law、稳定性到底体现出怎么样的性质；真的复现，知道到底是怎么 work、怎么崩的，长出自己的 observation。
+比如，同样是 TRPO、PPO 和 GRPO，很容易复述一套关于信赖域、clip、去掉 critic 的压缩总结，却没有理解各自到底在估计什么、优化什么。我更想弄清状态、采样轨迹、概率比、优势估计和方法假设，再检查它们怎样 work、怎样失败，长出自己的 observation。
+
+> **指南编辑补充。** [TRPO](https://arxiv.org/abs/1502.05477)采用近似的信赖域更新；[PPO](https://arxiv.org/abs/1707.06347)提出包括裁剪形式在内、更便于实现的替代目标，但裁剪不是严格的 KL 约束。[DeepSeekMath 中的 GRPO](https://arxiv.org/abs/2402.03300)使用同题多条回答的组内回报估计优势，不单独训练价值 critic。它们的目标与评测场景不同，不能视作普遍适用的线性替代链。
 
 你觉得看过 attention，听过 AI 咀嚼过的食物，看过 paper；详细推过数学和架构，真的去读，然后你又知道了超参数、架构、初始化之类的都有奥妙和理论。如此，你才能学的逐渐深入。
 

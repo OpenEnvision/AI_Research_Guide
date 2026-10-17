@@ -1,13 +1,15 @@
 {
-  "name": "uestc-ai-research-guide",
+  "name": "openenvision-ai-research-guide",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "node scripts/build-guide.mjs",
+    "build:pages": "node scripts/build-github-pages.mjs",
     "build:uestc": "node scripts/build-guide-uestc.mjs",
     "build:uestc:standalone": "node scripts/build-guide-uestc.mjs --standalone",
-    "test": "node --test"
+    "test": "node --test",
+    "dev": "python3 -m http.server 8000 --bind 127.0.0.1 --directory public"
   },
   "dependencies": {
     "marked": "18.0.14"

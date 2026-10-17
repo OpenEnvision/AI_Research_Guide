@@ -23,3 +23,14 @@
 ## 项目与研究资料
 
 [Awesome World Models](https://github.com/JiahuaDong/Awesome-World-Models)整理世界模型的论文与项目；[World Model 资料目录](catalog-directions.md#topic-17)包含经典工作和综述，[模型架构与 World Model 笔记](blogs.md#purshow)收有 WAM 等专题分析。
+
+## 如何设计一项可检验的世界模型研究
+
+- **研究问题与对照：** 明确预测对象、时间跨度、动作条件与表示空间，并区分视频预测、状态建模与用于决策的模型。根据任务比较直接策略、简单动力学或不使用模型的基线。
+- **评价协议：** 分别检查一步预测、多步滚动误差、不确定性和闭环决策效果。记录训练数据覆盖、动作分布、规划预算与环境变化，检验误差随时间累积的影响。
+- **结论边界：** 生成连贯的视频不能单独证明动力学正确或适合控制。要支持规划价值的主张，需要任务与决策层面的实验，而不仅是视觉样例。
+
+[实验设计](research-methods.md) · [数据与评测](datasets.md) · [专题课程](courses.md) · [实践平台](practice.md)
+
+
+预测协议可参考[时间序列路线](advanced-topics.md#time-series)，但被动序列预测不能替代动作条件与闭环控制实验；几何表示与坐标约定可沿[三维视觉](advanced-topics.md#geometry)补充。

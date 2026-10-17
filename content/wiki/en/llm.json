@@ -1,0 +1,637 @@
+[
+  {
+    "id": "foundation-model",
+    "summary": "A foundation model is trained on broad data and can be adapted to a range of downstream tasks.",
+    "detail": [
+      "The same foundation model can support classification, question answering, generation, and other applications. The term describes its ability to support a range of tasks; whether it has undergone conversational post-training is a separate question."
+    ],
+    "sourceTitles": [
+      "On the Opportunities and Risks of Foundation Models"
+    ]
+  },
+  {
+    "id": "base-model",
+    "summary": "A base model usually refers to a model version that has completed pre-training but has not yet been adapted to instructions or conversation.",
+    "detail": [
+      "Given a question, it may continue with similar text. Chat use typically requires instruction tuning or other post-training first."
+    ],
+    "sourceTitles": [
+      "Language Models are Unsupervised Multitask Learners"
+    ]
+  },
+  {
+    "id": "instruct-model",
+    "summary": "An instruction-tuned model is trained to perform tasks described by natural-language instructions.",
+    "detail": [
+      "Instruction tuning can cover summarization, translation, and classification. Chat models target role-based conversations. The categories often overlap, but instruction following does not imply adaptation to every multi-turn chat format; check the expected template."
+    ],
+    "sourceTitles": [
+      "Finetuned Language Models Are Zero-Shot Learners",
+      "Hugging Face: Chat Templates"
+    ]
+  },
+  {
+    "id": "reasoning-model",
+    "summary": "A reasoning model undergoes specialized training that encourages allocating more steps to complex problems before answering.",
+    "detail": [
+      "Training may combine verifiable rewards with reasoning-process data. The model can use extra computation for tasks such as mathematics and coding, but its advantages must be assessed on the relevant evaluations."
+    ],
+    "sourceTitles": [
+      "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
+    ]
+  },
+  {
+    "id": "pre-training",
+    "summary": "Pre-training is the initial stage of learning general representations or predictive abilities from broad data.",
+    "detail": [
+      "Language models typically learn patterns of language and knowledge by predicting tokens in text. A pre-trained model can subsequently undergo domain adaptation or instruction training."
+    ],
+    "sourceTitles": [
+      "Language Models are Unsupervised Multitask Learners"
+    ]
+  },
+  {
+    "id": "continued-pre-training",
+    "summary": "Continued pre-training updates an existing model on new data while retaining a pre-training objective.",
+    "detail": [
+      "For example, a general language model can continue next-token prediction on more legal documents to become more familiar with legal language. The data mixture affects how much general capability it retains."
+    ],
+    "sourceTitles": [
+      "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks"
+    ]
+  },
+  {
+    "id": "mid-training",
+    "summary": "Mid-training is a label used in some model reports for targeted capability training late in pre-training or before post-training.",
+    "detail": [
+      "It may raise the share of mathematics, code, or long-context data. It is not a universal stage; its boundary with continued pre-training depends on the report’s objectives, data, and schedule."
+    ],
+    "sourceTitles": [
+      "SmolLM3: Smol, multilingual, long-context reasoner",
+      "Olmo 3"
+    ]
+  },
+  {
+    "id": "post-training",
+    "summary": "Post-training comprises training stages after pre-training that adapt a model to task requirements and interaction styles.",
+    "detail": [
+      "Common stages include supervised fine-tuning, preference optimization, and reinforcement learning. Different models may use only some of these stages or alternate between them over several rounds."
+    ],
+    "sourceTitles": [
+      "Training language models to follow instructions with human feedback"
+    ]
+  },
+  {
+    "id": "fine-tuning",
+    "summary": "Fine-tuning starts from existing model parameters and continues training on target data to adapt the model for a particular use.",
+    "detail": [
+      "It can update all parameters or train only a small number of added parameters. When fine-tuning on customer-service conversations, the training examples directly influence how the model responds."
+    ],
+    "sourceTitles": [
+      "Hugging Face TRL: SFT Trainer"
+    ]
+  },
+  {
+    "id": "sft",
+    "summary": "Supervised fine-tuning continues training an existing model on pairs of inputs and desired outputs.",
+    "detail": [
+      "Training on user questions paired with high-quality answers increases the probability of generating those answers. Conversation fine-tuning also requires specifying which roles' tokens contribute to the loss."
+    ],
+    "sourceTitles": [
+      "Hugging Face TRL: SFT Trainer"
+    ]
+  },
+  {
+    "id": "instruction-tuning",
+    "summary": "Instruction tuning trains a model to follow task requests using varied instructions and their corresponding answers.",
+    "detail": [
+      "Examples can include requests to summarize a passage, translate into English, or extract dates. It is often implemented through SFT, with the data organized around task instructions."
+    ],
+    "sourceTitles": [
+      "Finetuned Language Models Are Zero-Shot Learners"
+    ]
+  },
+  {
+    "id": "alignment",
+    "summary": "Alignment is the process of making model behavior better match human intentions, preferences, and usage requirements.",
+    "detail": [
+      "Models can be trained on demonstration answers, preference comparisons, or rule-based feedback. Dedicated evaluations can then check instruction following, factuality, and application constraints."
+    ],
+    "sourceTitles": [
+      "Training language models to follow instructions with human feedback"
+    ]
+  },
+  {
+    "id": "rlhf",
+    "summary": "RLHF uses human feedback on model outputs to construct learning signals and improve a model through reinforcement learning.",
+    "detail": [
+      "A common process collects human preferences between two answers, trains a reward model, and then uses its scores to optimize the generative model."
+    ],
+    "sourceTitles": [
+      "Training language models to follow instructions with human feedback"
+    ]
+  },
+  {
+    "id": "rlaif",
+    "summary": "RLAIF uses AI-generated evaluations or preferences as an important source of reinforcement-learning feedback.",
+    "detail": [
+      "An evaluator model can compare two answers against a set of principles and provide preferences for reward-model training. Both the evaluation rules and the evaluator influence the direction of training."
+    ],
+    "sourceTitles": [
+      "Constitutional AI: Harmlessness from AI Feedback"
+    ]
+  },
+  {
+    "id": "rlvr",
+    "summary": "RLVR trains a model with rewards constructed from outcomes that programs or rules can verify.",
+    "detail": [
+      "Mathematics tasks can use final-answer checks, and coding tasks can run tests. The reliability of the learning signal depends on whether the checks cover the actual task requirements."
+    ],
+    "sourceTitles": [
+      "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
+    ]
+  },
+  {
+    "id": "dpo",
+    "summary": "DPO optimizes a preference objective from response pairs relative to a reference model.",
+    "detail": [
+      "A typical training example pairs a chosen response and a rejected response to the same prompt. The objective compares their log-probability ratios relative to the reference. Under the paper’s assumptions, it corresponds to a KL-regularized preference formulation, without the explicit reward model and loop of common PPO-based RLHF. It does not guarantee improvements in every preference, factuality, or capability measure."
+    ],
+    "sourceTitles": [
+      "Direct Preference Optimization"
+    ]
+  },
+  {
+    "id": "reward-model",
+    "summary": "A reward model scores candidate outputs or actions to provide a training or selection signal.",
+    "detail": [
+      "It can learn from human preferences which answers are better or select an answer from multiple candidates. What a high score means depends on its training data and objective."
+    ],
+    "sourceTitles": [
+      "Training language models to follow instructions with human feedback"
+    ]
+  },
+  {
+    "id": "process-reward-model",
+    "summary": "A process reward model evaluates intermediate steps in reasoning or task execution.",
+    "detail": [
+      "For mathematics, a PRM can check whether each transformation is valid, providing a more detailed signal for search and candidate selection than the final answer alone."
+    ],
+    "sourceTitles": [
+      "Let's Verify Step by Step"
+    ]
+  },
+  {
+    "id": "outcome-reward-model",
+    "summary": "An outcome reward model primarily scores the complete response or final result.",
+    "detail": [
+      "It can judge whether a problem's final answer is correct without assigning separate scores to intermediate steps. This signal is easier to collect but less informative about where an error occurred."
+    ],
+    "sourceTitles": [
+      "Let's Verify Step by Step"
+    ]
+  },
+  {
+    "id": "transformer",
+    "summary": "A Transformer is a neural-network architecture built around attention mechanisms and feed-forward networks.",
+    "detail": [
+      "Text is first converted into token representations, then processed through layers of attention and feed-forward computation. Encoders, decoders, and combinations of both can use the Transformer architecture."
+    ],
+    "sourceTitles": [
+      "Attention Is All You Need"
+    ]
+  },
+  {
+    "id": "encoder",
+    "summary": "An encoder transforms inputs into internal representations suited to subsequent processing.",
+    "detail": [
+      "A text encoder can produce contextual representations for each word for classification, retrieval, or a decoder to read. The original Transformer encoder uses bidirectional self-attention."
+    ],
+    "sourceTitles": [
+      "PyTorch: TransformerEncoderLayer"
+    ]
+  },
+  {
+    "id": "decoder",
+    "summary": "A decoder converts internal representations into outputs in a target form.",
+    "detail": [
+      "For text generation, a Transformer decoder can predict subsequent tokens one by one from existing text. In a VAE, a decoder reconstructs data such as images from latent vectors. Its task and architecture determine the representations it receives and the outputs it produces."
+    ],
+    "sourceTitles": [
+      "PyTorch: TransformerDecoderLayer"
+    ]
+  },
+  {
+    "id": "dense-model",
+    "summary": "A dense model typically uses the same main parameters in each layer during the forward pass for every token.",
+    "detail": [
+      "Unlike sparse MoE models, dense models do not select only a few experts per token. In other contexts, \"dense\" can also describe matrix storage or connectivity."
+    ],
+    "sourceTitles": [
+      "Switch Transformers"
+    ]
+  },
+  {
+    "id": "ffn",
+    "summary": "A Transformer's feed-forward network typically applies a nonlinear transformation separately to each position's representation.",
+    "detail": [
+      "A common structure expands the representation into a higher dimension, applies an activation function, and projects it back to the original dimension. MoE usually replaces this part with several selectable experts."
+    ],
+    "sourceTitles": [
+      "PyTorch: TransformerEncoderLayer"
+    ]
+  },
+  {
+    "id": "normalization",
+    "summary": "Normalization layers adjust the numerical scale of representations to help stabilize computation and training.",
+    "detail": [
+      "LayerNorm uses the mean and variance over specified feature dimensions, while RMSNorm uses root-mean-square scale without mean centering. They are different normalization methods, not interchangeable names; formulas and placement vary by architecture."
+    ],
+    "sourceTitles": [
+      "Layer Normalization",
+      "Root Mean Square Layer Normalization"
+    ]
+  },
+  {
+    "id": "residual-connection",
+    "summary": "A residual connection adds an input, or a projection of it, to the result of a network transformation.",
+    "detail": [
+      "With matching dimensions it is often written as y = x + F(x); a projection can align different dimensions. Residual connections are one kind of skip connection. Other skip connections may concatenate features instead of adding them."
+    ],
+    "sourceTitles": [
+      "Deep Residual Learning for Image Recognition"
+    ]
+  },
+  {
+    "id": "attention",
+    "summary": "Attention lets a model combine information from a set of representations using relevance-based weights.",
+    "detail": [
+      "When processing the word \"it,\" a model can place greater weight on a relevant object mentioned earlier. Different attention heads can learn different relationships between pieces of information."
+    ],
+    "sourceTitles": [
+      "PyTorch: MultiheadAttention"
+    ]
+  },
+  {
+    "id": "self-attention",
+    "summary": "Self-attention allows positions within the same sequence to read information from one another.",
+    "detail": [
+      "Each token in a sentence can update its representation using positions it is allowed to access. A causal language model masks future positions."
+    ],
+    "sourceTitles": [
+      "PyTorch: MultiheadAttention"
+    ]
+  },
+  {
+    "id": "cross-attention",
+    "summary": "Cross-attention allows one sequence to read information from the representations of another sequence.",
+    "detail": [
+      "In an encoder-decoder translation model, the translation being generated can use cross-attention to read the encoded source text."
+    ],
+    "sourceTitles": [
+      "PyTorch: TransformerDecoderLayer"
+    ]
+  },
+  {
+    "id": "qkv",
+    "summary": "Q, K, and V are the query, key, and value representations used to match relevant information and combine it during attention computation.",
+    "detail": [
+      "Q is compared with each K to obtain matching scores. After normalization, these scores weight the aggregation of V. Q, K, and V are usually obtained through learned linear transformations of the input."
+    ],
+    "sourceTitles": [
+      "PyTorch: scaled_dot_product_attention"
+    ]
+  },
+  {
+    "id": "causal-mask",
+    "summary": "A causal mask restricts each position to reading the current position and permitted earlier positions.",
+    "detail": [
+      "When predicting the next token in a sentence, the training mask hides tokens at later positions so the model cannot see future information."
+    ],
+    "sourceTitles": [
+      "PyTorch: scaled_dot_product_attention"
+    ]
+  },
+  {
+    "id": "positional-encoding",
+    "summary": "Positional encoding gives a model information about token positions or relative order in a sequence.",
+    "detail": [
+      "Reordering the same words can change their meaning. Positional encoding can represent order through methods such as adding vectors or modifying attention computation."
+    ],
+    "sourceTitles": [
+      "Attention Is All You Need"
+    ]
+  },
+  {
+    "id": "rope",
+    "summary": "Rotary positional embedding injects position information into attention by rotating query and key vectors according to position.",
+    "detail": [
+      "Different positions use different rotation angles, linking attention scores to relative positions. Extending the context length often involves adjusting these position-related frequencies."
+    ],
+    "sourceTitles": [
+      "RoFormer: Enhanced Transformer with Rotary Position Embedding"
+    ]
+  },
+  {
+    "id": "moe",
+    "summary": "A mixture of experts combines expert subnetworks through a gating or routing mechanism.",
+    "detail": [
+      "LLMs often use sparse MoE, activating only a few experts per token. MoE more generally can weight all experts, so sparsity is not inherent in the name. For sparse models, distinguish total from active parameters."
+    ],
+    "sourceTitles": [
+      "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer"
+    ]
+  },
+  {
+    "id": "moe-router",
+    "summary": "An expert router determines which experts should process each input and how to weight their outputs.",
+    "detail": [
+      "For a token, a router might select the two highest-scoring experts. Training may also use a load-balancing objective to prevent a few experts from becoming overloaded while others remain idle."
+    ],
+    "sourceTitles": [
+      "Switch Transformers"
+    ]
+  },
+  {
+    "id": "expert",
+    "summary": "An expert is a subnetwork in an MoE model that a router can select.",
+    "detail": [
+      "Experts are typically separate feed-forward modules. \"Expert\" names their structural role; their learned specialization need not correspond to clear human subject areas such as mathematics or coding."
+    ],
+    "sourceTitles": [
+      "Switch Transformers"
+    ]
+  },
+  {
+    "id": "tokenizer",
+    "summary": "A tokenizer converts text into a sequence of tokens and numerical IDs that a model can process.",
+    "detail": [
+      "A character, word, word fragment, or punctuation mark can be a token. Models use different vocabularies and segmentation rules, so the same text can have different token counts."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Tokenizers"
+    ]
+  },
+  {
+    "id": "token",
+    "summary": "A token is a basic unit used by a model to process text sequences.",
+    "detail": [
+      "\"Unbelievable\" may be split into several fragments, while special tokens can mark message boundaries or the end of a sequence. Context length and generated output are typically measured in tokens."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Tokenizers"
+    ]
+  },
+  {
+    "id": "context-window",
+    "summary": "The context window is the maximum number of tokens a model can process within a single context.",
+    "detail": [
+      "In typical autoregressive chat models, input and generated output share the context. Interfaces may impose a separate output limit. Capacity does not guarantee equally accurate use of information at every position."
+    ],
+    "sourceTitles": [
+      "Lost in the Middle: How Language Models Use Long Contexts"
+    ]
+  },
+  {
+    "id": "long-context",
+    "summary": "Long-context capability is the ability to process long inputs and make effective use of the information they contain.",
+    "detail": [
+      "A long context lets a model receive an entire long document, multiple files, or an extended conversation history at once. Using this information requires retrieving distant details and connecting content across positions."
+    ],
+    "sourceTitles": [
+      "Lost in the Middle: How Language Models Use Long Contexts"
+    ]
+  },
+  {
+    "id": "prompt",
+    "summary": "A prompt is input supplied to a model to describe a task and provide relevant information.",
+    "detail": [
+      "A useful prompt can include the task, necessary background, examples, and output format. Clearly separating source material from operational instructions helps the model interpret the request."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Prompting"
+    ]
+  },
+  {
+    "id": "system-prompt",
+    "summary": "A system prompt sets roles, behavioral rules, and task boundaries at a higher level of instruction priority within an application.",
+    "detail": [
+      "For example, an application can specify a customer-service tone and available tools in its system message. How a model represents and processes such messages depends on the interface and chat template."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Chat templates"
+    ]
+  },
+  {
+    "id": "chat-template",
+    "summary": "A chat template converts role-labeled conversation messages into the sequence format required for model training and generation.",
+    "detail": [
+      "It adds role markers, separators, and generation-start markers. Using the wrong template for the same messages can cause the model to confuse speakers or continue the text incorrectly."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Chat templates"
+    ]
+  },
+  {
+    "id": "autoregressive",
+    "summary": "An autoregressive model factors a sequence’s joint probability into probabilities of successive elements conditioned on preceding ones.",
+    "detail": [
+      "Generation typically predicts and selects the next element, then continues using the available elements as context. Elements can be text tokens, image pixels, or audio representations; autoregression is a general sequence-modeling approach, not specific to LLMs."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Text generation",
+      "Pixel Recurrent Neural Networks"
+    ]
+  },
+  {
+    "id": "decoding",
+    "summary": "A decoding strategy determines how a model's token probabilities become an actual output sequence.",
+    "detail": [
+      "A strategy can select the highest-probability token at each step, sample according to probabilities, or keep multiple candidate sequences. This choice affects diversity, quality, and computation."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Generation strategies"
+    ]
+  },
+  {
+    "id": "greedy-decoding",
+    "summary": "Greedy decoding chooses the highest-probability token at each step.",
+    "detail": [
+      "Each decision is locally optimal, but the resulting sequence need not have the highest overall probability or be correct. Unlike sampling, it does not randomly draw from the candidate distribution."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Generation Strategies"
+    ]
+  },
+  {
+    "id": "temperature",
+    "summary": "Sampling temperature rescales logits to adjust how concentrated the token probability distribution is.",
+    "detail": [
+      "Lower temperatures generally favor high-probability candidates, while higher temperatures generally increase diversity. How an interface handles a temperature of zero depends on its implementation."
+    ],
+    "sourceTitles": [
+      "Hugging Face: GenerationConfig"
+    ]
+  },
+  {
+    "id": "top-k",
+    "summary": "Top-k sampling draws only from the k tokens with the highest current probabilities.",
+    "detail": [
+      "With k = 20, each step keeps the 20 most probable tokens, renormalizes their probabilities, and samples. Here k counts candidates at one step, unlike the multiple complete answers in pass@k."
+    ],
+    "sourceTitles": [
+      "Hugging Face: GenerationConfig"
+    ]
+  },
+  {
+    "id": "top-p",
+    "summary": "Top-p sampling draws from a set of high-probability tokens whose cumulative probability reaches a threshold p.",
+    "detail": [
+      "The number of candidates changes with the distribution: the set is smaller when the model is confident and larger when it is uncertain. Top-p is often combined with temperature to control randomness."
+    ],
+    "sourceTitles": [
+      "The Curious Case of Neural Text Degeneration"
+    ]
+  },
+  {
+    "id": "beam-search",
+    "summary": "Beam search retains several high-scoring candidate sequences at each generation step and continues expanding them.",
+    "detail": [
+      "A beam width of 4 retains four candidate paths. Scores may include length penalties, and final selection also depends on stopping conditions."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Generation strategies"
+    ]
+  },
+  {
+    "id": "stop-sequence",
+    "summary": "A stop sequence is application-specified text or a token sequence that stops generation when matched.",
+    "detail": [
+      "A delimiter can serve as a stop sequence and may span several tokens. It differs from an EOS token in the vocabulary. Maximum output length is another stopping condition; whether matched content is retained depends on the interface."
+    ],
+    "sourceTitles": [
+      "Hugging Face: GenerationConfig"
+    ]
+  },
+  {
+    "id": "eos-token",
+    "summary": "EOS is a special vocabulary token marking the end of a sequence.",
+    "detail": [
+      "A generator usually treats configured EOS token IDs as stop signals. Some chat templates distinguish message, turn, and sequence boundaries with different tokens; their visible strings alone do not determine their function."
+    ],
+    "sourceTitles": [
+      "Hugging Face: GenerationConfig"
+    ]
+  },
+  {
+    "id": "in-context-learning",
+    "summary": "In-context learning is a model's adaptation to a task through instructions and examples in the current input.",
+    "detail": [
+      "After seeing sentence-to-sentiment examples in a prompt, a model may follow that pattern on a new sentence. Ordinary in-context learning uses fixed weights at inference: the input and internal representations change. It is not fine-tuning and does not establish that the adaptation persists after removing the examples."
+    ],
+    "sourceTitles": [
+      "Language Models are Few-Shot Learners"
+    ]
+  },
+  {
+    "id": "zero-shot",
+    "summary": "A zero-shot prompt describes a task without providing example input-output pairs for that task.",
+    "detail": [
+      "For example, it may directly request a translation into French. \"Zero-shot\" counts the examples in the current prompt; the model may still have encountered related tasks during pre-training."
+    ],
+    "sourceTitles": [
+      "Finetuned Language Models Are Zero-Shot Learners"
+    ]
+  },
+  {
+    "id": "few-shot",
+    "summary": "A few-shot prompt includes a small number of examples for a model to follow on a new task.",
+    "detail": [
+      "It might show two or three product reviews and their classifications, then ask for the next review to be classified. The format, representativeness, and order of examples can all affect the output."
+    ],
+    "sourceTitles": [
+      "Language Models are Few-Shot Learners"
+    ]
+  },
+  {
+    "id": "chain-of-thought",
+    "summary": "Chain of thought is a method that generates or uses a sequence of intermediate reasoning steps before reaching a final answer.",
+    "detail": [
+      "An answer to a word problem may list the conditions, calculate intermediate quantities, and then state a conclusion. Generated steps can be wrong or fail to reflect factors that affected the answer. Check the derivation and result; a fluent explanation is neither a proof nor a complete record of internal computation."
+    ],
+    "sourceTitles": [
+      "Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting"
+    ]
+  },
+  {
+    "id": "reasoning",
+    "summary": "Reasoning is the ability to analyze conditions, rules, or evidence over multiple steps to reach a conclusion.",
+    "detail": [
+      "Mathematical proofs, program debugging, and planning can all require reasoning. Evaluation should inspect the final result and any necessary intermediate process, distinguishing reasoning from simply repeating known facts."
+    ],
+    "sourceTitles": [
+      "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
+    ]
+  },
+  {
+    "id": "test-time-compute",
+    "summary": "Test-time compute is the computation spent generating, searching, checking, and selecting answers at response time.",
+    "detail": [
+      "A model can spend longer reasoning or generate multiple candidates for a verifier to select from. Test-time scaling studies how performance changes as this budget increases."
+    ],
+    "sourceTitles": [
+      "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters"
+    ]
+  },
+  {
+    "id": "self-consistency",
+    "summary": "Self-consistency samples multiple reasoning paths and aggregates their final answers to improve result stability.",
+    "detail": [
+      "After generating several solutions to the same mathematics problem, a system can vote over normalized final answers. This increases inference cost and depends on sufficient diversity among candidates."
+    ],
+    "sourceTitles": [
+      "Self-Consistency Improves Chain of Thought Reasoning in Language Models"
+    ]
+  },
+  {
+    "id": "hallucination",
+    "summary": "A hallucination is model-generated content that is false, unsupported, or inconsistent with the supplied material.",
+    "detail": [
+      "Distinguish factual error from lack of faithfulness to a source: an answer can repeat an incorrect document faithfully, or be factually correct yet unsupported by the specified material. Check truth, source support, and citation alignment separately. Retrieval and citations do not automatically eliminate hallucinations."
+    ],
+    "sourceTitles": [
+      "On Faithfulness and Factuality in Abstractive Summarization"
+    ]
+  },
+  {
+    "id": "grounding",
+    "summary": "Grounding connects model responses to verifiable documents, tool results, or information from the environment.",
+    "detail": [
+      "A document question-answering system can provide relevant passages and require each factual statement in an answer to be traceable to those passages. Checking that a source exists and checking that it actually supports a conclusion are separate tasks."
+    ],
+    "sourceTitles": [
+      "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"
+    ]
+  },
+  {
+    "id": "open-weight-model",
+    "summary": "An open-weight model provides model parameter files that users can download.",
+    "detail": [
+      "Downloaded weights can run on suitable hardware and software. Commercial use, redistribution, and modification remain governed by the specific license, and the training data may not be released."
+    ],
+    "sourceTitles": [
+      "The Llama 3 Herd of Models",
+      "Open Source AI Definition 1.0"
+    ]
+  },
+  {
+    "id": "open-source-model",
+    "summary": "An open-source AI model provides the materials and permissions needed to use, study, modify, and share it under the applicable open-source definition.",
+    "detail": [
+      "For example, the OSI definition covers code and data information needed to understand and reconstruct the system in addition to parameters. Assess a specific model by examining its actual release materials and license."
+    ],
+    "sourceTitles": [
+      "Open Source AI Definition 1.0"
+    ]
+  }
+]

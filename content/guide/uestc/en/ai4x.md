@@ -421,3 +421,14 @@ Once you have a question, connect the data, model and validation in a complete r
 For time-series foundations, [Forecasting: Principles and Practice](https://otexts.com/fpp3/) covers trends, forecasting and evaluation with examples in R. For Python projects, see [tsai](https://github.com/timeseriesAI/tsai).
 
 [AI for Science resource index](https://github.com/ai4s-research/awesome-ai-for-science) · [AI4X resource directory](catalog-directions.md#topic-23) · [Research questions](research.md) · [Contact and collaboration](contact.md)
+
+## Design a testable interdisciplinary study
+
+- **Question and controls:** define the domain question, measurement process, target units, and intended scope before choosing a model. Include established domain methods and check assumptions with knowledgeable collaborators.
+- **Evaluation:** choose splits by molecular scaffold, donor, patient, location, or time as appropriate. Inspect measurement noise and source differences. Separate predictive metrics, scientific objectives, and external validation; observational association alone does not establish causation.
+- **Limits:** a generic model score cannot fully establish domain value. Medical and scientific candidates need independent domain validation; predictions are not clinical or experimental conclusions.
+
+[Experimental design](research-methods.md) · [Data and evaluation](datasets.md) · [Specialist courses](courses.md) · [Practice](practice.md)
+
+
+For relationships, forecasts, interventions, and uncertainty, consult [graphs](advanced-topics.md#graphs), [time series](advanced-topics.md#time-series), [causal inference](advanced-topics.md#causal), and [probabilistic modeling](advanced-topics.md#probabilistic) respectively. Use [responsible AI](responsible-ai.md) for affected populations and use settings.

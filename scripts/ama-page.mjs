@@ -1,9 +1,7 @@
 export function amaPage(lang) {
- const zh=lang==='zh',board='https://github.com/Takamatsu-Hikaru/Takamatsu-Hikaru.github.io/discussions';
- return `<section id="ama-app">
- <div class="ama-toolbar"><span id="ama-count" role="status">${zh?'加载帖子…':'Loading posts…'}</span><a class="ama-primary" href="${board}/new?category=general" target="_blank" rel="noopener">${zh?'发帖':'New post'}</a></div>
- <div class="ama-filters"><label><span class="sr-only">${zh?'搜索帖子':'Search posts'}</span><input type="search" id="ama-query" placeholder="${zh?'搜索帖子':'Search posts'}"></label><button id="ama-refresh" type="button">${zh?'刷新':'Refresh'}</button></div>
- <div id="ama-list" aria-live="polite"></div><p id="ama-notice" role="status"></p>
- <div class="ama-footer"><span>${zh?'使用 GitHub 账号发帖、回复':'Post and reply with your GitHub account'}</span><a href="${board}/categories/general" target="_blank" rel="noopener">${zh?'进入讨论区':'Open discussions'}</a></div>
- <noscript><a href="${board}/categories/general">${zh?'打开讨论区':'Open discussions'}</a></noscript></section>`;
+ const zh=lang==='zh',issues='https://github.com/OpenEnvision/ai_research_guide/issues';
+ return `<section id="community-participation" aria-label="${zh?'参与指南建设':'Contribute to the guide'}">
+ <p><a href="${issues}" target="_blank" rel="noopener noreferrer">${zh?'前往 OpenEnvision 问题反馈区':'Open the OpenEnvision issue tracker'}</a></p>
+ <p>${zh?'可以用中文或英文提交问题、纠错和资源建议。浏览公开议题无需发帖；提交或回复需要 GitHub 账号。议题和回复会公开显示，请只分享适合公开的材料。':'Questions, corrections, and resource suggestions are welcome in English or Chinese. You can browse public issues without posting; submitting or replying requires a GitHub account. Issues and replies are public, so share only material suitable for public access.'}</p>
+ </section>`;
 }

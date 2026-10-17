@@ -1,35 +1,39 @@
-# Living well
+# Life alongside research
 
-Start with something specific: at the end of a day, beyond what you learned or accomplished, did you meet someone or encounter something that made you happy?
+> Adapted from [Hikaru's reflections](https://github.com/Takamatsu-Hikaru/AI-Research-Guide) on university and research life for readers at different stages and in different circumstances.
 
-## If you want something, try
+Learning and research can take much of your attention. You may also have a job, family, friends, interests, and needs of your own. There is no single balance between work and the rest of life that suits everyone. Begin with something specific: beyond what you accomplished today, was there a moment that made the day feel worthwhile?
 
-Good grades, research, earning money, music—or still not knowing what you like. Begin with what you want now, try a little, and notice how it feels.
+## Leave room to explore
 
-In [the letter to new students](welcome.md), I describe arriving confused and how people and experiences gradually changed my judgment. University contains many firsts; leave yourself some room to explore.
+You might want to improve your grades, try research, gain work experience, make music, or simply find out what you enjoy. Try something small that fits the time and energy you have, notice how it feels, and decide whether to continue.
 
-## When other people seem extraordinary
+[Starting your learning and research journey](welcome.md) discusses choosing questions, understanding different paths, and finding peers. Whether you are new to university or beginning a research role, you can adjust your goals as you settle in.
 
-I get anxious too. Gaps between people and difficult interactions have even produced physical symptoms for me. That experience is in the [opening essay](welcome.md), with the fuller changes in my [freshman-year review](timeline.md).
+## When other people seem far ahead
 
-You can admire someone and want to learn from them while keeping a life of your own. Talk and try when you see something concrete to learn. You can keep thinking about what does not yet have an answer.
+Seeing someone's achievements can be inspiring and can also bring pressure. Public accounts rarely show all the support, unsuccessful attempts, and personal circumstances behind the work. Before comparing yourself with someone else, identify what is within your own control.
 
-[Working yourself ragged is not a virtue](https://www.lesswrong.com/posts/grfDjRpWr2xjtLBvi/working-yourself-ragged-is-not-a-virtue) is another author's discussion of work rhythms. Consider how you want to arrange your own days as you read.
+If you admire a person, find something specific to learn from them: how they read papers, organize experiments, or explain a question clearly. Adapt what you learn to your own skills, responsibilities, and available time.
 
-## Things that do not need a report card
+[Working yourself ragged is not a virtue](https://www.lesswrong.com/posts/grfDjRpWr2xjtLBvi/working-yourself-ragged-is-not-a-virtue) offers another author's perspective on working habits. Consider how it relates to your own life and which habits you might keep or change.
 
-Live music, bead crafts, tokusatsu, a café full of plants, sunsets by East Lake, and time with people you love. Imagining a shop you might open or where you might live is good too.
+## Some things do not need a report card
 
-These things can make you happy in themselves. When research stalls or a competition goes poorly, life still contains things to look forward to.
+Music, exercise, cooking, a book unrelated to research, a familiar walk, or time with someone you care about can simply be things you enjoy. Rest does not have to become another task to perform well.
 
-## Learn how to be with people, too
+When research stalls or a project falls short of expectations, life can still contain things to look forward to. Their value does not depend on making you more productive afterward.
 
-Explain why you are asking for help, state expectations in collaboration, and communicate a decision when something does not fit. There are examples in [contact and collaboration](contact.md).
+## Make plans that fit your actual life
 
-Friends, relationships, choices, and regrets also appear as concrete stories in my [freshman-year review](timeline.md).
+Courses, employment, caregiving responsibilities, and collaboration across time zones can all affect your availability for research. At the start of a project, discuss the time you can contribute, your communication habits, and the tasks you can take on. Revisit scope and deadlines when circumstances change.
 
-[Back to experience](experience.md) · [A letter to new students](welcome.md)
+Be clear about what you expect from a collaboration, explain the problem when asking for help, and speak up when an arrangement is not working. Support may come from peers, supervisors, colleagues, or other people you trust. The [contact and collaboration guide](contact.md) includes examples to help you have these conversations.
 
-## Other people's words may help
+## Use reflection to adjust your pace
 
-The first three [LessWrong selections](lesswrong.md) discuss advice, wanting to grow, and a sustainable pace. After reading, ask what specific thing you want to change now.
+Occasionally ask which work is worth continuing, which commitments exceed your available energy, and whether you have time for things that help you recover. You can make one small adjustment without reorganizing your whole life.
+
+The LessWrong selections on [advice](lesswrong.md#other-advice), [improvement](lesswrong.md#growth), and [work rhythms](lesswrong.md#work-life) offer other perspectives. After reading, return to the specific thing you would like to change now.
+
+[Back to experiences](experience.md) · [Starting your learning and research journey](welcome.md)

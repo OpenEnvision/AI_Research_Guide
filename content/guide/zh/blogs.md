@@ -1,6 +1,6 @@
 # 技术博客与研究观点
 
-有些问题，读完论文还想看看作者怎样解释、实验中又遇到了什么。技术博客里常有更完整的推导、实现细节和研究过程，下面按主题整理了一些文章与笔记。
+技术博客可以补充论文中的推导、实现细节与研究过程。下面按主题整理文章与笔记：苏剑林、邹嘉轩及部分访谈主要使用中文，Chai 的所选文章与部分 Purshow Notes 提供中英双语。阅读时，应区分对机制的解释、已报告的实验结果，以及作者对研究方向的判断。
 
 ## 模型结构与数学推导
 
@@ -8,7 +8,7 @@
 
 ### Attention、MoE 与多模态模型
 
-[Purshow](https://purshow.github.io/) 的 [Purshow Notes](https://github.com/Purshow/Purshow_Notes) 包含 Attention、MoE、On-Policy Distillation、残差连接、稀疏词表嵌入和 YOCO 等主题，多项提供中英文版本。[WAM](https://github.com/Purshow/Purshow_Notes/tree/main/WAM) 与 [Encoder-Free](https://github.com/Purshow/Purshow_Notes/tree/main/Encoder-Free) 有独立专题。
+[Purshow](https://purshow.github.io/) 的 [Purshow Notes](https://github.com/Purshow/Purshow_Notes) 包含 Attention、MoE、On-Policy Distillation、残差连接、稀疏词表嵌入和 YOCO 等主题，其中多篇笔记提供中英文版本。[WAM](https://github.com/Purshow/Purshow_Notes/tree/main/WAM) 与 [Encoder-Free](https://github.com/Purshow/Purshow_Notes/tree/main/Encoder-Free) 有独立专题。
 
 [从 Infra 角度看，为什么去掉 Encoder 更好](https://github.com/Purshow/Purshow_Notes/blob/main/Encoder-Free/从Infra角度看，为什么去掉Encoder更好.md)比较视觉编码器与语言模型的负载、并行配置和调度差异，也讨论变长视觉 token 带来的负载问题。
 
@@ -83,6 +83,6 @@
 
 更多技术文章见 [BlogrXiv](https://openenvision.github.io/BlogrXiv/site/index.html)；课程、项目与工具见[资料总索引](resources.md)。
 
-### 社员仓库
+### 早期指南仓库
 
-[Takamatsu-Hikaru / AI-Research-Guide](https://github.com/Takamatsu-Hikaru/AI-Research-Guide) — 本指南的开源仓库。
+[Takamatsu-Hikaru / AI-Research-Guide](https://github.com/Takamatsu-Hikaru/AI-Research-Guide) — 本版本所依据的早期指南。当前维护与贡献入口见[关于本指南](about.md)。

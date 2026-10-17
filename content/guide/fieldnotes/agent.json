@@ -3,7 +3,7 @@
   "zh": {
     "overview": [
       "Agent 把模型放进一个持续执行的过程：拿到任务，读取当前信息，决定动作，调用工具，再根据结果决定下一步。做完一次搜索就回答、反复修改代码直到测试通过，都可以用这个视角观察；关键是环境反馈是否真的改变了后续行为。",
-      "这类系统的研究对象不只有模型本身，还包括工具接口、记忆、任务拆分、失败恢复和评测。把执行记录留下，区分模型选错了、工具返回错了、还是评价方式错了，往往是进入这个方向的第一步。"
+      "这类系统的研究对象不只有模型本身，还包括工具接口、记忆、任务拆分、失败恢复和评测。保留执行记录，区分模型决策、工具返回和评价方式中的错误，往往是了解这一方向的第一步。"
     ],
     "solves": [
       "连接检索、计算和代码执行，让模型获得参数之外的信息与能力。",
@@ -75,7 +75,7 @@
         "year": "2025",
         "title": "编程 Agent 进入日常开发",
         "label": "Coding agents",
-        "text": "Claude Code、Codex 等工具把读仓库、改文件和运行测试接成持续执行的过程。模型能力与执行框架一起改进，上下文组织、工具接口和任务验证成为实际开发中的关键环节。",
+        "text": "Claude Code、Codex 等工具将阅读代码仓库、修改文件和运行测试组织为持续执行的过程。模型能力与执行框架一起改进，上下文组织、工具接口和任务验证成为实际开发中的关键环节。",
         "papers": [],
         "links": [
           {
@@ -92,7 +92,7 @@
         "year": "2026",
         "title": "持续协作、个人记忆与科研工作流",
         "label": "Personal & research agents",
-        "text": "Muse、Dots 等个人 Agent 将任务延伸到云端计算机和日常应用，Hermes 探索跨会话记忆与技能积累，ARIS 则将执行和复审接入科研流程。长任务怎样接着做、过去的经验怎样继续使用，成为这些项目共同面对的问题。",
+        "text": "Muse、Dots 等个人 Agent 将任务延伸到云端计算机和日常应用，Hermes 探索跨会话记忆与技能积累，ARIS 则将执行和复审接入科研流程。如何持续推进较长的任务、复用已有经验，是这些项目共同面对的问题。",
         "papers": [],
         "links": [
           {
@@ -125,7 +125,7 @@
       },
       {
         "term": "Scaffold / 执行框架",
-        "text": "围绕模型的程序：管理工具、提示、循环、终止条件和反馈。同一模型换一套框架，表现可能不同。"
+        "text": "围绕模型构建的程序，负责管理工具、提示、执行循环、终止条件和反馈。同一模型使用不同框架，表现可能不同。"
       }
     ],
     "checklist": [
@@ -150,7 +150,7 @@
       "Research covers more than the model: tool interfaces, memory, task decomposition, recovery, and evaluation all matter. Keep execution traces and distinguish a bad model decision from a tool failure or an incorrect evaluator."
     ],
     "solves": [
-      "Connect retrieval, calculation, and code execution to information and capabilities outside model parameters.",
+      "Use retrieval, calculation, and code execution to access information and capabilities beyond what is stored in model parameters.",
       "Complete tasks requiring several operations, such as locating a bug, editing code, and verifying the change.",
       "Use feedback to revise actions and study reliability and cost on longer tasks."
     ],
@@ -183,7 +183,7 @@
       {
         "year": "2024",
         "title": "From SWE-bench to SWE-agent: working in real repositories",
-        "text": "SWE-bench evaluates changes against real issues and tests. In 2024, SWE-agent and OpenHands explored how editing interfaces, command execution, browsers, and sandboxes support complete tasks.",
+        "text": "SWE-bench evaluates changes against real issues and tests. In 2024, SWE-agent and OpenHands explored how editing interfaces, command execution, browsers, and sandboxes support end-to-end task completion.",
         "papers": [
           "swebench-2024"
         ],
@@ -219,7 +219,7 @@
         "year": "2025",
         "title": "Coding agents enter everyday development",
         "label": "Coding agents",
-        "text": "Tools such as Claude Code and Codex connect reading repositories, editing files, and running tests into an ongoing process. Models and harnesses improve together, bringing context management, tool interfaces, and verification into everyday development.",
+        "text": "Tools such as Claude Code and Codex combine repository exploration, file editing, and testing in an ongoing workflow. Models and harnesses improve together, bringing context management, tool interfaces, and verification into everyday development.",
         "papers": [],
         "links": [
           {
@@ -257,11 +257,11 @@
     "terms": [
       {
         "term": "Tool call",
-        "text": "The model emits a tool name and arguments; an external program executes them and returns a result."
+        "text": "The model outputs a tool name and arguments; an external program calls the tool with those arguments and returns the result."
       },
       {
         "term": "Trajectory",
-        "text": "The sequence of observations, actions, and results in a task. It helps locate the first error instead of judging only the final answer."
+        "text": "The sequence of observations, actions, and results in a task. Inspecting it helps you locate the first error rather than judge only the final answer."
       },
       {
         "term": "Context and memory",
@@ -286,7 +286,7 @@
         "Observation returns to the loop"
       ]
     },
-    "paperIntro": "Start with ReAct, tool use, feedback, and evaluation. Generative Agents and Voyager explore memory and accumulating skills in a town and in Minecraft."
+    "paperIntro": "Start with ReAct, tool use, feedback, and evaluation. Generative Agents explores memory in a simulated town; Voyager studies how an agent accumulates skills in Minecraft."
   },
   "papers": [
     {
@@ -300,7 +300,7 @@
         "tag": "行动循环",
         "question": "模型能否边获取外部信息，边调整解题过程？",
         "idea": "在一条轨迹中交替生成推理文本与行动，并把环境观察接回上下文。",
-        "why": "它让“模型去做事”变成一段能逐步检查的执行过程。",
+        "why": "它将模型执行任务的过程呈现为可逐步检查的轨迹。",
         "read": "先看项目页的 HotpotQA 示例，再看 ALFWorld 的失败轨迹。",
         "limit": "工具反馈会提供新证据，但模型仍可能忽略它或反复做错；显式推理文本也不等于完整的内部计算。"
       },
@@ -321,7 +321,7 @@
       "url": "https://arxiv.org/abs/2302.04761",
       "zh": {
         "tag": "工具使用训练",
-        "question": "怎样获得教模型调用工具的数据，而不逐条人工标注？",
+        "question": "怎样获取用于训练工具调用的数据，而无需逐条人工标注？",
         "idea": "生成候选调用，实际执行，保留让后续文本更容易预测的调用，再用这些数据微调模型。",
         "why": "与 ReAct 对照读，可以分清执行时的组织方式和训练时学到的能力。",
         "read": "看 Figure 2 的采样、执行、筛选流程，再看工具使用实例。",
@@ -345,7 +345,7 @@
       "code": "https://github.com/noahshinn/reflexion",
       "zh": {
         "tag": "反馈与记忆",
-        "question": "一次尝试失败后，怎样让下一次用上这次的教训？",
+        "question": "一次尝试失败后，怎样让后续尝试利用这次的反馈？",
         "idea": "把任务反馈整理成文字反思，保存到记忆，再作为下一次尝试的输入。",
         "why": "它是理解“改上下文”和“更新参数”差别的具体例子。",
         "read": "顺着方法中的执行、评估、反思和再次尝试读一遍。",
@@ -353,10 +353,10 @@
       },
       "en": {
         "tag": "Feedback and memory",
-        "question": "How can another attempt use lessons from a failure?",
+        "question": "How can an agent use lessons from a failed attempt on its next try?",
         "idea": "Turn task feedback into written reflections, store them, and supply them to subsequent attempts.",
         "why": "It provides a concrete contrast between changing context and changing parameters.",
-        "read": "Follow execution, evaluation, reflection, and the next attempt through the method.",
+        "read": "Follow the method from execution through evaluation and reflection to the next attempt.",
         "limit": "Reflections need useful feedback. This is not traditional reinforcement-learning training through gradient updates."
       }
     },
@@ -379,9 +379,9 @@
         "tag": "Repository-level evaluation",
         "question": "Can a model turn a repository and issue into a working fix?",
         "idea": "Collect real issues and fixes, provide the repository and problem, and evaluate proposed patches with tests.",
-        "why": "It joins reading, localization, editing, and verification in one task.",
+        "why": "It combines reading code, locating a problem, editing, and verification in one task.",
         "read": "Start with task construction and evaluation, then a failure case.",
-        "limit": "The original data comes from Python repositories. Passing tests does not cover all software quality or establish transfer to other languages."
+        "limit": "The original data come from Python repositories. Passing tests does not establish every aspect of software quality or guarantee transfer to other languages."
       }
     },
     {
@@ -396,14 +396,16 @@
         "question": "让 25 个角色住在一座小镇里，怎样让他们记住经历、安排生活并彼此交往？",
         "idea": "用自然语言记录观察，按相关性、重要性和时间检索记忆，再通过反思提炼经验、制定和调整计划。",
         "why": "聚会邀请怎样在人际网络中传播，可以沿着每个角色的记忆、对话与行动追踪。",
-        "read": "先看 Smallville 小镇图和情人节聚会案例，再读记忆检索、反思和规划的架构。"
+        "read": "先看 Smallville 小镇图和情人节聚会案例，再读记忆检索、反思和规划的架构。",
+        "limit": "评估关注小型模拟环境中的行为可信度；看起来像人的行为，不等于已验证真实人类行为的预测或心理机制。"
       },
       "en": {
         "tag": "Memory and social interaction",
         "question": "How can 25 town residents remember experiences, plan their days, and interact?",
         "idea": "Record observations in language, retrieve memories by relevance, importance, and recency, then reflect and plan.",
         "why": "Follow how a party invitation spreads through individual memories, conversations, and actions.",
-        "read": "Start with Smallville and the Valentine’s Day party, then study memory retrieval, reflection, and planning."
+        "read": "Start with Smallville and the Valentine’s Day party, then study memory retrieval, reflection, and planning.",
+        "limit": "Evaluation concerns behavioral believability in a small simulated setting. Humanlike behavior does not validate predictions of real human behavior or psychological mechanisms."
       }
     },
     {
@@ -415,17 +417,19 @@
       "code": "https://voyager.minedojo.org/",
       "zh": {
         "tag": "Minecraft 与技能积累",
-        "question": "从砍树到挖钻石，Agent 怎样把会做的事积累下来，继续探索？",
+        "question": "从砍树到挖钻石，Agent 怎样积累并复用技能，继续探索？",
         "idea": "自动课程提出任务，GPT-4 根据环境反馈生成和修正可执行代码；成功技能存入技能库，供后续任务检索、组合和复用。",
         "why": "科技树把长期能力积累呈现得很直观：后续技能建立在采集、合成与工具使用之上。",
-        "read": "先看科技树与物品探索主图，再看自动课程、技能库和代码调试循环。"
+        "read": "先看科技树与物品探索主图，再看自动课程、技能库和代码调试循环。",
+        "limit": "技能以 Minecraft 程序和提示上下文积累，而不是更新 GPT-4 权重；游戏中的迁移结果不直接证明真实机器人或任意工具环境的泛化。"
       },
       "en": {
         "tag": "Minecraft and reusable skills",
         "question": "How can an agent build on what it knows, from chopping wood to mining diamonds?",
         "idea": "An automatic curriculum proposes tasks. GPT-4 writes and revises executable code using feedback; successful skills are stored for retrieval and reuse.",
         "why": "The tech tree makes cumulative progress tangible: gathering, crafting, and tool use support later skills.",
-        "read": "Start with the tech-tree exploration figure, then study the curriculum, skill library, and code-refinement loop."
+        "read": "Start with the tech-tree exploration figure, then study the curriculum, skill library, and code-refinement loop.",
+        "limit": "Skills accumulate as Minecraft programs and prompt context without updating GPT-4 weights. Transfer within the game does not establish generalization to real robots or arbitrary tool environments."
       }
     }
   ]

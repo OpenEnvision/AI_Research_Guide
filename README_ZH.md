@@ -1,83 +1,73 @@
-<p align="center"><img src="public/blog/guide/logo-mark.png" width="190" alt="UESTC AI 社"></p>
+<p align="center"><img src="public/blog/guide/logo-openenvision.png" width="190" alt="OpenEnvision"></p>
 
-<h1 align="center">AI 科研入门指南</h1>
-<p align="center">大学选择、第一项研究与一路上的经验</p>
-<p align="center"><b>中文</b> · <a href="README.md">English</a> · <a href="https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/">在线阅读</a> · <a href="https://wiki.uestcai.top/zh/">社团平台版</a> · <a href="https://takamatsu-hikaru.github.io/blog/guide/zh/index.html">个人主页版</a> · <a href="https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/ama.html">讨论区</a></p>
+<h1 align="center">AI 学习与科研指南</h1>
+<p align="center">面向全球大学生与初级研究者的开放指南</p>
+<p align="center"><b>中文</b> · <a href="README.md">English</a> · <a href="https://github.com/OpenEnvision/ai_research_guide">项目仓库</a></p>
 
-这份指南面向刚进入大学、想了解 AI 和科研的同学。这里有我们对大学选择与科研入门的回答，也整理了入门项目、各方向的代表论文、课程和工具。联系老师、第一次进组、实验失败，以及和同龄人比较时的焦虑，也在其中。
+建立 AI 基础，完成可复现项目，逐步将问题转化为他人能够检查的研究。指南连接编程、数学、机器学习、研究方向、文献阅读、实验设计、评测、研究工程与学术交流。中英文版本共享核心学习路线与资源。
 
-## 从这里开始
+## 按当前任务开始
 
-| 你现在想了解什么 | 入口 |
+| 目标 | 指南入口 |
 | --- | --- |
-| 大学有哪些选择，自己想往哪里走 | [写给刚进大学的你](content/guide/zh/welcome.md) |
-| 为什么做科研，如何开始、找方向、联系老师 | [科研入门Q&A](content/guide/zh/research.md) |
-| 先做一个能看到结果的小项目 | [第一个 AI 项目](content/guide/zh/start.md) |
+| 制定系统学习计划 | [学习路线](content/guide/zh/learning-path.md) · [基础知识](content/guide/zh/basics.md) |
+| 选择课程与练习 | [课程](content/guide/zh/courses.md) · [实践训练](content/guide/zh/practice.md) |
+| 完成第一个项目 | [入门项目](content/guide/zh/start.md) |
+| 选择研究问题 | [研究方向地图](content/guide/zh/directions.md) · [进阶专题](content/guide/zh/advanced-topics.md) |
+| 阅读、设计与评估研究 | [文献阅读](content/guide/zh/reading.md) · [实验设计](content/guide/zh/research-methods.md) · [数据集](content/guide/zh/datasets.md) |
+| 交付可靠的研究材料 | [研究工程](content/guide/zh/engineering.md) · [负责任 AI](content/guide/zh/responsible-ai.md) |
+| 表达与合作 | [科研写作](content/guide/zh/writing.md) · [学术联系](content/guide/zh/contact.md) |
 
-## 内容导航
+[科研入门 60 问](content/guide/zh/research.md)解答各阶段的常见问题，[资源总索引](content/guide/zh/resources.md)提供完整目录。保留署名的[个人经历](content/guide/zh/experience.md)作为补充阅读。
 
-[术语与会议速查](https://takamatsu-hikaru.github.io/AI-Research-Guide/wiki/index.html)：查询中文、英文或缩写，按方向浏览术语、会议与期刊。
+## 本地预览
 
-| 板块 | 内容 |
-| --- | --- |
-| 基础与学习 | [学习基础知识](content/guide/zh/basics.md) · [论文选读](content/guide/zh/papers.md) |
-| 认识研究方向 | [AI 的不同方向，都在研究什么？](content/guide/zh/directions.md) · [大语言模型：理解、生成、推理](content/guide/zh/llm.md) · [Agent](content/guide/zh/agent.md) · [计算机视觉：让模型读懂图像](content/guide/zh/vision.md) · [多模态：图像、语言与声音](content/guide/zh/multimodal.md) · [生成模型](content/guide/zh/generation.md) · [强化学习](content/guide/zh/rl.md) · [世界模型](content/guide/zh/world-model.md) · [具身智能：从看见到行动](content/guide/zh/embodied.md) · [效率与系统](content/guide/zh/systems.md) · [AI 交叉学科](content/guide/zh/ai4x.md) |
-| 推进一项研究 | [找资料和读论文](content/guide/zh/reading.md) · [写作、画图和汇报](content/guide/zh/writing.md) · [联系老师、学长与合作](content/guide/zh/contact.md) · [AI 工具](content/guide/zh/ai.md) |
-| 经历与生活 | [经历、焚诀与走过的弯路](content/guide/zh/experience.md) · [论文阅读与笔记工作流](content/guide/zh/irene-workflow.md) · [大一年终总结：顿觉天地宽](content/guide/zh/timeline.md) · [怎么好好生活](content/guide/zh/life.md) |
-| 看看外面 | [Lookout：研究者和实验室最近在做什么？](content/guide/zh/lookout.md) · [技术博客与研究观点](content/guide/zh/blogs.md) · [LessWrong：研究判断与 AI 使用](content/guide/zh/lesswrong.md) · [深度学习课程与论文精读](content/guide/zh/limu.md) · [课题组与研究团队](content/guide/zh/labs.md) |
-| 找具体资料 | [资料总索引](content/guide/zh/resources.md) · [科研经验与交流](content/guide/zh/research-conversations.md) |
-
-[在线阅读](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/)包含全文搜索、可展开的科研问答，以及 10 个方向的简介、发展路线、术语和 带原图的论文卡片。每张卡片都附论文原文及相关项目链接。
-
-[AI 编年史与方向总览](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/directions.html)串起主要研究路线；[Lookout](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/lookout.html)整理 AI 与机器人公司的研究入口。Agent 方向已补充 Generative Agents 的小镇和 Voyager 的 Minecraft 技能探索。
-
-## 研究社区与知识分享
-
-### OpenEnvision
-
-[OpenEnvision（OE）](https://openenvision.github.io/)是连接学术界与产业界的开放 AI 研究社区，关注世界模型、多模态、视觉与具身智能，也通过整理博客、访谈和课程，为社区分享研究知识。
-
-- [BlogrXiv：AI 研究博客与技术文章](https://openenvision.github.io/BlogrXiv/site/index.html)：汇集研究博客、实验室文章和技术笔记，涉及模型原理、工程经验与科研方法。
-- [ScholarTube：AI 访谈、播客与课程](https://openenvision.github.io/ScholarTube/)：收集研究者长访谈、视频播客、完整课程与学术报告，覆盖 Agent、世界模型、视觉、机器人及科研方法。
-### Lumina
-
-[Lumina](https://lumina-embodied.ai/)关注具身智能的研究、开源项目与社区交流，提供了[具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)，也定期举办 Lumina Talks、具身观察和社区活动。
-
-### AgentHub
-
-[AgentHub](https://hqhq1025.github.io/agent_hub/)把 Agent 社区里的讨论整理成日报和周报，涉及智能体研究、工具使用、工程实践与行业动态。分享大家最近遇到的问题，以及对技术方案的比较和判断。
-
-## 交流与参与
-
-欢迎在[讨论区](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/ama.html)聊学习、项目和科研中的问题。
-
-欢迎到 [GitHub 仓库](https://github.com/OpenEnvision/ai_research_guide)提 Issue、提交 PR，补充资料或修正内容。觉得有用，也欢迎 Star、分享给身边的同学。
-
-中文正文在 [content/guide/zh](content/guide/zh)，英文正文在 [content/guide/en](content/guide/en)。方向介绍和论文卡片的数据在 [content/guide/fieldnotes](content/guide/fieldnotes)。
-
-## 关于与致谢
-
-[关于 AI 社与这份指南](content/guide/zh/about.md)。大学开篇、科研问答和个人经历由社团成员撰写，课程、论文和博客链接到原作者页面。
-
-这份指南承接[《UESTC AI 社指南》](https://my.feishu.cn/docx/HQYodz7thohS1Nxo6KAcoeNtnbb)及 AI4UESTC_Beginners 的整理工作，感谢旧库作者与贡献者。[Lumina 具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)为具身方向的组织与资料选取提供了参考。论文插图的来源记录在[配图索引](content/guide/paper-figures.json)。
-
-[irene](https://github.com/tseirene6) 分享了[论文阅读与笔记工作流](content/guide/zh/irene-workflow.md)，提供了论文与笔记管理、科研简报、阅读深度和 AI 追问的实践经验。相关文章中的对应方法由这份分享整理。
-
-## 更新内容
-
-直接在 GitHub 编辑 [中文 Markdown](content/guide/zh) 或 [英文 Markdown](content/guide/en)，此仓库暂未启用自动部署，在线阅读链接指向现有站点。论文小卡、公司目录与页面样式的编辑位置见[更新与贡献说明](CONTRIBUTING.md)。
-
-## 本地构建
-
-需要 Node.js 22 或更高版本。
+需要 Node.js 22 或更高版本，以及用于本地服务器的 Python 3。
 
 ```bash
 npm ci
-npm run build          # GitHub Pages / 个人版
-npm run build:uestc    # 社团版
-npm test               # 两套版式的回归检查
+npm run build
+npm run dev
 ```
 
-打开 `public/blog/guide/zh/index.html` 或 `public/blog/guide/en/index.html`；第二套版式在 `public/blog/guide/guide-uestc/zh/index.html`。
+打开[英文展示主页](http://127.0.0.1:8000/blog/guide/)或[中文展示主页](http://127.0.0.1:8000/blog/guide/zh.html)。
 
-GitHub Pages 版发布到 [AI-Research-Guide](https://takamatsu-hikaru.github.io/AI-Research-Guide/zh/)，社团版发布到 [wiki.uestcai.top](https://wiki.uestcai.top/zh/)，个人主页版位于 [blog/guide](https://takamatsu-hikaru.github.io/blog/guide/zh/)。三个入口共用正文、方向小卡与图文排版；个人版另保留大学开篇、个人经历和 LessWrong 的成长与生活文章。
+| 页面 | 生成文件 |
+| --- | --- |
+| GitHub Pages 的仓库根入口 | `index.html` |
+| 本地默认英文展示主页 | `public/blog/guide/index.html` |
+| 中文展示主页 | `public/blog/guide/zh.html` |
+| 站点根入口，同样展示主页 | `public/index.html` |
+| 英文指南概览 | `public/blog/guide/en/index.html` |
+| 中文指南概览 | `public/blog/guide/zh/index.html` |
+
+本次修订为**本地预览**。已有公开站点可能仍是旧版，发布需要另行执行。外部链接尚未全部逐项复核；资源页单独记录核验范围与日期。
+
+## 构建不同版本
+
+```bash
+npm run build                     # 主站、展示主页及仓库根入口
+npm run build:pages               # GitHub Pages 发布包，输出至 dist/github-pages
+npm run build:uestc               # 副版本
+npm run build:uestc:standalone    # 副版本独立打包
+npm test                          # 构建与行为回归检查
+```
+
+两版共用 [content/guide/en](content/guide/en) 和 [content/guide/zh](content/guide/zh) 的核心正文。主版本每语言 45 页，包含 3 页社区视角文章。年度回顾（`timeline`）已退出发布范围，Markdown 源稿保留存档；副版本通过 manifest 选取每语言 42 页，不含这三篇社区文章，入口生成于 `public/blog/guide/guide-uestc/en/index.html` 及对应的 `zh/index.html`。`content/guide/uestc` 下原有 Markdown 覆盖文件作为历史来源保留，不再作为分叉的核心正文使用。
+
+## 部署到 GitHub Pages
+
+`npm run build` 会在仓库最外层生成完整的英文主页 `index.html`，同时生成 `.nojekyll`。主页通过相对路径引用 `public/blog/guide/` 下的页面和资源，也适用于带有仓库名的 GitHub Pages 地址。
+
+在仓库 **Settings → Pages → Build and deployment** 中选择一种发布方式：
+
+- **Deploy from a branch：**运行 `npm run build`，提交根目录的 `index.html`、`.nojekyll` 和完整的 `public/blog/guide/` 目录，再选择发布分支及 **/(root)**。之后每次修改源内容，都需要重新构建并提交生成文件。
+- **GitHub Actions：**将发布来源设为 **GitHub Actions**。仓库自带的 Pages 工作流会执行 `npm run build:pages`，发布 `dist/github-pages/`。这个发布包包含主版本的根目录 `index.html`、`.nojekyll` 和 `public/blog/guide/`。
+
+上传或复制时请保留完整目录结构，单独上传 `index.html` 无法组成完整网站。本次本地修改尚未发布到远程仓库。仓库设置步骤可参阅 GitHub 的[发布来源说明](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
+
+## 来源与贡献
+
+项目由 [OpenEnvision](https://openenvision.org/) 维护，基于 [Takamatsu-Hikaru/AI-Research-Guide](https://github.com/Takamatsu-Hikaru/AI-Research-Guide)、早期[学生共同编写的 AI 学习材料](https://my.feishu.cn/docx/HQYodz7thohS1Nxo6KAcoeNtnbb) 继续整理。原始文章与改编内容保留作者署名和来源链接。[Lumina 具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)为具身资源选取提供参考；[irene](https://github.com/tseirene6) 提供了[论文阅读与笔记工作流](content/guide/zh/irene-workflow.md)的实践来源。
+
+编辑标准与完整致谢见[关于本指南](content/guide/zh/about.md)，修改方式见 [CONTRIBUTING.md](CONTRIBUTING.md)。更正请说明具体页面、原始依据及对应语言的调整。方向材料位于 [content/guide/fieldnotes](content/guide/fieldnotes)，插图来源记录在 [paper-figures.json](content/guide/paper-figures.json)。

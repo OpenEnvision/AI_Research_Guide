@@ -108,3 +108,14 @@ For using agents in your own research, see [AI tools](ai.md). For studying why t
 ## Evaluation analysis and multi-agent organization
 
 [Chai's research notes](blogs.md#chai) include AutomationBench scoring analysis and a simulation study of multi-agent organization. More tutorials and paper lists are in the [agent catalog](catalog-directions.md#topic-21).
+
+## Design a testable agent study
+
+- **Question and controls:** separate the model, prompts, tool interface, memory, planning, and execution framework. Retain simple-prompt or rule-based baselines and match permissions, initial states, retries, and compute budgets.
+- **Evaluation:** verify completion against environment state. Record trajectories, failure stages, calls, time, cost, and permission violations. Distinguish single attempts, multiple attempts, and human-assisted outcomes.
+- **Limits:** a natural-language claim of success is not execution evidence. More tools, samples, or agents can increase cost; comparisons under matched constraints are needed to identify the method's contribution.
+
+[Experimental design](research-methods.md) · [Data and evaluation](datasets.md) · [Specialist courses](courses.md) · [Practice](practice.md)
+
+
+Use [research engineering](engineering.md) for validation, timeouts, and delivery, and [agent threat modeling](responsible-ai.md#llm-agent-security) for external content, retrieval permissions, mock tools, and unauthorized-action tests. Inspect complete traces in a recoverable local environment before expanding scope.

@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="904" viewBox="0 0 1800 1017" role="img" aria-labelledby="overview-title overview-desc">
+  <title id="overview-title">OpenEnvision AI 学习与科研指南知识地图</title>
+  <desc id="overview-desc">围绕学习、研究、交流，指南分为开始学习、研究方向、做研究时来查、看看外面和资料总索引五个分支。下方展示从开始接触、动手学习、进入课题、形成判断到表达与交流的过程。</desc>
+  <defs>
+    <style>
+      text{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",Arial,sans-serif;fill:#050505}
+      .panel{fill:#fff;stroke:#050505;stroke-width:1.5;stroke-opacity:.18}
+      .rule{stroke:#050505;stroke-width:1;stroke-opacity:.15}
+      .link{fill:none;stroke:#df1f26;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .accent{fill:#df1f26}
+      .heading{font-size:35px;font-weight:650;letter-spacing:.5px}
+      .label{font-size:27px;font-weight:500}
+      .detail{font-size:25px;font-weight:400;fill-opacity:.68}
+      .index-label{font-size:26px;font-weight:500}
+      .step-label{font-size:25px;font-weight:500}
+      .stage{font-size:28px;font-weight:650}
+      .number{font-size:22px;font-weight:600;letter-spacing:2px;fill:#df1f26}
+    </style>
+  </defs>
+
+  <rect width="1800" height="1017" fill="#fff"/>
+
+  <!-- Four subject branches connect to a common learning community. -->
+  <path class="link" d="M648 192H680L754 246"/>
+  <path class="link" d="M1152 192H1120L1046 246"/>
+  <path class="link" d="M648 512H680L754 454"/>
+  <path class="link" d="M1152 512H1120L1046 454"/>
+  <path class="link" d="M900 521V670"/>
+
+  <rect class="panel" x="48" y="56" width="600" height="272" rx="16"/>
+  <circle class="accent" cx="84" cy="104" r="5"/>
+  <text class="heading" x="105" y="116">开始学习</text>
+  <path class="rule" d="M80 140H616"/>
+  <text class="label" x="80" y="184">第一个 AI 项目</text>
+  <text class="label" x="355" y="184">基础知识</text>
+  <text class="detail" x="80" y="234">MNIST · YOLO</text>
+  <text class="detail" x="355" y="234">Python · 数学 · ML/DL</text>
+  <text class="detail" x="80" y="284">Agent · 机器人</text>
+  <text class="detail" x="355" y="284">论文选读 · 术语速查</text>
+
+  <rect class="panel" x="1152" y="56" width="600" height="272" rx="16"/>
+  <circle class="accent" cx="1188" cy="104" r="5"/>
+  <text class="heading" x="1209" y="116">研究方向</text>
+  <path class="rule" d="M1184 140H1720"/>
+  <text class="label" x="1184" y="184">大语言模型 · Agent</text>
+  <text class="label" x="1470" y="184">World Model</text>
+  <text class="label" x="1184" y="234">计算机视觉 · 多模态</text>
+  <text class="label" x="1470" y="234">具身智能</text>
+  <text class="label" x="1184" y="284">生成模型 · 强化学习</text>
+  <text class="label" x="1470" y="284">效率与系统 · AI 交叉</text>
+
+  <rect class="panel" x="48" y="368" width="600" height="288" rx="16"/>
+  <circle class="accent" cx="84" cy="416" r="5"/>
+  <text class="heading" x="105" y="428">做研究时来查</text>
+  <path class="rule" d="M80 452H616"/>
+  <text class="label" x="80" y="498">找资料和读论文</text>
+  <text class="label" x="355" y="498">笔记与工作流</text>
+  <text class="label" x="80" y="551">做实验 · 分析结果</text>
+  <text class="label" x="355" y="551">写作 · 画图 · 汇报</text>
+  <text class="label" x="80" y="604">和 AI 一起做事</text>
+  <text class="label" x="355" y="604">联系老师 · 投稿发表</text>
+
+  <rect class="panel" x="1152" y="368" width="600" height="288" rx="16"/>
+  <circle class="accent" cx="1188" cy="416" r="5"/>
+  <text class="heading" x="1209" y="428">看看外面</text>
+  <path class="rule" d="M1184 452H1720"/>
+  <text class="label" x="1184" y="498">研究者与实验室</text>
+  <text class="label" x="1470" y="498">公司与开源项目</text>
+  <text class="label" x="1184" y="551">技术博客 · 研究观点</text>
+  <text class="label" x="1470" y="551">研究社区</text>
+  <text class="label" x="1184" y="604">课程 · 访谈 · 媒体</text>
+  <text class="label" x="1470" y="604">交流与 AMA</text>
+
+  <!-- The central wordmark and rings are vector shapes and live text. -->
+  <circle cx="900" cy="350" r="171" fill="#fff" stroke="#050505" stroke-width="1.5" stroke-opacity=".18"/>
+  <circle cx="900" cy="350" r="151" fill="none" stroke="#df1f26" stroke-width="1" stroke-opacity=".28"/>
+  <path class="link" d="M900 199A151 151 0 0 1 1051 350"/>
+  <circle class="accent" cx="900" cy="199" r="5"/>
+  <circle class="accent" cx="1051" cy="350" r="5"/>
+  <text x="900" y="330" text-anchor="middle" font-size="37" font-weight="650" letter-spacing="-.8">OpenEnvision</text>
+  <text x="900" y="373" text-anchor="middle" font-size="25" font-weight="500">AI 学习与科研指南</text>
+  <text x="900" y="418" text-anchor="middle" font-size="24" fill-opacity=".68">学习 · 研究 · 交流</text>
+  <circle cx="754" cy="246" r="6" fill="#fff" stroke="#df1f26" stroke-width="2"/>
+  <circle cx="1046" cy="246" r="6" fill="#fff" stroke="#df1f26" stroke-width="2"/>
+  <circle cx="754" cy="454" r="6" fill="#fff" stroke="#df1f26" stroke-width="2"/>
+  <circle cx="1046" cy="454" r="6" fill="#fff" stroke="#df1f26" stroke-width="2"/>
+  <circle class="accent" cx="648" cy="192" r="5"/>
+  <circle class="accent" cx="1152" cy="192" r="5"/>
+  <circle class="accent" cx="648" cy="512" r="5"/>
+  <circle class="accent" cx="1152" cy="512" r="5"/>
+  <rect x="775" y="560" width="250" height="53" fill="#fff"/>
+  <text x="900" y="594" text-anchor="middle" font-size="25" font-weight="500">科研 Q&amp;A / 60 问</text>
+
+  <!-- Fifth branch: an index that spans all research activities. -->
+  <rect class="panel" x="48" y="670" width="1704" height="100" rx="16"/>
+  <circle class="accent" cx="900" cy="670" r="5"/>
+  <circle class="accent" cx="84" cy="718" r="5"/>
+  <text x="105" y="730" font-size="32" font-weight="650">资料总索引</text>
+  <path class="rule" d="M366 694V746M716 694V746M1066 694V746M1416 694V746"/>
+  <text class="index-label" x="541" y="730" text-anchor="middle">课程与教材</text>
+  <text class="index-label" x="891" y="730" text-anchor="middle">方向论文与项目</text>
+  <text class="index-label" x="1241" y="730" text-anchor="middle">科研方法与工具</text>
+  <text class="index-label" x="1584" y="730" text-anchor="middle">博客与信息渠道</text>
+
+  <!-- A shared progression, with the original map's learning stages. -->
+  <text x="48" y="830" font-size="34" font-weight="650">从入门到开展研究</text>
+  <path class="rule" d="M48 854H1752M48 996H1752M388 854V996M729 854V996M1071 854V996M1412 854V996"/>
+  <text class="number" x="72" y="890">01</text>
+  <text class="number" x="412" y="890">02</text>
+  <text class="number" x="753" y="890">03</text>
+  <text class="number" x="1095" y="890">04</text>
+  <text class="number" x="1436" y="890">05</text>
+  <text class="step-label" x="218" y="932" text-anchor="middle">AI 小项目 · 科研常识</text>
+  <text class="step-label" x="558" y="932" text-anchor="middle">编程 · 数学 · 模型原理</text>
+  <text class="step-label" x="900" y="932" text-anchor="middle">文献 · 实验 · 合作</text>
+  <text class="step-label" x="1242" y="932" text-anchor="middle">分析结果 · 提出问题</text>
+  <text class="step-label" x="1582" y="932" text-anchor="middle">论文 · 报告 · 开源分享</text>
+  <text class="stage" x="218" y="976" text-anchor="middle">开始接触</text>
+  <text class="stage" x="558" y="976" text-anchor="middle">动手学习</text>
+  <text class="stage" x="900" y="976" text-anchor="middle">进入课题</text>
+  <text class="stage" x="1242" y="976" text-anchor="middle">形成判断</text>
+  <text class="stage" x="1582" y="976" text-anchor="middle">表达与交流</text>
+  <path d="M48 996H388M388 996H729M729 996H1071M1071 996H1412M1412 996H1752" stroke="#df1f26" stroke-width="3"/>
+</svg>

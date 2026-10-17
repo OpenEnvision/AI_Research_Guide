@@ -7,11 +7,11 @@
       "Generative Adversarial Network"
     ],
     "category": "generation",
-    "group": "生成方法",
+    "group": "生成模型家族",
     "kind": "term",
     "summary": "生成对抗网络通过生成器与判别器的对抗训练，让生成器学会产生逼真的样本。",
     "detail": [
-      "生成器从随机输入制造图片，判别器学习判断输入来自真实数据还是生成器。双方交替改进，判别器的反馈推动生成器更接近数据分布。"
+      "生成器根据随机输入生成图片，判别器学习判断输入来自真实数据还是生成器。双方交替改进，判别器的反馈推动生成器更接近数据分布。"
     ],
     "related": [
       "vae",
@@ -36,7 +36,7 @@
       "Variational Autoencoder"
     ],
     "category": "generation",
-    "group": "生成方法",
+    "group": "生成模型家族",
     "kind": "term",
     "summary": "变分自编码器学习将数据编码为潜在变量的分布，再从潜在变量解码生成数据。",
     "detail": [
@@ -65,7 +65,7 @@
       "扩散生成模型"
     ],
     "category": "generation",
-    "group": "生成方法",
+    "group": "生成模型家族",
     "kind": "term",
     "summary": "扩散模型通过学习逐步逆转加噪过程，从噪声中生成符合数据分布的样本。",
     "detail": [
@@ -87,6 +87,69 @@
     ]
   },
   {
+    "id": "normalizing-flow",
+    "term": "Normalizing Flow",
+    "zh": "正态化流",
+    "aliases": [
+      "Normalizing Flows",
+      "归一化流"
+    ],
+    "category": "generation",
+    "group": "生成模型家族",
+    "kind": "term",
+    "summary": "正态化流通过可逆变换将简单概率分布映射为复杂分布，并用变量替换公式计算密度。",
+    "detail": [
+      "采样时把基础分布中的样本送入可逆映射；计算数据密度时需要计入变换的雅可比。连续正态化流用微分方程定义变换，流匹配是一类训练连续流的方法；这些术语描述的是建模方法的不同层面。"
+    ],
+    "related": [
+      "flow-matching",
+      "rectified-flow",
+      "latent-space"
+    ],
+    "sources": [
+      {
+        "title": "Variational Inference with Normalizing Flows",
+        "url": "https://arxiv.org/abs/1505.05770"
+      },
+      {
+        "title": "Flow Matching for Generative Modeling",
+        "url": "https://arxiv.org/abs/2210.02747"
+      }
+    ],
+    "categories": [
+      "generation"
+    ]
+  },
+  {
+    "id": "ddpm",
+    "term": "DDPM",
+    "zh": "去噪扩散概率模型",
+    "aliases": [
+      "Denoising Diffusion Probabilistic Model"
+    ],
+    "category": "generation",
+    "group": "扩散训练与机制",
+    "kind": "term",
+    "summary": "DDPM 是通过前向逐步加噪和学习反向概率过程进行生成的一类扩散模型。",
+    "detail": [
+      "经典训练目标让网络预测加入图片的高斯噪声。生成时按反向步骤不断更新，标准采样过程在部分步骤中保留随机性。"
+    ],
+    "related": [
+      "diffusion-model",
+      "denoising",
+      "ddim"
+    ],
+    "sources": [
+      {
+        "title": "Denoising Diffusion Probabilistic Models",
+        "url": "https://arxiv.org/abs/2006.11239"
+      }
+    ],
+    "categories": [
+      "generation"
+    ]
+  },
+  {
     "id": "score-function",
     "term": "Score Function",
     "zh": "得分函数",
@@ -95,7 +158,7 @@
       "分数函数"
     ],
     "category": "generation",
-    "group": "扩散机制",
+    "group": "扩散训练与机制",
     "kind": "term",
     "summary": "生成建模中的得分函数是数据对数概率密度对输入的梯度，指向局部概率密度增大的方向。",
     "detail": [
@@ -124,11 +187,11 @@
       "噪声调度"
     ],
     "category": "generation",
-    "group": "扩散机制",
+    "group": "扩散训练与机制",
     "kind": "term",
-    "summary": "噪声日程规定扩散过程中，不同时间位置使用多大的噪声强度。",
+    "summary": "噪声日程规定扩散过程中不同时刻使用的噪声强度。",
     "detail": [
-      "训练图片可以从几乎清晰逐渐变成接近纯噪声。日程决定中间状态的清晰程度，也影响模型需要学习哪些去噪难度。"
+      "训练图片可以从几乎清晰逐渐变成接近纯噪声。日程决定中间状态的清晰程度，也决定模型需要学习处理哪些难度的去噪任务。"
     ],
     "related": [
       "diffusion-model",
@@ -153,7 +216,7 @@
       "降噪"
     ],
     "category": "generation",
-    "group": "扩散机制",
+    "group": "扩散训练与机制",
     "kind": "term",
     "summary": "扩散生成中的去噪是根据当前带噪样本和噪声水平，估计恢复数据所需的信息。",
     "detail": [
@@ -175,96 +238,6 @@
     ]
   },
   {
-    "id": "diffusion-sampler",
-    "term": "Diffusion Sampler",
-    "zh": "扩散采样器",
-    "aliases": [
-      "Sampler",
-      "采样器",
-      "Scheduler"
-    ],
-    "category": "generation",
-    "group": "扩散机制",
-    "kind": "term",
-    "summary": "扩散采样器规定如何利用模型预测，逐步把当前噪声样本更新成生成结果。",
-    "detail": [
-      "同一个去噪网络可以搭配不同采样算法。算法决定下一步走多远、是否加入随机噪声以及如何使用历史预测，从而影响生成速度和效果。"
-    ],
-    "related": [
-      "ddpm",
-      "ddim",
-      "denoising",
-      "noise-schedule"
-    ],
-    "sources": [
-      {
-        "title": "Diffusers：Schedulers",
-        "url": "https://huggingface.co/docs/diffusers/en/using-diffusers/schedulers"
-      }
-    ],
-    "categories": [
-      "generation"
-    ]
-  },
-  {
-    "id": "ddpm",
-    "term": "DDPM",
-    "zh": "去噪扩散概率模型",
-    "aliases": [
-      "Denoising Diffusion Probabilistic Model"
-    ],
-    "category": "generation",
-    "group": "生成方法",
-    "kind": "term",
-    "summary": "DDPM 是通过前向逐步加噪和学习反向概率过程进行生成的一类扩散模型。",
-    "detail": [
-      "经典训练目标让网络预测加入图片的高斯噪声。生成时按反向步骤不断更新，标准采样过程在部分步骤中保留随机性。"
-    ],
-    "related": [
-      "diffusion-model",
-      "denoising",
-      "ddim"
-    ],
-    "sources": [
-      {
-        "title": "Denoising Diffusion Probabilistic Models",
-        "url": "https://arxiv.org/abs/2006.11239"
-      }
-    ],
-    "categories": [
-      "generation"
-    ]
-  },
-  {
-    "id": "ddim",
-    "term": "DDIM",
-    "zh": "去噪扩散隐式模型",
-    "aliases": [
-      "Denoising Diffusion Implicit Model"
-    ],
-    "category": "generation",
-    "group": "生成方法",
-    "kind": "term",
-    "summary": "DDIM 构造与常见扩散训练目标兼容的生成过程，使模型可以用较少步骤采样。",
-    "detail": [
-      "已有的噪声预测网络可以配合 DDIM 更新规则使用。其确定性设置在给定初始噪声后沿固定路径生成，采样步数可以少于原始训练噪声步数。"
-    ],
-    "related": [
-      "ddpm",
-      "diffusion-sampler",
-      "denoising"
-    ],
-    "sources": [
-      {
-        "title": "Denoising Diffusion Implicit Models",
-        "url": "https://arxiv.org/abs/2010.02502"
-      }
-    ],
-    "categories": [
-      "generation"
-    ]
-  },
-  {
     "id": "flow-matching",
     "term": "Flow Matching",
     "zh": "流匹配",
@@ -272,7 +245,7 @@
       "FM"
     ],
     "category": "generation",
-    "group": "生成方法",
+    "group": "流模型训练",
     "kind": "term",
     "summary": "流匹配通过学习概率路径上的速度场，将简单分布中的样本连续运输到数据分布。",
     "detail": [
@@ -281,7 +254,8 @@
     "related": [
       "rectified-flow",
       "diffusion-model",
-      "dit"
+      "dit",
+      "normalizing-flow"
     ],
     "sources": [
       {
@@ -302,7 +276,7 @@
       "整流流"
     ],
     "category": "generation",
-    "group": "生成方法",
+    "group": "流模型训练",
     "kind": "term",
     "summary": "校正流通过拟合连接噪声与数据的直线路径速度，学习可用于生成的连续变换。",
     "detail": [
@@ -324,6 +298,37 @@
     ]
   },
   {
+    "id": "latent-space",
+    "term": "Latent Space",
+    "zh": "潜在空间",
+    "aliases": [
+      "隐空间",
+      "Latent"
+    ],
+    "category": "generation",
+    "group": "生成表示与结构",
+    "kind": "term",
+    "summary": "潜在空间由模型的内部变量构成，用于表示或生成观测数据。",
+    "detail": [
+      "在 VAE 或潜空间扩散中，图像常被编码成较小的表示，再由解码器还原。但“潜在”不保证维度更低，也不保证每个方向都有清晰语义；正态化流可以在与数据同维的潜在空间中建模。"
+    ],
+    "related": [
+      "vae",
+      "latent-diffusion",
+      "latent-dynamics",
+      "latent-representation"
+    ],
+    "sources": [
+      {
+        "title": "Auto-Encoding Variational Bayes",
+        "url": "https://arxiv.org/abs/1312.6114"
+      }
+    ],
+    "categories": [
+      "generation"
+    ]
+  },
+  {
     "id": "latent-diffusion",
     "term": "Latent Diffusion",
     "zh": "潜空间扩散",
@@ -332,7 +337,7 @@
       "Latent Diffusion Model"
     ],
     "category": "generation",
-    "group": "生成方法",
+    "group": "生成表示与结构",
     "kind": "term",
     "summary": "潜空间扩散先把数据压缩为潜在表示，再在这个较小的空间中执行扩散生成。",
     "detail": [
@@ -361,7 +366,7 @@
       "Diffusion Transformer"
     ],
     "category": "generation",
-    "group": "模型结构",
+    "group": "生成表示与结构",
     "kind": "term",
     "summary": "DiT 使用 Transformer 作为扩散模型的主要预测网络，处理带噪图块或潜在图块。",
     "detail": [
@@ -383,19 +388,107 @@
     ]
   },
   {
+    "id": "diffusion-sampler",
+    "term": "Diffusion Sampler",
+    "zh": "扩散采样器",
+    "aliases": [
+      "Diffusion Sampling Algorithm"
+    ],
+    "category": "generation",
+    "group": "采样与引导",
+    "kind": "term",
+    "summary": "扩散采样器规定如何利用模型预测，逐步把当前噪声样本更新成生成结果。",
+    "detail": [
+      "同一去噪网络可以搭配不同更新算法，决定步长、随机噪声以及如何利用历史预测。Diffusers 等库常用 Scheduler 封装时间步与更新规则；它不同于训练时的学习率调度器，也不能仅由噪声日程确定。"
+    ],
+    "related": [
+      "ddpm",
+      "ddim",
+      "denoising",
+      "noise-schedule"
+    ],
+    "sources": [
+      {
+        "title": "Diffusers：Schedulers",
+        "url": "https://huggingface.co/docs/diffusers/en/using-diffusers/schedulers"
+      }
+    ],
+    "categories": [
+      "generation"
+    ]
+  },
+  {
+    "id": "ddim",
+    "term": "DDIM",
+    "zh": "去噪扩散隐式模型",
+    "aliases": [
+      "Denoising Diffusion Implicit Model"
+    ],
+    "category": "generation",
+    "group": "采样与引导",
+    "kind": "term",
+    "summary": "DDIM 构造与常见扩散训练目标兼容的生成过程，使模型可以用较少步骤采样。",
+    "detail": [
+      "已有的噪声预测网络可以配合 DDIM 更新规则使用。其确定性设置在给定初始噪声后沿固定路径生成，采样步数可以少于原始训练噪声步数。"
+    ],
+    "related": [
+      "ddpm",
+      "diffusion-sampler",
+      "denoising"
+    ],
+    "sources": [
+      {
+        "title": "Denoising Diffusion Implicit Models",
+        "url": "https://arxiv.org/abs/2010.02502"
+      }
+    ],
+    "categories": [
+      "generation"
+    ]
+  },
+  {
+    "id": "diffusion-steps",
+    "term": "Sampling Steps",
+    "zh": "采样步数",
+    "aliases": [
+      "Inference Steps",
+      "推理步数"
+    ],
+    "category": "generation",
+    "group": "采样与引导",
+    "kind": "term",
+    "summary": "采样步数是生成过程中执行样本更新的次数。",
+    "detail": [
+      "生成器在每一步都会调用网络进行一次或多次预测。更多步骤意味着更多计算，但收益取决于模型与采样器；专门训练或蒸馏的模型可以适合少步生成。"
+    ],
+    "related": [
+      "diffusion-sampler",
+      "ddim",
+      "denoising"
+    ],
+    "sources": [
+      {
+        "title": "Diffusers：Schedulers",
+        "url": "https://huggingface.co/docs/diffusers/en/using-diffusers/schedulers"
+      }
+    ],
+    "categories": [
+      "generation"
+    ]
+  },
+  {
     "id": "classifier-free-guidance",
     "term": "CFG",
     "zh": "无分类器引导",
     "aliases": [
-      "Classifier-Free Guidance",
-      "Guidance Scale"
+      "Classifier-Free Guidance"
     ],
     "category": "generation",
-    "group": "条件与编辑",
+    "group": "采样与引导",
     "kind": "term",
     "summary": "无分类器引导组合有条件与无条件的模型预测，增强生成结果对指定条件的响应。",
     "detail": [
-      "同一步分别估计“按提示词生成”和“不提供该条件”时的方向，再放大两者差异。引导强度提高通常会加强条件影响，也会改变样本多样性和细节表现。"
+      "同一步组合带条件和去掉条件的预测，并用引导系数控制二者差异。Guidance Scale 是系数，不是算法的同义词；不同实现的数值约定可能不同。较强引导会改变条件遵循与多样性的权衡，也可能引入失真。"
     ],
     "related": [
       "conditioning",
@@ -421,7 +514,7 @@
       "Conditional Generation"
     ],
     "category": "generation",
-    "group": "条件与编辑",
+    "group": "生成任务与条件",
     "kind": "term",
     "summary": "条件控制让生成模型依据文字、图像、类别或其他指定信息生成内容。",
     "detail": [
@@ -443,96 +536,6 @@
     ]
   },
   {
-    "id": "inpainting",
-    "term": "Inpainting",
-    "zh": "局部重绘",
-    "aliases": [
-      "图像修补"
-    ],
-    "category": "generation",
-    "group": "条件与编辑",
-    "kind": "term",
-    "summary": "局部重绘根据周围内容和指定条件，生成图像中被掩码选中的区域。",
-    "detail": [
-      "把照片中的桌面一角标出来，可以在那片区域补上一盆植物。输入通常包括原图、表示修改范围的掩码和文字提示，模型借助周边信息协调新内容。"
-    ],
-    "related": [
-      "segmentation-mask",
-      "img2img",
-      "conditioning"
-    ],
-    "sources": [
-      {
-        "title": "Diffusers：Inpainting",
-        "url": "https://huggingface.co/docs/diffusers/en/using-diffusers/inpaint"
-      }
-    ],
-    "categories": [
-      "generation"
-    ]
-  },
-  {
-    "id": "img2img",
-    "term": "Image-to-Image",
-    "zh": "图生图",
-    "aliases": [
-      "Img2Img",
-      "图像到图像"
-    ],
-    "category": "generation",
-    "group": "条件与编辑",
-    "kind": "term",
-    "summary": "图生图以已有图像为起点或条件，生成与其相关的新图像。",
-    "detail": [
-      "将房间照片改成插画时，原图能提供构图线索。在常见扩散方案中，先给原图表示加入噪声再去噪；加噪程度越高，模型通常获得越大的改动空间。"
-    ],
-    "related": [
-      "inpainting",
-      "conditioning",
-      "latent-diffusion"
-    ],
-    "sources": [
-      {
-        "title": "Diffusers：Image-to-image",
-        "url": "https://huggingface.co/docs/diffusers/en/using-diffusers/img2img"
-      }
-    ],
-    "categories": [
-      "generation"
-    ]
-  },
-  {
-    "id": "latent-space",
-    "term": "Latent Space",
-    "zh": "潜在空间",
-    "aliases": [
-      "隐空间",
-      "Latent"
-    ],
-    "category": "generation",
-    "group": "生成表示",
-    "kind": "term",
-    "summary": "潜在空间是模型用紧凑内部变量表示数据结构的空间。",
-    "detail": [
-      "图片可以被编码成一组潜在数值，再由解码器还原。改变这些数值可能改变生成图像的外观或内容；具体方向的含义取决于模型学到的表示。"
-    ],
-    "related": [
-      "vae",
-      "latent-diffusion",
-      "latent-dynamics",
-      "latent-representation"
-    ],
-    "sources": [
-      {
-        "title": "Auto-Encoding Variational Bayes",
-        "url": "https://arxiv.org/abs/1312.6114"
-      }
-    ],
-    "categories": [
-      "generation"
-    ]
-  },
-  {
     "id": "text-to-image",
     "term": "Text-to-Image",
     "zh": "文生图",
@@ -541,7 +544,7 @@
       "Text2Image"
     ],
     "category": "generation",
-    "group": "条件与编辑",
+    "group": "生成任务与条件",
     "kind": "term",
     "summary": "文生图根据自然语言描述生成图片。",
     "detail": [
@@ -563,29 +566,58 @@
     ]
   },
   {
-    "id": "diffusion-steps",
-    "term": "Sampling Steps",
-    "zh": "采样步数",
+    "id": "img2img",
+    "term": "Image-to-Image",
+    "zh": "图生图",
     "aliases": [
-      "Inference Steps",
-      "推理步数"
+      "Img2Img",
+      "图像到图像"
     ],
     "category": "generation",
-    "group": "扩散机制",
+    "group": "生成任务与条件",
     "kind": "term",
-    "summary": "采样步数是生成过程中执行样本更新的次数。",
+    "summary": "图生图以已有图像为起点或条件，生成与其相关的新图像。",
     "detail": [
-      "生成器每走一步都会调用网络进行一次或多次预测。更多步骤意味着更多计算，但收益取决于模型与采样器；专门训练或蒸馏的模型可以适合少步生成。"
+      "将房间照片改成插画时，原图能提供构图线索。在常见扩散方案中，先给原图表示加入噪声再去噪；加噪程度越高，模型通常获得越大的改动空间。"
     ],
     "related": [
-      "diffusion-sampler",
-      "ddim",
-      "denoising"
+      "inpainting",
+      "conditioning",
+      "latent-diffusion"
     ],
     "sources": [
       {
-        "title": "Diffusers：Schedulers",
-        "url": "https://huggingface.co/docs/diffusers/en/using-diffusers/schedulers"
+        "title": "Diffusers：Image-to-image",
+        "url": "https://huggingface.co/docs/diffusers/en/using-diffusers/img2img"
+      }
+    ],
+    "categories": [
+      "generation"
+    ]
+  },
+  {
+    "id": "inpainting",
+    "term": "Inpainting",
+    "zh": "局部重绘",
+    "aliases": [
+      "图像修补"
+    ],
+    "category": "generation",
+    "group": "生成任务与条件",
+    "kind": "term",
+    "summary": "局部重绘根据周围内容和指定条件，生成图像中被掩码选中的区域。",
+    "detail": [
+      "把照片中的桌面一角标出来，可以在那片区域补上一盆植物。输入通常包括原图、表示修改范围的掩码和文字提示，模型利用周围的信息，使新内容与原图协调。"
+    ],
+    "related": [
+      "segmentation-mask",
+      "img2img",
+      "conditioning"
+    ],
+    "sources": [
+      {
+        "title": "Diffusers：Inpainting",
+        "url": "https://huggingface.co/docs/diffusers/en/using-diffusers/inpaint"
       }
     ],
     "categories": [

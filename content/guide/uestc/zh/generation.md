@@ -27,3 +27,14 @@ DDPM 的训练样本来自对数据逐步加噪，网络根据带噪样本和时
 ## 教程与技术文章
 
 [Hugging Face Diffusion Course](https://huggingface.co/learn/diffusion-course/unit1/1)提供扩散模型的讲解与代码；[科学空间的扩散系列](blogs.md#su)包含中文数学推导，[LoopDiT](blogs.md#chai)讨论相关模型与比较实验。更多课程与项目见[生成模型资料目录](catalog-directions.md#topic-16)。
+
+## 如何设计一项可检验的生成模型研究
+
+- **研究问题与对照：** 区分训练目标、模型结构、条件控制和采样算法。比较时记录数据、分辨率、预训练来源、采样步数、引导强度与计算预算。
+- **评价协议：** 同时检查质量、多样性、条件一致性、失败案例与运行成本。分布指标取决于样本数、特征提取器和实现；人工比较也应说明任务、盲评与标注协议。
+- **结论边界：** 视觉上更清晰、某项自动分数更高和更适合下游任务不是同一主张。不要只展示挑选的成功样例；保留固定种子或预先定义的样例选择规则。
+
+[实验设计](research-methods.md) · [数据与评测](datasets.md) · [专题课程](courses.md) · [实践平台](practice.md)
+
+
+建模假设、似然与预测检查的背景可见[概率建模](advanced-topics.md#probabilistic)；训练诊断和性能实验见[研究工程](engineering.md)。生成质量评价还应保留[人工评价](responsible-ai.md#human-evaluation)的抽样、评分与分歧记录。

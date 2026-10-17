@@ -1,19 +1,41 @@
-# 关于 AI 社与这份指南
+# 关于本指南
 
-我们是 UESTC AI 社，一群对 AI 感兴趣、一起学习和做项目的同学。这份指南从社团平时的学习与交流中整理而来，也希望能帮到其他学校想开始学 AI、尝试科研的同学。
+OpenEnvision AI 学习与科研指南是一份面向**全球大学生与初级研究者**的开放参考资料，也适合非计算机专业的学生与独立学习者参考。指南将基础知识、项目实践与科研方法联系起来，鼓励读者通过解释概念、检查结果和复现实验来检验理解。
+
+指南由 [OpenEnvision](https://openenvision.org/) 维护。本版本基于 [Takamatsu-Hikaru/AI-Research-Guide](https://github.com/Takamatsu-Hikaru/AI-Research-Guide) 继续整理，保留和改编原文时均注明作者与来源。
+
+## 适用读者
+
+- **初学者：**建立编程、数学和机器学习基础，通过习题与本地项目检验理解。
+- **准备参与科研的大学生：**了解领域、阅读论文、寻找指导，经历一次完整的研究过程。
+- **初级研究者：**改进实验设计、评测、研究工程、写作与合作方式。
+
+无论正在攻读本科或研究生学位、刚加入研究项目，还是在工作之余学习，都可以根据当前的基础选择起点。具体项目仍可能要求特定能力、设备、数据权限或指导条件；指南帮助你识别这些要求，而不以年龄或所属机构规定固定的学习顺序。使用时，可以结合所修课程、参与项目的要求，以及熟悉你个人情况的指导者的建议。
+
+## 内容组织与语言
+
+[学习路线](learning-path.md)连接[基础知识](basics.md)、[课程](courses.md)和[实践](practice.md)；[研究方向地图](directions.md)与[进阶专题](advanced-topics.md)帮助将兴趣缩小为具体任务。[文献阅读](reading.md)、[实验设计](research-methods.md)、[数据与评测](datasets.md)、[研究工程](engineering.md)、[负责任 AI](responsible-ai.md)及[写作](writing.md)，支持完整的研究过程。
+
+中英文版本共享核心路线、资源选择与学习目标。外部资源保留原有语言；指南页面的语言不代表所有链接都提供该语言版本。社区文章的改编保留作者署名，区分个人经历与通用建议。
+
+## 编辑标准
+
+资源链接优先指向原作者、授课机构、官方文档与原始研究。课程条目说明资源类型、语言、先修能力与建议产出。研究章节区分练习方案与实际执行的实验、结果与解释，以及具体发现与更广泛的主张。
+
+示例与时间安排是教学建议，应根据问题和资源调整。机构要求与投稿政策需要结合适用情境查阅。课题组目录提供了寻找研究团队的示例，不是机构排名或全球团队的完整名录。
+
+本轮内容修订日期为 **2026-10-17**；各资源页单独说明核验范围。课程、软件版本、许可和访问政策会变化，历史链接与作业尚未全部逐项复核。编辑日期不代表每个外部资源都在当天完成了核验。
 
 ## 来源与致谢
 
-这份指南承接旧[《UESTC AI 社指南》](https://my.feishu.cn/docx/HQYodz7thohS1Nxo6KAcoeNtnbb)及其前身 AI4UESTC_Beginners 的整理工作。感谢旧库贡献者，以及课程、论文、开源项目与技术文章的作者。
+项目基于已有开放学习材料继续整理，包括 [Hikaru 的科研指南](https://github.com/Takamatsu-Hikaru/AI-Research-Guide)与[学生共同编写的 AI 指南](https://my.feishu.cn/docx/HQYodz7thohS1Nxo6KAcoeNtnbb)。感谢原始贡献者，以及本指南引用的课程、论文、开源项目和技术文章的创作者。改编段落保留来源署名，原始资料记录各自的历史与写作背景。
 
-[Lumina 具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)为具身方向的资料选取提供了参考。
+[Lumina 具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)为具身方向的资源选取提供了参考。[论文阅读与笔记工作流](irene-workflow.md)根据 irene 的《一些小分享》整理，署名与原始材料在文章内标注。
 
-[论文阅读与笔记工作流](irene-workflow.md)根据 irene 的《一些小分享》整理，原文与工具来源在文章中标注。
+## 更正与贡献
 
-## 引用与修订
+可以沿页面中的来源链接核查内容，也可以在[项目仓库](https://github.com/OpenEnvision/ai_research_guide)提出 Issue 与 PR。更正请包含具体页面、建议改动及支持改动的原始来源。推荐资源时，请说明适用读者、先修要求、语言、访问条件与预期学习成果；修改共享内容时，同时检查对应语言版本与相关链接。
 
-课程、论文、项目与技术文章保留原始链接，改编材料注明来源。关于引用、署名或图片使用的问题，可以在[指南仓库](https://github.com/Takamatsu-Hikaru/AI-Research-Guide)提出。
+引用、署名或媒体使用问题也可通过仓库反馈。贡献时请保留来源，并区分个人建议与通用研究指导。
 
-[指南首页](home.md) · [资料总索引](resources.md)
-
-欢迎到 [GitHub 仓库](https://github.com/Takamatsu-Hikaru/AI-Research-Guide)提 Issue、提交 PR，补充资料或修正内容。觉得有用，也欢迎 Star、分享给身边的同学。
+[指南首页](home.md) · [资源总索引](resources.md)

@@ -1,0 +1,812 @@
+[
+  {
+    "id": "aaai",
+    "summary": "An academic conference covering a broad range of artificial intelligence research.",
+    "detail": [
+      "Its full title is the AAAI Conference on Artificial Intelligence. Papers cover machine learning, knowledge representation, search and planning, language, vision, and agents. It is useful for seeing how different AI fields approach problems."
+    ],
+    "sourceTitles": [
+      "AAAI official conference and paper information"
+    ]
+  },
+  {
+    "id": "ijcai",
+    "summary": "A broad international conference on foundational AI methods and applications.",
+    "detail": [
+      "IJCAI stands for the International Joint Conference on Artificial Intelligence. It brings together learning, reasoning, planning, and multi-agent research. Filter papers by topic, then compare their research questions and evaluation methods."
+    ],
+    "sourceTitles": [
+      "IJCAI official conference and paper information"
+    ]
+  },
+  {
+    "id": "aamas",
+    "summary": "A conference on autonomous agents and interactions among multiple agents.",
+    "detail": [
+      "AAMAS stands for the International Conference on Autonomous Agents and Multiagent Systems. Common topics include cooperation, games, coordination, mechanism design, and multi-agent learning. Agents may be software systems or robots."
+    ],
+    "sourceTitles": [
+      "AAMAS official conference and paper information"
+    ]
+  },
+  {
+    "id": "aij",
+    "summary": "An academic journal covering AI foundations and a broad range of AI research.",
+    "detail": [
+      "The formal journal title is Artificial Intelligence. AIJ is often used to distinguish the journal from the discipline. Related areas include knowledge representation, reasoning, planning, learning, and agents."
+    ],
+    "sourceTitles": [
+      "AIJ journal and publication information"
+    ]
+  },
+  {
+    "id": "jair",
+    "summary": "An open-access journal publishing research across branches of artificial intelligence.",
+    "detail": [
+      "JAIR stands for the Journal of Artificial Intelligence Research. Papers cover search, reasoning, learning, planning, language, and multi-agent systems. Full text is available through the journal website."
+    ],
+    "sourceTitles": [
+      "JAIR journal and publication information"
+    ]
+  },
+  {
+    "id": "npj-artificial-intelligence",
+    "summary": "An open-access journal publishing AI research and interdisciplinary applications.",
+    "detail": [
+      "It belongs to the Nature Portfolio npj series and covers AI theory, methods, and applications. Search using both the full title and the abbreviation npj AI to avoid confusion with other AI journals."
+    ],
+    "sourceTitles": [
+      "npj Artificial Intelligence journal and publication information"
+    ]
+  },
+  {
+    "id": "neurips",
+    "summary": "A conference on machine learning and its connections with fields such as statistics and neuroscience.",
+    "detail": [
+      "The full name is Conference on Neural Information Processing Systems; its earlier abbreviation was NIPS. Work on learning algorithms, optimization, generative models, and reinforcement learning can be found in its proceedings. Browse the official site and proceedings by topic."
+    ],
+    "sourceTitles": [
+      "NeurIPS official conference and paper information"
+    ]
+  },
+  {
+    "id": "icml",
+    "summary": "An international conference on machine learning theory, algorithms, and applications.",
+    "detail": [
+      "ICML stands for the International Conference on Machine Learning. Common questions include how to learn from data, why models generalize, and how to train and evaluate models more effectively."
+    ],
+    "sourceTitles": [
+      "ICML official conference and paper information"
+    ]
+  },
+  {
+    "id": "iclr",
+    "summary": "A conference centered on learning representations, with broad coverage of deep learning research.",
+    "detail": [
+      "ICLR stands for the International Conference on Learning Representations. A representation is an internal feature structure a model derives from raw data. Papers address network architectures, training methods, generative models, and understanding models."
+    ],
+    "sourceTitles": [
+      "ICLR official conference and paper information"
+    ]
+  },
+  {
+    "id": "aistats",
+    "summary": "An international academic conference connecting statistics and machine learning.",
+    "detail": [
+      "AISTATS stands for the International Conference on Artificial Intelligence and Statistics. Common topics include probabilistic modeling, statistical inference, learning theory, and optimization. Many papers examine the mathematical conditions that determine algorithm performance."
+    ],
+    "sourceTitles": [
+      "AISTATS official conference and paper information"
+    ]
+  },
+  {
+    "id": "uai",
+    "summary": "A conference on representing, reasoning about, and handling uncertainty in artificial intelligence.",
+    "detail": [
+      "UAI stands for the Conference on Uncertainty in Artificial Intelligence. Work often involves probabilistic models, causal inference, Bayesian methods, and decision-making. A central question is how to make sound judgments with incomplete information."
+    ],
+    "sourceTitles": [
+      "UAI official conference and paper information"
+    ]
+  },
+  {
+    "id": "colt",
+    "summary": "A conference that uses mathematics to study the capabilities and limits of machine learning.",
+    "detail": [
+      "COLT stands for the Conference on Learning Theory. Papers often analyze sample requirements, convergence of training algorithms, and bounds on prediction error. Reading them usually requires a foundation in probability and mathematics."
+    ],
+    "sourceTitles": [
+      "COLT official conference and paper information"
+    ]
+  },
+  {
+    "id": "rlc",
+    "summary": "A conference dedicated to reinforcement learning theory, algorithms, empirical research, and applications.",
+    "detail": [
+      "RLC stands for the Reinforcement Learning Conference. It focuses on learning to make decisions through actions and feedback and is associated with the Reinforcement Learning Journal (RLJ). Check the journal publication information separately from the conference presentation arrangements."
+    ],
+    "sourceTitles": [
+      "RLC official conference and paper information"
+    ]
+  },
+  {
+    "id": "jmlr",
+    "summary": "An open-access journal publishing full research articles across machine learning.",
+    "detail": [
+      "JMLR stands for the Journal of Machine Learning Research. Papers can cover theory, algorithms, empirical research, and software. The format generally gives authors room to develop derivations, experiments, and method details. Full text is available on its website."
+    ],
+    "sourceTitles": [
+      "JMLR journal and publication information"
+    ]
+  },
+  {
+    "id": "tmlr",
+    "summary": "A journal that accepts machine learning submissions on an ongoing basis and uses public review discussions.",
+    "detail": [
+      "TMLR stands for Transactions on Machine Learning Research. Submission and review take place on OpenReview. Readers can use the paper, reviews, and author responses together to understand which conclusions the research supports."
+    ],
+    "sourceTitles": [
+      "TMLR journal and publication information"
+    ]
+  },
+  {
+    "id": "tnnls",
+    "summary": "An IEEE journal on neural networks and related learning systems.",
+    "detail": [
+      "TNNLS stands for IEEE Transactions on Neural Networks and Learning Systems. Papers address learning theory, network architectures, training methods, and applications, including both research on algorithms and analysis of system behavior."
+    ],
+    "sourceTitles": [
+      "TNNLS journal and publication information"
+    ]
+  },
+  {
+    "id": "nature-machine-intelligence",
+    "summary": "An interdisciplinary journal publishing research in AI, machine learning, robotics, and related areas.",
+    "detail": [
+      "Its scope connects intelligent algorithms, applications, and questions at the intersection of disciplines. When reading, examine the new capabilities a method enables and how the experiments support the scientific conclusions."
+    ],
+    "sourceTitles": [
+      "Nature Machine Intelligence journal and publication information"
+    ]
+  },
+  {
+    "id": "rlj",
+    "summary": "An open-access, peer-reviewed journal dedicated to reinforcement learning research.",
+    "detail": [
+      "RLJ stands for Reinforcement Learning Journal. It is associated with the Reinforcement Learning Conference (RLC), where published work can be presented. Distinguish the journal publication record from the conference presentation."
+    ],
+    "sourceTitles": [
+      "RLJ: Journal and associated conference"
+    ]
+  },
+  {
+    "id": "cvpr",
+    "summary": "A conference covering image, video, and 3D vision research.",
+    "detail": [
+      "CVPR stands for the Conference on Computer Vision and Pattern Recognition. Common topics include recognition, detection, segmentation, 3D reconstruction, and visual generation. The CVF open-access archive provides papers and supplementary material."
+    ],
+    "sourceTitles": [
+      "CVPR official conference and paper information"
+    ]
+  },
+  {
+    "id": "iccv",
+    "summary": "An international conference on how computers understand and process visual information.",
+    "detail": [
+      "ICCV stands for the International Conference on Computer Vision. Its scope includes visual perception, geometry, multimodal understanding, and generation, with substantial overlap with CVPR and ECCV."
+    ],
+    "sourceTitles": [
+      "ICCV official conference and paper information"
+    ]
+  },
+  {
+    "id": "eccv",
+    "summary": "A computer vision research conference organized by the European Computer Vision Association.",
+    "detail": [
+      "ECCV stands for the European Conference on Computer Vision. Despite its regional name, participants and papers come from around the world. Topics include visual learning, image understanding, and 3D scenes."
+    ],
+    "sourceTitles": [
+      "ECCV official conference and paper information"
+    ]
+  },
+  {
+    "id": "wacv",
+    "summary": "A conference emphasizing computer vision methods and their practical applications.",
+    "detail": [
+      "WACV stands for the Winter Conference on Applications of Computer Vision. Look here for research on visual algorithms, systems, and evaluation using real data and practical settings."
+    ],
+    "sourceTitles": [
+      "WACV official conference and paper information"
+    ]
+  },
+  {
+    "id": "bmvc",
+    "summary": "A vision and pattern recognition conference organized by the British Machine Vision Association.",
+    "detail": [
+      "BMVC stands for the British Machine Vision Conference. Research includes visual representations, image and video analysis, geometry, and recognition. BMVA provides online access to the proceedings."
+    ],
+    "sourceTitles": [
+      "BMVC official conference and paper information"
+    ]
+  },
+  {
+    "id": "accv",
+    "summary": "An international conference for research in computer vision and related machine learning.",
+    "detail": [
+      "ACCV stands for the Asian Conference on Computer Vision. Topics include image understanding, visual geometry, and video analysis. Proceedings from past editions can be found through the Springer conference series."
+    ],
+    "sourceTitles": [
+      "ACCV official conference and paper information"
+    ]
+  },
+  {
+    "id": "icpr",
+    "summary": "An international congress on pattern recognition theory, methods, and applications.",
+    "detail": [
+      "ICPR stands for the International Conference on Pattern Recognition. Pattern recognition studies how to identify categories, structures, and regularities in data, so topics include vision, documents, signals, and other data types."
+    ],
+    "sourceTitles": [
+      "ICPR official conference and paper information"
+    ]
+  },
+  {
+    "id": "tpami",
+    "summary": "An IEEE journal covering pattern analysis, computer vision, and related machine intelligence research.",
+    "detail": [
+      "TPAMI stands for IEEE Transactions on Pattern Analysis and Machine Intelligence, also often abbreviated PAMI. Papers commonly develop detailed accounts of vision methods, pattern recognition theory, and experimental validation."
+    ],
+    "sourceTitles": [
+      "TPAMI journal and publication information"
+    ]
+  },
+  {
+    "id": "ijcv",
+    "summary": "A journal publishing computer vision theory, algorithms, and systems research.",
+    "detail": [
+      "IJCV stands for the International Journal of Computer Vision. Topics include image understanding, geometric reconstruction, visual learning, and video analysis. Journal articles usually give a detailed account of the problem and method."
+    ],
+    "sourceTitles": [
+      "IJCV journal and publication information"
+    ]
+  },
+  {
+    "id": "tip",
+    "summary": "An IEEE journal on image processing theory, algorithms, and applications.",
+    "detail": [
+      "TIP stands for IEEE Transactions on Image Processing. Related topics include image restoration, compression, enhancement, representation, and analysis, focusing on acquiring, processing, and using image information."
+    ],
+    "sourceTitles": [
+      "TIP journal and publication information"
+    ]
+  },
+  {
+    "id": "pattern-recognition",
+    "summary": "A journal publishing research on pattern recognition methods and applications.",
+    "detail": [
+      "The formal journal title is Pattern Recognition. Related problems include classification, clustering, feature learning, and image or document analysis. PR can be used as its abbreviation in references."
+    ],
+    "sourceTitles": [
+      "PR journal and publication information"
+    ]
+  },
+  {
+    "id": "acl",
+    "summary": "A conference covering natural language processing and computational linguistics.",
+    "detail": [
+      "As a conference name, ACL means the Annual Meeting of the Association for Computational Linguistics. ACL can also refer to the organizing association. Papers cover language understanding, generation, translation, language models, and linguistic analysis."
+    ],
+    "sourceTitles": [
+      "ACL official conference and paper information"
+    ]
+  },
+  {
+    "id": "emnlp",
+    "summary": "A conference emphasizing data and experiments in natural language processing research.",
+    "detail": [
+      "EMNLP stands for the Conference on Empirical Methods in Natural Language Processing. Research commonly tests methods using datasets, model comparisons, and error analysis, and also examines evaluation, language resources, and social impact."
+    ],
+    "sourceTitles": [
+      "EMNLP official conference and paper information"
+    ]
+  },
+  {
+    "id": "naacl",
+    "summary": "A computational linguistics and NLP conference held by the ACL chapter for the Americas.",
+    "detail": [
+      "The chapter is now called the Nations of the Americas Chapter of the Association for Computational Linguistics. Its former name, North American, still appears in historical papers. The conference covers a broad range of language technology research with participants from around the world."
+    ],
+    "sourceTitles": [
+      "NAACL official conference and paper information"
+    ]
+  },
+  {
+    "id": "eacl",
+    "summary": "An NLP conference held by the European chapter of ACL.",
+    "detail": [
+      "EACL stands for the Conference of the European Chapter of the Association for Computational Linguistics. It covers many areas of language technology, including different languages, language resources, and computational linguistics methods."
+    ],
+    "sourceTitles": [
+      "EACL official conference and paper information"
+    ]
+  },
+  {
+    "id": "aacl",
+    "summary": "A computational linguistics conference held by the Asian chapter of ACL.",
+    "detail": [
+      "AACL stands for the Conference of the Asian Chapter of the Association for Computational Linguistics. Some editions are held jointly with IJCNLP. Check the publication record for the full name of the particular edition."
+    ],
+    "sourceTitles": [
+      "AACL official conference and paper information"
+    ]
+  },
+  {
+    "id": "coling",
+    "summary": "An international conference on computational studies of language and natural language processing technology.",
+    "detail": [
+      "COLING stands for the International Conference on Computational Linguistics. Topics connect linguistic questions with computational methods, including semantics, syntax, text processing, multilingual technology, and language models."
+    ],
+    "sourceTitles": [
+      "COLING official conference and paper information"
+    ]
+  },
+  {
+    "id": "lrec",
+    "summary": "A conference series on language data, resource development, and language technology evaluation.",
+    "detail": [
+      "LREC stands for the Language Resources and Evaluation Conference. Important topics include corpora, annotation guidelines, dictionaries, multilingual data, and evaluation methods. Joint conferences such as LREC-COLING can be explored through the same resource collection."
+    ],
+    "sourceTitles": [
+      "LREC official conference and paper information"
+    ]
+  },
+  {
+    "id": "conll",
+    "summary": "A conference on natural language learning methods and mechanisms of language learning.",
+    "detail": [
+      "CoNLL stands for the Conference on Computational Natural Language Learning. Research explores the relationship between machine learning and language. Past shared tasks have also provided data and evaluation settings for linguistic analysis."
+    ],
+    "sourceTitles": [
+      "CoNLL official conference and paper information"
+    ]
+  },
+  {
+    "id": "tacl",
+    "summary": "A journal publishing computational linguistics and natural language processing research.",
+    "detail": [
+      "TACL stands for Transactions of the Association for Computational Linguistics. It uses a journal review process and has arrangements for presenting papers at ACL-related conferences. Full papers can be read in the ACL Anthology."
+    ],
+    "sourceTitles": [
+      "TACL journal and publication information"
+    ]
+  },
+  {
+    "id": "computational-linguistics",
+    "summary": "A journal on computational modeling, analysis, and processing of language.",
+    "detail": [
+      "The formal journal title is Computational Linguistics. Papers can connect linguistic theory with computational methods, including semantics, syntax, language learning, and natural language processing systems."
+    ],
+    "sourceTitles": [
+      "CL journal and publication information"
+    ]
+  },
+  {
+    "id": "corl",
+    "summary": "A conference on how robots learn skills from data and interaction.",
+    "detail": [
+      "CoRL stands for the Conference on Robot Learning. Common topics include imitation learning, reinforcement learning, combining perception with control, and real robot experiments. The focus is on how learning methods support robot behavior in practice."
+    ],
+    "sourceTitles": [
+      "CoRL official conference and paper information"
+    ]
+  },
+  {
+    "id": "rss",
+    "summary": "A conference on scientific questions, algorithms, and complete systems in robotics.",
+    "detail": [
+      "RSS stands for Robotics: Science and Systems. Papers cover robot perception, planning, control, manipulation, and learning, often connecting theoretical methods with system validation."
+    ],
+    "sourceTitles": [
+      "RSS official conference and paper information"
+    ]
+  },
+  {
+    "id": "icra",
+    "summary": "An IEEE international conference covering a broad range of robotics and automation research.",
+    "detail": [
+      "ICRA stands for the IEEE International Conference on Robotics and Automation. Research includes mechanical design, perception, motion planning, control, manipulation, and human-robot interaction. It can help build an overview of the robotics field."
+    ],
+    "sourceTitles": [
+      "ICRA official conference and paper information"
+    ]
+  },
+  {
+    "id": "iros",
+    "summary": "An international conference on intelligent robots and the systems that make them work.",
+    "detail": [
+      "IROS stands for the IEEE/RSJ International Conference on Intelligent Robots and Systems. Topics cover robot hardware, perception, learning, control, and applications. Many papers demonstrate robots performing specific tasks."
+    ],
+    "sourceTitles": [
+      "IROS official conference and paper information"
+    ]
+  },
+  {
+    "id": "humanoids",
+    "summary": "A conference dedicated to humanoid robot design, motion, and intelligent capabilities.",
+    "detail": [
+      "The full name is IEEE-RAS International Conference on Humanoid Robots. Typical topics include bipedal walking, balance, whole-body control, dexterous manipulation, and experiments on humanoid platforms."
+    ],
+    "sourceTitles": [
+      "Humanoids official conference and paper information"
+    ]
+  },
+  {
+    "id": "tro",
+    "summary": "An IEEE journal publishing robotics foundations, methods, and systems research.",
+    "detail": [
+      "The full name is IEEE Transactions on Robotics, often written TRO. Topics include motion, perception, control, manipulation, and robot systems. Articles usually explain the principles behind a method and its experimental results in depth."
+    ],
+    "sourceTitles": [
+      "T-RO journal and publication information"
+    ]
+  },
+  {
+    "id": "ijrr",
+    "summary": "A journal covering robotics science, technology, and systems research.",
+    "detail": [
+      "IJRR stands for The International Journal of Robotics Research. Its scope includes robot mechanisms, perception, planning, control, and learning, often supported by detailed theoretical analysis and experiments."
+    ],
+    "sourceTitles": [
+      "IJRR journal and publication information"
+    ]
+  },
+  {
+    "id": "ral",
+    "summary": "An IEEE journal publishing concise research articles in robotics and automation.",
+    "detail": [
+      "The full name is IEEE Robotics and Automation Letters, often written RAL. It is a journal, although some papers can also be presented at robotics conferences through associated arrangements. Use the publication record to distinguish the publication venue from the presentation event."
+    ],
+    "sourceTitles": [
+      "RA-L journal and publication information"
+    ]
+  },
+  {
+    "id": "science-robotics",
+    "summary": "A journal publishing interdisciplinary robotics research and technological advances.",
+    "detail": [
+      "It belongs to the Science family of journals and covers robot design, materials, control, intelligence, and applications. Research often connects new robot capabilities with scientific questions or real tasks."
+    ],
+    "sourceTitles": [
+      "Science Robotics journal and publication information"
+    ]
+  },
+  {
+    "id": "acm-mm",
+    "summary": "A conference on images, video, audio, text, and ways to combine these forms of information.",
+    "detail": [
+      "The full name is ACM International Conference on Multimedia. Papers address multimodal understanding and generation, media retrieval, content analysis, and multimedia systems, often processing several forms of information together."
+    ],
+    "sourceTitles": [
+      "ACM MM official conference and paper information"
+    ]
+  },
+  {
+    "id": "icassp",
+    "summary": "An IEEE conference covering acoustics, speech, and a broad range of signal processing research.",
+    "detail": [
+      "ICASSP stands for the International Conference on Acoustics, Speech, and Signal Processing. Alongside speech recognition and audio processing, it includes image processing, communications, machine learning, and other signal analysis problems."
+    ],
+    "sourceTitles": [
+      "ICASSP official conference and paper information"
+    ]
+  },
+  {
+    "id": "interspeech",
+    "summary": "An international conference on speech science and speech technology.",
+    "detail": [
+      "Organized by the International Speech Communication Association, ISCA, it covers speech recognition, synthesis, speaker analysis, speech perception, and related linguistic questions. Research concerns both speech systems and how people produce and understand speech."
+    ],
+    "sourceTitles": [
+      "INTERSPEECH official conference and paper information"
+    ]
+  },
+  {
+    "id": "tmm",
+    "summary": "An IEEE journal on multimedia content, systems, and applications.",
+    "detail": [
+      "TMM stands for IEEE Transactions on Multimedia. Research can combine images, sound, video, and text to study content understanding, coding and transmission, retrieval, generation, and user interaction."
+    ],
+    "sourceTitles": [
+      "TMM journal and publication information"
+    ]
+  },
+  {
+    "id": "kdd",
+    "summary": "A conference on discovering patterns in large datasets and creating practical value from them.",
+    "detail": [
+      "KDD stands for the ACM SIGKDD Conference on Knowledge Discovery and Data Mining. Common topics include data mining, graph learning, recommendation, anomaly detection, and data science applications. Methods are often closely linked to real settings."
+    ],
+    "sourceTitles": [
+      "KDD official conference and paper information"
+    ]
+  },
+  {
+    "id": "www",
+    "summary": "A conference on Web technology, Web data, and their social and practical impact.",
+    "detail": [
+      "Now named the ACM Web Conference, it is also often called The Web Conference or TheWebConf. Related areas include search, recommendation, social networks, Web mining, and Web security."
+    ],
+    "sourceTitles": [
+      "WWW official conference and paper information"
+    ]
+  },
+  {
+    "id": "sigir",
+    "summary": "A conference on information search, ranking, and retrieval evaluation.",
+    "detail": [
+      "As a conference name, SIGIR refers to the ACM SIGIR Conference on Research and Development in Information Retrieval. Typical topics include search engines, neural retrieval, recommendation, and finding information for question answering."
+    ],
+    "sourceTitles": [
+      "SIGIR official conference and paper information"
+    ]
+  },
+  {
+    "id": "wsdm",
+    "summary": "A conference connecting Web search, data mining, and related applications.",
+    "detail": [
+      "WSDM stands for the ACM International Conference on Web Search and Data Mining. Papers often address search ranking, recommender systems, graph data, and user behavior analysis, emphasizing learning from data at Web scale."
+    ],
+    "sourceTitles": [
+      "WSDM official conference and paper information"
+    ]
+  },
+  {
+    "id": "icdm",
+    "summary": "An IEEE conference on data mining algorithms, systems, and applications.",
+    "detail": [
+      "ICDM stands for the IEEE International Conference on Data Mining. Topics include classification, clustering, anomaly detection, streaming data, and graph mining. Identify the conference abbreviation together with its full name."
+    ],
+    "sourceTitles": [
+      "ICDM official conference and paper information"
+    ]
+  },
+  {
+    "id": "cikm",
+    "summary": "A conference on information retrieval, databases, and knowledge management.",
+    "detail": [
+      "CIKM stands for the ACM International Conference on Information and Knowledge Management. Research often asks how to organize, retrieve, and use data and knowledge, as in knowledge graphs, search, and recommendation."
+    ],
+    "sourceTitles": [
+      "CIKM official conference and paper information"
+    ]
+  },
+  {
+    "id": "recsys",
+    "summary": "A conference focused on recommendation algorithms, recommender systems, and user experience.",
+    "detail": [
+      "RecSys stands for the ACM Conference on Recommender Systems. Papers discuss predicting user interests as well as evaluation, interaction, fairness, and practical recommender system design."
+    ],
+    "sourceTitles": [
+      "RecSys official conference and paper information"
+    ]
+  },
+  {
+    "id": "tkde",
+    "summary": "An IEEE journal on managing, processing, and using data and knowledge.",
+    "detail": [
+      "TKDE stands for IEEE Transactions on Knowledge and Data Engineering. Related areas include databases, data mining, knowledge discovery, and information systems. Papers often consider both algorithm quality and data scale."
+    ],
+    "sourceTitles": [
+      "TKDE journal and publication information"
+    ]
+  },
+  {
+    "id": "tois",
+    "summary": "An ACM journal with a strong focus on information retrieval and related information systems.",
+    "detail": [
+      "TOIS stands for ACM Transactions on Information Systems. Common topics include search, ranking, recommendation, information organization, and how users seek information. Read it alongside research from conferences such as SIGIR."
+    ],
+    "sourceTitles": [
+      "TOIS journal and publication information"
+    ]
+  },
+  {
+    "id": "mlsys",
+    "summary": "A conference on the interaction between machine learning and computing systems.",
+    "detail": [
+      "MLSys stands for the Conference on Machine Learning and Systems. Typical topics include training and inference efficiency, distributed execution, compilers, hardware, and resource management. It also studies how machine learning can improve systems."
+    ],
+    "sourceTitles": [
+      "MLSys official conference and paper information"
+    ]
+  },
+  {
+    "id": "osdi",
+    "summary": "A conference on the design and implementation of operating systems and large computing systems.",
+    "detail": [
+      "OSDI stands for the USENIX Symposium on Operating Systems Design and Implementation. Topics can include distributed systems, storage, network services, and machine learning systems. Papers usually evaluate design choices through system implementations and experiments."
+    ],
+    "sourceTitles": [
+      "OSDI official conference and paper information"
+    ]
+  },
+  {
+    "id": "sosp",
+    "summary": "A conference on fundamental design questions in operating systems and related computing systems.",
+    "detail": [
+      "SOSP stands for the ACM Symposium on Operating Systems Principles. Work commonly examines performance, reliability, isolation, and distributed coordination, validating proposed mechanisms through implementation or analysis."
+    ],
+    "sourceTitles": [
+      "SOSP official conference and paper information"
+    ]
+  },
+  {
+    "id": "asplos",
+    "summary": "A conference on joint design across hardware, programming languages, and operating systems.",
+    "detail": [
+      "ASPLOS stands for the International Conference on Architectural Support for Programming Languages and Operating Systems. Problems such as AI acceleration, compiler optimization, and memory management often require considering software and hardware together."
+    ],
+    "sourceTitles": [
+      "ASPLOS official conference and paper information"
+    ]
+  },
+  {
+    "id": "isca",
+    "summary": "A conference on the organization and design of computer hardware.",
+    "detail": [
+      "ISCA stands for the International Symposium on Computer Architecture. Typical topics include processors, memory hierarchies, interconnects, and AI accelerators. Here ISCA denotes the architecture conference, rather than the speech association with the same abbreviation."
+    ],
+    "sourceTitles": [
+      "ISCA official conference and paper information"
+    ]
+  },
+  {
+    "id": "micro",
+    "summary": "A conference on processor microarchitecture and related software and hardware optimization.",
+    "detail": [
+      "MICRO stands for the IEEE/ACM International Symposium on Microarchitecture. Topics include execution pipelines, caches, parallel computing, accelerators, and compilation techniques, focusing on how hardware can execute programs more efficiently."
+    ],
+    "sourceTitles": [
+      "MICRO official conference and paper information"
+    ]
+  },
+  {
+    "id": "sc",
+    "summary": "A conference covering high-performance computing, networking, storage, and analysis.",
+    "detail": [
+      "Its full name is the International Conference for High Performance Computing, Networking, Storage, and Analysis. Related parallel computing questions arise in supercomputers, scientific computing, and large-scale AI training."
+    ],
+    "sourceTitles": [
+      "SC official conference and paper information"
+    ]
+  },
+  {
+    "id": "eurosys",
+    "summary": "An international conference on computer systems software and its practical implementation.",
+    "detail": [
+      "EuroSys stands for the European Conference on Computer Systems. Topics include operating systems, distributed computing, networks, and storage. Research often studies system efficiency and reliability under real workloads."
+    ],
+    "sourceTitles": [
+      "EuroSys official conference and paper information"
+    ]
+  },
+  {
+    "id": "siggraph",
+    "summary": "A conference for research and presentations in computer graphics and interactive technology.",
+    "detail": [
+      "Technical papers address rendering, geometric modeling, animation, physical simulation, and visual content generation. SIGGRAPH also includes art, production, and industry activities. Go directly to the Technical Papers program when looking for research papers."
+    ],
+    "sourceTitles": [
+      "SIGGRAPH official conference and paper information"
+    ]
+  },
+  {
+    "id": "siggraph-asia",
+    "summary": "A computer graphics and interactive technology conference and exhibition held in Asia.",
+    "detail": [
+      "Its research scope is closely related to SIGGRAPH, including rendering, animation, geometry, simulation, and interaction. Technical papers, technical communications, and exhibitions are distinct programs. Check the relevant program for publication details."
+    ],
+    "sourceTitles": [
+      "SIGGRAPH Asia official conference and paper information"
+    ]
+  },
+  {
+    "id": "chi",
+    "summary": "A human-computer interaction conference on how people interact with computing technology.",
+    "detail": [
+      "CHI stands for the ACM CHI Conference on Human Factors in Computing Systems. Related questions include the experience of using AI assistants, explainable interaction, accessibility, and user studies, with attention to the effects of technology on people."
+    ],
+    "sourceTitles": [
+      "CHI official conference and paper information"
+    ]
+  },
+  {
+    "id": "uist",
+    "summary": "A conference on interaction technology, user interfaces, and supporting systems.",
+    "detail": [
+      "UIST stands for the ACM Symposium on User Interface Software and Technology. Common work includes new input devices, interaction tools, intelligent interfaces, and creative systems. Prototypes usually demonstrate how the technology is used."
+    ],
+    "sourceTitles": [
+      "UIST official conference and paper information"
+    ]
+  },
+  {
+    "id": "tog",
+    "summary": "An ACM journal publishing computer graphics research.",
+    "detail": [
+      "TOG stands for ACM Transactions on Graphics. Important topics include rendering, geometry, animation, simulation, and visual content creation. Some papers are associated with the technical papers programs of SIGGRAPH or SIGGRAPH Asia."
+    ],
+    "sourceTitles": [
+      "TOG journal and publication information"
+    ]
+  },
+  {
+    "id": "miccai",
+    "summary": "A conference on medical image computing and computer-assisted intervention methods.",
+    "detail": [
+      "MICCAI stands for the International Conference on Medical Image Computing and Computer Assisted Intervention. Common topics include medical image segmentation, registration, reconstruction, and surgical navigation. Evaluation usually reflects the requirements of the medical task."
+    ],
+    "sourceTitles": [
+      "MICCAI official conference and paper information"
+    ]
+  },
+  {
+    "id": "ismb",
+    "summary": "A conference for bioinformatics and computational biology research.",
+    "detail": [
+      "ISMB stands for Intelligent Systems for Molecular Biology. Topics include computational analysis of genomes, proteins, single-cell data, and biological networks. Machine learning is one commonly used family of methods."
+    ],
+    "sourceTitles": [
+      "ISMB official conference and paper information"
+    ]
+  },
+  {
+    "id": "recomb",
+    "summary": "A conference on computational methods for problems in molecular biology.",
+    "detail": [
+      "RECOMB stands for Research in Computational Molecular Biology. Work often starts from a problem involving sequences, genomes, or biological networks, and proposes algorithms, statistical models, and computational analyses."
+    ],
+    "sourceTitles": [
+      "RECOMB official conference and paper information"
+    ]
+  },
+  {
+    "id": "nature-methods",
+    "summary": "A journal publishing methods, technologies, and tools for life sciences research.",
+    "detail": [
+      "It includes work on machine learning-assisted imaging, single-cell analysis, and structural studies. A paper usually centers on how a method helps conduct life sciences experiments or analyze data."
+    ],
+    "sourceTitles": [
+      "Nature Methods journal and publication information"
+    ]
+  },
+  {
+    "id": "nature-computational-science",
+    "summary": "A journal publishing interdisciplinary computational methods and mathematical models.",
+    "detail": [
+      "Research spans fields such as computational biology, chemistry, materials, and climate, focusing on how computational techniques address scientific questions. AI can serve as a tool or be the computational method developed in the paper."
+    ],
+    "sourceTitles": [
+      "Nature Computational Science journal and publication information"
+    ]
+  },
+  {
+    "id": "tmi",
+    "summary": "An IEEE journal on acquiring, reconstructing, processing, and analyzing medical images.",
+    "detail": [
+      "TMI stands for IEEE Transactions on Medical Imaging. Related areas include medical image reconstruction, segmentation, registration, and computational analysis. Methods are usually designed around the imaging process or medical task."
+    ],
+    "sourceTitles": [
+      "TMI journal and publication information"
+    ]
+  },
+  {
+    "id": "media",
+    "summary": "A journal publishing research on computational analysis of medical and biological images.",
+    "detail": [
+      "The formal title is Medical Image Analysis, one of the official journals of the MICCAI Society. Research covers medical and biological images at different scales, with methods such as segmentation, registration, modeling, and assisted analysis."
+    ],
+    "sourceTitles": [
+      "MedIA journal and publication information"
+    ]
+  }
+]

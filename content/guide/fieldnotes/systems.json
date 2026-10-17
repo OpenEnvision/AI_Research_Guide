@@ -2,15 +2,15 @@
   "id": "systems",
   "zh": {
     "overview": [
-      "效率与系统研究怎样在有限硬件、时间和成本里完成训练或推理。一个模型的公式没有变，运行速度也可能差很多：数据搬运、算子实现、显存分配、请求调度和多卡通信，都会决定 GPU 能不能持续干活，以及用户要等多久。",
-      "这条线与模型方法紧密相连。更长的上下文会增加缓存，更多并发请求会改变内存压力，降低精度可能影响任务质量。读系统论文时，把优化对象和测试负载一起看：它省的是哪块内存、减少了什么等待，换一种任务时收益又会怎样变化。"
+      "效率与系统研究怎样在有限硬件、时间和成本里完成训练或推理。即使模型的数学定义相同，不同实现的运行速度也可能相差很大：数据搬运、算子实现、显存分配、请求调度和多卡通信，都会影响 GPU 的利用率与用户的等待时间。",
+      "系统研究与模型设计紧密相连。更长的上下文会增加缓存，更多并发请求会改变内存压力，降低精度可能影响任务质量。读系统论文时，把优化对象和测试负载一起看：它省的是哪块内存、减少了什么等待，换一种任务时收益又会怎样变化。"
     ],
     "solves": [
       "让原本显存装不下的模型或训练状态能够分布到多张卡上。",
       "减少计算中的内存搬运与重复工作，提高已有硬件的利用率。",
       "在模型质量、响应速度、并发量和服务成本之间找到可测量的取舍。"
     ],
-    "stance": "先测清瓶颈，再选优化；显存更省、吞吐更高和单个用户等得更少，分别是不同的结果。",
+    "stance": "先测量性能瓶颈，再选择优化方法；节省显存、提高吞吐和缩短单个用户的等待时间，是不同的目标。",
     "roadmap": [
       {
         "year": "2020",
@@ -22,7 +22,7 @@
       },
       {
         "year": "2022",
-        "title": "FlashAttention：改变计算的搬运方式",
+        "title": "FlashAttention：改进数据搬运方式",
         "text": "保持精确注意力的数学目标，用分块计算减少 GPU 不同内存层级间的读写。",
         "papers": [
           "flashattention-2022"
@@ -48,7 +48,7 @@
     "terms": [
       {
         "term": "吞吐与延迟",
-        "text": "吞吐是在一段时间内完成多少工作；延迟是一个请求等待多久。增大 batch 可能改善前者，却让排队更久。"
+        "text": "吞吐衡量单位时间内完成的工作量，延迟衡量单个请求的等待时间。增大 batch 可能提高吞吐，也可能延长排队时间。"
       },
       {
         "term": "Prefill / Decode",
@@ -81,13 +81,13 @@
   },
   "en": {
     "overview": [
-      "Efficiency and systems research asks how to train and serve models within hardware, time, and cost limits. An unchanged formula can run at very different speeds: data movement, kernel implementation, memory allocation, request scheduling, and communication determine whether GPUs stay busy and how long users wait.",
-      "This field is closely tied to model design. Longer contexts increase cache requirements, concurrent requests change memory pressure, and lower precision may affect quality. Read an optimization together with its workload: which memory does it save, which wait does it reduce, and how would another task change the result?"
+      "Efficiency and systems research asks how to train and serve models within hardware, time, and cost limits. Different implementations of the same computation can run at very different speeds: data movement, kernel implementation, memory allocation, request scheduling, and communication determine whether GPUs stay busy and how long users wait.",
+      "This field is closely tied to model design. Longer contexts increase cache requirements, concurrent requests change memory pressure, and lower precision may affect quality. Consider an optimization alongside its workload: where does it save memory or reduce waiting, and how might the result change on another task?"
     ],
     "solves": [
       "Distribute model and training states that do not fit on one device.",
       "Reduce data movement and redundant work to use existing hardware more effectively.",
-      "Measure tradeoffs among model quality, response time, concurrency, and service cost."
+      "Measure trade-offs among model quality, response time, concurrency, and service cost."
     ],
     "stance": "Measure the bottleneck before choosing an optimization. Lower memory use, higher throughput, and shorter user waits are different outcomes.",
     "roadmap": [
@@ -127,11 +127,11 @@
     "terms": [
       {
         "term": "Throughput and latency",
-        "text": "Throughput measures work completed per unit time; latency measures how long one request waits. Larger batches can improve throughput while increasing queues."
+        "text": "Throughput measures work completed per unit time; latency measures how long a request takes. Larger batches can improve throughput while increasing queueing time."
       },
       {
         "term": "Prefill / decode",
-        "text": "Prefill processes the input context; decode generates output step by step. Their compute and memory-access patterns differ, so one speed number is insufficient."
+        "text": "Prefill processes the input context; decode generates output step by step. Their compute and memory-access patterns differ, so a single speed measurement is insufficient."
       },
       {
         "term": "KV cache",
@@ -145,7 +145,7 @@
     "checklist": [
       "Fix the model and input/output lengths; measure time and peak memory three times at two batch sizes, recording hardware and precision.",
       "Measure time to the first token separately from subsequent generation speed and explain why they are not interchangeable.",
-      "Choose one of the optimizations on this page, draw the object it changes, and identify a metric that directly tests its effect."
+      "Choose one of the optimizations on this page, draw the component or data structure it changes, and identify a metric that directly tests its effect."
     ],
     "figure": {
       "title": "Where one request spends its time",
@@ -170,7 +170,7 @@
         "tag": "分布式训练",
         "question": "多卡训练中，每张卡都保存相同状态，会浪费多少显存？",
         "idea": "按阶段分片优化器状态、梯度和参数，需要时再通信取回，让多张卡分担存储。",
-        "why": "它能帮助你读懂训练显存的组成，而不只盯着模型参数量。",
+        "why": "它有助于理解训练时显存占用的组成，而不只关注模型参数量。",
         "read": "先看三阶段各自分片的对象，再比较内存和通信分析。",
         "limit": "减少冗余存储会改变通信模式；网络带宽与卡数会影响收益。"
       },
@@ -178,7 +178,7 @@
         "tag": "Distributed training",
         "question": "How much memory is wasted by replicating training state on every GPU?",
         "idea": "Progressively partition optimizer states, gradients, and parameters, communicating required pieces when needed.",
-        "why": "It explains training memory beyond parameter count.",
+        "why": "It explains why training memory requirements extend beyond the parameters themselves.",
         "read": "Identify what each of the three stages partitions, then compare memory and communication costs.",
         "limit": "Sharding changes communication. Benefits depend on bandwidth and device count."
       }
@@ -203,7 +203,7 @@
         "question": "Can attention be limited by data movement rather than multiplication count?",
         "idea": "Tile work into fast on-chip memory instead of repeatedly materializing the full attention matrix in device memory.",
         "why": "It shows how the same mathematical operation can have very different execution costs.",
-        "read": "Start with GPU memory levels and tiling, then IO analysis and runtime.",
+        "read": "Start with GPU memory levels and tiling, then examine the I/O analysis and runtime results.",
         "limit": "Exact dense attention still has quadratic arithmetic complexity. Speedup depends on shapes, hardware, and implementation."
       }
     },
@@ -240,7 +240,7 @@
       "code": "https://github.com/vllm-project/vllm",
       "zh": {
         "tag": "vLLM · 服务缓存",
-        "question": "不同长度的请求不断进入和结束，怎样少浪费 KV cache 显存？",
+        "question": "不同长度的请求不断进入和结束，怎样减少 KV cache 的显存浪费？",
         "idea": "把缓存切成块，用映射表组织不连续的物理存储，并支持必要的缓存共享。",
         "why": "它把操作系统中的分页思路带到模型服务，解释了并发能力从哪里来。",
         "read": "先看缓存碎片问题和块映射，再看固定延迟条件下的吞吐比较。",
@@ -248,7 +248,7 @@
       },
       "en": {
         "tag": "vLLM · serving cache",
-        "question": "How can changing request lengths avoid wasting KV-cache memory?",
+        "question": "How can a serving system avoid wasting KV-cache memory when request lengths vary?",
         "idea": "Split the cache into blocks, map logical sequences to noncontiguous storage, and support cache sharing.",
         "why": "It connects operating-system paging to the capacity of a model-serving system.",
         "read": "Start with fragmentation and block mapping, then throughput under matched latency conditions.",

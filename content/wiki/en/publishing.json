@@ -1,0 +1,439 @@
+[
+  {
+    "id": "research-article",
+    "summary": "A paper presenting original research questions, methods, experiments, or theoretical results.",
+    "detail": [
+      "The central contribution is new knowledge or evidence, usually supported by a clear question, methods, results, and limitations. This describes the contribution rather than its publication venue or manuscript version: a research article can appear in a conference or journal and may first be shared as a preprint. Structure and submission requirements depend on the venue."
+    ],
+    "sourceTitles": [
+      "ACM conference paper types"
+    ]
+  },
+  {
+    "id": "survey",
+    "summary": "A paper that organizes, compares, and synthesizes existing literature on a research topic.",
+    "detail": [
+      "A good survey explains how research problems are organized, how representative methods compare, and which questions remain unresolved. Use it to build a map of a field, then follow its references to original research."
+    ],
+    "sourceTitles": [
+      "ACM Computing Surveys: About the journal"
+    ]
+  },
+  {
+    "id": "position-paper",
+    "summary": "A paper arguing for a clear position through evidence and reasoning to advance scholarly discussion.",
+    "detail": [
+      "The main contribution is a position on what direction or action a research community should take, with consideration of credible alternatives. Claims need support from relevant literature, evidence, and reasoning rather than personal opinion alone. Review criteria and publication arrangements depend on the conference or journal."
+    ],
+    "sourceTitles": [
+      "ICML 2026 call for position papers"
+    ]
+  },
+  {
+    "id": "technical-report",
+    "summary": "A research document that records technical methods, system designs, or experimental results in detail.",
+    "detail": [
+      "A laboratory or institution can publish technical reports in a report series. They often include implementation details, experimental settings, and engineering experience. The review process depends on the publishing organization or project."
+    ],
+    "sourceTitles": [
+      "NASA Technical Reports Server"
+    ]
+  },
+  {
+    "id": "preprint",
+    "summary": "A manuscript version shared publicly before formal peer-reviewed publication.",
+    "detail": [
+      "Preprint describes a manuscript’s version and dissemination status: both original research articles and surveys can have preprints. Researchers use them to share results and receive feedback, then may update the content or add a formal publication link.",
+      "Being hosted on arXiv does not itself establish that a paper has passed peer review. Check version dates, revision history, and the associated conference or journal publication record."
+    ],
+    "sourceTitles": [
+      "arXiv: About the platform"
+    ]
+  },
+  {
+    "id": "accepted-manuscript",
+    "summary": "The author’s manuscript as accepted after peer review, before the publisher’s editing and production process.",
+    "detail": [
+      "It contains the accepted research content but usually lacks the publisher’s final editing and layout. Check the specific file and publisher guidance to identify the version; the hosting platform alone is insufficient, as one platform may hold versions from different stages."
+    ],
+    "sourceTitles": [
+      "SAGE author archiving and re-use guidelines"
+    ]
+  },
+  {
+    "id": "camera-ready",
+    "summary": "The final manuscript that authors prepare and submit after acceptance to meet publication requirements.",
+    "detail": [
+      "Authors incorporate permitted revisions and check author information, formatting, references, and publication materials before submitting the final manuscript. Camera-ready describes the author-submitted version; the publisher’s final version of record may undergo further formatting or publication-metadata processing. Check the formal publication record when citing it."
+    ],
+    "sourceTitles": [
+      "ECCV submission and publication policies: Camera-ready requirements"
+    ]
+  },
+  {
+    "id": "version-of-record",
+    "summary": "The version formally released by a publisher as the publication record.",
+    "detail": [
+      "It normally includes the publisher’s editing, layout, and publication metadata. A camera-ready manuscript is the final file supplied for publication; submitting that file alone does not mean the paper has been formally published. Consult the publisher’s record to confirm the published version and any associated corrections."
+    ],
+    "sourceTitles": [
+      "Taylor & Francis guide to article versions",
+      "ACL publication ethics policy: Camera-ready"
+    ]
+  },
+  {
+    "id": "conference",
+    "summary": "An event where researchers present results and exchange scholarly ideas.",
+    "detail": [
+      "Many computer science conferences organize paper submissions, review, and proceedings. Events can also include invited talks, posters, tutorials, and workshops. Check which program a paper belongs to when reading its publication record."
+    ],
+    "sourceTitles": [
+      "NeurIPS call for papers"
+    ]
+  },
+  {
+    "id": "journal",
+    "summary": "A periodical that organizes and publishes scholarly research articles on an ongoing schedule.",
+    "detail": [
+      "Editors usually arrange reviews, and authors may go through one or more rounds of revision. Published articles are identified by volume, issue, or article number. JMLR, TPAMI, and TACL are journals."
+    ],
+    "sourceTitles": [
+      "TMLR editorial policies"
+    ]
+  },
+  {
+    "id": "workshop",
+    "summary": "An academic event organized around a specific or emerging topic.",
+    "detail": [
+      "Workshops are often attached to larger conferences, but can also be independent. They may include contributed presentations, invited talks, and discussions. Formal proceedings and the review process depend on the workshop."
+    ],
+    "sourceTitles": [
+      "NeurIPS call for workshop proposals"
+    ]
+  },
+  {
+    "id": "proceedings",
+    "summary": "A publication that collects papers from a conference or workshop.",
+    "detail": [
+      "Proceedings usually have a specific conference name, volume, and publication details, so readers can reliably find and cite them. PMLR, ACL Anthology, and publisher digital libraries host such collections."
+    ],
+    "sourceTitles": [
+      "PMLR: About the proceedings"
+    ]
+  },
+  {
+    "id": "findings",
+    "summary": "A series of peer-reviewed paper collections published within the ACL community.",
+    "detail": [
+      "The full name is Findings of the Association for Computational Linguistics. Volumes are associated with a conference and year, such as Findings of ACL or Findings of EMNLP. It identifies a publication venue, not a paper type or presentation format; check the conference and volume in ACL Anthology."
+    ],
+    "sourceTitles": [
+      "ACL Anthology: Findings"
+    ]
+  },
+  {
+    "id": "oral",
+    "summary": "A scheduled presentation in which authors explain their paper to an audience in person or online.",
+    "detail": [
+      "An oral presentation usually has a dedicated time slot and questions. Authors need to condense their work and explain the question, method, and results clearly. Duration and paper selection depend on the conference."
+    ],
+    "sourceTitles": [
+      "ECCV conference and presentation program"
+    ]
+  },
+  {
+    "id": "poster",
+    "summary": "A format that presents a paper visually on a poster and supports direct discussion with readers.",
+    "detail": [
+      "Posters usually fit the question, method, and key results into limited space, allowing authors to discuss the work in response to readers’ questions. Poster sessions are a common presentation format for formally published conference papers."
+    ],
+    "sourceTitles": [
+      "ECCV poster and video submission instructions"
+    ]
+  },
+  {
+    "id": "spotlight",
+    "summary": "A conference label highlighting selected accepted papers, with presentation arrangements defined by the conference.",
+    "detail": [
+      "Spotlight can involve featured posters or short talks. NeurIPS 2025, for example, used it as an honor tag for selected poster papers presented in poster sessions. Check both the publication record and the scheduled presentation format; the label alone does not establish that a paper has an oral presentation."
+    ],
+    "sourceTitles": [
+      "NeurIPS: Paper and poster presentation arrangements"
+    ]
+  },
+  {
+    "id": "peer-review",
+    "summary": "The process in which researchers in a relevant field assess a paper's quality and suitability for publication.",
+    "detail": [
+      "Reviewers usually examine the value of the question, the validity of the method, the sufficiency of the evidence, and the clarity of the conclusions. Editors or conference organizers make decisions using the reviews and author responses."
+    ],
+    "sourceTitles": [
+      "Nature Portfolio: Peer review"
+    ]
+  },
+  {
+    "id": "double-blind",
+    "summary": "A review arrangement that conceals author and reviewer identities from one another.",
+    "detail": [
+      "Submission files usually need to remove identifying author information, and reviewers provide anonymous feedback. This aims to reduce the influence of identity on judgments. Each venue defines its specific anonymity rules."
+    ],
+    "sourceTitles": [
+      "ACL Rolling Review reviewer guidelines"
+    ]
+  },
+  {
+    "id": "conflict-of-interest",
+    "summary": "A collaborative, competitive, or personal relationship that could affect a reviewer’s independent judgment.",
+    "detail": [
+      "Recent collaborators, members of the same institution, or supervisory relationships usually need to be declared in the submission system so reviewers can be reassigned. Check the conference or journal rules for the relevant time windows and relationship types."
+    ],
+    "sourceTitles": [
+      "NeurIPS reviewer guidelines"
+    ]
+  },
+  {
+    "id": "review",
+    "summary": "A written assessment of a paper's research question, methods, evidence, and presentation by a reviewer.",
+    "detail": [
+      "A review usually summarizes the contribution, identifies strengths and weaknesses, and raises questions or suggests revisions. Some submission systems also ask reviewers for scores and their confidence in those judgments.",
+      "As an article type, review also refers to a paper that synthesizes existing research in a field."
+    ],
+    "sourceTitles": [
+      "NeurIPS reviewer guidelines"
+    ]
+  },
+  {
+    "id": "rebuttal",
+    "summary": "A formal author response to reviewer questions during the review process.",
+    "detail": [
+      "Authors usually clarify misunderstandings, provide evidence, and explain planned revisions point by point. A conference may limit response length, additional experiments, and attachments. Focus the response on the issues that affect the assessment."
+    ],
+    "sourceTitles": [
+      "ACL Rolling Review reviewer guidelines"
+    ]
+  },
+  {
+    "id": "meta-review",
+    "summary": "An overall review that synthesizes individual reviews, author responses, and discussion.",
+    "detail": [
+      "Usually written by an AC or handling editor, it explains which issues have been resolved, which still affect the conclusions, and why the final recommendation follows. It can reveal the main grounds for acceptance or rejection."
+    ],
+    "sourceTitles": [
+      "ECCV area chair guidelines"
+    ]
+  },
+  {
+    "id": "desk-reject",
+    "summary": "A rejection by an editor or conference organizer before the usual review process, or as a direct result of a rule violation.",
+    "detail": [
+      "Common reasons include a mismatch in scope, missing required material, or failure to follow submission rules. The decision letter usually explains the reason, helping authors decide whether to provide missing materials, revise the presentation, or choose another venue."
+    ],
+    "sourceTitles": [
+      "Nature Portfolio: Peer review"
+    ]
+  },
+  {
+    "id": "reviewer",
+    "summary": "A researcher invited to assess a submission and provide a written evaluation of its quality.",
+    "detail": [
+      "Reviewers examine the research question, methods, and evidence, explain their assessment, and discuss author responses, revising their judgment when needed. They provide evaluations and recommendations; editors or the relevant conference chairs make acceptance decisions under the venue’s process."
+    ],
+    "sourceTitles": [
+      "NeurIPS reviewer responsibilities and guidelines"
+    ]
+  },
+  {
+    "id": "area-chair",
+    "summary": "A conference role responsible for coordinating the review of a group of papers and forming an overall assessment.",
+    "detail": [
+      "AC stands for Area Chair. An AC usually checks review quality, encourages discussion, handles disagreements, and writes a meta-review, then submits an acceptance recommendation or decision under the conference process."
+    ],
+    "sourceTitles": [
+      "ECCV area chair guidelines"
+    ]
+  },
+  {
+    "id": "senior-area-chair",
+    "summary": "A role that coordinates several area chairs and helps resolve complex review issues.",
+    "detail": [
+      "SAC stands for Senior Area Chair. SACs help ACs handle disagreements, check the consistency of decisions, and communicate with program chairs. The conference defines the exact responsibilities."
+    ],
+    "sourceTitles": [
+      "ECCV senior area chair guidelines"
+    ]
+  },
+  {
+    "id": "program-committee",
+    "summary": "A committee involved in reviewing conference papers and organizing the scientific program.",
+    "detail": [
+      "PC stands for Program Committee. Its membership varies by conference and may include reviewers, ACs, SACs, and program chairs. Program Chair refers to the person overseeing this work, a distinct concept from the committee as a whole. Interpret PC or PCs in context."
+    ],
+    "sourceTitles": [
+      "ECCV submission policies: Program committee and review process",
+      "ACL Conference Handbook: Program co-chairs"
+    ]
+  },
+  {
+    "id": "program-chair",
+    "summary": "A conference leader responsible for overseeing paper review, acceptance decisions, and the scientific program.",
+    "detail": [
+      "Program chairs assemble the review team, oversee reviewing, coordinate acceptance decisions, and organize the scientific program. Several co-chairs often share these duties; the conference defines their exact authority and responsibilities.",
+      "Program Committee refers to the committee as a whole, while Program Chair refers to its leadership. Some conferences abbreviate Program Chairs as PCs, so interpret the abbreviation in context."
+    ],
+    "sourceTitles": [
+      "ACL Conference Handbook: Program chair duties",
+      "NeurIPS reviewer guidelines: Review roles and responsibilities"
+    ]
+  },
+  {
+    "id": "arxiv",
+    "summary": "A platform where researchers can publicly submit, update, and read academic papers.",
+    "detail": [
+      "AI researchers frequently share papers and new versions on arXiv. The platform moderates content and classifications; peer-review status and formal publication details must be checked separately in the paper record."
+    ],
+    "sourceTitles": [
+      "arXiv: About the platform"
+    ]
+  },
+  {
+    "id": "openreview",
+    "summary": "A platform for conferences and journals to manage submissions, reviews, discussions, and paper presentation.",
+    "detail": [
+      "Organizers can configure who can see papers, reviews, and comments. Public reviews and author responses can help readers understand disagreements and revisions; the level of openness depends on the conference or journal."
+    ],
+    "sourceTitles": [
+      "OpenReview: About the platform"
+    ]
+  },
+  {
+    "id": "appendix",
+    "summary": "A section after the main paper that develops proofs, details, or additional analysis.",
+    "detail": [
+      "For example, the main text may present a theorem and key experiments, while the appendix provides derivations, hyperparameters, and further results. An appendix may be in the same file or supplied as supplementary material, depending on the publication format."
+    ],
+    "sourceTitles": [
+      "NeurIPS call for papers"
+    ]
+  },
+  {
+    "id": "supplementary-material",
+    "summary": "Additional explanations, experiments, data, or demonstrations supplied with a paper.",
+    "detail": [
+      "Supplementary material can include proofs, experimental settings, further results, code, and videos that help readers check the main claims. Submissions usually have separate file type and size requirements."
+    ],
+    "sourceTitles": [
+      "ECCV submission and publication policies"
+    ]
+  },
+  {
+    "id": "authorship",
+    "summary": "The assignment of an author list to recognize research contributions, responsibilities, and credit.",
+    "detail": [
+      "A paper lists the people who participated as authors. The list can identify co-first authors and corresponding authors. A contribution statement describes each person's work, such as formulating the question, designing experiments, developing code, or writing the paper."
+    ],
+    "sourceTitles": [
+      "Nature Portfolio authorship policies"
+    ]
+  },
+  {
+    "id": "first-author",
+    "summary": "The author listed first on a paper.",
+    "detail": [
+      "Many fields use first authorship to indicate a major contributor, but other conventions, such as alphabetical order, also exist. Co-first authors are usually identified by a footnote stating equal contribution."
+    ],
+    "sourceTitles": [
+      "Nature Portfolio authorship policies"
+    ]
+  },
+  {
+    "id": "corresponding-author",
+    "summary": "The author responsible for contact during submission, publication, and related communication.",
+    "detail": [
+      "The corresponding author usually communicates with editors and readers, and coordinates author confirmations, materials, and declarations. Papers often identify this role by an email address or symbol. Responsibilities depend on journal policies and agreements among authors."
+    ],
+    "sourceTitles": [
+      "Nature Portfolio authorship policies"
+    ]
+  },
+  {
+    "id": "credit",
+    "summary": "A taxonomy that describes people’s contributions to research through standardized roles.",
+    "detail": [
+      "CRediT can record roles such as conceptualization, methodology, software, data curation, analysis, and writing. A person may hold several roles. Contribution statements make the division of work clearer."
+    ],
+    "sourceTitles": [
+      "NISO CRediT contributor role taxonomy"
+    ]
+  },
+  {
+    "id": "scie",
+    "summary": "Names of citation indexes in Web of Science used to index and search scientific journal literature.",
+    "detail": [
+      "SCI stands for Science Citation Index, and SCIE for Science Citation Index Expanded. When checking a journal, verify the specific database that indexes it. Citation links can then help trace references and citing papers."
+    ],
+    "sourceTitles": [
+      "Clarivate: Science Citation Index Expanded"
+    ]
+  },
+  {
+    "id": "doi",
+    "summary": "A persistent identifier and link resolution system for digital objects such as papers.",
+    "detail": [
+      "A paper's DOI is usually written as a string starting with 10. and can be resolved through doi.org. Including a DOI in a citation helps readers locate a stable publication record."
+    ],
+    "sourceTitles": [
+      "DOI Foundation: What is a DOI?"
+    ]
+  },
+  {
+    "id": "ccf",
+    "summary": "The China Computer Federation’s recommended list of international conferences and journals, organized by research area.",
+    "detail": [
+      "CCF stands for China Computer Federation; in publishing discussions it often refers to the federation’s recommended venue list. The list uses categories such as A, B, and C. Check the edition, exact venue, and eligible paper types.",
+      "Recommendation categories describe venues and do not directly establish the quality of an individual paper. CCF also advises against treating the list as a simple basis for research assessment. Check main-conference papers, Findings, and affiliated workshops separately instead of automatically applying the main conference’s category."
+    ],
+    "sourceTitles": [
+      "CCF recommended international conference and journal list"
+    ]
+  },
+  {
+    "id": "jcr",
+    "summary": "A journal citation data and analysis product provided by Clarivate.",
+    "detail": [
+      "JCR stands for Journal Citation Reports. It provides indicators such as impact factors, subject categories, and journal rankings. Interpret results in the context of the indicator year and subject category."
+    ],
+    "sourceTitles": [
+      "Clarivate: Journal Impact Factor and JCR"
+    ]
+  },
+  {
+    "id": "jcr-quartile",
+    "summary": "A quartile group based on a journal's indicator ranking within a subject category.",
+    "detail": [
+      "The labels Q1, Q2, Q3, and Q4 divide the ranking into four groups, from highest to lowest. A journal can belong to several subject categories. Report the category, indicator, and year together."
+    ],
+    "sourceTitles": [
+      "Clarivate: JCR rankings and quartiles"
+    ]
+  },
+  {
+    "id": "cas-partition",
+    "summary": "A journal classification system formerly published by the National Science Library of the Chinese Academy of Sciences.",
+    "detail": [
+      "The system provides partitions within broad and narrow subject categories to describe a journal's position. The National Science Library has stated that it will no longer update or publish the journal partition table from 2026 onward. Preserve the version and source when referring to historical partitions."
+    ],
+    "sourceTitles": [
+      "National Science Library, Chinese Academy of Sciences: Statement on the journal partition table"
+    ]
+  },
+  {
+    "id": "impact-factor",
+    "summary": "A journal-level indicator calculated from citations in a specified year to the journal's recent content.",
+    "detail": [
+      "The commonly used two-year impact factor divides citations in a year to the journal's content from the preceding two years by the number of scholarly items eligible under the counting rules in those two years. Consider the year, discipline, and counting definition when comparing journals; assess an individual paper by reading its own content."
+    ],
+    "sourceTitles": [
+      "Clarivate: Calculating the Journal Impact Factor numerator"
+    ]
+  }
+]

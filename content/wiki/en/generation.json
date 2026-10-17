@@ -1,0 +1,213 @@
+[
+  {
+    "id": "gan",
+    "summary": "A generative adversarial network trains a generator and a discriminator against each other so the generator learns to produce realistic samples.",
+    "detail": [
+      "The generator creates images from random inputs, while the discriminator learns to distinguish real data from generated data. They train in alternation, and the discriminator's feedback pushes the generator toward the data distribution."
+    ],
+    "sourceTitles": [
+      "Generative Adversarial Networks"
+    ]
+  },
+  {
+    "id": "vae",
+    "summary": "A variational autoencoder encodes data as a distribution over latent variables and decodes samples from those variables to generate data.",
+    "detail": [
+      "The encoder predicts a latent distribution for an input image, and the decoder reconstructs the image after sampling. Training encourages both accurate reconstruction and agreement with a specified prior, enabling generation by sampling from latent space."
+    ],
+    "sourceTitles": [
+      "Auto-Encoding Variational Bayes"
+    ]
+  },
+  {
+    "id": "diffusion-model",
+    "summary": "A diffusion model generates samples resembling the data distribution by learning to reverse a gradual noising process.",
+    "detail": [
+      "During training, real images receive different amounts of noise, and a network learns how to recover information. Generation starts with random noise and repeatedly applies learned updates until a structured image emerges."
+    ],
+    "sourceTitles": [
+      "Denoising Diffusion Probabilistic Models"
+    ]
+  },
+  {
+    "id": "normalizing-flow",
+    "summary": "A normalizing flow maps a simple probability distribution to a complex one using invertible transformations and computes densities through change of variables.",
+    "detail": [
+      "Sampling transforms samples drawn from a base distribution, while density evaluation accounts for the transformation Jacobian. Continuous normalizing flows define transformations with differential equations; flow matching is a way to train continuous flows. These names describe different levels of the modeling approach."
+    ],
+    "sourceTitles": [
+      "Variational Inference with Normalizing Flows",
+      "Flow Matching for Generative Modeling"
+    ]
+  },
+  {
+    "id": "ddpm",
+    "summary": "DDPM is a family of diffusion models that generates data through a learned reverse probabilistic process corresponding to gradual forward noising.",
+    "detail": [
+      "The classic training objective asks a network to predict Gaussian noise added to an image. Generation repeatedly applies reverse updates, with the standard sampling process retaining randomness in some steps."
+    ],
+    "sourceTitles": [
+      "Denoising Diffusion Probabilistic Models"
+    ]
+  },
+  {
+    "id": "score-function",
+    "summary": "In generative modeling, a score function is the gradient of the log probability density with respect to the input, pointing toward a local increase in density.",
+    "detail": [
+      "At a given noise level, the model learns which direction would make the current sample more like the data. This local directional information, combined with a sampling rule, can gradually guide noise toward the data distribution."
+    ],
+    "sourceTitles": [
+      "Score-Based Generative Modeling through Stochastic Differential Equations"
+    ]
+  },
+  {
+    "id": "noise-schedule",
+    "summary": "A noise schedule specifies the noise strength at different times in a diffusion process.",
+    "detail": [
+      "A training image can change from almost clear to nearly pure noise. The schedule determines how much signal remains at intermediate stages and which denoising tasks the model must learn."
+    ],
+    "sourceTitles": [
+      "Denoising Diffusion Probabilistic Models"
+    ]
+  },
+  {
+    "id": "denoising",
+    "summary": "In diffusion generation, denoising estimates the information needed to recover data from a noisy sample at a specified noise level.",
+    "detail": [
+      "A network can predict the added noise, a cleaner sample, or an equivalent parameterization. The sampler converts that prediction into the next sample update and repeats the process to generate an output."
+    ],
+    "sourceTitles": [
+      "Denoising Diffusion Probabilistic Models"
+    ]
+  },
+  {
+    "id": "flow-matching",
+    "summary": "Flow matching learns a velocity field along a probability path to continuously transport samples from a simple distribution to the data distribution.",
+    "detail": [
+      "Intermediate states can be constructed between noise and real samples, and a network is trained to predict their velocity at a given time. Generation begins with noise and integrates the predicted velocity to obtain a sample."
+    ],
+    "sourceTitles": [
+      "Flow Matching for Generative Modeling"
+    ]
+  },
+  {
+    "id": "rectified-flow",
+    "summary": "Rectified flow learns a continuous generative transformation by fitting velocities along straight paths connecting noise and data.",
+    "detail": [
+      "Training linearly interpolates a noise-data pair and asks a network to predict the displacement direction. The learned flow trajectories may still curve; further reflow training can straighten them to support generation in fewer steps."
+    ],
+    "sourceTitles": [
+      "Flow Straight and Fast"
+    ]
+  },
+  {
+    "id": "latent-space",
+    "summary": "A latent space consists of internal model variables used to represent or generate observed data.",
+    "detail": [
+      "In VAEs and latent diffusion, images are often encoded into smaller representations and decoded back. Latent does not guarantee lower dimensionality or a clear meaning for every direction; normalizing flows may use latent variables with the same dimensionality as the data."
+    ],
+    "sourceTitles": [
+      "Auto-Encoding Variational Bayes"
+    ]
+  },
+  {
+    "id": "latent-diffusion",
+    "summary": "Latent diffusion compresses data into a latent representation and performs diffusion generation in that smaller space.",
+    "detail": [
+      "An encoder first compresses an image into features. The diffusion model generates those features, and a decoder converts them back into pixels. The smaller space lowers computational cost, while reconstruction detail also depends on the encoder and decoder."
+    ],
+    "sourceTitles": [
+      "High-Resolution Image Synthesis with Latent Diffusion Models"
+    ]
+  },
+  {
+    "id": "dit",
+    "summary": "DiT uses a Transformer as the main prediction network of a diffusion model, processing noisy image patches or latent patches.",
+    "detail": [
+      "Patch sequences enter a Transformer, which combines them with the timestep and other conditions to predict denoising information. DiT describes the architecture; the overall generation method still determines its training objective and sampling rules."
+    ],
+    "sourceTitles": [
+      "Scalable Diffusion Models with Transformers"
+    ]
+  },
+  {
+    "id": "diffusion-sampler",
+    "summary": "A diffusion sampler specifies how model predictions update a noisy sample step by step into a generated output.",
+    "detail": [
+      "The same denoising network can use different update algorithms, controlling step sizes, random noise, and past predictions. Libraries such as Diffusers often package timesteps and update rules as a scheduler. This differs from a training learning-rate scheduler and is not determined by the noise schedule alone."
+    ],
+    "sourceTitles": [
+      "Diffusers: Schedulers"
+    ]
+  },
+  {
+    "id": "ddim",
+    "summary": "DDIM constructs a generation process compatible with common diffusion training objectives and enables sampling with fewer steps.",
+    "detail": [
+      "An existing noise prediction network can be used with DDIM update rules. In its deterministic setting, a fixed initial noise sample follows a fixed generation path, and the number of sampling steps can be smaller than the number of training noise steps."
+    ],
+    "sourceTitles": [
+      "Denoising Diffusion Implicit Models"
+    ]
+  },
+  {
+    "id": "diffusion-steps",
+    "summary": "Sampling steps are the sample updates performed during generation.",
+    "detail": [
+      "Each step calls the network for one or more predictions. More steps require more computation, but the benefit depends on the model and sampler; specially trained or distilled models can work well with only a few generation steps."
+    ],
+    "sourceTitles": [
+      "Diffusers: Schedulers"
+    ]
+  },
+  {
+    "id": "classifier-free-guidance",
+    "summary": "Classifier-free guidance combines conditional and unconditional model predictions to strengthen a generated sample's response to a specified condition.",
+    "detail": [
+      "At each step, predictions with and without conditioning are combined using a guidance coefficient. The term guidance scale refers to that coefficient, not the algorithm; numeric conventions can differ between implementations. Stronger guidance changes the trade-off between condition adherence and diversity and may introduce artifacts."
+    ],
+    "sourceTitles": [
+      "Classifier-Free Diffusion Guidance"
+    ]
+  },
+  {
+    "id": "conditioning",
+    "summary": "Conditioning guides a generative model using text, images, classes, or other specified information.",
+    "detail": [
+      "To generate a red chair, a text description enters the network as a condition. Concatenation, attention, or other mechanisms can inject this information so the generation process continues to use the supplied cues."
+    ],
+    "sourceTitles": [
+      "High-Resolution Image Synthesis with Latent Diffusion Models"
+    ]
+  },
+  {
+    "id": "text-to-image",
+    "summary": "Text-to-image generation creates images from natural-language descriptions.",
+    "detail": [
+      "For “an orange cat sitting by a window in evening light,” the model uses the text as a condition to generate a corresponding scene. Text encoding, the generation network, and sampling jointly determine the final image."
+    ],
+    "sourceTitles": [
+      "High-Resolution Image Synthesis with Latent Diffusion Models"
+    ]
+  },
+  {
+    "id": "img2img",
+    "summary": "Image-to-image generation uses an existing image as a starting point or condition to generate a related new image.",
+    "detail": [
+      "When turning a room photo into an illustration, the original image provides composition cues. Common diffusion methods add noise to its representation before denoising; more noise generally gives the model more freedom to change it."
+    ],
+    "sourceTitles": [
+      "Diffusers: Image-to-image"
+    ]
+  },
+  {
+    "id": "inpainting",
+    "summary": "Inpainting generates a masked image region using surrounding content and specified conditions.",
+    "detail": [
+      "Marking one corner of a tabletop in a photo could allow a plant to be added there. Inputs usually include the original image, a mask defining the editable area, and a text prompt; the surrounding image helps the new content fit the scene."
+    ],
+    "sourceTitles": [
+      "Diffusers: Inpainting"
+    ]
+  }
+]

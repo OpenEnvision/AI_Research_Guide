@@ -1,6 +1,6 @@
 # 科研方法与常用工具
 
-科研经验、方法文章和工具教程放在一起，涵盖文献检索、实验、写作与汇报。方法文章讨论工作中的判断，工具文档提供具体操作与配置。
+方法文章讨论研究中的判断，软件文档提供具体操作。可以根据当前问题选读，再结合指南的对应章节理解完整流程。文献、笔记和引用可以先用少量熟悉的工具管理；本目录不是必须安装的软件清单。
 
 [返回资料总索引](resources.md)
 
@@ -22,7 +22,7 @@
 
 - **[How Do I Get Started in Research? — Stanford Academic Advising](https://advising.stanford.edu/current-students/advising-student-handbook/start-research)**
 
-    Stanford 的本科研究指导，介绍研究兴趣、教师交流与校内项目。
+    Stanford 的本科研究指导，介绍如何从个人兴趣出发，通过与教师交流和参与项目开始研究。文中的校内项目面向 Stanford 学生；联系研究者与准备问题的方法可结合自身环境参考。
 
 <a id="topic-2"></a>
 
@@ -30,7 +30,7 @@
 
 - **[提问的智慧：中文译文](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)**
 
-    技术沟通文章，讨论如何描述目标、环境、已有尝试与错误信息。
+    技术沟通文章的中文译文。提问时说明目标、预期与实际结果、环境和已有尝试，必要时提供最小可复现示例；沟通方式以所在社区的参与规范为准。
 
 <a id="topic-8"></a>
 
@@ -62,7 +62,7 @@
 
 - **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/zotero.ico" alt="" loading="lazy"> Zotero Integration](https://github.com/community-archive/obsidian-zotero-integration)**
 
-    将 Zotero 的引用、笔记与 PDF 批注导入 Obsidian。
+    将 Zotero 的引用、笔记与 PDF 批注导入 Obsidian，需要配合 Better BibTeX for Zotero。安装前按仓库说明检查版本兼容性。
 
 - **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/zotero.ico" alt="" loading="lazy"> Zotero Connector](https://www.zotero.org/download/connectors)**
 

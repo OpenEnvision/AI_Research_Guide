@@ -1,6 +1,6 @@
 window.AI4X_MOTION=window.AI4X_MOTION||{};
 window.AI4X_KIT=(()=>{
- const C={ink:'#243e35',green:'#34776a',light:'#dce9df',copper:'#bc7c48',muted:'#768779',paper:'#f8f6ee',line:'#cbd8ca',blue:'#668a9a'};
+ const C={ink:'#050505',green:'#df1f26',light:'#f4f4f4',copper:'#b80f16',muted:'#636363',paper:'#fff',line:'#d1d1d1',blue:'#333'};
  const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
  const mix=(a,b,t)=>a+(b-a)*t;
  const smooth=(a,b,t)=>{const x=clamp((t-a)/(b-a));return x*x*(3-2*x)};

@@ -75,3 +75,14 @@ Agent 的训练样本包含观察、动作、工具返回和任务结果。任�
 [Hello Agents](https://github.com/datawhalechina/hello-agents) 提供中文教程和代码项目；[Hugging Face Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction)介绍工具调用、Agent 框架与实践。[LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/)讨论规划、记忆和工具使用等组件，[LLM Agent Paper List](https://github.com/WooooDyy/LLM-Agent-Paper-List)整理相关研究论文。
 
 更多教程与论文见[Agent 资料目录](catalog-directions.md#topic-21)。编程与开发工具见[学习基础知识](basics.md)；具体使用介绍见[AI 工具](ai.md)与[论文阅读与笔记工作流](irene-workflow.md)。
+
+## 如何设计一项可检验的 Agent 研究
+
+- **研究问题与对照：** 将模型、提示、工具接口、记忆、规划和执行框架分别作为变量。保留简单提示或规则流程基线，匹配工具权限、任务初始状态、重试与计算预算。
+- **评价协议：** 优先根据环境状态检查任务是否完成；同时记录过程、失败阶段、调用次数、时间、费用与越权行为。区分单次成功率、多次尝试结果和人工干预后的结果。
+- **结论边界：** 自然语言中的自述不能代替执行证据。增加工具、采样次数或多 Agent 成员可能增加成本；只有在相同约束下的对照才能解释方法贡献。
+
+[实验设计](research-methods.md) · [数据与评测](datasets.md) · [专题课程](courses.md) · [实践平台](practice.md)
+
+
+执行系统的输入校验、超时和交付见[研究工程](engineering.md)；外部内容、检索权限、模拟工具与越权测试见[Agent 威胁建模](responsible-ai.md#llm-agent-security)。先在可恢复的本地环境检查完整轨迹，再扩大任务范围。

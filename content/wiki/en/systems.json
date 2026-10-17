@@ -1,0 +1,323 @@
+[
+  {
+    "id": "cuda",
+    "summary": "CUDA is NVIDIA's platform and programming model for parallel GPU computing.",
+    "detail": [
+      "Deep learning frameworks can use CUDA libraries to run matrix computations on NVIDIA GPUs. Hardware, drivers, and software versions must be compatible at runtime."
+    ],
+    "sourceTitles": [
+      "NVIDIA: CUDA Programming Guide"
+    ]
+  },
+  {
+    "id": "kernel",
+    "summary": "A GPU kernel is a program executed in parallel by many threads on a GPU.",
+    "detail": [
+      "Matrix multiplication, normalization, and attention can each use one or more kernels. Fusing adjacent operations into one kernel may reduce data movement and launch overhead."
+    ],
+    "sourceTitles": [
+      "NVIDIA: CUDA Programming Guide"
+    ]
+  },
+  {
+    "id": "vram",
+    "summary": "VRAM is GPU memory used to store model parameters, intermediate results, and other computational data.",
+    "detail": [
+      "Training stores gradients, optimizer states, and activations in addition to weights. During inference, longer contexts and more concurrent requests increase KV cache memory use."
+    ],
+    "sourceTitles": [
+      "PyTorch: CUDA memory management"
+    ]
+  },
+  {
+    "id": "oom",
+    "summary": "OOM means a program has requested more memory than is currently available.",
+    "detail": [
+      "If training runs out of GPU memory, check the batch size, sequence length, and memory used by model states. During inference, also check concurrent requests and the KV cache."
+    ],
+    "sourceTitles": [
+      "PyTorch: CUDA memory management"
+    ]
+  },
+  {
+    "id": "mixed-precision",
+    "summary": "Mixed precision uses numerical formats with different levels of precision during training or inference.",
+    "detail": [
+      "Some matrix operations can use FP16 or BF16, while some accumulation and sensitive computations remain in FP32. This balances numerical stability and computational resources."
+    ],
+    "sourceTitles": [
+      "PyTorch: Automatic Mixed Precision"
+    ]
+  },
+  {
+    "id": "fp32",
+    "summary": "Usually the IEEE 754 single-precision floating-point format stored in 32 bits.",
+    "detail": [
+      "FP32 uses more storage and provides greater significand precision than FP16 and BF16. Floating-point operations still incur rounding error, and operation order can affect results."
+    ],
+    "sourceTitles": [
+      "NVIDIA: Floating Point and IEEE 754"
+    ]
+  },
+  {
+    "id": "fp16",
+    "summary": "FP16 is a floating-point format that stores a value in 16 bits.",
+    "detail": [
+      "It uses less storage than FP32 but has a smaller representable range. Training often uses loss scaling to reduce the chance that very small gradients become zero."
+    ],
+    "sourceTitles": [
+      "PyTorch: Automatic Mixed Precision"
+    ]
+  },
+  {
+    "id": "bf16",
+    "summary": "BF16 is a 16-bit floating-point format with an exponent range close to FP32 and lower significand precision.",
+    "detail": [
+      "Both BF16 and FP16 occupy 16 bits, but their numerical ranges differ. Hardware that supports BF16 often uses it for deep learning training."
+    ],
+    "sourceTitles": [
+      "PyTorch: Automatic Mixed Precision"
+    ]
+  },
+  {
+    "id": "fp8",
+    "summary": "FP8 is a family of floating-point formats that represent values using 8 bits.",
+    "detail": [
+      "Common formats make different tradeoffs between exponent range and significand precision. Practical use requires scaling, suitable operators, and hardware support."
+    ],
+    "sourceTitles": [
+      "NVIDIA Transformer Engine: Using FP8 and FP4"
+    ]
+  },
+  {
+    "id": "quantization",
+    "summary": "Quantization maps weights or activations to numerical representations with fewer bits.",
+    "detail": [
+      "Compressing some weights from 16 bits to 4 bits can substantially reduce storage. Actual speed and accuracy also depend on the method, whether activations are quantized, and support in the underlying hardware and software."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Quantization"
+    ]
+  },
+  {
+    "id": "pruning",
+    "summary": "Pruning compresses a model by removing or masking some weights, channels, or modules.",
+    "detail": [
+      "Unstructured pruning can set individual weights to zero, while structured pruning removes whole channel groups. Acceleration depends on whether the remaining structure matches the execution tools."
+    ],
+    "sourceTitles": [
+      "PyTorch: Pruning Tutorial"
+    ]
+  },
+  {
+    "id": "lora",
+    "summary": "LoRA represents weight updates by training a small number of low-rank matrices while freezing the original weights.",
+    "detail": [
+      "The additional matrices can be saved separately as adapters. For different fine-tuning tasks, small task-specific adapters can share the same base model."
+    ],
+    "sourceTitles": [
+      "LoRA: Low-Rank Adaptation of Large Language Models"
+    ]
+  },
+  {
+    "id": "qlora",
+    "summary": "QLoRA trains LoRA adapters on a base model stored in quantized form to reduce fine-tuning GPU memory requirements.",
+    "detail": [
+      "The original method quantizes base weights to 4 bits and passes gradients through the computation to update adapters. The base weights remain frozen."
+    ],
+    "sourceTitles": [
+      "QLoRA: Efficient Finetuning of Quantized LLMs"
+    ]
+  },
+  {
+    "id": "peft",
+    "summary": "Parameter-efficient fine-tuning adapts a model by training only a small subset of parameters or added parameters.",
+    "detail": [
+      "LoRA and prefix tuning are examples. They can reduce the number of task-specific parameters that must be saved and the GPU memory used by some training states."
+    ],
+    "sourceTitles": [
+      "Hugging Face: PEFT"
+    ]
+  },
+  {
+    "id": "ddp",
+    "summary": "DDP keeps model replicas on multiple devices, processes different data on each replica, and synchronizes gradients.",
+    "detail": [
+      "After each GPU computes gradients for its local batch, communication combines the results, and all replicas make consistent updates."
+    ],
+    "sourceTitles": [
+      "PyTorch: DistributedDataParallel"
+    ]
+  },
+  {
+    "id": "fsdp",
+    "summary": "FSDP shards model parameters, gradients, and optimizer states across multiple devices.",
+    "detail": [
+      "Before a layer executes, its required parameters are temporarily gathered; afterward, they are released or sharded again. This reduces per-device GPU memory use while adding communication."
+    ],
+    "sourceTitles": [
+      "PyTorch: Fully Sharded Data Parallel"
+    ]
+  },
+  {
+    "id": "zero",
+    "summary": "ZeRO reduces duplicate storage by partitioning training states across data-parallel devices.",
+    "detail": [
+      "Its three common stages progressively partition optimizer states, gradients, and parameters. Higher stages generally save more memory per GPU and require corresponding communication."
+    ],
+    "sourceTitles": [
+      "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models"
+    ]
+  },
+  {
+    "id": "data-parallelism",
+    "summary": "Data parallelism uses model replicas on multiple devices to process different data simultaneously.",
+    "detail": [
+      "After local computation, replicas exchange information such as gradients to keep training consistent. When adding devices, also account for any change in the global batch size."
+    ],
+    "sourceTitles": [
+      "PyTorch: Distributed Overview"
+    ]
+  },
+  {
+    "id": "tensor-parallelism",
+    "summary": "Tensor parallelism partitions tensors or matrix operations within a layer across multiple devices.",
+    "detail": [
+      "A large linear layer can be sharded by matrix rows or columns. Devices compute separate parts and combine results through communication."
+    ],
+    "sourceTitles": [
+      "PyTorch: Tensor Parallelism"
+    ]
+  },
+  {
+    "id": "pipeline-parallelism",
+    "summary": "Pipeline parallelism places different model layers on different devices and moves microbatches through those stages.",
+    "detail": [
+      "After the first GPU computes early layers, it sends results to the next GPU while starting another microbatch. Uneven work across stages causes waiting."
+    ],
+    "sourceTitles": [
+      "PyTorch: Pipeline Parallelism"
+    ]
+  },
+  {
+    "id": "flash-attention",
+    "summary": "FlashAttention uses tiling and fused computation to reduce GPU memory traffic and accelerate exact attention.",
+    "detail": [
+      "Tiling and recomputation avoid storing the full attention matrix, benefiting both training and inference. It optimizes how standard attention is executed; speedups still depend on sequence length, hardware, and implementation."
+    ],
+    "sourceTitles": [
+      "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness"
+    ]
+  },
+  {
+    "id": "activation-checkpointing",
+    "summary": "Recomputing some forward-pass intermediates during backpropagation to reduce stored activation memory.",
+    "detail": [
+      "It trades extra computation for lower activation memory. This serves a different purpose from saving model and optimizer states to disk as a checkpoint for resuming training."
+    ],
+    "sourceTitles": [
+      "PyTorch: Activation checkpointing"
+    ]
+  },
+  {
+    "id": "kv-cache",
+    "summary": "A key-value cache stores attention keys and values for previously processed tokens so later generation can reuse them.",
+    "detail": [
+      "When generating a new token, the model can read the existing cache to avoid repeating some computations. Longer contexts and more concurrent requests usually require more cache memory."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Cache strategies"
+    ]
+  },
+  {
+    "id": "prefill",
+    "summary": "Prefill processes the input prompt's tokens and builds the cache needed for subsequent generation.",
+    "detail": [
+      "Long documents increase the work in this stage and may delay the first output token."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Optimizing LLMs for Speed and Memory"
+    ]
+  },
+  {
+    "id": "decode",
+    "summary": "Decoding repeatedly generates subsequent tokens using the existing context and cache.",
+    "detail": [
+      "Conventional autoregressive decoding generates tokens step by step. A token may be a subword, character, or another unit rather than a complete word. Speculative decoding can verify several positions together; system evaluation still distinguishes time to first token from subsequent generation speed."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Optimizing LLMs for Speed and Memory"
+    ]
+  },
+  {
+    "id": "inference-batching",
+    "summary": "Inference batching combines requests for execution to improve device utilization.",
+    "detail": [
+      "This is the general practice of executing requests together. Dynamic batching forms batches from arriving requests, while continuous batching changes membership between generation iterations. Their scheduling granularity differs, and batch size affects throughput, queueing time, and GPU memory."
+    ],
+    "sourceTitles": [
+      "vLLM: vLLM documentation"
+    ]
+  },
+  {
+    "id": "speculative-decoding",
+    "summary": "Speculative decoding generates several draft tokens using a cheaper method and then verifies them together with the target model.",
+    "detail": [
+      "Accepted drafts can advance multiple positions at once; rejected positions are corrected according to the algorithm. Speedup depends on the draft acceptance rate and verification overhead."
+    ],
+    "sourceTitles": [
+      "Fast Inference from Transformers via Speculative Decoding"
+    ]
+  },
+  {
+    "id": "dynamic-batching",
+    "summary": "Forming inference batches at serving time according to arriving requests and batch constraints.",
+    "detail": [
+      "For example, Triton can collect requests within a bounded waiting time. This request-level grouping differs from continuous batching, which can change membership at each generation iteration."
+    ],
+    "sourceTitles": [
+      "NVIDIA Triton: Dynamic batching"
+    ]
+  },
+  {
+    "id": "continuous-batching",
+    "summary": "Rescheduling generative-model requests between iterations so completed requests can leave and new requests can join.",
+    "detail": [
+      "Batch membership can change during generation instead of waiting for every request in the original batch to finish. It is common in language-model serving with variable output lengths; benefits depend on workload and scheduling."
+    ],
+    "sourceTitles": [
+      "Orca: Iteration-level scheduling for generative model serving"
+    ]
+  },
+  {
+    "id": "flops",
+    "summary": "FLOPs counts floating-point operations; FLOPS or FLOP/s measures floating-point operations per second.",
+    "detail": [
+      "Estimating the computation in one model forward pass uses an operation count, FLOPs. Describing a GPU's computational rate uses FLOPS: one trillion floating-point operations per second is 1 TFLOPS.",
+      "Computational comparisons must specify numerical precision and computation mode. Hardware operation rates differ between formats such as FP32 and FP16."
+    ],
+    "sourceTitles": [
+      "NVIDIA: GPU Performance Background"
+    ]
+  },
+  {
+    "id": "latency",
+    "summary": "Latency is the time from the start to the completion of a request or operation.",
+    "detail": [
+      "Language model services often report time to first token, time per token, and total response time separately. Comparisons must align input length, output length, and concurrent load."
+    ],
+    "sourceTitles": [
+      "NVIDIA Triton: GenAI-Perf"
+    ]
+  },
+  {
+    "id": "throughput",
+    "summary": "Throughput is the number of requests or amount of data a system processes per unit time.",
+    "detail": [
+      "Language model services often measure requests per second or output tokens per second. Measurements also need to specify batching, concurrency, and latency requirements."
+    ],
+    "sourceTitles": [
+      "NVIDIA Triton: GenAI-Perf"
+    ]
+  }
+]

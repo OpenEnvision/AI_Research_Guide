@@ -2,7 +2,7 @@
 
 Sometimes a paper leaves you wanting to know how an author explains the idea or what happened during the experiments. We have selected technical blogs and research notes, with original links and suggestions for where to begin.
 
-For model mechanisms, start with Jianlin Su or Purshow; for training and evaluation, try Wenhao Chai. You will also find writing on Scaling Ladder, world models, and paper writing below.
+For model mechanisms, start with Jianlin Su or Purshow; for training and evaluation, try Wenhao Chai. Su's articles, Zou's essays, and several linked interviews are in Chinese; Chai's featured articles and parts of Purshow Notes offer both languages. The summaries here are in English. Distinguish an author's explanation of a concept, the results they report, and their views on where research should go.
 
 Find more articles by field at [BlogrXiv](https://openenvision.github.io/BlogrXiv/site/index.html). [Back to the resource index](resources.md).
 
@@ -16,7 +16,7 @@ Find more articles by field at [BlogrXiv](https://openenvision.github.io/BlogrXi
 
 [Original article](https://github.com/Purshow/Purshow_Notes/blob/main/Encoder-Free/从Infra角度看，为什么去掉Encoder更好.md)
 
-The article explains encoder-free design through differences in workload, parallel configuration, and scheduling between vision encoders and language models. It also notes that removing the encoder does not eliminate workload variation from variable-length visual tokens.
+The article explains encoder-free design by comparing workloads, parallelization strategies, and scheduling between vision encoders and language models. It also notes that removing the encoder does not eliminate workload variation from variable-length visual tokens.
 
 ### Purshow Notes: consult by question
 
@@ -51,7 +51,7 @@ Chinese and English, September 19, 2026. Examines scoring definitions and string
 
 [Original article](https://wenhaochai.com/blogs/predictable-swarm-scaling.html)
 
-Chinese and English, September 27, 2026. Uses task-dependency graphs and simulations to compare single agents and standard or recursive swarms. Distinguishes coverage from best results while discussing division of work and cost limits.
+Chinese and English, September 27, 2026. Uses task-dependency graphs and simulations to compare single agents and standard or recursive swarms. Distinguishes task coverage from the best result achieved, while discussing how to divide work within a cost budget.
 
 <a id="zou"></a>
 
@@ -81,7 +81,7 @@ Chinese, September 20, 2026. Organizes a workflow around small experiments, cons
 
 [Repository and full text](https://github.com/hzwer/WritingAIPaper)
 
-By Zhewei Huang and Xiaohan Ding, 2024. Covers extracting contributions, overall structure, introductions and related work, logic, defensibility, reader effort, and information density. Includes common negative reviews and a pre-submission check.
+By Zhewei Huang and Xiaohan Ding, 2024. Covers identifying a paper's contribution, organizing introductions and related work, building a sound argument, and making a dense paper easier to read. Includes common reviewer criticisms and a pre-submission checklist.
 
 ### Rebuttal writing
 
@@ -91,7 +91,7 @@ By Zhewei Huang and Xiaohan Ding, 2024. Covers extracting contributions, overall
 
 ## Xiaoguang Han
 
-[University profile](https://sse.cuhk.edu.cn/faculty/hanxiaoguang). The materials below include academic discussion, mentoring interviews, and research experience.
+[University profile](https://sse.cuhk.edu.cn/faculty/hanxiaoguang). The resources below include research discussions, interviews about mentoring, and reflections on research experience.
 
 ### Highlights from the first GAMES academic salon
 
@@ -129,7 +129,7 @@ Why do we need positional representations, and how can desired properties guide 
 
 [Original](https://spaces.ac.cn/archives/8265), 2021.
 
-Introduces RoPE and RoFormer, constructing a positional transformation from the goal of making inner products reflect relative position. It is both a mechanism explanation and a firsthand account of design emerging from a question and constraints. Read after part one.
+Introduces RoPE and RoFormer, constructing a positional transformation from the goal of making inner products reflect relative position. It explains how the method works and gives a firsthand account of how a research question and design constraints shaped it. Read after part one.
 
 ### A discussion of diffusion models, part 1: DDPM as demolition and reconstruction
 
@@ -141,7 +141,7 @@ Starts with a gradual destruction-and-rebuilding analogy, then connects noising 
 
 [Original](https://spaces.ac.cn/archives/10739), 2025.
 
-Explains the team's choice of Muon through optimizer practice and discusses spectral norms, learning rates, weight decay, and related theory and experiments. Start with the question, motivation, and experimental adjustments before the equations.
+Explains the team's choice of Muon through their experience with optimizers and discusses spectral norms, learning rates, weight decay, and related theory and experiments. Start with the question, motivation, and experimental adjustments before the equations.
 
 
 <a id="knightnemo"></a>
@@ -156,12 +156,12 @@ Technical topics include world models, reinforcement learning, and generative mo
 
 ## Industry and research perspectives
 
-Public perspectives on technical directions and industry developments. Read alongside publication dates, supporting evidence, and subsequent technical work.
+Public perspectives on research trends and industry developments. Consider when each piece was published, the evidence it cites, and the technical work that followed.
 
 - **[Elon Musk: Master Plan, Part Deux](https://www.tesla.com/master-plan-part-deux)**: a 2016 product plan on Tesla's website, including autonomy and vehicle applications.
 - **[Sam Altman: blog](https://blog.samaltman.com/)**: perspectives on AI capabilities, products, and industry developments.
 - **[Dario Amodei: The Urgency of Interpretability](https://darioamodei.com/post/the-urgency-of-interpretability)**: April 2025; discusses the motivation and progress of research into models' internal mechanisms.
 
-### Member repository
+### Earlier guide repository
 
-[Takamatsu-Hikaru / AI-Research-Guide](https://github.com/Takamatsu-Hikaru/AI-Research-Guide) — Source repository for this guide.
+[Takamatsu-Hikaru / AI-Research-Guide](https://github.com/Takamatsu-Hikaru/AI-Research-Guide) — An earlier source for this edition. Current maintenance and contribution details are on [About this guide](about.md).

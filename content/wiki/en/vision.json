@@ -1,0 +1,232 @@
+[
+  {
+    "id": "image-classification",
+    "summary": "Image classification predicts one or more class labels for an entire image.",
+    "detail": [
+      "For a photo of fruit, a classifier might decide whether it shows an apple or a banana. Outputs are usually scores or probabilities for each class, describing what the image depicts overall."
+    ],
+    "sourceTitles": [
+      "Torchvision: Models and Pre-trained Weights"
+    ]
+  },
+  {
+    "id": "object-detection",
+    "summary": "Object detection identifies both the locations and the classes of objects in an image.",
+    "detail": [
+      "In a street photo, a detector might draw separate boxes around three cars and two pedestrians. Each result usually includes a bounding box, class, and confidence score for counting or subsequent tracking."
+    ],
+    "sourceTitles": [
+      "Faster R-CNN"
+    ]
+  },
+  {
+    "id": "semantic-segmentation",
+    "summary": "Semantic segmentation assigns a semantic class to every pixel in an image.",
+    "detail": [
+      "In a road scene, pixels might be labeled as road, vehicle, or sky. Two adjacent cars can share the same class label: the output describes which class each region belongs to."
+    ],
+    "sourceTitles": [
+      "Torchvision: Models and Pre-trained Weights"
+    ]
+  },
+  {
+    "id": "instance-segmentation",
+    "summary": "Instance segmentation identifies individual objects and the pixels occupied by each one.",
+    "detail": [
+      "For three cups on a table, the model produces a separate mask for each cup. This captures their outlines and distinguishes which pixels belong to which cup."
+    ],
+    "sourceTitles": [
+      "Mask R-CNN"
+    ]
+  },
+  {
+    "id": "panoptic-segmentation",
+    "summary": "Panoptic segmentation assigns a class to every pixel and instance identities to objects that need to be distinguished individually.",
+    "detail": [
+      "A street scene needs complete labels for road and sky as well as separate identities for each pedestrian and car. Panoptic segmentation combines these outputs into a single pixel-level annotation."
+    ],
+    "sourceTitles": [
+      "Panoptic Segmentation"
+    ]
+  },
+  {
+    "id": "object-tracking",
+    "summary": "Object tracking locates objects across successive video frames while maintaining their identities.",
+    "detail": [
+      "Single-object tracking follows a specified target; multi-object tracking (MOT) must also distinguish targets and maintain their identities. Frame-by-frame detection, motion prediction, and appearance matching are common components. Occlusion and reappearance make identity association harder."
+    ],
+    "sourceTitles": [
+      "ByteTrack"
+    ]
+  },
+  {
+    "id": "depth-estimation",
+    "summary": "Depth estimation predicts distances within a scene or relative depth at locations in an image.",
+    "detail": [
+      "A depth map is a representation of the estimate, rather than the estimation method. Monocular models may predict relative depth or metric depth under particular training and calibration conditions; stereo cameras and depth sensors provide extra geometric information. Compare results using explicit units, scales, and coordinate conventions."
+    ],
+    "sourceTitles": [
+      "Vision Transformers for Dense Prediction"
+    ]
+  },
+  {
+    "id": "pose-estimation",
+    "summary": "Pose estimation infers the position, orientation, or structural keypoints of a person, object, or camera.",
+    "detail": [
+      "Human pose can be represented by a skeleton connecting shoulders, elbows, wrists, and other keypoints. A robot grasping a cup may instead need its three-dimensional position and orientation. Different tasks use different pose representations."
+    ],
+    "sourceTitles": [
+      "Torchvision: Models and Pre-trained Weights"
+    ]
+  },
+  {
+    "id": "optical-flow",
+    "summary": "Optical flow describes the direction and distance of apparent movement of pixels or image features between consecutive images.",
+    "detail": [
+      "When a ball moves to the right, flow vectors near it point rightward. Camera movement also produces optical flow, so the flow reflects both scene motion and changes in viewpoint."
+    ],
+    "sourceTitles": [
+      "OpenCV: Optical Flow"
+    ]
+  },
+  {
+    "id": "image-patch",
+    "summary": "An image patch is a small local region cut from an image, often used as a basic input unit in vision models.",
+    "detail": [
+      "An image can be divided into a fixed-size grid, with each patch converted to a visual token. Smaller patches generally preserve more positional detail but produce longer sequences."
+    ],
+    "sourceTitles": [
+      "An Image is Worth 16x16 Words"
+    ]
+  },
+  {
+    "id": "feature-map",
+    "summary": "A feature map arranges feature responses over spatial positions, often across multiple channels.",
+    "detail": [
+      "A convolutional output commonly has channel, height, and width dimensions. Channels contain different learned features; they are not necessarily recognizable edges or object classes, and the feature map is not the input image."
+    ],
+    "sourceTitles": [
+      "Stanford CS231n: Convolutional Networks"
+    ]
+  },
+  {
+    "id": "bounding-box",
+    "summary": "A bounding box represents an object's location and extent using a rectangle or another specified box format.",
+    "detail": [
+      "Two-dimensional detection often uses top-left and bottom-right coordinates, or a center point with width and height. Boxes support localization and counting; following an irregular contour such as a cup handle precisely requires a pixel-level mask."
+    ],
+    "sourceTitles": [
+      "Faster R-CNN"
+    ]
+  },
+  {
+    "id": "segmentation-mask",
+    "summary": "A segmentation mask marks the pixels covered by an object or region.",
+    "detail": [
+      "Marking person pixels as 1 and background pixels as 0 produces a binary person mask. Masks can support background removal or indicate which areas an image editing model should modify."
+    ],
+    "sourceTitles": [
+      "Segment Anything"
+    ]
+  },
+  {
+    "id": "keypoint",
+    "summary": "A keypoint is one of a small set of representative locations used to describe object structure or match images.",
+    "detail": [
+      "Wrists and knees on a body, or eye corners and the nose tip on a face, can serve as semantic keypoints. Their locations support motion estimation, face alignment, or tracking of local movement."
+    ],
+    "sourceTitles": [
+      "Mask R-CNN"
+    ]
+  },
+  {
+    "id": "cnn",
+    "summary": "A convolutional neural network learns representations using shared local convolutions and can process images, audio, and other locally structured data.",
+    "detail": [
+      "Early layers can respond to edges and simple textures, while later layers combine local information into more complex structures. Reusing a convolutional kernel's parameters across locations lets the network look for similar patterns throughout an image."
+    ],
+    "sourceTitles": [
+      "Stanford CS231n: Convolutional Networks"
+    ]
+  },
+  {
+    "id": "vit",
+    "summary": "ViT splits an image into patches, turns them into a sequence, and uses a Transformer to learn relationships between patches.",
+    "detail": [
+      "Each patch is mapped to a vector and supplied with positional information. Attention lets distant patches exchange information, for example connecting wheels, windows, and a car body into a whole vehicle."
+    ],
+    "sourceTitles": [
+      "An Image is Worth 16x16 Words"
+    ]
+  },
+  {
+    "id": "vision-backbone",
+    "summary": "A vision backbone converts raw images into feature representations for downstream tasks.",
+    "detail": [
+      "A detector can use ResNet or ViT to extract information about edges, textures, and object structure before task-specific modules predict boxes and classes. The backbone extracts visual features that task-specific modules can share."
+    ],
+    "sourceTitles": [
+      "Feature Pyramid Networks for Object Detection"
+    ]
+  },
+  {
+    "id": "vision-neck",
+    "summary": "A vision neck connects a backbone to task heads by organizing or fusing visual features at different scales.",
+    "detail": [
+      "Small objects require precise location information, while large objects require semantic information spanning a larger area. Structures such as FPN combine features from different layers so a detection head can use multiple scales."
+    ],
+    "sourceTitles": [
+      "Feature Pyramid Networks for Object Detection"
+    ]
+  },
+  {
+    "id": "vision-head",
+    "summary": "A vision head converts feature representations into predictions for a particular task.",
+    "detail": [
+      "The same backbone can feed a classification head, bounding box regression head, or mask head. The task determines the output format and training target, such as class scores or a foreground probability for every pixel."
+    ],
+    "sourceTitles": [
+      "Mask R-CNN"
+    ]
+  },
+  {
+    "id": "receptive-field",
+    "summary": "A receptive field is the region of an input image that can influence a particular feature location.",
+    "detail": [
+      "Recognizing a thin line may require only a small window, while recognizing a whole car requires a larger region. The number of convolutional layers, kernel sizes, and downsampling choices affect the receptive field."
+    ],
+    "sourceTitles": [
+      "Stanford CS231n: Convolutional Networks"
+    ]
+  },
+  {
+    "id": "convolution",
+    "summary": "Convolution scans local regions with shared weights to produce features that respond to particular local patterns.",
+    "detail": [
+      "A convolutional kernel is a set of weights; convolution is the operation that applies them. Visual networks reuse the weights across locations to produce feature maps. Deep learning libraries commonly use cross-correlation without flipping the kernel while still calling the layer a convolution."
+    ],
+    "sourceTitles": [
+      "Stanford CS231n: Convolutional Networks"
+    ]
+  },
+  {
+    "id": "pooling",
+    "summary": "Pooling summarizes local features into fewer values, often to reduce the spatial size of a feature map.",
+    "detail": [
+      "Max pooling keeps the largest response in a small region; average pooling takes the mean. Smaller spatial dimensions reduce subsequent computation while also compressing some positional detail."
+    ],
+    "sourceTitles": [
+      "Stanford CS231n: Convolutional Networks"
+    ]
+  },
+  {
+    "id": "nms",
+    "summary": "Non-maximum suppression reduces duplicate detection boxes by retaining high-scoring candidates and removing excessively overlapping ones.",
+    "detail": [
+      "A detector might draw five similar boxes around one cup. NMS usually keeps the highest-scoring box first, removes duplicates using an overlap threshold, and repeats the process on the remaining boxes."
+    ],
+    "sourceTitles": [
+      "Faster R-CNN"
+    ]
+  }
+]

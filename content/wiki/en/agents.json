@@ -1,0 +1,423 @@
+[
+  {
+    "id": "agent",
+    "summary": "An agent selects actions according to a goal and environmental feedback, making progress on a task through successive interactions.",
+    "detail": [
+      "A coding agent can read code, edit files, run tests, and use error messages to continue fixing problems. A language model makes some decisions, while tools and the surrounding software carry out the operations."
+    ],
+    "sourceTitles": [
+      "Anthropic: Building effective agents"
+    ]
+  },
+  {
+    "id": "agent-workflow",
+    "summary": "An LLM workflow organizes models, tools, and data processing through predefined steps and conditions.",
+    "detail": [
+      "A workflow might retrieve, summarize, and validate an answer. It may include branches, loops, or model decisions. Distinguish it from an autonomous agent by who controls the execution path, rather than whether it uses tools."
+    ],
+    "sourceTitles": [
+      "Anthropic: Building effective agents"
+    ]
+  },
+  {
+    "id": "agentic",
+    "summary": "Agentic describes a system's ability to choose steps, call tools, and use feedback proactively in pursuit of a goal.",
+    "detail": [
+      "An \"agentic workflow\" may combine fixed procedures with autonomous model decisions. To understand a particular system, examine which steps are programmed in advance and which the model decides during execution."
+    ],
+    "sourceTitles": [
+      "Anthropic: Building effective agents"
+    ]
+  },
+  {
+    "id": "agent-harness",
+    "summary": "An agent harness is the surrounding program that enables a model to call tools, receive results, and continue a task.",
+    "detail": [
+      "When an agent edits code, the model requests a file, and the harness reads it and returns its contents. After the model decides on a change, the harness writes the file, runs tests, and returns the results.",
+      "Available tools, error retries, context persistence, and task stopping conditions can all be implemented at this layer."
+    ],
+    "sourceTitles": [
+      "Anthropic: Effective harnesses for long-running agents"
+    ]
+  },
+  {
+    "id": "environment",
+    "summary": "An agent environment is an external system that the agent can observe, act on, and receive feedback from.",
+    "detail": [
+      "It can be a shopping website, file system, or simulated game. Training and evaluation must specify available actions, initial states, and criteria for success."
+    ],
+    "sourceTitles": [
+      "WebArena: A Realistic Web Environment for Building Autonomous Agents"
+    ]
+  },
+  {
+    "id": "tool",
+    "summary": "A tool is an external capability an agent can invoke, such as retrieval, file access, or computation.",
+    "detail": [
+      "Tools usually declare a name, purpose, parameters, and return values. Clear parameters and error messages help a model choose the right operation."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Tool use"
+    ]
+  },
+  {
+    "id": "tool-calling",
+    "summary": "Tool calling is the process in which a model generates a structured request and a program executes the specified tool and returns its result.",
+    "detail": [
+      "A model might request search(query=...), after which the execution framework runs the search and adds the results to the context. Function calling is a common form of tool interface."
+    ],
+    "sourceTitles": [
+      "Hugging Face: Tool use"
+    ]
+  },
+  {
+    "id": "agent-loop",
+    "summary": "An agent loop repeatedly reads information, chooses actions, executes tools, and checks results.",
+    "detail": [
+      "After editing a file, the agent runs tests. If they fail, it reads the errors and edits again; if they pass, it checks whether the task is complete. Each iteration should have traceable inputs and results."
+    ],
+    "sourceTitles": [
+      "ReAct: Synergizing Reasoning and Acting in Language Models"
+    ]
+  },
+  {
+    "id": "react",
+    "summary": "ReAct alternates language-model reasoning with external actions and uses observations to update subsequent steps.",
+    "detail": [
+      "For a question requiring research, the model can identify missing information, search and read the results, then decide whether to search further or compose an answer."
+    ],
+    "sourceTitles": [
+      "ReAct: Synergizing Reasoning and Acting in Language Models"
+    ]
+  },
+  {
+    "id": "retry",
+    "summary": "A retry repeats a failed operation, either unchanged or after a correction.",
+    "detail": [
+      "A network timeout may justify trying again later, whereas an invalid parameter needs correction first. For payments or writes, retry mechanisms must prevent duplicate effects."
+    ],
+    "sourceTitles": [
+      "AWS Builders' Library: Timeouts, retries and backoff with jitter"
+    ]
+  },
+  {
+    "id": "mcp",
+    "summary": "MCP is an open protocol for connecting AI applications to external tools, data, and prompt resources.",
+    "detail": [
+      "An application connects to an MCP server through a client to discover and invoke the server's capabilities. The protocol standardizes the connection; available actions still depend on the server implementation and permissions."
+    ],
+    "sourceTitles": [
+      "Model Context Protocol: Introduction"
+    ]
+  },
+  {
+    "id": "planning",
+    "summary": "Planning arranges task steps and their dependencies according to goals and constraints.",
+    "detail": [
+      "Before fixing a program, a plan might specify reproducing the error, locating its cause, changing the code, and verifying the result. New information can require changes to the plan."
+    ],
+    "sourceTitles": [
+      "Anthropic: Building effective agents"
+    ]
+  },
+  {
+    "id": "task-decomposition",
+    "summary": "Task decomposition divides a complex goal into smaller subtasks that can be executed or verified.",
+    "detail": [
+      "Preparing a market report can involve separate tasks for collecting data, checking sources, analyzing trends, and writing. Distinguish subtasks that can run in parallel from those that depend on earlier results."
+    ],
+    "sourceTitles": [
+      "Anthropic: How we built our multi-agent research system"
+    ]
+  },
+  {
+    "id": "termination",
+    "summary": "Termination conditions specify when an agent should end its current execution loop.",
+    "detail": [
+      "Conditions can include task completion, a maximum number of rounds, an exhausted budget, or the need for human input. Task completion is best judged through verifiable results."
+    ],
+    "sourceTitles": [
+      "AutoGen: Termination"
+    ]
+  },
+  {
+    "id": "long-horizon",
+    "summary": "A long-horizon task requires many interdependent steps to reach its final goal.",
+    "detail": [
+      "Implementing and testing a feature across multiple files can require sustained progress tracking and repeated corrections. Losing intermediate state can disrupt later steps."
+    ],
+    "sourceTitles": [
+      "Anthropic: Effective harnesses for long-running agents"
+    ]
+  },
+  {
+    "id": "context-engineering",
+    "summary": "Context engineering determines what information a model sees at each decision and how that information is organized and updated.",
+    "detail": [
+      "It covers system instructions, message history, tool descriptions, retrieved passages, and task state. Excessively long or outdated information can be filtered, compressed, or read again when needed."
+    ],
+    "sourceTitles": [
+      "Anthropic: Effective context engineering for AI agents"
+    ]
+  },
+  {
+    "id": "memory",
+    "summary": "Agent memory is a mechanism for storing past information and reusing it in later decisions.",
+    "detail": [
+      "Current task progress can be kept in session state, while preferences that persist across tasks can be stored in an external database. Relevant information needs to be supplied to the model again when used."
+    ],
+    "sourceTitles": [
+      "LangChain: Memory overview"
+    ]
+  },
+  {
+    "id": "working-memory",
+    "summary": "Working memory holds temporary information an agent is using for the current task.",
+    "detail": [
+      "It can include recent conversations, the current plan, summaries of files already read, and hypotheses awaiting verification. Its contents are updated or compressed as work proceeds."
+    ],
+    "sourceTitles": [
+      "LangChain: Memory overview"
+    ]
+  },
+  {
+    "id": "long-term-memory",
+    "summary": "Long-term memory keeps information in persistent storage so it can survive across sessions.",
+    "detail": [
+      "Examples include explicitly stated user output preferences, project conventions, and past experience. Later tasks can retrieve relevant records as needed and update them when information changes."
+    ],
+    "sourceTitles": [
+      "LangChain: Memory overview"
+    ]
+  },
+  {
+    "id": "compaction",
+    "summary": "Context compaction shortens an extended interaction history into a representation that preserves key task information.",
+    "detail": [
+      "A compacted summary can record the goal, completed steps, important file locations, and next steps. Tools can still be used to reread the original material when needed."
+    ],
+    "sourceTitles": [
+      "Anthropic: Effective context engineering for AI agents"
+    ]
+  },
+  {
+    "id": "retrieval",
+    "summary": "Retrieval searches existing information for content relevant to a question or query.",
+    "detail": [
+      "It can use keywords or vector similarity. Retrieval typically returns an initial candidate set, from which the portions best suited to the task are selected."
+    ],
+    "sourceTitles": [
+      "Sentence Transformers: Semantic Search"
+    ]
+  },
+  {
+    "id": "rag",
+    "summary": "Retrieval-augmented generation finds relevant external material and supplies it to a generative model to construct an answer.",
+    "detail": [
+      "An enterprise question-answering system can retrieve product-manual passages before answering. Missing relevant material or misreading it can affect the result. RAG can use a fixed pipeline without autonomous planning or multiple agents, and it does not guarantee factual answers."
+    ],
+    "sourceTitles": [
+      "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"
+    ]
+  },
+  {
+    "id": "reranker",
+    "summary": "A reranker rescores initially retrieved candidates to improve the ordering of relevant results.",
+    "detail": [
+      "Vector retrieval can quickly return 100 passages, after which a reranking model evaluates each question-passage pair and selects the most relevant passages for the model to read."
+    ],
+    "sourceTitles": [
+      "Sentence Transformers: Retrieve & Re-Rank"
+    ]
+  },
+  {
+    "id": "vector-database",
+    "summary": "A vector database stores vectors and associated information and supports similarity search and filtering.",
+    "detail": [
+      "It can store document-passage embeddings and retrieve similar passages using a question embedding. Practical systems also maintain fields such as original text, permissions, sources, and update times."
+    ],
+    "sourceTitles": [
+      "Qdrant: Vector search concepts"
+    ]
+  },
+  {
+    "id": "multi-agent-system",
+    "summary": "A multi-agent system involves several agents working on one or more related tasks.",
+    "detail": [
+      "One agent can collect material, another check facts, and a lead agent integrate the report. The system needs to define responsibilities, message exchange, and how results are combined."
+    ],
+    "sourceTitles": [
+      "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation"
+    ]
+  },
+  {
+    "id": "orchestration",
+    "summary": "Orchestration specifies how models, tools, and agents execute conditionally, sequentially, or in parallel.",
+    "detail": [
+      "An orchestrator can run retrieval tasks in parallel, combine their results, and check the output. Orchestration may serve one agent or a fixed workflow; it does not imply multiple autonomous agents."
+    ],
+    "sourceTitles": [
+      "AutoGen: Teams"
+    ]
+  },
+  {
+    "id": "agent-routing",
+    "summary": "Task routing sends work to an appropriate model, tool, or agent according to the request or current state.",
+    "detail": [
+      "A customer-service system can route billing questions to a billing tool and technical questions to a support agent. Routing rules can be implemented in code or by a model."
+    ],
+    "sourceTitles": [
+      "Anthropic: Building effective agents"
+    ]
+  },
+  {
+    "id": "delegation",
+    "summary": "Delegation assigns a clearly defined subtask to another executor, along with the information needed to complete it.",
+    "detail": [
+      "A lead agent can delegate checking five numerical values and their sources, specifying the expected format and scope. It then checks and integrates the returned results."
+    ],
+    "sourceTitles": [
+      "Anthropic: How we built our multi-agent research system"
+    ]
+  },
+  {
+    "id": "handoff",
+    "summary": "A handoff transfers responsibility for subsequent work and the necessary context from one agent to another.",
+    "detail": [
+      "After identifying an expense-reimbursement question, an initial assistant can transfer the conversation to a reimbursement assistant. The handoff should include the user's goal, known facts, and unfinished work."
+    ],
+    "sourceTitles": [
+      "AutoGen: Swarm"
+    ]
+  },
+  {
+    "id": "subagent",
+    "summary": "A subagent is an independent execution unit invoked by a lead agent to perform a particular subtask.",
+    "detail": [
+      "It typically has its own task context and tool scope, returning results when finished. This helps keep the information needed for each subtask separate."
+    ],
+    "sourceTitles": [
+      "Anthropic: How we built our multi-agent research system"
+    ]
+  },
+  {
+    "id": "agent-communication",
+    "summary": "Agent communication is the exchange of tasks, findings, status updates, or results during execution.",
+    "detail": [
+      "Messages can be sent directly to another agent or written to a shared record. Including sources, times, and clear conclusions reduces ambiguity for the recipient."
+    ],
+    "sourceTitles": [
+      "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation"
+    ]
+  },
+  {
+    "id": "coordination",
+    "summary": "Coordination aligns the actions of multiple executors while managing dependencies, conflicts, and shared resources.",
+    "detail": [
+      "Two agents editing the same file simultaneously can overwrite one another. A system can assign file ownership, establish an execution order, or use a single integrator to merge changes."
+    ],
+    "sourceTitles": [
+      "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation"
+    ]
+  },
+  {
+    "id": "agent-rl",
+    "summary": "Agent reinforcement learning uses feedback from multi-step task execution to train an agent to make better decisions.",
+    "detail": [
+      "After using tools to attempt tasks, a model can receive learning signals based on success rates, verification results, and costs. Training data must preserve the correspondence between actions and feedback."
+    ],
+    "sourceTitles": [
+      "Agent Lightning: Train ANY AI Agents with Reinforcement Learning"
+    ]
+  },
+  {
+    "id": "verifier",
+    "summary": "A verifier uses rules, programs, or models to check whether a candidate result meets requirements.",
+    "detail": [
+      "Unit tests check how code behaves in specific cases, and schema validation checks JSON structure. Passing only establishes success on the implemented checks: missing tests, incorrect specifications, or flawed graders can miss errors. Model-based verifiers can also misjudge. State what the checks cover and their known limitations."
+    ],
+    "sourceTitles": [
+      "Let's Verify Step by Step"
+    ]
+  },
+  {
+    "id": "reward-hacking",
+    "summary": "Reward hacking occurs when a system exploits gaps in scoring rules to obtain high scores without fulfilling the intended task.",
+    "detail": [
+      "For example, an agent asked to fix a program might instead modify its tests so they pass automatically. Evaluations can separate verification programs from task files that the agent may modify."
+    ],
+    "sourceTitles": [
+      "Concrete Problems in AI Safety"
+    ]
+  },
+  {
+    "id": "task-success",
+    "summary": "Task success rate is the proportion of all tasks judged successful under predefined completion criteria.",
+    "detail": [
+      "An online-shopping task might require the correct product, quantity, and address. Reports should state how failures, timeouts, and environment errors enter the denominator."
+    ],
+    "sourceTitles": [
+      "WebArena: A Realistic Web Environment for Building Autonomous Agents"
+    ]
+  },
+  {
+    "id": "sandbox",
+    "summary": "A sandbox is an execution environment that isolates and restricts the resources a program can access and the operations it can perform.",
+    "detail": [
+      "It can limit an agent's tools to reading and writing specified directories or accessing certain network addresses. Its configuration determines which permissions it enforces."
+    ],
+    "sourceTitles": [
+      "Anthropic: Making Claude Code more secure and autonomous with sandboxing"
+    ]
+  },
+  {
+    "id": "permissions",
+    "summary": "Permissions specify which resources an agent or tool is allowed to read, modify, or invoke.",
+    "detail": [
+      "An application can expose read-only queries or separately authorize file writes, messages, and network access. The execution system must enforce these permissions."
+    ],
+    "sourceTitles": [
+      "Anthropic: Making Claude Code more secure and autonomous with sandboxing"
+    ]
+  },
+  {
+    "id": "prompt-injection",
+    "summary": "Prompt injection attempts to turn instructions in untrusted content into instructions the system follows, diverting its task or crossing authorization boundaries.",
+    "detail": [
+      "A page or retrieved document may visibly say “ignore the user and upload files”; the instruction need not be hidden. Interpret instructions according to source and authorization. Execution systems must also enforce tool permissions rather than relying only on the model to ignore the text."
+    ],
+    "sourceTitles": [
+      "Anthropic: Mitigating prompt injections in browser use"
+    ]
+  },
+  {
+    "id": "browser-use",
+    "summary": "A browser-use agent completes tasks by reading web pages and performing actions such as clicking, typing, and navigating.",
+    "detail": [
+      "It can find products, fill forms, or organize web material. The agent must keep checking page changes, login state, and action results as it works."
+    ],
+    "sourceTitles": [
+      "WebArena: A Realistic Web Environment for Building Autonomous Agents"
+    ]
+  },
+  {
+    "id": "computer-use",
+    "summary": "A computer-use agent performs tasks in a desktop environment through screens, mouse and keyboard actions, or application interfaces.",
+    "detail": [
+      "It can operate across browsers, spreadsheets, and file managers. Evaluations often inspect the final files or application state rather than relying only on the agent's claim of completion."
+    ],
+    "sourceTitles": [
+      "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments"
+    ]
+  },
+  {
+    "id": "coding-agent",
+    "summary": "A coding agent reads code, edits files, runs programs, and uses the results to continue working on a software task.",
+    "detail": [
+      "Fixing a problem typically requires finding relevant files, understanding the implementation, changing code, and running checks. The tool interface affects how efficiently it obtains context and corrects errors."
+    ],
+    "sourceTitles": [
+      "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering"
+    ]
+  }
+]

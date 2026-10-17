@@ -12,10 +12,11 @@ const anchor=id=>document.body.dataset.club==='true'?'#/ai4x/'+id:'#'+id;
 
 const $=s=>document.querySelector(s),host=$('#scene-host'),area=$('#process'),select=$('#topic-select');
 const registry=window.AI4X_MOTION,kit=window.AI4X_KIT,reduce=matchMedia('(prefers-reduced-motion: reduce)');
-host.innerHTML='<canvas role="img" aria-label="研究过程动态示意"></canvas>';
+host.innerHTML=`<canvas role="img" aria-label="${english?'Animated research process':'研究过程动态示意'}"></canvas>`;
 const canvas=host.firstElementChild,ctx=canvas.getContext('2d');
 const fill=ctx.fillText.bind(ctx);ctx.fillText=(s,x,y,...args)=>fill(tr(s),x,y,...args);
-let current='molecule',progress=reduce.matches?.65:.025,paused=reduce.matches,visible=true,last=0,raf=0,lastStage=-1;
+const requestedScene=new URLSearchParams(location.search).get('scene');
+let current=TOPICS.some(t=>t.id===requestedScene)?requestedScene:'molecule',progress=reduce.matches?.65:.025,paused=reduce.matches,visible=true,last=0,raf=0,lastStage=-1;
 const groups=[...new Set(TOPICS.map(t=>t.group))];
 $('#scene-groups').innerHTML=groups.map((g,i)=>`<button type="button" data-group="${i}">${g}</button>`).join('');
 $('#scene-groups').querySelectorAll('button').forEach(b=>b.onclick=()=>choose(TOPICS.find(t=>t.group===groups[+b.dataset.group]).id));
@@ -29,9 +30,9 @@ function resize(){const w=host.clientWidth,dpr=Math.min(devicePixelRatio||1,2);c
 function draw(){
  const scene=registry[current];
  ctx.save();ctx.setTransform(canvas.width/900,0,0,canvas.height/440,0,0);ctx.clearRect(0,0,900,440);
- const bg=ctx.createLinearGradient(0,0,900,440);bg.addColorStop(0,'#f4f3ea');bg.addColorStop(.6,'#edf2e9');bg.addColorStop(1,'#ebece1');ctx.fillStyle=bg;ctx.fillRect(0,0,900,440);
- ctx.strokeStyle='#5c7b6110';ctx.lineWidth=1;for(let y=20;y<440;y+=28)for(let x=20;x<900;x+=28){ctx.beginPath();ctx.arc(x,y,.65,0,Math.PI*2);ctx.stroke()}
- if(scene){ctx.save();try{scene.draw(ctx,progress,kit)}finally{ctx.restore()}}else{kit.text(ctx,'正在制作这一方向的演示',450,220,25,kit.C.ink,'center')}
+ const bg=ctx.createLinearGradient(0,0,900,440);bg.addColorStop(0,'#ffffff');bg.addColorStop(.6,'#fafafa');bg.addColorStop(1,'#f4f4f4');ctx.fillStyle=bg;ctx.fillRect(0,0,900,440);
+ ctx.strokeStyle='#05050510';ctx.lineWidth=1;for(let y=20;y<440;y+=28)for(let x=20;x<900;x+=28){ctx.beginPath();ctx.arc(x,y,.65,0,Math.PI*2);ctx.stroke()}
+ if(scene){ctx.save();try{scene.draw(ctx,progress,kit)}finally{ctx.restore()}}else{kit.text(ctx,english?'A demonstration for this field is in preparation.':'正在制作这一方向的演示',450,220,25,kit.C.ink,'center')}
  ctx.restore();
  const stage=Math.min(3,Math.floor(progress*4));if(stage!==lastStage){lastStage=stage;[...$('#process-labels').children].forEach((b,i)=>{b.classList.toggle('active',i===stage);if(i===stage)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')})}
  $('.scene-progress i').style.transform=`scaleX(${progress})`;
@@ -40,10 +41,17 @@ function canPlay(){return !paused&&visible&&!document.hidden&&host.isConnected}
 function tick(now){raf=0;if(!canPlay())return;if(last)progress=(progress+Math.min((now-last)/1000,.08)/(registry[current]?.duration||18))%1;last=now;draw();raf=requestAnimationFrame(tick)}
 function schedule(){cancelAnimationFrame(raf);last=0;if(canPlay())raf=requestAnimationFrame(tick)}
 function controls(){area.classList.toggle('paused',paused);$('#motion-toggle').textContent=paused?(english?'Play':'播放'):(english?'Pause':'暂停');$('#motion-toggle').setAttribute('aria-pressed',String(paused));schedule()}
-function choose(id){if(!TOPICS.some(t=>t.id===id))return;current=id;progress=reduce.matches?.65:.025;lastStage=-1;select.value=id;const t=TOPICS.find(x=>x.id===id);tabs(t);canvas.setAttribute('aria-label',`${t.short}：${(registry[id]?.steps||[]).map(tr).join(', ')}`);$('#process-labels').innerHTML=(registry[id]?.steps||[]).map(tr).map((s,i)=>`<button type="button" data-step="${i}"><span>${String(i+1).padStart(2,'0')}</span>${s}</button>`).join('');$('#process-labels').querySelectorAll('button').forEach(b=>b.onclick=()=>{progress=(+b.dataset.step+.25)/4;lastStage=-1;draw();schedule()});$('#read-topic').href=anchor(id);draw();schedule()}
+function choose(id){if(!TOPICS.some(t=>t.id===id))return;current=id;progress=reduce.matches?.65:.025;lastStage=-1;select.value=id;const t=TOPICS.find(x=>x.id===id);tabs(t);canvas.setAttribute('aria-label',`${t.short}${english?': ':'：'}${(registry[id]?.steps||[]).map(tr).join(', ')}`);$('#process-labels').innerHTML=(registry[id]?.steps||[]).map(tr).map((s,i)=>`<button type="button" data-step="${i}"><span>${String(i+1).padStart(2,'0')}</span>${s}</button>`).join('');$('#process-labels').querySelectorAll('button').forEach(b=>b.onclick=()=>{progress=(+b.dataset.step+.25)/4;lastStage=-1;draw();schedule()});$('#read-topic').href=anchor(id);if(!document.body.dataset.club){const url=new URL(location.href);url.searchParams.set('scene',id);history.replaceState(history.state,'',url);window.guideSyncLanguage?.()}draw();schedule()}
 $('#motion-toggle').onclick=()=>{paused=!paused;controls()};
 select.onchange=()=>choose(select.value);
-document.querySelectorAll('[data-scene]').forEach(b=>b.onclick=()=>{choose(b.dataset.scene);area.scrollIntoView({behavior:reduce.matches?'instant':'smooth',block:'start'})});
+document.querySelectorAll('[data-scene]').forEach(b=>b.onclick=()=>{
+ choose(b.dataset.scene);
+ const target=$('#ai4x-process')||area;
+ if(!target.hasAttribute('tabindex')){target.setAttribute('tabindex','-1');target.addEventListener('blur',()=>target.removeAttribute('tabindex'),{once:true});}
+ target.focus({preventScroll:true});
+ target.scrollIntoView({behavior:reduce.matches?'instant':'smooth',block:'start'});
+ window.guideRequestTocTarget?.('#'+target.id);
+});
 const resizeObserver=new ResizeObserver(resize);resizeObserver.observe(host);
 const visibilityObserver=new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;schedule()},{threshold:.05});visibilityObserver.observe(host);
 document.addEventListener('visibilitychange',schedule);

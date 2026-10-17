@@ -41,7 +41,7 @@
     "kind": "term",
     "summary": "代理模型学习输入到结果的近似映射，用较低成本替代部分昂贵计算或实验。",
     "detail": [
-      "用少量流体模拟结果训练网络后，可以快速估计新翼型的阻力；需要检查代理在新参数范围内的误差。"
+      "用少量流体模拟结果训练网络后，可以快速估计新翼型的阻力；需要检查代理模型在新参数范围内的误差。"
     ],
     "related": [
       "neural-operator",
@@ -146,6 +146,35 @@
     ]
   },
   {
+    "id": "dft",
+    "term": "DFT",
+    "zh": "密度泛函理论",
+    "aliases": [
+      "Density Functional Theory"
+    ],
+    "category": "science",
+    "group": "科学计算",
+    "kind": "term",
+    "summary": "密度泛函理论以电子密度为核心变量，计算多电子体系的结构与性质。",
+    "detail": [
+      "材料研究常用 DFT 估计能量、受力和电子性质，再用这些结果训练机器学习势；计算结果与所选近似和参数有关。"
+    ],
+    "related": [
+      "ai-for-science",
+      "surrogate-model",
+      "dataset"
+    ],
+    "sources": [
+      {
+        "title": "Self-Consistent Equations Including Exchange and Correlation Effects",
+        "url": "https://doi.org/10.1103/PhysRev.140.A1133"
+      }
+    ],
+    "categories": [
+      "science"
+    ]
+  },
+  {
     "id": "smiles",
     "term": "SMILES",
     "zh": "分子线性表示",
@@ -177,24 +206,62 @@
   {
     "id": "protein-folding",
     "term": "Protein Folding",
-    "zh": "蛋白质折叠与结构预测",
+    "zh": "蛋白质折叠",
     "aliases": [],
     "category": "science",
     "group": "分子与蛋白质",
     "kind": "term",
-    "summary": "蛋白质折叠描述氨基酸链形成空间结构的过程，结构预测则计算其可能的三维形态。",
+    "summary": "蛋白质折叠是氨基酸链在给定环境中形成和转变空间构象的物理过程。",
     "detail": [
-      "AlphaFold 等模型可以根据序列及相关信息预测结构；读预测结果时还要查看各区域的置信度及结构适用条件。"
+      "折叠研究关注能量、路径、速度及环境条件；由序列预测一个可能结构是相关的计算任务。准确预测结构并不等于模拟了折叠过程，也不意味着恢复了全部构象或动态行为。"
     ],
     "related": [
       "uncertainty",
       "molecular-docking",
-      "ai-for-science"
+      "ai-for-science",
+      "protein-structure-prediction"
     ],
     "sources": [
       {
+        "title": "Christian Anfinsen: Studies on the Principles That Govern the Folding of Protein Chains",
+        "url": "https://www.nobelprize.org/uploads/2018/06/anfinsen-lecture.pdf"
+      },
+      {
         "title": "AlphaFold Protein Structure Database：FAQ",
         "url": "https://alphafold.ebi.ac.uk/faq"
+      }
+    ],
+    "categories": [
+      "science"
+    ]
+  },
+  {
+    "id": "protein-structure-prediction",
+    "term": "Protein Structure Prediction",
+    "zh": "蛋白质结构预测",
+    "aliases": [
+      "Protein 3D Structure Prediction"
+    ],
+    "category": "science",
+    "group": "分子与蛋白质",
+    "kind": "term",
+    "summary": "蛋白质结构预测根据序列及相关信息计算蛋白质可能的三维结构。",
+    "detail": [
+      "AlphaFold 等方法预测结构而不是直接观测分子的折叠轨迹。应结合局部结构置信度、区域间相对位置误差和适用条件解读；高置信度也不能直接证明结合活性或某个实验条件下的功能。"
+    ],
+    "related": [
+      "protein-folding",
+      "molecular-docking",
+      "uncertainty"
+    ],
+    "sources": [
+      {
+        "title": "Highly accurate protein structure prediction with AlphaFold",
+        "url": "https://www.nature.com/articles/s41586-021-03819-2"
+      },
+      {
+        "title": "EMBL-EBI: Evaluating AlphaFold2 predicted structures using confidence scores",
+        "url": "https://www.ebi.ac.uk/training/online/courses/alphafold/inputs-and-outputs/evaluating-alphafolds-predicted-structures-using-confidence-scores/"
       }
     ],
     "categories": [
@@ -218,7 +285,8 @@
     "related": [
       "protein-folding",
       "smiles",
-      "surrogate-model"
+      "surrogate-model",
+      "protein-structure-prediction"
     ],
     "sources": [
       {
@@ -231,45 +299,16 @@
     ]
   },
   {
-    "id": "dft",
-    "term": "DFT",
-    "zh": "密度泛函理论",
-    "aliases": [
-      "Density Functional Theory"
-    ],
-    "category": "science",
-    "group": "科学建模",
-    "kind": "term",
-    "summary": "密度泛函理论以电子密度为核心变量，计算多电子体系的结构与性质。",
-    "detail": [
-      "材料研究常用 DFT 估计能量、受力和电子性质，再用这些结果训练机器学习势；计算结果与所选近似和参数有关。"
-    ],
-    "related": [
-      "ai-for-science",
-      "surrogate-model",
-      "dataset"
-    ],
-    "sources": [
-      {
-        "title": "Self-Consistent Equations Including Exchange and Correlation Effects",
-        "url": "https://doi.org/10.1103/PhysRev.140.A1133"
-      }
-    ],
-    "categories": [
-      "science"
-    ]
-  },
-  {
     "id": "active-learning",
     "term": "Active Learning",
     "zh": "主动学习",
     "aliases": [],
     "category": "science",
-    "group": "实验与搜索",
+    "group": "实验设计与不确定性",
     "kind": "term",
-    "summary": "主动学习让模型根据当前状态挑选最值得获得标签或实验结果的样本。",
+    "summary": "主动学习让学习算法选择下一批需要标签或测量结果的样本，以提高学习效率。",
     "detail": [
-      "材料搜索中可以先预测一批候选，再挑选不确定性高或潜在性能好的样品做实验，把结果加入训练集继续更新模型。"
+      "例如优先标注能减少分类器不确定性的图片，或测量最能改善材料性质预测的样品。选择目标主要是提升模型或信息质量；贝叶斯优化更侧重用有限实验找到高目标值，两者可结合但不应混为一谈。"
     ],
     "related": [
       "uncertainty",
@@ -278,13 +317,19 @@
     ],
     "sources": [
       {
-        "title": "Burr Settles：Active Learning Literature Survey",
+        "title": "Burr Settles: Active Learning Literature Survey",
         "url": "https://burrsettles.com/pub/settles.activelearning.pdf"
       }
     ],
     "categories": [
-      "science"
-    ]
+      "science",
+      "training",
+      "data"
+    ],
+    "categoryGroups": {
+      "training": "监督信号",
+      "data": "数据处理"
+    }
   },
   {
     "id": "uncertainty",
@@ -294,11 +339,11 @@
       "uncertainty estimation"
     ],
     "category": "science",
-    "group": "实验与搜索",
+    "group": "实验设计与不确定性",
     "kind": "term",
-    "summary": "不确定性描述模型对预测结果或未知因素缺乏把握的程度。",
+    "summary": "不确定性描述未知量或未来结果的可能变化，以及对这些变化的认识程度。",
     "detail": [
-      "来源可以是数据本身的噪声，也可以是模型缺少相关训练信息；预测区间、模型集成和概率模型可用于表达不同形式的不确定性。"
+      "观测噪声与模型知识不足是不同来源，应明确用概率、区间还是模型分歧表达什么。预测概率很高不代表已经校准：例如，对预测发生概率为 80% 的一组事件，需检查其实际发生频率是否接近 80%。不确定性估计和区间解释仍依赖模型、数据与使用条件。"
     ],
     "related": [
       "active-learning",
@@ -307,71 +352,17 @@
     ],
     "sources": [
       {
-        "title": "What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision?",
-        "url": "https://arxiv.org/abs/1703.04977"
+        "title": "Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift",
+        "url": "https://arxiv.org/abs/1906.02530"
       }
     ],
     "categories": [
-      "science"
-    ]
-  },
-  {
-    "id": "hpo",
-    "term": "HPO",
-    "zh": "超参数优化",
-    "aliases": [
-      "Hyperparameter Optimization"
+      "science",
+      "data"
     ],
-    "category": "science",
-    "group": "实验与搜索",
-    "kind": "term",
-    "summary": "超参数优化通过比较多组配置，寻找在指定评估指标下效果较好的训练设置。",
-    "detail": [
-      "可以搜索学习率、批量大小和正则强度，并用验证集评价；记录每次试验的配置和结果，有助于分析搜索是否有效。"
-    ],
-    "related": [
-      "hyperparameter",
-      "bayesian-optimization",
-      "automl"
-    ],
-    "sources": [
-      {
-        "title": "Optuna：A hyperparameter optimization framework",
-        "url": "https://optuna.readthedocs.io/en/stable/"
-      }
-    ],
-    "categories": [
-      "science"
-    ]
-  },
-  {
-    "id": "nas",
-    "term": "NAS",
-    "zh": "神经架构搜索",
-    "aliases": [
-      "Neural Architecture Search"
-    ],
-    "category": "science",
-    "group": "实验与搜索",
-    "kind": "term",
-    "summary": "神经架构搜索在预先定义的结构空间中寻找合适的神经网络。",
-    "detail": [
-      "搜索变量可以包括层数、通道数、连接方式或算子类型；目标也可同时考虑准确率、推理延迟与模型大小。"
-    ],
-    "related": [
-      "hpo",
-      "automl",
-      "latency"
-    ],
-    "sources": [
-      {
-        "title": "Neural Architecture Search with Reinforcement Learning",
-        "url": "https://arxiv.org/abs/1611.01578"
-      }
-    ],
-    "categories": [
-      "science"
-    ]
+    "categoryGroups": {
+      "data": "不确定性与复现"
+    }
   },
   {
     "id": "bayesian-optimization",
@@ -381,11 +372,11 @@
       "BO"
     ],
     "category": "science",
-    "group": "实验与搜索",
+    "group": "实验设计与不确定性",
     "kind": "term",
     "summary": "贝叶斯优化用已观察结果建立代理模型，再根据收益潜力和不确定性选择下一次试验。",
     "detail": [
-      "调超参数时，每次完整训练都很贵，因此先用已有试验拟合性能，再挑一个值得尝试的新配置。"
+      "调超参数或寻找高性能材料时，每次评估可能很贵。代理模型与采集函数结合当前预测和不确定性，选择下一次评估以改进目标值；主动学习通常更侧重提高预测模型或信息质量。"
     ],
     "related": [
       "surrogate-model",
@@ -403,6 +394,72 @@
     ]
   },
   {
+    "id": "hpo",
+    "term": "HPO",
+    "zh": "超参数优化",
+    "aliases": [
+      "Hyperparameter Optimization"
+    ],
+    "category": "science",
+    "group": "自动化机器学习",
+    "kind": "term",
+    "summary": "超参数优化通过比较多组配置，寻找在指定评估指标下效果较好的训练设置。",
+    "detail": [
+      "可以搜索学习率、批量大小和正则强度，并用验证集评价；记录每次试验的配置和结果，有助于分析搜索是否有效。"
+    ],
+    "related": [
+      "hyperparameter",
+      "bayesian-optimization",
+      "automl"
+    ],
+    "sources": [
+      {
+        "title": "Optuna：A hyperparameter optimization framework",
+        "url": "https://optuna.readthedocs.io/en/stable/"
+      }
+    ],
+    "categories": [
+      "science",
+      "training"
+    ],
+    "categoryGroups": {
+      "training": "模型选择与搜索"
+    }
+  },
+  {
+    "id": "nas",
+    "term": "NAS",
+    "zh": "神经架构搜索",
+    "aliases": [
+      "Neural Architecture Search"
+    ],
+    "category": "science",
+    "group": "自动化机器学习",
+    "kind": "term",
+    "summary": "神经架构搜索在预先定义的结构空间中寻找合适的神经网络。",
+    "detail": [
+      "搜索变量可以包括层数、通道数、连接方式或算子类型；目标也可同时考虑准确率、推理延迟与模型大小。"
+    ],
+    "related": [
+      "hpo",
+      "automl",
+      "latency"
+    ],
+    "sources": [
+      {
+        "title": "Neural Architecture Search with Reinforcement Learning",
+        "url": "https://arxiv.org/abs/1611.01578"
+      }
+    ],
+    "categories": [
+      "science",
+      "training"
+    ],
+    "categoryGroups": {
+      "training": "模型选择与搜索"
+    }
+  },
+  {
     "id": "automl",
     "term": "AutoML",
     "zh": "自动化机器学习",
@@ -410,7 +467,7 @@
       "Automated Machine Learning"
     ],
     "category": "science",
-    "group": "实验与搜索",
+    "group": "自动化机器学习",
     "kind": "term",
     "summary": "自动化机器学习把数据处理、模型选择和参数搜索等步骤交给程序组织执行。",
     "detail": [
@@ -428,8 +485,12 @@
       }
     ],
     "categories": [
-      "science"
-    ]
+      "science",
+      "training"
+    ],
+    "categoryGroups": {
+      "training": "模型选择与搜索"
+    }
   },
   {
     "id": "theorem-proving",
@@ -439,7 +500,7 @@
       "automated theorem proving"
     ],
     "category": "science",
-    "group": "形式化与科研智能体",
+    "group": "形式化证明",
     "kind": "term",
     "summary": "定理证明从明确的公理、定义和已有结论出发，构造满足逻辑规则的证明。",
     "detail": [
@@ -466,7 +527,7 @@
     "zh": "Lean 证明助手",
     "aliases": [],
     "category": "science",
-    "group": "形式化与科研智能体",
+    "group": "形式化证明",
     "kind": "term",
     "summary": "Lean 是支持形式化数学证明与程序开发的语言和交互式证明系统。",
     "detail": [
@@ -493,11 +554,11 @@
     "zh": "科研智能体",
     "aliases": [],
     "category": "science",
-    "group": "形式化与科研智能体",
+    "group": "科研自动化",
     "kind": "term",
     "summary": "科研智能体把提出研究想法、编写实验、分析结果和整理报告等步骤连接成自动化研究流程。",
     "detail": [
-      "一个系统可以生成假设、运行代码、读取指标并提出下一轮实验；"
+      "系统可以生成假设、运行代码、读取指标并提出下一轮实验；自动完成流程不证明问题有价值、结果正确或贡献新颖。数据权限、方法论、原始证据和结论仍需按领域标准审查，不能将生成的论文当作已验证研究。"
     ],
     "related": [
       "agent",
@@ -522,11 +583,11 @@
       "Recursive Self-Improvement"
     ],
     "category": "science",
-    "group": "形式化与科研智能体",
+    "group": "科研自动化",
     "kind": "term",
     "summary": "递归自我改进是系统修改自身能力或改进方法，并继续利用改进后的系统开展下一轮改进。",
     "detail": [
-      "一种实验做法是让编程智能体修改自己的工具与运行代码，再用固定基准评估候选版本；关键在于后续改进确实使用了更新后的能力。"
+      "例如让编程智能体修改自己的工具，再用候选版本开展后续改进。应独立评估性能、成本和失败情况，并保留回退条件；在固定基准上改善一个版本，不证明改进会持续、推广到新任务或无限加速。"
     ],
     "related": [
       "ai-scientist",

@@ -1,0 +1,8 @@
+/* Shared language control for the homepage, reading interface and glossary. */
+.language-switch{display:inline-flex;align-items:center;justify-content:center;gap:4px;flex:none;white-space:nowrap;font:500 11px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;letter-spacing:.06em}
+.language-switch .language-link{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:27px;min-height:32px;margin:0;padding:5px 2px;border:0;border-radius:0;background:transparent;color:#65706b;font:inherit;line-height:1;text-decoration:none;box-shadow:none}
+.language-switch .language-link:hover{color:#bd342d}
+.language-switch .language-link.is-current{color:#14201d;font-weight:650}
+.language-switch .is-current::after{content:"";position:absolute;bottom:2px;left:5px;right:5px;height:1px;background:currentColor}
+.language-switch .language-link:focus-visible{outline:2px solid #bd342d;outline-offset:2px}
+.language-divider{color:#9aa49e;font-weight:400;user-select:none}

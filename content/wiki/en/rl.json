@@ -1,0 +1,395 @@
+[
+  {
+    "id": "reinforcement-learning",
+    "summary": "Reinforcement learning uses reward feedback associated with actions to learn policies that improve expected cumulative return.",
+    "detail": [
+      "Actions affect later states and rewards. Learning may use fresh interactions or existing logs. Reward feedback evaluates outcomes and usually does not directly specify the correct action at every step."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Key Concepts in RL"
+    ]
+  },
+  {
+    "id": "policy",
+    "summary": "A policy is a rule for choosing actions from current observations or historical information.",
+    "detail": [
+      "In a maze, the policy decides whether to turn left or right at an intersection. It can choose an action directly or assign probabilities and sample from them. Training a policy adjusts this rule to improve long-term return."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Introduction to reinforcement learning"
+    ]
+  },
+  {
+    "id": "reward",
+    "summary": "A reward is numerical feedback from the environment for an interaction.",
+    "detail": [
+      "A robot can receive a positive reward for placing a cup in the designated position and a negative reward for knocking it over. Reward design tells the learning system which outcomes to pursue. Feedback can arrive at every step or only at the end of a task."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Introduction to reinforcement learning"
+    ]
+  },
+  {
+    "id": "return",
+    "summary": "Return is the total of rewards accumulated from a given time onward, following a specified rule.",
+    "detail": [
+      "In a maze, taking an extra step may incur an immediate penalty while helping the agent reach the exit. Return combines these connected outcomes so the policy can balance immediate rewards against later consequences."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Introduction to reinforcement learning"
+    ]
+  },
+  {
+    "id": "discount-factor",
+    "summary": "The discount factor determines the weight of rewards further in the future when calculating return.",
+    "detail": [
+      "A common definition is G_t = R_(t+1) + γR_(t+2) + γ²R_(t+3) + …, so the first reward after the current action is undiscounted. Gamma usually lies between 0 and 1. Values closer to 1 give more weight to distant rewards; continuing tasks also require attention to whether return is finite."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Introduction to reinforcement learning"
+    ]
+  },
+  {
+    "id": "mdp",
+    "summary": "A Markov decision process describes sequential decision-making through states, actions, state transitions, and rewards.",
+    "detail": [
+      "Given the current state and action, the next-state distribution does not require earlier history: this is the Markov property. It allows planning and value computation to be organized around the current state."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Introduction to reinforcement learning"
+    ]
+  },
+  {
+    "id": "pomdp",
+    "summary": "A partially observable Markov decision process describes decision-making when an agent receives only partial information about the environment state.",
+    "detail": [
+      "A robot's camera cannot see an object behind a cabinet door, so it must combine earlier observations and actions to form a judgment. Policies can use history, memory, or beliefs about state to compensate for information missing from a single observation."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Introduction to reinforcement learning"
+    ]
+  },
+  {
+    "id": "observation",
+    "summary": "An observation is the environmental information an agent actually receives at a particular time.",
+    "detail": [
+      "Camera images and joint-sensor readings can be observations. A single frame may reveal where a ball is but make its velocity hard to determine; consecutive frames provide additional information."
+    ],
+    "sourceTitles": [
+      "Gymnasium: Basic Usage"
+    ]
+  },
+  {
+    "id": "action",
+    "summary": "An action is a control choice an agent sends to the environment that can influence subsequent changes.",
+    "detail": [
+      "An action might specify a jump in a game or target velocities for a robotic arm's joints. The former is discrete and the latter continuous; the form of the action affects the design of the algorithm and output layer."
+    ],
+    "sourceTitles": [
+      "Gymnasium: Basic Usage"
+    ]
+  },
+  {
+    "id": "state",
+    "summary": "A Markov state contains enough information, given an action, to specify the distribution of the next state and reward.",
+    "detail": [
+      "Sufficiency depends on the environment model: predicting a ball’s next state usually requires its velocity as well as its position. State is not a synonym for any input vector. Camera observations may reveal only part of it; histories or belief states can help with partial observability."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Introduction to reinforcement learning"
+    ]
+  },
+  {
+    "id": "episode",
+    "summary": "An episode is an interaction sequence from environment initialization to task termination or a predefined truncation.",
+    "detail": [
+      "A game or navigation attempt from start to finish can form an episode. Reaching the goal or failing terminates the task, while reaching a collection time limit truncates the interaction. An environment can record these two reasons for ending separately."
+    ],
+    "sourceTitles": [
+      "Gymnasium: Basic Usage"
+    ]
+  },
+  {
+    "id": "rollout",
+    "summary": "A rollout runs a policy over successive steps in a real environment, simulator, or model to collect an interaction sequence.",
+    "detail": [
+      "A training program can have one hundred simulated robots attempt grasping in parallel and collect their observations, actions, and rewards. A rollout can cover a whole episode or only a fixed number of steps."
+    ],
+    "sourceTitles": [
+      "Gymnasium: Basic Usage"
+    ]
+  },
+  {
+    "id": "trajectory",
+    "summary": "A trajectory is a time-ordered sequence of states or observations, actions, and corresponding outcomes.",
+    "detail": [
+      "Opening a door can be recorded as seeing the handle, reaching, making contact, turning, and pulling. Algorithms can learn relationships between early actions and later outcomes from this sequence or inspect where failure occurred step by step.",
+      "For a web agent, a trajectory can record the pages viewed, buttons clicked, tools called, and results received at each step. Such records can provide data for training and analysis."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Introduction to reinforcement learning",
+      "Agent Lightning: Train ANY AI Agents with Reinforcement Learning"
+    ]
+  },
+  {
+    "id": "action-space",
+    "summary": "An action space specifies the set, representation, and allowed values of actions an agent can choose.",
+    "detail": [
+      "“Move left” is an action; left, right, and jump form a discrete action space. Joint velocities can form a continuous space. The space differs from one selected action, and state-dependent action constraints may need additional specification."
+    ],
+    "sourceTitles": [
+      "Gymnasium: Spaces"
+    ]
+  },
+  {
+    "id": "value-function",
+    "summary": "A state-value function estimates the average subsequent return from a state when following a specified policy.",
+    "detail": [
+      "In a maze, a position near the exit is usually more valuable than a dead end. V(s) gives a state an estimated long-term score and is often used as a reference for evaluating actions."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Introduction to reinforcement learning"
+    ]
+  },
+  {
+    "id": "q-function",
+    "summary": "An action-value function estimates expected return after taking a particular action in a state and then following a specified policy.",
+    "detail": [
+      "At an intersection, Q(intersection, left) and Q(intersection, right) can each receive a score. Comparing Q-values indicates which first move looks more promising from the current position."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Introduction to reinforcement learning"
+    ]
+  },
+  {
+    "id": "advantage",
+    "summary": "An advantage function compares an action’s expected return with the state average under a specified policy.",
+    "detail": [
+      "Aπ(s, a) = Qπ(s, a) − Vπ(s); both terms use the same policy and return definition. Positive advantage means better than that policy’s state average. It does not mean positive immediate reward or an action optimal under every policy."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Policy optimization"
+    ]
+  },
+  {
+    "id": "bellman-equation",
+    "summary": "A Bellman equation expresses current value as a combination of immediate reward and subsequent value.",
+    "detail": [
+      "To estimate the value of the current position, consider the next reward and add the discounted value of the next state. Repeatedly applying this relationship lets distant rewards gradually influence estimates for earlier states."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Introduction to reinforcement learning"
+    ]
+  },
+  {
+    "id": "td-learning",
+    "summary": "Temporal-difference learning updates a value prediction using observed rewards and estimated subsequent values.",
+    "detail": [
+      "A one-step TD error is δ = r + γV(s′) − V(s), with zero continuation value at a true terminal state. It bootstraps from an existing estimate and usually need not wait for an episode to end, unlike using a complete sampled return in a Monte Carlo estimate."
+    ],
+    "sourceTitles": [
+      "Learning to Predict by the Methods of Temporal Differences"
+    ]
+  },
+  {
+    "id": "offline-rl",
+    "summary": "Offline reinforcement learning learns a policy from previously collected data that remain fixed during training, without collecting new interactions along the way.",
+    "detail": [
+      "Existing logs of robot operations can be used to train a new policy. Data coverage determines which behaviors the model has seen. Value estimates for actions rarely present in the logs may be unreliable, so algorithms typically need to constrain overly optimistic choices."
+    ],
+    "sourceTitles": [
+      "Offline Reinforcement Learning"
+    ]
+  },
+  {
+    "id": "online-rl",
+    "summary": "Online reinforcement learning allows the policy to continue interacting with the environment and obtaining new data during training.",
+    "detail": [
+      "The system tries a batch of actions, updates the policy, and continues with the updated policy. \"Online\" describes ongoing data collection; online training can use either on-policy or off-policy methods."
+    ],
+    "sourceTitles": [
+      "Offline Reinforcement Learning"
+    ]
+  },
+  {
+    "id": "model-based-rl",
+    "summary": "Model-based reinforcement learning uses a model of environmental changes to assist planning or policy learning.",
+    "detail": [
+      "A robot can predict where a box will move after a push and compare the outcomes of different actions. The environment model can be specified by rules or learned from data and can generate simulated experience."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Kinds of RL algorithms"
+    ]
+  },
+  {
+    "id": "model-free-rl",
+    "summary": "Model-free reinforcement learning directly learns policies or values without relying on an environment-transition model for planning or generating training experience.",
+    "detail": [
+      "DQN estimates Q-values with a neural network, and PPO represents its policy with a neural network; both are common model-free methods. \"Model-free\" specifically means an environment model is not used to learn how to act. Policies and values may still be implemented with large neural networks."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Kinds of RL algorithms"
+    ]
+  },
+  {
+    "id": "on-policy",
+    "summary": "On-policy learning uses data generated by the target policy itself to estimate its value or improve it.",
+    "detail": [
+      "PPO typically collects fresh data with the current policy before updating, rather than repeatedly mixing in data accumulated under much older policies. On-policy describes the relationship between behavior and target policies; whether an environment model is used is a separate classification."
+    ],
+    "sourceTitles": [
+      "Spinning Up: PPO"
+    ]
+  },
+  {
+    "id": "off-policy",
+    "summary": "Off-policy learning can learn a current target policy using data generated by other policies.",
+    "detail": [
+      "The behavior policy generates data; the target policy is being evaluated or improved, and the two may differ. DQN can reuse experience collected by earlier policies. Off-policy does not mean offline, and feeding arbitrary logs into an online algorithm is not automatically valid: coverage, distribution differences, and algorithm assumptions matter."
+    ],
+    "sourceTitles": [
+      "Offline Reinforcement Learning"
+    ]
+  },
+  {
+    "id": "exploration",
+    "summary": "Exploration tries unfamiliar actions to gather more information about the environment.",
+    "detail": [
+      "One route may currently look best while another has never been tried. Occasionally taking the second route may reveal a shorter path. Exploration can therefore sacrifice some immediate reward for information that improves later decisions."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Kinds of RL algorithms"
+    ]
+  },
+  {
+    "id": "exploitation",
+    "summary": "Exploitation uses existing experience to choose the action currently estimated to yield the most reward.",
+    "detail": [
+      "After discovering a reliable route, taking it again is exploitation. During training, the system typically needs to balance trying new routes with using known good ones."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Kinds of RL algorithms"
+    ]
+  },
+  {
+    "id": "reward-shaping",
+    "summary": "Reward shaping adds intermediate feedback to help a learner discover behavior that leads toward a task goal.",
+    "detail": [
+      "If a grasping task gives points only on success, random attempts rarely receive useful feedback. Rewards can be added for progress such as approaching the target. The form of shaping affects preferred behavior and needs to remain consistent with the final goal."
+    ],
+    "sourceTitles": [
+      "Policy Invariance Under Reward Transformations"
+    ]
+  },
+  {
+    "id": "sparse-reward",
+    "summary": "Sparse reward means useful reward feedback occurs in only a small number of states or events.",
+    "detail": [
+      "A robot might receive a reward only when it inserts a key into a lock, with zero reward for all other steps. Learning must infer which attempts helped from very few success signals, making exploration and credit assignment harder."
+    ],
+    "sourceTitles": [
+      "Learning Latent Dynamics for Planning from Pixels"
+    ]
+  },
+  {
+    "id": "policy-gradient",
+    "summary": "Policy-gradient methods estimate the gradient of expected return with respect to policy parameters and use it for updates.",
+    "detail": [
+      "Common estimators weight action log-probability gradients by returns or advantages. Samples jointly determine the update, and shared parameters couple action probabilities. A high-return sample therefore need not become more probable after every step, and actual return need not improve on every update."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Policy optimization"
+    ]
+  },
+  {
+    "id": "actor-critic",
+    "summary": "Actor-critic methods use a policy component to choose actions and a value component to evaluate them and help update the policy.",
+    "detail": [
+      "The actor outputs actions or action probabilities, while the critic estimates the long-term value of states or actions. After a robotic arm attempts a grasp, for example, value estimates help the policy judge which adjustments are promising."
+    ],
+    "sourceTitles": [
+      "Spinning Up: SAC"
+    ]
+  },
+  {
+    "id": "dqn",
+    "summary": "DQN uses a neural network to estimate Q-values for discrete actions and learn action selection from them.",
+    "detail": [
+      "Given a game screen, the network scores actions such as moving left, moving right, and firing. Classic DQN reuses interaction data through experience replay and stabilizes learning with a more slowly updated target network."
+    ],
+    "sourceTitles": [
+      "Human-level Control through Deep Reinforcement Learning"
+    ]
+  },
+  {
+    "id": "ppo",
+    "summary": "PPO is a family of policy-optimization methods that discourage large policy changes through surrogate objectives or penalties.",
+    "detail": [
+      "The widely used PPO-Clip variant clips an objective based on probability ratios and advantages to reduce incentives for some large changes. This is not a hard bound on parameter steps or KL at every state, nor a guarantee of increasing return. Typically, it collects a fresh batch, performs several updates, and collects another batch."
+    ],
+    "sourceTitles": [
+      "Spinning Up: PPO"
+    ]
+  },
+  {
+    "id": "sac",
+    "summary": "SAC optimizes expected return together with policy entropy, encouraging a policy that earns reward while retaining an appropriate degree of randomness.",
+    "detail": [
+      "Robotic-arm control often requires continuous joint actions. SAC learns action Q-values and a stochastic policy while reusing past data through experience replay. The entropy term encourages trying a range of actions."
+    ],
+    "sourceTitles": [
+      "Spinning Up: SAC"
+    ]
+  },
+  {
+    "id": "grpo",
+    "summary": "GRPO constructs relative advantages for policy updates from reward differences among a group of candidate outputs for the same input.",
+    "detail": [
+      "For example, sample several answers to one problem and use within-group reward mean and standard deviation to form relative advantages for a clipped, KL-regularized objective. The original GRPO algorithm does not train a separate value model. Equal group rewards typically provide no relative reward signal, and an update need not increase every high-scoring answer’s probability."
+    ],
+    "sourceTitles": [
+      "DeepSeekMath"
+    ]
+  },
+  {
+    "id": "q-learning",
+    "summary": "Q-learning is an off-policy method that learns optimal action values from rewards and the largest estimated action value at the next state.",
+    "detail": [
+      "Its typical one-step target is r + γ max_a′ Q(s′, a′), with no continuation value after true termination. The behavior policy may explore. Tabular convergence depends on conditions such as sufficient visitation and suitable learning rates; it does not automatically extend to arbitrary neural networks. DQN is a deep-network extension."
+    ],
+    "sourceTitles": [
+      "Q-learning — Watkins and Dayan"
+    ]
+  },
+  {
+    "id": "replay-buffer",
+    "summary": "A replay buffer stores past interaction records for resampling during training.",
+    "detail": [
+      "A record typically includes an observation, action, reward, and next observation. Mixing records from different times into training batches reuses data that were costly to collect and reduces the problem of highly similar consecutive samples."
+    ],
+    "sourceTitles": [
+      "Playing Atari with Deep Reinforcement Learning"
+    ]
+  },
+  {
+    "id": "sample-efficiency",
+    "summary": "Sample efficiency measures how much interaction data a learning method needs to reach a given performance level.",
+    "detail": [
+      "If two methods reliably grasp objects but one needs ten thousand attempts and the other a hundred thousand, the first has higher interaction sample efficiency. Comparisons should keep task difficulty and target performance consistent."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Kinds of RL algorithms"
+    ]
+  },
+  {
+    "id": "credit-assignment",
+    "summary": "Credit assignment studies how to attribute the quality of a final outcome to particular earlier actions.",
+    "detail": [
+      "A robot's eventual success at opening a door may depend on choosing the right grasp position much earlier. Algorithms need to propagate the success signal backward through time to help the policy identify which steps improve outcomes."
+    ],
+    "sourceTitles": [
+      "Spinning Up: Policy optimization",
+      "Agent Lightning: Train ANY AI Agents with Reinforcement Learning"
+    ]
+  }
+]

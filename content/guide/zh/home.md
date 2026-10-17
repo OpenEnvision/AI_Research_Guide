@@ -1,29 +1,50 @@
-# AI科研入门指南
+# AI 学习与科研指南
 
-各位同学，欢迎来到 UESTC AI 社的入门指南。如果你对 **AI 和科研感兴趣**，却还不知道从哪里开始入门；或者已经开始参与项目或规划找课题组，却不知道怎么联系老师，对接工作；或者已经加入了自己的课题组，但是仍然对**想 idea、推进工作**感到迷茫。我们希望这份指南能够帮助到你。
+这是一份面向**全球大学生与初级研究者**的开放指南，帮助你打好人工智能基础、完成可复现的项目，并逐步围绕具体问题开展可供他人检验的研究。你可以根据已有基础和当前任务选择起点，不必因专业、年级或所属机构而遵循固定的学习顺序。
 
-<figure class="resource-figure guide-overview"><a href="../../../public/blog/guide/figures/uestc/home/guide-overview.png?v=2" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/uestc/home/guide-overview.webp?v=2" width="1600" height="904" alt="指南全览：开始学习、研究方向、科研实践、看看外面与资料索引；从初次接触、动手学习，到进入课题、形成判断和表达交流。" decoding="async" fetchpriority="high"></a></figure>
+指南涵盖编程与数学、机器学习、研究方向、文献阅读、研究设计、研究工程和学术交流。中英文版本提供对应的核心学习路线与资源。可以为解决一个问题查阅单章，也可以围绕一个主题持续学习，无需按顺序读完整个网站。
 
-**[写给刚进大学的你](welcome.md)** · 大学里的选择、科研与生活，也写了刚入学时的迷茫。
+## 选择你的起点
 
-## 从哪里开始
+| 下一步目标 | 建议阅读 | 阶段产出 |
+| --- | --- | --- |
+| 建立编程、数学与机器学习基础 | [学习路线](learning-path.md) · [基础知识](basics.md) | 能独立解释的习题与小程序 |
+| 完成第一个完整项目 | [项目实践](start.md) · [练习与竞赛](practice.md) | 基线、独立评估与可复现报告 |
+| 了解并选择研究方向 | [研究方向地图](directions.md) · [进阶专题](advanced-topics.md) | 明确的任务定义与主题阅读清单 |
+| 从读论文走向研究 | [文献阅读](reading.md) · [实验设计](research-methods.md) | 文献比较与可检验的问题 |
+| 改进正在进行的研究 | [数据集与评测](datasets.md) · [研究工程](engineering.md) | 可追溯的数据、公平的对照实验与可重复运行的代码 |
+| 清楚表达并开展合作 | [写作与汇报](writing.md) · [学术联系与合作](contact.md) | 清楚的论证、有效反馈与明确的合作约定 |
 
-| 如果你想…… | 可以看看↓↓ |
-|---|---|
-| 找一个 AI 入门项目，先动手试试 | [第一个 AI 项目](start.md) |
-| 了解 AI 有哪些研究方向、分别在做什么 | [研究方向总览](directions.md) |
-| 补一补编程、数学、机器学习等基础 | [学习基础知识](basics.md) |
-| 了解科研到底在做什么，怎么开始 | [科研入门Q&A](research.md) |
-| 学着找论文、读论文 | [找资料和读论文](reading.md) |
-| 写论文、画图、准备汇报 | [写作、画图和汇报](writing.md) |
-| 找老师、联系课题组、参与合作 | [联系老师、学长与合作](contact.md) |
-| 用 AI 辅助学习、编程和科研 | [AI 工具](ai.md) |
-| 了解会议、投稿和审稿流程 | [投稿与会议](writing.md#submission) |
-| 查找不熟悉的 AI 术语或学术会议 | [术语与会议速查](../wiki/index.html) |
+第一次接触科研，可以从[科研入门 60 问](research.md)查阅准备、指导关系、论文、实验、AI 工具与发表流程。
 
-## AI 编年史
+## 完成一次学习与研究循环
 
-如果你想宏观地了解 AI 的历史，可以看这段有关AI发展的介绍视频。从达特茅斯会议，到语言模型、生成、机器人与科学发现，再到未来的 AGI，我们都身在其中。
+1. **理解：**选择一门主课，补齐当前任务需要的前置知识。
+2. **实现：**检查数据，建立简单基线，记录环境与配置。
+3. **检验：**提出问题，设计公平比较，同时分析结果与失败案例。
+4. **表达：**用证据支持论点，说明研究局限，并整理可供他人核查的材料。
+
+[课程目录](courses.md)帮助选择系统学习资源，[练习平台](practice.md)提供针对性训练。简要记录已经理解什么、检查过哪些证据，以及仍有哪些疑问。研究贡献可以体现在理论、实证或方法上，也可以来自论证充分的数据或评测分析，不必以提出更大的模型为目标。
+
+<figure class="resource-figure guide-overview"><a href="../../../public/blog/guide/figures/openenvision-guide-overview.svg" target="_blank" rel="noopener"><img src="../../../public/blog/guide/figures/openenvision-guide-overview.svg" width="1600" height="904" alt="指南全览：基础学习、研究方向、科研实践、研究社区与资源索引。" decoding="async"></a></figure>
+
+## 探索 AI 研究
+
+[语言模型](llm.md)、[智能体](agent.md)、[计算机视觉](vision.md)、[多模态学习](multimodal.md)、[生成模型](generation.md)、[强化学习](rl.md)、[世界模型](world-model.md)、[具身智能](embodied.md)、[效率与系统](systems.md)和[交叉学科 AI](ai4x.md)，都可以从具体任务、数据与证据入手。
+
+[研究方向地图](directions.md)说明这些方向之间的联系；[进阶专题](advanced-topics.md)进一步覆盖检索、推荐、图、时序、因果、概率建模、音频、三维与学习理论。从一个具体问题开始，再补充相关方法。
+
+## 建立研究方法与判断
+
+[实验设计](research-methods.md) · [数据集与评测](datasets.md) · [研究工程](engineering.md) · [可信与负责任 AI](responsible-ai.md)
+
+[论文阅读与笔记](irene-workflow.md) · [写作、画图与汇报](writing.md) · [AI 辅助研究](ai.md)
+
+这些章节帮助你判断结果能够支持哪些结论、他人如何复现工作，以及结论的适用范围。入门项目提供了无需付费模型服务或专用硬件、可在本地完成的方案，可根据时间、设备与指导条件调整规模。
+
+## 了解研究的背景与发展
+
+这段历史导览串联人工智能的重要研究路径。历史梳理用于建立背景；评价具体方法或论断时，仍需回到原始论文与实验材料。
 
 <video class="chronicle-video" controls preload="none" playsinline poster="../chronicle/poster.jpg" aria-label="AI 编年史">
 <source src="../chronicle/ai-chronicle.mp4" type="video/mp4">
@@ -31,29 +52,14 @@
 <track kind="subtitles" src="../chronicle/en.vtt" srclang="en" label="English" >
 </video>
 
+跟进[研究者与实验室动态](lookout.md)、阅读[技术博客](blogs.md)，或从[论文选读](papers.md)深入一个问题。完整目录见[资源总索引](resources.md)，陌生概念与会议名称可查[术语与会议速查](../wiki/index.html)。
 
-## 跟进研究动态
+## 经验与社区
 
-[研究者与实验室动态](lookout.md) · [技术博客与研究观点](blogs.md) · [论文选读](papers.md)
+指南由 [OpenEnvision](https://openenvision.org/) 维护。相关社区项目包括 AI 技术文章目录 [BlogrXiv](https://openenvision.github.io/BlogrXiv/site/index.html)，以及研究者访谈、课程与学术报告目录 [ScholarTube](https://openenvision.github.io/ScholarTube/)。引用其中的解释或论断时，请进一步查阅原始来源。
 
-[关于 AI 社与这份指南](about.md)
+[Lumina](https://lumina-embodied.ai/)及其[具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)提供更多具身研究材料；[AgentHub](https://hqhq1025.github.io/agent_hub/)整理智能体社区的讨论与摘要。
 
-## 研究社区与知识分享
+可以继续阅读[学习与研究的起点](welcome.md)、[经验与反思](experience.md)和[研究之外的生活](life.md)。这些社区文章在改编时保留来源，供你结合自己的处境形成判断。
 
-### OpenEnvision
-
-[OpenEnvision（OE）](https://openenvision.github.io/)是连接学术界与产业界的开放 AI 研究社区，关注**世界模型、多模态、视觉与具身智能**，也通过整理博客、访谈和课程，为社区分享研究知识。
-
-- [BlogrXiv：AI 研究博客与技术文章](https://openenvision.github.io/BlogrXiv/site/index.html)：汇集研究博客、实验室文章和技术笔记，涉及模型原理、工程经验与科研方法。
-- [ScholarTube：AI 访谈、播客与课程](https://openenvision.github.io/ScholarTube/)：收集研究者长访谈、视频播客、完整课程与学术报告，覆盖 Agent、世界模型、视觉、机器人及科研方法。
-### Lumina
-
-[Lumina](https://lumina-embodied.ai/)关注**具身智能的研究、开源项目与社区交流**，提供了[具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)，也定期举办 Lumina Talks、具身观察和社区活动。
-
-### AgentHub
-
-[AgentHub](https://hqhq1025.github.io/agent_hub/)把 Agent 社区里的讨论整理成日报和周报，涉及智能体研究、工具使用、工程实践与行业动态。分享大家最近遇到的问题，以及对技术方案的比较和判断。
-
-## 更多学习资料
-
-我们整理了一份[资料总索引](resources.md)，包括课程、论文、教程、博客和其他学习资源，可以按主题浏览，也可以直接搜索。
+[关于本指南](about.md)说明内容范围、来源与编辑标准。欢迎通过[项目仓库](https://github.com/OpenEnvision/ai_research_guide)提出更正与贡献。

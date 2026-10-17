@@ -1,110 +1,77 @@
-# Agents: getting models to do things
+# Agents: tools, feedback, and task execution
 
-Asking a model to explain an error is different from asking it to open a project, locate files, change code, and run tests. The latter requires observing the environment, choosing the next action, and judging whether the job is done. Many agent research questions live in that process.
+A model that explains an error and a system that opens a project, edits files, and checks the result solve different problems. An agent repeatedly observes an environment, chooses an action, and uses feedback to decide what to do next. Its behavior depends on the model and the program around it: tools, context, memory, permissions, and stopping rules.
 
-## ReAct: reasoning, action and feedback
+<a id="agent-learning"></a>
 
-On the [ReAct project page](https://react-lm.github.io/), follow an example alternating reasoning, action, and environmental feedback. Notice whether new information changes the next action.
+## Where to start: follow one complete trajectory
 
-Then choose a basic exercise from [Hello Agents](https://github.com/datawhalechina/hello-agents) or the [Hugging Face Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction). Build a small system whose tool calls you can inspect and keep its full trace. For Python or API difficulties, return to [foundations](basics.md).
+Start with [language-model inference](llm.md), basic programming interfaces, and the difference between generated text and an executed action. You do not need to pretrain a model to understand how an agent system works. The Chinese [Hello Agents](https://github.com/datawhalechina/hello-agents) tutorial and English [Hugging Face Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction) provide worked explanations.
 
-## What can you study within agent research?
+Follow one example on the [ReAct project page](https://react-lm.github.io/). Separate the task, information available to the model, selected action, returned observation, and final state. A tool call is a request: an external program still has to validate and execute it. A stated plan is not evidence that those actions happened.
 
-The same agent task can be studied through decisions, coordination, data, training, evaluation, or system design. These directions often overlap: recovering from failure on a long task might involve changing memory, adding training examples, or adjusting a tool interface.
+| Component | Its role | A useful reading question |
+| --- | --- | --- |
+| Model or policy | Selects a response or action | Which observations and instructions were available? |
+| Tools and environment | Execute actions and return observations | What state can change, and what can fail? |
+| Context and memory | Make information available across steps | What is retained, omitted, or retrieved incorrectly? |
+| Harness or scaffold | Organizes calls, retries, limits, and stopping | Which behavior comes from the model, and which from surrounding code? |
+| Evaluator | Checks the outcome | Is completion verified against an artifact or environment state? |
+
+## Research questions and representative papers
 
 ### Planning, tools, and memory
 
-As tasks get longer, do early errors propagate, does important information disappear, and can the system replan after failure? When a model misuses an available tool, the description, visible information, call format, or action-selection ability may be responsible. Inspect what it actually saw at each step, then study which memories to retain, when to call a tool, and when to change the plan. These questions also lead to context management, recovery, and long-task evaluation.
+Long tasks can expose error propagation, missing information, and poor recovery. Before attributing a failure to reasoning, find the first decision that was incorrect or unsupported by the available information. [Reflexion](https://arxiv.org/abs/2303.11366) turns feedback into written memory for subsequent attempts without updating model weights. [Voyager](https://voyager.minedojo.org/) connects task selection, code revision, and a reusable skill library in Minecraft. Memory helps only when the system retrieves and uses relevant information; storing more text does not by itself lead to better decisions.
 
-- [Reflexion](https://arxiv.org/abs/2303.11366): follow a failure as it becomes written memory and influences another attempt, making the role of feedback in decisions concrete.
-- [Voyager](https://voyager.minedojo.org/): inspect task selection, code revision, and the skill library in Minecraft to see how later tasks reuse successful behavior.
+### Multi-agent organization
 
-### Multi-agent systems (MAS): division of work, communication, and organization
+Multiple agents can divide work, check results, or simulate interactions. [AutoGen](https://arxiv.org/abs/2308.08155) studies configurable roles and conversations; [Generative Agents](https://arxiv.org/abs/2304.03442) connects individual memory and planning with behavior in a simulated town. Ask what communication contributes beyond extra calls or repeated sampling. Compare with a simpler system under similar time and compute constraints, and inspect whether agents repeat one another's errors. Multi-agent coordination does not require reinforcement learning.
 
-Do multiple agents help? Identify work that benefits from division, what communication adds, and its time and cost. Research questions include who messages whom, how much context to share, who checks results, and how disagreements are resolved. Compare a simpler system at the same budget to understand the source of gains. Another line studies collective behavior: how individual memories and interactions shape information spreading and social relationships.
+### Trajectory data and training
 
-- [AutoGen](https://arxiv.org/abs/2308.08155): examine configurable roles and conversation patterns to understand how agents complete tasks together and explore ways to divide work and communicate.
-- [Generative Agents](https://arxiv.org/abs/2304.03442): trace a party invitation through a town's social network to connect individual behavior with collective outcomes.
+A trajectory can contain observations, actions, tool results, and outcomes. [Toolformer](https://arxiv.org/abs/2302.04761) generates, executes, and filters candidate tool calls; [AgentTuning](https://arxiv.org/abs/2310.12823) mixes interaction trajectories with general instructions. When reading a training method, identify which parts of a trajectory are model targets and which are supplied by the environment. Data selection, failure coverage, and task overlap matter as much as the format of a trace.
 
-### Trajectory data: which experiences teach an agent?
+[Search-R1](https://arxiv.org/abs/2503.09516) integrates search with reinforcement learning; [Agent Lightning](https://arxiv.org/abs/2508.03680) connects execution traces to training and credit assignment. Distinguish changing weights using rewards from changing context or retaining written feedback. The underlying policy-learning concepts are introduced in [reinforcement learning](rl.md).
 
-Agent training examples can contain observations, actions, tool responses, and final results. Which tasks to collect, how to select successful trajectories, whether failures and retries help, and how to mix data from different tasks are all research questions. Follow a complete trajectory to check what the model could see, what it was trained to predict, and how tool responses enter training.
+### Environments, evaluation, and interfaces
 
-- [Toolformer](https://arxiv.org/abs/2302.04761): inspect how candidate tool calls are generated, executed, and filtered to understand how a few demonstrations can support tool-use data generation.
-- [AgentTuning](https://arxiv.org/abs/2310.12823): look at how its AgentInstruct interaction trajectories are mixed with general instructions, and how transfer to unseen agent tasks is evaluated.
+[AgentBench](https://arxiv.org/abs/2308.03688) includes operating-system and database tasks and provides [environment code](https://github.com/THUDM/AgentBench). [WebArena](https://arxiv.org/abs/2307.13854) supplies reproducible website tasks; [SWE-bench](https://www.swebench.com/) evaluates repository issue resolution. Before comparing scores, read how each benchmark defines success and resets its environment.
 
-### Agent RL: improving behavior through feedback
-
-How can task feedback teach a model to choose better actions? This connects training data, rewards, [RL](rl.md), and automated evaluation. Success on a multi-step task may depend on a much earlier search or tool choice. Questions include how to assign rewards across steps, explore new actions, and handle environment responses during training. One concrete question is whether a model learns to search more effectively or simply makes more calls.
-
-- [Search-R1](https://arxiv.org/abs/2503.09516): study how search enters multi-turn RL training, focusing on outcome rewards and the treatment of retrieved text, then compare actual search trajectories.
-- [Agent Lightning](https://arxiv.org/abs/2508.03680): see how agent execution records become training data and how credit assignment connects task feedback to particular decisions.
-
-### Environments and evaluation: did the task actually get done?
-
-Agent research includes building environments for repeated interaction and methods for judging completion. Can a task be reset, are initial conditions consistent, and does the evaluator recognize a partially finished result? These choices affect whether comparisons are reliable. Alongside overall success, study where failures occur, how many calls a task takes, and what changes on a different type of task.
-
-- [AgentBench](https://arxiv.org/abs/2308.03688): explore interactive settings such as operating systems and databases, comparing their task definitions, evaluation methods, and typical failures.
-- [WebArena](https://arxiv.org/abs/2307.13854): examine reproducible website environments and evaluation based on task completion to understand how browser actions become comparable experiments.
-
-### Harness and infrastructure
-
-The program surrounding a model determines which tools it can use, how results return, how failures are retried, and when a task ends. Research can focus on tool interfaces and context organization, or on sandboxes, parallel execution, logs, and state recovery. Hold the model fixed and compare success, time, and cost under different interfaces or execution methods to understand the effect of system design.
-
-- [SWE-agent](https://arxiv.org/abs/2405.15793): inspect interfaces for viewing files, editing, and execution to understand how interface design affects the process of completing coding tasks.
-- [OpenHands](https://arxiv.org/abs/2407.16741): see how code execution, a command line, a browser, and sandboxes form a platform, and how the runtime and evaluation support agent experiments.
-
+Interfaces also shape capability. [SWE-agent](https://arxiv.org/abs/2405.15793) studies file viewing, editing, and execution interfaces; [OpenHands](https://arxiv.org/abs/2407.16741) integrates a command line, code execution, browser, and sandbox. A stronger model and a better interface are different explanations for an improvement. [Chai's notes](blogs.md#chai) discuss scoring and multi-agent organization.
 
 <a id="agent-projects"></a>
 
-## What agents are doing: from code to everyday life
+## Project examples: what to inspect
 
-Real agents combine tools, memory, planning, and feedback. Coding assistants, personal assistants, and research tools put these capabilities to work on different tasks.
+These examples illustrate different system designs; they are not a ranking. Use the linked documentation or code to study interfaces and traces; a product demonstration is not a controlled comparison.
 
-### Coding agents: working in a repository
-
-<div class="agent-project-grid">
-<article class="agent-project"><h4><a href="https://openai.com/codex/">Codex ↗</a></h4><p>Codex reads projects, edits code, runs tests, and reviews changes, with support for parallel tasks and ongoing background work. Follow a bug fix to see how it locates files, checks an edit, and responds to test results.</p></article>
-<article class="agent-project"><h4><a href="https://code.claude.com/docs/en/overview">Claude Code ↗</a></h4><p>Claude Code reads repositories, edits files, and runs commands from the terminal, connecting code exploration, implementation, and testing. Its tools, Skills, and project instructions show how a coding agent can adapt to a team’s workflow.</p></article>
-<article class="agent-project"><h4><a href="https://www.kimi.com/code/en">Kimi Code ↗</a></h4><p>Kimi Code works through the terminal and editor to search code, change a project, run commands, and adjust its next steps from feedback. A small feature and its execution trace show how code understanding, tools, and verification work together.</p></article>
-<article class="agent-project"><h4><a href="https://www.zcode.network/en/">ZCode ↗</a></h4><p>ZCode is a coding-agent workspace for GLM that brings projects, conversations, and task execution together. It uses AGENTS.md for project conventions, making it useful for studying how that context shapes edits and checks.</p></article>
-<article class="agent-project"><h4><a href="https://pi.dev/">Pi ↗</a></h4><p>Pi is a lightweight, extensible agent harness built around reading and writing files and executing commands. Extensions, Skills, and prompt templates let you adapt its workflow; the code is a useful entry into agent loops and tool interfaces.</p></article>
-</div>
-
-### Personal agents: remembering and following through
+### Coding agents
 
 <div class="agent-project-grid">
-<article class="agent-project"><h4><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Muse ↗</a></h4><p>Meta’s Muse has its own cloud computer and browser and connects to everyday apps for email, travel, and longer-term goals. It brings personal preferences and ongoing tasks together, linking memory, cross-app actions, and task state.</p></article>
-<article class="agent-project"><h4><a href="https://openai.com/index/introducing-dots/">Dots ↗</a></h4><p>OpenAI’s Dots are always-on agents that use cloud computers and connected apps to work on tasks and learn user preferences from conversations and feedback. They connect ongoing collaboration with long-term context, background execution, and learning from feedback.</p></article>
-<article class="agent-project"><h4><a href="https://github.com/NousResearch/hermes-agent">Hermes ↗</a></h4><p>Hermes is an open-source personal agent from Nous Research, accessible through the terminal and messaging apps. It keeps memory across sessions and turns methods developed during tasks into reusable skills; its implementation offers a concrete way to study both.</p></article>
+<article class="agent-project"><h4><a href="https://openai.com/codex/">Codex ↗</a></h4><p>Follow repository exploration, editing, and test feedback through a coding task.</p></article>
+<article class="agent-project"><h4><a href="https://code.claude.com/docs/en/overview">Claude Code ↗</a></h4><p>Inspect terminal tools, project instructions, and how execution results affect subsequent steps.</p></article>
+<article class="agent-project"><h4><a href="https://www.kimi.com/code/en">Kimi Code ↗</a></h4><p>Compare the terminal and editor interfaces for code search, changes, and verification.</p></article>
+<article class="agent-project"><h4><a href="https://www.zcode.network/en/">ZCode ↗</a></h4><p>Inspect project context and conventions supplied through AGENTS.md.</p></article>
+<article class="agent-project"><h4><a href="https://pi.dev/">Pi ↗</a></h4><p>Read a lightweight harness to see how file tools, command execution, and extensions fit together.</p></article>
 </div>
 
-### Research agents: connecting literature and experiments
+### Personal, research, and domain agents
 
 <div class="agent-project-grid">
-<article class="agent-project"><h4><a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep">ARIS ↗</a></h4><p>ARIS uses Skills to organize machine-learning research, including literature review, idea development, experiments, analysis, and paper revision. An executor advances the work while another model reviews it, with feedback feeding the next round—a concrete multi-agent research workflow.</p></article>
+<article class="agent-project"><h4><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Muse ↗</a></h4><p>Study persistent task state, connected apps, and permission boundaries in a personal agent.</p></article>
+<article class="agent-project"><h4><a href="https://openai.com/index/introducing-dots/">Dots ↗</a></h4><p>Examine how ongoing tasks, preferences, and cloud execution fit together.</p></article>
+<article class="agent-project"><h4><a href="https://github.com/NousResearch/hermes-agent">Hermes ↗</a></h4><p>Inspect cross-session memory and reusable skills in an open-source implementation.</p></article>
+<article class="agent-project"><h4><a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep">ARIS ↗</a></h4><p>Trace execution and review across literature, experiments, analysis, and revision.</p></article>
+<article class="agent-project"><h4><a href="https://www.antgroup.com/en/news-media/press-releases/1765779300000">Ant A-Fu ↗</a></h4><p>Examine how a health assistant organizes questions, reports, records, and service access.</p></article>
 </div>
 
-### Health agents: supporting everyday health needs
+For ways to use these tools in your studies, see [AI tools](ai.md) and [paper-reading workflows](irene-workflow.md). For an early component-based overview, read [Lilian Weng's LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/); use the [paper list](https://github.com/WooooDyy/LLM-Agent-Paper-List) or [agent catalog](catalog-directions.md#topic-21) once you have a specific question.
 
-<div class="agent-project-grid">
-<article class="agent-project"><h4><a href="https://www.antgroup.com/en/news-media/press-releases/1765779300000">蚂蚁阿福 / Ant A-Fu ↗</a></h4><p>Ant A-Fu brings together health questions, report interpretation, health records, and access to healthcare services. The application connects longitudinal personal information, specialist knowledge, and services, making information organization and task workflows concrete in a specific domain.</p></article>
-</div>
+## How to assess an agent paper
 
-[AI tools](ai.md) · [Paper reading and note workflows](irene-workflow.md)
+Choose a narrow claim: better recovery, memory, tool selection, or coordination. Identify the model, prompt, permissions, initial state, retries, and total budget in both the method and baseline. A simple fixed workflow can be a valuable baseline when the task is predictable.
 
-## Evaluate an agent on retrieval tasks
+Inspect trajectories as well as aggregate success. Distinguish an incorrect decision from a tool error, environment failure, evaluator error, or human intervention. Report completion, time, calls, cost, and failures with the same number of allowed attempts. A claim of success in the final message cannot substitute for checking the resulting artifact or environment.
 
-Give the system a set of similar tasks, such as retrieving specified facts from public documents with sources. Count successes, incorrect citations, missing information, and tool failures. Keep tasks and conditions fixed across changes and check whether failures decrease.
-
-For coding agents, see [SWE-bench](https://www.swebench.com/); AgentBench above also provides [environment and evaluation code](https://github.com/THUDM/AgentBench). Read their task and evaluation definitions separately.
-
-## Agent overviews and paper lists
-
-[Lilian Weng's LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/) introduces an early component-based view. The [LLM Agent Paper List](https://github.com/WooooDyy/LLM-Agent-Paper-List) helps once you have a question to follow.
-
-For using agents in your own research, see [AI tools](ai.md). For studying why they fail, see [experiments and evaluation](research.md#q43).
-
-## Evaluation analysis and multi-agent organization
-
-[Chai's research notes](blogs.md#chai) include AutomationBench scoring analysis and a simulation study of multi-agent organization. More tutorials and paper lists are in the [agent catalog](catalog-directions.md#topic-21).
+Use [research design](research-methods.md) and [data and evaluation](datasets.md) for comparison protocols, [research engineering](engineering.md) for execution records and recovery, and [agent security](responsible-ai.md#llm-agent-security) for untrusted external content and unauthorized-action tests.

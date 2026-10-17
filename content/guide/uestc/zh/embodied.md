@@ -27,3 +27,14 @@ VLA 可以从示范中训练，也可以结合奖励反馈改进策略。模型�
 [Lumina 具身智能指南](https://github.com/TianxingChen/Embodied-AI-Guide)整理具身方向的任务、方法与资料；细分主题包括 [RL-VLA](https://github.com/Denghaoyuan123/Awesome-RL-VLA)、[人形机器人学习](https://github.com/YanjieZe/awesome-humanoid-robot-learning)和[高效 VLA](https://github.com/guanweifan/awesome-efficient-vla)。
 
 更多[课程与项目](catalog-directions.md#topic-19)、[细分论文索引](catalog-directions.md#topic-20)与[课题组](labs.md)各有整理。数据与 Scaling 的讨论见[相关研究笔记](blogs.md#zou)，实验比较与结果分析见[科研问答](research.md#q44)。
+
+## 如何设计一项可检验的具身智能研究
+
+- **研究问题与对照：** 明确机器人、传感器、动作空间、控制频率、任务和可用演示。比较一致数据与预算下的简单控制或行为克隆基线，并区分仿真与真实系统。
+- **评价协议：** 报告任务初始状态、重复次数、人工重置、干预、成功判据和失败类型。将物体、场景、机器人或任务变化作为不同泛化轴分别评估。
+- **结论边界：** 离线预测误差与闭环任务成功不同，仿真改善也不能直接证明实机迁移。实机实验须符合所在机构的操作与安全流程。
+
+[实验设计](research-methods.md) · [数据与评测](datasets.md) · [专题课程](courses.md) · [实践平台](practice.md)
+
+
+坐标系、相机和点云处理见[三维视觉](advanced-topics.md#geometry)，数据与模型交付见[研究工程](engineering.md)。评估时将离线数据检查、仿真与真实系统验证分开记录，并明确人工重置和干预。

@@ -114,23 +114,27 @@
       }
     ],
     "categories": [
-      "multimodal"
-    ]
+      "multimodal",
+      "vision"
+    ],
+    "categoryGroups": {
+      "vision": "视觉结构"
+    }
   },
   {
     "id": "multimodal-projector",
     "term": "Projector",
     "zh": "多模态投影器",
     "aliases": [
-      "Projection Layer",
-      "连接器"
+      "Multimodal Projection Layer",
+      "多模态投影层"
     ],
     "category": "multimodal",
     "group": "模型连接",
     "kind": "term",
     "summary": "多模态投影器把一种模态的特征映射到另一模块能够接收的表示空间。",
     "detail": [
-      "视觉编码器输出的向量维度和分布可能与语言模型输入不同。线性层或小型网络可以把视觉特征变成语言模型能使用的视觉 token。"
+      "视觉编码器输出的维度和分布，可能与语言模型所需的输入不同，线性层或多层感知机可将其映射为语言模型可接收的输入。投影器是连接模块的一种实现；Q-Former 等通过查询与注意力连接模态，不能都视为简单投影层。"
     ],
     "related": [
       "vision-encoder",
@@ -141,6 +145,10 @@
       {
         "title": "Visual Instruction Tuning",
         "url": "https://arxiv.org/abs/2304.08485"
+      },
+      {
+        "title": "BLIP-2",
+        "url": "https://arxiv.org/abs/2301.12597"
       }
     ],
     "categories": [
@@ -156,7 +164,7 @@
       "跨模态对齐"
     ],
     "category": "multimodal",
-    "group": "模型连接",
+    "group": "对齐、融合与表示学习",
     "kind": "term",
     "summary": "多模态对齐让来自不同模态、但表达相同内容的信息建立对应关系。",
     "detail": [
@@ -185,11 +193,11 @@
       "Fusion"
     ],
     "category": "multimodal",
-    "group": "模型连接",
+    "group": "对齐、融合与表示学习",
     "kind": "term",
     "summary": "多模态融合把来自不同模态的线索组合起来，形成联合判断所需的表示或结果。",
     "detail": [
-      "判断说话内容时，声音提供发音，嘴唇画面帮助区分相近音节。融合可以发生在特征输入后，也可以通过交叉注意力或多个模型输出的组合实现。"
+      "判断说话内容时，声音提供发音，唇部运动的画面帮助区分相近音节。融合可以发生在特征输入后，也可以通过交叉注意力或多个模型输出的组合实现。"
     ],
     "related": [
       "modality",
@@ -214,11 +222,11 @@
       "对比式学习"
     ],
     "category": "multimodal",
-    "group": "表示与检索",
+    "group": "对齐、融合与表示学习",
     "kind": "term",
     "summary": "对比学习通过比较匹配与不匹配的样本，学习能体现语义关系的表示。",
     "detail": [
-      "图文训练中，一张猫的照片应比同批次的汽车描述更接近对应的猫描述。把正例拉近、把对照样本区分开，可得到适合检索的向量空间。"
+      "正负样本可以来自同一图像的不同增强视图，也可以来自配对图文；对比学习不只属于多模态，也不必然是自监督。正例如何定义、负例如何选择和损失函数共同决定表示保留什么信息。"
     ],
     "related": [
       "multimodal-alignment",
@@ -229,41 +237,21 @@
       {
         "title": "Learning Transferable Visual Models From Natural Language Supervision",
         "url": "https://arxiv.org/abs/2103.00020"
-      }
-    ],
-    "categories": [
-      "multimodal"
-    ]
-  },
-  {
-    "id": "cross-modal-retrieval",
-    "term": "Cross-modal Retrieval",
-    "zh": "跨模态检索",
-    "aliases": [
-      "Text-to-Image Retrieval",
-      "图文检索"
-    ],
-    "category": "multimodal",
-    "group": "表示与检索",
-    "kind": "term",
-    "summary": "跨模态检索用一种模态的查询寻找另一种模态中语义相符的内容。",
-    "detail": [
-      "输入“雪地里奔跑的狗”，系统在图片库中寻找匹配照片。常见方法把查询文字和候选图片编码成向量，再按相似度排序。"
-    ],
-    "related": [
-      "contrastive-learning",
-      "multimodal-alignment",
-      "vision-encoder"
-    ],
-    "sources": [
+      },
       {
-        "title": "Learning Transferable Visual Models From Natural Language Supervision",
-        "url": "https://arxiv.org/abs/2103.00020"
+        "title": "A Simple Framework for Contrastive Learning of Visual Representations",
+        "url": "https://arxiv.org/abs/2002.05709"
       }
     ],
     "categories": [
-      "multimodal"
-    ]
+      "multimodal",
+      "vision",
+      "training"
+    ],
+    "categoryGroups": {
+      "vision": "视觉表示",
+      "training": "迁移与训练策略"
+    }
   },
   {
     "id": "vqa",
@@ -320,8 +308,12 @@
       }
     ],
     "categories": [
-      "multimodal"
-    ]
+      "multimodal",
+      "vision"
+    ],
+    "categoryGroups": {
+      "vision": "视觉任务"
+    }
   },
   {
     "id": "multimodal-grounding",
@@ -347,6 +339,66 @@
       {
         "title": "Grounding DINO",
         "url": "https://arxiv.org/abs/2303.05499"
+      }
+    ],
+    "categories": [
+      "multimodal"
+    ]
+  },
+  {
+    "id": "image-captioning",
+    "term": "Image Captioning",
+    "zh": "图像描述",
+    "aliases": [
+      "Captioning",
+      "看图说话"
+    ],
+    "category": "multimodal",
+    "group": "多模态任务",
+    "kind": "term",
+    "summary": "图像描述根据画面生成概括其内容的自然语言句子。",
+    "detail": [
+      "对于狗追球的照片，模型可以输出“一只狗在草地上追逐皮球”。生成过程需要选择值得描述的对象、动作与关系，并把视觉信息组织成连贯语言。"
+    ],
+    "related": [
+      "vlm",
+      "vqa",
+      "vision-encoder"
+    ],
+    "sources": [
+      {
+        "title": "Visual Instruction Tuning",
+        "url": "https://arxiv.org/abs/2304.08485"
+      }
+    ],
+    "categories": [
+      "multimodal"
+    ]
+  },
+  {
+    "id": "cross-modal-retrieval",
+    "term": "Cross-modal Retrieval",
+    "zh": "跨模态检索",
+    "aliases": [
+      "Text-to-Image Retrieval",
+      "图文检索"
+    ],
+    "category": "multimodal",
+    "group": "多模态任务",
+    "kind": "term",
+    "summary": "跨模态检索用一种模态的查询寻找另一种模态中语义相符的内容。",
+    "detail": [
+      "输入“雪地里奔跑的狗”，系统在图片库中寻找匹配照片。常见方法把查询文字和候选图片编码成向量，再按相似度排序。"
+    ],
+    "related": [
+      "contrastive-learning",
+      "multimodal-alignment",
+      "vision-encoder"
+    ],
+    "sources": [
+      {
+        "title": "Learning Transferable Visual Models From Natural Language Supervision",
+        "url": "https://arxiv.org/abs/2103.00020"
       }
     ],
     "categories": [
@@ -419,25 +471,26 @@
     "term": "Audio Token",
     "zh": "音频令牌",
     "aliases": [
-      "声学Token",
-      "Codec Token"
+      "Audio Tokens",
+      "音频Token"
     ],
     "category": "multimodal",
-    "group": "语音与音频",
+    "group": "音频表示与编解码",
     "kind": "term",
-    "summary": "音频令牌是把声音编码成离散序列后得到的基本符号单元。",
+    "summary": "音频令牌是用于序列建模的音频表示单元，可承载语义结构或声学细节。",
     "detail": [
-      "神经音频编解码器可以把短时间的声音压缩为若干码本编号。模型预测这些编号，再由解码器恢复波形，使语音生成可以借用序列建模方法。"
+      "离散语义令牌可从自监督音频特征量化得到；声学编解码令牌通常来自神经音频编解码器的码本。两者保留的信息和重建波形的能力不同，不能把所有音频令牌都等同于 Codec Token。"
     ],
     "related": [
       "tts",
       "asr",
-      "mllm"
+      "mllm",
+      "neural-audio-codec"
     ],
     "sources": [
       {
-        "title": "Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers",
-        "url": "https://arxiv.org/abs/2301.02111"
+        "title": "AudioLM: a Language Modeling Approach to Audio Generation",
+        "url": "https://arxiv.org/abs/2209.03143"
       }
     ],
     "categories": [
@@ -445,29 +498,32 @@
     ]
   },
   {
-    "id": "image-captioning",
-    "term": "Image Captioning",
-    "zh": "图像描述",
+    "id": "neural-audio-codec",
+    "term": "Neural Audio Codec",
+    "zh": "神经音频编解码器",
     "aliases": [
-      "Captioning",
-      "看图说话"
+      "Neural Codec"
     ],
     "category": "multimodal",
-    "group": "多模态任务",
+    "group": "音频表示与编解码",
     "kind": "term",
-    "summary": "图像描述根据画面生成概括其内容的自然语言句子。",
+    "summary": "神经音频编解码器用可学习的编码器、量化器和解码器压缩并重建音频。",
     "detail": [
-      "对于狗追球的照片，模型可以输出“一只狗在草地上追逐皮球”。生成过程需要选择值得描述的对象、动作与关系，并把视觉信息组织成连贯语言。"
+      "编码器把波形变成紧凑表示，量化器产生离散码，解码器由这些码恢复声音。码率、延迟和重建质量之间存在权衡；Codec Token 可以用作生成模型的预测目标，但编解码器本身不等同于语音识别或文本转语音系统。"
     ],
     "related": [
-      "vlm",
-      "vqa",
-      "vision-encoder"
+      "audio-token",
+      "tts",
+      "asr"
     ],
     "sources": [
       {
-        "title": "Visual Instruction Tuning",
-        "url": "https://arxiv.org/abs/2304.08485"
+        "title": "SoundStream: An End-to-End Neural Audio Codec",
+        "url": "https://arxiv.org/abs/2107.03312"
+      },
+      {
+        "title": "High Fidelity Neural Audio Compression",
+        "url": "https://arxiv.org/abs/2210.13438"
       }
     ],
     "categories": [

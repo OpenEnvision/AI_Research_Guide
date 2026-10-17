@@ -402,3 +402,14 @@ AI 已经参与到分子筛选、蛋白质设计、天气预测、医学影像�
 分子的旋转与对称性、图中的关系、时间序列的先后、医学图像的体素间距，都带着具体的学科含义。这些结构影响数据表示、模型与训练目标；新分子骨架、新供体、新患者或未来时间段，又对应不同的泛化问题。交叉研究中的方法选择，与这些问题本身密切相连。
 
 [AI for Science 资料索引](https://github.com/ai4s-research/awesome-ai-for-science) · [AI4X 资料目录](catalog-directions.md#topic-23) · [科研入门Q&A](research.md) · [联系老师、学长与合作](contact.md)
+
+## 如何设计一项可检验的交叉学科研究
+
+- **研究问题与对照：** 先明确学科问题、测量过程、目标单位和适用范围，再选择模型。将相关领域的经典方法纳入基线，并与具备领域知识的合作者核对假设。
+- **评价协议：** 根据任务按分子骨架、供体、患者、地点或时间划分，检查测量噪声与数据来源差异。分别报告预测指标、实际研究目标和外部验证；观察性关联不能直接证明因果作用。
+- **结论边界：** 跨学科任务的价值不能只由通用模型分数判断。医学或科学发现中的候选结果，需要相应领域的独立验证；模型预测不等于临床或实验结论。
+
+[实验设计](research-methods.md) · [数据与评测](datasets.md) · [专题课程](courses.md) · [实践平台](practice.md)
+
+
+涉及关系结构、预测、干预与不确定性时，分别参考[图学习](advanced-topics.md#graphs)、[时间序列](advanced-topics.md#time-series)、[因果推断](advanced-topics.md#causal)与[概率建模](advanced-topics.md#probabilistic)。真实人群与应用情境的评价方法见[可信 AI](responsible-ai.md)。

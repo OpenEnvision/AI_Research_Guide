@@ -1,77 +1,77 @@
-# Agent
+# 智能体：工具、反馈与任务执行
 
-让模型解释一个报错，和让它打开项目、定位文件、修改代码、运行测试，是两种不同的任务。后者需要持续观察环境，决定下一步动作，并判断事情有没有做完。Agent 研究里很多问题就发生在这个过程里。
+让模型解释报错，与让系统打开项目、修改文件并检查结果，是不同的问题。智能体反复观察环境、选择动作，再根据反馈决定下一步。它的行为同时取决于模型和外围程序：工具、上下文、记忆、权限与停止规则。
 
-模型可以调用搜索、代码执行和浏览器等工具，也可以和其他 Agent 协作。任务怎样拆分，哪些信息需要记住，工具如何接入，以及怎样利用交互数据训练模型，都有各自的研究问题。
+<a id="agent-learning"></a>
 
-## 推理、行动与工具
+## 初学者的阅读路线：梳理一次完整任务
 
-[ReAct](https://react-lm.github.io/) 将推理与行动交替组织起来，搜索等工具返回的信息又参与下一步决策。语言模型与环境的交互由此形成一个持续的过程。
+先理解[语言模型的推理](llm.md)、基本程序接口，以及生成文字和实际执行动作之间的区别。学习智能体系统不需要自己预训练模型。中文 [Hello Agents](https://github.com/datawhalechina/hello-agents) 与英文 [Hugging Face Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction) 都提供具体讲解。
 
-工具接口决定模型能够执行什么操作、得到什么信息。规划涉及任务分解与动作选择，记忆保存经历、知识或技能，上下文组织则决定哪些信息参与当前决策。[Reflexion](https://arxiv.org/abs/2303.11366) 将反馈写成文字记忆，[Voyager](https://voyager.minedojo.org/) 在 Minecraft 中建立可复用的代码技能库。
+阅读 [ReAct 项目页](https://react-lm.github.io/)中的一个例子，分清任务、模型可见信息、所选动作、返回观察与最终状态。模型发出的工具调用只是请求，仍需由外部程序校验并执行；写出计划也不能证明动作已经发生。
 
-## 多 Agent 系统（MAS）
+| 组成 | 作用 | 阅读时要问什么 |
+| --- | --- | --- |
+| 模型或策略 | 选择回答或动作 | 当时能看到哪些观察与指令？ |
+| 工具与环境 | 执行动作并返回观察 | 哪些状态可以改变，哪里可能失败？ |
+| 上下文与记忆 | 为后续步骤保留和提供信息 | 保留、遗漏或错误检索了什么？ |
+| Harness 或 Scaffold | 组织调用、重试、限制与停止 | 哪些行为来自模型，哪些来自外围代码？ |
+| 评价器 | 检查结果 | 是否依据实际产物或环境状态判断完成？ |
 
-多个 Agent 可以承担不同角色、共享信息和协调任务。通信方式、共享上下文、任务分工与组织结构，会影响协作的过程与成本。群体中的记忆和互动还会形成信息传播与社会关系。
+## 研究问题与代表论文
 
-[AutoGen](https://arxiv.org/abs/2308.08155) 用可配置的角色与对话流程组织协作；[Generative Agents](https://arxiv.org/abs/2304.03442) 将记忆、规划与反思用于小镇中的角色，展示日常活动、聚会邀请和角色之间的信息传播。
+### 规划、工具与记忆
 
-## 交互数据与策略训练
+较长的任务容易暴露错误传播、信息丢失和恢复困难等问题。先找到第一处缺乏依据或错误的决策，再判断是否属于推理问题。[Reflexion](https://arxiv.org/abs/2303.11366) 将反馈写成后续尝试可用的记忆，不更新模型权重；[Voyager](https://voyager.minedojo.org/) 将 Minecraft 中的任务选择、代码修改与可复用技能库连接起来。记忆需要被恰当地检索与使用才可能帮助决策，存下更多文字本身不能证明效果更好。
 
-Agent 的训练样本包含观察、动作、工具返回和任务结果。任务的选择、轨迹的筛选、数据配比与训练目标，影响模型学到的工具使用和决策方式。[Toolformer](https://arxiv.org/abs/2302.04761) 生成、执行并筛选候选工具调用；[AgentTuning](https://arxiv.org/abs/2310.12823) 将 AgentInstruct 交互轨迹与通用指令混合训练。
+### 多智能体的组织
 
-[强化学习](rl.md)进一步利用任务反馈优化策略。多步交互中的最终结果可能依赖较早的一次搜索或工具选择，奖励分配、探索和训练数据的组织因此相互联系。[Search-R1](https://arxiv.org/abs/2503.09516) 将搜索接入推理与 RL 训练；[Agent Lightning](https://arxiv.org/abs/2508.03680) 研究执行记录与训练数据的衔接，以及任务反馈与具体决策之间的信用分配。
+多个 Agent 可以分工、检查结果，也可以模拟互动。[AutoGen](https://arxiv.org/abs/2308.08155) 研究可配置的角色与对话，[Generative Agents](https://arxiv.org/abs/2304.03442) 将个体记忆和规划与模拟小镇中的行为联系起来。阅读时需要判断：智能体之间的通信带来了什么，哪些收益仅来自额外调用或重复采样。在相近时间和计算约束下与简单系统比较，并检查成员是否重复彼此的错误。多 Agent 协作不要求使用强化学习。
 
-## 环境与评测
+### 轨迹数据与训练
 
-研究环境规定 Agent 能看到什么、能执行什么操作，以及任务完成的条件。操作系统、网页、代码仓库等环境各有状态与规则；成功率、调用次数、耗时与成本描述系统表现的不同方面。
+轨迹可以包含观察、动作、工具结果与任务结局。[Toolformer](https://arxiv.org/abs/2302.04761) 生成、执行并筛选候选工具调用；[AgentTuning](https://arxiv.org/abs/2310.12823) 将交互轨迹与通用指令混合训练。阅读训练方法时，分清轨迹中哪些是模型预测目标、哪些由环境提供。数据如何选择、是否覆盖失败情形、任务之间是否重叠，与轨迹格式同样重要。
 
-[AgentBench](https://arxiv.org/abs/2308.03688) 包含操作系统、数据库等交互环境，并提供[环境与评测代码](https://github.com/THUDM/AgentBench)；[WebArena](https://arxiv.org/abs/2307.13854) 提供可复现的网站环境与任务评价；[SWE-bench](https://www.swebench.com/)围绕真实代码仓库中的问题组织任务。[评测与多 Agent 组织笔记](blogs.md#chai)包括 AutomationBench 评分分析和组织结构的模拟研究。
+[Search-R1](https://arxiv.org/abs/2503.09516) 将搜索接入强化学习；[Agent Lightning](https://arxiv.org/abs/2508.03680) 衔接执行轨迹、训练与信用分配。通过奖励更新权重，与改变上下文或保存文字反馈，应当分别理解。策略学习的基础见[强化学习](rl.md)。
 
-## 执行框架与基础设施
+### 环境、评测与接口
 
-模型之外的执行框架负责工具调用、上下文组织、沙箱、并行执行与任务状态。接口中有哪些操作，文件和执行结果怎样返回，都会影响模型的决策与工作方式。
+[AgentBench](https://arxiv.org/abs/2308.03688) 包含操作系统、数据库等任务，并提供[环境代码](https://github.com/THUDM/AgentBench)；[WebArena](https://arxiv.org/abs/2307.13854) 提供可复现的网站任务；[SWE-bench](https://www.swebench.com/) 评估代码仓库中的问题修复。比较分数前，先了解任务成功的判定标准与环境重置流程。
 
-[SWE-agent](https://arxiv.org/abs/2405.15793) 研究面向 Agent 的文件查看、编辑与执行接口；[OpenHands](https://arxiv.org/abs/2407.16741) 将代码执行、命令行、浏览器和沙箱接成一个平台。
+接口也会影响能力。[SWE-agent](https://arxiv.org/abs/2405.15793) 研究文件查看、编辑与执行接口；[OpenHands](https://arxiv.org/abs/2407.16741) 将命令行、代码执行、浏览器和沙箱结合。效果改善可能来自更强的模型，也可能来自更好的接口，应分别检验。[相关笔记](blogs.md#chai)讨论评分与多 Agent 组织。
 
 <a id="agent-projects"></a>
 
-## Agent 项目
+## 项目示例：应该观察什么
 
-一个实际的 Agent 往往会同时用到工具、记忆、规划和反馈。编程助手、个人助理和科研工具，已经把这些能力用在了不同的任务里。
+这些例子用于理解系统设计，不构成排名。可以结合文档或代码研究接口与执行轨迹；产品演示不等于有对照的比较。
 
-### 编程 Agent：在代码仓库里完成任务
-
-<div class="agent-project-grid">
-<article class="agent-project"><h4><a href="https://openai.com/codex/">Codex ↗</a></h4><p>Codex 可以读取项目、修改代码、运行测试和审查改动，也支持并行处理任务与持续的后台工作。</p></article>
-<article class="agent-project"><h4><a href="https://code.claude.com/docs/en/overview">Claude Code ↗</a></h4><p>Claude Code 在终端中读取仓库、编辑文件和执行命令，将项目理解、功能实现与测试接在一起，并支持工具、Skills 和项目指令。</p></article>
-<article class="agent-project"><h4><a href="https://www.kimi.com/code/en">Kimi Code ↗</a></h4><p>Kimi Code 提供终端和编辑器入口，可以搜索代码、修改项目、运行命令，并根据执行结果调整后续步骤。</p></article>
-<article class="agent-project"><h4><a href="https://www.zcode.network/en/">ZCode ↗</a></h4><p>ZCode 是面向 GLM 的编程 Agent 工作环境，将项目、对话和任务执行放在一起，支持通过 AGENTS.md 提供项目约定。</p></article>
-<article class="agent-project"><h4><a href="https://pi.dev/">Pi ↗</a></h4><p>Pi 是一个可扩展的轻量 Agent harness，核心围绕文件读写和命令执行，支持组合扩展、Skills 与提示模板。</p></article>
-</div>
-
-### 个人 Agent
+### 编程 Agent
 
 <div class="agent-project-grid">
-<article class="agent-project"><h4><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Muse ↗</a></h4><p>Meta 的 Muse 在云端有自己的计算机和浏览器，可以连接日常应用，处理邮件、行程和长期目标。</p></article>
-<article class="agent-project"><h4><a href="https://openai.com/index/introducing-dots/">Dots ↗</a></h4><p>OpenAI 的 Dots 是持续在线的个人 Agent，使用云端计算机和连接的应用推进任务，并从交流与反馈中积累对用户的了解。</p></article>
-<article class="agent-project"><h4><a href="https://github.com/NousResearch/hermes-agent">Hermes ↗</a></h4><p>Hermes 是 Nous Research 开源的个人 Agent，可以从终端和聊天软件接收任务。它保留跨会话记忆，并把执行中积累的方法整理成可复用技能。</p></article>
+<article class="agent-project"><h4><a href="https://openai.com/codex/">Codex ↗</a></h4><p>跟随一次编程任务，理解代码仓库的检索、文件修改与测试反馈。</p></article>
+<article class="agent-project"><h4><a href="https://code.claude.com/docs/en/overview">Claude Code ↗</a></h4><p>观察终端工具、项目指令及执行结果怎样影响后续步骤。</p></article>
+<article class="agent-project"><h4><a href="https://www.kimi.com/code/en">Kimi Code ↗</a></h4><p>比较终端与编辑器中代码搜索、修改和验证的接口。</p></article>
+<article class="agent-project"><h4><a href="https://www.zcode.network/en/">ZCode ↗</a></h4><p>观察项目上下文，以及通过 AGENTS.md 提供的约定。</p></article>
+<article class="agent-project"><h4><a href="https://pi.dev/">Pi ↗</a></h4><p>阅读轻量 Harness，理解文件工具、命令执行与扩展如何配合。</p></article>
 </div>
 
-### 科研 Agent
+### 个人、科研与领域 Agent
 
 <div class="agent-project-grid">
-<article class="agent-project"><h4><a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep">ARIS ↗</a></h4><p>ARIS 用 Skills 组织机器学习研究流程，包括文献调研、想法讨论、实验、结果分析和论文修改。执行模型推进工作，另一个模型参与审阅，反馈再进入下一轮。</p></article>
+<article class="agent-project"><h4><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Muse ↗</a></h4><p>研究个人 Agent 中的持续任务状态、应用连接与权限边界。</p></article>
+<article class="agent-project"><h4><a href="https://openai.com/index/introducing-dots/">Dots ↗</a></h4><p>观察持续任务、用户偏好与云端执行怎样配合。</p></article>
+<article class="agent-project"><h4><a href="https://github.com/NousResearch/hermes-agent">Hermes ↗</a></h4><p>从开源实现中理解跨会话记忆与可复用技能。</p></article>
+<article class="agent-project"><h4><a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep">ARIS ↗</a></h4><p>了解文献阅读、实验、分析与修改各环节的执行和审阅过程。</p></article>
+<article class="agent-project"><h4><a href="https://www.antgroup.com/en/news-media/press-releases/1765779300000">蚂蚁阿福 / Ant A-Fu ↗</a></h4><p>观察健康助手怎样组织问题、报告、记录与服务入口。</p></article>
 </div>
 
-### 健康 Agent
+学习中怎样使用这些工具，见 [AI 工具](ai.md)与[论文阅读工作流](irene-workflow.md)。介绍系统组件的早期综述可读 [LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/)；有了具体问题后，再查[论文列表](https://github.com/WooooDyy/LLM-Agent-Paper-List)或 [Agent 资料目录](catalog-directions.md#topic-21)。
 
-<div class="agent-project-grid">
-<article class="agent-project"><h4><a href="https://www.antgroup.com/en/news-media/press-releases/1765779300000">蚂蚁阿福 / Ant A-Fu ↗</a></h4><p>蚂蚁阿福围绕健康问答、报告解读、健康记录与医疗健康服务展开。</p></article>
-</div>
+## 怎样判断一篇 Agent 论文
 
-## 教程与综述
+先选定范围明确的研究主张，例如改善错误恢复、记忆、工具选择或协作。明确方法与基线中的模型、提示、权限、初始状态、重试和总预算。任务可预测时，简单的固定流程也是有价值的基线。
 
-[Hello Agents](https://github.com/datawhalechina/hello-agents) 提供中文教程和代码项目；[Hugging Face Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction)介绍工具调用、Agent 框架与实践。[LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/)讨论规划、记忆和工具使用等组件，[LLM Agent Paper List](https://github.com/WooooDyy/LLM-Agent-Paper-List)整理相关研究论文。
+除总体成功率外，还要检查轨迹，区分决策错误、工具错误、环境故障、评分错误与人工干预。在相同尝试预算下报告完成情况、时间、调用、费用和失败。系统在最终消息中声称成功，不能替代对实际产物或环境状态的核查。
 
-更多教程与论文见[Agent 资料目录](catalog-directions.md#topic-21)。编程与开发工具见[学习基础知识](basics.md)；具体使用介绍见[AI 工具](ai.md)与[论文阅读与笔记工作流](irene-workflow.md)。
+比较协议见[研究设计](research-methods.md)和[数据与评测](datasets.md)，执行记录与恢复见[研究工程](engineering.md)，不可信外部内容与越权测试见 [Agent 安全](responsible-ai.md#llm-agent-security)。

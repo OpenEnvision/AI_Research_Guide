@@ -28,7 +28,7 @@
       "research": ""
     }
   },
-  "roboticsIntro": "机器人团队的研究涉及仿真训练、人类操作数据、通用模型、技能适应与真机控制。",
+  "roboticsIntro": "机器人研究涉及在仿真中训练、利用人类操作示范学习、构建通用模型、调整技能以适应不同条件，以及真机控制。",
   "reportsLabel": "模型家族与技术报告",
   "omitDirectionLinks": true,
   "companyImages": {

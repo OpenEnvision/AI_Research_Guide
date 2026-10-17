@@ -1,0 +1,637 @@
+{
+  "llm": {
+    "overview": [],
+    "solves": [
+      "Data and training: data mixtures, learning objectives, model scale, and compute allocation.",
+      "Model behavior: instructions, preferences, rewards, and search during inference.",
+      "Architecture and efficiency: context representations, network design, and training and inference costs."
+    ],
+    "stance": "",
+    "roadmap": [
+      {
+        "year": "2017",
+        "title": "Architecture: exchange information across positions",
+        "text": "Trace how attention exchanges information between positions, then distinguish the original encoder–decoder translation model from later decoder-only language models.",
+        "papers": [
+          "transformer-2017"
+        ]
+      },
+      {
+        "year": "2018",
+        "title": "Pretraining and task adaptation",
+        "text": "Identify which weights are reused after language-model pretraining and how supervised examples adapt them to a task.",
+        "papers": [
+          "gpt-2018"
+        ]
+      },
+      {
+        "year": "2020",
+        "title": "Prompting: put task examples in context",
+        "text": "Compare zero-shot and few-shot prompts. Identify what examples enter the context and confirm that task-specific evaluation does not update weights.",
+        "papers": [
+          "gpt3-2020"
+        ]
+      },
+      {
+        "year": "2022",
+        "title": "Behavior: align responses with human instructions",
+        "text": "Separate demonstrations, ranked comparisons, the reward model, and policy optimization. Interpret the human preference results in the context of the prompt distribution used for evaluation.",
+        "papers": [
+          "instructgpt-2022"
+        ]
+      }
+    ],
+    "terms": [
+      {
+        "term": "Token",
+        "text": "A discrete unit produced by a tokenizer, such as a part of a word, a character, or a unit derived from bytes. The same text can have different token lengths under different tokenizers."
+      },
+      {
+        "term": "Autoregressive generation",
+        "text": "Predict a token from preceding context, append it, and continue. During training, predictions at multiple positions can be computed in parallel."
+      },
+      {
+        "term": "Pretraining and post-training",
+        "text": "Pretraining establishes broad capabilities; post-training adjusts task skills or behavior. Instruction tuning and preference learning are common post-training methods."
+      },
+      {
+        "term": "In-context learning",
+        "text": "Instructions and examples in the input can change performance without updating the model's weights. This differs from fine-tuning on those examples."
+      }
+    ],
+    "paperIntro": "",
+    "checklist": [],
+    "followup": false,
+    "reportIntro": "Technical reports connect architecture, data, and training choices within one study. System cards also examine capabilities, evaluations, and model behavior.",
+    "tasksTitle": "Research themes"
+  },
+  "agent": {
+    "overview": [],
+    "solves": [
+      "Decision-making and collaboration: planning, tool selection, memory, and multi-agent coordination.",
+      "Data and training: interaction trajectories, rewards, and policy optimization.",
+      "Environments and systems: task definitions, tool interfaces, execution frameworks, and evaluation."
+    ],
+    "stance": "",
+    "roadmap": [
+      {
+        "year": "2023",
+        "title": "ReAct: connect reasoning, actions, and observations",
+        "text": "Mark the boundary between model-generated reasoning, executable actions, and observations returned by the environment.",
+        "papers": [
+          "react-2023"
+        ]
+      },
+      {
+        "year": "2023",
+        "title": "Toolformer: learn when to call tools",
+        "text": "Follow candidate generation and filtering: which tool calls improve the language-model objective, and which are discarded?",
+        "papers": [
+          "toolformer-2023"
+        ]
+      },
+      {
+        "year": "2023",
+        "title": "Reflexion: reuse feedback in another attempt",
+        "text": "Locate the feedback and memory used on a later attempt. Distinguish changing the context from updating model weights.",
+        "papers": [
+          "reflexion-2023"
+        ]
+      },
+      {
+        "year": "2024",
+        "title": "From SWE-bench to SWE-agent: working in real repositories",
+        "text": "Distinguish how the benchmark defines success from how the agent interface works. SWE-agent and OpenHands show how viewing, editing, execution, and sandbox design affect task completion.",
+        "papers": [
+          "swebench-2024"
+        ],
+        "links": [
+          {
+            "title": "SWE-agent",
+            "url": "https://arxiv.org/abs/2405.15793"
+          },
+          {
+            "title": "OpenHands",
+            "url": "https://arxiv.org/abs/2407.16741"
+          }
+        ]
+      },
+      {
+        "year": "2025",
+        "title": "Training models to use tools",
+        "label": "Agent RL",
+        "text": "Follow observations and actions into the training data, then identify how rewards are assigned and how credit is distributed across actions. Separate the contribution of learning from changes in tools or execution.",
+        "papers": [],
+        "links": [
+          {
+            "title": "Search-R1",
+            "url": "https://arxiv.org/abs/2503.09516"
+          },
+          {
+            "title": "Agent Lightning",
+            "url": "https://arxiv.org/abs/2508.03680"
+          }
+        ]
+      },
+      {
+        "year": "2025",
+        "title": "Coding agents enter everyday development",
+        "label": "Coding agents",
+        "text": "Compare how coding tools expose project context, file operations, test results, and stopping conditions. Follow a complete trace to see how the agent uses the interface to make and verify a change.",
+        "papers": [],
+        "links": [
+          {
+            "title": "Codex",
+            "url": "https://openai.com/index/codex-now-generally-available/"
+          },
+          {
+            "title": "Claude Code",
+            "url": "https://www.anthropic.com/news/claude-3-7-sonnet"
+          }
+        ]
+      },
+      {
+        "year": "2026",
+        "title": "Ongoing collaboration, personal memory, and research workflows",
+        "label": "Personal & research agents",
+        "text": "Study what state persists between sessions, how previous experience is retrieved, and where actions require authorization. Use the linked projects as design examples.",
+        "papers": [],
+        "links": [
+          {
+            "title": "Muse",
+            "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
+          },
+          {
+            "title": "Dots",
+            "url": "https://openai.com/index/introducing-dots/"
+          },
+          {
+            "title": "Explore the projects",
+            "url": "#agent-projects"
+          }
+        ]
+      }
+    ],
+    "terms": [
+      {
+        "term": "Tool call",
+        "text": "The model outputs a tool name and arguments; an external program calls the tool with those arguments and returns the result."
+      },
+      {
+        "term": "Trajectory",
+        "text": "The sequence of observations, actions, and results in a task. Inspecting it helps you locate the first error rather than judge only the final answer."
+      },
+      {
+        "term": "Context and memory",
+        "text": "Context is what the model currently sees. Memory persists across steps or attempts and must be retrieved to affect the current decision."
+      },
+      {
+        "term": "Scaffold",
+        "text": "The surrounding program manages tools, prompts, loops, stopping conditions, and feedback. The same model can behave differently in different scaffolds."
+      }
+    ],
+    "paperIntro": "",
+    "checklist": [],
+    "followup": false,
+    "tasksTitle": "Research themes"
+  },
+  "vision": {
+    "overview": [],
+    "solves": [
+      "Representation learning: transferable features from images and video.",
+      "Recognition and measurement: predicting categories, locations, outlines, and attributes.",
+      "Space and time: modeling depth, 3D structure, motion, and events."
+    ],
+    "stance": "",
+    "roadmap": [
+      {
+        "year": "2012",
+        "title": "Learning visual features",
+        "text": "Consider dataset size, convolutional architecture, and training choices together; do not attribute the classification result to depth alone.",
+        "papers": [
+          "alexnet-2012"
+        ]
+      },
+      {
+        "year": "2016",
+        "title": "Making deeper networks trainable",
+        "text": "Follow the additive shortcut and compare the optimization evidence. Then examine how the learned backbone transfers to other tasks.",
+        "papers": [
+          "resnet-2016"
+        ]
+      },
+      {
+        "year": "2016",
+        "title": "A separate task: recognition plus location",
+        "text": "Identify boxes, classes, confidence scores, and prediction matching. Check how detection metrics and evaluation protocols differ from those used for image classification.",
+        "papers": [
+          "yolo-2016"
+        ]
+      },
+      {
+        "year": "2021",
+        "title": "Images as sequences of patches",
+        "text": "Track patch embeddings, position information, and pretraining scale. Compare architectures under stated data and computation conditions.",
+        "papers": [
+          "vit-2021"
+        ]
+      }
+    ],
+    "terms": [
+      {
+        "term": "Convolution / CNN",
+        "text": "A small filter moves across an image, reusing its parameters at different positions. Stacked layers combine local patterns into more complex features."
+      },
+      {
+        "term": "Feature / representation",
+        "text": "Numerical representations at intermediate layers that retain information useful for a task. They can feed a classifier or support detection and retrieval."
+      },
+      {
+        "term": "Patch and attention",
+        "text": "A patch is a small image region. Attention uses the input to determine how much information patches exchange. A patch need not correspond to an object."
+      },
+      {
+        "term": "IoU and mAP",
+        "text": "IoU measures overlap between predicted and reference regions, including boxes or masks. mAP summarizes precision–recall performance; classes, overlap thresholds, and aggregation conventions must match for comparison."
+      }
+    ],
+    "paperIntro": "",
+    "checklist": [],
+    "followup": false,
+    "tasksTitle": "Research themes"
+  },
+  "multimodal": {
+    "overview": [],
+    "solves": [
+      "Cross-modal representations: relationships among images, text, audio, and video.",
+      "Understanding and question answering: retrieval, visual conversation, and document and video understanding.",
+      "Model design: information fusion, training data, and computational cost."
+    ],
+    "stance": "",
+    "roadmap": [
+      {
+        "year": "2021",
+        "title": "Making images and text comparable",
+        "text": "Follow the two encoders and contrastive objective. Distinguish ranking candidate texts from generating a new answer.",
+        "papers": [
+          "clip-2021"
+        ]
+      },
+      {
+        "year": "2023",
+        "title": "Connecting existing vision and language models",
+        "text": "Identify which components are frozen and which are trainable. Trace how Q-Former outputs reach the language model.",
+        "papers": [
+          "blip2-2023"
+        ]
+      },
+      {
+        "year": "2023",
+        "title": "Learning to answer visual instructions",
+        "text": "Separate visual feature alignment from visual instruction tuning, then inspect which model components are updated at each stage.",
+        "papers": [
+          "llava-2023"
+        ]
+      }
+    ],
+    "terms": [
+      {
+        "term": "Modality",
+        "text": "A form of information, such as text, images, or sound. Modalities differ in structure and information density."
+      },
+      {
+        "term": "Encoder",
+        "text": "A model that transforms raw input into numerical features. Its representations can then be used for tasks such as image matching or question answering."
+      },
+      {
+        "term": "Contrastive learning",
+        "text": "Training that increases the similarity of matched image–text pairs relative to mismatched pairs within a group of examples. Learning to match pairs does not by itself enable answer generation."
+      },
+      {
+        "term": "Connector and instruction tuning",
+        "text": "A connector turns visual features into inputs a language model can use. Instruction tuning trains the model to respond using examples such as questions and answers. The former is an architectural component; the latter is a training method."
+      }
+    ],
+    "paperIntro": "",
+    "checklist": [],
+    "followup": false,
+    "tasksTitle": "Research themes"
+  },
+  "generation": {
+    "overview": [],
+    "solves": [
+      "Generation and editing: producing samples from conditions or modifying existing content.",
+      "Distributions and structure: diversity, conditional control, and spatial and temporal relationships.",
+      "Training and sampling: objectives, generation paths, computational efficiency, and quality."
+    ],
+    "stance": "",
+    "roadmap": [
+      {
+        "year": "2014",
+        "title": "Learning through an adversary",
+        "text": "Identify the generator and discriminator objectives. Inspect sample diversity as well as the quality of the selected images.",
+        "papers": [
+          "gan-2014"
+        ]
+      },
+      {
+        "year": "2020",
+        "title": "Generation as repeated denoising",
+        "text": "Connect the known forward noising process to the learned prediction target and reverse sampling updates. Training and sampling are different computations.",
+        "papers": [
+          "ddpm-2020"
+        ]
+      },
+      {
+        "year": "2022",
+        "title": "Doing the expensive work in a smaller space",
+        "text": "Separate the image autoencoder, latent denoising network, and conditioning mechanism. Ask what detail is lost through compression.",
+        "papers": [
+          "ldm-2022"
+        ]
+      },
+      {
+        "year": "2023",
+        "title": "A Transformer can be the denoising network",
+        "text": "Treat the Transformer as a choice of denoising architecture. Inspect scaling comparisons without conflating architecture with the training objective or sampler.",
+        "papers": [
+          "dit-2023"
+        ]
+      }
+    ],
+    "terms": [
+      {
+        "term": "Noise",
+        "text": "Random perturbations drawn from a chosen distribution. Knowing the noise added during training lets us construct a task with a known target."
+      },
+      {
+        "term": "Denoising objective",
+        "text": "Predict noise, a clean sample, or a related quantity from a noisy input and its noise level. A common DDPM formulation predicts added noise, which is used to compute sampling updates."
+      },
+      {
+        "term": "Latent space",
+        "text": "In latent diffusion, an encoder maps images to a compact representation and a decoder reconstructs pixels. Compression reduces the denoising workload but can limit preserved detail."
+      },
+      {
+        "term": "Sampler",
+        "text": "The rule that uses model predictions to move from an initial random state to a sample. Steps, update equations, and randomness all affect speed and quality."
+      }
+    ],
+    "paperIntro": "",
+    "checklist": [],
+    "followup": false,
+    "tasksTitle": "Research themes"
+  },
+  "rl": {
+    "overview": [],
+    "solves": [
+      "Policy learning: value estimation, policy optimization, and exploration.",
+      "Learning settings: online interaction, offline data, environment models, and multiple agents.",
+      "Applications: games, robot control, language-model post-training, and interaction through tools."
+    ],
+    "stance": "",
+    "roadmap": [
+      {
+        "year": "2015",
+        "title": "Estimate the long-term value of actions",
+        "text": "Trace the action-value target, replayed transitions, and target network. Keep the discrete action setting explicit.",
+        "papers": [
+          "rl-dqn"
+        ]
+      },
+      {
+        "year": "2017",
+        "title": "Improve the action-selection policy directly",
+        "text": "Follow experience collection, advantage estimation, and policy updates. Clipping discourages large changes but is not a guarantee of monotonic improvement.",
+        "papers": [
+          "rl-ppo"
+        ]
+      },
+      {
+        "year": "2018",
+        "title": "Reuse experience while retaining exploration",
+        "text": "Identify the actor, critics, replay data, and entropy term. Compare its off-policy use of data with the way PPO uses data; go beyond the algorithm names.",
+        "papers": [
+          "rl-sac"
+        ]
+      }
+    ],
+    "terms": [
+      {
+        "term": "Policy",
+        "text": "A rule for selecting an action from observations. It can return a fixed action or a distribution over actions."
+      },
+      {
+        "term": "Reward / Return",
+        "text": "A reward is feedback at one step. Return accumulates later rewards, often discounting more distant ones."
+      },
+      {
+        "term": "Value",
+        "text": "Expected future return from a state, or after taking an action, when following a specified policy afterward."
+      },
+      {
+        "term": "On-policy / Off-policy",
+        "text": "On-policy updates mainly use experience from the current or nearby policy; off-policy learning can use experience from other or older policies."
+      }
+    ],
+    "paperIntro": "",
+    "checklist": [],
+    "followup": false,
+    "tasksTitle": "Research themes"
+  },
+  "world-model": {
+    "overview": [],
+    "solves": [
+      "Environment representations: retaining state, history, and task information from observations.",
+      "Behavior learning: training policies on model-generated trajectories.",
+      "Simulation and planning: predicting changes in a scene and comparing the outcomes of candidate actions."
+    ],
+    "stance": "",
+    "roadmap": [
+      {
+        "year": "2018",
+        "title": "Separate vision, memory, and control",
+        "text": "Locate visual encoding, dynamics, and control. Identify which observations come from a real environment and which from the learned model.",
+        "papers": [
+          "wm-world-models"
+        ]
+      },
+      {
+        "year": "2020",
+        "title": "Learn what planning needs",
+        "text": "Track the reward, value, and policy predictions used in search. A representation useful for decision-making need not reconstruct future images.",
+        "papers": [
+          "wm-muzero"
+        ]
+      },
+      {
+        "year": "2025",
+        "title": "Learn behavior on imagined trajectories",
+        "text": "Distinguish world-model training from actor–critic training on imagined trajectories. Then examine performance in the real environment and the range of tasks over which the paper claims to share hyperparameters.",
+        "papers": [
+          "wm-dreamerv3"
+        ]
+      }
+    ],
+    "terms": [
+      {
+        "term": "Latent state",
+        "text": "A learned internal representation of observations and history. It need not reconstruct every visible detail or give each dimension an interpretable meaning."
+      },
+      {
+        "term": "Dynamics model",
+        "text": "A model of how a subsequent state or its distribution depends on the current state and action. Its predictions can be deterministic or probabilistic."
+      },
+      {
+        "term": "Imagined rollout",
+        "text": "A trajectory generated by repeatedly predicting action outcomes from an internal state. Its feedback comes from the model."
+      },
+      {
+        "term": "Planning / Policy",
+        "text": "Planning compares candidate action sequences at decision time; a policy maps observations or internal states to actions. They can be combined."
+      }
+    ],
+    "paperIntro": "",
+    "checklist": [],
+    "followup": false,
+    "tasksTitle": "Research themes"
+  },
+  "embodied": {
+    "overview": [],
+    "solves": [
+      "Robot manipulation: interacting with objects through grasping, placement, assembly, and related tasks.",
+      "Instructions and generalization: connecting vision, language, and action, and learning across settings.",
+      "Navigation and locomotion: localization, movement, balance, and whole-body control."
+    ],
+    "stance": "",
+    "roadmap": [
+      {
+        "year": "2022",
+        "title": "Learn actions from multitask demonstrations",
+        "text": "Identify observation history, language input, action encoding, and the diversity of demonstrations before interpreting generalization.",
+        "papers": [
+          "embodied-rt1"
+        ]
+      },
+      {
+        "year": "2023",
+        "title": "Generate action sequences",
+        "text": "Connect the distribution over action sequences to receding-horizon execution: how much of a predicted sequence runs before the next observation?",
+        "papers": [
+          "embodied-diffusion-policy"
+        ]
+      },
+      {
+        "year": "2023",
+        "title": "Bring vision-language knowledge into control",
+        "text": "Follow how actions become tokens and how robot data mix with vision-language tasks. Separate semantic transfer from physical control accuracy.",
+        "papers": [
+          "embodied-rt2"
+        ]
+      },
+      {
+        "year": "2024",
+        "title": "Generate continuous actions with a VLM",
+        "text": "Locate the pretrained VLM and flow-matching action expert. Examine the action representations and adaptation data alongside the architecture.",
+        "papers": [
+          "embodied-pi0"
+        ]
+      },
+      {
+        "year": "2025",
+        "title": "Take tasks into new homes",
+        "text": "Inspect the roles of heterogeneous training data and task decomposition. When reviewing evaluation in new homes, check the initial conditions and any human interventions.",
+        "papers": [
+          "embodied-pi05"
+        ]
+      }
+    ],
+    "terms": [
+      {
+        "term": "Imitation learning",
+        "text": "Learning a policy from paired observations and demonstrated actions. Gaps in demonstration coverage often lead to failures during deployment."
+      },
+      {
+        "term": "Vision–Language–Action (VLA)",
+        "text": "Models conditioned on vision and language that output actions, represented as discrete tokens or continuous values."
+      },
+      {
+        "term": "Action chunk",
+        "text": "Several future actions predicted together. A system can execute part of the sequence, observe again, and replan."
+      },
+      {
+        "term": "Closed-loop control",
+        "text": "A control process that observes the environment after an action and adjusts accordingly. Feedback rates and control interfaces differ across systems."
+      }
+    ],
+    "paperIntro": "",
+    "checklist": [],
+    "followup": false,
+    "tasksTitle": "Research themes"
+  },
+  "systems": {
+    "overview": [],
+    "solves": [
+      "Training memory and communication: parameters, gradients, optimizer states, and multi-GPU parallelism.",
+      "Kernels and hardware: computation, memory access, numerical precision, and execution scheduling.",
+      "Inference serving: latency, throughput, caching, concurrency, and cost."
+    ],
+    "stance": "",
+    "roadmap": [
+      {
+        "year": "2020",
+        "title": "ZeRO: partition redundant training state",
+        "text": "Follow what each sharding stage distributes and what communication it introduces. Memory savings and throughput are separate measurements.",
+        "papers": [
+          "zero-2020"
+        ]
+      },
+      {
+        "year": "2022",
+        "title": "FlashAttention: change data movement",
+        "text": "Identify which intermediate tensors are avoided and how tiling reduces memory transfers while retaining exact attention.",
+        "papers": [
+          "flashattention-2022"
+        ]
+      },
+      {
+        "year": "2023",
+        "title": "SmoothQuant: make low precision practical",
+        "text": "Follow how activation outliers are handled and which kernels execute INT8 operations. Assess quality and speed on the hardware used in the study.",
+        "papers": [
+          "smoothquant-2023"
+        ]
+      },
+      {
+        "year": "2023",
+        "title": "PagedAttention: manage a growing KV cache",
+        "text": "Trace logical token positions to cache blocks. Inspect fragmentation, sharing, concurrency, and serving latency together.",
+        "papers": [
+          "pagedattention-2023"
+        ]
+      }
+    ],
+    "terms": [
+      {
+        "term": "Throughput and latency",
+        "text": "Throughput measures work completed per unit time; latency measures how long a request takes. Larger batches can improve throughput while increasing queueing time."
+      },
+      {
+        "term": "Prefill / decode",
+        "text": "Prefill processes the input context; decode generates output step by step. Their compute and memory-access patterns differ, so a single speed measurement is insufficient."
+      },
+      {
+        "term": "KV cache",
+        "text": "Stored attention keys and values for processed tokens avoid repeated computation during generation. Context length and concurrent requests consume cache memory."
+      },
+      {
+        "term": "Quantization",
+        "text": "Lower-precision representations reduce storage and some computation costs. Speedups depend on hardware and kernel support."
+      }
+    ],
+    "paperIntro": "",
+    "checklist": [],
+    "followup": false,
+    "tasksTitle": "Research themes"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "companies": {
+    "tencent": "Language, multimodal, image, and video generation, with open Hunyuan models, reports, and examples.",
+    "xiaomi": "Language reasoning, vision, and speech models, with research on model training and architecture.",
+    "bytedance": "Large models, speech, vision, world models, and AI systems.",
+    "kimi": "Long-context modeling, reasoning, and agents, with open Kimi models and technical reports.",
+    "deepseek": "Mixture-of-experts models, training efficiency, and reasoning models. Technical reports cover architecture, training, and engineering.",
+    "qwen": "Language, code, vision-language, and multimodal models, with model weights, examples, and technical reports.",
+    "minimax": "Long-context modeling, reasoning, and multimodal generation, including attention design and inference efficiency."
+  },
+  "robotics": {
+    "galbot": {
+      "description": "Develops embodied models for manipulation and mobile tasks in settings such as retail and material handling. Its developer platform provides perception, planning, control, navigation, and simulation resources."
+    },
+    "agibot": {
+      "description": "Develops humanoid robots and embodied AI models, with the open AgiBot World manipulation dataset, models, and development tools."
+    },
+    "unitree": {
+      "description": "Develops quadruped and humanoid robots, including G1 and H1 platforms used for locomotion research. Unitree RL Gym provides tools for reinforcement-learning training and deployment."
+    },
+    "sudo": {
+      "research": "The website provides a technical explanation and a continuous 60-minute picking video, including moving targets, mid-grasp disturbances, and obstacle avoidance in constrained spaces."
+    },
+    "tars": {
+      "research": "WIYH covers data capture, annotation, and skill transfer. The AWE series focuses on vision–touch fusion and precise contact manipulation, including flexible wiring assembly."
+    },
+    "pokebot": {
+      "research": ""
+    }
+  },
+  "roboticsIntro": "Robotics research spans training in simulation, learning from human demonstrations, general-purpose models, adapting skills, and control on real hardware.",
+  "reportsLabel": "Model families and technical reports",
+  "omitDirectionLinks": true,
+  "companyImages": {
+    "nvidia": "figures/uestc/lookout/nvidia.svg",
+    "xai": "figures/uestc/lookout/xai-current-mark.png"
+  },
+  "extraCompanies": [
+    [
+      "nvidia",
+      "NVIDIA",
+      "NVIDIA",
+      "https://www.nvidia.com/",
+      "https://research.nvidia.com/publications",
+      "图形、生成模型、机器人与 AI 系统研究，发布论文、模型和开发工具。",
+      "Research in graphics, generative models, robotics, and AI systems, with papers, models, and development tools."
+    ],
+    [
+      "xai",
+      "xAI / SpaceXSI",
+      "xAI / SpaceXSI",
+      "https://x.ai/",
+      "https://x.ai/news",
+      "Grok 模型、推理与工具调用，提供模型发布、评测和 API 文档。",
+      "Grok models, reasoning, and tool use, with model releases, evaluations, and API documentation."
+    ]
+  ]
+}

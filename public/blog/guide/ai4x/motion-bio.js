@@ -70,7 +70,7 @@
         const width = mix(5, copper ? 7 : 13 + 4 * Math.sin(u * TAU * 15) ** 2, build);
         path(ctx, [[seg.a[0] + 2, seg.a[1] + 3], [seg.b[0] + 2, seg.b[1] + 3]], C.ink, width + 1, .12 * build);
         path(ctx, [seg.a, seg.b], copper ? C.copper : C.green, width, .75 + .2 * (seg.z + 70) / 140);
-        path(ctx, [[seg.a[0] - 1.5, seg.a[1] - 2], [seg.b[0] - 1.5, seg.b[1] - 2]], copper ? '#eed1ab' : '#a4c9b0', width * .22, .6 * build);
+        path(ctx, [[seg.a[0] - 1.5, seg.a[1] - 2], [seg.b[0] - 1.5, seg.b[1] - 2]], copper ? '#f4b1b4' : '#f0a2a6', width * .22, .6 * build);
       }
       alpha(ctx, 1 - at(t, .24, .35), () => {
         const seq = 'M A K V L G D A S T R V L E';
@@ -93,7 +93,7 @@
           label(ctx, '参考结构', 685, 75, C.copper, 22);
         });
       });
-      caption(ctx, t < .24 ? '氨基酸序列' : t < .52 ? '远距离残基联系' : t < .76 ? '计算预测三维结构' : '叠合比较局部差异', C);
+      caption(ctx, t < .24 ? '氨基酸序列' : t < .52 ? '远距离残基联系' : t < .76 ? '预测三维结构' : '叠合比较局部差异', C);
       ctx.restore();
     }
   };
@@ -141,7 +141,7 @@
         for (let i = 0; i < letters.length; i++) {
           const x = 170 + i * 70, active = i === 4;
           if (active) {
-            const halo = ctx.createRadialGradient(x, cy, 3, x, cy, 55); halo.addColorStop(0, '#bc7c4830'); halo.addColorStop(1, '#bc7c4800');
+            const halo = ctx.createRadialGradient(x, cy, 3, x, cy, 55); halo.addColorStop(0, '#b80f1630'); halo.addColorStop(1, '#b80f1600');
             ellipse(ctx, x, cy, 55, 55, halo);
             ellipse(ctx, x, cy, 25, 25, C.paper, C.copper, 2);
           } else ellipse(ctx, x, cy, 20, 20, C.paper);
@@ -160,7 +160,7 @@
         alpha(ctx, 1 - at(t, .69, .73), () => { path(ctx, [[scanX, 190], [scanX, 371]], C.green, 2, .35); });
         alpha(ctx, variant, () => {
           const x = 450; ctx.setLineDash([4, 5]); path(ctx, [[x, cy + 40], [x, 367]], C.copper, 1.5, .55); ctx.setLineDash([]);
-          ctx.fillStyle = '#bc7c4810'; ctx.fillRect(413, 215, 155, 157);
+          ctx.fillStyle = '#b80f1610'; ctx.fillRect(413, 215, 155, 157);
           path(ctx, [[599, 241], [599, 329]], C.copper, 1.5, .6);
           path(ctx, [[592, 250], [599, 241], [606, 250]], C.copper, 1.5, .6);
           path(ctx, [[592, 320], [599, 329], [606, 320]], C.copper, 1.5, .6);
@@ -179,16 +179,16 @@
       points.push([x + Math.cos(a) * rr, y + Math.sin(a) * rr * .88]);
     }
     const grad = ctx.createRadialGradient(x - r * .28, y - r * .3, 1, x, y, r);
-    grad.addColorStop(0, response ? '#f3e3c8' : '#edf3e7'); grad.addColorStop(.8, response ? '#e0bf8f' : '#c4dbbf'); grad.addColorStop(1, response ? '#bf9567' : '#8db99b');
+    grad.addColorStop(0, response ? '#fff0f1' : '#f2f2f2'); grad.addColorStop(.8, response ? '#f4aeb2' : '#d1d1d1'); grad.addColorStop(1, response ? '#cc555c' : '#999999');
     ctx.beginPath(); points.forEach((p, i) => i ? ctx.lineTo(...p) : ctx.moveTo(...p)); ctx.closePath(); ctx.fillStyle = grad; ctx.fill();
     ctx.strokeStyle = response ? C.copper : C.green; ctx.lineWidth = detail ? 1.5 : 1; ctx.stroke();
     const nx = x - r * .11, ny = y + r * .03;
-    ellipse(ctx, nx, ny, r * .35, r * .29, response ? '#ba865b99' : '#50857288', response ? '#aa744c88' : '#3c6f5d88', 1, -.3);
-    ellipse(ctx, nx - r * .07, ny + r * .02, r * .095, r * .095, response ? '#93634499' : '#3f716199');
+    ellipse(ctx, nx, ny, r * .35, r * .29, response ? '#b80f1699' : '#63636388', response ? '#9c0d1388' : '#44444488', 1, -.3);
+    ellipse(ctx, nx - r * .07, ny + r * .02, r * .095, r * .095, response ? '#820b1099' : '#48484899');
     if (detail) {
       for (let j = 0; j < 7; j++) {
         const a = j * 2.399 + phase, d = r * (.52 + .13 * hash(j + phase));
-        ellipse(ctx, x + Math.cos(a) * d, y + Math.sin(a) * d * .8, r * .1, r * .045, '#93b3a080', '#668d7766', .7, a);
+        ellipse(ctx, x + Math.cos(a) * d, y + Math.sin(a) * d * .8, r * .1, r * .045, '#a9a9a980', '#7f7f7f66', .7, a);
       }
       path(ctx, points.slice(3, 13).map(p => [p[0] - 1, p[1] - 2]), '#ffffff', 2, .7);
     }
@@ -232,9 +232,9 @@
       });
       alpha(ctx, treat * (1 - at(t, .83, .9)), () => {
         const dx = mix(798, 458, at(t, .52, .68)), dy = mix(66, 226, at(t, .52, .68));
-        const halo = ctx.createRadialGradient(dx, dy, 2, dx, dy, 57); halo.addColorStop(0, '#bc7c4835'); halo.addColorStop(1, '#bc7c4800');
+        const halo = ctx.createRadialGradient(dx, dy, 2, dx, dy, 57); halo.addColorStop(0, '#b80f1635'); halo.addColorStop(1, '#b80f1600');
         ellipse(ctx, dx, dy, 57, 57, halo);
-        ellipse(ctx, dx, dy, 13, 13, C.copper, '#f6e8ce', 3);
+        ellipse(ctx, dx, dy, 13, 13, C.copper, '#fff0f1', 3);
         for (let j = 0; j < 5; j++) ellipse(ctx, dx + Math.sin(j * 2.4) * 28, dy + Math.cos(j * 2.4) * 22, 3, 3, C.copper);
         label(ctx, '干预', 778, 44, C.copper, 23, 'center');
       });
@@ -252,7 +252,7 @@
   }
   function head(ctx, x, y, s, t, C) {
     const g = ctx.createRadialGradient(x - s * .3, y - s * .2, s * .1, x, y, s);
-    g.addColorStop(0, '#f2f1e4'); g.addColorStop(.8, '#dde7d7'); g.addColorStop(1, '#b7cdb7');
+    g.addColorStop(0, '#f2f2f2'); g.addColorStop(.8, '#e2e2e2'); g.addColorStop(1, '#c7c7c7');
     ellipse(ctx, x, y, s * .81, s, g, C.green, 2);
     ellipse(ctx, x - s * .85, y + s * .08, s * .08, s * .2, C.paper, C.green, 1.5);
     ellipse(ctx, x + s * .85, y + s * .08, s * .08, s * .2, C.paper, C.green, 1.5);
@@ -262,7 +262,7 @@
     for (let j = 0; j < 3; j++) {
       const xx = x + Math.sin(t * TAU + j * 2) * s * .37, yy = y + Math.cos(t * TAU * .7 + j * 2) * s * .43;
       const field = ctx.createRadialGradient(xx, yy, 0, xx, yy, s * .8);
-      field.addColorStop(0, j === 1 ? '#bc7c483b' : '#34776a44'); field.addColorStop(1, '#34776a00');
+      field.addColorStop(0, j === 1 ? '#b80f163b' : '#df1f2644'); field.addColorStop(1, '#df1f2600');
       ellipse(ctx, xx, yy, s, s, field);
     }
     ctx.restore();
@@ -280,19 +280,19 @@
     ctx.beginPath(); ctx.moveTo(0, s * .78);
     ctx.bezierCurveTo(-s * .7, s * .42, -s * .75, -s * .4, s * .12, -s);
     ctx.bezierCurveTo(s * .65, -s * .32, s * .61, s * .38, 0, s * .78);
-    const grad = ctx.createLinearGradient(-s, -s, s, s); grad.addColorStop(0, predicted ? '#d8dec0' : '#abc5a1'); grad.addColorStop(1, predicted ? '#779980' : '#477b61');
+    const grad = ctx.createLinearGradient(-s, -s, s, s); grad.addColorStop(0, predicted ? '#dddddd' : '#eea3a7'); grad.addColorStop(1, predicted ? '#949494' : '#b80f16');
     ctx.fillStyle = grad; ctx.globalAlpha *= predicted ? .84 : 1; ctx.fill(); ctx.strokeStyle = predicted ? C.copper : C.green; ctx.lineWidth = 2; ctx.stroke();
-    path(ctx, [[-s * .03, s], [s * .05, -s * .79]], predicted ? '#d7e2cc' : '#e3ecd9', 2);
+    path(ctx, [[-s * .03, s], [s * .05, -s * .79]], predicted ? '#e0e0e0' : '#ffe5e6', 2);
     for (let i = 0; i < 5; i++) {
       const yy = s * (.48 - i * .27), w = s * (.22 + .09 * Math.sin(i));
-      path(ctx, [[s * .02, yy], [-w, yy - s * .2]], '#dfe8d588', 1);
-      path(ctx, [[s * .02, yy], [w, yy - s * .2]], '#dfe8d588', 1);
+      path(ctx, [[s * .02, yy], [-w, yy - s * .2]], '#eeeeee88', 1);
+      path(ctx, [[s * .02, yy], [w, yy - s * .2]], '#eeeeee88', 1);
     }
     if (predicted) { ctx.setLineDash([4, 5]); path(ctx, [[-s * .02 + 3 * Math.sin(phase), s * .83], [s * .08, -s * .79]], C.copper, 1, .35); }
     ctx.restore();
   }
   window.AI4X_MOTION.eeg = {
-    duration: 18, steps: ['电极记录', '时频编码', '视觉解码', '留出被试比较'],
+    duration: 18, steps: ['电极记录', '时频编码', '视觉解码', '在留出被试上比较'],
     draw(ctx, t, kit) {
       const C = kit.C, features = at(t, .2, .37), decoding = at(t, .46, .6), compare = at(t, .75, .86);
       ctx.save(); ctx.globalAlpha *= fade(t);
@@ -337,7 +337,7 @@
           label(ctx, '未见被试', 450, 370, C.muted, 20, 'center');
         });
       });
-      caption(ctx, t < .25 ? '记录电信号随时间的变化' : t < .5 ? '提取频段、时间与空间关系' : t < .75 ? '用信号表征连接视觉内容' : '在未见被试上检验解码', C);
+      caption(ctx, t < .25 ? '记录电信号随时间的变化' : t < .5 ? '提取频段、时间与空间关系' : t < .75 ? '将信号表征与视觉内容对应' : '在未见被试上检验解码', C);
       ctx.restore();
     }
   };
@@ -346,28 +346,28 @@
   function scanRaw(ctx, x, y, scale, beat, C, opacity) {
     ctx.save(); ctx.translate(x, y); ctx.scale(scale, scale); ctx.globalAlpha *= opacity == null ? 1 : opacity;
     const tissue = ctx.createRadialGradient(-20, -22, 10, 0, 0, 160);
-    tissue.addColorStop(0, '#aaa99e'); tissue.addColorStop(.5, '#737a73'); tissue.addColorStop(.88, '#a5a99b'); tissue.addColorStop(1, '#454f49');
-    ellipse(ctx, 0, 0, 155, 138, '#27342e', '#b7c4b4', 2);
+    tissue.addColorStop(0, '#a8a8a8'); tissue.addColorStop(.5, '#787878'); tissue.addColorStop(.88, '#a7a7a7'); tissue.addColorStop(1, '#4d4d4d');
+    ellipse(ctx, 0, 0, 155, 138, '#303030', '#c0c0c0', 2);
     ellipse(ctx, 0, 0, 145, 127, tissue);
-    ellipse(ctx, -63, -21, 47, 79, '#25372f', '#697b6b', 4, -.24);
-    ellipse(ctx, 63, -21, 45, 79, '#293a31', '#738272', 3, .26);
-    ellipse(ctx, -2, 79, 26, 25, '#c7c8b5', '#657361', 5);
-    ellipse(ctx, -2, 80, 11, 14, '#596954', '#c7c8b5', 3);
+    ellipse(ctx, -63, -21, 47, 79, '#333333', '#767676', 4, -.24);
+    ellipse(ctx, 63, -21, 45, 79, '#363636', '#7e7e7e', 3, .26);
+    ellipse(ctx, -2, 79, 26, 25, '#c6c6c6', '#6f6f6f', 5);
+    ellipse(ctx, -2, 80, 11, 14, '#646464', '#c6c6c6', 3);
     // Vascular and tissue features make the scan read as a volume, not an icon.
-    ellipse(ctx, 10, -72, 10, 13, '#b9bfac', '#737e6b', 3);
-    ellipse(ctx, -13, -42, 13, 10, '#999f8d');
+    ellipse(ctx, 10, -72, 10, 13, '#bdbdbd', '#7a7a7a', 3);
+    ellipse(ctx, -13, -42, 13, 10, '#9c9c9c');
     const rr = 1 - beat * .19;
-    ellipse(ctx, 13, 9, 48, 57, '#4e6250', '#8e9b81', 2, -.28);
-    ellipse(ctx, 14, 6, 34 * rr, 42 * rr, '#dadac1', '#929c80', 11, -.24);
-    ellipse(ctx, -22, -3, 20, 36, '#c5c9b0', '#788b74', 6, .32);
-    ellipse(ctx, 6, 9, 5, 9, '#7c8a70', null, 0, -.5);
-    ellipse(ctx, 22, 17, 4, 7, '#7c8a70', null, 0, .4);
+    ellipse(ctx, 13, 9, 48, 57, '#5c5c5c', '#979797', 2, -.28);
+    ellipse(ctx, 14, 6, 34 * rr, 42 * rr, '#d7d7d7', '#979797', 11, -.24);
+    ellipse(ctx, -22, -3, 20, 36, '#c6c6c6', '#868686', 6, .32);
+    ellipse(ctx, 6, 9, 5, 9, '#858585', null, 0, -.5);
+    ellipse(ctx, 22, 17, 4, 7, '#858585', null, 0, .4);
     ctx.save(); ctx.beginPath(); ctx.ellipse(0, 0, 142, 123, 0, 0, TAU); ctx.clip();
     const grainAlpha = ctx.globalAlpha;
     for (let i = 0; i < 1550; i++) {
       const px = hash(i * 3) * 290 - 145, py = hash(i * 3 + 1) * 254 - 127;
       ctx.globalAlpha = grainAlpha * (.025 + hash(i * 3 + 2) * .1);
-      ctx.fillStyle = i % 2 ? '#eef0d7' : '#172820'; ctx.fillRect(px, py, 1.4 + hash(i + 1000) * 2.8, 1.1 + hash(i + 2000) * 2.4);
+      ctx.fillStyle = i % 2 ? '#eeeeee' : '#232323'; ctx.fillRect(px, py, 1.4 + hash(i + 1000) * 2.8, 1.1 + hash(i + 2000) * 2.4);
     }
     ctx.restore(); ctx.restore();
   }
@@ -412,7 +412,7 @@
         if (trace > 0) heartBoundary(ctx, x + 15.7, y + 6.7, 1.12, 1.12, trace, C, .22 * trace, beat * functionView);
         alpha(ctx, 1 - trace, () => {
           const scanY = 72 + ((t * 3.1) % 1) * 275;
-          path(ctx, [[278, scanY], [622, scanY]], '#c9d9bd', 1.5, .26);
+          path(ctx, [[278, scanY], [622, scanY]], '#d2d2d2', 1.5, .26);
         });
         alpha(ctx, trace, () => {
           path(ctx, [[x + 49, y + 8], [674, 133], [779, 133]], C.copper, 1.5, .7);
@@ -436,7 +436,7 @@
           // A volumetric wire surface contracts with the sampled frame.
           for (let j = 0; j < 15; j++) {
             const v = j / 14, radius = Math.sin(v * Math.PI) ** .6 * (48 - beat * 10);
-            ellipse(ctx, cx + Math.sin(v * Math.PI) * 5, cy - 54 + v * 110, radius, radius * .28, j === 7 ? '#bc7c481a' : null, C.copper, 1.3);
+            ellipse(ctx, cx + Math.sin(v * Math.PI) * 5, cy - 54 + v * 110, radius, radius * .28, j === 7 ? '#b80f161a' : null, C.copper, 1.3);
           }
           const graph = [], gx = 539, gy = 334, gw = 251;
           path(ctx, [[gx, 259], [gx, gy], [gx + gw, gy]], C.line, 1.5);

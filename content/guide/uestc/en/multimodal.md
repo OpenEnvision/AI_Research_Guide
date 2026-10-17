@@ -21,3 +21,14 @@ The [multimodal LLM paper index](https://github.com/BradyFU/Awesome-Multimodal-L
 ## Encoder design and system costs
 
 [Purshow's Encoder-Free analysis](blogs.md#purshow) explains design through workload and parallel scheduling. More courses, papers, and projects are in the [multimodal catalog](catalog-directions.md#topic-15).
+
+## Design a testable multimodal study
+
+- **Question and controls:** identify complementary information in each modality. Compare full inputs with text-only, image-only, or missing-modality baselines while controlling data, capacity, and training budget.
+- **Evaluation:** inspect pairing, temporal alignment, conflicting inputs, OCR dependence, and languages. Use input perturbations or modality controls to diagnose information use, and manually check a sample of answers and evidence.
+- **Limits:** training on paired data does not mean every answer depends on the image. Language priors, leakage, and evaluator bias can affect measurement; one aggregate score does not explain cross-modal reasoning.
+
+[Experimental design](research-methods.md) · [Data and evaluation](datasets.md) · [Specialist courses](courses.md) · [Practice](practice.md)
+
+
+For sound, use [audio and speech](advanced-topics.md#audio) to check sampling, segmentation, speakers, and text conventions. For judgments and preferences, define correctness, evidence, and preference separately with the [human-evaluation protocol](responsible-ai.md#human-evaluation).

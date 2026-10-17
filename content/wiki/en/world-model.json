@@ -1,0 +1,146 @@
+[
+  {
+    "id": "world-model",
+    "summary": "A world model learns an environment's structure and patterns of change to predict what may happen next.",
+    "detail": [
+      "A model may predict future observations, latent states, or rewards so a decision system can compare actions or generate training experience. It learns predictive relationships for particular data and tasks: realistic images do not establish that the model obeys physical laws or accurately predicts the consequences of arbitrary actions."
+    ],
+    "sourceTitles": [
+      "World Models",
+      "Dream to Control: Learning Behaviors by Latent Imagination"
+    ]
+  },
+  {
+    "id": "dynamics-model",
+    "summary": "A dynamics model describes how an action changes the current state into the next state.",
+    "detail": [
+      "Where a box will move after a push, and by how much, are transition predictions. A model may output a deterministic result or represent multiple possible outcomes and their probabilities."
+    ],
+    "sourceTitles": [
+      "Learning Latent Dynamics for Planning from Pixels"
+    ]
+  },
+  {
+    "id": "forward-model",
+    "summary": "A forward model predicts the consequences of an action from the current situation.",
+    "detail": [
+      "Given an arm’s current state and action, a forward model predicts the next state or observation. A state-to-state forward model can be the same as a transition model. “Forward” emphasizes predicting consequences from actions, in contrast to inferring actions from before-and-after states."
+    ],
+    "sourceTitles": [
+      "Curiosity-driven Exploration by Self-supervised Prediction"
+    ]
+  },
+  {
+    "id": "inverse-model",
+    "summary": "In world models and representation learning, an inverse dynamics model infers the intervening action from states or observations before and after a change.",
+    "detail": [
+      "An object moving from left to right may suggest a pushing action, although several actions can produce similar changes. This differs from inverse kinematics, which solves for joint configurations that achieve a target pose. In classical robot dynamics, inverse dynamics also commonly means computing the torques required for a specified motion."
+    ],
+    "sourceTitles": [
+      "Curiosity-driven Exploration by Self-supervised Prediction",
+      "Modern Robotics: Dynamics of Open Chains"
+    ]
+  },
+  {
+    "id": "action-conditioned",
+    "summary": "Action-conditioned prediction takes a proposed action as input to predict how different choices change the situation.",
+    "detail": [
+      "From the same robot camera image, turning left and turning right produce different next images. Explicit action inputs let a model predict the consequences of a specific action."
+    ],
+    "sourceTitles": [
+      "Learning Latent Dynamics for Planning from Pixels"
+    ]
+  },
+  {
+    "id": "latent-dynamics",
+    "summary": "Latent dynamics predicts environmental changes in a compressed internal representation.",
+    "detail": [
+      "A model first encodes an image into a latent state, then predicts how that state evolves after an action. This can focus computation on information relevant to decisions and reduce the burden of pixel-by-pixel prediction."
+    ],
+    "sourceTitles": [
+      "Learning Latent Dynamics for Planning from Pixels"
+    ]
+  },
+  {
+    "id": "belief-state",
+    "summary": "A belief state is a probability distribution over environment states conditioned on the observation and action history in a partially observable setting.",
+    "detail": [
+      "A robot uncertain whether an object is in the left or right cabinet can assign probabilities and update them after observing. Under a correct POMDP model and exact updates, the belief summarizes the relevant history. An arbitrary neural hidden vector is not automatically this probability distribution."
+    ],
+    "sourceTitles": [
+      "Planning and acting in partially observable stochastic domains"
+    ]
+  },
+  {
+    "id": "observation-model",
+    "summary": "An observation model describes possible observations and their probabilities conditioned on the environment state and, where applicable, the action.",
+    "detail": [
+      "The same object position can yield different images under occlusion, sensor noise, or different sensing actions. A transition model predicts changes in the environment; an observation model describes how states appear to sensors. Inferring state from observations is state estimation."
+    ],
+    "sourceTitles": [
+      "Planning and acting in partially observable stochastic domains"
+    ]
+  },
+  {
+    "id": "imagination",
+    "summary": "Imagination rolls out future state and action sequences inside a learned environment model.",
+    "detail": [
+      "Before actually pushing a box, a robot can simulate the consequences of several pushes. Algorithms can also train policies and value functions using these predicted trajectories, reducing reliance on real interaction."
+    ],
+    "sourceTitles": [
+      "Dream to Control"
+    ]
+  },
+  {
+    "id": "world-planning",
+    "summary": "World-model planning predicts and compares the consequences of candidate actions to choose actions that better serve a goal.",
+    "detail": [
+      "A navigation system can predict what it would encounter after going straight or turning, then choose a route using future rewards. Planning may directly search action sequences or use policy and value networks to narrow the search."
+    ],
+    "sourceTitles": [
+      "Learning Latent Dynamics for Planning from Pixels"
+    ]
+  },
+  {
+    "id": "mcts",
+    "summary": "Monte Carlo tree search repeatedly selects, expands, evaluates, and backs up results to concentrate computation on more promising decision branches.",
+    "detail": [
+      "In a board game, nodes represent positions and edges represent moves; search backs up evaluations to allocate further computation. MCTS can use known rules or a simulator, or combine learned models, policies, and values. It is a search method and does not require training a world model."
+    ],
+    "sourceTitles": [
+      "Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model",
+      "Bandit based Monte-Carlo Planning"
+    ]
+  },
+  {
+    "id": "open-loop",
+    "summary": "Open-loop execution follows predetermined actions without adjusting them using new observations during execution.",
+    "detail": [
+      "A high-level action sequence that receives no new visual feedback is open-loop at that level, even if low-level motors use feedback control. “Open-loop prediction” instead means rolling a model forward without new real observations. Specify the control level and time interval being discussed."
+    ],
+    "sourceTitles": [
+      "Modern Robotics: Robot Control"
+    ]
+  },
+  {
+    "id": "closed-loop",
+    "summary": "Closed-loop execution continually obtains feedback during action and adjusts subsequent actions according to actual outcomes.",
+    "detail": [
+      "As a gripper approaches a cup, it repeatedly observes the location and corrects any deviation. Feedback returns real execution outcomes to the control system, helping handle disturbances and prediction errors."
+    ],
+    "sourceTitles": [
+      "Modern Robotics: Robot Control"
+    ]
+  },
+  {
+    "id": "compounding-error",
+    "summary": "Compounding error occurs when an earlier prediction or decision error feeds into later steps and may grow over time.",
+    "detail": [
+      "If a world model slightly mispredicts a box's position and then predicts from that position, its predictions further into the future may become less accurate. Shorter prediction horizons, real observations, or better models can help control this effect."
+    ],
+    "sourceTitles": [
+      "A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning",
+      "Learning Latent Dynamics for Planning from Pixels"
+    ]
+  }
+]

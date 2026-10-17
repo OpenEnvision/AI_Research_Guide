@@ -1,100 +1,72 @@
-# A letter to new university students
+# Starting your learning and research journey
 
-You have just moved into your dorm and sat through a slightly bewildering class. If someone asked what university means to you, what would you say?
+> **About this article.** This article draws on [Hikaru's reflections](https://github.com/Takamatsu-Hikaru/AI-Research-Guide) on university life and getting started in research. His ideas about exploration, peer support, and personal growth have been adapted for readers across countries, disciplines, and stages of study.
 
-Another year of high school, early study sessions, soldering circuits, calculus; research, competitions, internships; peer pressure and endless competition. Or clubs, live music, friends, and hobbies. As someone only a year ahead of you, I want to talk about university and some things you may already be experiencing.
+You may be starting university, moving into AI from another field, starting a graduate degree, or taking on your first research role. New courses, papers, and tools keep appearing. People around you seem to have a direction, while you are still wondering where to begin.
 
-## You are entering a wider world
+This guide is for university students and junior researchers worldwide. Start with a question that matters to you, build the foundations you need, try things, and find people to learn with. Your starting point and circumstances will shape both your path and your pace.
 
-For many students coming from the orderly routine of high school, this is the first time there is no clear route map. You do not always know what to do next. There are graduate admissions, studying abroad, research, competitions, internships, clubs, student organizations, and plenty of fun. Feeling lost or overwhelmed is normal. Be generous with yourself and allow yourself to feel different things.
+## Find a question worth exploring
 
-You will encounter many firsts. Your world will repeatedly expand, and you will repeatedly realize that you have only scratched its surface. Through trying things, your ability to act will grow too.
+When you first encounter AI, it is easy to make “learn everything” the goal. But there will always be another course, paper, or tool. A specific question can help you choose what to do next: why does a model make a certain mistake? How could a program perform a useful task? Does the evidence in a paper support its conclusions?
 
-Over these four years, I think few things matter more than getting to know yourself: what you want, your ideals and ambitions, your agency and motivation. Do things you want to do. Do not constantly stop yourself with “I'm not ready” or “I'm not good enough yet.” Take the first step and let preparation and growth happen alongside it.
+Exploring a question goes hand in hand with building your foundations. Programming, linear algebra, probability, and machine learning concepts recur across many tasks. Return to a topic when you find a gap, then apply what you learn to the problem in front of you. You can try a small project while you are still learning the basics.
 
-Have the courage to move first. Do what feels meaningful, seek good places and good work, find somewhere with a gradient, and train your own parameters.
+If you do not yet have a direction, start with one course, a small project you can explain, or a paper you want to understand carefully. The [learning path](learning-path.md) can help you choose a starting point that suits your background and the time you have.
 
 <a id="choices"></a>
 
-## Where these choices can lead
+## Understand what different choices offer
 
-When you first arrive, graduate admissions, studying abroad, research, competitions, and internships often come up together, as though you need to do them all. It helps to separate them: recommendation-based admission, entrance exams, and overseas applications are routes to further study; research careers, industry work, and starting a company are possible destinations; competitions, projects, research, and internships are experiences you can try along the way.
+Further study, research, internships, competitions, and entrepreneurship often appear together in conversations about the future. They serve different purposes. A degree offers a structured setting for learning and training. Research, industry, and entrepreneurship offer different ways to build a career. Projects, competitions, and internships let you try out the work and discover what you enjoy.
 
-If you want graduate admission, there is nothing wrong with working hard for the grades and opportunities you need. Also look one step further: **What do you hope to gain from graduate study? Deeper knowledge, a different environment, better job opportunities, or a chance to keep doing research?** Getting clearer about that can help you decide where to spend your time.
+If you are considering a master's or doctoral program, ask: **What training do I want, what questions interest me, and who would I like to work with?** Then explore the curriculum, supervision, funding, workload, and completion requirements. Routes and opportunities vary by country, institution, and program. Other people's choices can give you ideas without deciding your path for you.
 
-If you want to go deeper into a subject, explore its courses and research areas. If you want to know whether a kind of work suits you, look at what people actually do in those jobs, talk to them, and seek projects or internships. To experience research, you can begin with a small project and talk to older students and faculty. A competition gives you a defined task and teammates; research gives you experience formulating questions and testing your ideas.
+To explore a research area, you might read a survey, join a discussion, or try to reproduce a small result. To explore a career, look at the tasks people actually perform, talk to practitioners, and seek a suitable project or internship. Learning that an activity does not suit you is also a useful outcome.
 
-Even a wish as broad as “I want to go somewhere better” can become more specific: what attracts you there, and whom would you like to work with, on what? Get some experience, then adjust. For me, the excitement of making demos was one reason I kept exploring AI. I discuss why I moved toward research in [this answer](research.md#q3).
+Time, finances, work or caregiving responsibilities, and access to supervision all affect what is practical. A next step that fits your circumstances is more useful than copying someone else's pace.
 
-Still, knowing your options does not necessarily stop you from worrying when others seem far ahead. I have been there too.
+## Move from completing tasks to asking questions
 
-## I also wondered why everyone else had already started
+Course assignments usually provide a goal and a way to assess the answer. In research, you also need to explain why the question matters, what previous work has established, and what evidence would support or challenge your idea.
 
-Many younger students tell us they do not know how to plan and feel that no one is guiding them. Then they see peers and older students achieving things and feel they have nothing.
+A useful starting point can be small: compare a published method with a simple baseline under the same conditions, check whether a conclusion depends on a particular data split, or document when a method fails. Write down the question, hypothesis, experimental conditions, and observations before deciding whether to expand the work.
 
-There is no universal formula. There really is a high-school-like, achievement-driven story about age around us: “If you have not joined a lab in your first year, won a national scholarship, or secured an internship in your second, you are behind.” Those of us sharing experience should ask whether we help create that anxiety.
+Without a lab, substantial computing resources, or a regular supervisor, you can still begin with public papers, small experiments, and reading discussions. Choose a question that fits your resources and record its limitations honestly. Larger models and more experiments do not automatically produce clearer conclusions.
 
-It leaves you lost and blaming yourself for still being lost: why do I not have a lab or a paper? Can I get into the graduate school I want?
+The [research Q&A](research.md), [paper reading guide](reading.md), and [research methods](research-methods.md) explain how to develop these practices.
 
-I sometimes use the person I hope to become to punish the person I am now. But not knowing yet does not mean never knowing. Some things cannot be obtained by effort alone, and that does not make your whole life a failure.
+## You do not need someone else's timetable
 
-When I first arrived, I worried too: everyone was joining labs, and I had never learned C. How were people getting into good graduate schools?
+Public accounts often show a paper, award, or job before they show the attempts, support, and circumstances behind it. Advice about what everyone should achieve by a certain year rarely accounts for differences in degree programs, disciplines, and personal circumstances.
 
-In February, feeling brushed aside by someone and overwhelmed by the gap between me and more experienced students, I experienced anxiety with physical symptoms. In March, I was still telling a mentor how badly I wanted to be able to collaborate and know people as he did. Looking at myself, I seemed to know no one.
+In his original account, Hikaru described feeling behind when other students were joining labs and he had not yet learned C. His first paper deadline and a rejection brought further self-doubt. Guidance, collaborators, and repeated practice with writing and communication gradually helped him focus on the work ahead. His experience shows how someone can find their way through uncertainty; it is not a timetable for everyone else.
 
-May brought my first paper deadline: awkward writing and constant self-doubt. August brought my first rejection and regret about how I had handled May. I am grateful for the understanding, trust, and guidance of the students who helped me learn from those experiences.
+When you reflect on progress, ask specific questions. Can you explain a concept that used to confuse you? Run a small experiment independently? Revise a judgment in response to new evidence? Identify whom to ask for help? These changes may take time to become visible results, but they are worth recording.
 
-Gradually I met more people and earned some recognition. I became a little better at writing papers and making figures, found friends, and gained some steadiness. I began asking “Am I qualified?” less often, doing the work in front of me, and moving toward the person I wanted to become.
+A rejected paper, a missed opportunity, or a slower period of learning does not define your ability or your worth.
 
-Some things that once felt impossible to get past now make me smile. They really did shape me. I want to quote Saining Xie from an interview, in translation:
+## Find people you can learn with
 
-> Do not fixate on success or failure at every moment, or gains and losses at each point. Research is an integral: all those evaluations accumulate, and together they determine whether you are a good researcher.
+Support can come from classmates, student societies, interdisciplinary reading groups, research teams, or online open-source communities. You do not need an impressive background before you can take part in a discussion.
 
-This is about more than research. It is also a way of living.
+Good collaboration makes it easier to ask questions and respects different levels of experience and available time. Begin with a small, clear agreement: read a paper together, explain difficult passages to each other, or check an experimental result. Discuss how much time each person can contribute, how you will record the work, and how to communicate difficulties.
 
-I wrote a fuller account in [My Freshman-Year Review: The World Suddenly Opens Wide](timeline.md).
+When asking for guidance, describe what you are working on, what you have tried, and the kind of feedback you need. Before starting a research collaboration, discuss supervision, communication, and expectations about contributions and authorship. The [contact and collaboration guide](contact.md) includes practical examples.
 
-## You also have a life to live
+## Leave room for life beyond research
 
-People are free. Loving yourself matters. No reason should take away your ability to notice beauty, experience life, or follow a choice without calculating its usefulness.
+You can take research seriously and still make time for things you enjoy, without having to justify them as productive. Rest, exercise, music, friendship, or a walk on your own have value in themselves.
 
-You can stay up to finish a paper, spend a day doing practice questions, debug a circuit or program all afternoon, and polish a presentation seven or eight times. You can also take a taxi straight to a concert or a drinks event, visit a café full of plants, choose a dessert, and imagine the little shop you might open or the place you might live.
+Courses, employment, and family responsibilities sometimes compete for the same hours. Adjust the scope and pace of a project when you need to, and consider discussing difficulties with someone you trust. For a routine to be sustainable, it has to fit your life.
 
-Or watch the sunset by East Lake without a destination, enjoying time with people you treasure.
+As you develop your own judgment, we hope you stay curious, stay connected to people who support you, and keep things to look forward to beyond research. [Life alongside research](life.md) continues this conversation.
 
-A competition may go badly, or research may stall. I hope ordinary beauty can still make you happy and fulfilled. It is an important part of life in its own right.
+## Find a starting point that fits your experience
 
-## Gradually develop your own judgment
+- To decide what to learn first, explore the [learning path](learning-path.md).
+- To understand AI by building something, choose a [first project](start.md).
+- To begin reading and research, start with the [research Q&A](research.md).
+- To learn about other people's choices and difficulties, read [experiences and reflections](experience.md).
 
-Experiments, formulas, people you ask for help, papers, architectures you finally understand, people you meet, and places you visit all change your picture of the world. You also learn more about yourself.
-
-I do not care much which ideology people file these choices under. If there is something you want to try, try it. People making different choices can still get along. We can discuss a specific mistake or flawed idea; a label cannot replace that conversation.
-
-So keep asking, learning deeply, and staying curious. Go to good places and do good work. You already have worth; gradually build a steady center of your own.
-
-Through rising and falling tides, recognize both the breadth of the world and your small place in it, and keep moving. If a few months from now you can smile about things that used to hurt and see the distance you have traveled, you are becoming a better version of yourself.
-
-Our AI Club hopes to be a place to grow and a source of support. Whether or not our paths remain together, meeting you and watching you grow into someone who can take things on independently is what makes this worthwhile.
-
-## A few words about the AI Club
-
-The experiences above are my own, but this guide also comes from a group of people willing to help one another. Having talked about support, I would like to introduce that community.
-
-The UESTC AI Club is the largest deep learning student club in southwestern China, with over 2,500 members. Members have published more than 50 student-first-authored papers at leading conferences and journals, and serve as conference reviewers. The club has organized competitions with Baidu and talks with Google and ByteDance, and has also helped student startups develop.
-
-We bring together people who are curious about AI. From computer vision and natural language processing to language models, agents, world models, and embodied AI, members explore the questions that interest them.
-
-We started the club to help students choose future directions and explore AI more deeply. We hope to build a strong peer-support and open-source community at UESTC, with room for people to develop freely. There are no barriers based on discipline or year of study; we hope everyone can find people they enjoy working with.
-
-In the club, you can:
-
-1. Meet other AI enthusiasts, ask questions, and learn together.
-2. Begin learning deep learning, with practical guidance for competitions, development, and research.
-3. Learn about frontier research, industry, and internships. The group shares lab openings and job referrals.
-4. Talk with older students about your plans. Club presidents and core members have research experience and are happy to help you get started and grow.
-
-We hope everyone who joins finds good places to do the work they most want to do. Welcome—we look forward to exploring, creating, and growing with you.
-
-## Where to go next
-
-Curious about research? Read [How to get started in research](research.md). Want to do something first? Try a [small project](start.md). For other people's experiences, visit [experience and lessons](experience.md). For the rest of life, [continue here](life.md).
+Start with the page that addresses your current question, and return when a new one emerges.

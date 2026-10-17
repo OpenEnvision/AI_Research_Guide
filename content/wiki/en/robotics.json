@@ -1,0 +1,273 @@
+[
+  {
+    "id": "embodied-ai",
+    "summary": "Embodied AI studies how systems with physical or simulated bodies interact with their environment through perception and action.",
+    "detail": [
+      "Picking up a cup links perception, movement, contact, and feedback; both the body and environment constrain behavior. Research can also use simulated bodies. Merely invoking software tools does not establish embodiment in this sense."
+    ],
+    "sourceTitles": [
+      "Habitat: A Platform for Embodied AI Research"
+    ]
+  },
+  {
+    "id": "humanoid",
+    "summary": "A humanoid robot has a humanlike structure, usually including a torso, two legs, and two arms.",
+    "detail": [
+      "Legs support movement in spaces designed for people, such as stairs, while arms can perform manipulation. Coordinating whole-body motion requires accounting for balance, joint limits, contact, and intended actions together."
+    ],
+    "sourceTitles": [
+      "Real-World Humanoid Locomotion with Reinforcement Learning"
+    ]
+  },
+  {
+    "id": "manipulation",
+    "summary": "Robotic manipulation changes the position, pose, or state of an external object by applying force through contact.",
+    "detail": [
+      "Picking up a cup, opening a drawer, and tightening a bottle cap are manipulation tasks. Models must connect visual localization with contact control and handle changes caused by sliding, friction, and object shape."
+    ],
+    "sourceTitles": [
+      "Modern Robotics: Grasping and Manipulation"
+    ]
+  },
+  {
+    "id": "locomotion",
+    "summary": "Locomotion studies how robots move their bodies through walking, rolling, or other mechanisms while maintaining controlled motion.",
+    "detail": [
+      "A quadruped coordinates footholds and support timing, while a wheeled robot controls its wheels. Locomotion concerns how the body moves; navigation additionally determines location, goals, and feasible routes."
+    ],
+    "sourceTitles": [
+      "Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning",
+      "Nav2: Navigation Concepts"
+    ]
+  },
+  {
+    "id": "robot-navigation",
+    "summary": "Robot navigation guides a robot to a goal through localization, route selection, and motion control.",
+    "detail": [
+      "A mobile robot can estimate its position on a map, plan around obstacles, and control its motion while reacting to new obstacles. Navigation may use a prior map or online sensing. It involves more than generating a path or maintaining a walking gait alone."
+    ],
+    "sourceTitles": [
+      "Nav2: Navigation Concepts"
+    ]
+  },
+  {
+    "id": "end-effector",
+    "summary": "An end effector is a device mounted at the end of a robot arm that directly performs a task.",
+    "detail": [
+      "Grippers, suction cups, and welding torches can all be end effectors. Grasp planning often first sets the end effector's target position and orientation, then calculates how the arm's joints should move together."
+    ],
+    "sourceTitles": [
+      "Modern Robotics: Forward Kinematics"
+    ]
+  },
+  {
+    "id": "gripper",
+    "summary": "A gripper is a common robot end effector that contacts and holds objects using fingers or a clamping structure.",
+    "detail": [
+      "A parallel gripper holds a cup from two sides; a dexterous hand can form more complex contacts with several fingers. Stability depends on contact locations, gripping force, and friction."
+    ],
+    "sourceTitles": [
+      "Modern Robotics: Grasping and Manipulation"
+    ]
+  },
+  {
+    "id": "degrees-of-freedom",
+    "summary": "The number of degrees of freedom is the number of independent parameters needed to describe a system's configuration.",
+    "detail": [
+      "A single revolute joint usually provides one independent angle. A free rigid body in three dimensions has three translational and three rotational degrees of freedom. Mechanical constraints reduce the number of independent motion dimensions."
+    ],
+    "sourceTitles": [
+      "Modern Robotics: Configuration Space"
+    ]
+  },
+  {
+    "id": "joint-space",
+    "summary": "Joint space describes a robot's configuration using its joint variables.",
+    "detail": [
+      "A configuration of a six-joint arm can be written as six angles. A joint-space trajectory specifies how those angles change over time, which the controller uses to drive the motors."
+    ],
+    "sourceTitles": [
+      "Modern Robotics: Configuration Space"
+    ]
+  },
+  {
+    "id": "task-space",
+    "summary": "Task space describes a robot's goals or motion using variables suited to the task.",
+    "detail": [
+      "When placing a cup on a table, the target is often expressed as the gripper's three-dimensional position and orientation. Inverse kinematics or related methods can then convert the target into joint actions."
+    ],
+    "sourceTitles": [
+      "Modern Robotics: Configuration Space"
+    ]
+  },
+  {
+    "id": "robot-kinematics",
+    "summary": "Robot kinematics studies geometric relationships between joint configurations and the positions, orientations, and velocities of robot parts.",
+    "detail": [
+      "Forward kinematics maps joint variables to end-effector pose; inverse kinematics seeks joint configurations for a target pose. Both are kinematics problems. Kinematics describes geometric motion relationships, while dynamics analyzes the forces and torques that produce motion."
+    ],
+    "sourceTitles": [
+      "Modern Robotics: Forward Kinematics"
+    ]
+  },
+  {
+    "id": "robot-dynamics",
+    "summary": "Robot dynamics studies how forces, torques, mass, and inertia affect a robot's motion.",
+    "detail": [
+      "Lifting an empty arm and lifting the same arm with a heavy object require different motor torques. Dynamics models describe these relationships to support gravity compensation, acceleration prediction, and contact handling."
+    ],
+    "sourceTitles": [
+      "Modern Robotics: Dynamics"
+    ]
+  },
+  {
+    "id": "inverse-kinematics",
+    "summary": "Inverse kinematics finds joint configurations that achieve a target end-effector position and orientation.",
+    "detail": [
+      "For a gripper positioned above a cup, a solver computes the required shoulder, elbow, and wrist rotations. A target may have multiple joint solutions or lie beyond the robot's reach."
+    ],
+    "sourceTitles": [
+      "Modern Robotics: Inverse Kinematics"
+    ]
+  },
+  {
+    "id": "forward-kinematics",
+    "summary": "Forward kinematics computes the pose of an end effector or another link relative to a reference frame from robot geometry and joint variables.",
+    "detail": [
+      "Joint angles and link dimensions determine the gripper’s position and orientation. This is a specific kinematics problem, not the entire field, and it does not directly calculate the torques needed to execute a motion."
+    ],
+    "sourceTitles": [
+      "Modern Robotics: Forward Kinematics"
+    ]
+  },
+  {
+    "id": "pid",
+    "summary": "PID combines the current error, accumulated error, and rate of change of error to produce a control input.",
+    "detail": [
+      "When moving a joint to a target angle, the proportional term corrects its deviation, the integral term compensates for persistent residual error, and the derivative term responds to error changes. The three gains jointly affect response speed, oscillation, and steady-state behavior."
+    ],
+    "sourceTitles": [
+      "Modern Robotics: Robot Control"
+    ]
+  },
+  {
+    "id": "mpc",
+    "summary": "Model predictive control optimizes a future action sequence using a model, executes part of it, and replans from new observations.",
+    "detail": [
+      "A robot predicts how to avoid obstacles over the next several steps, executes only the first step, then observes its actual position and recalculates. Repeated optimization lets feedback correct the original plan."
+    ],
+    "sourceTitles": [
+      "Spinning Up: A Taxonomy of Reinforcement Learning Algorithms"
+    ]
+  },
+  {
+    "id": "motion-planning",
+    "summary": "Motion planning finds a path or trajectory from a robot's starting configuration to a goal while satisfying specified constraints.",
+    "detail": [
+      "To move a cup around a barrier onto a tray, a planner considers obstacles, joint limits, and motion feasibility. A controller then tracks and executes the resulting plan."
+    ],
+    "sourceTitles": [
+      "Modern Robotics: Motion Planning"
+    ]
+  },
+  {
+    "id": "teleoperation",
+    "summary": "Teleoperation lets a person control a robot remotely through a controller, master arm, or another interface.",
+    "detail": [
+      "An operator moves a master arm while a remote arm follows, and the system records camera images and joint commands. This setup enables remote operation and the collection of demonstrations for robot learning."
+    ],
+    "sourceTitles": [
+      "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware"
+    ]
+  },
+  {
+    "id": "demonstration",
+    "summary": "A demonstration records observations, actions, and relevant outcomes while an expert performs a task.",
+    "detail": [
+      "When a person teleoperates a robot to fold a towel, the system saves what it sees and the actions issued at each step. Demonstrations provide behavior to imitate and may also include failures and human corrections."
+    ],
+    "sourceTitles": [
+      "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware"
+    ]
+  },
+  {
+    "id": "behavior-cloning",
+    "summary": "Behavior cloning uses supervised learning to fit the observation-to-action mapping in demonstrations.",
+    "detail": [
+      "A training example can pair a pre-grasp image with the demonstrator’s action. Execution errors may take the policy into states poorly covered by demonstrations, causing errors to compound. Behavior cloning is an imitation-learning method: it fits demonstrated actions rather than optimizing cumulative reward as reinforcement learning does."
+    ],
+    "sourceTitles": [
+      "A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning"
+    ]
+  },
+  {
+    "id": "imitation-learning",
+    "summary": "Imitation learning uses expert demonstrations or feedback to learn how to act.",
+    "detail": [
+      "Behavior cloning directly imitates actions in a dataset. Other methods run the current policy and ask an expert for guidance on the states it encounters, adding coverage of situations that demonstrations rarely include."
+    ],
+    "sourceTitles": [
+      "A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning"
+    ]
+  },
+  {
+    "id": "vla",
+    "summary": "A vision-language-action model combines visual observations and language instructions to produce executable robot actions.",
+    "detail": [
+      "Given a tabletop image and “put the apple in the bowl,” the model connects vision and language to action prediction. Outputs may be joint commands, pose changes, or action tokens, usually executed through a control system. VLA describes inputs, outputs, and capabilities; it does not require imitation learning as the only training method or guarantee safe execution of every output."
+    ],
+    "sourceTitles": [
+      "RT-2: Vision-Language-Action Models"
+    ]
+  },
+  {
+    "id": "action-chunking",
+    "summary": "Action chunking predicts a sequence of actions spanning several consecutive timesteps at once.",
+    "detail": [
+      "For picking up a cup, a model may predict a short sequence covering approach, gripper closure, and the start of lifting. The system can execute part of it, observe again, and predict another chunk to combine continuity with feedback."
+    ],
+    "sourceTitles": [
+      "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware"
+    ]
+  },
+  {
+    "id": "sim-to-real",
+    "summary": "Sim-to-real transfer applies capabilities learned in simulation to real robot hardware.",
+    "detail": [
+      "Practicing walking in a simulator can rapidly collect experience. Real-world friction, motor response, and sensor error differ from simulation, so transfer methods help the policy adapt to these changes."
+    ],
+    "sourceTitles": [
+      "Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World"
+    ]
+  },
+  {
+    "id": "domain-randomization",
+    "summary": "Domain randomization varies environment or system parameters during training so a policy can adapt to a range of conditions.",
+    "detail": [
+      "A grasping simulation can randomize lighting, textures, object mass, and friction. The model encounters more conditions, increasing the chance that the real environment falls within the range covered during training."
+    ],
+    "sourceTitles": [
+      "Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World"
+    ]
+  },
+  {
+    "id": "tactile-sensing",
+    "summary": "Tactile sensing uses contact sensors to obtain information such as surface shape, pressure, or slip.",
+    "detail": [
+      "After grasping an object, vision may not clearly reveal the finger contact area. Tactile signals can help determine whether the grasp is secure or the object is slipping and support grip adjustments."
+    ],
+    "sourceTitles": [
+      "DIGIT: A Novel Design for a Low-Cost Compact High-Resolution Tactile Sensor"
+    ]
+  },
+  {
+    "id": "proprioception",
+    "summary": "Proprioception provides information about a robot's own body state, including joints, pose, and velocity.",
+    "detail": [
+      "Joint encoders report joint angles, while inertial sensors help estimate body orientation and rotation. A walking policy uses these signals to detect body tilt and quickly adjust how the robot supports its body."
+    ],
+    "sourceTitles": [
+      "Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning"
+    ]
+  }
+]

@@ -460,7 +460,8 @@
     "credit": "Google DeepMind · AlphaGeometry 官方方法示意图",
     "paper": "https://www.nature.com/articles/s41586-023-06747-5",
     "width": 1440,
-    "height": 455
+    "height": 455,
+    "creditEn": "Google DeepMind · official AlphaGeometry methodology diagram"
   },
   "fno": {
     "file": "ai4x-fno.png",

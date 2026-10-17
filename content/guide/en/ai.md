@@ -1,10 +1,24 @@
-# AI tools
+# AI-assisted learning and research
 
-An unfamiliar equation, an error in reproduction code, or an idea you want to discuss can all be reasons to ask AI for help. Coding assistants can also read a project, edit code, and run programs. With your research material, they can help organize notes, analyze results, and make figures.
+AI can help explain a concept, navigate code, compare notes, or revise a draft. Its most useful role depends on the task and on what you can verify. Start with a small, specific request, keep the original material, and decide what a satisfactory answer would look like.
 
-## Coding and experiments
+## Match the task to a check
 
-TRAE, WorkBuddy, Claude Code, ZCode, and Codex can help with project development. When reproducing a paper, you can provide the paper and code and ask for help [understanding the implementation](reading.md#paper-code), setting up the environment, editing scripts, or diagnosing errors. A change you want to try can then be implemented in the existing project.
+| Task | Useful assistance | What you still need to check |
+| --- | --- | --- |
+| Learn a concept | Alternative explanations, questions, small examples | Definitions, assumptions, and whether you can explain the concept without the generated answer |
+| Read literature | Search terms, comparisons, source locations | Whether each work exists and the cited passage supports the statement |
+| Understand or edit code | File navigation, proposed changes, error diagnosis | The actual diff, inputs/outputs, tests, and evaluation logic |
+| Analyze results | Organize tables, plots, and possible explanations | Raw data, denominators, calculations, and competing explanations |
+| Write or present | Structure, wording, diagrams, audience adaptation | Meaning, numbers, citations, and the connection between claims and evidence |
+
+A useful request specifies the material, goal, scope, output format, and how you will check the result. For example: “Using these three notes, compare the data and evaluation conditions. Cite a source location for each item, and mark missing information as unknown.” Agreement or a fluent answer is not independent evidence.
+
+## Understand code changes before accepting them
+
+Ask the assistant to trace one example through the implementation before proposing a broad rewrite. Review what changed and why, including preprocessing, labels, metrics, and dependencies. An explanation of a run is different from evidence that it ran: retain the actual command, environment, output, and failures when execution matters.
+
+The tools below are examples of coding assistants, not a required stack or a ranking. Access, cost, supported languages, permissions, and data handling differ. You do not need a paid subscription to work through this guide.
 
 <div class="logo-strip">
 <a class="logo-entry" href="https://www.trae.cn/"><img src="../../../public/blog/guide/figures/uestc/intro/trae-logo.png" alt=""><span>TRAE</span></a>
@@ -14,38 +28,38 @@ TRAE, WorkBuddy, Claude Code, ZCode, and Codex can help with project development
 <a class="logo-entry" href="https://openai.com/codex/"><img src="../../../public/blog/guide/figures/uestc/intro/openai-logo.png" alt=""><span>Codex</span></a>
 </div>
 
-Once experiments are running, AI can help organize logs, compare results across configurations, and plot curves. Include the data locations, environment, and available compute when describing the task.
+Use a small reproducible case when diagnosing an error; return to [research engineering](engineering.md) for correctness checks. Give an assistant only the file and execution access needed for the task, and inspect consequential actions before allowing them.
 
-## Research material and analysis
+## Keep literature work connected to the sources
 
-A discussion of a paper can draw on its text, equations, method diagrams, and code. With a collection of material, you can provide your research question and notes and ask AI to compare approaches, organize relevant experiments, and identify questions that remain unclear. The [paper note workflow](irene-workflow.md#notes) covers Zotero, Obsidian, and local AI tools.
+Ask for passages, equation definitions, figure locations, or code references, then inspect them. A correct title does not guarantee a correct summary, and a generated reference may not exist. Separate what the author states from the assistant's interpretation and your own judgment.
 
-**Markdown works well for keeping an analysis in one document.** Text, equations, code, tables, and images can sit together and remain easy to edit. An experiment analysis might include comparison conditions, plots, unusual examples, and your current explanation, with the relevant parts updated as new results arrive. [Markdown's basic syntax](https://www.markdownguide.org/basic-syntax/) covers these formats.
+Use the [reading note](reading.md#paper-notes) and [optional note workflow](irene-workflow.md#notes) to preserve those distinctions. [Markdown](https://www.markdownguide.org/basic-syntax/) is one simple format for notes, tables, figures, and open questions. A reference manager and ordinary text files are enough to start.
 
-## Figures and presentations
+## Generate figures from evidence
 
-AI can help turn existing analyses and material into figures, webpages, or slides. Plots can come from CSV files and experiment logs; model architectures can become diagrams. Interactive pages or animations can show how something changes over time.
+Quantitative plots should come from saved data with inspectable calculations. AI can draft plotting code, labels, or layouts, but it should not invent missing observations, uncertainty bars, or a plausible-looking result. Mark conceptual diagrams as schematics and check every arrow, label, and equation.
 
-For a group meeting or talk, you can provide the audience, available time, and research material to develop speaker notes and slides, then refine the order, colors, and layout. Related resources are in [writing, figures, and talks](writing.md).
+For a talk, state the audience, available time, central question, and source material. Check whether a listener can explain the claim and find its evidence after the revision. See [writing and figures](writing.md).
 
 <a id="grill-me"></a>
 
-## Discussing methods and ideas
+## Use questions to test understanding
 
-AI can also be useful when you have an early idea or several possible explanations for a result. Relevant papers, previous attempts, and current questions give the discussion something concrete to work with: connections between methods, factors you may have missed, and other approaches worth trying.
+Explain a method or equation yourself first. Then ask one question at a time about inputs, assumptions, the role of a component, and evidence. Answer before looking at a generated explanation; return to the paper when the discussion exposes a gap.
 
-**Grill Me** uses follow-up questions to explore your understanding. Tools are available in [paper-tools-marketplace](https://github.com/tseirene6/paper-tools-marketplace), with an example in [paper reading and discussion](irene-workflow.md#grill). Prompts, procedures, and output formats you use often can be saved as a skill.
+**Grill Me** in [paper-tools-marketplace](https://github.com/tseirene6/paper-tools-marketplace) is one optional implementation; the [reading workflow](irene-workflow.md#grill) explains the approach. You can also use this approach with a peer, without any special software.
 
 <a id="ai-feedback"></a>
 
-## Keeping your own judgment
+## Keep judgment and uncertainty visible
 
-In a research discussion, AI may follow your idea and supply a motivation, method, and plausible explanation. A smooth conversation can make gaps in the reasoning less noticeable, or make its agreement feel like confirmation that you are right. You still need to consider whether its reasoning holds and fits the papers you have read and experiments you have done. Disagreements can also be discussed with teachers and other students.
+Ask for alternatives and observations that would weaken your preferred explanation. A model can reinforce a premise supplied in the question, and several generated answers may share the same error. Verify a disputed claim with a derivation, source, calculation, or appropriate experiment; discuss unresolved points with people who can assess them.
 
-**Your own learning, experience, and judgment matter.** Reading papers, understanding code, and doing experiments shape the questions you can ask and how you assess a suggestion. When a gap in your knowledge gets in the way of understanding the work, it is worth spending time on it. That is part of developing your own view of a problem and its possible solutions.
+Keep proposed work separate from completed work. For research-relevant assistance, record the source material, important changes, and human checks. Before sharing restricted or unpublished material, check how you are allowed to use and share it; local file access does not imply that processing stays local. Venue-specific disclosure is covered in [writing](writing.md#ai-disclosure).
 
-[Two observations about AI](lesswrong.md#ai) discuss belief reinforcement in AI interactions and how students use and understand AI.
+**Learning check:** can you now explain the important step, identify where the evidence comes from, and detect an incorrect alternative? If not, narrow the task and study the concept you are missing. Finishing an assisted task and understanding it are separate outcomes.
 
 ## Further reading
 
-[Lilian Weng's agent article](https://lilianweng.github.io/posts/2023-06-23-agent/) covers planning, memory, and tool use; [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) discusses how workflows and agents are organized.
+[Two AI-use reflections](lesswrong.md#ai) discuss belief reinforcement and student learning. For the systems behind assistants, see [Lilian Weng on agents](https://lilianweng.github.io/posts/2023-06-23-agent/) and [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents). These describe particular designs, not guarantees about every product.

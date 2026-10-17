@@ -1,5 +1,35 @@
 [
   {
+    "id": "git",
+    "term": "Git",
+    "zh": "分布式版本控制系统",
+    "aliases": [
+      "Git version control"
+    ],
+    "category": "development",
+    "group": "代码与版本",
+    "kind": "term",
+    "summary": "在本地记录文件版本、组织分支并与其他仓库交换历史的版本控制系统。",
+    "detail": [
+      "Git 可以离线创建提交、查看历史和管理分支。GitHub 是托管 Git 仓库并提供协作功能的平台，使用 Git 本身不要求使用 GitHub。"
+    ],
+    "related": [
+      "github",
+      "repository",
+      "commit",
+      "branch"
+    ],
+    "sources": [
+      {
+        "title": "Pro Git：Git 是什么",
+        "url": "https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F"
+      }
+    ],
+    "categories": [
+      "development"
+    ]
+  },
+  {
     "id": "repository",
     "term": "Repository",
     "zh": "代码仓库",
@@ -29,53 +59,30 @@
     ]
   },
   {
-    "id": "fork",
-    "term": "Fork",
-    "zh": "派生仓库",
-    "aliases": [],
+    "id": "staging-area",
+    "term": "Staging area",
+    "zh": "暂存区",
+    "aliases": [
+      "Git index",
+      "暂存",
+      "索引区"
+    ],
     "category": "development",
     "group": "代码与版本",
     "kind": "term",
-    "summary": "Fork 在代码托管平台上从现有仓库派生出一个关联的仓库。",
+    "summary": "Git 中用于准备下一次提交内容的区域。",
     "detail": [
-      "你可以在自己的派生仓库中修改代码，再向原仓库提出 Pull Request；后续也可以把原仓库的新改动同步过来。"
+      "修改工作区文件后，可以把选定改动放入暂存区，再创建提交。文件后来发生的新修改不会自动进入此前已暂存的快照；暂存、提交和推送是不同步骤。"
     ],
     "related": [
-      "repository",
-      "clone",
-      "pull-request"
+      "git",
+      "commit",
+      "git-push"
     ],
     "sources": [
       {
-        "title": "GitHub：About forks",
-        "url": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks"
-      }
-    ],
-    "categories": [
-      "development"
-    ]
-  },
-  {
-    "id": "clone",
-    "term": "Clone",
-    "zh": "克隆仓库",
-    "aliases": [],
-    "category": "development",
-    "group": "代码与版本",
-    "kind": "term",
-    "summary": "克隆把远程或本地 Git 仓库复制成一份可工作的仓库。",
-    "detail": [
-      "正常克隆会带上提交历史和远程地址，之后可以在本地浏览、修改并提交文件；也可通过浅克隆只获取部分历史。"
-    ],
-    "related": [
-      "repository",
-      "fork",
-      "commit"
-    ],
-    "sources": [
-      {
-        "title": "Git：git-clone",
-        "url": "https://git-scm.com/docs/git-clone"
+        "title": "Pro Git：工作区、暂存区与仓库",
+        "url": "https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F"
       }
     ],
     "categories": [
@@ -92,10 +99,11 @@
     "kind": "term",
     "summary": "提交记录 Git 仓库中一次确定的文件状态及其相关信息。",
     "detail": [
-      "一条提交有标识、作者、时间、说明和父提交；提交到本地仓库后，还需要另行推送，远程协作者才能获取它。"
+      "提交通常把暂存区准备的文件快照记入本地历史，并记录作者、说明及父提交等信息。编辑文件、暂存、提交与推送是不同步骤；本地提交本身不会把代码上传到远程。"
     ],
     "related": [
-      "repository",
+      "staging-area",
+      "git-push",
       "branch",
       "merge"
     ],
@@ -137,6 +145,211 @@
     ]
   },
   {
+    "id": "merge",
+    "term": "Merge",
+    "zh": "合并",
+    "aliases": [],
+    "category": "development",
+    "group": "代码与版本",
+    "kind": "term",
+    "summary": "合并把另一条提交历史中的改动整合到当前分支。",
+    "detail": [
+      "两个分支修改了同一位置时，Git 可能需要人工解决冲突；合并完成后应检查组合后的代码是否按预期运行。"
+    ],
+    "related": [
+      "branch",
+      "commit",
+      "pull-request"
+    ],
+    "sources": [
+      {
+        "title": "Git：git-merge",
+        "url": "https://git-scm.com/docs/git-merge"
+      }
+    ],
+    "categories": [
+      "development"
+    ]
+  },
+  {
+    "id": "git-tag",
+    "term": "Git tag",
+    "zh": "Git 标签",
+    "aliases": [
+      "Tag",
+      "版本标签"
+    ],
+    "category": "development",
+    "group": "代码与版本",
+    "kind": "term",
+    "summary": "为仓库中的特定对象命名的引用，常用来标记某个提交对应的版本。",
+    "detail": [
+      "标签通常固定标记一个版本，分支则随新提交向前移动。GitHub Release 可关联标签并附带版本说明或文件；标签本身不等于完整的软件发布。"
+    ],
+    "related": [
+      "commit",
+      "branch",
+      "release",
+      "git-push"
+    ],
+    "sources": [
+      {
+        "title": "Git：git-tag",
+        "url": "https://git-scm.com/docs/git-tag"
+      }
+    ],
+    "categories": [
+      "development"
+    ]
+  },
+  {
+    "id": "clone",
+    "term": "Clone",
+    "zh": "克隆仓库",
+    "aliases": [],
+    "category": "development",
+    "group": "远程同步",
+    "kind": "term",
+    "summary": "克隆把远程或本地 Git 仓库复制成一份可工作的仓库。",
+    "detail": [
+      "正常克隆会带上提交历史和远程地址，之后可以在本地浏览、修改并提交文件；也可通过浅克隆只获取部分历史。"
+    ],
+    "related": [
+      "repository",
+      "fork",
+      "git-fetch",
+      "commit"
+    ],
+    "sources": [
+      {
+        "title": "Git：git-clone",
+        "url": "https://git-scm.com/docs/git-clone"
+      }
+    ],
+    "categories": [
+      "development"
+    ]
+  },
+  {
+    "id": "git-fetch",
+    "term": "Git fetch",
+    "zh": "获取远程历史",
+    "aliases": [
+      "Fetch",
+      "git-fetch"
+    ],
+    "category": "development",
+    "group": "远程同步",
+    "kind": "term",
+    "summary": "从其他仓库下载提交等对象，并更新相应的远程跟踪引用。",
+    "detail": [
+      "常规 fetch 会更新本地对远程提交的记录，不会自动把它们合并进当前工作分支。需要整合时，再选择 merge、rebase 或 pull 等流程。"
+    ],
+    "related": [
+      "git-pull",
+      "git-push",
+      "clone",
+      "merge"
+    ],
+    "sources": [
+      {
+        "title": "Git：git-fetch",
+        "url": "https://git-scm.com/docs/git-fetch"
+      }
+    ],
+    "categories": [
+      "development"
+    ]
+  },
+  {
+    "id": "git-pull",
+    "term": "Git pull",
+    "zh": "获取并整合远程改动",
+    "aliases": [
+      "Pull",
+      "git-pull"
+    ],
+    "category": "development",
+    "group": "远程同步",
+    "kind": "term",
+    "summary": "先获取远程历史，再按配置和选项将其整合进当前分支。",
+    "detail": [
+      "整合可以采用快进、合并或变基等方式，可能产生需要处理的冲突。Git pull 是命令；Pull Request 是托管平台上的审查与合并提议，两者用途不同。"
+    ],
+    "related": [
+      "git-fetch",
+      "merge",
+      "pull-request"
+    ],
+    "sources": [
+      {
+        "title": "Git：git-pull",
+        "url": "https://git-scm.com/docs/git-pull"
+      }
+    ],
+    "categories": [
+      "development"
+    ]
+  },
+  {
+    "id": "git-push",
+    "term": "Git push",
+    "zh": "推送本地历史",
+    "aliases": [
+      "Push",
+      "git-push"
+    ],
+    "category": "development",
+    "group": "远程同步",
+    "kind": "term",
+    "summary": "把所需提交等对象发送到远程仓库，并请求更新对应分支或标签。",
+    "detail": [
+      "本地 commit 不会自动执行 push。推送受远程权限、分支规则和历史关系约束；普通推送若会覆盖不兼容的远程历史，通常会被拒绝。"
+    ],
+    "related": [
+      "commit",
+      "git-fetch",
+      "git-tag",
+      "pull-request"
+    ],
+    "sources": [
+      {
+        "title": "Git：git-push",
+        "url": "https://git-scm.com/docs/git-push"
+      }
+    ],
+    "categories": [
+      "development"
+    ]
+  },
+  {
+    "id": "fork",
+    "term": "Fork",
+    "zh": "派生仓库",
+    "aliases": [],
+    "category": "development",
+    "group": "协作与发布",
+    "kind": "term",
+    "summary": "Fork 在代码托管平台上从现有仓库派生出一个关联的仓库。",
+    "detail": [
+      "你可以在自己的派生仓库中修改代码，再向原仓库提出 Pull Request；后续也可以把原仓库的新改动同步过来。"
+    ],
+    "related": [
+      "repository",
+      "clone",
+      "pull-request"
+    ],
+    "sources": [
+      {
+        "title": "GitHub：About forks",
+        "url": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks"
+      }
+    ],
+    "categories": [
+      "development"
+    ]
+  },
+  {
     "id": "pull-request",
     "term": "Pull Request",
     "zh": "拉取请求",
@@ -159,33 +372,6 @@
       {
         "title": "GitHub：About pull requests",
         "url": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests"
-      }
-    ],
-    "categories": [
-      "development"
-    ]
-  },
-  {
-    "id": "merge",
-    "term": "Merge",
-    "zh": "合并",
-    "aliases": [],
-    "category": "development",
-    "group": "代码与版本",
-    "kind": "term",
-    "summary": "合并把另一条提交历史中的改动整合到当前分支。",
-    "detail": [
-      "两个分支修改了同一位置时，Git 可能需要人工解决冲突；合并完成后应检查组合后的代码是否按预期运行。"
-    ],
-    "related": [
-      "branch",
-      "commit",
-      "pull-request"
-    ],
-    "sources": [
-      {
-        "title": "Git：git-merge",
-        "url": "https://git-scm.com/docs/git-merge"
       }
     ],
     "categories": [
@@ -234,6 +420,7 @@
       "发布页可以提供版本说明、安装包和升级信息；固定发布版本有助于记录实验使用了哪一版工具。"
     ],
     "related": [
+      "git-tag",
       "repository",
       "dependency",
       "reproducibility"
@@ -242,6 +429,34 @@
       {
         "title": "GitHub：About releases",
         "url": "https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases"
+      }
+    ],
+    "categories": [
+      "development"
+    ]
+  },
+  {
+    "id": "github",
+    "term": "GitHub",
+    "zh": "Git 仓库托管与协作平台",
+    "aliases": [],
+    "category": "development",
+    "group": "协作与发布",
+    "kind": "term",
+    "summary": "基于 Git 仓库提供代码托管、审查、问题跟踪与自动化等功能的平台。",
+    "detail": [
+      "Git 是版本控制工具，GitHub 是基于 Git 仓库及其历史提供协作功能的服务。Pull Request、Issue 和 Release 属于平台工作流，不能与本地提交或 Git 命令直接等同。"
+    ],
+    "related": [
+      "git",
+      "repository",
+      "pull-request",
+      "issue"
+    ],
+    "sources": [
+      {
+        "title": "GitHub：GitHub 是什么",
+        "url": "https://docs.github.com/en/get-started/start-your-journey/what-is-github"
       }
     ],
     "categories": [
@@ -258,7 +473,7 @@
     "kind": "term",
     "summary": "依赖是一个程序正常构建或运行时需要的其他软件包或组件。",
     "detail": [
-      "训练代码可能依赖 PyTorch、数据处理库和图像库；依赖文件和锁定版本帮助不同机器安装一致的组合。"
+      "训练代码可能依赖 PyTorch、数据处理库和图像库；记录依赖并锁定版本，有助于在不同机器上安装一致的软件环境。"
     ],
     "related": [
       "python-env",
@@ -280,9 +495,6 @@
     "term": "Python Environment",
     "zh": "Python 环境",
     "aliases": [
-      "virtual environment",
-      "venv",
-      "conda env",
       "Python env",
       "env"
     ],
@@ -291,7 +503,7 @@
     "kind": "term",
     "summary": "Python 环境是一组供项目使用的 Python 解释器、已安装包和相关配置。",
     "detail": [
-      "虚拟环境可以把两个项目所需的库版本分开；运行脚本前选择正确解释器，才能使用该环境内安装的包。这里的 env 指软件运行环境。"
+      "Python 环境包含解释器与可用的软件包；venv 创建的虚拟环境、Conda 环境等是组织和隔离依赖的不同方式。它们不自动提供容器或安全沙箱那样的进程隔离。这里的 env 指软件运行环境，与强化学习环境应按上下文区分。"
     ],
     "related": [
       "dependency",
@@ -321,6 +533,7 @@
       "项目可以用 Dockerfile 描述基础系统、依赖和启动方式，再构建成镜像；其他机器获取该镜像后可创建容器运行项目。"
     ],
     "related": [
+      "container-image",
       "container",
       "dependency",
       "reproducibility"
@@ -348,6 +561,7 @@
       "同一个镜像可以启动多个容器实例；需要长期保存的实验结果通常写到挂载目录或持久卷中。"
     ],
     "related": [
+      "container-image",
       "docker",
       "sandbox",
       "dependency"
@@ -356,6 +570,36 @@
       {
         "title": "Docker：What is a container?",
         "url": "https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/"
+      }
+    ],
+    "categories": [
+      "development"
+    ]
+  },
+  {
+    "id": "container-image",
+    "term": "Container image",
+    "zh": "容器镜像",
+    "aliases": [
+      "Docker image",
+      "容器映像"
+    ],
+    "category": "development",
+    "group": "运行与安装",
+    "kind": "term",
+    "summary": "包含运行应用所需文件和配置、用于创建容器的只读模板。",
+    "detail": [
+      "同一镜像可以启动多个容器实例。镜像是模板，容器是基于它创建的运行实例；需要长期保留的数据应放在合适的持久存储中。"
+    ],
+    "related": [
+      "container",
+      "docker",
+      "dependency"
+    ],
+    "sources": [
+      {
+        "title": "Docker：容器镜像是什么",
+        "url": "https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/"
       }
     ],
     "categories": [

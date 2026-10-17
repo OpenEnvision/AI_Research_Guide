@@ -57,37 +57,6 @@
     ]
   },
   {
-    "id": "flops",
-    "term": "FLOPs / FLOPS",
-    "zh": "浮点运算量",
-    "aliases": [
-      "FLOP",
-      "FLOPS"
-    ],
-    "category": "systems",
-    "group": "GPU 与计算",
-    "kind": "term",
-    "summary": "FLOPs 表示浮点运算次数；FLOPS 或 FLOP/s 表示每秒浮点运算次数。",
-    "detail": [
-      "估算一次模型前向传播要做多少计算，用的是运算次数 FLOPs。介绍 GPU 每秒能完成多少计算，用的是运算速率 FLOPS，例如每秒一万亿次浮点运算写作 1 TFLOPS。",
-      "讨论计算时，要同时看数值精度和计算方式；FP32、FP16 等不同精度下，硬件的运算速率会不同。"
-    ],
-    "related": [
-      "kernel",
-      "throughput",
-      "latency"
-    ],
-    "sources": [
-      {
-        "title": "NVIDIA：GPU Performance Background",
-        "url": "https://docs.nvidia.com/deeplearning/performance/dl-performance-gpu-background/index.html"
-      }
-    ],
-    "categories": [
-      "systems"
-    ]
-  },
-  {
     "id": "vram",
     "term": "VRAM",
     "zh": "显存",
@@ -152,7 +121,7 @@
     "zh": "混合精度",
     "aliases": [],
     "category": "systems",
-    "group": "精度与压缩",
+    "group": "数值精度",
     "kind": "term",
     "summary": "混合精度在一次训练或推理中组合使用不同精度的数值格式。",
     "detail": [
@@ -174,6 +143,36 @@
     ]
   },
   {
+    "id": "fp32",
+    "term": "FP32",
+    "zh": "32 位单精度浮点数",
+    "aliases": [
+      "float32",
+      "single precision"
+    ],
+    "category": "systems",
+    "group": "数值精度",
+    "kind": "term",
+    "summary": "通常指采用 32 位存储的 IEEE 754 单精度浮点格式。",
+    "detail": [
+      "相比 FP16 和 BF16，FP32 使用更多存储并提供更高的有效数精度；浮点运算仍有舍入误差，运算顺序也可能影响结果。"
+    ],
+    "related": [
+      "fp16",
+      "bf16",
+      "mixed-precision"
+    ],
+    "sources": [
+      {
+        "title": "NVIDIA：浮点数与 IEEE 754",
+        "url": "https://docs.nvidia.com/cuda/floating-point/index.html"
+      }
+    ],
+    "categories": [
+      "systems"
+    ]
+  },
+  {
     "id": "fp16",
     "term": "FP16",
     "zh": "16 位浮点数",
@@ -182,7 +181,7 @@
       "half precision"
     ],
     "category": "systems",
-    "group": "精度与压缩",
+    "group": "数值精度",
     "kind": "term",
     "summary": "FP16 是使用 16 位存储一个数值的浮点格式。",
     "detail": [
@@ -211,7 +210,7 @@
       "bfloat16"
     ],
     "category": "systems",
-    "group": "精度与压缩",
+    "group": "数值精度",
     "kind": "term",
     "summary": "BF16 是指数范围接近 FP32、尾数精度较低的 16 位浮点格式。",
     "detail": [
@@ -240,7 +239,7 @@
       "float8"
     ],
     "category": "systems",
-    "group": "精度与压缩",
+    "group": "数值精度",
     "kind": "term",
     "summary": "FP8 是使用 8 位表示数值的一组浮点格式。",
     "detail": [
@@ -267,7 +266,7 @@
     "zh": "量化",
     "aliases": [],
     "category": "systems",
-    "group": "精度与压缩",
+    "group": "模型压缩",
     "kind": "term",
     "summary": "量化把权重或激活值映射到较低位宽的数值表示。",
     "detail": [
@@ -282,6 +281,33 @@
       {
         "title": "Hugging Face：Quantization",
         "url": "https://huggingface.co/docs/transformers/main/en/quantization/overview"
+      }
+    ],
+    "categories": [
+      "systems"
+    ]
+  },
+  {
+    "id": "pruning",
+    "term": "Pruning",
+    "zh": "剪枝",
+    "aliases": [],
+    "category": "systems",
+    "group": "模型压缩",
+    "kind": "term",
+    "summary": "剪枝通过移除或屏蔽部分权重、通道或模块来压缩模型。",
+    "detail": [
+      "非结构化剪枝可以让很多单个权重变成零，结构化剪枝则移除整组通道；能否加速取决于剩余结构与运行工具是否匹配。"
+    ],
+    "related": [
+      "quantization",
+      "parameter",
+      "flops"
+    ],
+    "sources": [
+      {
+        "title": "PyTorch：Pruning Tutorial",
+        "url": "https://docs.pytorch.org/tutorials/intermediate/pruning_tutorial.html"
       }
     ],
     "categories": [
@@ -367,33 +393,6 @@
       {
         "title": "Hugging Face：PEFT",
         "url": "https://huggingface.co/docs/peft/index"
-      }
-    ],
-    "categories": [
-      "systems"
-    ]
-  },
-  {
-    "id": "pruning",
-    "term": "Pruning",
-    "zh": "剪枝",
-    "aliases": [],
-    "category": "systems",
-    "group": "精度与压缩",
-    "kind": "term",
-    "summary": "剪枝通过移除或屏蔽部分权重、通道或模块来压缩模型。",
-    "detail": [
-      "非结构化剪枝可以让很多单个权重变成零，结构化剪枝则移除整组通道；能否加速取决于剩余结构与运行工具是否匹配。"
-    ],
-    "related": [
-      "quantization",
-      "parameter",
-      "flops"
-    ],
-    "sources": [
-      {
-        "title": "PyTorch：Pruning Tutorial",
-        "url": "https://docs.pytorch.org/tutorials/intermediate/pruning_tutorial.html"
       }
     ],
     "categories": [
@@ -575,6 +574,66 @@
     ]
   },
   {
+    "id": "flash-attention",
+    "term": "FlashAttention",
+    "zh": "快速注意力实现",
+    "aliases": [],
+    "category": "systems",
+    "group": "计算与显存优化",
+    "kind": "term",
+    "summary": "FlashAttention 通过分块与融合计算减少显存读写，加速精确注意力计算。",
+    "detail": [
+      "它通过分块和重计算避免保存完整的注意力矩阵，可用于训练及推理。它优化标准注意力的执行方式；加速效果仍取决于序列长度、硬件和实现版本。"
+    ],
+    "related": [
+      "attention",
+      "kernel",
+      "vram"
+    ],
+    "sources": [
+      {
+        "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+        "url": "https://arxiv.org/abs/2205.14135"
+      }
+    ],
+    "categories": [
+      "systems"
+    ]
+  },
+  {
+    "id": "activation-checkpointing",
+    "term": "Activation checkpointing",
+    "zh": "激活重计算",
+    "aliases": [
+      "Gradient checkpointing",
+      "Activation recomputation",
+      "梯度检查点",
+      "激活检查点"
+    ],
+    "category": "systems",
+    "group": "计算与显存优化",
+    "kind": "term",
+    "summary": "在反向传播时重新计算部分前向中间结果，以减少训练时保存的激活值。",
+    "detail": [
+      "它通过额外计算减少保存激活值所需的显存，与把模型和优化器状态保存到磁盘以便恢复训练的 Checkpoint 是两种不同用途。"
+    ],
+    "related": [
+      "checkpoint",
+      "activation",
+      "backpropagation",
+      "vram"
+    ],
+    "sources": [
+      {
+        "title": "PyTorch：激活检查点与重计算",
+        "url": "https://docs.pytorch.org/docs/stable/checkpoint"
+      }
+    ],
+    "categories": [
+      "systems"
+    ]
+  },
+  {
     "id": "kv-cache",
     "term": "KV Cache",
     "zh": "键值缓存",
@@ -582,7 +641,7 @@
       "KV-cache"
     ],
     "category": "systems",
-    "group": "推理加速",
+    "group": "推理执行与服务",
     "kind": "term",
     "summary": "键值缓存保存已经处理过的 token 对应的注意力键和值，供后续生成复用。",
     "detail": [
@@ -609,7 +668,7 @@
     "zh": "提示预填充阶段",
     "aliases": [],
     "category": "systems",
-    "group": "推理加速",
+    "group": "推理执行与服务",
     "kind": "term",
     "summary": "预填充阶段处理输入提示中的 token，并建立后续生成需要的缓存。",
     "detail": [
@@ -633,16 +692,16 @@
   {
     "id": "decode",
     "term": "Decode Phase",
-    "zh": "逐词解码阶段",
+    "zh": "逐 token 解码阶段",
     "aliases": [
       "decode stage"
     ],
     "category": "systems",
-    "group": "推理加速",
+    "group": "推理执行与服务",
     "kind": "term",
-    "summary": "逐词解码阶段在已有上下文和缓存基础上，反复生成后续 token。",
+    "summary": "解码阶段在已有上下文和缓存基础上，反复生成后续 token。",
     "detail": [
-      "每生成一个新 token，就更新缓存并进入下一步；系统优化时常把首个 token 的等待时间与后续 token 的生成速度分开观察。"
+      "常规自回归解码逐步生成 token，token 可以是子词、字符或其他单位，并不一定是完整的词。推测解码等方法可一次验证多个位置；系统评估仍需区分首 token 等待时间与后续生成速度。"
     ],
     "related": [
       "prefill",
@@ -661,23 +720,24 @@
   },
   {
     "id": "inference-batching",
-    "term": "Batching",
+    "term": "Inference batching",
     "zh": "推理批处理",
     "aliases": [
-      "continuous batching",
-      "动态批处理"
+      "Batching",
+      "推理批处理"
     ],
     "category": "systems",
-    "group": "推理加速",
+    "group": "推理执行与服务",
     "kind": "term",
     "summary": "推理批处理把多个请求组合起来执行，以提高设备利用率。",
     "detail": [
-      "连续批处理可以在一个请求结束后，让新请求加入后续生成步骤；批处理规模也会影响排队时间和显存占用。"
+      "这是把请求合并执行的总称。动态批处理按到达时间等条件组织批次，连续批处理则在生成迭代之间调整成员；它们采用的调度粒度不同。批量大小会影响吞吐量、排队时间和显存占用。"
     ],
     "related": [
+      "dynamic-batching",
+      "continuous-batching",
       "throughput",
-      "latency",
-      "kv-cache"
+      "latency"
     ],
     "sources": [
       {
@@ -697,9 +757,9 @@
       "speculative sampling"
     ],
     "category": "systems",
-    "group": "推理加速",
+    "group": "推理执行与服务",
     "kind": "term",
-    "summary": "推测解码先用较便宜的方法生成多个草稿 token，再由目标模型一起验证。",
+    "summary": "推测解码先用计算成本较低的方法生成多个草稿 token，再由目标模型一起验证。",
     "detail": [
       "被接受的草稿可以一次推进多个位置，被拒绝的位置再按算法修正；加速幅度取决于草稿接受率和验证开销。"
     ],
@@ -719,26 +779,93 @@
     ]
   },
   {
-    "id": "flash-attention",
-    "term": "FlashAttention",
-    "zh": "快速注意力实现",
-    "aliases": [],
+    "id": "dynamic-batching",
+    "term": "Dynamic batching",
+    "zh": "动态批处理",
+    "aliases": [
+      "动态组批"
+    ],
     "category": "systems",
-    "group": "推理加速",
+    "group": "推理执行与服务",
     "kind": "term",
-    "summary": "FlashAttention 通过分块与融合计算减少显存读写，加速精确注意力计算。",
+    "summary": "服务端按请求到达情况和批量限制，将多个推理请求组成一批执行。",
     "detail": [
-      "它避免把完整的注意力分数矩阵反复写入显存；效果取决于序列长度、硬件和具体实现版本。"
+      "例如 Triton 可在限定等待时间内收集请求。它描述请求层面的组批，与每次生成迭代都可调整成员的连续批处理应区分。"
     ],
     "related": [
-      "attention",
-      "kernel",
-      "vram"
+      "inference-batching",
+      "continuous-batching",
+      "throughput",
+      "latency"
     ],
     "sources": [
       {
-        "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
-        "url": "https://arxiv.org/abs/2205.14135"
+        "title": "NVIDIA Triton：动态批处理",
+        "url": "https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/user_guide/batcher.html"
+      }
+    ],
+    "categories": [
+      "systems"
+    ]
+  },
+  {
+    "id": "continuous-batching",
+    "term": "Continuous batching",
+    "zh": "连续批处理",
+    "aliases": [
+      "Iteration-level batching",
+      "Inflight batching",
+      "迭代级批处理"
+    ],
+    "category": "systems",
+    "group": "推理执行与服务",
+    "kind": "term",
+    "summary": "在生成模型的每次迭代之间重新调度请求，及时释放完成请求并接纳新请求。",
+    "detail": [
+      "批次成员可以随生成过程变化，不必等待原来整批请求全部结束。它常用于输出长度不同的语言模型服务，收益取决于负载与调度实现。"
+    ],
+    "related": [
+      "inference-batching",
+      "dynamic-batching",
+      "decode",
+      "kv-cache"
+    ],
+    "sources": [
+      {
+        "title": "Orca：迭代级生成模型服务调度",
+        "url": "https://www.usenix.org/conference/osdi22/presentation/yu"
+      }
+    ],
+    "categories": [
+      "systems"
+    ]
+  },
+  {
+    "id": "flops",
+    "term": "FLOPs / FLOPS",
+    "zh": "浮点运算次数与速率",
+    "aliases": [
+      "FLOP",
+      "FLOP/s",
+      "Floating-point operations"
+    ],
+    "category": "systems",
+    "group": "系统指标",
+    "kind": "term",
+    "summary": "FLOPs 表示浮点运算次数；FLOPS 或 FLOP/s 表示每秒浮点运算次数。",
+    "detail": [
+      "估算一次模型前向传播要做多少计算，用的是运算次数 FLOPs。介绍 GPU 每秒能完成多少计算，用的是运算速率 FLOPS，例如每秒一万亿次浮点运算写作 1 TFLOPS。",
+      "讨论计算时，要同时看数值精度和计算方式；FP32、FP16 等不同精度下，硬件的运算速率会不同。"
+    ],
+    "related": [
+      "kernel",
+      "throughput",
+      "latency"
+    ],
+    "sources": [
+      {
+        "title": "NVIDIA：GPU Performance Background",
+        "url": "https://docs.nvidia.com/deeplearning/performance/dl-performance-gpu-background/index.html"
       }
     ],
     "categories": [

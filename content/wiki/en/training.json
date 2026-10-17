@@ -1,0 +1,373 @@
+[
+  {
+    "id": "parameter",
+    "summary": "Parameters are internal numerical values that determine a model’s computation; trainable parameters are adjusted through learning.",
+    "detail": [
+      "Slopes in linear models and weights and biases in neural networks are parameters. Frozen weights remain parameters even when the current training run does not update them. A “7B model” usually has approximately seven billion parameters."
+    ],
+    "sourceTitles": [
+      "PyTorch: Neural Network Modules"
+    ]
+  },
+  {
+    "id": "weight",
+    "summary": "A weight is a model parameter that controls how input information is combined and passed onward.",
+    "detail": [
+      "If two features are multiplied by 0.8 and 0.2 before being added, those coefficients are weights. Files downloaded as “model weights” usually also contain other parameters, such as biases."
+    ],
+    "sourceTitles": [
+      "PyTorch: Neural Network Modules"
+    ]
+  },
+  {
+    "id": "feature",
+    "summary": "A feature is an input attribute or a representation extracted from data that a model uses to make predictions.",
+    "detail": [
+      "House price prediction might use floor area and floor number as features. A vision network can learn features such as edges and textures, which later layers combine."
+    ],
+    "sourceTitles": [
+      "Google: Machine Learning Glossary"
+    ]
+  },
+  {
+    "id": "embedding",
+    "summary": "An embedding represents a word, image, or other object as a set of numerical values.",
+    "detail": [
+      "A word might be mapped to 768 numbers for subsequent processing by a network. Retrieval embeddings are usually trained specifically to place semantically similar texts closer together in vector space."
+    ],
+    "sourceTitles": [
+      "PyTorch: Embedding"
+    ]
+  },
+  {
+    "id": "latent-representation",
+    "summary": "A latent representation is an internal encoding of input information whose meaning is usually not directly observable.",
+    "detail": [
+      "An autoencoder compresses an image into internal numerical values and then attempts to reconstruct it. These values form a latent representation; an individual dimension need not correspond to a property that a person can name."
+    ],
+    "sourceTitles": [
+      "Auto-Encoding Variational Bayes"
+    ]
+  },
+  {
+    "id": "logit",
+    "summary": "A logit is a raw score that a model assigns to a candidate outcome before converting scores into probabilities.",
+    "detail": [
+      "A language model assigns a score to each token in its vocabulary, then applies softmax to obtain probabilities. Sampling temperature is usually applied to these scores."
+    ],
+    "sourceTitles": [
+      "PyTorch: Neural Network Modules"
+    ]
+  },
+  {
+    "id": "activation",
+    "summary": "Activations are intermediate values or tensors produced while a neural network processes a particular input.",
+    "detail": [
+      "Activations vary with the input, unlike model parameters shared across examples. Activations are usually saved so that these intermediate results are available during backpropagation. An activation function is the transformation rule applied to values; it has a separate entry."
+    ],
+    "sourceTitles": [
+      "PyTorch: Neural Network Modules"
+    ]
+  },
+  {
+    "id": "activation-function",
+    "summary": "An activation function transforms numerical values in a neural network, usually to introduce nonlinearity.",
+    "detail": [
+      "ReLU computes max(0, x), while GELU uses a smooth gating form. The function specifies a rule; activations are the values produced during a particular forward pass."
+    ],
+    "sourceTitles": [
+      "PyTorch: Nonlinear Activations"
+    ]
+  },
+  {
+    "id": "forward-pass",
+    "summary": "A forward pass applies a model’s operations to inputs to produce outputs and intermediate representations.",
+    "detail": [
+      "Training usually computes predictions and a loss, then gradients, then parameter updates. Making predictions also requires forward computation; a forward pass alone is not a parameter update."
+    ],
+    "sourceTitles": [
+      "PyTorch: Automatic Differentiation"
+    ]
+  },
+  {
+    "id": "inference",
+    "summary": "Inference uses an existing model to make predictions or generate outputs for inputs.",
+    "detail": [
+      "It usually leaves parameters fixed and may involve repeated forward passes, sampling, or search. Inference refers to the execution stage; reasoning is the ability to derive conclusions from conditions or evidence. The two concepts are distinct."
+    ],
+    "sourceTitles": [
+      "Google: Machine Learning Glossary"
+    ]
+  },
+  {
+    "id": "loss",
+    "summary": "A loss assigns a numerical cost to model outputs or other aspects of training behavior.",
+    "detail": [
+      "Classification cross-entropy penalizes low probability for the correct class. Other losses compare representations, reconstructions, or policy behavior. The full objective may also include regularization. Lower training loss does not by itself establish better test performance."
+    ],
+    "sourceTitles": [
+      "PyTorch: Optimizing Model Parameters"
+    ]
+  },
+  {
+    "id": "objective",
+    "summary": "An objective is the quantity that a training algorithm seeks to minimize or maximize.",
+    "detail": [
+      "It might be average prediction loss plus a parameter regularization term, or a reward to maximize. When reading a training equation, check the optimization direction and the coefficient of each term."
+    ],
+    "sourceTitles": [
+      "Deep Learning: Regularization"
+    ]
+  },
+  {
+    "id": "gradient",
+    "summary": "A gradient describes the local rate of change of an objective with respect to each parameter.",
+    "detail": [
+      "A positive gradient for a parameter means that increasing it slightly at the current point increases the objective. Gradient descent updates parameters in the opposite direction."
+    ],
+    "sourceTitles": [
+      "PyTorch: Automatic Differentiation"
+    ]
+  },
+  {
+    "id": "backpropagation",
+    "summary": "Backpropagation uses the chain rule to compute parameter gradients layer by layer, working backward from the output.",
+    "detail": [
+      "The forward computation produces predictions and a loss; backpropagation then computes gradients. The optimizer subsequently uses those gradients to change the weights."
+    ],
+    "sourceTitles": [
+      "PyTorch: Automatic Differentiation"
+    ]
+  },
+  {
+    "id": "optimizer",
+    "summary": "An optimizer specifies parameter updates intended to improve a chosen objective.",
+    "detail": [
+      "Neural networks commonly use gradient-based optimizers. SGD uses current gradients and may add momentum; Adam maintains historical gradient moments. Missing optimizer states can change resumed training. An individual update need not reduce the loss."
+    ],
+    "sourceTitles": [
+      "PyTorch: Optimizing Model Parameters"
+    ]
+  },
+  {
+    "id": "sgd",
+    "summary": "SGD estimates gradients from randomly sampled examples or small batches and uses them to update parameters.",
+    "detail": [
+      "Processing only part of the dataset makes the update direction noisy but allows frequent updates. Practical implementations often add momentum to smooth historical gradients."
+    ],
+    "sourceTitles": [
+      "PyTorch: Learning Rate Scheduling"
+    ]
+  },
+  {
+    "id": "adam",
+    "summary": "Adam adaptively scales updates using estimates of first and second raw gradient moments.",
+    "detail": [
+      "It maintains exponential moving averages of gradients and squared gradients, with bias correction. The second moment concerns squared gradients, not Hessian second derivatives: Adam is a first-order method. Resuming training generally requires these states."
+    ],
+    "sourceTitles": [
+      "Adam: A Method for Stochastic Optimization"
+    ]
+  },
+  {
+    "id": "adamw",
+    "summary": "AdamW applies weight decay separately from the Adam update.",
+    "detail": [
+      "For an adaptive optimizer such as Adam, decoupled weight decay is generally not equivalent to adding an L2 penalty to the loss. Check the implementation and which parameter groups receive decay when comparing configurations."
+    ],
+    "sourceTitles": [
+      "Decoupled Weight Decay Regularization"
+    ]
+  },
+  {
+    "id": "learning-rate",
+    "summary": "The learning rate is a hyperparameter that scales parameter updates.",
+    "detail": [
+      "The actual step also depends on gradients, momentum, adaptive scaling, and parameter groups; the learning rate is not the distance parameters move. Large values can destabilize training and small values can slow it. Interpret them with training curves and validation behavior."
+    ],
+    "sourceTitles": [
+      "PyTorch: Optimizing Model Parameters"
+    ]
+  },
+  {
+    "id": "lr-scheduler",
+    "summary": "A learning rate scheduler changes the learning rate according to training progress or evaluation results.",
+    "detail": [
+      "A cosine schedule gradually decreases the learning rate along a smooth curve. Some schedulers reduce it only after a validation metric stops improving."
+    ],
+    "sourceTitles": [
+      "PyTorch: Learning Rate Scheduling"
+    ]
+  },
+  {
+    "id": "warmup",
+    "summary": "Learning rate warmup gradually increases the learning rate during the initial part of training.",
+    "detail": [
+      "For example, the first 1,000 updates may increase it from a small value to the target before decay begins. Warmup steps specify the number of updates directly; a warmup ratio sets this duration as a proportion of total training steps."
+    ],
+    "sourceTitles": [
+      "PyTorch: Learning Rate Scheduling"
+    ]
+  },
+  {
+    "id": "hyperparameter",
+    "summary": "A hyperparameter is a setting configured externally before or during training.",
+    "detail": [
+      "Learning rate, batch size, number of network layers, and regularization strength are hyperparameters. They are usually adjusted using validation performance."
+    ],
+    "sourceTitles": [
+      "Google: Machine Learning Glossary"
+    ]
+  },
+  {
+    "id": "batch",
+    "summary": "A batch is a group of examples processed by a model together.",
+    "detail": [
+      "The batch is the collection of examples; batch size counts them. With gradient accumulation, several small batches contribute to one parameter update."
+    ],
+    "sourceTitles": [
+      "PyTorch: Optimizing Model Parameters"
+    ]
+  },
+  {
+    "id": "batch-size",
+    "summary": "Batch size is the number of examples in a batch.",
+    "detail": [
+      "Distinguish per-device size, the total across data-parallel devices, and effective size after gradient accumulation. With 8 examples per device, 2 devices, and 4 accumulation steps, one update uses 64 examples."
+    ],
+    "sourceTitles": [
+      "Deep Learning: Minibatch Algorithms"
+    ]
+  },
+  {
+    "id": "gradient-accumulation",
+    "summary": "Gradient accumulation combines gradients from several small batches before one optimizer update.",
+    "detail": [
+      "It allows more examples to contribute to each update without increasing the memory needed for a single batch. Normalize losses correctly and clear gradients at update boundaries. Operations using batch statistics or other batch-dependent behavior can prevent exact equivalence to one large batch."
+    ],
+    "sourceTitles": [
+      "PyTorch: Gradient Accumulation and Zeroing"
+    ]
+  },
+  {
+    "id": "epoch",
+    "summary": "An epoch is one pass through the training dataset under the specified data traversal procedure.",
+    "detail": [
+      "For a dataset of 1,000 examples and a batch size of 100, an epoch has approximately 10 batches. Streaming training or continuous sampling is usually tracked directly in steps."
+    ],
+    "sourceTitles": [
+      "PyTorch: Optimizing Model Parameters"
+    ]
+  },
+  {
+    "id": "training-step",
+    "summary": "A training step usually means one optimizer update, although the exact counting convention depends on the training framework.",
+    "detail": [
+      "If gradients are accumulated over four small batches, processing 40 batches produces only 10 parameter updates. Check the definition of “step” when aligning logs and scheduler settings."
+    ],
+    "sourceTitles": [
+      "PyTorch: Optimizing Model Parameters"
+    ]
+  },
+  {
+    "id": "convergence",
+    "summary": "Convergence means a specified parameter sequence, objective value, or iteration error approaches a limit.",
+    "detail": [
+      "A flat curve only shows small changes at the observed scale; it may also reflect a tiny learning rate or stalled optimization. State the quantity and stopping criterion. Numerical stability or a stationary point guarantees neither a global optimum nor good generalization."
+    ],
+    "sourceTitles": [
+      "Google: Machine Learning Glossary"
+    ]
+  },
+  {
+    "id": "supervised-learning",
+    "summary": "Supervised learning trains a model on paired inputs and target answers.",
+    "detail": [
+      "Examples include training a classifier on images labeled “cat” or “dog,” or a question-answering model on questions and reference answers. Labels may come from people, rules, or other systems."
+    ],
+    "sourceTitles": [
+      "Google: Machine Learning Glossary"
+    ]
+  },
+  {
+    "id": "unsupervised-learning",
+    "summary": "Unsupervised learning looks for structure or patterns in data without specified target labels.",
+    "detail": [
+      "Grouping customers by purchasing behavior is one example. The model produces groups, but their business meaning still needs to be interpreted."
+    ],
+    "sourceTitles": [
+      "Google: Machine Learning Glossary"
+    ]
+  },
+  {
+    "id": "self-supervised-learning",
+    "summary": "Self-supervised learning trains a model using prediction targets constructed from the data itself.",
+    "detail": [
+      "Masking a word in a sentence and asking the model to fill it in, or asking a language model to predict the next token, generates training signals directly from raw text."
+    ],
+    "sourceTitles": [
+      "BERT: Pre-training of Deep Bidirectional Transformers"
+    ]
+  },
+  {
+    "id": "semi-supervised-learning",
+    "summary": "Semi-supervised learning combines labeled and unlabeled data during training.",
+    "detail": [
+      "A common setting uses a small labeled set and a large unlabeled set. For example, a classifier can learn further from pseudo-labels or consistency constraints on unlabeled data. A particular ratio of labeled to unlabeled examples is not part of the definition."
+    ],
+    "sourceTitles": [
+      "scikit-learn: Semi-supervised Learning"
+    ]
+  },
+  {
+    "id": "transfer-learning",
+    "summary": "Transfer learning applies capabilities learned from an existing task or dataset to a new task.",
+    "detail": [
+      "To detect defects in manufactured parts, one can start with a network trained on a large image collection, train a new classification head, or further adjust the whole network."
+    ],
+    "sourceTitles": [
+      "PyTorch: Transfer Learning Tutorial"
+    ]
+  },
+  {
+    "id": "multitask-learning",
+    "summary": "Multitask learning trains one model jointly on several related tasks.",
+    "detail": [
+      "A text model might learn sentiment and topic classification together while sharing part of its network. Sampling proportions or loss weights help balance the tasks."
+    ],
+    "sourceTitles": [
+      "An Overview of Multi-Task Learning in Deep Neural Networks"
+    ]
+  },
+  {
+    "id": "curriculum-learning",
+    "summary": "Curriculum learning arranges training examples and tasks according to a designed order or level of difficulty.",
+    "detail": [
+      "Training might begin with short arithmetic expressions and gradually introduce longer ones. Whether that order helps must be assessed against a baseline that mixes examples randomly."
+    ],
+    "sourceTitles": [
+      "Curriculum Learning"
+    ]
+  },
+  {
+    "id": "knowledge-distillation",
+    "summary": "Knowledge distillation trains a student model using a teacher model's outputs or internal representations.",
+    "detail": [
+      "A student can learn from the teacher's soft probabilities or generated answers. A common goal is to retain as much capability as possible in a smaller model."
+    ],
+    "sourceTitles": [
+      "Distilling the Knowledge in a Neural Network"
+    ]
+  },
+  {
+    "id": "checkpoint",
+    "summary": "A checkpoint is a saved model state that can be loaded for use or to resume training.",
+    "detail": [
+      "Training a model may take several days, so checkpoints are saved periodically. If the job stops, a saved state can be loaded to continue training.",
+      "Inference requires model weights. A checkpoint for resuming training usually also contains the optimizer state, learning rate scheduler state, and training step count. “ckpt” is a common abbreviation for checkpoint."
+    ],
+    "sourceTitles": [
+      "PyTorch: Saving and Loading Models"
+    ]
+  }
+]

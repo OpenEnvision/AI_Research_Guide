@@ -4,7 +4,7 @@
 
 ## 动手学深度学习
 
-[中文教材](https://zh.d2l.ai/)从数据操作、线性模型与优化讲到 CNN、RNN、Attention 和 Transformer。各章有可运行的代码，也有[配套课程与视频](https://courses.d2l.ai/zh-v2/)。
+[中文教材](https://zh.d2l.ai/)从数据操作、线性模型与优化讲到 CNN、RNN、Attention 和 Transformer，另有[英文教材](https://d2l.ai/)与[中文配套课程](https://courses.d2l.ai/zh-v2/)。看代码时，可以围绕三个问题检查理解：输入是什么形状，损失如何计算，参数怎样更新？
 
 <figure class="resource-figure medium"><a href="https://www.bilibili.com/video/BV1if4y147hS/"><img src="../../../public/blog/guide/figures/uestc/intro/limu-d2l.jpg" alt="动手学深度学习 v2" loading="lazy"></a><figcaption><a href="https://www.bilibili.com/video/BV1if4y147hS/">动手学深度学习 v2</a></figcaption></figure>
 
@@ -17,6 +17,8 @@
 <div class="resource-pair"><figure class="resource-figure medium"><a href="https://www.bilibili.com/video/BV1H44y1t75x/"><img src="../../../public/blog/guide/figures/uestc/reading/limu-reading.jpg" alt="如何读论文" loading="lazy"></a><figcaption><a href="https://www.bilibili.com/video/BV1H44y1t75x/">如何读论文</a></figcaption></figure><figure class="resource-figure medium"><a href="https://www.bilibili.com/video/BV1pu411o7BE"><img src="../../../public/blog/guide/figures/uestc/reading/limu-transformer.jpg" alt="Transformer 论文逐段精读" loading="lazy"></a><figcaption><a href="https://www.bilibili.com/video/BV1pu411o7BE">Transformer 论文逐段精读</a></figcaption></figure></div>
 
 <div class="resource-pair"><figure class="resource-figure medium"><a href="https://www.bilibili.com/video/BV15P4y137jb/"><img src="../../../public/blog/guide/figures/uestc/reading/limu-vit.jpg" alt="ViT 论文逐段精读" loading="lazy"></a><figcaption><a href="https://www.bilibili.com/video/BV15P4y137jb/">ViT 论文逐段精读</a></figcaption></figure><figure class="resource-figure medium"><a href="https://www.bilibili.com/video/BV1SL4y1s7LQ/"><img src="../../../public/blog/guide/figures/uestc/reading/limu-clip.jpg" alt="CLIP 论文逐段精读" loading="lazy"></a><figcaption><a href="https://www.bilibili.com/video/BV1SL4y1s7LQ/">CLIP 论文逐段精读</a></figcaption></figure></div>
+
+先写下自己对问题、方法与实验的理解，再对照讲解。记录讲解者重点讨论了什么、自己忽略了哪张图，以及哪些主张需要实验支持，逐渐形成自己的阅读方式。
 
 ## 相关资料
 

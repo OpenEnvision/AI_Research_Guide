@@ -1,14 +1,24 @@
 # AI Research Guide
 
-Welcome to the UESTC AI Club guide. If you are interested in AI but unsure where to start, we have put together a few projects you can try, along with courses, papers, and tools to help along the way.
+The OpenEnvision AI Research Guide supports systematic study, practical projects, and the transition to research. It covers programming and mathematics, machine learning and deep learning, research areas, literature review, experimental design, evaluation, and academic communication. Paired Chinese and English pages organize courses and exercises around reviewable learning outcomes.
 
-Choose a starting point below that fits where you are now. You can come back as questions arise; there is no need to read the guide from beginning to end.
+**[Learning path](learning-path.md)** · **[MOOCs and courses](courses.md)** · **[Practice](practice.md)** · **[Research methods](research-methods.md)** · **[Datasets and evaluation](datasets.md)**
 
-## Where to start
+**[Specialized topics](advanced-topics.md)** · **[Research engineering](engineering.md)** · **[Trustworthy and responsible AI](responsible-ai.md)**
+
+## Choose an entry point by task
 
 | Current task | Entry point |
 | --- | --- |
-| Run an AI project for the first time | [MNIST, YOLO, agents, and robotics](start.md) |
+| Plan a route from foundations to research | [A staged learning path](learning-path.md) |
+| Choose MOOCs, lecture courses, and textbooks | [MOOCs and structured courses](courses.md) |
+| Practice programming, algorithms, SQL, or data challenges | [Practice and learning platforms](practice.md) |
+| Design reliable experiments and reproduce results | [Experimental design and reproducibility](research-methods.md) |
+| Study retrieval, recommendation, graphs, time series, causality, probability, audio, or 3D | [Specialized topics](advanced-topics.md) |
+| Turn experiments into reproducible project artifacts | [Research engineering](engineering.md) |
+| Evaluate fairness, robustness, privacy, explanations, and agent security | [Trustworthy and responsible AI](responsible-ai.md) |
+| Select datasets, benchmarks, and metrics | [Datasets and evaluation](datasets.md) |
+| Run an AI project for the first time | [Seven graded starter projects](start.md) |
 | Understand the research areas | [Research directions](directions.md) |
 | Resolve a programming, math, or model concept | [Foundations](basics.md) |
 | Prepare to join a research project | [Getting started: 60 questions](research.md) |
@@ -16,7 +26,7 @@ Choose a starting point below that fits where you are now. You can come back as 
 
 ## AI, a history
 
-From Dartmouth to language models, generation, robotics, and scientific discovery: the ideas that changed AI, and how their paths meet.
+This historical introduction connects major research paths. Use it for orientation, then check original papers and experimental evidence for claims about methods, capabilities, or future developments.
 
 <video class="chronicle-video" controls preload="none" playsinline poster="../chronicle/poster.jpg" aria-label="AI, a history">
 <source src="../chronicle/ai-chronicle.mp4" type="video/mp4">
@@ -29,7 +39,7 @@ From Dartmouth to language models, generation, robotics, and scientific discover
 ## Getting started with AI
 
 **[Your first AI project: where to begin?](start.md)**  
-Train a model to recognize handwritten digits, or detect people and cars in your own photos. Start with MNIST or YOLO and work through running, training, and modifying the code. There are also beginner projects for agents and robotics.
+Choose from seven graded routes: digit classification, tabular regression, text retrieval, tool use, a small language model, object detection, and robotics data. Start with a local baseline, then record data splits, metrics, errors, and changes before increasing the project scope.
 
 **[What do different AI research areas study?](directions.md)**  
 Language models, agents, vision, multimodal learning, generation, RL, world models, embodied AI, and systems. Each starts with a question, then connects papers, explanations, and projects.
@@ -58,7 +68,7 @@ How do you read your first paper, interpret experiment results, or write your fi
 
 ### OpenEnvision
 
-[OpenEnvision (OE)](https://openenvision.github.io/) is an open AI research community connecting academia and industry, with interests in world models, multimodal intelligence, vision, and embodied AI. It also shares research knowledge through curated writing, interviews, and courses.
+[OpenEnvision (OE)](https://openenvision.org/) is an open AI research community connecting academia and industry, with interests in world models, multimodal intelligence, vision, and embodied AI. It also shares research knowledge through curated writing, interviews, and courses.
 
 - **[BlogrXiv: AI research blogs and technical writing](https://openenvision.github.io/BlogrXiv/site/index.html)** brings together research blogs, lab essays, and technical notes. Browse by field for explanations, engineering experience, and research methods, then follow links to the original articles.
 - **[ScholarTube: AI interviews, podcasts, and courses](https://openenvision.github.io/ScholarTube/)** collects long-form researcher interviews, video podcasts, complete courses, and research talks across agents, world models, vision, robotics, and research practice, with links to the original videos.

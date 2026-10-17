@@ -1,6 +1,8 @@
-# About the UESTC AI Club guide
+# About OpenEnvision and this guide
 
-We are the UESTC AI Club, a group of students learning about AI and working on projects together. This guide grew out of our learning and discussions, and we hope it is useful to students at other universities who want to explore AI and research too.
+This AI Research Guide is maintained by [OpenEnvision](https://openenvision.org/), an open AI research community connecting academia and industry, with interests in world models, multimodal intelligence, vision, and embodied AI. We hope this guide helps students begin learning, build their first projects, and explore research.
+
+This edition is based on [Takamatsu-Hikaru/AI-Research-Guide](https://github.com/Takamatsu-Hikaru/AI-Research-Guide), preserving the original articles, personal experiences, and source attribution.
 
 ## Scope
 
@@ -20,4 +22,12 @@ References retain author names and original links. Use “Edit this page” in t
 
 [Guide home](home.md) · [Resource index](resources.md)
 
-Contributions are welcome on [GitHub](https://github.com/Takamatsu-Hikaru/AI-Research-Guide): open an issue or submit a PR with corrections and resources. If you find the guide useful, give it a star or share it with others.
+Contributions are welcome on [GitHub](https://github.com/OpenEnvision/ai_research_guide): open an issue or submit a PR with corrections and resources. If you find the guide useful, give it a star or share it with others.
+
+## Scope and editorial standards
+
+The guide connects programming, mathematics, and ML foundations with specialist courses, projects, evaluation, literature review, and research. The new [learning path](learning-path.md), [courses and MOOCs](courses.md), [practice platforms](practice.md), [datasets and evaluation](datasets.md), and [research methods](research-methods.md) have corresponding Chinese and English content.
+
+Resources prioritize providers, original authors, official documentation, and original research. Course entries distinguish type, language, prerequisites, and suggested outcomes. Research guidance distinguishes claims, experimental conditions, and limits. Personal accounts retain attribution and context rather than serving as universal research rules.
+
+This content revision is dated 2026-10-16; resource pages state the scope of entry-point checks. Offerings, software, licenses, and access policies change. Historical links and assignments have not all been individually verified. Corrections should check bilingual meaning, related links, and original sources together.

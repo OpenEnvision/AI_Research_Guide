@@ -5,7 +5,7 @@
     "zh": "图",
     "aliases": [],
     "category": "graph-finance",
-    "group": "图结构",
+    "group": "图结构与知识表示",
     "kind": "term",
     "summary": "图是由节点以及连接节点的边组成的数据结构。",
     "detail": [
@@ -34,7 +34,7 @@
       "vertex"
     ],
     "category": "graph-finance",
-    "group": "图结构",
+    "group": "图结构与知识表示",
     "kind": "term",
     "summary": "节点是图中用于表示一个实体或对象的基本元素。",
     "detail": [
@@ -63,7 +63,7 @@
       "link"
     ],
     "category": "graph-finance",
-    "group": "图结构",
+    "group": "图结构与知识表示",
     "kind": "term",
     "summary": "边表示图中两个节点之间的关系或连接。",
     "detail": [
@@ -85,6 +85,35 @@
     ]
   },
   {
+    "id": "knowledge-graph",
+    "term": "Knowledge Graph",
+    "zh": "知识图谱",
+    "aliases": [
+      "KG"
+    ],
+    "category": "graph-finance",
+    "group": "图结构与知识表示",
+    "kind": "term",
+    "summary": "知识图谱以实体及其关系组织结构化知识或带来源的陈述。",
+    "detail": [
+      "“北京—位于—中国”可表示为关系三元组，实体和关系还可携带类型、时间与来源。图中的陈述可能有误或相互冲突，结构化存储本身不保证事实正确；知识图谱是表示方式，不等同于图神经网络。"
+    ],
+    "related": [
+      "graph",
+      "link-prediction",
+      "rag"
+    ],
+    "sources": [
+      {
+        "title": "W3C：RDF 1.1 Primer",
+        "url": "https://www.w3.org/TR/rdf11-primer/"
+      }
+    ],
+    "categories": [
+      "graph-finance"
+    ]
+  },
+  {
     "id": "gnn",
     "term": "GNN",
     "zh": "图神经网络",
@@ -92,7 +121,7 @@
       "Graph Neural Network"
     ],
     "category": "graph-finance",
-    "group": "图学习",
+    "group": "图学习方法与任务",
     "kind": "term",
     "summary": "图神经网络利用节点、边及邻接关系学习图上的表示。",
     "detail": [
@@ -119,7 +148,7 @@
     "zh": "消息传递",
     "aliases": [],
     "category": "graph-finance",
-    "group": "图学习",
+    "group": "图学习方法与任务",
     "kind": "term",
     "summary": "图神经网络中的消息传递让节点从相邻节点或边收集信息并更新表示。",
     "detail": [
@@ -146,7 +175,7 @@
     "zh": "链接预测",
     "aliases": [],
     "category": "graph-finance",
-    "group": "图学习",
+    "group": "图学习方法与任务",
     "kind": "term",
     "summary": "链接预测估计两个节点之间是否存在或将出现某种关系。",
     "detail": [
@@ -168,35 +197,6 @@
     ]
   },
   {
-    "id": "knowledge-graph",
-    "term": "Knowledge Graph",
-    "zh": "知识图谱",
-    "aliases": [
-      "KG"
-    ],
-    "category": "graph-finance",
-    "group": "图学习",
-    "kind": "term",
-    "summary": "知识图谱以实体及其关系组织事实信息。",
-    "detail": [
-      "“北京—属于—中国”可以表示为一个关系三元组；实体还可以连接名称、类型、时间和来源等属性。"
-    ],
-    "related": [
-      "graph",
-      "link-prediction",
-      "rag"
-    ],
-    "sources": [
-      {
-        "title": "W3C：RDF 1.1 Primer",
-        "url": "https://www.w3.org/TR/rdf11-primer/"
-      }
-    ],
-    "categories": [
-      "graph-finance"
-    ]
-  },
-  {
     "id": "recommendation",
     "term": "Recommendation System",
     "zh": "推荐系统",
@@ -204,7 +204,7 @@
       "recommender system"
     ],
     "category": "graph-finance",
-    "group": "推荐应用",
+    "group": "推荐系统",
     "kind": "term",
     "summary": "推荐系统根据用户、候选内容和场景信息选择并排序可能有价值的内容。",
     "detail": [
@@ -213,7 +213,8 @@
     "related": [
       "collaborative-filtering",
       "cold-start",
-      "retrieval"
+      "retrieval",
+      "content-based-recommendation"
     ],
     "sources": [
       {
@@ -233,7 +234,7 @@
       "CF"
     ],
     "category": "graph-finance",
-    "group": "推荐应用",
+    "group": "推荐系统",
     "kind": "term",
     "summary": "协同过滤从用户与物品的交互模式中学习偏好并生成推荐。",
     "detail": [
@@ -242,7 +243,8 @@
     "related": [
       "recommendation",
       "embedding",
-      "cold-start"
+      "cold-start",
+      "content-based-recommendation"
     ],
     "sources": [
       {
@@ -255,12 +257,42 @@
     ]
   },
   {
+    "id": "content-based-recommendation",
+    "term": "Content-based Recommendation",
+    "zh": "基于内容的推荐",
+    "aliases": [
+      "Content-based Filtering",
+      "Content-based Recommender"
+    ],
+    "category": "graph-finance",
+    "group": "推荐系统",
+    "kind": "term",
+    "summary": "基于内容的推荐利用物品特征及用户偏好，推荐与用户感兴趣内容相似的物品。",
+    "detail": [
+      "例如根据读者喜欢的文章的主题和文本向量寻找相近文章。它可使用用户自己的历史或显式偏好，不要求其他用户的交互记录；与协同过滤结合可形成混合推荐。"
+    ],
+    "related": [
+      "recommendation",
+      "collaborative-filtering",
+      "cold-start"
+    ],
+    "sources": [
+      {
+        "title": "Google: Content-based filtering",
+        "url": "https://developers.google.com/machine-learning/recommendation/content-based/basics"
+      }
+    ],
+    "categories": [
+      "graph-finance"
+    ]
+  },
+  {
     "id": "cold-start",
     "term": "Cold Start",
     "zh": "冷启动",
     "aliases": [],
     "category": "graph-finance",
-    "group": "推荐应用",
+    "group": "推荐系统",
     "kind": "term",
     "summary": "冷启动是用户、物品或系统缺少历史交互数据时难以做出准确推荐的问题。",
     "detail": [
@@ -287,11 +319,11 @@
     "zh": "时间序列",
     "aliases": [],
     "category": "graph-finance",
-    "group": "时序与金融",
+    "group": "时序数据",
     "kind": "term",
     "summary": "时间序列是按照时间顺序记录的一组观测值。",
     "detail": [
-      "每日销量、每小时温度和每分钟价格都属于时间序列；预测评估通常按时间先后划分数据，保留过去预测未来的关系。"
+      "每日销量、每小时温度和每分钟价格都属于时间序列；预测评估通常按时间先后划分数据，确保使用过去的数据预测未来。"
     ],
     "related": [
       "look-ahead-bias",
@@ -314,7 +346,7 @@
     "zh": "金融因子",
     "aliases": [],
     "category": "graph-finance",
-    "group": "时序与金融",
+    "group": "金融建模与回测",
     "kind": "term",
     "summary": "金融因子是用于刻画资产风险、收益共性或选股信号的一类变量。",
     "detail": [
@@ -343,7 +375,7 @@
       "backtesting"
     ],
     "category": "graph-finance",
-    "group": "时序与金融",
+    "group": "金融建模与回测",
     "kind": "term",
     "summary": "回测是在历史数据和指定执行规则上模拟一个策略的运行结果。",
     "detail": [
@@ -352,7 +384,8 @@
     "related": [
       "look-ahead-bias",
       "time-series",
-      "factor"
+      "factor",
+      "survivorship-bias"
     ],
     "sources": [
       {
@@ -373,16 +406,17 @@
       "未来信息泄漏"
     ],
     "category": "graph-finance",
-    "group": "时序与金融",
+    "group": "金融建模与回测",
     "kind": "term",
     "summary": "前视偏差是在模拟历史决策时使用了当时尚不可获得的信息。",
     "detail": [
-      "用月底才公布的财报决定月初买卖，或用今天的指数成分股回测多年前的策略，都可能把未来信息带入历史决策。"
+      "用月底才公布的财报决定月初买卖，就使用了未来信息。使用今天的指数成分股回测过去还可能同时引入幸存者偏差。应按每项数据实际可获得的时间构建输入，而不能只看数据所描述的日期。"
     ],
     "related": [
       "backtest",
       "data-leakage",
-      "time-series"
+      "time-series",
+      "survivorship-bias"
     ],
     "sources": [
       {
@@ -392,6 +426,35 @@
       {
         "title": "QuantConnect：Research Guide",
         "url": "https://www.quantconnect.com/docs/v2/writing-algorithms/key-concepts/research-guide"
+      }
+    ],
+    "categories": [
+      "graph-finance"
+    ]
+  },
+  {
+    "id": "survivorship-bias",
+    "term": "Survivorship Bias",
+    "zh": "幸存者偏差",
+    "aliases": [
+      "Survivor Bias"
+    ],
+    "category": "graph-finance",
+    "group": "金融建模与回测",
+    "kind": "term",
+    "summary": "幸存者偏差来自只观察留存下来的样本，而遗漏已经退出或失败的对象。",
+    "detail": [
+      "只用今天仍上市的股票回测历史，会遗漏退市或破产公司，扭曲收益与风险估计。应保留当时可用的完整样本范围及退出记录；它关注样本被如何筛选，前视偏差则关注是否用了当时不可知的信息，两者可能同时存在。"
+    ],
+    "related": [
+      "look-ahead-bias",
+      "backtest",
+      "data-leakage"
+    ],
+    "sources": [
+      {
+        "title": "CFA Institute: The good, bad and ugly of bias in AI",
+        "url": "https://www.cfainstitute.org/insights/articles/good-bad-and-ugly-of-bias-in-ai"
       }
     ],
     "categories": [

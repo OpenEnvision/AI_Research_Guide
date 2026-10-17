@@ -1,0 +1,205 @@
+[
+  {
+    "id": "ai-for-science",
+    "summary": "AI for Science applies AI to scientific data analysis, modeling, experimental design, and discovery.",
+    "detail": [
+      "Examples include predicting molecular properties, accelerating fluid simulations, and choosing conditions for the next experiment. Model outputs usually need to be checked against physical constraints, numerical calculations, or experimental measurements."
+    ],
+    "sourceTitles": [
+      "Scientific discovery in the age of artificial intelligence"
+    ]
+  },
+  {
+    "id": "surrogate-model",
+    "summary": "A surrogate model learns an approximate mapping from inputs to outcomes, replacing some expensive computations or experiments at lower cost.",
+    "detail": [
+      "A network trained on a small collection of fluid simulations can quickly estimate drag for a new airfoil. Its errors must be checked in the new parameter range."
+    ],
+    "sourceTitles": [
+      "Fourier Neural Operator for Parametric Partial Differential Equations",
+      "Scientific discovery in the age of artificial intelligence"
+    ]
+  },
+  {
+    "id": "neural-operator",
+    "summary": "A neural operator learns a mapping from one function or field to another.",
+    "detail": [
+      "Given a material coefficient field and boundary conditions, a model can predict the corresponding solution field. Fourier neural operators use frequency-domain computation to model spatial relationships."
+    ],
+    "sourceTitles": [
+      "Fourier Neural Operator for Parametric Partial Differential Equations"
+    ]
+  },
+  {
+    "id": "pinn",
+    "summary": "A physics-informed neural network includes constraints such as physical equations and boundary conditions in its training objective.",
+    "detail": [
+      "For heat conduction, a network outputs a temperature field, and the loss measures both observation error and the heat equation residual. The weights on these loss terms affect the solution."
+    ],
+    "sourceTitles": [
+      "Physics Informed Deep Learning"
+    ]
+  },
+  {
+    "id": "inverse-design",
+    "summary": "Inverse design starts with desired performance and searches for structures, materials, or parameters that can achieve it.",
+    "detail": [
+      "One might specify how an optical device should transmit light, then search for a structure using optimization or a generative model. Candidate designs still require simulation or experimental validation."
+    ],
+    "sourceTitles": [
+      "Inverse design in nanophotonics"
+    ]
+  },
+  {
+    "id": "dft",
+    "summary": "Density functional theory uses electron density as its central variable to calculate the structure and properties of many-electron systems.",
+    "detail": [
+      "Materials researchers often use DFT to estimate energies, forces, and electronic properties, then train machine learning potentials on those results. Calculated results depend on the selected approximations and parameters."
+    ],
+    "sourceTitles": [
+      "Self-Consistent Equations Including Exchange and Correlation Effects"
+    ]
+  },
+  {
+    "id": "smiles",
+    "summary": "SMILES describes a molecule's atoms, bonds, and some structural information as a string.",
+    "detail": [
+      "For example, CCO can represent ethanol. Parentheses indicate branches and digits can mark ring closures. The same molecule may have several valid strings."
+    ],
+    "sourceTitles": [
+      "Daylight Theory: SMILES"
+    ]
+  },
+  {
+    "id": "protein-folding",
+    "summary": "Protein folding is the physical process in which an amino acid chain adopts and changes three-dimensional conformations in a given environment.",
+    "detail": [
+      "Folding research studies energetics, pathways, rates, and environmental conditions. Predicting a plausible structure from a sequence is a related computational task. An accurate structure prediction does not itself simulate folding or recover every conformation and dynamic behavior."
+    ],
+    "sourceTitles": [
+      "Christian Anfinsen: Studies on the Principles That Govern the Folding of Protein Chains",
+      "AlphaFold Protein Structure Database: FAQ"
+    ]
+  },
+  {
+    "id": "protein-structure-prediction",
+    "summary": "Protein structure prediction computes plausible three-dimensional protein structures from sequences and related information.",
+    "detail": [
+      "Methods such as AlphaFold predict structures; they do not directly observe folding trajectories. Interpret local confidence, relative positional errors between regions, and applicable conditions. High confidence alone does not establish binding activity or function under a particular experimental condition."
+    ],
+    "sourceTitles": [
+      "Highly accurate protein structure prediction with AlphaFold",
+      "EMBL-EBI: Evaluating AlphaFold2 predicted structures using confidence scores"
+    ]
+  },
+  {
+    "id": "molecular-docking",
+    "summary": "Molecular docking searches for possible spatial poses of two binding molecules and scores the candidate poses.",
+    "detail": [
+      "A common task places a small molecule in a protein's binding pocket, adjusts its position and conformation, and scores it. Docking scores can help prioritize molecules from a large candidate set for experimental testing."
+    ],
+    "sourceTitles": [
+      "AutoDock Vina: Basic docking"
+    ]
+  },
+  {
+    "id": "active-learning",
+    "summary": "Active learning lets a learning algorithm select the next examples to label or measure in order to improve learning efficiency.",
+    "detail": [
+      "Examples include labeling images that reduce a classifier’s uncertainty or measuring samples that improve predictions of material properties. The main aim is better learning or information; Bayesian optimization focuses on finding high objective values with limited experiments. The approaches can be combined but are distinct."
+    ],
+    "sourceTitles": [
+      "Burr Settles: Active Learning Literature Survey"
+    ]
+  },
+  {
+    "id": "uncertainty",
+    "summary": "Uncertainty concerns possible variation in unknown quantities or future outcomes and what is known about that variation.",
+    "detail": [
+      "Observation noise and limited model knowledge are different sources. State what a probability, interval, or model disagreement represents. High probabilities are not automatically calibrated: events assigned about 80% probability should be checked against their observed frequency. Estimates and interval interpretations still depend on models, data, and use conditions."
+    ],
+    "sourceTitles": [
+      "Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift"
+    ]
+  },
+  {
+    "id": "bayesian-optimization",
+    "summary": "Bayesian optimization builds a surrogate model from observed results and selects the next trial using its potential benefit and uncertainty.",
+    "detail": [
+      "Hyperparameter tuning or materials discovery can require costly evaluations. A surrogate model and acquisition function combine predictions and uncertainty to choose the next evaluation for improving the objective. Active learning usually emphasizes improving the predictive model or information quality."
+    ],
+    "sourceTitles": [
+      "Practical Bayesian Optimization of Machine Learning Algorithms"
+    ]
+  },
+  {
+    "id": "hpo",
+    "summary": "Hyperparameter optimization compares configurations to find training settings that perform well on a specified evaluation metric.",
+    "detail": [
+      "A search may vary learning rate, batch size, and regularization strength and evaluate them on a validation set. Recording each trial's configuration and result helps assess the search."
+    ],
+    "sourceTitles": [
+      "Optuna: A hyperparameter optimization framework"
+    ]
+  },
+  {
+    "id": "nas",
+    "summary": "Neural architecture search looks for a suitable neural network within a predefined architecture space.",
+    "detail": [
+      "Search variables may include layer count, channel count, connectivity, or operator type. Objectives can jointly consider accuracy, inference latency, and model size."
+    ],
+    "sourceTitles": [
+      "Neural Architecture Search with Reinforcement Learning"
+    ]
+  },
+  {
+    "id": "automl",
+    "summary": "Automated machine learning organizes steps such as data processing, model selection, and parameter search through software.",
+    "detail": [
+      "Given tabular data and a target column, a system can compare models and preprocessing choices and select a candidate pipeline using validation performance."
+    ],
+    "sourceTitles": [
+      "Automated Machine Learning: Methods, Systems, Challenges"
+    ]
+  },
+  {
+    "id": "theorem-proving",
+    "summary": "Theorem proving constructs a proof that follows logical rules from explicit axioms, definitions, and established results.",
+    "detail": [
+      "In a formal proof system, a model can propose proof steps and a checker verifies them. Only a complete proof that passes checking satisfies the goal within that system."
+    ],
+    "sourceTitles": [
+      "Theorem Proving in Lean 4"
+    ]
+  },
+  {
+    "id": "lean",
+    "summary": "Lean is a language and interactive proof system for formal mathematical proofs and program development.",
+    "detail": [
+      "A person or model writes statements and proofs in Lean, and its kernel checks whether the derivations follow the rules. Established mathematical results can be imported from libraries."
+    ],
+    "sourceTitles": [
+      "Theorem Proving in Lean 4"
+    ]
+  },
+  {
+    "id": "ai-scientist",
+    "summary": "An AI scientist brings together steps such as proposing ideas, writing experimental code, analyzing results, and preparing reports in an automated research workflow.",
+    "detail": [
+      "A system may generate hypotheses, run code, read metrics, and propose another experiment. Completing the workflow does not establish that the question is valuable, the results are correct, or the work is novel. Examine data permissions, methodology, original evidence, and conclusions using domain standards; a generated paper is not automatically validated research."
+    ],
+    "sourceTitles": [
+      "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery"
+    ]
+  },
+  {
+    "id": "recursive-self-improvement",
+    "summary": "Recursive self-improvement occurs when a system modifies its capabilities or improvement methods and uses the improved system for the next round of improvement.",
+    "detail": [
+      "For example, a coding agent may modify its tools and use a candidate version in later improvement rounds. Evaluate performance, cost, and failures independently and record the conditions that would require a rollback. Improving one version on a fixed benchmark does not show sustained gains, transfer to new tasks, or unlimited acceleration."
+    ],
+    "sourceTitles": [
+      "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents"
+    ]
+  }
+]

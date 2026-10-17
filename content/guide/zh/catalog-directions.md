@@ -1,6 +1,8 @@
 # 各方向课程、论文与项目
 
-各方向的课程、论文清单与开源项目整理在下面。课程通常会连贯地讲解背景与方法，项目页有代码、实验和演示，paper list 则汇集同一主题下的相关工作。各方向的基本介绍见[研究方向总览](directions.md)。
+本页按研究方向提供课程、代表论文与开源项目。各领域的基本介绍见[研究方向总览](directions.md)。
+
+课程或教材提供知识结构，原论文用于理解具体问题，论文清单用于继续查找相关工作。以下资源可按需选择，无需全部学完再开始研究。使用前，请先了解具体任务、先修要求与访问条件。
 
 [返回资料总索引](resources.md)
 
@@ -10,7 +12,7 @@
 
 - **[Kaggle Digit Recognizer：MNIST 手写数字识别](https://www.kaggle.com/competitions/digit-recognizer/overview)**
 
-    手写数字分类比赛，提供数据、公开 Notebook 与结果提交。 [Code 页面](https://www.kaggle.com/competitions/digit-recognizer/code) · [第一个 AI 项目](start.md)
+    使用 MNIST 的手写数字分类比赛，提供社区 [Notebook](https://www.kaggle.com/competitions/digit-recognizer/code)。先看任务定义与评测规则，再读参考实现。本指南的[本地分类入门](start.md)使用较小的 scikit-learn digits 数据集，是另一条入门路线，并非 Kaggle 提交教程。
 
 - **[Ultralytics YOLO Quickstart](https://docs.ultralytics.com/quickstart)**
 
@@ -40,7 +42,7 @@
 
 - **[Build a Large Language Model From Scratch — Sebastian Raschka](https://github.com/rasbt/LLMs-from-scratch)**
 
-    从头实现语言模型的配套代码，包含 token、embedding、attention 与训练过程。
+    英文书的开放配套代码与章节材料，包含 token、embedding、attention 与训练过程；完整图书需另行购买。
 
 - **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/stanford.png" alt="" loading="lazy"> Stanford CS224N](https://web.stanford.edu/class/cs224n/)**
 
@@ -48,11 +50,11 @@
 
 - **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/stanford.png" alt="" loading="lazy"> Stanford CS336：Language Modeling from Scratch，2025](https://cs336.stanford.edu/spring2025/)**
 
-    从头构建语言模型的课程，包含数据、训练、系统与评估，配有编程作业和视频。 [官方第一讲](https://www.youtube.com/watch?v=SQ3fZ1sAqXI)
+    从头构建语言模型的课程，包含数据、训练、系统与评估，配有编程作业和视频；适合已有深度学习与编程基础的读者。 [官方第一讲](https://www.youtube.com/watch?v=SQ3fZ1sAqXI)
 
 - **[Deep Dive into LLMs like ChatGPT — Karpathy](https://www.youtube.com/watch?v=7xTGNNLPyMI)**
 
-    面向较广泛观众的语言模型介绍，讲解 ChatGPT 一类模型的训练与使用。
+    面向广泛受众的语言模型介绍，讲解 ChatGPT 一类模型的训练与使用。
 
 <a id="topic-15"></a>
 
@@ -84,7 +86,7 @@
 
 - **[MIT：Introduction to Flow Matching and Diffusion Models，2025](https://diffusion.csail.mit.edu/2025/)**
 
-    生成模型课程，讲解 Flow Matching 与扩散模型的数学关系，配有讲义和练习。
+    英文生成模型课程，讲解 Flow Matching 与扩散模型的数学关系，配有讲义和练习；需要概率与微积分基础。
 
 - **[Generative Modeling by Estimating Gradients of the Data Distribution — Yang Song](https://yang-song.net/blog/2021/score/)**
 
@@ -100,7 +102,7 @@
 
 - **[World Models — David Ha、Jürgen Schmidhuber](https://worldmodels.github.io/)**
 
-    世界模型的文章与实验演示，将观察压缩、动态预测与控制结合起来。
+    世界模型的文章与实验演示，将观测压缩、环境动态预测与控制结合起来。
 
 - **[DreamerV3 — Danijar Hafner 等](https://danijar.com/project/dreamerv3/)**
 
@@ -152,11 +154,11 @@
 
 - **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/huggingface.svg" alt="" loading="lazy"> LeRobot](https://github.com/huggingface/lerobot)**
 
-    机器人学习的模型、数据集、训练代码与工具。
+    机器人学习的模型、数据集、训练代码与文档。可以先读示范数据与模型执行流程；真实机器人实验需要相应硬件。
 
 - **[RoboTwin 2.0](https://robotwin-platform.github.io/)**
 
-    双臂机器人仿真、数据生成与评测项目。
+    双臂机器人仿真、数据生成与评测项目。安装或训练前，先检查项目列出的 GPU 与环境要求。
 
 - **[ALOHA／ACT：Learning Fine-Grained Bimanual Manipulation](https://tonyzhaozh.github.io/aloha/)**
 
@@ -202,7 +204,7 @@
 
 - **[<img class="resource-mark" src="../../../public/blog/guide/figures/uestc/resources/huggingface.svg" alt="" loading="lazy"> Hugging Face Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction)**
 
-    工具调用、Agent 框架与实践课程。
+    工具调用、Agent 框架与实践课程。涉及模型 API 的练习需要相应账户，并可能产生使用费用。
 
     <figure class="resource-figure medium"><a href="https://huggingface.co/learn/agents-course/en/unit0/introduction"><img src="../../../public/blog/guide/figures/uestc/intro/hf-agents.jpg" alt="Hugging Face Agents Course" loading="lazy" width="1200" height="675"></a></figure>
 
@@ -268,7 +270,7 @@
 
 - **[FinRL](https://github.com/AI4Finance-Foundation/FinRL)**
 
-    金融强化学习项目，包含数据、交易环境、训练与回测。
+    金融强化学习项目，包含数据、交易环境、训练与回测。重点检查时间顺序、信息是否提前可用、交易成本与评测条件。
 
 - **[Awesome AI for Science](https://github.com/ai4s-research/awesome-ai-for-science)**
 

@@ -31,3 +31,14 @@ After a successful demo, ask where failures concentrate and how initial conditio
 ## Embodied communities, teams and scaling
 
 The catalog preserves [Lumina, courses, and projects](catalog-directions.md#topic-19) and [specialized embodied paper lists](catalog-directions.md#topic-20). Meet researchers through [labs](labs.md); for data and scaling, read [Jiaxuan Zou](blogs.md#zou).
+
+## Design a testable embodied-AI study
+
+- **Question and controls:** specify the robot, sensors, action space, control frequency, tasks, and demonstrations. Compare simple control or behavioral-cloning baselines with matched data and budgets; distinguish simulation from physical systems.
+- **Evaluation:** report initial states, repetitions, manual resets, interventions, success criteria, and failure types. Evaluate changes in objects, scenes, robots, and tasks as separate generalization axes.
+- **Limits:** offline prediction error differs from closed-loop success, and simulation gains do not establish physical transfer. Physical experiments must follow the institution's operating and safety procedures.
+
+[Experimental design](research-methods.md) · [Data and evaluation](datasets.md) · [Specialist courses](courses.md) · [Practice](practice.md)
+
+
+Use [3D vision](advanced-topics.md#geometry) for coordinates, cameras, and point clouds and [engineering](engineering.md) for data/model artifacts. Record offline checks, simulation, and physical-system validation separately, including human resets and interventions.

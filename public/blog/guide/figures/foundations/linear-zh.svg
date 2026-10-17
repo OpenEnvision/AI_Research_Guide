@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" width="600" height="260" role="img" aria-labelledby="title desc">
+<title id="title">线性模型对两次出行作出预测</title><desc id="desc">路程 1 和 2 千米组成形状为 2×1 的输入矩阵 X。共同使用权重 w=2 与偏置 b=1，得到预测时间 3 和 5 分钟。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L8 5L0 9" fill="none" stroke="#376556" stroke-width="1.5"/></marker></defs>
+<rect x="1" y="1" width="598" height="258" rx="14" fill="#f7f5ef" stroke="#d9ded7"/>
+<g font-family="system-ui, -apple-system, 'Noto Sans SC', sans-serif" fill="#20382f">
+<text x="300" y="33" text-anchor="middle" font-size="21" font-weight="650">两条观测使用同一个预测规则</text>
+<rect x="24" y="56" width="152" height="138" rx="10" fill="#fff" stroke="#d9ded7"/>
+<rect x="224" y="56" width="152" height="138" rx="10" fill="#fff" stroke="#d9ded7"/>
+<rect x="424" y="56" width="152" height="138" rx="10" fill="#fff" stroke="#d9ded7"/>
+<path d="M184 127h30" stroke="#376556" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M384 127h30" stroke="#376556" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="100" y="82" text-anchor="middle" font-size="17" font-weight="600">路程 X</text>
+<text x="100" y="104" text-anchor="middle" font-size="15" fill="#52685e">（千米）</text>
+<text x="300" y="82" text-anchor="middle" font-size="17" font-weight="600">参数</text>
+<text x="500" y="82" text-anchor="middle" font-size="17" font-weight="600">预测 ŷ</text>
+<text x="500" y="104" text-anchor="middle" font-size="15" fill="#52685e">（分钟）</text>
+<path d="M85 113h-8v65h8M115 113h8v65h-8" fill="none" stroke="#376556" stroke-width="1.8"/>
+<text x="100" y="137" text-anchor="middle" font-size="24">1</text>
+<text x="100" y="168" text-anchor="middle" font-size="24">2</text>
+<path d="M485 113h-8v65h8M515 113h8v65h-8" fill="none" stroke="#376556" stroke-width="1.8"/>
+<text x="500" y="137" text-anchor="middle" font-size="24">3</text>
+<text x="500" y="168" text-anchor="middle" font-size="24">5</text>
+<text x="300" y="132" text-anchor="middle" font-size="24">w = 2</text>
+<text x="300" y="167" text-anchor="middle" font-size="24">b = 1</text>
+<text x="300" y="232" text-anchor="middle" font-size="23" font-weight="600">ŷ = Xw + b</text>
+</g></svg>

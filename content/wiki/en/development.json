@@ -1,0 +1,252 @@
+[
+  {
+    "id": "git",
+    "summary": "A distributed version-control system for recording file versions, managing branches, and exchanging history with other repositories.",
+    "detail": [
+      "Git can create commits, inspect history, and manage branches offline. GitHub hosts Git repositories and adds collaboration features; Git itself does not require GitHub."
+    ],
+    "sourceTitles": [
+      "Pro Git: What is Git?"
+    ]
+  },
+  {
+    "id": "repository",
+    "summary": "A repository stores project files and their version history.",
+    "detail": [
+      "An AI project repository usually contains training code, configuration, documentation, and tests. The history of a Git repository also shows which commit introduced a change."
+    ],
+    "sourceTitles": [
+      "GitHub: About repositories"
+    ]
+  },
+  {
+    "id": "staging-area",
+    "summary": "The Git area used to prepare the file contents of the next commit.",
+    "detail": [
+      "After editing the working tree, selected changes can be staged and then committed. Later edits do not automatically become part of an already staged snapshot. Staging, committing, and pushing are separate steps."
+    ],
+    "sourceTitles": [
+      "Pro Git: Working tree, staging area, and repository"
+    ]
+  },
+  {
+    "id": "commit",
+    "summary": "A commit records a specific state of files in a Git repository and its associated information.",
+    "detail": [
+      "A commit normally records the snapshot prepared in the staging area in local history, with metadata such as authorship, a message, and parent commits. Editing, staging, committing, and pushing are separate steps; a local commit alone does not upload code to a remote."
+    ],
+    "sourceTitles": [
+      "Git: git-commit"
+    ]
+  },
+  {
+    "id": "branch",
+    "summary": "A branch is a movable reference to the tip of a commit history, used to organize different lines of work.",
+    "detail": [
+      "You can implement a new module on a feature branch, then review and test the changes before merging them into the main branch. Each new commit advances the current branch reference."
+    ],
+    "sourceTitles": [
+      "Git: git-branch"
+    ]
+  },
+  {
+    "id": "merge",
+    "summary": "Merging integrates changes from another commit history into the current branch.",
+    "detail": [
+      "If two branches modify the same location, Git may require you to resolve a conflict manually. After merging, check that the combined code behaves as expected."
+    ],
+    "sourceTitles": [
+      "Git: git-merge"
+    ]
+  },
+  {
+    "id": "git-tag",
+    "summary": "A named reference to a repository object, commonly used to mark a version at a particular commit.",
+    "detail": [
+      "Tags normally mark a fixed version, whereas branches advance with new commits. A GitHub release can attach notes or files to a tag; the tag alone is not the whole software release."
+    ],
+    "sourceTitles": [
+      "Git: git-tag"
+    ]
+  },
+  {
+    "id": "clone",
+    "summary": "Cloning copies a remote or local Git repository into a working repository.",
+    "detail": [
+      "A normal clone includes the commit history and remote address, so you can browse, modify, and commit files locally. A shallow clone can fetch only part of the history."
+    ],
+    "sourceTitles": [
+      "Git: git-clone"
+    ]
+  },
+  {
+    "id": "git-fetch",
+    "summary": "Downloading objects and updating remote-tracking references from another repository.",
+    "detail": [
+      "A normal fetch discovers remote commits without automatically merging them into the current working branch. Integration is a separate step using workflows such as merge, rebase, or pull."
+    ],
+    "sourceTitles": [
+      "Git: git-fetch"
+    ]
+  },
+  {
+    "id": "git-pull",
+    "summary": "Fetching remote history and then integrating it into the current branch according to configuration and options.",
+    "detail": [
+      "Integration can use fast-forwarding, merging, or rebasing and may require conflict resolution. Git pull is a command; a pull request is a review and merge proposal on a hosting platform."
+    ],
+    "sourceTitles": [
+      "Git: git-pull"
+    ]
+  },
+  {
+    "id": "git-push",
+    "summary": "Sending required objects to a remote repository and requesting updates to its branches or tags.",
+    "detail": [
+      "A local commit does not automatically push anything. Updates depend on permissions, branch rules, and history relationships; a normal push is generally rejected if it would overwrite divergent remote history."
+    ],
+    "sourceTitles": [
+      "Git: git-push"
+    ]
+  },
+  {
+    "id": "fork",
+    "summary": "A fork is a linked repository derived from an existing repository on a code hosting platform.",
+    "detail": [
+      "You can modify code in your own fork and open a pull request proposing changes to the original repository. You can also synchronize later changes from the original repository."
+    ],
+    "sourceTitles": [
+      "GitHub: About forks"
+    ]
+  },
+  {
+    "id": "pull-request",
+    "summary": "A pull request proposes branch changes for review and merging on a code hosting platform.",
+    "detail": [
+      "Reviewers can inspect the diff, discuss the implementation, and run automated checks. After review, the changes can be merged into the target branch according to the project rules."
+    ],
+    "sourceTitles": [
+      "GitHub: About pull requests"
+    ]
+  },
+  {
+    "id": "issue",
+    "summary": "An issue is a project record for tracking a bug, feature request, or other work.",
+    "detail": [
+      "A clear bug report can include reproduction steps, the expected result, and the actual result. Labels, assignees, and linked pull requests help a team track progress."
+    ],
+    "sourceTitles": [
+      "GitHub: About issues"
+    ]
+  },
+  {
+    "id": "release",
+    "summary": "A release is a version of software prepared for users, usually associated with a specific version tag.",
+    "detail": [
+      "A release page can provide release notes, installation packages, and upgrade information. Pinning a release helps record which version of a tool was used in an experiment."
+    ],
+    "sourceTitles": [
+      "GitHub: About releases"
+    ]
+  },
+  {
+    "id": "github",
+    "summary": "A platform for hosting Git repositories, reviewing code, tracking issues, and automating workflows.",
+    "detail": [
+      "Git is the version-control tool; GitHub is a collaboration service built around repositories. Pull requests, issues, and releases are platform workflows and are distinct from local commits or Git commands."
+    ],
+    "sourceTitles": [
+      "GitHub: What is GitHub?"
+    ]
+  },
+  {
+    "id": "dependency",
+    "summary": "A dependency is another software package or component required to build or run a program.",
+    "detail": [
+      "Training code may depend on PyTorch, data processing libraries, and image libraries. Dependency files and pinned versions help different machines install a consistent combination."
+    ],
+    "sourceTitles": [
+      "pip: User Guide"
+    ]
+  },
+  {
+    "id": "python-env",
+    "summary": "A Python environment consists of an interpreter, installed packages, and related configuration used by a project.",
+    "detail": [
+      "A Python environment includes an interpreter and available packages. Virtual environments created by venv and Conda environments are different ways to organize and isolate dependencies. They do not automatically provide the process isolation of containers or security sandboxes. Here, env means a software runtime environment, distinct from an environment in reinforcement learning."
+    ],
+    "sourceTitles": [
+      "Python: venv"
+    ]
+  },
+  {
+    "id": "docker",
+    "summary": "Docker provides tools for building, distributing, and running container images.",
+    "detail": [
+      "A project can use a Dockerfile to describe its base system, dependencies, and startup procedure, then build an image. Other machines can retrieve that image and create containers to run the project."
+    ],
+    "sourceTitles": [
+      "Docker: Overview"
+    ]
+  },
+  {
+    "id": "container",
+    "summary": "A container is an isolated process environment that runs an application with the files and dependencies it needs.",
+    "detail": [
+      "The same image can start multiple container instances. Experiment results that need to persist are usually written to a mounted directory or persistent volume."
+    ],
+    "sourceTitles": [
+      "Docker: What is a container?"
+    ]
+  },
+  {
+    "id": "container-image",
+    "summary": "A read-only template of application files and configuration used to create containers.",
+    "detail": [
+      "One image can start multiple container instances. The image is the template; a container is an instance created from it. Data that must outlive an instance belongs in appropriate persistent storage."
+    ],
+    "sourceTitles": [
+      "Docker: What is an image?"
+    ]
+  },
+  {
+    "id": "ssh",
+    "summary": "SSH is a protocol for logging into and operating remote systems over an encrypted connection.",
+    "detail": [
+      "Researchers can connect to a GPU server to inspect logs, run commands, or transfer files. The connection target is determined by its address, port, user identity, and authentication method."
+    ],
+    "sourceTitles": [
+      "OpenSSH: Manual Pages"
+    ]
+  },
+  {
+    "id": "cli",
+    "summary": "A command-line interface lets you use a program through typed commands, arguments, and options.",
+    "detail": [
+      "For example, a training program can accept options for the model name, data path, and batch size. Saving the complete command helps repeat the same operation later."
+    ],
+    "sourceTitles": [
+      "Click: Command Line Interface Creation Kit"
+    ]
+  },
+  {
+    "id": "api",
+    "summary": "An API specifies how programs request functionality, pass parameters, and receive results.",
+    "detail": [
+      "A model service can expose an interface that accepts a text prompt and returns generated output. The caller must follow the specified fields, authentication method, and error format."
+    ],
+    "sourceTitles": [
+      "MDN: API"
+    ]
+  },
+  {
+    "id": "sdk",
+    "summary": "An SDK is a collection of libraries, tools, and documentation that helps developers use a platform or service.",
+    "detail": [
+      "An SDK for a model service can provide functions for sending requests, handling responses, and dealing with common errors, making it easier to call the underlying API from your application."
+    ],
+    "sourceTitles": [
+      "Azure SDK Design Guidelines: Introduction"
+    ]
+  }
+]

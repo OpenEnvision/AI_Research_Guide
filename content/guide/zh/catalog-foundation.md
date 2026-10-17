@@ -1,6 +1,6 @@
 # 课程、教材与基础学习
 
-基础课各有侧重：Crash Course 介绍领域全貌，3Blue1Brown 用图像解释数学，MIT 和 Stanford 的课程有系统的讲义与作业。
+选择一门主课或一本教材，再用简短的讲解解决具体疑问。Crash Course 介绍领域全貌，3Blue1Brown 建立数学直觉，系统课程通过习题检验理解。动画可以帮助理解动机；核对假设、自己算一个例子，才能形成更准确的理解。
 
 [返回资料总索引](resources.md)
 
@@ -94,7 +94,7 @@
 
 - **[Practical Deep Learning for Coders — fast.ai](https://course.fast.ai/)**
 
-    面向有编程基础读者的实践课程，从训练应用模型展开深度学习方法。
+    面向有编程基础读者的实践课程，从训练实际任务中的模型入手，介绍深度学习方法。
 
     <figure class="resource-figure medium"><a href="https://course.fast.ai/"><img src="../../../public/blog/guide/figures/uestc/resources/fastai-cover.jpg" alt="Practical Deep Learning for Coders" loading="lazy"></a></figure>
 

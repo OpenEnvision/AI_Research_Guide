@@ -1,6 +1,8 @@
-# Courses, papers, and projects by direction
+# Courses, papers, and projects by research area
 
-Once a question interests you, use this catalog for courses, representative papers, code, and fuller paper lists. For a first introduction, read the [directions overview](directions.md), then return to choose material.
+Once you find a question that interests you, use this catalog to find courses, key papers, code, and more extensive reading lists. If you are still exploring, start with the [research overview](directions.md), then return here to choose resources.
+
+Use a course or textbook for structure, one original paper for a concrete question, and a paper index when you need related work. The lists are alternatives to select from, rather than prerequisites to finish. Check the task, assumed background, and access requirements before committing to a route.
 
 [Back to the resource index](resources.md)
 
@@ -8,9 +10,9 @@ Once a question interests you, use this catalog for courses, representative pape
 
 ## Computer vision: perception, representations, and image models
 
-- **[Kaggle Digit Recognizer: MNIST](https://www.kaggle.com/competitions/digit-recognizer/overview)** — Go from displaying data through training and validation to generating predictions and submitting results. Find beginner notebooks in the Code section and a concrete starting route in the guide. [Code notebooks](https://www.kaggle.com/competitions/digit-recognizer/code) [Hands-on route](start.md)
+- **[Kaggle Digit Recognizer: MNIST](https://www.kaggle.com/competitions/digit-recognizer/overview)** — A competition using MNIST images, with community [code notebooks](https://www.kaggle.com/competitions/digit-recognizer/code). Read the task and evaluation rules before using a notebook. The guide's [local classification route](start.md) uses the smaller scikit-learn digits dataset; it is a separate introduction, not a Kaggle submission tutorial.
 
-- **[Ultralytics YOLO Quickstart](https://docs.ultralytics.com/quickstart)** — Detect objects in your own photos with a pretrained model, then try small-dataset training and validation. A practical entry for a visual demo you can show.
+- **[Ultralytics YOLO Quickstart](https://docs.ultralytics.com/quickstart)** — Detect objects in your own photos with a pretrained model, then try small-dataset training and validation. A practical starting point for building an object-detection demo.
 
 - **[Stanford CS231n](https://cs231n.stanford.edu/schedule)** — English lectures and slides on vision tasks, losses, training, and convolutional/visual architectures. Start there, then choose a topic from the schedule.
 
@@ -26,7 +28,7 @@ Once a question interests you, use this catalog for courses, representative pape
 
 - **[Build a Large Language Model From Scratch — Sebastian Raschka](https://github.com/rasbt/LLMs-from-scratch)** — Open companion code and chapter material for an English book. Start with tokens, embeddings, attention, and training; the book is purchased separately.
 
-- **[Stanford CS224N](https://web.stanford.edu/class/cs224n/)** — An English NLP course. Choose representations, attention, and language tasks to understand the questions and methods behind language models.
+- **[Stanford CS224N](https://web.stanford.edu/class/cs224n/)** — An English NLP course. Explore representations, attention, and language tasks to understand the questions and methods behind language models.
 
 - **[Stanford CS336: Language Modeling from Scratch, 2025](https://cs336.stanford.edu/spring2025/)** — English lectures, assignments, and videos connecting data, training, systems, and evaluation. Intended for people with DL and programming foundations. [Official first lecture](https://www.youtube.com/watch?v=SQ3fZ1sAqXI)
 
@@ -40,7 +42,7 @@ Once a question interests you, use this catalog for courses, representative pape
 
 - **[CLIP official project](https://github.com/openai/CLIP)** — Official code and paper. Begin with image–text correspondence, inputs and outputs, and zero-shot use before training details.
 
-- **[LLaVA: Visual Instruction Tuning](https://llava-vl.github.io/)** — Author project page, diagrams, and paper. Examine model connections and instruction data to see how images enter language interaction.
+- **[LLaVA: Visual Instruction Tuning](https://llava-vl.github.io/)** — Author project page, diagrams, and paper. Examine how the model components connect and how instruction data is used to incorporate images into language-based interactions.
 
 - **[Awesome Multimodal Large Language Models](https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models)** — A paper and resource list. Follow particular tasks to surveys and related work.
 
@@ -62,13 +64,13 @@ Once a question interests you, use this catalog for courses, representative pape
 
 - **[World Models — David Ha and Jürgen Schmidhuber](https://worldmodels.github.io/)** — An author article with visualizations and experiments, connecting compressed observations, predicted dynamics, and control in one system.
 
-- **[DreamerV3 — Danijar Hafner and colleagues](https://danijar.com/project/dreamerv3/)** — Paper, code, and demonstrations. Follow World Models into how a learned model serves behavior learning and how training and evaluation are organized.
+- **[DreamerV3 — Danijar Hafner and colleagues](https://danijar.com/project/dreamerv3/)** — Paper, code, and demonstrations. Build on World Models to explore how a learned model supports learning to act, and how the system is trained and evaluated.
 
 - **[Awesome World Models — JiahuaDong](https://github.com/JiahuaDong/Awesome-World-Models)** — A topic-organized paper list for investigating video, robotics, and other uses of world models.
 
 <a id="topic-18"></a>
 
-## RL: interaction, introductory texts, code, and depth
+## RL: introductory texts, code, and further study
 
 - **[Hands-on Reinforcement Learning](https://hrl.boyuai.com/)** — A Chinese online book with code and videos. Begin with definitions and a small environment, then move from values and policies into deep RL.
 
@@ -76,7 +78,7 @@ Once a question interests you, use this catalog for courses, representative pape
 
 - **[Gymnasium: Basic Usage](https://gymnasium.farama.org/introduction/basic_usage/)** — Official code tutorial showing the flow of observations, actions, rewards, and termination signals in small environments.
 
-- **[CleanRL](https://docs.cleanrl.dev/)** — RL implementations and explanations. Pick an algorithm and follow its relatively concentrated training code beside the concepts.
+- **[CleanRL](https://docs.cleanrl.dev/)** — RL implementations and explanations. Pick an algorithm and study its compact training code alongside the underlying concepts.
 
 - **[Berkeley Deep Reinforcement Learning](https://rail.eecs.berkeley.edu/deeprlcourse/)** — Lectures, videos, and assignments. After RL foundations, explore model learning, policy optimization, and other topics.
 
@@ -84,9 +86,9 @@ Once a question interests you, use this catalog for courses, representative pape
 
 ## Embodied AI: orientation, routes, papers, and practice
 
-- **[Lumina / Tianxing Chen: Embodied-AI-Guide](https://github.com/TianxingChen/Embodied-AI-Guide)** — A Chinese embodied-AI guide. Get a technical map, then find routes, papers, tutorials, and projects by direction.
+- **[Lumina / Tianxing Chen: Embodied-AI-Guide](https://github.com/TianxingChen/Embodied-AI-Guide)** — A Chinese embodied-AI guide. Get an overview of the field, then explore learning paths, papers, tutorials, and projects by research area.
 
-- **[MIT Robotic Manipulation — Russ Tedrake](https://manipulation.csail.mit.edu/)** — English course and textbook on geometry, perception, planning, and control, for understanding the pieces of manipulation.
+- **[MIT Robotic Manipulation — Russ Tedrake](https://manipulation.csail.mit.edu/)** — English course and textbook on geometry, perception, planning, and control, for understanding the components of a manipulation system.
 
 - **[MIT Underactuated Robotics](https://underactuated.mit.edu/)** — A control and robotics course for deeper study of dynamics, control, and decision-making by topic.
 
@@ -170,7 +172,7 @@ Once a question interests you, use this catalog for courses, representative pape
 
 ## Graph learning and time-series forecasting
 
-- **[Stanford CS224W: Machine Learning with Graphs](https://web.stanford.edu/class/cs224w/)** — An English graph-learning course. Learn representations and typical tasks, then investigate your own relational-data question.
+- **[Stanford CS224W: Machine Learning with Graphs](https://web.stanford.edu/class/cs224w/)** — A graph-learning course in English. Study representations and common tasks, then explore your own question about relational data.
 
 - **[Forecasting: Principles and Practice, third edition](https://otexts.com/fpp3/)** — An open forecasting textbook using R. Learn trends, seasonality, prediction, and evaluation; Python users can start with concepts and figures.
 
